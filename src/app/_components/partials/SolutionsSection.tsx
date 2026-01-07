@@ -1,0 +1,109 @@
+import Link from "next/link"
+import Image from "next/image"
+import {
+  ShoppingCart,
+  TrendingUp,
+  GraduationCap,
+  RotateCcw,
+  CreditCard,
+  Megaphone,
+} from "lucide-react"
+
+const SOLUTIONS = [
+  {
+    title: "Optimized Ordering",
+    subtitle: "Scale up your ordering process.",
+    icon: ShoppingCart,
+    image: "/solutions/ordering.svg",
+    slug: "ordering",
+  },
+  {
+    title: "Rebates",
+    subtitle: "Maximize ROI. Drive Growth. Automate Success.",
+    icon: TrendingUp,
+    image: "/solutions/rebates.svg",
+    slug: "rebates",
+  },
+  {
+    title: "Training Management",
+    subtitle: "Transforms training into a loyalty-building journey.",
+    icon: GraduationCap,
+    image: "/solutions/training.svg",
+    slug: "training",
+  },
+  {
+    title: "Returns Management",
+    subtitle: "Minimize Returns, Maximize Control.",
+    icon: RotateCcw,
+    image: "/solutions/returns.svg",
+    slug: "returns",
+  },
+  {
+    title: "Payments",
+    subtitle: "Smarter, Faster, More Secure.",
+    icon: CreditCard,
+    image: "/solutions/payments.svg",
+    slug: "payments",
+  },
+  {
+    title: "Marketing",
+    subtitle: "Keep your customers up-to-date.",
+    icon: Megaphone,
+    image: "/solutions/marketing.svg",
+    slug: "marketing",
+  },
+]
+
+export function SolutionsSection() {
+  return (
+    <section className="bg-gray-50 py-16 md:py-24">
+      <div className="container">
+        {/* Header */}
+        <header className="mb-12 text-center">
+          <h2 className="mb-4 text-3xl font-bold md:text-4xl">
+            Power Your Growth with Sales Acceleration
+          </h2>
+          <p className="mx-auto max-w-2xl text-lg text-gray-600">
+            Choose from these modules, all customized to fit your business.
+          </p>
+        </header>
+
+        {/* Grid: 1 col mobile, 2-3 cols desktop */}
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 md:gap-8 lg:grid-cols-3">
+          {SOLUTIONS.map((item) => {
+            const Icon = item.icon
+            return (
+              <Link
+                key={item.slug}
+                href={`/solutions/${item.slug}`}
+                aria-label={`View ${item.title} solution details`}
+              >
+                <article className="rounded-lg bg-white p-6 shadow-sm transition-shadow hover:shadow-md">
+                  {/* Mobile: Show icon only */}
+                  <div className="mb-4 md:hidden">
+                    <div className="inline-flex h-12 w-12 items-center justify-center rounded-lg bg-teal-100 text-teal-700">
+                      <Icon className="h-6 w-6" />
+                    </div>
+                  </div>
+                  <h3 className="mb-2 text-xl font-semibold">{item.title}</h3>
+                  <p className="text-sm leading-relaxed text-gray-600">
+                    {item.subtitle}
+                  </p>
+                  {/* Desktop: Show image only */}
+                  <div className="relative mb-4 hidden h-48 overflow-hidden rounded-lg bg-gray-100 md:block">
+                    <Image
+                      src={item.image}
+                      alt={item.title}
+                      fill
+                      className="object-cover"
+                    />
+                  </div>
+                </article>
+              </Link>
+            )
+          })}
+        </div>
+      </div>
+    </section>
+  )
+}
