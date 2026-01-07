@@ -1,0 +1,10 @@
+<svg width="400" height="300" xmlns="http://www.w3.org/2000/svg">
+  <rect width="400" height="300" fill="#0d9488"/>
+  <rect x="100" y="40" width="200" height="240" fill="#fff" rx="8"/>
+  <rect x="120" y="60" width="160" height="20" fill="#e0f2f1" rx="4"/>
+  <rect x="120" y="95" width="160" height="20" fill="#e0f2f1" rx="4"/>
+  <rect x="120" y="130" width="160" height="20" fill="#e0f2f1" rx="4"/>
+  <rect x="120" y="165" width="160" height="20" fill="#e0f2f1" rx="4"/>
+  <rect x="120" y="200" width="160" height="20" fill="#e0f2f1" rx="4"/>
+  <text x="200" y="250" font-family="Arial" font-size="16" fill="#0d9488" text-anchor="middle" font-weight="bold">Custom Reports</text>
+</svg>

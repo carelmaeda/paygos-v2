@@ -56,7 +56,7 @@ const SOLUTIONS = [
 
 export function SolutionsSection() {
   return (
-    <section className="bg-gray-50 py-16 md:py-24">
+    <section className="solutions bg-gray-50">
       <div className="container">
         {/* Header */}
         <header className="mb-12 text-center">
@@ -85,10 +85,8 @@ export function SolutionsSection() {
                       <Icon className="h-6 w-6" />
                     </div>
                   </div>
-                  <h3 className="mb-2 text-xl font-semibold">{item.title}</h3>
-                  <p className="text-sm leading-relaxed text-gray-600">
-                    {item.subtitle}
-                  </p>
+                  <h3 className="text-xl font-semibold">{item.title}</h3>
+                  <p className="text-sm text-gray-600">{item.subtitle}</p>
                   {/* Desktop: Show image only */}
                   <div className="relative mb-4 hidden h-48 overflow-hidden rounded-lg bg-gray-100 md:block">
                     <Image

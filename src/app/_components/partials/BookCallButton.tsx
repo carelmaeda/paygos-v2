@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { Button } from "@/components/ui/button" // adjust path if needed
+import { Button } from "@/app/_components/ui/button" // adjust path if needed
 
 interface BookCallButtonProps {
   className?: string

@@ -17,12 +17,11 @@ export function Hero() {
         </article>
 
         {/* Right Column */}
-        <div className="hero-image-wrapper">
+        <div className="image-wrapper">
           <Image
             src="/paygos-hero.svg"
             alt="Paygos Hero Illustration"
             fill
-            className="hero-image"
             priority
           />
         </div>

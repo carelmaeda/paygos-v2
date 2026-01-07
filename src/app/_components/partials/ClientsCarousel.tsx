@@ -72,9 +72,9 @@ const clients: Client[] = [
 
 export function ClientsCarousel() {
   return (
-    <section className="bg-teal-950 text-white">
+    <section className="text-grey-100 bg-teal-950">
       <div>
-        <p className="mb-8 text-center">
+        <p className="mb-8 text-center opacity-40">
           50,000+ users have saved millions of hours with Paygos.
         </p>
 

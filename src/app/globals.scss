@@ -144,16 +144,12 @@ button {
 // ============================================
 .hero {
   color: white;
-  a {
-    background-color: rgb(0, 255, 255);
-    color: #0a0a0a;
-  }
-
   article {
     h1 {
-      font-size: clamp(3rem, 6vw, 4rem);
-      font-weight: 900;
+      font-size: clamp(6rem, 8vw, 5rem);
+      font-weight: 800;
       line-height: 0.9;
+      letter-spacing: -4px;
       margin-bottom: 1rem;
       span {
         color: white;
@@ -164,10 +160,14 @@ button {
       font-size: 1.125rem;
       margin-bottom: 2rem;
     }
+    a {
+      background-color: rgb(0, 255, 255);
+      color: #0a0a0a;
+    }
     width: 100%;
   }
 
-  &-image-wrapper {
+  .image-wrapper {
     position: relative;
     width: 100%;
     height: 35vw;
@@ -208,8 +208,115 @@ button {
 }
 
 // ============================================
+// SOLUTIONS SECTION
+// ============================================
+
+.solutions {
+  padding: 1rem;
+  header {
+    text-align: center;
+    h2 {
+      font-size: clamp(2rem, 2vw, 1rem);
+      font-weight: 800;
+      line-height: 0.9;
+    }
+  }
+
+  &-image-wrapper {
+    position: relative;
+    width: 100%;
+    height: 35vw;
+  }
+
+  @media (min-width: $breakpoint-md) {
+    padding: 2rem;
+    .container {
+      display: grid;
+    }
+  }
+}
+
+// ============================================
+// FIELD SALES SECTION
+// ============================================
+
+.fsa {
+  padding: 1rem;
+  color: white;
+  text-align: center;
+
+  .container {
+    display: grid;
+    gap: 4rem;
+    header {
+      text-align: center;
+      h2 {
+        font-size: 2rem;
+        font-weight: 700;
+        line-height: 0.9;
+      }
+    }
+
+    .text-wrapper {
+      h3 {
+        font-size: 1.5rem;
+        font-weight: 600;
+      }
+    }
+
+    .image-wrapper {
+      margin-block: 1rem;
+      position: relative;
+      width: 100%;
+      height: 150px;
+    }
+
+    .card-wrapper {
+      display: grid;
+      gap: 2rem;
+    }
+  }
+  .card-row:nth-child(even) {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+  @media (min-width: $breakpoint-md) {
+    padding: 4rem;
+    .container {
+      .card-row,
+      .card-row:nth-child(even) {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+        gap: 1rem;
+        justify-items: center;
+        .text-wrapper {
+          text-align: justify;
+        }
+      }
+      .image-wrapper {
+        height: 400px;
+      }
+    }
+  }
+}
+
+// ============================================
+// DATA ANALYTICS
+// ============================================
+
+.data-analytics {
+  padding: 1rem;
+
+  @media (min-width: $breakpoint-md) {
+    padding: 4rem;
+  }
+}
+
+// ============================================
 // LAYOUT COMPONENTS
 // ============================================
+
 @layer components {
   .container {
     width: 100%;
