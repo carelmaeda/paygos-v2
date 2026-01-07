@@ -1,0 +1,220 @@
+// ============================================
+// IMPORTS
+// ============================================
+@import "tailwindcss";
+
+// ============================================
+// VARIABLES
+// ============================================
+
+// Colors - Light Mode
+$background-light: #ffffff;
+$foreground-light: #171717;
+
+// Colors - Dark Mode
+$background-dark: #0a0a0a;
+$foreground-dark: #ededed;
+
+// Colors - UI Components
+$primary-dark: #1d1d1d;
+$primary-hover: #27272a;
+$secondary-border: #e4e4e7;
+$secondary-hover: #f4f4f5;
+
+// Colors - Hero Section
+$accent-blue: #3b82f6;
+$text-gray: #6b7280;
+
+// Breakpoints
+$breakpoint-md: 48rem;
+
+// ============================================
+// CSS CUSTOM PROPERTIES (Runtime Theming)
+// ============================================
+:root {
+  --background: #{$background-light};
+  --foreground: #{$foreground-light};
+  --popover: #{$background-light};
+  --popover-foreground: #{$foreground-light};
+
+  @media (prefers-color-scheme: dark) {
+    --background: #{$background-dark};
+    --foreground: #{$foreground-dark};
+    --popover: #{$background-dark};
+    --popover-foreground: #{$foreground-dark};
+  }
+}
+
+// ============================================
+// TAILWIND THEME EXTENSION
+// ============================================
+// stylelint-disable-next-line scss/at-rule-no-unknown
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --font-primary: var(--font-inter);
+  --font-secondary: var(--font-urbanist);
+}
+
+// ============================================
+// GLOBAL BASE STYLES
+// ============================================
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-inter), sans-serif;
+}
+
+// ============================================
+// TYPOGRAPHY
+// ============================================
+
+// Headers & Titles (Urbanist)
+h1,
+h2,
+h3 {
+  font-family: var(--font-urbanist), sans-serif;
+}
+
+// Body & Subheadings (Inter)
+h4,
+h5,
+h6,
+p,
+span,
+a,
+button {
+  font-family: var(--font-inter), sans-serif;
+}
+
+// ============================================
+// BUTTON COMPONENTS
+// ============================================
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem 1.25rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1.25rem;
+  border-radius: 6px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.2s ease;
+
+  // Mobile: full-width, bigger touch targets
+  @media (max-width: calc($breakpoint-md - 0.0625rem)) {
+    width: 100%;
+    padding: 0.75rem 1.25rem;
+    font-size: 1rem;
+    min-height: 44px;
+  }
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
+  &-primary {
+    background-color: $primary-dark;
+    color: $background-light;
+
+    &:hover {
+      background-color: $primary-hover;
+    }
+  }
+
+  &-secondary {
+    background-color: transparent;
+    color: $foreground-light;
+    border-color: $secondary-border;
+
+    &:hover {
+      background-color: $secondary-hover;
+    }
+  }
+}
+
+// ============================================
+// HERO SECTION
+// ============================================
+.hero {
+  color: white;
+  a {
+    background-color: rgb(0, 255, 255);
+    color: #0a0a0a;
+  }
+
+  article {
+    h1 {
+      font-size: clamp(3rem, 6vw, 4rem);
+      font-weight: 900;
+      line-height: 0.9;
+      margin-bottom: 1rem;
+      span {
+        color: white;
+      }
+    }
+
+    p {
+      font-size: 1.125rem;
+      margin-bottom: 2rem;
+    }
+    width: 100%;
+  }
+
+  &-image-wrapper {
+    position: relative;
+    width: 100%;
+    height: 35vw;
+  }
+
+  @media (min-width: $breakpoint-md) {
+    .container {
+      display: flex;
+      align-items: center;
+    }
+  }
+}
+
+// ============================================
+// CAROUSEL ANIMATIONS
+// ============================================
+@keyframes scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-scroll {
+  animation: scroll 30s linear infinite;
+}
+
+.animate-pause:hover {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-scroll {
+    animation: none;
+  }
+}
+
+// ============================================
+// LAYOUT COMPONENTS
+// ============================================
+@layer components {
+  .container {
+    width: 100%;
+    max-width: 900px;
+    margin-inline: auto;
+    padding-inline: clamp(1.5rem, 5vw, 5rem);
+  }
+}
