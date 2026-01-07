@@ -8,6 +8,7 @@ import {
   RotateCcw,
   CreditCard,
   Megaphone,
+  UserCog,
 } from "lucide-react"
 
 const SOLUTIONS = [
@@ -52,6 +53,13 @@ const SOLUTIONS = [
     icon: Megaphone,
     image: "/solutions/marketing.svg",
     slug: "marketing",
+  },
+  {
+    title: "Field Sales Automation",
+    subtitle: "Save your company both time and money.",
+    icon: UserCog,
+    image: "/solutions/fsa.svg",
+    slug: "fsa",
   },
 ]
 
