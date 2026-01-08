@@ -1,7 +1,7 @@
 import Link from "next/link"
 import { ArrowRight } from "lucide-react"
 import { Button } from "@/app/_components/ui/button"
-import { CustomerStoriesCarousel } from "../sections/testimonials/CustomerStoriesCarousel"
+import { CustomerStoriesCarousel } from "./CustomerStoriesCarousel"
 
 export function Customers() {
   return (

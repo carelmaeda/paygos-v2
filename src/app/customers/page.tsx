@@ -1,7 +1,7 @@
 import Link from "next/link"
 import { ArrowLeft } from "lucide-react"
 import { Button } from "@/app/_components/ui/button"
-import { CustomersLogosCarousel } from "../_components/partials/CustomersLogosCarousel"
+import { CustomersLogosCarousel } from "../_components/sections/testimonials/CustomersLogosCarousel"
 
 export default function CustomersPage() {
   return (

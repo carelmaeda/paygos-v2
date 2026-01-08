@@ -1,6 +1,6 @@
 import Image from "next/image"
-import { BookCallButton } from "./BookCallButton"
-import { CustomersLogosCarousel } from "./CustomersLogosCarousel"
+import { BookCallButton } from "../cta/BookCallButton"
+import { CustomersLogosCarousel } from "../testimonials/CustomersLogosCarousel"
 
 export function Hero() {
   return (
