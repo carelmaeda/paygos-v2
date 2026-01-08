@@ -29,7 +29,7 @@ export function DesktopNav() {
             <NavigationMenuItem>
               <NavigationMenuTrigger>Solutions</NavigationMenuTrigger>
               <NavigationMenuContent>
-                <div className="grid w-150 max-w-[90vw] gap-3 p-4 md:grid-cols-2">
+                <div className="grid w-150 max-w-[90vw] grid-cols-2 gap-3 p-4">
                   {SOLUTIONS.map((item) => {
                     const Icon = item.icon
                     return (
@@ -39,9 +39,7 @@ export function DesktopNav() {
                         className="block rounded-md p-3 transition-colors hover:bg-teal-300"
                       >
                         <div className="flex items-start gap-3">
-                          {Icon && (
-                            <Icon className="mt-0.5 h-5 w-5 shrink-0" />
-                          )}
+                          {Icon && <Icon className="mt-0.5 h-5 w-5 shrink-0" />}
                           <div className="space-y-1">
                             <p className="text-sm font-medium">{item.title}</p>
                             <p className="text-muted-foreground text-sm">

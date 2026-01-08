@@ -49,7 +49,7 @@ export function Navbar() {
         {/* Logo */}
         <Link href="/">
           <Image
-            src="https://cdn.brandfetch.io/iduoAS1dpZ/theme/dark/logo.svg?c=1dxbfHSJFAPEGdCLU4o5B"
+            src="/paygos/logo-full.webp"
             alt="Brand Logo"
             width={150}
             height={50}

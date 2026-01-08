@@ -2,7 +2,6 @@
 
 import { useState, memo, useMemo } from "react"
 import Image from "next/image"
-import { cn } from "@/lib/utils"
 
 // ============================================
 // TYPES
@@ -27,62 +26,62 @@ const CLIENTS: readonly Client[] = [
   {
     id: "1",
     name: "Mars",
-    logoUrl:
-      "https://cdn.brandfetch.io/idFvQZLcOg/theme/light/logo.svg?c=1dxbfHSJFAPEGdCLU4o5B",
+    logoUrl: "/customers/mars.svg",
     isLocal: true,
   },
   {
     id: "2",
     name: "Hills Pet",
-    logoUrl: "/logos/client-b.png",
+    logoUrl: "/customers/hillspet.svg",
     isLocal: true,
   },
   {
     id: "3",
-    name: "Royal Canin",
-    logoUrl:
-      "https://cdn.brandfetch.io/idAnQD0ZGT/theme/dark/logo.svg?k=bfHSJFAPEG",
+    name: "Sandoz",
+    logoUrl: "/customers/sandoz.svg",
     domain: "#",
     isLocal: false,
   },
   {
     id: "4",
     name: "Roche",
-    logoUrl:
-      "https://cdn.brandfetch.io/idw382nG0m/theme/dark/logo.svg?k=bfHSJFAPEG",
+    logoUrl: "/customers/roche.svg",
     domain: "#",
     isLocal: false,
   },
   {
     id: "5",
-    name: "Nestlé",
-    logoUrl:
-      "https://cdn.brandfetch.io/idJfXF-So-/theme/dark/logo.svg?k=bfHSJFAPEG",
-    domain: "nestle.com",
+    name: "Nestle",
+    logoUrl: "/customers/nestle.svg",
+    domain: "#",
     isLocal: false,
   },
   {
     id: "6",
-    name: "Unilever",
-    logoUrl:
-      "https://cdn.brandfetch.io/idw7Lb2LhT/theme/dark/logo.svg?k=bfHSJFAPEG",
-    domain: "unilever.com",
+    name: "Haleon",
+    logoUrl: "/customers/haleon.svg",
+    domain: "#",
     isLocal: false,
   },
   {
     id: "7",
-    name: "Procter & Gamble",
-    logoUrl:
-      "https://cdn.brandfetch.io/idtfGXPyDR/theme/dark/logo.svg?k=bfHSJFAPEG",
-    domain: "pg.com",
+    name: "Vital Essentials",
+    logoUrl: "/customers/vital-essentials.svg",
+    domain: "#",
     isLocal: false,
   },
   {
     id: "8",
-    name: "Johnson & Johnson",
-    logoUrl:
-      "https://cdn.brandfetch.io/id8xF9m35U/theme/dark/logo.svg?k=bfHSJFAPEG",
-    domain: "jnj.com",
+    name: "Lindt",
+    logoUrl: "/customers/lindt.svg",
+    domain: "#",
+    isLocal: false,
+  },
+  {
+    id: "9",
+    name: "Royal Canin",
+    logoUrl: "/customers/royal-canin.svg",
+    domain: "#",
     isLocal: false,
   },
 ] as const
@@ -90,23 +89,7 @@ const CLIENTS: readonly Client[] = [
 // ============================================
 // STATIC CLASSNAMES
 // ============================================
-// Extract static className strings to prevent recreation
-
-/** Fallback placeholder styles when image fails to load */
-const FALLBACK_CLASSES = cn(
-  "flex h-12 w-32 items-center justify-center md:h-16",
-  "rounded bg-teal-900/30 text-teal-100/50",
-  "text-sm font-medium"
-)
-
-/** Logo image styles with hover effects */
-const LOGO_CLASSES = cn(
-  "grayscale hover:grayscale-0",
-  "opacity-70 hover:opacity-100",
-  "transition-all duration-300",
-  "h-12 w-auto md:h-16",
-  "object-contain"
-)
+// Logo styles are defined in globals.scss for better control over sizing and spacing
 
 // ============================================
 // SUB-COMPONENTS
@@ -129,7 +112,7 @@ const ClientLogo = memo(({ client }: { client: Client }) => {
   // ============================================
   // Display company name when image fails to load
   if (hasError) {
-    return <div className={FALLBACK_CLASSES}>{client.name}</div>
+    return <div className="customer-logo-fallback">{client.name}</div>
   }
 
   // ============================================
@@ -139,9 +122,9 @@ const ClientLogo = memo(({ client }: { client: Client }) => {
     <Image
       src={client.logoUrl}
       alt={client.name}
-      width={120}
-      height={60}
-      className={LOGO_CLASSES}
+      width={200}
+      height={100}
+      className="customer-logo-image"
       onError={() => setHasError(true)} // Trigger fallback on error
     />
   )
@@ -168,7 +151,7 @@ export function CustomersLogosCarousel() {
   const logoSets = useMemo(() => {
     // First set of logos
     const firstSet = CLIENTS.map((client) => (
-      <div key={client.id} className="flex-shrink-0">
+      <div key={client.id} className="customer-logo-container">
         <ClientLogo client={client} />
       </div>
     ))
@@ -176,7 +159,7 @@ export function CustomersLogosCarousel() {
     // Duplicate set for seamless loop animation
     // When first set scrolls out of view, duplicate appears creating infinite effect
     const duplicateSet = CLIENTS.map((client) => (
-      <div key={`${client.id}-duplicate`} className="flex-shrink-0">
+      <div key={`${client.id}-duplicate`} className="customer-logo-container">
         <ClientLogo client={client} />
       </div>
     ))
@@ -188,7 +171,7 @@ export function CustomersLogosCarousel() {
   // RENDER
   // ============================================
   return (
-    <section className="text-grey-100">
+    <section className="text-grey-100 pb-8">
       <div>
         {/* Section Description */}
         <p className="mb-8 text-center opacity-40">
@@ -200,7 +183,7 @@ export function CustomersLogosCarousel() {
           {/* Animated Scrolling Container */}
           {/* animate-scroll: CSS animation for continuous left scroll */}
           {/* animate-pause: Pauses animation on hover for accessibility */}
-          <div className="animate-scroll animate-pause flex gap-8">
+          <div className="animate-scroll animate-pause flex gap-12">
             {logoSets.firstSet}
             {logoSets.duplicateSet}
           </div>

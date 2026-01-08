@@ -3,7 +3,7 @@ import Link from "next/link"
 import Image from "next/image"
 import { ArrowLeft } from "lucide-react"
 import { Button } from "@/app/_components/ui/button"
-import { customerStories } from "@/app/_components/sections/testimonials/data/customer-stories"
+import { customerStories } from "@/app/_components/sections/customers/data/customer-stories"
 
 interface CustomerStoryPageProps {
   params: Promise<{ slug: string }>

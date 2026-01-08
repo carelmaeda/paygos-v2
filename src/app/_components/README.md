@@ -9,7 +9,7 @@ This directory contains all React components organized by feature and purpose:
 - **`sections/`** - Page section components organized by feature
   - `hero/` - Hero sections
   - `solutions/` - Solution-related sections
-  - `testimonials/` - Customer testimonials and social proof
+  - `customers/` - Customer customers and social proof
   - `cta/` - Call-to-action sections and buttons
 
 ## Guidelines
@@ -73,7 +73,7 @@ import { Hero } from "@/app/_components/sections/hero/Hero"
 
 Within the components directory, prefer relative imports for better portability:
 ```typescript
-// From sections/testimonials/Customers.tsx
+// From sections/customers/Customers.tsx
 import { CustomerStoriesCarousel } from "./CustomerStoriesCarousel"
 import { Button } from "../../ui/button"
 ```
