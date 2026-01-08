@@ -1,7 +1,7 @@
 // ============================================
 // IMPORTS
 // ============================================
-@import "tailwindcss";
+@use "tailwindcss";
 
 // ============================================
 // VARIABLES
@@ -22,7 +22,7 @@ $secondary-border: #e4e4e7;
 $secondary-hover: #f4f4f5;
 
 // Colors - Hero Section
-$accent-blue: #3b82f6;
+$accent-teal: #3b82f6;
 $text-gray: #6b7280;
 
 // Breakpoints
