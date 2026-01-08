@@ -1,6 +1,6 @@
 import Image from "next/image"
 import { BookCallButton } from "./BookCallButton"
-import { ClientsCarousel } from "./ClientsCarousel"
+import { CustomersLogosCarousel } from "./CustomersLogosCarousel"
 
 export function Hero() {
   return (
@@ -26,7 +26,7 @@ export function Hero() {
           />
         </div>
       </div>
-      <ClientsCarousel />
+      <CustomersLogosCarousel />
     </section>
   )
 }

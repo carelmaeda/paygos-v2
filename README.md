@@ -9,11 +9,13 @@ Paygos V2 is a complete redesign of the Paygos platform, featuring a modern tech
 ## Tech Stack
 
 ### Core Framework
+
 - **Next.js 16.1.1** - React framework with App Router and Turbopack
 - **React 19.2.3** - Latest React with enhanced performance
 - **TypeScript 5.x** - Type-safe development
 
 ### Styling & UI
+
 - **Tailwind CSS v4** - Utility-first CSS framework with native CSS support
 - **SCSS/SASS 1.97.2** - Enhanced CSS with variables, nesting, and mixins
 - **shadcn/ui** - Accessible component library (New York style)
@@ -22,6 +24,7 @@ Paygos V2 is a complete redesign of the Paygos platform, featuring a modern tech
 - **Class Variance Authority** - Type-safe component variants
 
 ### Development Tools
+
 - **Prettier 3.7.4** - Code formatting with Tailwind plugin
 - **ESLint 9.x** - Code linting with Next.js config
 - **tw-animate-css** - Additional Tailwind animations
@@ -41,7 +44,7 @@ paygos-v2/
 │   │   │   └── partials/      # Reusable UI components
 │   │   │       ├── Navbar.tsx
 │   │   │       ├── Hero.tsx
-│   │   │       ├── ClientsCarousel.tsx
+│   │   │       ├── CustomersLogosCarousel.tsx
 │   │   │       └── BookCallButton.tsx
 │   │   ├── globals.scss        # Global styles and animations
 │   │   ├── layout.tsx          # Root layout
@@ -67,6 +70,7 @@ paygos-v2/
 ### Current Implementation
 
 #### 1. Navigation System
+
 - **Desktop Navigation**: Dropdown menu with NavigationMenu component
 - **Mobile Navigation**: Sheet drawer with collapsible accordion
 - **Icons**: Lucide React icons for visual clarity
@@ -79,12 +83,14 @@ paygos-v2/
   - Customer Management (UserCog icon)
 
 #### 2. Hero Section
+
 - Responsive layout with compelling headline
 - Call-to-action buttons with mobile optimization
 - Hero image integration
 - Dark background with teal accent colors
 
-#### 3. ClientsCarousel Component
+#### 3. CustomersLogosCarousel Component
+
 - **Infinite horizontal scroll animation** (30s loop)
 - **Logo sources**: Brandfetch CDN OR local files from `public/logos/`
 - **Visual effects**: Grayscale by default, color on hover
@@ -93,6 +99,7 @@ paygos-v2/
 - **Seamless loop**: Duplicate logo sets for continuous scrolling
 
 #### 4. Responsive Design
+
 - **Mobile-first approach** with breakpoint at 768px
 - **Button optimization**: Full-width on mobile with 44px min-height (iOS touch target)
 - **Typography**: Inter (body/subheadings), Urbanist (headings)
@@ -101,6 +108,7 @@ paygos-v2/
 ### Styling System
 
 #### SCSS Variables
+
 ```scss
 // Colors - Light Mode
 $background-light: #ffffff;
@@ -122,6 +130,7 @@ $text-gray: #6b7280;
 ```
 
 #### Custom Animations
+
 - **Carousel scroll**: Infinite horizontal scroll with `translateX`
 - **Pause on hover**: `animation-play-state: paused`
 - **Accessibility**: Respects `prefers-reduced-motion`
@@ -129,23 +138,27 @@ $text-gray: #6b7280;
 ## Getting Started
 
 ### Prerequisites
+
 - Node.js 20.x or later
 - npm or yarn package manager
 
 ### Installation
 
 1. Clone the repository:
+
 ```bash
 git clone <repository-url>
 cd paygos-v2
 ```
 
 2. Install dependencies:
+
 ```bash
 npm install
 ```
 
 3. Run the development server:
+
 ```bash
 npm run dev
 ```
@@ -166,16 +179,19 @@ npm run format:check # Check code formatting
 ## Configuration
 
 ### Next.js Configuration
+
 - **Image optimization**: Brandfetch CDN whitelisted for remote images
 - **Turbopack**: Enabled for faster development builds
 
 ### Tailwind CSS v4
+
 - Uses new `@import "tailwindcss"` syntax
 - Custom theme extensions via `@theme inline` directive
 - CSS custom properties for runtime theming
 - PostCSS plugin: `@tailwindcss/postcss`
 
 ### shadcn/ui Configuration
+
 - **Style**: New York variant
 - **Base color**: Neutral
 - **CSS Variables**: Enabled
@@ -183,6 +199,7 @@ npm run format:check # Check code formatting
 - **Aliases**: `@/components`, `@/lib/utils`, `@/hooks`
 
 ### VSCode Settings
+
 - **Auto-format on save** with Prettier
 - **ESLint auto-fix** on save
 - **SCSS unknown at-rules**: Ignored (for Tailwind v4 `@theme`)
@@ -190,14 +207,18 @@ npm run format:check # Check code formatting
 ## Image Assets
 
 ### Brandfetch Integration
+
 Client logos can be fetched from Brandfetch CDN:
+
 ```typescript
 // Format: https://cdn.brandfetch.io/[domain]/fallback/transparent/h/[height]
 logoUrl: "https://cdn.brandfetch.io/coca-cola.com/fallback/transparent/h/60"
 ```
 
 ### Local Logo Storage
+
 Place client logos in `public/logos/` directory:
+
 ```typescript
 logoUrl: "/logos/client-name.svg"
 ```
@@ -206,16 +227,18 @@ Supported formats: SVG, PNG, JPG
 
 ## Component Usage
 
-### ClientsCarousel
+### CustomersLogosCarousel
+
 ```tsx
-import { ClientsCarousel } from "@/app/_components/partials/ClientsCarousel"
+import { CustomersLogosCarousel } from "@/app/_components/partials/CustomersLogosCarousel"
 
 export default function Page() {
-  return <ClientsCarousel />
+  return <CustomersLogosCarousel />
 }
 ```
 
 ### Navbar
+
 ```tsx
 import { Navbar } from "@/app/_components/partials/Navbar"
 

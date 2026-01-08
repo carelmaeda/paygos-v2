@@ -29,7 +29,7 @@ $text-gray: #6b7280;
 $breakpoint-md: 48rem;
 
 // ============================================
-// CSS CUSTOM PROPERTIES (Runtime Theming)
+// CSS CUSTOM PROPERTIES
 // ============================================
 :root {
   --background: #{$background-light};
@@ -96,8 +96,8 @@ button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 0.5rem 1.25rem;
-  font-size: 0.875rem;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
   font-weight: 500;
   line-height: 1.25rem;
   border-radius: 6px;
@@ -323,5 +323,98 @@ button {
     max-width: 900px;
     margin-inline: auto;
     padding-inline: clamp(1.5rem, 5vw, 5rem);
+  }
+}
+
+// ============================================
+// CUSTOMER STORIES CAROUSEL
+// ============================================
+
+.customer-stories-swiper {
+  padding-bottom: 3rem;
+
+  .swiper-pagination {
+    bottom: 0;
+  }
+
+  .swiper-pagination-bullet {
+    width: 10px;
+    height: 10px;
+    background: #dbd1d6;
+    opacity: 1;
+    transition: all 0.3s ease;
+
+    &-active {
+      background: #0d9488;
+      width: 24px;
+      border-radius: 5px;
+    }
+  }
+
+  .swiper-button-next,
+  .swiper-button-prev {
+    color: #0d9488;
+    width: 32px;
+    height: 32px;
+    background: white;
+    border-radius: 50%;
+    box-shadow:
+      0 4px 6px -1px rgb(0 0 0 / 0.1),
+      0 2px 4px -1px rgb(0 0 0 / 0.06);
+    transition: all 0.3s ease;
+    z-index: 10;
+    margin-top: 0;
+    top: 50%;
+    transform: translateY(-50%);
+
+    &:hover {
+      background: #f0fdfa;
+      transform: translateY(-50%) scale(1.1);
+    }
+
+    &::after {
+      font-size: 18px;
+      font-weight: 900;
+    }
+
+    &.swiper-button-disabled {
+      opacity: 0.35;
+      cursor: not-allowed;
+    }
+  }
+
+  .swiper-button-prev {
+    left: 10px;
+  }
+
+  .swiper-button-next {
+    right: 10px;
+  }
+
+  @media (max-width: 767px) {
+    .swiper-button-next,
+    .swiper-button-prev {
+      display: none;
+    }
+  }
+
+  @media (min-width: 768px) and (max-width: 1023px) {
+    .swiper-button-prev {
+      left: 5px;
+    }
+
+    .swiper-button-next {
+      right: 5px;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .swiper-button-prev {
+      left: 20px;
+    }
+
+    .swiper-button-next {
+      right: 20px;
+    }
   }
 }
