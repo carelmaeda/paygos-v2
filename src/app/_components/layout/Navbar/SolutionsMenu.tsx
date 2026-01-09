@@ -1,9 +1,10 @@
 import {
   ShoppingCart,
-  BarChart3,
-  Receipt,
-  ArrowLeftRight,
+  TrendingUp,
+  GraduationCap,
+  RotateCcw,
   CreditCard,
+  Megaphone,
   UserCog,
 } from "lucide-react"
 import type { LucideIcon } from "lucide-react"
@@ -29,37 +30,43 @@ export const SOLUTIONS: readonly SolutionItem[] = [
   {
     title: "Optimized Ordering",
     href: "/solutions/ordering",
-    description: "Add a subtext here.",
+    description: "Scale up your ordering process.",
     icon: ShoppingCart,
-  },
-  {
-    title: "Data & Analytics",
-    href: "/solutions/data",
-    description: "Add a subtext here.",
-    icon: BarChart3,
   },
   {
     title: "Rebates",
     href: "/solutions/rebates",
-    description: "Add a subtext here.",
-    icon: Receipt,
+    description: "Maximize ROI. Drive Growth. Automate Success.",
+    icon: TrendingUp,
   },
   {
-    title: "Returns",
+    title: "Training Management",
+    href: "/solutions/training",
+    description: "Transforms training into a loyalty-building journey.",
+    icon: GraduationCap,
+  },
+  {
+    title: "Returns Management",
     href: "/solutions/returns",
-    description: "Add a subtext here.",
-    icon: ArrowLeftRight,
+    description: "Minimize Returns, Maximize Control.",
+    icon: RotateCcw,
   },
   {
     title: "Payments",
     href: "/solutions/payments",
-    description: "Add a subtext here.",
+    description: "Smarter, Faster, More Secure.",
     icon: CreditCard,
+  },
+  {
+    title: "Marketing",
+    href: "/solutions/marketing",
+    description: "Keep your customers up-to-date.",
+    icon: Megaphone,
   },
   {
     title: "Field Sales Automation",
     href: "/solutions/fsa",
-    description: "Add a subtext here.",
+    description: "Save your company both time and money.",
     icon: UserCog,
   },
 ] as const

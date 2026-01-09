@@ -60,10 +60,7 @@ export function DesktopNav() {
         <Link href="/customers" className={navigationMenuTriggerStyle()}>
           Customers
         </Link>
-        <Link
-          href="/contact"
-          className={`${navigationMenuTriggerStyle()} hidden!`}
-        >
+        <Link href="/roi" className={navigationMenuTriggerStyle()}>
           ROI Calculator
         </Link>
         <Link href="/about" className={navigationMenuTriggerStyle()}>

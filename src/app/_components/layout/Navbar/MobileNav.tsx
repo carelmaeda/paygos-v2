@@ -43,7 +43,7 @@ export function MobileNav() {
       </SheetTrigger>
 
       {/* Mobile Drawer Content */}
-      <SheetContent side="right" className="w-72">
+      <SheetContent side="right" className="w-full">
         <SheetTitle className="sr-only">Navigation Menu</SheetTitle>
         <div className="mt-6 flex flex-col gap-4">
           {/* Solutions Accordion */}
@@ -73,12 +73,12 @@ export function MobileNav() {
 
           {/* Mobile Navigation Links */}
           <SheetClose asChild>
-            <Link href="/clients" className={navigationMenuTriggerStyle()}>
-              Clients
+            <Link href="/customers" className={navigationMenuTriggerStyle()}>
+              Customers
             </Link>
           </SheetClose>
           <SheetClose asChild>
-            <Link href="/contact" className={navigationMenuTriggerStyle()}>
+            <Link href="/roi" className={navigationMenuTriggerStyle()}>
               ROI Calculator
             </Link>
           </SheetClose>

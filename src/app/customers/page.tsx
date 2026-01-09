@@ -27,8 +27,9 @@ export default function CustomersPage() {
             Customer Stories
           </h1>
         </div>
-
         <CustomersLogosCarousel />
+
+        <div></div>
       </div>
     </main>
   )

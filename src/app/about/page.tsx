@@ -36,9 +36,9 @@ export default function AboutPage() {
             <div className="space-y-6 text-lg text-gray-600">
               <p>
                 Founded with a vision to revolutionize the way businesses manage
-                their sales operations, Paygos emerged from a simple observation:
-                sales teams were spending too much time on administrative tasks
-                and not enough time selling.
+                their sales operations, Paygos emerged from a simple
+                observation: sales teams were spending too much time on
+                administrative tasks and not enough time selling.
               </p>
               <p>
                 Our founders, experienced sales professionals themselves,
@@ -50,9 +50,9 @@ export default function AboutPage() {
               <p>
                 Today, Paygos serves thousands of businesses worldwide, helping
                 them save millions of hours and increase their sales efficiency.
-                Our mission remains unchanged: to empower every sales professional
-                with the tools they need to focus on what they do best—building
-                relationships and closing deals.
+                Our mission remains unchanged: to empower every sales
+                professional with the tools they need to focus on what they do
+                best—building relationships and closing deals.
               </p>
             </div>
           </div>
@@ -151,8 +151,8 @@ export default function AboutPage() {
                     transforming the sales landscape.
                   </p>
                   <p className="font-semibold text-gray-900">
-                    Together, we're building the future of sales—one innovation
-                    at a time.
+                    Together, we build the future of sales—one innovation at a
+                    time.
                   </p>
                 </div>
               </div>

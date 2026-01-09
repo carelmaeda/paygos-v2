@@ -1,24 +1,9 @@
-import { notFound } from "next/navigation"
 import Link from "next/link"
 import Image from "next/image"
 import { ArrowLeft } from "lucide-react"
 import { Button } from "@/app/_components/ui/button"
-import { customerStories } from "@/app/_components/sections/customers/data/customer-stories"
 
-interface CustomerStoryPageProps {
-  params: Promise<{ slug: string }>
-}
-
-export default async function CustomerStoryPage({
-  params,
-}: CustomerStoryPageProps) {
-  const { slug } = await params
-  const story = customerStories.find((s) => s.slug === slug)
-
-  if (!story) {
-    notFound()
-  }
-
+export default function ManufacturingEfficiencyPage() {
   return (
     <main className="min-h-screen bg-gray-50">
       <div className="container py-16 md:py-24">
@@ -40,8 +25,8 @@ export default async function CustomerStoryPage({
         <div className="relative mb-12 overflow-hidden rounded-xl">
           <div className="relative h-[300px] md:h-[400px]">
             <Image
-              src={story.backgroundImage}
-              alt={story.companyName}
+              src="https://images.unsplash.com/photo-1565793298595-6a879b1d9492?q=80&w=2071&auto=format&fit=crop"
+              alt="ManuTech Industries"
               fill
               className="object-cover"
             />
@@ -51,25 +36,23 @@ export default async function CustomerStoryPage({
             <div className="absolute bottom-0 left-0 right-0 p-8 text-white">
               <div className="mb-4 inline-block rounded-lg bg-white p-4">
                 <Image
-                  src={story.companyLogo}
-                  alt={story.companyName}
+                  src="/customers/logos/manutech.svg"
+                  alt="ManuTech Industries"
                   width={120}
                   height={60}
                   className="h-12 w-auto object-contain"
                 />
               </div>
               <h1 className="mb-2 text-3xl font-bold md:text-5xl">
-                {story.title}
+                50% reduction in order processing time
               </h1>
               <div className="flex flex-wrap gap-2">
-                {story.tags.map((tag, index) => (
-                  <span
-                    key={index}
-                    className="inline-flex rounded-lg bg-teal-100 px-3 py-1 text-sm font-medium text-teal-700"
-                  >
-                    {tag}
-                  </span>
-                ))}
+                <span className="inline-flex rounded-lg bg-teal-100 px-3 py-1 text-sm font-medium text-teal-700">
+                  Manufacturing
+                </span>
+                <span className="inline-flex rounded-lg bg-teal-100 px-3 py-1 text-sm font-medium text-teal-700">
+                  Efficiency
+                </span>
               </div>
             </div>
           </div>
@@ -77,17 +60,20 @@ export default async function CustomerStoryPage({
 
         {/* Story Content */}
         <div className="mx-auto max-w-3xl">
-          <p className="text-lg text-gray-600">{story.excerpt}</p>
-          {/* Add more content sections here as needed */}
+          <div className="space-y-6 text-lg text-gray-600">
+            <p>
+              Streamlining operations with field sales automation to improve
+              manufacturing efficiency.
+            </p>
+
+            {/* Add your custom content here */}
+            <p>
+              Add more detailed story content, testimonials, metrics, and other
+              information here. You can use any HTML/Tailwind markup you want.
+            </p>
+          </div>
         </div>
       </div>
     </main>
   )
-}
-
-// Generate static params for static generation
-export function generateStaticParams() {
-  return customerStories.map((story) => ({
-    slug: story.slug,
-  }))
 }

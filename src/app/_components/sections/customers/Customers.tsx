@@ -15,7 +15,7 @@ export function Customers() {
 
           {/* Subtitle */}
           <p className="mb-8 text-lg text-gray-600 md:text-xl">
-            Over 27.5M+ hours saved for 50,000+ customers.
+            Over 2.5M+ hours saved for 5,000+ customers.
           </p>
         </div>
       </div>

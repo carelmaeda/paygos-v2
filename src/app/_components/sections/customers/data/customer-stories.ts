@@ -9,7 +9,7 @@ export const customerStories: CustomerStory[] = [
     backgroundImage:
       "https://images.unsplash.com/photo-1556740758-90de374c12ad?q=80&w=2070&auto=format&fit=crop",
     tags: ["Retail", "Time Saved"],
-    title: "7 Hours saved on month end close",
+    title: "19% YoY Sales Increase",
     excerpt:
       "How Retail Corp automated their month-end processes with Paygos and saved significant time on operations.",
   },

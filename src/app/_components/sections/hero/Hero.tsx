@@ -10,7 +10,7 @@ export function Hero() {
         <article>
           <h1>
             Sell More. <br />
-            <span>Spend Less.</span>
+            Spend Less.
           </h1>
           <p>This is a subtitle that is very long and nice.</p>
           <BookCallButton />

@@ -30,41 +30,45 @@ export function Footer() {
                 className="h-8 w-auto"
               />
             </Link>
-            <p className="mt-4 max-w-xs text-sm leading-relaxed">
-              Empowering businesses to sell more and spend less through
-              innovative sales automation technology.
+            <p className="my-4 max-w-xs text-sm leading-relaxed">
+              A customizable sales acceleration platform designed to drive
+              incremental revenue, automate manual processes and surface
+              actionable sales data & analytics.
             </p>
 
-            {/* Social Links */}
-            <div className="mt-6 flex gap-4">
-              <Link
-                href="#"
-                aria-label="Follow us on LinkedIn"
-                className="transition-colors hover:text-teal-400"
-              >
-                <Linkedin className="h-5 w-5" />
-              </Link>
-              <Link
-                href="#"
-                aria-label="Follow us on Twitter"
-                className="transition-colors hover:text-teal-400"
-              >
-                <Twitter className="h-5 w-5" />
-              </Link>
-              <Link
-                href="#"
-                aria-label="Follow us on Facebook"
-                className="transition-colors hover:text-teal-400"
-              >
-                <Facebook className="h-5 w-5" />
-              </Link>
-              <Link
-                href="#"
-                aria-label="Follow us on Instagram"
-                className="transition-colors hover:text-teal-400"
-              >
-                <Instagram className="h-5 w-5" />
-              </Link>
+            <div>
+              <small className="text-xs">Follow us on LinkedIn</small>
+              {/* Social Links */}
+              <div className="flex gap-4">
+                <Link
+                  href="#"
+                  aria-label="Follow us on LinkedIn"
+                  className="transition-colors hover:text-teal-400"
+                >
+                  <Linkedin className="h-5 w-5" />
+                </Link>
+                <Link
+                  href="#"
+                  aria-label="Follow us on Twitter"
+                  className="hidden transition-colors hover:text-teal-400"
+                >
+                  <Twitter className="h-5 w-5" />
+                </Link>
+                <Link
+                  href="#"
+                  aria-label="Follow us on Facebook"
+                  className="hidden transition-colors hover:text-teal-400"
+                >
+                  <Facebook className="h-5 w-5" />
+                </Link>
+                <Link
+                  href="#"
+                  aria-label="Follow us on Instagram"
+                  className="hidden transition-colors hover:text-teal-400"
+                >
+                  <Instagram className="h-5 w-5" />
+                </Link>
+              </div>
             </div>
           </div>
 
@@ -173,22 +177,7 @@ export function Footer() {
             <ul className="space-y-3 text-sm">
               <li>
                 <Link href="#" className="transition-colors hover:text-white">
-                  Blog
-                </Link>
-              </li>
-              <li>
-                <Link href="#" className="transition-colors hover:text-white">
-                  Support Center
-                </Link>
-              </li>
-              <li>
-                <Link href="#" className="transition-colors hover:text-white">
-                  Documentation
-                </Link>
-              </li>
-              <li>
-                <Link href="#" className="transition-colors hover:text-white">
-                  API Reference
+                  Roi Calculator
                 </Link>
               </li>
               <li>
@@ -205,16 +194,32 @@ export function Footer() {
           <div className="flex flex-col items-center justify-between gap-4 text-sm text-gray-400 md:flex-row">
             <p>&copy; {currentYear} Paygos. All rights reserved.</p>
             <div className="flex flex-wrap justify-center gap-6">
-              <Link href="#" className="transition-colors hover:text-white">
+              <Link
+                target="_blank"
+                href="https://brandmomentum.ca/privacy-policy/"
+                className="transition-colors hover:text-white"
+              >
                 Privacy Policy
               </Link>
-              <Link href="#" className="transition-colors hover:text-white">
-                Terms of Service
+              <Link
+                target="_blank"
+                href="https://brandmomentum.ca/multi-year-accessibility-plan/"
+                className="transition-colors hover:text-white"
+              >
+                Accessibility Plan
               </Link>
-              <Link href="#" className="transition-colors hover:text-white">
+              <Link
+                target="_blank"
+                href="#"
+                className="transition-colors hover:text-white"
+              >
                 Cookie Policy
               </Link>
-              <Link href="#" className="transition-colors hover:text-white">
+              <Link
+                target="_blank"
+                href="#"
+                className="transition-colors hover:text-white"
+              >
                 Security
               </Link>
             </div>
