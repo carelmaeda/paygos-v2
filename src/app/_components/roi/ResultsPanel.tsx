@@ -1,39 +1,128 @@
 import { Card, CardContent } from "@/components/ui/card"
-import { RoiResults } from "./types"
+import { RoiMode, RoiResults } from "./types"
 
 interface Props {
   results: RoiResults
+  mode: RoiMode
 }
 
-export function ResultsPanel({ results }: Props) {
-  const stats = [
-    { label: "Customer Engagement ↑", value: `${results.engagementIncrease}%` },
-    { label: "Sales Increase", value: `$${results.salesIncrease}` },
-    {
-      label: "Product Interest ↑",
-      value: `${results.productInterestIncrease}%`,
-    },
-    {
-      label: "Customer Traffic ↑",
-      value: `${results.customerTrafficIncrease}%`,
-    },
-    { label: "Admin Hours Saved", value: `${results.adminHoursSaved} hrs` },
-    {
-      label: "Sales Rep Hours Saved",
-      value: `${results.salesRepHoursSaved} hrs`,
-    },
-  ]
+// ============================================
+// VISIBILITY LOGIC
+// ============================================
 
+function shouldShowIndicator(indicator: string, mode: RoiMode): boolean {
+  const visibilityRules = {
+    sales: [
+      "engagementIncrease",
+      "salesIncrease",
+      "productInterestIncrease",
+      "customerTrafficIncrease",
+      "adminHoursSaved",
+    ],
+    fsa: ["adminHoursSaved", "salesRepHoursSaved"],
+    both: [
+      "engagementIncrease",
+      "salesIncrease",
+      "productInterestIncrease",
+      "customerTrafficIncrease",
+      "adminHoursSaved",
+      "salesRepHoursSaved",
+    ],
+  }
+  return visibilityRules[mode].includes(indicator)
+}
+
+// ============================================
+// COMPONENT
+// ============================================
+
+export function ResultsPanel({ results, mode }: Props) {
   return (
-    <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
-      {stats.map((stat) => (
-        <Card key={stat.label}>
-          <CardContent className="p-6">
-            <p className="text-muted-foreground text-sm">{stat.label}</p>
-            <p className="mt-2 text-2xl font-semibold">{stat.value}</p>
+    <div className="grid auto-cols-fr grid-flow-col gap-3 overflow-x-auto">
+      {/* Improve Customer Engagement by */}
+      {shouldShowIndicator("engagementIncrease", mode) &&
+        results.engagementIncrease && (
+          <Card>
+            <CardContent className="p-4">
+              <p className="text-xs text-muted-foreground">
+                Improve Customer Engagement by
+              </p>
+              <p className="mt-1 text-2xl font-bold">
+                {results.engagementIncrease}
+              </p>
+            </CardContent>
+          </Card>
+        )}
+
+      {/* Sales Increase of */}
+      {shouldShowIndicator("salesIncrease", mode) && results.salesIncrease && (
+        <Card>
+          <CardContent className="p-4">
+            <p className="text-xs text-muted-foreground">Sales Increase of</p>
+            <p className="mt-1 text-2xl font-bold">{results.salesIncrease}</p>
           </CardContent>
         </Card>
-      ))}
+      )}
+
+      {/* Increase Interest in Products by */}
+      {shouldShowIndicator("productInterestIncrease", mode) &&
+        results.productInterestIncrease && (
+          <Card>
+            <CardContent className="p-4">
+              <p className="text-xs text-muted-foreground">
+                Increase Interest in Products by
+              </p>
+              <p className="mt-1 text-2xl font-bold">
+                {results.productInterestIncrease}
+              </p>
+            </CardContent>
+          </Card>
+        )}
+
+      {/* Improve Customer Traffic by */}
+      {shouldShowIndicator("customerTrafficIncrease", mode) &&
+        results.customerTrafficIncrease && (
+          <Card>
+            <CardContent className="p-4">
+              <p className="text-xs text-muted-foreground">
+                Improve Customer Traffic by
+              </p>
+              <p className="mt-1 text-2xl font-bold">
+                {results.customerTrafficIncrease}
+              </p>
+            </CardContent>
+          </Card>
+        )}
+
+      {/* Administration Saved */}
+      {shouldShowIndicator("adminHoursSaved", mode) &&
+        results.adminHoursSaved !== undefined && (
+          <Card>
+            <CardContent className="p-4">
+              <p className="text-xs text-muted-foreground">
+                Administration Saved
+              </p>
+              <p className="mt-1 text-2xl font-bold">
+                {results.adminHoursSaved}{" "}
+                <span className="text-base">Hours / Week</span>
+              </p>
+            </CardContent>
+          </Card>
+        )}
+
+      {/* Hours Saved */}
+      {shouldShowIndicator("salesRepHoursSaved", mode) &&
+        results.salesRepHoursSaved !== undefined && (
+          <Card>
+            <CardContent className="p-4">
+              <p className="text-xs text-muted-foreground">Hours Saved</p>
+              <p className="mt-1 text-2xl font-bold">
+                {results.salesRepHoursSaved}{" "}
+                <span className="text-base">Hours / Week</span>
+              </p>
+            </CardContent>
+          </Card>
+        )}
     </div>
   )
 }

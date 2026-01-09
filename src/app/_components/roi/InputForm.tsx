@@ -18,25 +18,33 @@ export function InputForm({ inputs, onChange }: Props) {
       })
 
   return (
-    <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
-      <div>
-        <Label># of Sales Reps</Label>
-        <Input type="number" onChange={handle("salesReps")} />
+    <div className="grid grid-cols-1 gap-3 md:grid-cols-4">
+      <div className="space-y-1.5">
+        <Label className="text-sm"># of Sales Reps</Label>
+        <Input type="number" onChange={handle("salesReps")} className="h-9" />
       </div>
 
-      <div>
-        <Label># of Customers</Label>
-        <Input type="number" onChange={handle("customers")} />
+      <div className="space-y-1.5">
+        <Label className="text-sm"># of Customers</Label>
+        <Input type="number" onChange={handle("customers")} className="h-9" />
       </div>
 
-      <div>
-        <Label># of Distributors</Label>
-        <Input type="number" onChange={handle("distributors")} />
+      <div className="space-y-1.5">
+        <Label className="text-sm"># of Distributors</Label>
+        <Input
+          type="number"
+          onChange={handle("distributors")}
+          className="h-9"
+        />
       </div>
 
-      <div>
-        <Label>Corporate Spend / Month ($)</Label>
-        <Input type="number" onChange={handle("monthlySpend")} />
+      <div className="space-y-1.5">
+        <Label className="text-sm">Corporate Spend / Month ($)</Label>
+        <Input
+          type="number"
+          onChange={handle("monthlySpend")}
+          className="h-9"
+        />
       </div>
     </div>
   )

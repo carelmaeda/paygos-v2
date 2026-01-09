@@ -8,10 +8,13 @@ export interface RoiInputs {
 }
 
 export interface RoiResults {
+  // Percentage strings (e.g., "25%")
   engagementIncrease?: string
   salesIncrease?: string
   productInterestIncrease?: string
   customerTrafficIncrease?: string
+
+  // Numeric hours per week
   adminHoursSaved?: number
   salesRepHoursSaved?: number
 }

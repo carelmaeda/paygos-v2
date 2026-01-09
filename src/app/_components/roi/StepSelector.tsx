@@ -14,11 +14,19 @@ export function StepSelector({ value, onChange }: Props) {
       type="single"
       value={value}
       onValueChange={(val) => val && onChange(val as RoiMode)}
+      variant="outline"
+      spacing={2}
       className="justify-start"
     >
-      <ToggleGroupItem value="sales">Sales Acceleration</ToggleGroupItem>
-      <ToggleGroupItem value="fsa">FSA</ToggleGroupItem>
-      <ToggleGroupItem value="both">Both</ToggleGroupItem>
+      <ToggleGroupItem value="sales" className="min-w-[140px]">
+        Sales Acceleration
+      </ToggleGroupItem>
+      <ToggleGroupItem value="fsa" className="min-w-[140px]">
+        FSA
+      </ToggleGroupItem>
+      <ToggleGroupItem value="both" className="min-w-[140px]">
+        Both
+      </ToggleGroupItem>
     </ToggleGroup>
   )
 }

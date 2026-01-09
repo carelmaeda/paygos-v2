@@ -6,8 +6,16 @@ import {
   CreditCard,
   Megaphone,
   UserCog,
+  type LucideIcon,
 } from "lucide-react"
-import { SolutionBase } from "../types/solution-content"
+
+export interface SolutionBase {
+  title: string
+  subtitle: string
+  icon: LucideIcon
+  image: string
+  slug: string
+}
 
 export const SOLUTIONS: SolutionBase[] = [
   {

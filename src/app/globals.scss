@@ -37,11 +37,62 @@ $breakpoint-md: 48rem;
   --popover: #{$background-light};
   --popover-foreground: #{$foreground-light};
 
+  // Card colors
+  --card: #{$background-light};
+  --card-foreground: #{$foreground-light};
+
+  // Primary colors (main brand color)
+  --primary: #{$primary-dark};
+  --primary-foreground: #{$background-light};
+
+  // Secondary colors
+  --secondary: #{$secondary-hover};
+  --secondary-foreground: #{$foreground-light};
+
+  // Muted colors (for subtle backgrounds)
+  --muted: #f4f4f5;
+  --muted-foreground: #71717a;
+
+  // Accent colors (for highlights)
+  --accent: #f4f4f5;
+  --accent-foreground: #{$foreground-light};
+
+  // Destructive colors (for errors/delete)
+  --destructive: #ef4444;
+  --destructive-foreground: #{$background-light};
+
+  // Border and input colors
+  --border: #{$secondary-border};
+  --input: #{$secondary-border};
+  --ring: #{$foreground-light};
+
   @media (prefers-color-scheme: dark) {
     --background: #{$background-dark};
     --foreground: #{$foreground-dark};
     --popover: #{$background-dark};
     --popover-foreground: #{$foreground-dark};
+
+    --card: #{$background-dark};
+    --card-foreground: #{$foreground-dark};
+
+    --primary: #{$foreground-dark};
+    --primary-foreground: #{$background-dark};
+
+    --secondary: #27272a;
+    --secondary-foreground: #{$foreground-dark};
+
+    --muted: #27272a;
+    --muted-foreground: #a1a1aa;
+
+    --accent: #27272a;
+    --accent-foreground: #{$foreground-dark};
+
+    --destructive: #ef4444;
+    --destructive-foreground: #{$foreground-dark};
+
+    --border: #27272a;
+    --input: #27272a;
+    --ring: #{$foreground-dark};
   }
 }
 
@@ -52,8 +103,23 @@ $breakpoint-md: 48rem;
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
   --color-popover: var(--popover);
   --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
   --font-primary: var(--font-inter);
   --font-secondary: var(--font-urbanist);
 }
