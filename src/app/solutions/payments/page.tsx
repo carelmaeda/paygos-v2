@@ -1,139 +1,46 @@
-import type { Metadata } from "next"
+"use client"
+
 import Link from "next/link"
 import Image from "next/image"
 import {
   ArrowRight,
   ShieldCheck,
+  PieChart,
   Wallet,
   History,
   CheckCircle,
   Smartphone,
+  AlertCircle,
+  TrendingDown,
+  FileSearch,
+  Shield,
+  TrendingUp,
 } from "lucide-react"
+import { Bar, BarChart, CartesianGrid, XAxis, YAxis } from "recharts"
+import {
+  ChartConfig,
+  ChartContainer,
+  ChartTooltip,
+  ChartTooltipContent,
+} from "@/components/ui/chart"
 import { CTA } from "@/app/_components/sections/cta/CTA"
-import { PaymentDistributionChart } from "./payment-distribution-chart"
-
-export const metadata: Metadata = {
-  title: "Payment Solutions | Paygos",
-  description: "Modern payment processing tools to validate incentives, manage budgets, and ensure compliance. Real-time insights and automated payment workflows for sales teams.",
-  keywords: ["payment processing", "incentive payments", "budget management", "payment compliance", "EFT payments", "payment automation", "sales incentives"],
-  openGraph: {
-    title: "Payment Solutions | Paygos",
-    description: "Modern payment processing tools to validate incentives, manage budgets, and ensure compliance. Real-time insights and automated payment workflows for sales teams.",
-    url: "https://www.paygos.ca/solutions/payments",
-    siteName: "Paygos",
-    images: [
-      {
-        url: "/paygos/logo-full.webp",
-        width: 1200,
-        height: 630,
-        alt: "Paygos Payment Solutions",
-      },
-    ],
-    locale: "en_US",
-    type: "website",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Payment Solutions | Paygos",
-    description: "Modern payment processing tools to validate incentives, manage budgets, and ensure compliance. Real-time insights and automated payment workflows for sales teams.",
-    images: ["/paygos/logo-full.webp"],
-  },
-  robots: {
-    index: true,
-    follow: true,
-  },
-  alternates: {
-    canonical: "https://www.paygos.ca/solutions/payments",
-  },
-}
+import { IndustryBadge } from "@/app/_components/sections/solutions/IndustryBadge"
+import { BookCallButton } from "@/app/_components/sections/cta/BookCallButton"
 
 // --- Constants & Configuration ---
 
-const ACTIVITY_LOG = [
-  {
-    name: "Pharmasave 125",
-    type: "EFT Payment",
-    amount: "-$150.00",
-    active: true,
-  },
-  {
-    name: "Familiprix 2288",
-    type: "Cheque Issued",
-    amount: "-$130.00",
-    active: false,
-  },
-  {
-    name: "Jean Coutu 207",
-    type: "EFT Payment",
-    amount: "-$85.00",
-    active: true,
-  },
+const CHART_DATA = [
+  { reason: "Display", amount: 1800 },
+  { reason: "Incentive", amount: 1200 },
+  { reason: "Credit", amount: 600 },
 ]
 
-// --- Reusable Sub-Components ---
-
-const ActivityItem = ({
-  name,
-  type,
-  amount,
-  active,
-}: (typeof ACTIVITY_LOG)[0]) => (
-  <div className="group flex items-center justify-between rounded-3xl border border-white/5 bg-white/5 p-6 transition-all hover:border-white/10 hover:bg-white/10">
-    <div className="flex items-center gap-5">
-      <div
-        className={`h-3 w-3 rounded-full ${active ? "bg-emerald-500 shadow-[0_0_12px_rgba(16,185,129,0.5)]" : "bg-slate-600"}`}
-      />
-      <div>
-        <p className="text-xl font-black tracking-tight">{name}</p>
-        <p className="text-[10px] font-bold tracking-[0.1em] text-slate-500 uppercase">
-          {type}
-        </p>
-      </div>
-    </div>
-    <p
-      className={`text-2xl font-black ${active ? "text-emerald-400" : "text-slate-400"}`}
-    >
-      {amount}
-    </p>
-  </div>
-)
-
-const FeatureItem = ({
-  icon: Icon,
-  title,
-  desc,
-}: {
-  icon: React.ElementType
-  title: string
-  desc: string
-}) => (
-  <div className="group flex items-start gap-8">
-    <div className="shrink-0 rounded-3xl bg-emerald-50 p-5 transition-colors duration-300 group-hover:bg-emerald-500 group-hover:text-white">
-      <Icon size={28} className="text-emerald-600 group-hover:text-white" />
-    </div>
-    <div>
-      <h4 className="mb-2 text-2xl font-black tracking-tight text-slate-900 uppercase">
-        {title}
-      </h4>
-      <p className="text-lg leading-relaxed font-medium text-slate-500">
-        {desc}
-      </p>
-    </div>
-  </div>
-)
-
-const BookCallButton = ({ className = "" }) => (
-  <Link
-    href="mailto:explorepaygos@paygos.ca"
-    className={`group flex items-center justify-center gap-4 rounded-[2rem] px-12 py-6 text-xl font-black tracking-widest uppercase shadow-2xl transition-all ${className}`}
-  >
-    BOOK A CALL{" "}
-    <ArrowRight
-      size={28}
-      className="transition-transform group-hover:translate-x-1"
-    />
-  </Link>
-)
+const CHART_CONFIG = {
+  amount: {
+    label: "Payment Amount",
+    color: "#10b981",
+  },
+} satisfies ChartConfig
 
 // --- Main Page Component ---
 
@@ -168,99 +75,430 @@ export default function PaymentsPage() {
               Modern tools to validate incentives, manage budgets, and ensure
               compliance in one unified platform.
             </p>
-            <BookCallButton className="bg-emerald-500 text-slate-950 hover:bg-emerald-400" />
+            <BookCallButton />
           </div>
         </div>
       </section>
 
-      {/* SECTION: Financial Snapshot */}
-      <section className="relative z-20 container mx-auto -mt-24 px-6">
-        <div className="grid grid-cols-1 gap-10 lg:grid-cols-12">
-          {/* Card: Budget Overview */}
-          <div className="rounded-[3.5rem] border border-slate-100 bg-white p-12 shadow-[0_32px_64px_-15px_rgba(0,0,0,0.1)] lg:col-span-5">
-            <div className="mb-12 flex items-start justify-between">
-              <div>
-                <p className="mb-2 text-xs font-black tracking-widest text-slate-400 uppercase">
-                  Budget Overview
-                </p>
-                <h2 className="text-6xl font-black tracking-tighter text-slate-900">
-                  $10,500.00
-                </h2>
-              </div>
-              <Wallet
-                className="rounded-3xl bg-emerald-50 p-5 text-emerald-600"
-                size={76}
-              />
+      {/* SECTION: Challenges */}
+      <section className="container mx-auto px-6 py-24">
+        <h2 className="mb-12 text-center text-3xl font-black text-slate-900">
+          Common Payment Challenges
+        </h2>
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
+          {/* Challenge 1 */}
+          <div className="rounded-2xl border border-gray-100 bg-white p-8 shadow-lg transition-shadow hover:shadow-xl">
+            <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-xl bg-red-100">
+              <AlertCircle className="h-8 w-8 text-red-600" />
             </div>
-
-            <div className="space-y-8">
-              <div className="rounded-3xl border border-slate-100 bg-slate-50 p-8">
-                <div className="mb-4 flex items-center justify-between text-xs font-black tracking-widest text-slate-500 uppercase">
-                  <span>Used This Month</span>
-                  <span className="text-xl font-black text-slate-900">
-                    $851.50
-                  </span>
-                </div>
-                <div className="h-3 w-full overflow-hidden rounded-full bg-slate-200">
-                  <div className="h-full w-[12%] rounded-full bg-emerald-500" />
-                </div>
-              </div>
-              <div className="flex items-center justify-between rounded-3xl bg-emerald-950 p-8 text-white shadow-2xl">
-                <div>
-                  <p className="mb-1 text-xs font-black tracking-widest text-emerald-400 uppercase">
-                    Total Available
-                  </p>
-                  <p className="text-3xl font-black">$9,648.50</p>
-                </div>
-                <CheckCircle className="text-emerald-400" size={32} />
-              </div>
-            </div>
+            <h3 className="mb-3 text-xl font-bold text-gray-900">
+              Manual Payment Processing
+            </h3>
+            <p className="text-gray-600">
+              Validating incentive execution requires manual verification,
+              leading to delays and errors
+            </p>
           </div>
 
-          {/* Card: Recent Activity Log */}
-          <div className="rounded-[3.5rem] bg-slate-900 p-12 text-white shadow-2xl lg:col-span-7">
-            <div className="mb-10 flex items-center justify-between font-black tracking-widest uppercase">
-              <div className="flex items-center gap-4 text-xl">
-                <History className="text-emerald-400" size={24} />{" "}
-                <span>Activity Feed</span>
-              </div>
-              <span className="rounded-full bg-emerald-500/20 px-3 py-1 text-[10px] text-emerald-400">
-                Real-Time
-              </span>
+          {/* Challenge 2 */}
+          <div className="rounded-2xl border border-gray-100 bg-white p-8 shadow-lg transition-shadow hover:shadow-xl">
+            <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-xl bg-red-100">
+              <TrendingDown className="h-8 w-8 text-red-600" />
             </div>
-            <div className="space-y-4">
-              {ACTIVITY_LOG.map((item, i) => (
-                <ActivityItem key={i} {...item} />
-              ))}
-            </div>
+            <h3 className="mb-3 text-xl font-bold text-gray-900">
+              Budget Overruns
+            </h3>
+            <p className="text-gray-600">
+              Without spending limits, promotional budgets frequently exceed
+              allocation
+            </p>
           </div>
+
+          {/* Challenge 3 */}
+          <div className="rounded-2xl border border-gray-100 bg-white p-8 shadow-lg transition-shadow hover:shadow-xl">
+            <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-xl bg-red-100">
+              <FileSearch className="h-8 w-8 text-red-600" />
+            </div>
+            <h3 className="mb-3 text-xl font-bold text-gray-900">
+              Payment Reconciliation
+            </h3>
+            <p className="text-gray-600">
+              Tracking EFT payments across multiple retailers creates
+              reconciliation nightmares
+            </p>
+          </div>
+
+          {/* Challenge 4 */}
+          <div className="rounded-2xl border border-gray-100 bg-white p-8 shadow-lg transition-shadow hover:shadow-xl">
+            <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-xl bg-red-100">
+              <Shield className="h-8 w-8 text-red-600" />
+            </div>
+            <h3 className="mb-3 text-xl font-bold text-gray-900">
+              Compliance Issues
+            </h3>
+            <p className="text-gray-600">
+              Audit trails are incomplete, making compliance verification
+              difficult
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* SECTION: Payment Capabilities - Bento Grid */}
+      <section
+        className="mx-auto mb-24 max-w-5xl px-4"
+        role="region"
+        aria-labelledby="payment-capabilities"
+      >
+        <h2 id="payment-capabilities" className="sr-only">
+          Payment Management Capabilities
+        </h2>
+
+        <div className="grid auto-rows-[300px] grid-cols-1 gap-2 md:grid-cols-6">
+          {/* Card 1 - Automated Validation */}
+          <article
+            className="bento-card md:col-span-4"
+            role="group"
+            aria-labelledby="automated-validation"
+            aria-describedby="automated-validation-desc"
+          >
+            <Image
+              src="https://images.unsplash.com/photo-1556742111-a301076d9d18"
+              alt="Automated payment validation"
+              fill
+            />
+            <div>
+              <ShieldCheck size={32} aria-hidden="true" />
+              <h3 id="automated-validation" className="md:text-3xl">
+                Automated Validation
+              </h3>
+              <p
+                id="automated-validation-desc"
+                className="md:max-w-lg md:text-lg"
+              >
+                Upload proof of execution via mobile, trigger automated
+                validation, and approve EFT payments instantly.
+              </p>
+            </div>
+          </article>
+
+          {/* Card 2 - Budget Control */}
+          <article
+            className="bento-card md:col-span-2"
+            role="group"
+            aria-labelledby="budget-control"
+            aria-describedby="budget-control-desc"
+          >
+            <Image
+              src="https://images.unsplash.com/photo-1554224154-26032ffc0d07"
+              alt="Budget control and spending limits"
+              fill
+            />
+            <div>
+              <Wallet size={32} aria-hidden="true" />
+              <h3 id="budget-control">Spending Limits</h3>
+              <p id="budget-control-desc">
+                Set promotional budgets and approval thresholds to prevent
+                overruns.
+              </p>
+            </div>
+          </article>
+
+          {/* Card 3 - Real-Time Tracking */}
+          <article
+            className="bento-card md:col-span-2"
+            role="group"
+            aria-labelledby="real-time-tracking"
+            aria-describedby="real-time-tracking-desc"
+          >
+            <Image
+              src="https://images.unsplash.com/photo-1460925895917-afdab827c52f"
+              alt="Real-time payment tracking"
+              fill
+            />
+            <div>
+              <History size={32} aria-hidden="true" />
+              <h3 id="real-time-tracking">Real-Time Activity</h3>
+              <p id="real-time-tracking-desc">
+                Track all payments from submission to EFT processing with
+                complete transparency.
+              </p>
+            </div>
+          </article>
+
+          {/* Card 4 - Mobile Validation */}
+          <article
+            className="bento-card md:col-span-4"
+            role="group"
+            aria-labelledby="mobile-validation"
+            aria-describedby="mobile-validation-desc"
+          >
+            <Image
+              src="https://images.unsplash.com/photo-1556656793-08538906a9f8"
+              alt="Mobile payment validation"
+              fill
+            />
+            <div>
+              <Smartphone size={32} aria-hidden="true" />
+              <h3 id="mobile-validation" className="md:text-3xl">
+                Mobile-First Validation
+              </h3>
+              <p id="mobile-validation-desc" className="md:max-w-lg md:text-lg">
+                Field reps capture execution proof on their phones, triggering
+                instant payment workflows.
+              </p>
+            </div>
+          </article>
+
+          {/* Card 5 - Compliance & Audit */}
+          <article
+            className="bento-card md:col-span-3"
+            role="group"
+            aria-labelledby="compliance-audit"
+            aria-describedby="compliance-audit-desc"
+          >
+            <Image
+              src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85"
+              alt="Compliance and audit trails"
+              fill
+            />
+            <div>
+              <Shield size={32} aria-hidden="true" />
+              <h3 id="compliance-audit" className="md:text-2xl">
+                Complete Audit Trails
+              </h3>
+              <p id="compliance-audit-desc" className="md:text-base">
+                Every payment logged with timestamps, approvals, and supporting
+                documentation for compliance.
+              </p>
+            </div>
+          </article>
+
+          {/* Card 6 - Payment Distribution */}
+          <article
+            className="bento-card md:col-span-3"
+            role="group"
+            aria-labelledby="payment-distribution"
+            aria-describedby="payment-distribution-desc"
+          >
+            <Image
+              src="https://images.unsplash.com/photo-1551288049-bebda4e38f71"
+              alt="Payment distribution analytics"
+              fill
+            />
+            <div>
+              <PieChart size={32} aria-hidden="true" />
+              <h3 id="payment-distribution" className="md:text-2xl">
+                Payment Analytics
+              </h3>
+              <p id="payment-distribution-desc" className="md:text-base">
+                Analyze payment patterns by type, region, and retailer to
+                optimize incentive programs.
+              </p>
+            </div>
+          </article>
         </div>
       </section>
 
       {/* SECTION: Analytics & Chart */}
       <section className="container mx-auto px-6 py-40">
         <div className="grid items-center gap-32 lg:grid-cols-2">
-          <PaymentDistributionChart />
+          <div className="rounded-[4rem] border border-slate-50 bg-white p-12 shadow-xl">
+            <div className="mb-12 flex items-center justify-between text-xs font-black tracking-widest uppercase">
+              <span>Payment Distribution</span>
+              <PieChart className="text-emerald-500" size={20} />
+            </div>
+            <ChartContainer config={CHART_CONFIG} className="h-[400px] w-full">
+              <BarChart
+                data={CHART_DATA}
+                layout="vertical"
+                margin={{ left: 30 }}
+              >
+                <CartesianGrid horizontal={false} stroke="#f8fafc" />
+                <XAxis type="number" hide />
+                <YAxis
+                  dataKey="reason"
+                  type="category"
+                  tickLine={false}
+                  tickMargin={15}
+                  axisLine={false}
+                  tick={{ fill: "#475569", fontSize: 13, fontWeight: 900 }}
+                />
+                <ChartTooltip
+                  cursor={false}
+                  content={
+                    <ChartTooltipContent
+                      className="rounded-2xl bg-slate-950 text-white"
+                      formatter={(val) => (
+                        <span className="font-black text-emerald-400">
+                          ${Number(val).toLocaleString()}
+                        </span>
+                      )}
+                    />
+                  }
+                />
+                <Bar
+                  dataKey="amount"
+                  fill="#10b981"
+                  radius={[0, 12, 12, 0]}
+                  barSize={40}
+                  activeBar={{ fill: "#34d399" }}
+                />
+              </BarChart>
+            </ChartContainer>
+          </div>
 
           <div className="space-y-12">
             <h2 className="text-5xl leading-[0.9] font-black tracking-tighter text-slate-900 uppercase md:text-7xl">
               Transparency <br />{" "}
-              <span className="text-emerald-600 underline decoration-emerald-200 underline-offset-[12px]">
+              <span className="text-teal-600 underline decoration-teal-200 underline-offset-[12px]">
                 At Every Level.
               </span>
             </h2>
             <div className="space-y-10">
-              <FeatureItem
-                icon={ShieldCheck}
-                title="Compliance & Control"
-                desc="Set spending limits and approval workflows to prevent budget overruns before they happen."
-              />
-              <FeatureItem
-                icon={Smartphone}
-                title="Validation via Mobile"
-                desc="Upload images directly to validate incentive execution and trigger EFT payments instantly."
-              />
+              <div className="group flex items-start gap-8">
+                <div className="shrink-0 rounded-3xl bg-teal-50 p-5 transition-colors duration-300 group-hover:bg-teal-500">
+                  <ShieldCheck
+                    size={28}
+                    className="text-teal-600 group-hover:text-white"
+                  />
+                </div>
+                <div>
+                  <h4 className="mb-2 text-2xl font-black tracking-tight text-slate-900 uppercase">
+                    Compliance & Control
+                  </h4>
+                  <p className="text-lg leading-relaxed font-medium text-slate-500">
+                    Set spending limits and approval workflows to prevent budget
+                    overruns before they happen.
+                  </p>
+                </div>
+              </div>
+              <div className="group flex items-start gap-8">
+                <div className="shrink-0 rounded-3xl bg-teal-50 p-5 transition-colors duration-300 group-hover:bg-teal-500">
+                  <Smartphone
+                    size={28}
+                    className="text-teal-600 group-hover:text-white"
+                  />
+                </div>
+                <div>
+                  <h4 className="mb-2 text-2xl font-black tracking-tight text-slate-900 uppercase">
+                    Validation via Mobile
+                  </h4>
+                  <p className="text-lg leading-relaxed font-medium text-slate-500">
+                    Upload images directly to validate incentive execution and
+                    trigger EFT payments instantly.
+                  </p>
+                </div>
+              </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <IndustryBadge />
+
+      {/* SECTION: ROI */}
+      <section className="mx-auto" role="region" aria-labelledby="roi-heading">
+        <div className="relative overflow-hidden bg-slate-900 p-8 text-white md:p-16">
+          <div className="relative z-10 grid items-center gap-12 lg:grid-cols-2">
+            <div>
+              <h2
+                id="roi-heading"
+                className="mb-8 text-4xl font-black md:text-6xl"
+              >
+                Proven Impact <br />
+                <span className="text-teal-500">
+                  Where Payments Drive Accountability
+                </span>
+              </h2>
+
+              <ul className="mb-10 space-y-6">
+                <li className="flex items-start gap-4">
+                  <TrendingUp
+                    aria-hidden="true"
+                    className="mt-1 text-teal-500"
+                  />
+                  <p className="text-lg text-slate-300">
+                    Process payments{" "}
+                    <strong className="text-white">
+                      75% faster with automated validation
+                    </strong>{" "}
+                    and instant EFT capabilities.
+                  </p>
+                </li>
+
+                <li className="flex items-start gap-4">
+                  <CheckCircle
+                    aria-hidden="true"
+                    className="mt-1 text-teal-500"
+                  />
+                  <p className="text-lg text-slate-300">
+                    Reduce budget overruns by{" "}
+                    <strong className="text-white">90%</strong> with spending
+                    limits and approval workflows.
+                  </p>
+                </li>
+
+                <li className="flex items-start gap-4">
+                  <ShieldCheck
+                    aria-hidden="true"
+                    className="mt-1 text-teal-500"
+                  />
+                  <p className="text-lg text-slate-300">
+                    Achieve{" "}
+                    <strong className="text-white">
+                      100% audit compliance
+                    </strong>{" "}
+                    with complete payment trails and documentation.
+                  </p>
+                </li>
+              </ul>
+
+              <a href="/roi" className="btn btn-secondary text-white!">
+                Calculate Your ROI <ArrowRight aria-hidden="true" />
+              </a>
+            </div>
+
+            {/* ROI Stats */}
+            <aside
+              className="relative"
+              role="group"
+              aria-labelledby="roi-stats"
+            >
+              <div className="rounded-[2.5rem] border border-white/10 bg-white/5 p-12 text-center backdrop-blur-md">
+                <TrendingUp
+                  className="mx-auto mb-6 text-teal-500"
+                  size={48}
+                  aria-hidden="true"
+                />
+
+                <h3
+                  id="roi-stats"
+                  className="mb-2 text-5xl font-black md:text-8xl"
+                >
+                  75%
+                </h3>
+                <p className="text-sm font-bold tracking-[0.2em] text-teal-400 uppercase">
+                  Faster Processing
+                </p>
+
+                <div className="mt-10 grid grid-cols-2 gap-8 border-t border-white/10 pt-10">
+                  <div>
+                    <h4 className="text-3xl font-black">2 days</h4>
+                    <p className="text-xs font-bold text-slate-500 uppercase">
+                      Average Payment Time
+                    </p>
+                  </div>
+
+                  <div>
+                    <h4 className="text-3xl font-black">100%</h4>
+                    <p className="text-xs font-bold text-slate-500 uppercase">
+                      Validated
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </aside>
           </div>
         </div>
       </section>

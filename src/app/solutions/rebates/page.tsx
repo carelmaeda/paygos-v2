@@ -1,6 +1,8 @@
 import type { Metadata } from "next"
 import React from "react"
+import Link from "next/link"
 import { CTA } from "@/app/_components/sections/cta/CTA"
+import { BookCallButton } from "@/app/_components/sections/cta/BookCallButton"
 import Image from "next/image"
 import { IndustryBadge } from "@/app/_components/sections/solutions/IndustryBadge"
 import {
@@ -13,7 +15,12 @@ import {
   ArrowRight,
   CheckCircle2,
   TrendingUp,
+  FileSpreadsheet,
+  AlertCircle,
+  Clock,
+  TrendingDown,
 } from "lucide-react"
+import { RebatesPerformanceChart } from "./rebates-performance-chart"
 
 export const metadata: Metadata = {
   title: "Rebates & Incentives | Paygos",
@@ -54,24 +61,101 @@ export default function PaygosRebatesPage() {
   return (
     <main className="min-h-screen">
       {/* Hero */}
-      <header
-        className="mx-auto max-w-7xl pt-12 pb-16 text-center"
-        role="region"
-        aria-labelledby="page-title"
-      >
-        <h1
-          id="page-title"
-          className="mb-6 text-5xl font-black tracking-tight text-slate-900 md:text-7xl"
-        >
-          Turn Rebates Into <br />
-          <span className="text-teal-600">Revenue Accelerators</span>
-        </h1>
-        <p className="mx-auto max-w-3xl text-slate-600">
-          Paygos automates rebate tracking, claim validation, and payout
-          management—giving your team real-time visibility into programs that
-          drive loyalty and maximize profitability.
-        </p>
-      </header>
+      <section className="relative flex min-h-[90vh] items-center overflow-hidden bg-slate-950 pt-32 pb-24">
+        <div className="absolute inset-0 z-0">
+          <Image
+            src="https://images.unsplash.com/photo-1554224155-6726b3ff858f"
+            alt="Rebates and incentives"
+            fill
+            priority
+            className="object-cover opacity-30"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/70 to-transparent" />
+        </div>
+
+        <div className="relative z-10 container mx-auto px-6 lg:px-8">
+          <div className="max-w-4xl">
+            <div className="mb-8 inline-flex items-center gap-2 rounded-full border border-emerald-500/30 bg-emerald-500/20 px-4 py-1.5 text-xs font-black tracking-[0.2em] text-emerald-300 uppercase backdrop-blur-md">
+              Automated • Validated • Transparent
+            </div>
+            <h1 className="mb-10 text-6xl leading-[0.9] font-black tracking-tighter text-white md:text-9xl">
+              REBATES THAT <br />
+              <span className="bg-gradient-to-r from-emerald-400 to-cyan-400 bg-clip-text text-transparent">
+                DRIVE LOYALTY.
+              </span>
+            </h1>
+            <p className="mb-12 max-w-2xl text-xl leading-relaxed font-medium text-slate-300 md:text-2xl">
+              Paygos automates rebate tracking, claim validation, and payout
+              management—giving your team real-time visibility into programs that
+              drive loyalty and maximize profitability.
+            </p>
+            <BookCallButton />
+          </div>
+        </div>
+      </section>
+
+      {/* Challenges */}
+      <section className="container mx-auto px-6 py-24">
+        <h2 className="mb-12 text-center text-3xl font-black text-slate-900">
+          Common Rebate Challenges
+        </h2>
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
+          {/* Challenge 1 */}
+          <div className="rounded-2xl border border-gray-100 bg-white p-8 shadow-lg transition-shadow hover:shadow-xl">
+            <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-xl bg-red-100">
+              <FileSpreadsheet className="h-8 w-8 text-red-600" />
+            </div>
+            <h3 className="mb-3 text-xl font-bold text-gray-900">
+              Spreadsheet Chaos
+            </h3>
+            <p className="text-gray-600">
+              Tracking rebate tiers across 100+ retailers in Excel leads to
+              calculation errors
+            </p>
+          </div>
+
+          {/* Challenge 2 */}
+          <div className="rounded-2xl border border-gray-100 bg-white p-8 shadow-lg transition-shadow hover:shadow-xl">
+            <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-xl bg-red-100">
+              <AlertCircle className="h-8 w-8 text-red-600" />
+            </div>
+            <h3 className="mb-3 text-xl font-bold text-gray-900">
+              Claim Disputes
+            </h3>
+            <p className="text-gray-600">
+              Retailers dispute 25% of rebate calculations due to lack of
+              transparency
+            </p>
+          </div>
+
+          {/* Challenge 3 */}
+          <div className="rounded-2xl border border-gray-100 bg-white p-8 shadow-lg transition-shadow hover:shadow-xl">
+            <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-xl bg-red-100">
+              <Clock className="h-8 w-8 text-red-600" />
+            </div>
+            <h3 className="mb-3 text-xl font-bold text-gray-900">
+              Delayed Payouts
+            </h3>
+            <p className="text-gray-600">
+              Manual validation takes 30-45 days, frustrating partners
+            </p>
+          </div>
+
+          {/* Challenge 4 */}
+          <div className="rounded-2xl border border-gray-100 bg-white p-8 shadow-lg transition-shadow hover:shadow-xl">
+            <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-xl bg-red-100">
+              <TrendingDown className="h-8 w-8 text-red-600" />
+            </div>
+            <h3 className="mb-3 text-xl font-bold text-gray-900">
+              Lost Opportunities
+            </h3>
+            <p className="text-gray-600">
+              Retailers don't see progress toward thresholds, missing
+              incremental sales
+            </p>
+          </div>
+        </div>
+      </section>
 
       {/* Rebate Capabilities */}
       <section
@@ -226,6 +310,57 @@ export default function PaygosRebatesPage() {
               </p>
             </div>
           </article>
+        </div>
+      </section>
+
+      {/* Chart Section */}
+      <section className="container mx-auto px-6 py-40">
+        <div className="grid items-center gap-32 lg:grid-cols-2">
+          <RebatesPerformanceChart />
+          <div className="space-y-12">
+            <h2 className="text-5xl leading-[0.9] font-black tracking-tighter uppercase text-slate-900 md:text-7xl">
+              Growth <br />
+              <span className="text-teal-600 underline decoration-teal-200 underline-offset-[12px]">
+                That's Measurable.
+              </span>
+            </h2>
+            <div className="space-y-10">
+              <div className="group flex items-start gap-8">
+                <div className="shrink-0 rounded-3xl bg-teal-50 p-5 transition-colors duration-300 group-hover:bg-teal-500">
+                  <TrendingUp
+                    size={28}
+                    className="text-teal-600 group-hover:text-white"
+                  />
+                </div>
+                <div>
+                  <h4 className="mb-2 text-2xl font-black tracking-tight text-slate-900 uppercase">
+                    Track Program Performance
+                  </h4>
+                  <p className="text-lg leading-relaxed font-medium text-slate-500">
+                    Monitor rebate enrollment, claims, and payouts across tiers
+                    in real-time to optimize program ROI.
+                  </p>
+                </div>
+              </div>
+              <div className="group flex items-start gap-8">
+                <div className="shrink-0 rounded-3xl bg-teal-50 p-5 transition-colors duration-300 group-hover:bg-teal-500">
+                  <Target
+                    size={28}
+                    className="text-teal-600 group-hover:text-white"
+                  />
+                </div>
+                <div>
+                  <h4 className="mb-2 text-2xl font-black tracking-tight text-slate-900 uppercase">
+                    Drive Incremental Sales
+                  </h4>
+                  <p className="text-lg leading-relaxed font-medium text-slate-500">
+                    Give retailers visibility into their progress toward
+                    thresholds to motivate increased purchasing.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 

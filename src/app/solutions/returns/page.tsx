@@ -1,4 +1,5 @@
 import type { Metadata } from "next"
+import React from "react"
 import Link from "next/link"
 import Image from "next/image"
 import {
@@ -6,11 +7,18 @@ import {
   ArrowRight,
   CheckCircle2,
   TrendingUp,
-  LayoutDashboard,
   Package,
   Search,
+  BarChart3,
+  AlertTriangle,
+  Clock,
+  DollarSign,
+  PackageX,
 } from "lucide-react"
-import { ReturnsChart } from "./returns-chart"
+import { CTA } from "@/app/_components/sections/cta/CTA"
+import { BookCallButton } from "@/app/_components/sections/cta/BookCallButton"
+import { IndustryBadge } from "@/app/_components/sections/solutions/IndustryBadge"
+import { ReturnsTrendChart } from "./returns-trend-chart"
 
 export const metadata: Metadata = {
   title: "Returns Management | Paygos",
@@ -49,192 +57,366 @@ export const metadata: Metadata = {
 
 export default function ReturnsPage() {
   return (
-    <main className="min-h-screen bg-white font-sans text-slate-900">
-      {/* Hero Section with Unsplash Background */}
-      <section className="relative flex min-h-[80vh] items-center overflow-hidden bg-slate-950 pt-20 pb-16 md:pt-32 md:pb-24">
-        {/* Unsplash Image Background */}
+    <main className="min-h-screen">
+      {/* Hero */}
+      <section className="relative flex min-h-[90vh] items-center overflow-hidden bg-slate-950 pt-32 pb-24">
         <div className="absolute inset-0 z-0">
           <Image
-            src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=2070&auto=format&fit=crop"
-            alt="Logistics and Returns Warehouse"
+            src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d"
+            alt="Returns management"
             fill
             priority
-            className="object-cover opacity-40"
+            className="object-cover opacity-30"
           />
-          {/* Gradient Overlay for Text Legibility */}
-          <div className="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/80 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/70 to-transparent" />
         </div>
 
         <div className="relative z-10 container mx-auto px-6 lg:px-8">
           <div className="max-w-4xl">
-            <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-teal-500/30 bg-teal-500/20 px-3 py-1 backdrop-blur-md">
-              <span className="relative flex h-2 w-2">
-                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-teal-400 opacity-75"></span>
-                <span className="relative inline-flex h-2 w-2 rounded-full bg-teal-500"></span>
-              </span>
-              <span className="text-xs font-bold tracking-widest text-teal-300 uppercase">
-                Returns Management
-              </span>
+            <div className="mb-8 inline-flex items-center gap-2 rounded-full border border-emerald-500/30 bg-emerald-500/20 px-4 py-1.5 text-xs font-black tracking-[0.2em] text-emerald-300 uppercase backdrop-blur-md">
+              Validated • Efficient • Transparent
             </div>
-            <h1 className="mb-8 text-5xl leading-[1.05] font-black tracking-tight text-white md:text-8xl">
-              Reclaim Margin. <br />
-              <span className="bg-gradient-to-r from-teal-400 to-emerald-400 bg-clip-text text-transparent">
-                Redeploy Time.
+            <h1 className="mb-10 text-6xl leading-[0.9] font-black tracking-tighter text-white md:text-9xl">
+              RECLAIM MARGIN. <br />
+              <span className="bg-gradient-to-r from-emerald-400 to-cyan-400 bg-clip-text text-transparent">
+                REDEPLOY TIME.
               </span>
             </h1>
-            <p className="mb-10 max-w-2xl text-lg leading-relaxed text-slate-300 md:text-xl">
-              Returns in convenience, fuel, and independent pharmacy are often
-              messy. Paygos brings structure and visibility to a part of your
-              business long treated as a cost center.
+            <p className="mb-12 max-w-2xl text-xl leading-relaxed font-medium text-slate-300 md:text-2xl">
+              Returns in convenience, fuel, and independent pharmacy are often messy.
+              Paygos brings structure and visibility to a part of your business long
+              treated as a cost center.
             </p>
-            <Link
-              href="mailto:explorepaygos@paygos.ca"
-              className="group inline-flex items-center justify-center gap-3 rounded-2xl bg-teal-500 px-10 py-5 text-lg font-black tracking-tighter text-slate-950 uppercase shadow-2xl shadow-teal-500/40 transition-all hover:bg-teal-400"
-            >
-              BOOK A CALL{" "}
-              <ArrowRight
-                size={22}
-                className="transition-transform group-hover:translate-x-1"
-              />
-            </Link>
+            <BookCallButton />
           </div>
         </div>
       </section>
 
-      {/* Stats Grid */}
-      <section className="relative z-20 container mx-auto -mt-12 px-6">
-        <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
-          <div className="flex flex-col items-center rounded-3xl border border-slate-100 bg-white p-8 text-center shadow-2xl">
-            <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-2xl bg-teal-50">
-              <Package className="text-teal-600" />
+      {/* Challenges */}
+      <section className="container mx-auto px-6 py-24">
+        <h2 className="mb-12 text-center text-3xl font-black text-slate-900">
+          Common Returns Challenges
+        </h2>
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
+          {/* Challenge 1 */}
+          <div className="rounded-2xl border border-gray-100 bg-white p-8 shadow-lg transition-shadow hover:shadow-xl">
+            <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-xl bg-red-100">
+              <AlertTriangle className="h-8 w-8 text-red-600" />
             </div>
-            <p className="mb-2 text-sm font-bold tracking-wider text-slate-500 uppercase">
-              Total Number of Returns
+            <h3 className="mb-3 text-xl font-bold text-gray-900">
+              Unclear Return Reasons
+            </h3>
+            <p className="text-gray-600">
+              Returns lack standardized categorization, making it hard to
+              identify root causes
             </p>
-            <h2 className="text-4xl font-black tracking-tighter text-slate-900">
-              55,717
-            </h2>
           </div>
-          <div className="flex flex-col items-center rounded-3xl border border-slate-100 bg-white p-8 text-center shadow-2xl">
-            <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-2xl bg-teal-50">
-              <TrendingUp className="text-teal-600" />
+
+          {/* Challenge 2 */}
+          <div className="rounded-2xl border border-gray-100 bg-white p-8 shadow-lg transition-shadow hover:shadow-xl">
+            <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-xl bg-red-100">
+              <Clock className="h-8 w-8 text-red-600" />
             </div>
-            <p className="mb-2 text-sm font-bold tracking-wider text-slate-500 uppercase">
-              YTD Number of Returns
+            <h3 className="mb-3 text-xl font-bold text-gray-900">
+              Processing Delays
+            </h3>
+            <p className="text-gray-600">
+              Manual return validation causes 7-10 day processing delays
             </p>
-            <h2 className="text-4xl font-black tracking-tighter text-slate-900">
-              5,199
-            </h2>
           </div>
-          <div className="flex flex-col items-center rounded-3xl border border-slate-100 bg-white p-8 text-center shadow-2xl">
-            <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-2xl bg-teal-50">
-              <LayoutDashboard className="text-teal-600" />
+
+          {/* Challenge 3 */}
+          <div className="rounded-2xl border border-gray-100 bg-white p-8 shadow-lg transition-shadow hover:shadow-xl">
+            <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-xl bg-red-100">
+              <DollarSign className="h-8 w-8 text-red-600" />
             </div>
-            <p className="mb-2 text-sm font-bold tracking-wider text-slate-500 uppercase">
-              Total Returned Quantity
+            <h3 className="mb-3 text-xl font-bold text-gray-900">
+              Lost Margin
+            </h3>
+            <p className="text-gray-600">
+              Unvalidated returns erode margin by 5-8% annually
             </p>
-            <h2 className="text-4xl font-black tracking-tighter text-slate-900">
-              2.51 M
-            </h2>
+          </div>
+
+          {/* Challenge 4 */}
+          <div className="rounded-2xl border border-gray-100 bg-white p-8 shadow-lg transition-shadow hover:shadow-xl">
+            <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-xl bg-red-100">
+              <PackageX className="h-8 w-8 text-red-600" />
+            </div>
+            <h3 className="mb-3 text-xl font-bold text-gray-900">
+              Replacement Gaps
+            </h3>
+            <p className="text-gray-600">
+              Bad goods lead to out-of-stocks instead of automatic replacements
+            </p>
           </div>
         </div>
       </section>
 
-      {/* Analytics Section */}
-      <section className="py-24 md:py-40">
-        <div className="container mx-auto px-6">
-          <div className="grid items-center gap-20 lg:grid-cols-2">
-            <div className="space-y-8">
-              <h2 className="text-4xl leading-none font-black tracking-tighter text-slate-900 md:text-6xl">
-                DATA THAT PAYS <br />
-                <span className="text-teal-600 underline decoration-teal-200 underline-offset-8">
-                  YOU BACK.
-                </span>
-              </h2>
-              <p className="text-xl leading-relaxed font-medium text-slate-600">
-                Analyze return rates by SKU, region, or retailer. Identify
-                damage tied to shipping and optimize volumes based on real sales
-                cadence.
-              </p>
-              <ul className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-                {["By SKU", "By Region", "By Packaging", "By Retailer"].map(
-                  (item) => (
-                    <li
-                      key={item}
-                      className="flex items-center gap-3 rounded-xl border border-slate-100 bg-slate-50 p-4 font-bold text-slate-800"
-                    >
-                      <CheckCircle2 className="text-teal-500" size={20} />{" "}
-                      {item}
-                    </li>
-                  )
-                )}
-              </ul>
-            </div>
+      {/* Returns Capabilities */}
+      <section
+        className="mx-auto mb-24 max-w-5xl px-4"
+        role="region"
+        aria-labelledby="returns-capabilities"
+      >
+        <h2 id="returns-capabilities" className="sr-only">
+          Returns Management Capabilities
+        </h2>
 
-            <ReturnsChart />
-          </div>
-        </div>
-      </section>
-
-      {/* Solutions Grid */}
-      <section className="bg-slate-50 py-24">
-        <div className="container mx-auto px-6">
-          <div className="mb-24 text-center">
-            <h2 className="mb-6 text-4xl font-black tracking-tighter md:text-6xl">
-              WHAT PAYGOS DELIVERS
-            </h2>
-            <div className="mx-auto h-2 w-24 rounded-full bg-teal-500"></div>
-          </div>
-
-          <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:gap-12">
-            <div className="group rounded-[3rem] border-b-8 border-teal-500 bg-white p-12 shadow-xl transition-all hover:-translate-y-2">
-              <div className="mb-8 flex h-16 w-16 items-center justify-center rounded-2xl bg-teal-50 text-teal-600 transition-all duration-300 group-hover:bg-teal-600 group-hover:text-white">
-                <RefreshCcw size={32} />
-              </div>
-              <h3 className="mb-4 text-3xl font-black tracking-tight text-slate-900">
-                Replacement&mdash;Not Just Credit
-              </h3>
-              <p className="text-lg leading-relaxed font-medium text-slate-600">
-                Bad goods don&apos;t mean lost sales. Stores can request
-                replacements at the same time they submit a
-                return&mdash;retaining shelf space and sell-through.
-              </p>
-            </div>
-
-            <div className="group rounded-[3rem] border-b-8 border-slate-900 bg-white p-12 shadow-xl transition-all hover:-translate-y-2">
-              <div className="mb-8 flex h-16 w-16 items-center justify-center rounded-2xl bg-teal-50 text-teal-600 transition-all duration-300 group-hover:bg-slate-900 group-hover:text-white">
-                <Search size={32} />
-              </div>
-              <h3 className="mb-4 text-3xl font-black tracking-tight text-slate-900">
+        <div className="grid auto-rows-[300px] grid-cols-1 gap-2 md:grid-cols-6">
+          {/* Card 1 - Validated Returns */}
+          <article
+            className="bento-card md:col-span-4"
+            role="group"
+            aria-labelledby="validated-returns"
+            aria-describedby="validated-returns-desc"
+          >
+            <Image
+              src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d"
+              alt="Validated returns processing with image capture"
+              fill
+            />
+            <div>
+              <Search size={32} aria-hidden="true" />
+              <h3 id="validated-returns" className="md:text-3xl">
                 Validated Returns
               </h3>
-              <p className="text-lg leading-relaxed font-medium text-slate-600">
+              <p id="validated-returns-desc" className="md:max-w-lg md:text-lg">
                 Using image capture and scanning tech, returns are logged and
                 verified at the store level. No forms. No calls. Your reps stay
                 focused on growth.
               </p>
             </div>
-          </div>
+          </article>
 
-          <div className="mt-20 text-center">
-            <Link
-              href="mailto:explorepaygos@paygos.ca"
-              className="inline-flex items-center gap-3 rounded-2xl bg-slate-900 px-12 py-6 text-xl font-black tracking-widest text-white uppercase transition-all hover:bg-teal-600"
-            >
-              BOOK A CALL <ArrowRight size={24} />
-            </Link>
+          {/* Card 2 - Replacement Orders */}
+          <article
+            className="bento-card md:col-span-2"
+            role="group"
+            aria-labelledby="replacement-orders"
+            aria-describedby="replacement-orders-desc"
+          >
+            <Image
+              src="https://images.unsplash.com/photo-1553413077-190dd305871c"
+              alt="Replacement order management"
+              fill
+            />
+            <div>
+              <RefreshCcw size={32} aria-hidden="true" />
+              <h3 id="replacement-orders">Replacement—Not Just Credit</h3>
+              <p id="replacement-orders-desc">
+                Bad goods don't mean lost sales. Request replacements alongside
+                returns—retaining shelf space.
+              </p>
+            </div>
+          </article>
+
+          {/* Card 3 - Analytics by SKU */}
+          <article
+            className="bento-card md:col-span-2"
+            role="group"
+            aria-labelledby="returns-analytics"
+            aria-describedby="returns-analytics-desc"
+          >
+            <Image
+              src="https://images.unsplash.com/photo-1551288049-bebda4e38f71"
+              alt="Returns analytics dashboard"
+              fill
+            />
+            <div>
+              <BarChart3 size={32} aria-hidden="true" />
+              <h3 id="returns-analytics">Data That Pays You Back</h3>
+              <p id="returns-analytics-desc">
+                Analyze return rates by SKU, region, or retailer. Identify
+                damage tied to shipping.
+              </p>
+            </div>
+          </article>
+
+          {/* Card 4 - Real-Time Tracking */}
+          <article
+            className="bento-card md:col-span-4"
+            role="group"
+            aria-labelledby="real-time-tracking"
+            aria-describedby="real-time-tracking-desc"
+          >
+            <Image
+              src="https://images.unsplash.com/photo-1460925895917-afdab827c52f"
+              alt="Real-time returns tracking interface"
+              fill
+            />
+            <div>
+              <Package size={32} aria-hidden="true" />
+              <h3 id="real-time-tracking" className="md:text-3xl">
+                Real-Time Visibility
+              </h3>
+              <p id="real-time-tracking-desc" className="md:max-w-lg md:text-lg">
+                Track all returns from submission to credit processing.
+                Complete transparency for reps, retailers, and head office.
+              </p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      {/* Chart Section */}
+      <section className="container mx-auto px-6 py-40">
+        <div className="grid items-center gap-32 lg:grid-cols-2">
+          <ReturnsTrendChart />
+          <div className="space-y-12">
+            <h2 className="text-5xl leading-[0.9] font-black tracking-tighter uppercase text-slate-900 md:text-7xl">
+              Visibility <br />
+              <span className="text-teal-600 underline decoration-teal-200 underline-offset-[12px]">
+                That Pays Off.
+              </span>
+            </h2>
+            <div className="space-y-10">
+              <div className="group flex items-start gap-8">
+                <div className="shrink-0 rounded-3xl bg-teal-50 p-5 transition-colors duration-300 group-hover:bg-teal-500">
+                  <BarChart3
+                    size={28}
+                    className="text-teal-600 group-hover:text-white"
+                  />
+                </div>
+                <div>
+                  <h4 className="mb-2 text-2xl font-black tracking-tight text-slate-900 uppercase">
+                    Identify Patterns
+                  </h4>
+                  <p className="text-lg leading-relaxed font-medium text-slate-500">
+                    Analyze returns by category, SKU, region, or retailer to
+                    pinpoint damage tied to shipping or quality issues.
+                  </p>
+                </div>
+              </div>
+              <div className="group flex items-start gap-8">
+                <div className="shrink-0 rounded-3xl bg-teal-50 p-5 transition-colors duration-300 group-hover:bg-teal-500">
+                  <TrendingUp
+                    size={28}
+                    className="text-teal-600 group-hover:text-white"
+                  />
+                </div>
+                <div>
+                  <h4 className="mb-2 text-2xl font-black tracking-tight text-slate-900 uppercase">
+                    Reduce Waste
+                  </h4>
+                  <p className="text-lg leading-relaxed font-medium text-slate-500">
+                    Spot trends early and take corrective action before return
+                    rates impact your bottom line.
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      <footer className="border-t border-slate-100 py-20 text-center">
-        <Link
-          href="/"
-          className="text-xs font-black tracking-[0.3em] text-slate-400 uppercase transition-colors hover:text-teal-600"
-        >
-          &larr; BACK TO OVERVIEW
-        </Link>
-      </footer>
+      <IndustryBadge />
+
+      {/* ROI */}
+      <section className="mx-auto" role="region" aria-labelledby="roi-heading">
+        <div className="relative overflow-hidden bg-slate-900 p-8 text-white md:p-16">
+          <div className="relative z-10 grid items-center gap-12 lg:grid-cols-2">
+            <div>
+              <h2
+                id="roi-heading"
+                className="mb-8 text-4xl font-black md:text-6xl"
+              >
+                Proven Impact <br />
+                <span className="text-teal-500">
+                  Where Returns Drive Efficiency
+                </span>
+              </h2>
+
+              <ul className="mb-10 space-y-6">
+                <li className="flex items-start gap-4">
+                  <TrendingUp
+                    aria-hidden="true"
+                    className="mt-1 text-teal-500"
+                  />
+                  <p className="text-lg text-slate-300">
+                    Reduce returns processing time by{" "}
+                    <strong className="text-white">
+                      60% with automated validation
+                    </strong>{" "}
+                    and image capture workflows.
+                  </p>
+                </li>
+
+                <li className="flex items-start gap-4">
+                  <CheckCircle2
+                    aria-hidden="true"
+                    className="mt-1 text-teal-500"
+                  />
+                  <p className="text-lg text-slate-300">
+                    Stores process returns{" "}
+                    <strong className="text-white">on-site in under 5 minutes</strong>
+                    —no phone calls or paperwork required.
+                  </p>
+                </li>
+
+                <li className="flex items-start gap-4">
+                  <RefreshCcw
+                    aria-hidden="true"
+                    className="mt-1 text-teal-500"
+                  />
+                  <p className="text-lg text-slate-300">
+                    Replacement orders maintain{" "}
+                    <strong className="text-white">shelf presence and revenue</strong>
+                    —turning a cost center into a retention tool.
+                  </p>
+                </li>
+              </ul>
+
+              <a href="/roi" className="btn btn-secondary text-white!">
+                Calculate Your ROI <ArrowRight aria-hidden="true" />
+              </a>
+            </div>
+
+            {/* ROI Stats */}
+            <aside
+              className="relative"
+              role="group"
+              aria-labelledby="roi-stats"
+            >
+              <div className="rounded-[2.5rem] border border-white/10 bg-white/5 p-12 text-center backdrop-blur-md">
+                <TrendingUp
+                  className="mx-auto mb-6 text-teal-500"
+                  size={48}
+                  aria-hidden="true"
+                />
+
+                <h3
+                  id="roi-stats"
+                  className="mb-2 text-5xl font-black md:text-8xl"
+                >
+                  60%
+                </h3>
+                <p className="text-sm font-bold tracking-[0.2em] text-teal-400 uppercase">
+                  Faster Processing
+                </p>
+
+                <div className="mt-10 grid grid-cols-2 gap-8 border-t border-white/10 pt-10">
+                  <div>
+                    <h4 className="text-3xl font-black">5 min</h4>
+                    <p className="text-xs font-bold text-slate-500 uppercase">
+                      Average Return Time
+                    </p>
+                  </div>
+
+                  <div>
+                    <h4 className="text-3xl font-black">100%</h4>
+                    <p className="text-xs font-bold text-slate-500 uppercase">
+                      Validated & Tracked
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </aside>
+          </div>
+        </div>
+      </section>
+
+      <CTA />
     </main>
   )
 }
