@@ -3,7 +3,9 @@
     "allow": [
       "Bash(npm run format:*)",
       "Bash(npm run build:*)",
-      "Bash(cat:*)"
+      "Bash(cat:*)",
+      "Bash(powershell \"Get-Process node -ErrorAction SilentlyContinue | Select-Object Id, ProcessName, StartTime\")",
+      "Bash(taskkill:*)"
     ]
   },
   "hooks": {

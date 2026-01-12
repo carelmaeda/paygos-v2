@@ -1,7 +1,43 @@
+import type { Metadata } from "next"
 import Link from "next/link"
 import Image from "next/image"
 import { ArrowLeft } from "lucide-react"
 import { Button } from "@/app/_components/ui/button"
+
+export const metadata: Metadata = {
+  title: "Finance Automation Success Story | Paygos",
+  description: "Learn how finance companies achieve automation success with Paygos. Discover improved efficiency, reduced costs, and streamlined financial processes.",
+  keywords: ["finance automation", "financial services", "process automation", "cost reduction", "finance efficiency", "customer success", "case study"],
+  openGraph: {
+    title: "Finance Automation Success Story | Paygos",
+    description: "Learn how finance companies achieve automation success with Paygos. Discover improved efficiency, reduced costs, and streamlined financial processes.",
+    url: "https://www.paygos.ca/customers/finance-automation",
+    siteName: "Paygos",
+    images: [
+      {
+        url: "/paygos/logo-full.webp",
+        width: 1200,
+        height: 630,
+        alt: "Paygos Finance Automation Success Story",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Finance Automation Success Story | Paygos",
+    description: "Learn how finance companies achieve automation success with Paygos. Discover improved efficiency, reduced costs, and streamlined financial processes.",
+    images: ["/paygos/logo-full.webp"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
+  alternates: {
+    canonical: "https://www.paygos.ca/customers/finance-automation",
+  },
+}
 
 export default function FinanceAutomationPage() {
   return (

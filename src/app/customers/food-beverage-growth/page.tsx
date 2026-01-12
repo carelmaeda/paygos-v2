@@ -1,7 +1,43 @@
+import type { Metadata } from "next"
 import Link from "next/link"
 import Image from "next/image"
 import { ArrowLeft } from "lucide-react"
 import { Button } from "@/app/_components/ui/button"
+
+export const metadata: Metadata = {
+  title: "Food & Beverage Growth Success Story | Paygos",
+  description: "Discover how food and beverage companies drive growth with Paygos. Learn about increased sales, improved distribution, and accelerated market expansion.",
+  keywords: ["food and beverage", "CPG growth", "sales growth", "distribution optimization", "market expansion", "customer success", "F&B automation"],
+  openGraph: {
+    title: "Food & Beverage Growth Success Story | Paygos",
+    description: "Discover how food and beverage companies drive growth with Paygos. Learn about increased sales, improved distribution, and accelerated market expansion.",
+    url: "https://www.paygos.ca/customers/food-beverage-growth",
+    siteName: "Paygos",
+    images: [
+      {
+        url: "/paygos/logo-full.webp",
+        width: 1200,
+        height: 630,
+        alt: "Paygos Food & Beverage Growth Success Story",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Food & Beverage Growth Success Story | Paygos",
+    description: "Discover how food and beverage companies drive growth with Paygos. Learn about increased sales, improved distribution, and accelerated market expansion.",
+    images: ["/paygos/logo-full.webp"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
+  alternates: {
+    canonical: "https://www.paygos.ca/customers/food-beverage-growth",
+  },
+}
 
 export default function FoodBeverageGrowthPage() {
   return (

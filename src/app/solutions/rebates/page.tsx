@@ -1,3 +1,4 @@
+import type { Metadata } from "next"
 import React from "react"
 import { CTA } from "@/app/_components/sections/cta/CTA"
 import Image from "next/image"
@@ -13,6 +14,41 @@ import {
   CheckCircle2,
   TrendingUp,
 } from "lucide-react"
+
+export const metadata: Metadata = {
+  title: "Rebates & Incentives | Paygos",
+  description: "Turn rebates into revenue drivers with Paygos. Automate rebate management, track incentive programs, and maximize ROI with real-time validation and reporting.",
+  keywords: ["rebate management", "sales incentives", "rebate tracking", "incentive programs", "rebate automation", "promotional rebates", "trade promotions", "sales promotions"],
+  openGraph: {
+    title: "Rebates & Incentives | Paygos",
+    description: "Turn rebates into revenue drivers with Paygos. Automate rebate management, track incentive programs, and maximize ROI with real-time validation and reporting.",
+    url: "https://www.paygos.ca/solutions/rebates",
+    siteName: "Paygos",
+    images: [
+      {
+        url: "/paygos/logo-full.webp",
+        width: 1200,
+        height: 630,
+        alt: "Paygos Rebates & Incentives",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Rebates & Incentives | Paygos",
+    description: "Turn rebates into revenue drivers with Paygos. Automate rebate management, track incentive programs, and maximize ROI with real-time validation and reporting.",
+    images: ["/paygos/logo-full.webp"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
+  alternates: {
+    canonical: "https://www.paygos.ca/solutions/rebates",
+  },
+}
 
 export default function PaygosRebatesPage() {
   return (

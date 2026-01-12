@@ -1,6 +1,42 @@
+import type { Metadata } from "next"
 import Link from "next/link"
 import Image from "next/image"
 import { Megaphone } from "lucide-react"
+
+export const metadata: Metadata = {
+  title: "Marketing Solutions | Paygos",
+  description: "Keep your customers up-to-date with Paygos marketing solutions. Automated campaigns, targeted communications, and integrated marketing tools for sales teams.",
+  keywords: ["marketing automation", "sales marketing", "customer communication", "marketing campaigns", "targeted marketing", "promotional marketing", "trade marketing", "retail marketing"],
+  openGraph: {
+    title: "Marketing Solutions | Paygos",
+    description: "Keep your customers up-to-date with Paygos marketing solutions. Automated campaigns, targeted communications, and integrated marketing tools for sales teams.",
+    url: "https://www.paygos.ca/solutions/marketing",
+    siteName: "Paygos",
+    images: [
+      {
+        url: "/paygos/logo-full.webp",
+        width: 1200,
+        height: 630,
+        alt: "Paygos Marketing Solutions",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Marketing Solutions | Paygos",
+    description: "Keep your customers up-to-date with Paygos marketing solutions. Automated campaigns, targeted communications, and integrated marketing tools for sales teams.",
+    images: ["/paygos/logo-full.webp"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
+  alternates: {
+    canonical: "https://www.paygos.ca/solutions/marketing",
+  },
+}
 
 export default function MarketingPage() {
   return (

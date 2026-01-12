@@ -1,7 +1,43 @@
+import type { Metadata } from "next"
 import Link from "next/link"
 import Image from "next/image"
 import { ArrowLeft } from "lucide-react"
 import { Button } from "@/app/_components/ui/button"
+
+export const metadata: Metadata = {
+  title: "Healthcare Compliance Success Story | Paygos",
+  description: "See how healthcare organizations maintain compliance with Paygos. Explore automated compliance tracking, regulatory adherence, and risk mitigation strategies.",
+  keywords: ["healthcare compliance", "regulatory compliance", "healthcare automation", "compliance tracking", "risk management", "pharmaceutical sales", "medical compliance"],
+  openGraph: {
+    title: "Healthcare Compliance Success Story | Paygos",
+    description: "See how healthcare organizations maintain compliance with Paygos. Explore automated compliance tracking, regulatory adherence, and risk mitigation strategies.",
+    url: "https://www.paygos.ca/customers/healthcare-compliance",
+    siteName: "Paygos",
+    images: [
+      {
+        url: "/paygos/logo-full.webp",
+        width: 1200,
+        height: 630,
+        alt: "Paygos Healthcare Compliance Success Story",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Healthcare Compliance Success Story | Paygos",
+    description: "See how healthcare organizations maintain compliance with Paygos. Explore automated compliance tracking, regulatory adherence, and risk mitigation strategies.",
+    images: ["/paygos/logo-full.webp"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
+  alternates: {
+    canonical: "https://www.paygos.ca/customers/healthcare-compliance",
+  },
+}
 
 export default function HealthcareCompliancePage() {
   return (

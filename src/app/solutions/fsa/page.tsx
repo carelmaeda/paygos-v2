@@ -1,6 +1,42 @@
+import type { Metadata } from "next"
 import Link from "next/link"
 import Image from "next/image"
 import { UserCog } from "lucide-react"
+
+export const metadata: Metadata = {
+  title: "Field Sales Automation | Paygos",
+  description: "Save time and money with Paygos field sales automation. Empower your field sales teams with mobile tools, automated workflows, and real-time visibility.",
+  keywords: ["field sales automation", "FSA", "mobile sales", "sales force automation", "field sales management", "sales productivity", "territory management", "sales routing"],
+  openGraph: {
+    title: "Field Sales Automation | Paygos",
+    description: "Save time and money with Paygos field sales automation. Empower your field sales teams with mobile tools, automated workflows, and real-time visibility.",
+    url: "https://www.paygos.ca/solutions/fsa",
+    siteName: "Paygos",
+    images: [
+      {
+        url: "/paygos/logo-full.webp",
+        width: 1200,
+        height: 630,
+        alt: "Paygos Field Sales Automation",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Field Sales Automation | Paygos",
+    description: "Save time and money with Paygos field sales automation. Empower your field sales teams with mobile tools, automated workflows, and real-time visibility.",
+    images: ["/paygos/logo-full.webp"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
+  alternates: {
+    canonical: "https://www.paygos.ca/solutions/fsa",
+  },
+}
 
 export default function FSAPage() {
   return (
