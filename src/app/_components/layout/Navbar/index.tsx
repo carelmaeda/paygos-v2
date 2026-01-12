@@ -44,12 +44,12 @@ export function Navbar() {
   // RENDER
   // ============================================
   return (
-    <header className="sticky top-0 z-50 w-full bg-white">
+    <header className="sticky top-0 z-50 w-full bg-black">
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4">
         {/* Logo */}
         <Link href="/">
           <Image
-            src="/paygos/logo-full.webp"
+            src="/paygos/logo-full-white.webp"
             alt="Brand Logo"
             width={150}
             height={50}

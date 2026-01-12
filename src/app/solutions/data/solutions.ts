@@ -5,7 +5,6 @@ import {
   RotateCcw,
   CreditCard,
   Megaphone,
-  UserCog,
   type LucideIcon,
 } from "lucide-react"
 
@@ -59,12 +58,5 @@ export const SOLUTIONS: SolutionBase[] = [
     icon: Megaphone,
     image: "/solutions/marketing.svg",
     slug: "marketing",
-  },
-  {
-    title: "Field Sales Automation",
-    subtitle: "Save your company both time and money.",
-    icon: UserCog,
-    image: "/solutions/fsa.svg",
-    slug: "fsa",
   },
 ]

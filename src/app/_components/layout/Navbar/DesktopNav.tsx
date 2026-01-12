@@ -1,3 +1,6 @@
+"use client"
+
+import { useState } from "react"
 import Link from "next/link"
 import {
   NavigationMenu,
@@ -20,13 +23,15 @@ import { SOLUTIONS } from "./SolutionsMenu"
  * Hidden on mobile (md:flex)
  */
 export function DesktopNav() {
+  const [value, setValue] = useState("")
+
   return (
     <>
       {/* Desktop Navigation Menu */}
-      <nav className="hidden items-center gap-1 md:flex">
-        <NavigationMenu>
+      <nav className="hidden items-center md:flex">
+        <NavigationMenu value={value} onValueChange={setValue}>
           <NavigationMenuList>
-            <NavigationMenuItem>
+            <NavigationMenuItem value="solutions">
               <NavigationMenuTrigger>Solutions</NavigationMenuTrigger>
               <NavigationMenuContent>
                 <div className="grid w-150 max-w-[90vw] grid-cols-2 gap-3 p-4">
@@ -37,6 +42,7 @@ export function DesktopNav() {
                         key={item.href}
                         href={item.href}
                         className="block rounded-md p-3 transition-colors hover:bg-teal-300"
+                        onClick={() => setValue("")}
                       >
                         <div className="flex items-start gap-3">
                           {Icon && <Icon className="mt-0.5 h-5 w-5 shrink-0" />}

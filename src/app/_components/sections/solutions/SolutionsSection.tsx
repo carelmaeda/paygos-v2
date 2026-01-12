@@ -17,7 +17,7 @@ export function SolutionsSection() {
         </header>
 
         {/* Grid: 1 col mobile, 2-3 cols desktop */}
-        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 md:gap-8 lg:grid-cols-3">
+        <div className="grid grid-cols-1 gap-1 md:grid-cols-2 md:gap-3 lg:grid-cols-3">
           {SOLUTIONS.map((item) => {
             const Icon = item.icon
             return (
@@ -26,17 +26,17 @@ export function SolutionsSection() {
                 href={`/solutions/${item.slug}`}
                 aria-label={`View ${item.title} solution details`}
               >
-                <article className="rounded-lg bg-white p-6 shadow-sm transition-shadow hover:shadow-md">
+                <article className="h-full rounded-lg p-6 shadow-sm transition-shadow hover:shadow-md">
                   {/* Mobile: Show icon only */}
-                  <div className="mb-4 md:hidden">
+                  <div className="my-8 md:hidden">
                     <div className="inline-flex h-12 w-12 items-center justify-center rounded-lg bg-teal-100 text-teal-700">
                       <Icon className="h-6 w-6" />
                     </div>
                   </div>
-                  <h3 className="text-xl font-semibold">{item.title}</h3>
-                  <p className="text-sm text-gray-600">{item.subtitle}</p>
+                  <h3>{item.title}</h3>
+                  <small>{item.subtitle}</small>
                   {/* Desktop: Show image only */}
-                  <div className="relative mb-4 hidden h-48 overflow-hidden rounded-lg bg-gray-100 md:block">
+                  <div className="relative my-4 hidden h-48 overflow-hidden rounded-lg bg-gray-100 md:block">
                     <Image
                       src={item.image}
                       alt={item.title}

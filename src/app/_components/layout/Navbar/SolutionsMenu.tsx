@@ -1,10 +1,11 @@
 import {
   ShoppingCart,
-  TrendingUp,
+  CircleStar,
   GraduationCap,
   RotateCcw,
   CreditCard,
   Megaphone,
+  ChartNoAxesCombined,
   UserCog,
 } from "lucide-react"
 import type { LucideIcon } from "lucide-react"
@@ -28,6 +29,12 @@ export interface SolutionItem {
 /** Solutions menu items with icons and descriptions */
 export const SOLUTIONS: readonly SolutionItem[] = [
   {
+    title: "Field Sales Automation",
+    href: "/solutions/fsa",
+    description: "Save your company both time and money.",
+    icon: UserCog,
+  },
+  {
     title: "Optimized Ordering",
     href: "/solutions/ordering",
     description: "Scale up your ordering process.",
@@ -37,7 +44,7 @@ export const SOLUTIONS: readonly SolutionItem[] = [
     title: "Rebates",
     href: "/solutions/rebates",
     description: "Maximize ROI. Drive Growth. Automate Success.",
-    icon: TrendingUp,
+    icon: CircleStar,
   },
   {
     title: "Training Management",
@@ -64,9 +71,9 @@ export const SOLUTIONS: readonly SolutionItem[] = [
     icon: Megaphone,
   },
   {
-    title: "Field Sales Automation",
-    href: "/solutions/fsa",
-    description: "Save your company both time and money.",
-    icon: UserCog,
+    title: "Data & Analytics",
+    href: "/solutions/analytics",
+    description: "Power everything with smart data.",
+    icon: ChartNoAxesCombined,
   },
 ] as const

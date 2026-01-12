@@ -4,7 +4,7 @@ import { CustomersLogosCarousel } from "../customers/CustomersLogosCarousel"
 
 export function Hero() {
   return (
-    <section className="hero bg-teal-950">
+    <section className="hero">
       <div className="container">
         {/* Left Column */}
         <article>

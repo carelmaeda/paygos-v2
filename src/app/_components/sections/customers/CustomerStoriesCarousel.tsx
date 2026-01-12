@@ -5,6 +5,9 @@ import { Swiper, SwiperSlide } from "swiper/react"
 import { Pagination, Navigation } from "swiper/modules"
 import { CustomerStoryCard } from "./CustomerStoryCard"
 import { customerStories } from "./data/customer-stories"
+import { Button } from "../../ui/button"
+import Link from "next/link"
+import { ArrowRight } from "lucide-react"
 
 // Swiper styles - imported once
 import "swiper/css"
@@ -103,19 +106,48 @@ export function CustomerStoriesCarousel() {
   // RENDER
   // ============================================
   return (
-    <div className="relative mt-12 w-full">
-      <Swiper
-        modules={SWIPER_MODULES}
-        spaceBetween={20}
-        slidesPerView={1.2}
-        centeredSlides={false}
-        pagination={PAGINATION_CONFIG}
-        navigation={true}
-        breakpoints={BREAKPOINTS_CONFIG}
-        className="customer-stories-swiper"
-      >
-        {slides}
-      </Swiper>
-    </div>
+    <section className="py-16 md:py-24">
+      <div className="relative mt-12 w-full">
+        <div className="mx-auto max-w-3xl text-center">
+          {/* Header */}
+          <h2 className="mb-4 text-3xl font-bold md:text-4xl lg:text-5xl">
+            What would you do with more time?
+          </h2>
+
+          {/* Subtitle */}
+          <p className="mb-8 text-lg text-gray-600 md:text-xl">
+            Over 2.5M+ hours saved for 5,000+ customers.
+          </p>
+        </div>
+        <Swiper
+          modules={SWIPER_MODULES}
+          spaceBetween={20}
+          slidesPerView={1.2}
+          centeredSlides={false}
+          pagination={PAGINATION_CONFIG}
+          navigation={true}
+          breakpoints={BREAKPOINTS_CONFIG}
+          className="customer-stories-swiper"
+        >
+          {slides}
+        </Swiper>
+
+        <div className="container">
+          {/* Button */}
+          <div className="mt-12 text-center">
+            <Button asChild size="lg" className="btn btn-secondary">
+              <Link
+                href="/customers"
+                className="inline-flex items-center gap-2"
+                aria-label="View all customer success stories"
+              >
+                View all customer stories
+                <ArrowRight className="h-5 w-5" />
+              </Link>
+            </Button>
+          </div>
+        </div>
+      </div>
+    </section>
   )
 }

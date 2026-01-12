@@ -1,7 +1,7 @@
 import type { Metadata } from "next"
 import Image from "next/image"
 import { Target, Users, Lightbulb, Heart } from "lucide-react"
-import { BookCallButton } from "@/app/_components/sections/cta/BookCallButton"
+import { CTA } from "../_components/sections/cta/CTA"
 
 export const metadata: Metadata = {
   title: "About Us | Paygos",
@@ -171,21 +171,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* CTA Section - Dark Background */}
-      <section className="bg-teal-950 py-16 md:py-24">
-        <div className="container">
-          <div className="mx-auto max-w-3xl text-center text-white">
-            <h2 className="mb-6 text-3xl font-bold md:text-4xl lg:text-5xl">
-              Ready to accelerate your sales?
-            </h2>
-            <p className="mb-8 text-lg text-gray-200">
-              Join thousands of businesses that trust Paygos to transform their
-              sales operations.
-            </p>
-            <BookCallButton />
-          </div>
-        </div>
-      </section>
+      <CTA />
     </main>
   )
 }

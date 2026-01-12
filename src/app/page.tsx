@@ -2,8 +2,8 @@ import { Hero } from "./_components/sections/hero/Hero"
 import { SolutionsSection } from "./_components/sections/solutions/SolutionsSection"
 import { DataAnalytics } from "./_components/sections/solutions/DataAnalytics"
 import { FieldSales } from "./_components/sections/solutions/FieldSales"
-import { Customers } from "./_components/sections/customers/Customers"
 import { CTA } from "./_components/sections/cta/CTA"
+import { CustomerStoriesCarousel } from "./_components/sections/customers/CustomerStoriesCarousel"
 
 export default function Home() {
   return (
@@ -12,7 +12,7 @@ export default function Home() {
       <SolutionsSection />
       <FieldSales />
       <DataAnalytics />
-      <Customers />
+      <CustomerStoriesCarousel />
       <CTA />
     </>
   )

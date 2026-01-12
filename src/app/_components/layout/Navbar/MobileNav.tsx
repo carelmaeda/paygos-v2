@@ -33,12 +33,11 @@ export function MobileNav() {
       {/* Hamburger Trigger Button */}
       <SheetTrigger asChild>
         <Button
-          variant="ghost"
           size="icon"
-          className="md:hidden"
+          className="border text-white md:hidden"
           aria-label="Open navigation menu"
         >
-          <Menu className="h-5 w-5" />
+          <Menu />
         </Button>
       </SheetTrigger>
 
