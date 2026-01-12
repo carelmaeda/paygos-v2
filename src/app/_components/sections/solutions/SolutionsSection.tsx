@@ -1,6 +1,6 @@
 import Link from "next/link"
 import Image from "next/image"
-import { SOLUTIONS } from "@/app/solutions/data/solutions"
+import { SOLUTIONS } from "@/app/_components/sections/solutions/data/solutions"
 
 export function SolutionsSection() {
   return (
@@ -8,12 +8,8 @@ export function SolutionsSection() {
       <div className="container">
         {/* Header */}
         <header className="mb-12 text-center">
-          <h2 className="mb-4 text-3xl font-bold md:text-4xl">
-            Power Your Growth with Sales Acceleration
-          </h2>
-          <p className="mx-auto max-w-2xl text-lg text-gray-600">
-            Choose from these modules, all customized to fit your business.
-          </p>
+          <h2>Power Your Growth with Sales Acceleration</h2>
+          <p>Choose from these modules, all customized to fit your business.</p>
         </header>
 
         {/* Grid: 1 col mobile, 2-3 cols desktop */}

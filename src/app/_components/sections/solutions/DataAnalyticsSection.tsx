@@ -1,12 +1,5 @@
 import Image from "next/image"
-import {
-  Activity,
-  FileText,
-  BarChart3,
-  Package,
-  Users,
-  TrendingUp,
-} from "lucide-react"
+import { Activity, FileText, BarChart3 } from "lucide-react"
 
 const ANALYTICS_FEATURES = [
   {
@@ -38,10 +31,8 @@ export function DataAnalytics() {
       <div className="container">
         {/* Header */}
         <header className="mb-12 text-center">
-          <h2 className="mb-4 text-3xl font-bold md:text-4xl">
-            Data-Driven Insights at Your Fingertips
-          </h2>
-          <p className="mx-auto max-w-2xl text-lg text-gray-600">
+          <h2>Data-Driven Insights at Your Fingertips</h2>
+          <p>
             Transform raw data into actionable intelligence with our
             comprehensive analytics suite.
           </p>
@@ -54,7 +45,7 @@ export function DataAnalytics() {
             return (
               <article
                 key={item.slug}
-                className="rounded-lg bg-white p-6 shadow-sm transition-shadow hover:shadow-md"
+                className="rounded-lg px-6 pt-6 shadow-sm transition-shadow hover:shadow-md"
               >
                 {/* Mobile: Show icon only */}
                 <div className="mb-4 md:hidden">
@@ -62,10 +53,10 @@ export function DataAnalytics() {
                     <Icon className="h-6 w-6" />
                   </div>
                 </div>
-                <h3 className="text-xl font-semibold">{item.title}</h3>
-                <p className="text-sm text-gray-600">{item.subtitle}</p>
+                <h3>{item.title}</h3>
+                <p>{item.subtitle}</p>
                 {/* Desktop: Show image only */}
-                <div className="relative mb-4 hidden h-48 overflow-hidden rounded-lg bg-gray-100 md:block">
+                <div className="relative hidden h-48 overflow-hidden rounded-lg md:block">
                   <Image
                     src={item.image}
                     alt={item.title}

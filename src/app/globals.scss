@@ -152,11 +152,11 @@ h3 {
 /* Heading Scale */
 h1,
 .h1 {
-  font-size: 1.72rem;
+  font-size: 3rem;
   letter-spacing: -0.03em;
 
   @media (min-width: $breakpoint-md) {
-    font-size: 1.6rem;
+    font-size: 6rem;
   }
 }
 
@@ -388,7 +388,7 @@ button {
     height: auto;
     object-fit: contain;
     filter: grayscale(100%);
-    opacity: 0.7;
+    opacity: 0.25;
     transition: all 300ms ease;
 
     &:hover {
@@ -506,7 +506,7 @@ button {
 // ============================================
 
 .data-analytics {
-  padding: 1rem;
+  padding: 2rem 1rem;
 
   @media (min-width: $breakpoint-md) {
     padding: 4rem;

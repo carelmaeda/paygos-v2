@@ -1,6 +1,4 @@
 import type { Metadata } from "next"
-import React from "react"
-import Link from "next/link"
 import { CTA } from "@/app/_components/sections/cta/CTA"
 import { BookCallButton } from "@/app/_components/sections/cta/BookCallButton"
 import Image from "next/image"
@@ -26,11 +24,22 @@ import { CustomerStoriesCarousel } from "@/app/_components/sections/customers/Cu
 
 export const metadata: Metadata = {
   title: "Smart Ordering System | Paygos",
-  description: "Streamline order management with Paygos smart ordering platform. Real-time inventory visibility, automated order processing, and intelligent ordering workflows for sales teams.",
-  keywords: ["order management", "ordering system", "order automation", "inventory management", "order processing", "smart ordering", "order tracking", "sales ordering"],
+  description:
+    "Streamline order management with Paygos smart ordering platform. Real-time inventory visibility, automated order processing, and intelligent ordering workflows for sales teams.",
+  keywords: [
+    "order management",
+    "ordering system",
+    "order automation",
+    "inventory management",
+    "order processing",
+    "smart ordering",
+    "order tracking",
+    "sales ordering",
+  ],
   openGraph: {
     title: "Smart Ordering System | Paygos",
-    description: "Streamline order management with Paygos smart ordering platform. Real-time inventory visibility, automated order processing, and intelligent ordering workflows for sales teams.",
+    description:
+      "Streamline order management with Paygos smart ordering platform. Real-time inventory visibility, automated order processing, and intelligent ordering workflows for sales teams.",
     url: "https://www.paygos.ca/solutions/ordering",
     siteName: "Paygos",
     images: [
@@ -47,7 +56,8 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Smart Ordering System | Paygos",
-    description: "Streamline order management with Paygos smart ordering platform. Real-time inventory visibility, automated order processing, and intelligent ordering workflows for sales teams.",
+    description:
+      "Streamline order management with Paygos smart ordering platform. Real-time inventory visibility, automated order processing, and intelligent ordering workflows for sales teams.",
     images: ["/paygos/logo-full.webp"],
   },
   robots: {
@@ -87,9 +97,9 @@ export default function PaygosOrderingPage() {
               </span>
             </h1>
             <p className="mb-12 max-w-2xl text-xl leading-relaxed font-medium text-slate-300 md:text-2xl">
-              Paygos empowers reps, account managers, and retail partners to place
-              and track orders for products and merchandising in one streamlined
-              platform.
+              Paygos empowers reps, account managers, and retail partners to
+              place and track orders for products and merchandising in one
+              streamlined platform.
             </p>
             <BookCallButton />
           </div>
@@ -148,9 +158,7 @@ export default function PaygosOrderingPage() {
             <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-xl bg-red-100">
               <PackageX className="h-8 w-8 text-red-600" />
             </div>
-            <h3 className="mb-3 text-xl font-bold text-gray-900">
-              Stock-Outs
-            </h3>
+            <h3 className="mb-3 text-xl font-bold text-gray-900">Stock-Outs</h3>
             <p className="text-gray-600">
               Delayed reorders lead to 8-12% out-of-stock rates at retail
             </p>
@@ -290,7 +298,7 @@ export default function PaygosOrderingPage() {
         <div className="grid items-center gap-32 lg:grid-cols-2">
           <OrderingVolumeChart />
           <div className="space-y-12">
-            <h2 className="text-5xl leading-[0.9] font-black tracking-tighter uppercase text-slate-900 md:text-7xl">
+            <h2 className="text-5xl leading-[0.9] font-black tracking-tighter text-slate-900 uppercase md:text-7xl">
               Efficiency <br />
               <span className="text-teal-600 underline decoration-teal-200 underline-offset-[12px]">
                 That Scales.

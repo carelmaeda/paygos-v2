@@ -171,11 +171,11 @@ export function CustomersLogosCarousel() {
   // RENDER
   // ============================================
   return (
-    <section className="text-grey-100 pb-8">
+    <section className="text-muted-foreground pb-8">
       <div>
         {/* Section Description */}
-        <p className="mb-8 text-center opacity-40">
-          50,000+ users have saved millions of hours with Paygos.
+        <p className="mb-4 text-center text-sm">
+          20,000+ users have saved millions of hours with Paygos.
         </p>
 
         {/* Carousel Container */}

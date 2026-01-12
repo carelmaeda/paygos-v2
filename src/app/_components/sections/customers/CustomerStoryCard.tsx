@@ -46,12 +46,10 @@ export function CustomerStoryCard({ story, isMobile }: CustomerStoryCardProps) {
             className={cn(
               "absolute inset-0 z-20 flex items-center justify-center transition-opacity duration-300",
               "bg-black/80",
-              isHovered ? "opacity-100" : "opacity-0 pointer-events-none"
+              isHovered ? "opacity-100" : "pointer-events-none opacity-0"
             )}
           >
-            <h3 className="px-6 text-center text-2xl font-bold text-white">
-              {story.title}
-            </h3>
+            <h3 className="px-6 text-center text-white">{story.title}</h3>
           </div>
         )}
 

@@ -106,18 +106,14 @@ export function CustomerStoriesCarousel() {
   // RENDER
   // ============================================
   return (
-    <section className="py-16 md:py-24">
-      <div className="relative mt-12 w-full">
-        <div className="mx-auto max-w-3xl text-center">
+    <section className="py-8">
+      <div className="relative w-full">
+        <div className="mx-auto text-center">
           {/* Header */}
-          <h2 className="mb-4 text-3xl font-bold md:text-4xl lg:text-5xl">
-            What would you do with more time?
-          </h2>
+          <h2>What would you do with more time?</h2>
 
           {/* Subtitle */}
-          <p className="mb-8 text-lg text-gray-600 md:text-xl">
-            Over 2.5M+ hours saved for 5,000+ customers.
-          </p>
+          <p className="mb-8">Over 2.5M+ hours saved for 5,000+ customers.</p>
         </div>
         <Swiper
           modules={SWIPER_MODULES}
@@ -135,7 +131,7 @@ export function CustomerStoriesCarousel() {
         <div className="container">
           {/* Button */}
           <div className="mt-12 text-center">
-            <Button asChild size="lg" className="btn btn-secondary">
+            <Button asChild size="lg" variant="ghost">
               <Link
                 href="/customers"
                 className="inline-flex items-center gap-2"
