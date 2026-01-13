@@ -1,8 +1,8 @@
 import type { Metadata } from "next"
 import { Inter, Urbanist } from "next/font/google"
 import "./globals.scss"
-import { Navbar } from "./_components/layout/Navbar"
-import { Footer } from "./_components/layout/Footer"
+import { Navbar } from "@/components/layout/Navbar"
+import { Footer } from "@/components/layout/Footer"
 
 const inter = Inter({
   variable: "--font-inter",

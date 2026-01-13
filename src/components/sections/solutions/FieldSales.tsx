@@ -1,6 +1,7 @@
 import Link from "next/link"
 import Image from "next/image"
 import { ArrowRight } from "lucide-react"
+import { Button } from "../../ui/button"
 
 export function FieldSales() {
   return (
@@ -23,13 +24,16 @@ export function FieldSales() {
                 <h3>Our Field Sales Automation can do this.</h3>
                 <p>This is a subtitle that is very long and nice.</p>
               </div>
-              <Link
-                href="/solutions/fsa"
-                className="inline-flex items-center gap-2"
-              >
-                learn more
-                <ArrowRight className="h-4 w-4" />
-              </Link>
+              <Button variant="link" className="text-white">
+                {" "}
+                <Link
+                  href="/solutions/fsa"
+                  className="inline-flex items-center gap-2"
+                >
+                  Learn more
+                  <ArrowRight />
+                </Link>
+              </Button>
             </div>
 
             {/* Right Column */}
@@ -65,13 +69,16 @@ export function FieldSales() {
                   tools.
                 </p>
               </div>
-              <Link
-                href="/solutions/fsa"
-                className="inline-flex items-center gap-2"
-              >
-                learn more
-                <ArrowRight className="h-4 w-4" />
-              </Link>
+              <Button variant="link" className="text-white">
+                {" "}
+                <Link
+                  href="/solutions/fsa"
+                  className="inline-flex items-center gap-2"
+                >
+                  Learn more
+                  <ArrowRight />
+                </Link>
+              </Button>
             </div>
           </div>
         </div>

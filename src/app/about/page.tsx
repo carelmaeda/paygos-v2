@@ -1,7 +1,7 @@
 import type { Metadata } from "next"
 import Image from "next/image"
 import { Target, Users, Lightbulb, Heart } from "lucide-react"
-import { CTA } from "../_components/sections/cta/CTA"
+import { CTA } from "@/components/sections/cta/CTA"
 
 export const metadata: Metadata = {
   title: "About Us | Paygos",

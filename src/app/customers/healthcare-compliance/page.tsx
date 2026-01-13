@@ -2,7 +2,7 @@ import type { Metadata } from "next"
 import Link from "next/link"
 import Image from "next/image"
 import { ArrowLeft } from "lucide-react"
-import { Button } from "@/app/_components/ui/button"
+import { Button } from "@/components/ui/button"
 
 export const metadata: Metadata = {
   title: "Healthcare Compliance Success Story | Paygos",

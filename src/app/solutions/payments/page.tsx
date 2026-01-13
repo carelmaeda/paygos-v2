@@ -23,9 +23,9 @@ import {
   ChartTooltip,
   ChartTooltipContent,
 } from "@/components/ui/chart"
-import { CTA } from "@/app/_components/sections/cta/CTA"
-import { IndustryBadge } from "@/app/_components/sections/solutions/IndustryBadge"
-import { BookCallButton } from "@/app/_components/sections/cta/BookCallButton"
+import { CTA } from "@/components/sections/cta/CTA"
+import { IndustryBadge } from "@/components/sections/solutions/IndustryBadge"
+import { BookCallButton } from "@/components/sections/cta/BookCallButton"
 
 // --- Constants & Configuration ---
 

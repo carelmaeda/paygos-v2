@@ -15,9 +15,9 @@ import {
   DollarSign,
   PackageX,
 } from "lucide-react"
-import { CTA } from "@/app/_components/sections/cta/CTA"
-import { BookCallButton } from "@/app/_components/sections/cta/BookCallButton"
-import { IndustryBadge } from "@/app/_components/sections/solutions/IndustryBadge"
+import { CTA } from "@/components/sections/cta/CTA"
+import { BookCallButton } from "@/components/sections/cta/BookCallButton"
+import { IndustryBadge } from "@/components/sections/solutions/IndustryBadge"
 import { ReturnsTrendChart } from "./returns-trend-chart"
 
 export const metadata: Metadata = {

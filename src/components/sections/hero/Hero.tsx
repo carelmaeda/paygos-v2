@@ -14,7 +14,7 @@ export function Hero() {
       {/* PATTERN OVERLAY */}
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-0 z-0 opacity-3"
+        className="pointer-events-none absolute inset-0 z-0 opacity-5"
         style={{
           backgroundImage: `url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='100%' height='100%'><defs><pattern id='a' patternUnits='userSpaceOnUse' width='29' height='50.115'><rect width='100%' height='100%' fill='hsla(240,6.7%,17.6%,1)'/><path d='M14.498 16.858L0 8.488.002-8.257l14.5-8.374L29-8.26l-.002 16.745zm0 50.06L0 58.548l.002-16.745 14.5-8.373L29 41.8l-.002 16.744zM28.996 41.8l-14.498-8.37.002-16.744L29 8.312l14.498 8.37-.002 16.745zm-29 0l-14.498-8.37.002-16.744L0 8.312l14.498 8.37-.002 16.745z' stroke='%235eead4' stroke-width='1' fill='none'/></pattern></defs><rect width='800%' height='800%' fill='url(%23a)'/></svg>")`,
         }}
@@ -22,7 +22,7 @@ export function Hero() {
 
       <div className="relative z-10 mx-auto max-w-screen-2xl">
         {/* HERO BODY */}
-        <div className="relative flex items-center pt-8 md:py-16">
+        <div className="relative flex items-center pt-8 md:pt-16">
           {/* CONTENT */}
           <div className="relative mx-auto max-w-screen-xl px-4 md:px-8 lg:px-12">
             <div className="grid lg:grid-cols-2">
@@ -83,7 +83,7 @@ export function Hero() {
         </div>
 
         {/* LOGOS */}
-        <div className="my-8 md:mt-48">
+        <div className="my-8 md:mt-24">
           <CustomersLogosCarousel />
         </div>
       </div>

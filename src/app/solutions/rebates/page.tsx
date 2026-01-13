@@ -1,10 +1,10 @@
 import type { Metadata } from "next"
 import React from "react"
 import Link from "next/link"
-import { CTA } from "@/app/_components/sections/cta/CTA"
-import { BookCallButton } from "@/app/_components/sections/cta/BookCallButton"
+import { CTA } from "@/components/sections/cta/CTA"
+import { BookCallButton } from "@/components/sections/cta/BookCallButton"
 import Image from "next/image"
-import { IndustryBadge } from "@/app/_components/sections/solutions/IndustryBadge"
+import { IndustryBadge } from "@/components/sections/solutions/IndustryBadge"
 import {
   DollarSign,
   Target,

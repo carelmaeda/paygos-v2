@@ -9,9 +9,9 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
-} from "@/app/_components/ui/navigation-menu"
-import { BookCallButton } from "@/app/_components/sections/cta/BookCallButton"
+} from "@/components/ui/navigation-menu"
 import { SOLUTIONS } from "./SolutionsMenu"
+import { Button } from "@/components/ui/button"
 
 // ============================================
 // COMPONENT
@@ -28,7 +28,7 @@ export function DesktopNav() {
   return (
     <>
       {/* Desktop Navigation Menu */}
-      <nav className="hidden items-center md:flex">
+      <nav className="hidden items-center gap-2 md:flex">
         <NavigationMenu value={value} onValueChange={setValue}>
           <NavigationMenuList>
             <NavigationMenuItem value="solutions">
@@ -76,7 +76,11 @@ export function DesktopNav() {
 
       {/* Desktop CTA Button */}
       <div className="hidden md:block">
-        <BookCallButton />
+        <Button size="sm" variant="default">
+          <Link href="mailto:johndoe@fakeemail.com" aria-label="Book a Call">
+            Book a Call
+          </Link>
+        </Button>
       </div>
     </>
   )

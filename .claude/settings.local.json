@@ -5,7 +5,8 @@
       "Bash(npm run build:*)",
       "Bash(cat:*)",
       "Bash(powershell \"Get-Process node -ErrorAction SilentlyContinue | Select-Object Id, ProcessName, StartTime\")",
-      "Bash(taskkill:*)"
+      "Bash(taskkill:*)",
+      "Bash(find:*)"
     ]
   },
   "hooks": {

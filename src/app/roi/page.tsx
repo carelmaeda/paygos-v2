@@ -1,5 +1,5 @@
 import type { Metadata } from "next"
-import { RoiCalculator } from "../_components/roi/RoiCalculator"
+import { RoiCalculator } from "@/components/roi/RoiCalculator"
 import Image from "next/image"
 
 export const metadata: Metadata = {

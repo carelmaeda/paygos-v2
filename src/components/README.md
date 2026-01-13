@@ -62,13 +62,13 @@ When adding a new section:
 
 ### Import Aliases
 
-Use `@/app/_components/...` for absolute imports from outside the components directory.
+Use `@/components/...` for absolute imports from outside the components directory.
 
 Example:
 ```typescript
 // From a page file
-import { Navbar } from "@/app/_components/layout/Navbar"
-import { Hero } from "@/app/_components/sections/hero/Hero"
+import { Navbar } from "@/components/layout/Navbar"
+import { Hero } from "@/components/sections/hero/Hero"
 ```
 
 Within the components directory, prefer relative imports for better portability:

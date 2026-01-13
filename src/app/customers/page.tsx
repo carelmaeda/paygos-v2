@@ -1,8 +1,8 @@
 import type { Metadata } from "next"
 import Link from "next/link"
 import { ArrowLeft } from "lucide-react"
-import { Button } from "@/app/_components/ui/button"
-import { CustomersLogosCarousel } from "../_components/sections/customers/CustomersLogosCarousel"
+import { Button } from "@/components/ui/button"
+import { CustomersLogosCarousel } from "@/components/sections/customers/CustomersLogosCarousel"
 
 export const metadata: Metadata = {
   title: "Customer Stories | Paygos",

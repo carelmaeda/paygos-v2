@@ -1,21 +1,21 @@
 import Link from "next/link"
 import { Menu } from "lucide-react"
-import { Button } from "@/app/_components/ui/button"
+import { Button } from "@/components/ui/button"
 import {
   Sheet,
   SheetClose,
   SheetContent,
   SheetTitle,
   SheetTrigger,
-} from "@/app/_components/ui/sheet"
+} from "@/components/ui/sheet"
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-} from "@/app/_components/ui/accordion"
-import { navigationMenuTriggerStyle } from "@/app/_components/ui/navigation-menu"
-import { BookCallButton } from "@/app/_components/sections/cta/BookCallButton"
+} from "@/components/ui/accordion"
+import { navigationMenuTriggerStyle } from "@/components/ui/navigation-menu"
+import { BookCallButton } from "@/components/sections/cta/BookCallButton"
 import { SOLUTIONS } from "./SolutionsMenu"
 
 // ============================================
@@ -34,7 +34,7 @@ export function MobileNav() {
       <SheetTrigger asChild>
         <Button
           size="icon"
-          className="border text-white md:hidden"
+          className="text-white md:hidden"
           aria-label="Open navigation menu"
         >
           <Menu />
@@ -42,7 +42,7 @@ export function MobileNav() {
       </SheetTrigger>
 
       {/* Mobile Drawer Content */}
-      <SheetContent side="right" className="w-full">
+      <SheetContent side="right" className="w-full bg-red-500">
         <SheetTitle className="sr-only">Navigation Menu</SheetTitle>
         <div className="mt-6 flex flex-col gap-4">
           {/* Solutions Accordion */}

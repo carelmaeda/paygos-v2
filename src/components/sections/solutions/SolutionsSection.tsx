@@ -1,6 +1,6 @@
 import Link from "next/link"
 import Image from "next/image"
-import { SOLUTIONS } from "@/app/_components/sections/solutions/data/solutions"
+import { SOLUTIONS } from "@/components/sections/solutions/data/solutions"
 
 export function SolutionsSection() {
   return (

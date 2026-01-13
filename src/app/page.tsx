@@ -1,10 +1,10 @@
 import type { Metadata } from "next"
-import { Hero } from "./_components/sections/hero/Hero"
-import { SolutionsSection } from "./_components/sections/solutions/SolutionsSection"
-import { DataAnalytics } from "./_components/sections/solutions/DataAnalyticsSection"
-import { FieldSales } from "./_components/sections/solutions/FieldSales"
-import { CTA } from "./_components/sections/cta/CTA"
-import { CustomerStoriesCarousel } from "./_components/sections/customers/CustomerStoriesCarousel"
+import { Hero } from "@/components/sections/hero/Hero"
+import { SolutionsSection } from "@/components/sections/solutions/SolutionsSection"
+import { DataAnalytics } from "@/components/sections/solutions/DataAnalyticsSection"
+import { FieldSales } from "@/components/sections/solutions/FieldSales"
+import { CTA } from "@/components/sections/cta/CTA"
+import { CustomerStoriesCarousel } from "@/components/sections/customers/CustomerStoriesCarousel"
 
 export const metadata: Metadata = {
   title: "Paygos - Sales Automation Platform",

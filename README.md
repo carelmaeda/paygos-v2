@@ -314,7 +314,7 @@ npm run format:check # Check code formatting
 - **Base color**: Neutral
 - **CSS Variables**: Enabled
 - **RSC**: React Server Components enabled
-- **Aliases**: `@/app/_components`, `@/lib/utils`
+- **Aliases**: `@/components`, `@/lib/utils`
 
 ## Accessibility Features
 
