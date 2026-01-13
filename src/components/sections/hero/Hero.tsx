@@ -5,7 +5,7 @@ import { CustomersLogosCarousel } from "../customers/CustomersLogosCarousel"
 export function Hero() {
   return (
     <section
-      className="relative overflow-hidden rounded-b-xl"
+      className="relative overflow-hidden rounded-b-xl py-16"
       style={{
         background:
           "linear-gradient(270deg, rgba(255,255,255,0.22) 0%, rgba(0,0,0,0.18) 100%), #134E4A",

@@ -17,6 +17,15 @@ import {
 import { navigationMenuTriggerStyle } from "@/components/ui/navigation-menu"
 import { BookCallButton } from "@/components/sections/cta/BookCallButton"
 import { SOLUTIONS } from "./SolutionsMenu"
+import type { NavbarTheme } from "./useNavbarTheme"
+
+// ============================================
+// PROPS
+// ============================================
+
+interface MobileNavProps {
+  theme: NavbarTheme
+}
 
 // ============================================
 // COMPONENT
@@ -27,14 +36,17 @@ import { SOLUTIONS } from "./SolutionsMenu"
  * Mobile navigation drawer with hamburger trigger
  * Visible only on mobile (md:hidden)
  */
-export function MobileNav() {
+export function MobileNav({ theme }: MobileNavProps) {
+  const iconColor = theme === "dark" ? "text-white" : "text-black"
+  const textColor = theme === "dark" ? "text-white" : "text-black"
+
   return (
     <Sheet>
       {/* Hamburger Trigger Button */}
       <SheetTrigger asChild>
         <Button
           size="icon"
-          className="text-white md:hidden"
+          className={`${iconColor} md:hidden`}
           aria-label="Open navigation menu"
         >
           <Menu />
@@ -42,7 +54,7 @@ export function MobileNav() {
       </SheetTrigger>
 
       {/* Mobile Drawer Content */}
-      <SheetContent side="right" className="w-full bg-red-500">
+      <SheetContent side="right" className={`w-full bg-white/20 backdrop-blur-md shadow-[0_4px_30px_rgba(0,0,0,0.1)] border-l border-white/30 ${textColor}`}>
         <SheetTitle className="sr-only">Navigation Menu</SheetTitle>
         <div className="mt-6 flex flex-col gap-4">
           {/* Solutions Accordion */}

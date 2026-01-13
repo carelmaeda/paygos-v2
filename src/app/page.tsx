@@ -55,12 +55,35 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <>
-      <Hero />
-      <SolutionsSection />
-      <FieldSales />
-      <DataAnalytics />
-      <CustomerStoriesCarousel />
-      <CTA />
+      {/* Hero - Dark background */}
+      <section data-navbar-theme="dark">
+        <Hero />
+      </section>
+
+      {/* Solutions - Light background */}
+      <section data-navbar-theme="light">
+        <SolutionsSection />
+      </section>
+
+      {/* FieldSales - Dark background */}
+      <section data-navbar-theme="dark">
+        <FieldSales />
+      </section>
+
+      {/* DataAnalytics - Light background */}
+      <section data-navbar-theme="light">
+        <DataAnalytics />
+      </section>
+
+      {/* CustomerStories - Light background */}
+      <section data-navbar-theme="light">
+        <CustomerStoriesCarousel />
+      </section>
+
+      {/* CTA - Light background */}
+      <section data-navbar-theme="light">
+        <CTA />
+      </section>
     </>
   )
 }

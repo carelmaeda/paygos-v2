@@ -5,6 +5,7 @@ import Link from "next/link"
 import Image from "next/image"
 import { DesktopNav } from "./DesktopNav"
 import { MobileNav } from "./MobileNav"
+import { useNavbarTheme } from "./useNavbarTheme"
 
 // ============================================
 // CLIENT-SIDE DETECTION HOOK
@@ -39,17 +40,23 @@ export function Navbar() {
   // Prevent hydration mismatch with Radix UI components
   // Only render interactive components after client-side hydration
   const isClient = useIsClient()
+  const theme = useNavbarTheme()
+
+  // Determine text color and logo based on theme
+  const isDark = theme === "dark"
+  const textColor = isDark ? "text-white" : "text-black"
+  const logoSrc = isDark ? "/paygos/logo-full-white.webp" : "/paygos/logo-full-black.webp"
 
   // ============================================
   // RENDER
   // ============================================
   return (
-    <header className="sticky top-0 z-50 w-full bg-black">
-      <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4">
-        {/* Logo */}
+    <header className="fixed top-0 z-50 w-full bg-white/20 shadow-[0_4px_30px_rgba(0,0,0,0.1)] backdrop-blur-md">
+      <div className={`mx-auto flex h-16 max-w-7xl items-center justify-between px-4 transition-colors duration-300 ${textColor}`}>
+        {/* Logo - swaps based on theme */}
         <Link href="/">
           <Image
-            src="/paygos/logo-full-white.webp"
+            src={logoSrc}
             alt="Brand Logo"
             width={150}
             height={50}
@@ -57,11 +64,11 @@ export function Navbar() {
           />
         </Link>
 
-        {/* Navigation - Only render on client to prevent hydration mismatch */}
+        {/* Navigation - passes theme prop */}
         {isClient && (
           <>
-            <DesktopNav />
-            <MobileNav />
+            <DesktopNav theme={theme} />
+            <MobileNav theme={theme} />
           </>
         )}
       </div>

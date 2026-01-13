@@ -12,6 +12,19 @@ import {
 } from "@/components/ui/navigation-menu"
 import { SOLUTIONS } from "./SolutionsMenu"
 import { Button } from "@/components/ui/button"
+import type { NavbarTheme } from "./useNavbarTheme"
+
+// ============================================
+// COMPONENT
+// ============================================
+
+// ============================================
+// PROPS
+// ============================================
+
+interface DesktopNavProps {
+  theme: NavbarTheme
+}
 
 // ============================================
 // COMPONENT
@@ -22,13 +35,14 @@ import { Button } from "@/components/ui/button"
  * Desktop navigation menu with Solutions dropdown and top-level links
  * Hidden on mobile (md:flex)
  */
-export function DesktopNav() {
+export function DesktopNav({ theme }: DesktopNavProps) {
   const [value, setValue] = useState("")
+  const textColor = theme === "dark" ? "text-white" : "text-black"
 
   return (
     <>
       {/* Desktop Navigation Menu */}
-      <nav className="hidden items-center gap-2 md:flex">
+      <nav className={`hidden items-center gap-2 md:flex ${textColor}`}>
         <NavigationMenu value={value} onValueChange={setValue}>
           <NavigationMenuList>
             <NavigationMenuItem value="solutions">
