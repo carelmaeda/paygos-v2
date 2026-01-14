@@ -2,6 +2,7 @@ import Link from "next/link"
 import Image from "next/image"
 import { ArrowRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import { PatternHexagon } from "@/components/ui/patterns"
 
 const FEATURES = [
   {
@@ -23,8 +24,9 @@ const FEATURES = [
 
 export function FieldSales() {
   return (
-    <section className="bg-teal-950 py-16 text-white md:py-24">
-      <div className="section-container px-4 md:px-6">
+    <section className="relative bg-teal-950 py-16 text-white md:py-24">
+      <PatternHexagon />
+      <div className="section-container relative z-10 px-4 md:px-6">
         <header className="mb-16 text-center">
           <p className="mb-4 text-sm font-medium tracking-widest text-teal-400 uppercase">
             Field Sales Automation

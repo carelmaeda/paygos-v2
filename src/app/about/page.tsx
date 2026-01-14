@@ -12,7 +12,7 @@ export default function AboutPage() {
   return (
     <main className="min-h-screen">
       {/* Hero Section - Dark Background */}
-      <section className="bg-teal-950 py-16 md:py-24">
+      <section className="bg-teal-950 py-16 pt-32 md:py-24 md:pt-40" data-navbar-theme="dark">
         <div className="container">
           <div className="mx-auto max-w-4xl text-center text-white">
             <h1 className="mb-6 text-4xl font-bold md:text-5xl lg:text-6xl">
@@ -27,7 +27,7 @@ export default function AboutPage() {
       </section>
 
       {/* Our Story - Light Background */}
-      <section className="bg-white py-16 md:py-24">
+      <section className="bg-white py-16 md:py-24" data-navbar-theme="light">
         <div className="container">
           <div className="mx-auto max-w-3xl">
             <h2 className="mb-8 text-3xl font-bold md:text-4xl lg:text-5xl">
@@ -60,7 +60,7 @@ export default function AboutPage() {
       </section>
 
       {/* Our Values - Gray Background */}
-      <section className="bg-gray-50 py-16 md:py-24">
+      <section className="bg-gray-50 py-16 md:py-24" data-navbar-theme="light">
         <div className="container">
           <h2 className="mb-12 text-center text-3xl font-bold md:text-4xl lg:text-5xl">
             Our Values
@@ -128,7 +128,7 @@ export default function AboutPage() {
       </section>
 
       {/* Our Team - White Background */}
-      <section className="bg-white py-16 md:py-24">
+      <section className="bg-white py-16 md:py-24" data-navbar-theme="light">
         <div className="container">
           <div className="mx-auto max-w-5xl">
             <div className="grid gap-12 md:grid-cols-2 md:items-center">
@@ -171,7 +171,9 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <CTA />
+      <section data-navbar-theme="light">
+        <CTA />
+      </section>
     </main>
   )
 }

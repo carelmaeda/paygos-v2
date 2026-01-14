@@ -1,22 +1,20 @@
 import Link from "next/link"
 import Image from "next/image"
 import { Facebook, Twitter, Linkedin, Instagram } from "lucide-react"
+import { PatternDots } from "@/components/ui/patterns"
 
 // ============================================
 // COMPONENT
 // ============================================
 
-/**
- * Footer Component
- * Site-wide footer with navigation links, company info, and social media
- * Appears on all pages via root layout
- */
 export function Footer() {
   const currentYear = new Date().getFullYear()
 
   return (
-    <footer className="bg-slate-900 text-gray-300">
-      <div className="container py-12 md:py-16">
+    <footer className="relative bg-slate-900 text-gray-300">
+      <PatternDots />
+
+      <div className="section-container relative z-10 py-12 md:py-16">
         {/* Main Footer Content */}
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-5">
           {/* Brand Column */}

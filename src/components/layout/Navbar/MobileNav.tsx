@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { Menu } from "lucide-react"
+import { Menu, X } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import Image from "next/image"
 import {
@@ -59,21 +59,28 @@ export function MobileNav({ theme }: MobileNavProps) {
       {/* Mobile Drawer Content */}
       <SheetContent
         side="right"
+        hideCloseButton
         className={`w-full bg-white/20 shadow-[0_4px_30px_rgba(0,0,0,0.1)] backdrop-blur-md ${textColor}`}
       >
         <SheetTitle className="sr-only">Navigation Menu </SheetTitle>
 
-        {/* Logo - swaps based on theme */}
-        <Link href="/">
-          <Image
-            src="/paygos/logo-full-white.webp"
-            alt="Brand Logo"
-            width={130}
-            height={50}
-            priority
-            className="hover:opacity-70"
-          />
-        </Link>
+        {/* Header with Logo and Close Button */}
+        <div className="flex items-center justify-between p-5">
+          <Link href="/">
+            <Image
+              src="/paygos/logo-full-white.webp"
+              alt="Brand Logo"
+              width={130}
+              height={50}
+              priority
+              className="hover:opacity-70"
+            />
+          </Link>
+          <SheetClose className="focus:ring-ring rounded-sm opacity-70 transition-opacity hover:opacity-100 focus:ring-2 focus:ring-offset-2 focus:outline-none">
+            <X className="size-8" />
+            <span className="sr-only">Close</span>
+          </SheetClose>
+        </div>
 
         <div className="mt-6 flex flex-col justify-between gap-4 p-4">
           {/* Solutions Accordion */}

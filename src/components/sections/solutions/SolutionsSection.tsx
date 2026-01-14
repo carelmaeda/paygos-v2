@@ -22,13 +22,13 @@ const SOLUTIONS = [
 
 export function SolutionsSection() {
   return (
-    <section className="py-16 md:py-24">
+    <section className="py-16">
       <div className="section-container px-4 md:px-6">
         <header className="mb-16 text-center">
-          <h2 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
+          <h2 className="text-3xl font-bold sm:text-4xl md:text-5xl">
             Power Your Growth with Sales Acceleration
           </h2>
-          <p className="text-muted-foreground mx-auto mt-4 max-w-[700px] md:text-xl">
+          <p className="text-muted-foreground mx-auto mt-2">
             Choose from these modules, all customized to fit your business.
           </p>
         </header>

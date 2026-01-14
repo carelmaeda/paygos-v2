@@ -41,8 +41,8 @@ export const metadata: Metadata = {
 
 export default function FinanceAutomationPage() {
   return (
-    <main className="min-h-screen bg-gray-50">
-      <div className="container py-16 md:py-24">
+    <main className="min-h-screen bg-gray-50" data-navbar-theme="light">
+      <div className="container pt-32 pb-16 md:pt-40 md:pb-24">
         {/* Return Button */}
         <div className="mb-8">
           <Button asChild variant="outline">

@@ -1,6 +1,5 @@
 import type { Metadata } from "next"
 import React from "react"
-import Link from "next/link"
 import Image from "next/image"
 import {
   ArrowRight,
@@ -19,16 +18,26 @@ import {
 } from "lucide-react"
 import { CTA } from "@/components/sections/cta/CTA"
 import { BookCallButton } from "@/components/sections/cta/BookCallButton"
-import { IndustryBadge } from "@/components/sections/solutions/IndustryBadge"
 import { FsaCoverageChart } from "./fsa-coverage-chart"
+import { IndustryBadge } from "@/components/sections/solutions/IndustryBadge"
 
 export const metadata: Metadata = {
   title: "Field Sales Automation | Paygos",
-  description: "Empower your field team with mobile-first automation. Manage visits, capture photos, track activities, and execute flawlessly with Paygos FSA.",
-  keywords: ["field sales automation", "mobile sales app", "field rep tools", "visit tracking", "territory management", "field execution", "sales force automation"],
+  description:
+    "Empower your field team with mobile-first automation. Manage visits, capture photos, track activities, and execute flawlessly with Paygos FSA.",
+  keywords: [
+    "field sales automation",
+    "mobile sales app",
+    "field rep tools",
+    "visit tracking",
+    "territory management",
+    "field execution",
+    "sales force automation",
+  ],
   openGraph: {
     title: "Field Sales Automation | Paygos",
-    description: "Empower your field team with mobile-first automation. Manage visits, capture photos, track activities, and execute flawlessly with Paygos FSA.",
+    description:
+      "Empower your field team with mobile-first automation. Manage visits, capture photos, track activities, and execute flawlessly with Paygos FSA.",
     url: "https://www.paygos.ca/fsa",
     siteName: "Paygos",
     images: [
@@ -45,7 +54,8 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Field Sales Automation | Paygos",
-    description: "Empower your field team with mobile-first automation. Manage visits, capture photos, track activities, and execute flawlessly with Paygos FSA.",
+    description:
+      "Empower your field team with mobile-first automation. Manage visits, capture photos, track activities, and execute flawlessly with Paygos FSA.",
     images: ["/paygos/logo-full.webp"],
   },
   robots: {
@@ -61,7 +71,10 @@ export default function FsaPage() {
   return (
     <main className="min-h-screen">
       {/* Hero */}
-      <section className="relative flex min-h-[90vh] items-center overflow-hidden bg-slate-950 pt-32 pb-24" data-navbar-theme="dark">
+      <section
+        className="relative flex min-h-[90vh] items-center overflow-hidden bg-slate-950 pt-32 pb-24 md:py-32"
+        data-navbar-theme="dark"
+      >
         <div className="absolute inset-0 z-0">
           <Image
             src="https://images.unsplash.com/photo-1556761175-b413da4baf72"
@@ -73,12 +86,12 @@ export default function FsaPage() {
           <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/70 to-transparent" />
         </div>
 
-        <div className="relative z-10 container mx-auto px-6 lg:px-8">
+        <div className="section-container relative z-10 mx-auto px-6 lg:px-8">
           <div className="max-w-4xl">
             <div className="mb-8 inline-flex items-center gap-2 rounded-full border border-emerald-500/30 bg-emerald-500/20 px-4 py-1.5 text-xs font-black tracking-[0.2em] text-emerald-300 uppercase backdrop-blur-md">
               Mobile-First • Real-Time Execution
             </div>
-            <h1 className="mb-10 text-6xl leading-[0.9] font-black tracking-tighter text-white md:text-9xl">
+            <h1 className="mb-8 text-6xl leading-[0.9] font-black tracking-tighter text-white md:text-9xl">
               EMPOWER <br />
               <span className="bg-gradient-to-r from-emerald-400 to-cyan-400 bg-clip-text text-transparent">
                 YOUR FIELD TEAM.
@@ -95,8 +108,11 @@ export default function FsaPage() {
       </section>
 
       {/* Challenges */}
-      <section className="container mx-auto px-6 py-24" data-navbar-theme="light">
-        <h2 className="mb-12 text-center text-3xl font-black text-slate-900">
+      <section
+        className="section-container mx-auto px-6 py-24"
+        data-navbar-theme="light"
+      >
+        <h2 className="mb-8 text-center text-3xl font-black text-slate-900 md:text-5xl">
           Common Field Sales Challenges
         </h2>
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
@@ -123,7 +139,7 @@ export default function FsaPage() {
               Visit Verification
             </h3>
             <p className="text-gray-600">
-              No photo proof means execution claims can't be validated,
+              No photo proof means execution claims cannot be validated,
               creating accountability gaps
             </p>
           </div>
@@ -158,18 +174,23 @@ export default function FsaPage() {
         </div>
       </section>
 
+      <IndustryBadge />
+
       {/* FSA Capabilities - Bento Grid */}
       <section
-        className="mx-auto mb-24 max-w-5xl px-4"
+        className="section-container mx-auto px-6 py-24"
         role="region"
         aria-labelledby="fsa-capabilities"
         data-navbar-theme="light"
       >
-        <h2 id="fsa-capabilities" className="sr-only">
-          Field Sales Automation Capabilities
+        <h2
+          id="fsa-capabilities"
+          className="mb-8 text-center text-4xl font-black md:text-5xl"
+        >
+          The Paygos Solution
         </h2>
 
-        <div className="grid auto-rows-[300px] grid-cols-1 gap-2 md:grid-cols-6">
+        <div className="grid auto-rows-[350px] grid-cols-1 gap-6 md:grid-cols-6">
           {/* Card 1 - Mobile Visit Capture */}
           <article
             className="bento-card md:col-span-4"
@@ -182,12 +203,15 @@ export default function FsaPage() {
               alt="Mobile visit capture"
               fill
             />
-            <div>
+            <div className="p-8">
               <Smartphone size={32} aria-hidden="true" />
               <h3 id="mobile-visit-capture" className="md:text-3xl">
                 Mobile Visit Capture
               </h3>
-              <p id="mobile-visit-capture-desc" className="md:max-w-lg md:text-lg">
+              <p
+                id="mobile-visit-capture-desc"
+                className="md:max-w-lg md:text-lg"
+              >
                 Check in at stores, upload photos, log activities—all from one
                 app that works seamlessly on any device.
               </p>
@@ -206,7 +230,7 @@ export default function FsaPage() {
               alt="GPS route optimization"
               fill
             />
-            <div>
+            <div className="p-8">
               <Map size={32} aria-hidden="true" />
               <h3 id="gps-routes">Route Optimization</h3>
               <p id="gps-routes-desc">
@@ -228,7 +252,7 @@ export default function FsaPage() {
               alt="Photo validation"
               fill
             />
-            <div>
+            <div className="p-8">
               <Camera size={32} aria-hidden="true" />
               <h3 id="photo-validation">Photo Validation</h3>
               <p id="photo-validation-desc">
@@ -250,7 +274,7 @@ export default function FsaPage() {
               alt="Activity dashboard"
               fill
             />
-            <div>
+            <div className="p-8">
               <Activity size={32} aria-hidden="true" />
               <h3 id="activity-dashboard">Live Dashboard</h3>
               <p id="activity-dashboard-desc">
@@ -272,7 +296,7 @@ export default function FsaPage() {
               alt="Offline mode"
               fill
             />
-            <div>
+            <div className="p-8">
               <CloudOff size={32} aria-hidden="true" />
               <h3 id="offline-mode">Offline Mode</h3>
               <p id="offline-mode-desc">
@@ -294,7 +318,7 @@ export default function FsaPage() {
               alt="Incentive integration"
               fill
             />
-            <div>
+            <div className="p-8">
               <DollarSign size={32} aria-hidden="true" />
               <h3 id="incentive-tie-in" className="md:text-3xl">
                 Incentive Automation
@@ -309,14 +333,17 @@ export default function FsaPage() {
       </section>
 
       {/* Chart Section */}
-      <section className="container mx-auto px-6 py-40" data-navbar-theme="light">
-        <div className="grid items-center gap-32 lg:grid-cols-2">
+      <section
+        className="section-container mx-auto px-6 py-24"
+        data-navbar-theme="light"
+      >
+        <div className="grid items-center gap-16 lg:grid-cols-2">
           <FsaCoverageChart />
           <div className="space-y-12">
-            <h2 className="text-5xl leading-[0.9] font-black tracking-tighter uppercase text-slate-900 md:text-7xl">
+            <h2 className="text-5xl leading-[0.9] font-black tracking-tighter text-slate-900 uppercase md:text-7xl">
               Coverage <br />
               <span className="text-teal-600 underline decoration-teal-200 underline-offset-[12px]">
-                That's Complete.
+                That&apos;s Complete.
               </span>
             </h2>
             <div className="space-y-10">
@@ -359,16 +386,19 @@ export default function FsaPage() {
         </div>
       </section>
 
-      <IndustryBadge />
-
       {/* ROI */}
-      <section className="mx-auto" role="region" aria-labelledby="roi-heading" data-navbar-theme="dark">
-        <div className="relative overflow-hidden bg-slate-900 p-8 text-white md:p-16">
-          <div className="relative z-10 grid items-center gap-12 lg:grid-cols-2">
+      <section
+        className="bg-slate-900 py-24"
+        role="region"
+        aria-labelledby="roi-heading"
+        data-navbar-theme="dark"
+      >
+        <div className="section-container mx-auto px-6">
+          <div className="grid items-center gap-16 lg:grid-cols-2">
             <div>
               <h2
                 id="roi-heading"
-                className="mb-8 text-4xl font-black md:text-6xl"
+                className="mb-8 text-4xl font-black text-white md:text-6xl"
               >
                 Proven Impact <br />
                 <span className="text-teal-500">
@@ -376,12 +406,9 @@ export default function FsaPage() {
                 </span>
               </h2>
 
-              <ul className="mb-10 space-y-6">
+              <ul className="mb-12 space-y-6">
                 <li className="flex items-start gap-4">
-                  <Timer
-                    aria-hidden="true"
-                    className="mt-1 text-teal-500"
-                  />
+                  <Timer aria-hidden="true" className="mt-1 text-teal-500" />
                   <p className="text-lg text-slate-300">
                     Reduce admin time by{" "}
                     <strong className="text-white">50%</strong> with mobile
@@ -415,7 +442,8 @@ export default function FsaPage() {
               </ul>
 
               <a href="/roi" className="btn btn-secondary text-white!">
-                Calculate Your ROI <ArrowRight aria-hidden="true" />
+                Calculate Your ROI
+                <ArrowRight aria-hidden="true" className="mx-2" />
               </a>
             </div>
 
@@ -434,7 +462,7 @@ export default function FsaPage() {
 
                 <h3
                   id="roi-stats"
-                  className="mb-2 text-5xl font-black md:text-8xl"
+                  className="mb-2 text-5xl font-black text-white md:text-8xl"
                 >
                   10 hrs
                 </h3>
@@ -444,14 +472,16 @@ export default function FsaPage() {
 
                 <div className="mt-10 grid grid-cols-2 gap-8 border-t border-white/10 pt-10">
                   <div>
-                    <h4 className="text-3xl font-black">Real-Time</h4>
+                    <h4 className="text-3xl font-black text-white">
+                      Real-Time
+                    </h4>
                     <p className="text-xs font-bold text-slate-500 uppercase">
                       Visibility
                     </p>
                   </div>
 
                   <div>
-                    <h4 className="text-3xl font-black">100%</h4>
+                    <h4 className="text-3xl font-black text-white">100%</h4>
                     <p className="text-xs font-bold text-slate-500 uppercase">
                       Photo Validation
                     </p>

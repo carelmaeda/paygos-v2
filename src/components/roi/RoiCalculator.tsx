@@ -19,22 +19,37 @@ export function RoiCalculator() {
   const results = useMemo(() => calculateROI(mode, inputs), [mode, inputs])
 
   return (
-    <div className="mx-auto max-w-5xl space-y-5">
+    <div className="space-y-8">
       {/* Step 1 */}
-      <section className="space-y-2">
-        <h2 className="text-lg font-semibold">Step 1 – Select ROI Type</h2>
+      <section className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+        <div className="mb-4 flex items-center gap-3">
+          <span className="flex h-8 w-8 items-center justify-center rounded-full bg-teal-600 text-sm font-bold text-white">
+            1
+          </span>
+          <h2 className="text-lg font-bold text-slate-900">Select ROI Type</h2>
+        </div>
         <StepSelector value={mode} onChange={setMode} />
       </section>
 
       {/* Step 2 */}
-      <section className="space-y-2">
-        <h2 className="text-lg font-semibold">Step 2 – Enter Values</h2>
+      <section className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+        <div className="mb-4 flex items-center gap-3">
+          <span className="flex h-8 w-8 items-center justify-center rounded-full bg-teal-600 text-sm font-bold text-white">
+            2
+          </span>
+          <h2 className="text-lg font-bold text-slate-900">Enter Your Values</h2>
+        </div>
         <InputForm inputs={inputs} onChange={setInputs} />
       </section>
 
       {/* Step 3 */}
-      <section className="space-y-2">
-        <h2 className="text-lg font-semibold">Step 3 – Results</h2>
+      <section className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+        <div className="mb-4 flex items-center gap-3">
+          <span className="flex h-8 w-8 items-center justify-center rounded-full bg-teal-600 text-sm font-bold text-white">
+            3
+          </span>
+          <h2 className="text-lg font-bold text-slate-900">Your Estimated Results</h2>
+        </div>
         <ResultsPanel results={results} mode={mode} />
       </section>
     </div>
