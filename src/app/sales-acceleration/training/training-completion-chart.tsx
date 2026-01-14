@@ -1,6 +1,6 @@
 "use client"
 
-import { ShoppingCart } from "lucide-react"
+import { GraduationCap } from "lucide-react"
 import { Bar, BarChart, CartesianGrid, XAxis, YAxis } from "recharts"
 import {
   ChartConfig,
@@ -10,46 +10,50 @@ import {
 } from "@/components/ui/chart"
 
 const CHART_DATA = [
-  { category: "Beverages", total: 450, fulfilled: 425 },
-  { category: "Snacks", total: 380, fulfilled: 360 },
-  { category: "Pharmacy", total: 320, fulfilled: 310 },
-  { category: "Grocery", total: 290, fulfilled: 275 },
-  { category: "Personal Care", total: 240, fulfilled: 235 },
+  { module: "Product Basics", notStarted: 45, inProgress: 28, completed: 127 },
+  { module: "Safety & Compliance", notStarted: 38, inProgress: 35, completed: 127 },
+  { module: "Sales Techniques", notStarted: 52, inProgress: 25, completed: 123 },
+  { module: "Customer Service", notStarted: 41, inProgress: 32, completed: 127 },
+  { module: "Advanced Product", notStarted: 68, inProgress: 22, completed: 110 },
 ]
 
 const CHART_CONFIG = {
-  total: {
-    label: "Total Orders",
-    color: "#14b8a6",
+  notStarted: {
+    label: "Not Started",
+    color: "#e2e8f0",
   },
-  fulfilled: {
-    label: "Fulfilled",
+  inProgress: {
+    label: "In Progress",
+    color: "#fbbf24",
+  },
+  completed: {
+    label: "Completed",
     color: "#10b981",
   },
 } satisfies ChartConfig
 
-export function OrderingVolumeChart() {
+export function TrainingCompletionChart() {
   return (
     <div className="rounded-[4rem] border border-slate-50 bg-white p-12 shadow-xl">
       <div className="mb-12 flex items-center justify-between text-xs font-black tracking-widest uppercase">
-        <span>Order Volume by Category</span>
-        <ShoppingCart className="text-emerald-500" size={20} />
+        <span>Training Module Completion</span>
+        <GraduationCap className="text-emerald-500" size={20} />
       </div>
-      <ChartContainer config={CHART_CONFIG} className="h-[400px] w-full">
+      <ChartContainer id="training-completion" config={CHART_CONFIG} className="h-[400px] w-full">
         <BarChart
           data={CHART_DATA}
           margin={{ left: 12, right: 12, top: 12, bottom: 12 }}
         >
           <CartesianGrid strokeDasharray="3 3" stroke="#f1f5f9" vertical={false} />
           <XAxis
-            dataKey="category"
+            dataKey="module"
             tickLine={false}
             tickMargin={10}
             axisLine={false}
-            tick={{ fill: "#475569", fontSize: 12, fontWeight: 900 }}
+            tick={{ fill: "#475569", fontSize: 11, fontWeight: 900 }}
             angle={-45}
             textAnchor="end"
-            height={80}
+            height={100}
           />
           <YAxis
             tickLine={false}
@@ -63,23 +67,29 @@ export function OrderingVolumeChart() {
                 className="rounded-2xl bg-slate-950 text-white"
                 formatter={(val, name) => (
                   <span className="font-black text-teal-400">
-                    {val} orders
+                    {val} participants
                   </span>
                 )}
               />
             }
           />
           <Bar
-            dataKey="total"
-            fill="#14b8a6"
-            radius={[8, 8, 0, 0]}
-            barSize={60}
+            dataKey="notStarted"
+            stackId="a"
+            fill="#e2e8f0"
+            radius={[0, 0, 0, 0]}
           />
           <Bar
-            dataKey="fulfilled"
+            dataKey="inProgress"
+            stackId="a"
+            fill="#fbbf24"
+            radius={[0, 0, 0, 0]}
+          />
+          <Bar
+            dataKey="completed"
+            stackId="a"
             fill="#10b981"
             radius={[8, 8, 0, 0]}
-            barSize={60}
           />
         </BarChart>
       </ChartContainer>

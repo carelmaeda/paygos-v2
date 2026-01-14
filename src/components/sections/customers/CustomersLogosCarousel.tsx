@@ -171,7 +171,7 @@ export function CustomersLogosCarousel() {
   // RENDER
   // ============================================
   return (
-    <section className="text-muted-foreground pb-8">
+    <section className="text-muted-foreground">
       <div>
         {/* Section Description */}
         <p className="mb-4 text-center text-sm">

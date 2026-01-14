@@ -5,7 +5,7 @@ import { CustomersLogosCarousel } from "../customers/CustomersLogosCarousel"
 export function Hero() {
   return (
     <section
-      className="relative overflow-hidden rounded-b-xl py-16"
+      className="relative overflow-hidden py-8"
       style={{
         background:
           "linear-gradient(270deg, rgba(255,255,255,0.22) 0%, rgba(0,0,0,0.18) 100%), #134E4A",
@@ -28,7 +28,7 @@ export function Hero() {
             <div className="grid lg:grid-cols-2">
               {/* LEFT */}
               <article className="text-center text-white lg:text-left">
-                <div className="mb-6 flex justify-center lg:justify-start">
+                <div className="mb-6 flex hidden justify-center lg:justify-start">
                   <div className="flex items-center gap-2 text-sm">
                     <span className="font-semibold">2,000+</span>
                     <span className="text-muted-foreground">

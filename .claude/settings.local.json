@@ -6,7 +6,8 @@
       "Bash(cat:*)",
       "Bash(powershell \"Get-Process node -ErrorAction SilentlyContinue | Select-Object Id, ProcessName, StartTime\")",
       "Bash(taskkill:*)",
-      "Bash(find:*)"
+      "Bash(find:*)",
+      "Bash(npx tsc:*)"
     ]
   },
   "hooks": {

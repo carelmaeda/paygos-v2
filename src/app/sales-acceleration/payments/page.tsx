@@ -48,7 +48,7 @@ export default function PaymentsPage() {
   return (
     <main className="min-h-screen bg-white font-sans text-slate-900">
       {/* SECTION: Hero & Background */}
-      <section className="relative flex min-h-[90vh] items-center overflow-hidden bg-slate-950 pt-32 pb-24">
+      <section data-navbar-theme="dark" className="relative flex min-h-[90vh] items-center overflow-hidden bg-slate-950 pt-32 pb-24">
         <div className="absolute inset-0 z-0">
           <Image
             src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?q=80&w=2070&auto=format&fit=crop"
@@ -81,7 +81,7 @@ export default function PaymentsPage() {
       </section>
 
       {/* SECTION: Challenges */}
-      <section className="container mx-auto px-6 py-24">
+      <section data-navbar-theme="light" className="container mx-auto px-6 py-24">
         <h2 className="mb-12 text-center text-3xl font-black text-slate-900">
           Common Payment Challenges
         </h2>
@@ -146,6 +146,7 @@ export default function PaymentsPage() {
 
       {/* SECTION: Payment Capabilities - Bento Grid */}
       <section
+        data-navbar-theme="light"
         className="mx-auto mb-24 max-w-5xl px-4"
         role="region"
         aria-labelledby="payment-capabilities"
@@ -301,14 +302,14 @@ export default function PaymentsPage() {
       </section>
 
       {/* SECTION: Analytics & Chart */}
-      <section className="container mx-auto px-6 py-40">
+      <section data-navbar-theme="light" className="container mx-auto px-6 py-40">
         <div className="grid items-center gap-32 lg:grid-cols-2">
           <div className="rounded-[4rem] border border-slate-50 bg-white p-12 shadow-xl">
             <div className="mb-12 flex items-center justify-between text-xs font-black tracking-widest uppercase">
               <span>Payment Distribution</span>
               <PieChart className="text-emerald-500" size={20} />
             </div>
-            <ChartContainer config={CHART_CONFIG} className="h-[400px] w-full">
+            <ChartContainer id="payment-distribution-page" config={CHART_CONFIG} className="h-[400px] w-full">
               <BarChart
                 data={CHART_DATA}
                 layout="vertical"
@@ -398,7 +399,7 @@ export default function PaymentsPage() {
       <IndustryBadge />
 
       {/* SECTION: ROI */}
-      <section className="mx-auto" role="region" aria-labelledby="roi-heading">
+      <section data-navbar-theme="dark" className="mx-auto" role="region" aria-labelledby="roi-heading">
         <div className="relative overflow-hidden bg-slate-900 p-8 text-white md:p-16">
           <div className="relative z-10 grid items-center gap-12 lg:grid-cols-2">
             <div>

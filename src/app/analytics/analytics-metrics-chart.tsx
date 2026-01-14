@@ -30,7 +30,7 @@ export function AnalyticsMetricsChart() {
         <span>Dashboard Metrics Overview</span>
         <BarChart3 className="text-emerald-500" size={20} />
       </div>
-      <ChartContainer config={CHART_CONFIG} className="h-[400px] w-full">
+      <ChartContainer id="analytics-metrics" config={CHART_CONFIG} className="h-[400px] w-full">
         <RadialBarChart
           data={CHART_DATA}
           startAngle={90}

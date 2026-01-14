@@ -45,22 +45,27 @@ export function Navbar() {
   // Determine text color and logo based on theme
   const isDark = theme === "dark"
   const textColor = isDark ? "text-white" : "text-black"
-  const logoSrc = isDark ? "/paygos/logo-full-white.webp" : "/paygos/logo-full-black.webp"
+  const logoSrc = isDark
+    ? "/paygos/logo-full-white.webp"
+    : "/paygos/logo-full-black.webp"
 
   // ============================================
   // RENDER
   // ============================================
   return (
     <header className="fixed top-0 z-50 w-full bg-white/20 shadow-[0_4px_30px_rgba(0,0,0,0.1)] backdrop-blur-md">
-      <div className={`mx-auto flex h-16 max-w-7xl items-center justify-between px-4 transition-colors duration-300 ${textColor}`}>
+      <div
+        className={`mx-auto flex h-14 max-w-7xl items-center justify-between px-6 transition-colors duration-300 ${textColor}`}
+      >
         {/* Logo - swaps based on theme */}
         <Link href="/">
           <Image
             src={logoSrc}
             alt="Brand Logo"
-            width={150}
+            width={130}
             height={50}
             priority
+            className="hover:opacity-70"
           />
         </Link>
 

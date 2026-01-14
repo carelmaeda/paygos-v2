@@ -6,38 +6,37 @@ import {
   ArrowRight,
   CheckCircle2,
   TrendingUp,
-  Mail,
-  MessageSquare,
-  Target,
-  BarChart3,
-  Percent,
-  Zap,
-  Megaphone,
-  UserX,
-  Users,
-  Eye,
-  Clock as ClockIcon,
+  Smartphone,
+  MapPin,
+  Camera,
+  Activity,
+  CloudOff,
+  DollarSign,
+  FileText,
+  Clock,
+  Map,
+  Timer,
 } from "lucide-react"
 import { CTA } from "@/components/sections/cta/CTA"
 import { BookCallButton } from "@/components/sections/cta/BookCallButton"
 import { IndustryBadge } from "@/components/sections/solutions/IndustryBadge"
-import { MarketingEngagementChart } from "./marketing-engagement-chart"
+import { FsaCoverageChart } from "./fsa-coverage-chart"
 
 export const metadata: Metadata = {
-  title: "Marketing Solutions | Paygos",
-  description: "Engage retailers at scale with targeted communications. Automate campaign delivery, track engagement, and reach the right retailers at the right time.",
-  keywords: ["marketing automation", "sales marketing", "customer communication", "marketing campaigns", "targeted marketing", "promotional marketing", "trade marketing", "retail marketing"],
+  title: "Field Sales Automation | Paygos",
+  description: "Empower your field team with mobile-first automation. Manage visits, capture photos, track activities, and execute flawlessly with Paygos FSA.",
+  keywords: ["field sales automation", "mobile sales app", "field rep tools", "visit tracking", "territory management", "field execution", "sales force automation"],
   openGraph: {
-    title: "Marketing Solutions | Paygos",
-    description: "Engage retailers at scale with targeted communications. Automate campaign delivery, track engagement, and reach the right retailers at the right time.",
-    url: "https://www.paygos.ca/solutions/marketing",
+    title: "Field Sales Automation | Paygos",
+    description: "Empower your field team with mobile-first automation. Manage visits, capture photos, track activities, and execute flawlessly with Paygos FSA.",
+    url: "https://www.paygos.ca/fsa",
     siteName: "Paygos",
     images: [
       {
         url: "/paygos/logo-full.webp",
         width: 1200,
         height: 630,
-        alt: "Paygos Marketing Solutions",
+        alt: "Paygos Field Sales Automation",
       },
     ],
     locale: "en_US",
@@ -45,8 +44,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Marketing Solutions | Paygos",
-    description: "Engage retailers at scale with targeted communications. Automate campaign delivery, track engagement, and reach the right retailers at the right time.",
+    title: "Field Sales Automation | Paygos",
+    description: "Empower your field team with mobile-first automation. Manage visits, capture photos, track activities, and execute flawlessly with Paygos FSA.",
     images: ["/paygos/logo-full.webp"],
   },
   robots: {
@@ -54,19 +53,19 @@ export const metadata: Metadata = {
     follow: true,
   },
   alternates: {
-    canonical: "https://www.paygos.ca/solutions/marketing",
+    canonical: "https://www.paygos.ca/fsa",
   },
 }
 
-export default function MarketingPage() {
+export default function FsaPage() {
   return (
     <main className="min-h-screen">
       {/* Hero */}
-      <section className="relative flex min-h-[90vh] items-center overflow-hidden bg-slate-950 pt-32 pb-24">
+      <section className="relative flex min-h-[90vh] items-center overflow-hidden bg-slate-950 pt-32 pb-24" data-navbar-theme="dark">
         <div className="absolute inset-0 z-0">
           <Image
-            src="https://images.unsplash.com/photo-1557838923-2985c318be48"
-            alt="Marketing campaigns"
+            src="https://images.unsplash.com/photo-1556761175-b413da4baf72"
+            alt="Field sales representative"
             fill
             priority
             className="object-cover opacity-30"
@@ -77,18 +76,18 @@ export default function MarketingPage() {
         <div className="relative z-10 container mx-auto px-6 lg:px-8">
           <div className="max-w-4xl">
             <div className="mb-8 inline-flex items-center gap-2 rounded-full border border-emerald-500/30 bg-emerald-500/20 px-4 py-1.5 text-xs font-black tracking-[0.2em] text-emerald-300 uppercase backdrop-blur-md">
-              Targeted • Automated • Measurable
+              Mobile-First • Real-Time Execution
             </div>
             <h1 className="mb-10 text-6xl leading-[0.9] font-black tracking-tighter text-white md:text-9xl">
-              ENGAGE RETAILERS <br />
+              EMPOWER <br />
               <span className="bg-gradient-to-r from-emerald-400 to-cyan-400 bg-clip-text text-transparent">
-                AT SCALE.
+                YOUR FIELD TEAM.
               </span>
             </h1>
             <p className="mb-12 max-w-2xl text-xl leading-relaxed font-medium text-slate-300 md:text-2xl">
-              Paygos Marketing automates campaign delivery, tracks engagement,
-              and ensures your message reaches the right retailers at the right
-              time.
+              Paygos FSA equips field reps with mobile tools to manage visits,
+              capture photos, track activities, and execute flawlessly—all from
+              their phone.
             </p>
             <BookCallButton />
           </div>
@@ -96,209 +95,213 @@ export default function MarketingPage() {
       </section>
 
       {/* Challenges */}
-      <section className="container mx-auto px-6 py-24">
+      <section className="container mx-auto px-6 py-24" data-navbar-theme="light">
         <h2 className="mb-12 text-center text-3xl font-black text-slate-900">
-          Common Marketing Challenges
+          Common Field Sales Challenges
         </h2>
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
           {/* Challenge 1 */}
           <div className="rounded-2xl border border-gray-100 bg-white p-8 shadow-lg transition-shadow hover:shadow-xl">
             <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-xl bg-red-100">
-              <Megaphone className="h-8 w-8 text-red-600" />
+              <FileText className="h-8 w-8 text-red-600" />
             </div>
             <h3 className="mb-3 text-xl font-bold text-gray-900">
-              Generic Blasts
+              Paper-Based Chaos
             </h3>
             <p className="text-gray-600">
-              Mass emails to all retailers result in 8% open rates and ignored
-              promotions
+              Reps waste 10 hours per week on manual data entry after filling
+              out paper forms
             </p>
           </div>
 
           {/* Challenge 2 */}
           <div className="rounded-2xl border border-gray-100 bg-white p-8 shadow-lg transition-shadow hover:shadow-xl">
             <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-xl bg-red-100">
-              <UserX className="h-8 w-8 text-red-600" />
+              <Camera className="h-8 w-8 text-red-600" />
             </div>
             <h3 className="mb-3 text-xl font-bold text-gray-900">
-              No Segmentation
+              Visit Verification
             </h3>
             <p className="text-gray-600">
-              Can't target messages by region, purchase history, or retailer
-              profile
+              No photo proof means execution claims can't be validated,
+              creating accountability gaps
             </p>
           </div>
 
           {/* Challenge 3 */}
           <div className="rounded-2xl border border-gray-100 bg-white p-8 shadow-lg transition-shadow hover:shadow-xl">
             <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-xl bg-red-100">
-              <Eye className="h-8 w-8 text-red-600" />
+              <MapPin className="h-8 w-8 text-red-600" />
             </div>
             <h3 className="mb-3 text-xl font-bold text-gray-900">
-              Tracking Blind Spots
+              Territory Gaps
             </h3>
             <p className="text-gray-600">
-              No visibility into who opened emails or clicked promo links
+              Managers lack visibility into which stores are being visited and
+              when
             </p>
           </div>
 
           {/* Challenge 4 */}
           <div className="rounded-2xl border border-gray-100 bg-white p-8 shadow-lg transition-shadow hover:shadow-xl">
             <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-xl bg-red-100">
-              <ClockIcon className="h-8 w-8 text-red-600" />
+              <Clock className="h-8 w-8 text-red-600" />
             </div>
             <h3 className="mb-3 text-xl font-bold text-gray-900">
-              Manual Campaigns
+              Delayed Reporting
             </h3>
             <p className="text-gray-600">
-              Building and sending campaigns takes 5-6 hours per launch
+              Field data reaches head office 5-7 days late, slowing critical
+              decisions
             </p>
           </div>
         </div>
       </section>
 
-      {/* Marketing Capabilities - Bento Grid */}
+      {/* FSA Capabilities - Bento Grid */}
       <section
         className="mx-auto mb-24 max-w-5xl px-4"
         role="region"
-        aria-labelledby="marketing-capabilities"
+        aria-labelledby="fsa-capabilities"
+        data-navbar-theme="light"
       >
-        <h2 id="marketing-capabilities" className="sr-only">
-          Marketing Automation Capabilities
+        <h2 id="fsa-capabilities" className="sr-only">
+          Field Sales Automation Capabilities
         </h2>
 
         <div className="grid auto-rows-[300px] grid-cols-1 gap-2 md:grid-cols-6">
-          {/* Card 1 - Segmented Campaigns */}
+          {/* Card 1 - Mobile Visit Capture */}
           <article
             className="bento-card md:col-span-4"
             role="group"
-            aria-labelledby="segmented-campaigns"
-            aria-describedby="segmented-campaigns-desc"
+            aria-labelledby="mobile-visit-capture"
+            aria-describedby="mobile-visit-capture-desc"
           >
             <Image
-              src="https://images.unsplash.com/photo-1460925895917-afdab827c52f"
-              alt="Segmented campaigns"
+              src="https://images.unsplash.com/photo-1556656793-08538906a9f8"
+              alt="Mobile visit capture"
               fill
             />
             <div>
-              <Target size={32} aria-hidden="true" />
-              <h3 id="segmented-campaigns" className="md:text-3xl">
-                Segmented Campaigns
+              <Smartphone size={32} aria-hidden="true" />
+              <h3 id="mobile-visit-capture" className="md:text-3xl">
+                Mobile Visit Capture
               </h3>
-              <p id="segmented-campaigns-desc" className="md:max-w-lg md:text-lg">
-                Target by region, banner, purchase history, or custom attributes
-                to ensure relevance.
+              <p id="mobile-visit-capture-desc" className="md:max-w-lg md:text-lg">
+                Check in at stores, upload photos, log activities—all from one
+                app that works seamlessly on any device.
               </p>
             </div>
           </article>
 
-          {/* Card 2 - Multi-Channel Delivery */}
+          {/* Card 2 - GPS Route Optimization */}
           <article
             className="bento-card md:col-span-2"
             role="group"
-            aria-labelledby="multi-channel"
-            aria-describedby="multi-channel-desc"
+            aria-labelledby="gps-routes"
+            aria-describedby="gps-routes-desc"
           >
             <Image
-              src="https://images.unsplash.com/photo-1596526131083-e8c633c948d2"
-              alt="Multi-channel delivery"
+              src="https://images.unsplash.com/photo-1569336415962-a4bd9f69cd83"
+              alt="GPS route optimization"
               fill
             />
             <div>
-              <MessageSquare size={32} aria-hidden="true" />
-              <h3 id="multi-channel">Multi-Channel</h3>
-              <p id="multi-channel-desc">
-                Email, SMS, in-app notifications—choose your channel per
-                campaign.
+              <Map size={32} aria-hidden="true" />
+              <h3 id="gps-routes">Route Optimization</h3>
+              <p id="gps-routes-desc">
+                Plan efficient routes and track mileage automatically for
+                expense reporting.
               </p>
             </div>
           </article>
 
-          {/* Card 3 - Drag-and-Drop Builder */}
+          {/* Card 3 - Real-Time Photo Validation */}
           <article
             className="bento-card md:col-span-2"
             role="group"
-            aria-labelledby="campaign-builder"
-            aria-describedby="campaign-builder-desc"
+            aria-labelledby="photo-validation"
+            aria-describedby="photo-validation-desc"
           >
             <Image
-              src="https://images.unsplash.com/photo-1586281380349-632531db7ed4"
-              alt="Campaign builder"
+              src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32"
+              alt="Photo validation"
               fill
             />
             <div>
-              <Mail size={32} aria-hidden="true" />
-              <h3 id="campaign-builder">Easy Builder</h3>
-              <p id="campaign-builder-desc">
-                Build beautiful campaigns in minutes with drag-and-drop
-                templates.
+              <Camera size={32} aria-hidden="true" />
+              <h3 id="photo-validation">Photo Validation</h3>
+              <p id="photo-validation-desc">
+                Capture planogram compliance, displays, and stock levels
+                instantly with timestamp and GPS.
               </p>
             </div>
           </article>
 
-          {/* Card 4 - Engagement Analytics */}
+          {/* Card 4 - Activity Dashboard */}
           <article
             className="bento-card md:col-span-2"
             role="group"
-            aria-labelledby="engagement-analytics"
-            aria-describedby="engagement-analytics-desc"
+            aria-labelledby="activity-dashboard"
+            aria-describedby="activity-dashboard-desc"
           >
             <Image
               src="https://images.unsplash.com/photo-1551288049-bebda4e38f71"
-              alt="Engagement analytics"
+              alt="Activity dashboard"
               fill
             />
             <div>
-              <BarChart3 size={32} aria-hidden="true" />
-              <h3 id="engagement-analytics">Track Engagement</h3>
-              <p id="engagement-analytics-desc">
-                Track opens, clicks, and conversion by retailer segment in
-                real-time.
+              <Activity size={32} aria-hidden="true" />
+              <h3 id="activity-dashboard">Live Dashboard</h3>
+              <p id="activity-dashboard-desc">
+                Managers see visit completions, rep productivity, and coverage
+                gaps in real-time.
               </p>
             </div>
           </article>
 
-          {/* Card 5 - Promo Code Integration */}
+          {/* Card 5 - Offline Mode */}
           <article
             className="bento-card md:col-span-2"
             role="group"
-            aria-labelledby="promo-codes"
-            aria-describedby="promo-codes-desc"
+            aria-labelledby="offline-mode"
+            aria-describedby="offline-mode-desc"
           >
             <Image
-              src="https://images.unsplash.com/photo-1556742502-ec7c0e9f34b1"
-              alt="Promo code integration"
+              src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64"
+              alt="Offline mode"
               fill
             />
             <div>
-              <Percent size={32} aria-hidden="true" />
-              <h3 id="promo-codes">Promo Codes</h3>
-              <p id="promo-codes-desc">
-                Embed unique codes tied to rebates or ordering incentives.
+              <CloudOff size={32} aria-hidden="true" />
+              <h3 id="offline-mode">Offline Mode</h3>
+              <p id="offline-mode-desc">
+                Work in low-signal areas—data automatically syncs when back
+                online.
               </p>
             </div>
           </article>
 
-          {/* Card 6 - Automated Triggers */}
+          {/* Card 6 - Incentive Tie-In */}
           <article
             className="bento-card md:col-span-4"
             role="group"
-            aria-labelledby="automated-triggers"
-            aria-describedby="automated-triggers-desc"
+            aria-labelledby="incentive-tie-in"
+            aria-describedby="incentive-tie-in-desc"
           >
             <Image
-              src="https://images.unsplash.com/photo-1551288049-bebda4e38f71"
-              alt="Automated triggers"
+              src="https://images.unsplash.com/photo-1579621970563-ebec7560ff3e"
+              alt="Incentive integration"
               fill
             />
             <div>
-              <Zap size={32} aria-hidden="true" />
-              <h3 id="automated-triggers" className="md:text-3xl">
-                Automated Triggers
+              <DollarSign size={32} aria-hidden="true" />
+              <h3 id="incentive-tie-in" className="md:text-3xl">
+                Incentive Automation
               </h3>
-              <p id="automated-triggers-desc" className="md:max-w-lg md:text-lg">
-                Send follow-ups based on retailer actions—order confirmations,
-                rebate milestones, training completion.
+              <p id="incentive-tie-in-desc" className="md:max-w-lg md:text-lg">
+                Link field activities to automatic incentive payouts based on
+                validated execution and performance.
               </p>
             </div>
           </article>
@@ -306,31 +309,31 @@ export default function MarketingPage() {
       </section>
 
       {/* Chart Section */}
-      <section className="container mx-auto px-6 py-40">
+      <section className="container mx-auto px-6 py-40" data-navbar-theme="light">
         <div className="grid items-center gap-32 lg:grid-cols-2">
-          <MarketingEngagementChart />
+          <FsaCoverageChart />
           <div className="space-y-12">
             <h2 className="text-5xl leading-[0.9] font-black tracking-tighter uppercase text-slate-900 md:text-7xl">
-              Engagement <br />
+              Coverage <br />
               <span className="text-teal-600 underline decoration-teal-200 underline-offset-[12px]">
-                That Converts.
+                That's Complete.
               </span>
             </h2>
             <div className="space-y-10">
               <div className="group flex items-start gap-8">
                 <div className="shrink-0 rounded-3xl bg-teal-50 p-5 transition-colors duration-300 group-hover:bg-teal-500">
-                  <BarChart3
+                  <MapPin
                     size={28}
                     className="text-teal-600 group-hover:text-white"
                   />
                 </div>
                 <div>
                   <h4 className="mb-2 text-2xl font-black tracking-tight text-slate-900 uppercase">
-                    Track Every Stage
+                    Track Territory Coverage
                   </h4>
                   <p className="text-lg leading-relaxed font-medium text-slate-500">
-                    Monitor campaign performance from send to conversion with
-                    funnel analytics at every stage.
+                    Monitor visit frequency by territory to identify gaps and
+                    optimize rep assignments in real-time.
                   </p>
                 </div>
               </div>
@@ -343,11 +346,11 @@ export default function MarketingPage() {
                 </div>
                 <div>
                   <h4 className="mb-2 text-2xl font-black tracking-tight text-slate-900 uppercase">
-                    Optimize Performance
+                    Maximize Productivity
                   </h4>
                   <p className="text-lg leading-relaxed font-medium text-slate-500">
-                    Identify drop-off points and refine messaging to improve
-                    open rates and conversions.
+                    Compare actual vs. target visits to ensure every territory
+                    gets the attention it needs.
                   </p>
                 </div>
               </div>
@@ -359,7 +362,7 @@ export default function MarketingPage() {
       <IndustryBadge />
 
       {/* ROI */}
-      <section className="mx-auto" role="region" aria-labelledby="roi-heading">
+      <section className="mx-auto" role="region" aria-labelledby="roi-heading" data-navbar-theme="dark">
         <div className="relative overflow-hidden bg-slate-900 p-8 text-white md:p-16">
           <div className="relative z-10 grid items-center gap-12 lg:grid-cols-2">
             <div>
@@ -369,20 +372,20 @@ export default function MarketingPage() {
               >
                 Proven Impact <br />
                 <span className="text-teal-500">
-                  Where Marketing Drives Action
+                  Where Field Teams Execute Flawlessly
                 </span>
               </h2>
 
               <ul className="mb-10 space-y-6">
                 <li className="flex items-start gap-4">
-                  <TrendingUp
+                  <Timer
                     aria-hidden="true"
                     className="mt-1 text-teal-500"
                   />
                   <p className="text-lg text-slate-300">
-                    Achieve{" "}
-                    <strong className="text-white">3x higher open rates</strong>{" "}
-                    with segmented, targeted campaigns vs. generic email blasts.
+                    Reduce admin time by{" "}
+                    <strong className="text-white">50%</strong> with mobile
+                    capture that eliminates double data entry.
                   </p>
                 </li>
 
@@ -392,18 +395,21 @@ export default function MarketingPage() {
                     className="mt-1 text-teal-500"
                   />
                   <p className="text-lg text-slate-300">
-                    Increase campaign engagement by{" "}
-                    <strong className="text-white">45%</strong> with multi-channel
-                    delivery and automated triggers.
+                    Increase visit validation by{" "}
+                    <strong className="text-white">85%</strong> with photo proof
+                    and GPS-timestamped check-ins.
                   </p>
                 </li>
 
                 <li className="flex items-start gap-4">
-                  <Zap aria-hidden="true" className="mt-1 text-teal-500" />
+                  <TrendingUp
+                    aria-hidden="true"
+                    className="mt-1 text-teal-500"
+                  />
                   <p className="text-lg text-slate-300">
-                    Build campaigns{" "}
-                    <strong className="text-white">60% faster</strong> with
-                    drag-and-drop templates and automated workflows.
+                    Improve territory coverage by{" "}
+                    <strong className="text-white">30%</strong> with optimized
+                    routing and real-time dashboards.
                   </p>
                 </li>
               </ul>
@@ -420,7 +426,7 @@ export default function MarketingPage() {
               aria-labelledby="roi-stats"
             >
               <div className="rounded-[2.5rem] border border-white/10 bg-white/5 p-12 text-center backdrop-blur-md">
-                <Users
+                <Timer
                   className="mx-auto mb-6 text-teal-500"
                   size={48}
                   aria-hidden="true"
@@ -430,24 +436,24 @@ export default function MarketingPage() {
                   id="roi-stats"
                   className="mb-2 text-5xl font-black md:text-8xl"
                 >
-                  3x
+                  10 hrs
                 </h3>
                 <p className="text-sm font-bold tracking-[0.2em] text-teal-400 uppercase">
-                  Better Engagement
+                  Saved Per Rep Per Week
                 </p>
 
                 <div className="mt-10 grid grid-cols-2 gap-8 border-t border-white/10 pt-10">
                   <div>
-                    <h4 className="text-3xl font-black">24%</h4>
+                    <h4 className="text-3xl font-black">Real-Time</h4>
                     <p className="text-xs font-bold text-slate-500 uppercase">
-                      Avg Open Rate
+                      Visibility
                     </p>
                   </div>
 
                   <div>
-                    <h4 className="text-3xl font-black">8%</h4>
+                    <h4 className="text-3xl font-black">100%</h4>
                     <p className="text-xs font-bold text-slate-500 uppercase">
-                      Conversion
+                      Photo Validation
                     </p>
                   </div>
                 </div>

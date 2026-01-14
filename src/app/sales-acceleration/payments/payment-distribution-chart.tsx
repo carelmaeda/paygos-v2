@@ -29,7 +29,7 @@ export function PaymentDistributionChart() {
         <span>Payment Distribution</span>
         <PieChart className="text-emerald-500" size={20} />
       </div>
-      <ChartContainer config={CHART_CONFIG} className="h-[400px] w-full">
+      <ChartContainer id="payment-distribution" config={CHART_CONFIG} className="h-[400px] w-full">
         <BarChart
           data={CHART_DATA}
           layout="vertical"

@@ -42,7 +42,7 @@ export const metadata: Metadata = {
     title: "Training Management | Paygos",
     description:
       "Transform training into a loyalty-building journey with Paygos. Interactive modules, certification tracking, and incentive-based rewards that drive completion.",
-    url: "https://www.paygos.ca/solutions/training",
+    url: "https://www.paygos.ca/sales-acceleration/training",
     siteName: "Paygos",
     images: [
       {
@@ -67,7 +67,7 @@ export const metadata: Metadata = {
     follow: true,
   },
   alternates: {
-    canonical: "https://www.paygos.ca/solutions/training",
+    canonical: "https://www.paygos.ca/sales-acceleration/training",
   },
 }
 
@@ -75,7 +75,7 @@ export default function TrainingPage() {
   return (
     <main>
       {/* Hero Section */}
-      <section className="relative flex min-h-[90vh] items-center overflow-hidden bg-slate-950 pt-32 pb-24">
+      <section className="relative flex min-h-[90vh] items-center overflow-hidden bg-slate-950 pt-32 pb-24" data-navbar-theme="dark">
         <div className="absolute inset-0 z-0">
           <Image
             src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?q=80&w=2070&auto=format&fit=crop"
@@ -111,7 +111,7 @@ export default function TrainingPage() {
       </section>
 
       {/* Challenges Section */}
-      <section className="container mx-auto px-6 py-24">
+      <section className="container mx-auto px-6 py-24" data-navbar-theme="light">
         <h2 className="mb-12 text-center text-3xl font-black text-slate-900">
           Common Training Challenges
         </h2>
@@ -171,7 +171,7 @@ export default function TrainingPage() {
       </section>
 
       {/* Bento Grid Section */}
-      <section id="capabilities" className="mx-auto mb-24 max-w-5xl px-4">
+      <section id="capabilities" className="mx-auto mb-24 max-w-5xl px-4" data-navbar-theme="light">
         <div className="mb-16 text-center">
           <h2 className="mb-6 text-4xl font-black text-slate-900 md:text-6xl">
             What Paygos Offers
@@ -294,7 +294,7 @@ export default function TrainingPage() {
       </section>
 
       {/* Chart Section */}
-      <section className="container mx-auto px-6 py-40">
+      <section className="container mx-auto px-6 py-40" data-navbar-theme="light">
         <div className="grid items-center gap-32 lg:grid-cols-2">
           <TrainingCompletionChart />
 
@@ -359,7 +359,7 @@ export default function TrainingPage() {
       <IndustryBadge />
 
       {/* ROI Section */}
-      <section className="mx-auto">
+      <section className="mx-auto" data-navbar-theme="dark">
         <div className="relative overflow-hidden bg-slate-900 p-8 text-white md:p-16">
           <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-slate-900 to-teal-950 opacity-90" />
 

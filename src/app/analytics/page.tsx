@@ -31,7 +31,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Data & Analytics | Paygos",
     description: "Transform data into strategy with Paygos analytics for CPG brands in independent retail. Real-time dashboards, sales insights, inventory tracking, and customer analytics.",
-    url: "https://www.paygos.ca/solutions/analytics",
+    url: "https://www.paygos.ca/analytics",
     siteName: "Paygos",
     images: [
       {
@@ -55,7 +55,7 @@ export const metadata: Metadata = {
     follow: true,
   },
   alternates: {
-    canonical: "https://www.paygos.ca/solutions/analytics",
+    canonical: "https://www.paygos.ca/analytics",
   },
 }
 
@@ -63,7 +63,7 @@ export default function AnalyticsPage() {
   return (
     <main className="min-h-screen">
       {/* Hero */}
-      <section className="relative flex min-h-[90vh] items-center overflow-hidden bg-slate-950 pt-32 pb-24">
+      <section className="relative flex min-h-[90vh] items-center overflow-hidden bg-slate-950 pt-32 pb-24" data-navbar-theme="dark">
         <div className="absolute inset-0 z-0">
           <Image
             src="https://images.unsplash.com/photo-1551288049-bebda4e38f71"
@@ -96,7 +96,7 @@ export default function AnalyticsPage() {
       </section>
 
       {/* Challenges */}
-      <section className="container mx-auto px-6 py-24">
+      <section className="container mx-auto px-6 py-24" data-navbar-theme="light">
         <h2 className="mb-12 text-center text-3xl font-black text-slate-900">
           Common Analytics Challenges
         </h2>
@@ -164,6 +164,7 @@ export default function AnalyticsPage() {
         className="mx-auto mb-24 max-w-5xl px-4"
         role="region"
         aria-labelledby="analytics-capabilities"
+        data-navbar-theme="light"
       >
         <h2 id="analytics-capabilities" className="sr-only">
           Analytics & Reporting Capabilities
@@ -307,7 +308,7 @@ export default function AnalyticsPage() {
       </section>
 
       {/* Chart Section */}
-      <section className="container mx-auto px-6 py-40">
+      <section className="container mx-auto px-6 py-40" data-navbar-theme="light">
         <div className="grid items-center gap-32 lg:grid-cols-2">
           <AnalyticsMetricsChart />
           <div className="space-y-12">
@@ -360,7 +361,7 @@ export default function AnalyticsPage() {
       <IndustryBadge />
 
       {/* ROI */}
-      <section className="mx-auto" role="region" aria-labelledby="roi-heading">
+      <section className="mx-auto" role="region" aria-labelledby="roi-heading" data-navbar-theme="dark">
         <div className="relative overflow-hidden bg-slate-900 p-8 text-white md:p-16">
           <div className="relative z-10 grid items-center gap-12 lg:grid-cols-2">
             <div>

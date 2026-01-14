@@ -1,40 +1,53 @@
 import type { Metadata } from "next"
-import React from "react"
-import Link from "next/link"
-import Image from "next/image"
-import {
-  RefreshCcw,
-  ArrowRight,
-  CheckCircle2,
-  TrendingUp,
-  Package,
-  Search,
-  BarChart3,
-  AlertTriangle,
-  Clock,
-  DollarSign,
-  PackageX,
-} from "lucide-react"
 import { CTA } from "@/components/sections/cta/CTA"
 import { BookCallButton } from "@/components/sections/cta/BookCallButton"
+import Image from "next/image"
 import { IndustryBadge } from "@/components/sections/solutions/IndustryBadge"
-import { ReturnsTrendChart } from "./returns-trend-chart"
+import {
+  Zap,
+  Clock,
+  ShoppingBag,
+  Eye,
+  Store,
+  TrendingUp,
+  ArrowRight,
+  CheckCircle2,
+  Calculator,
+  Monitor,
+  AlertCircle,
+  Eye as EyeOff,
+  PackageX,
+  BarChart3,
+} from "lucide-react"
+import { OrderingVolumeChart } from "./ordering-volume-chart"
+import { CustomerStoriesCarousel } from "@/components/sections/customers/CustomerStoriesCarousel"
 
 export const metadata: Metadata = {
-  title: "Returns Management | Paygos",
-  description: "Streamline returns processing in convenience, fuel, and pharmacy sectors. Bring structure and visibility to your returns with validated processes and real-time tracking.",
-  keywords: ["returns management", "product returns", "returns processing", "validated returns", "return analytics", "inventory returns", "replacement orders"],
+  title: "Smart Ordering System | Paygos",
+  description:
+    "Streamline order management with Paygos smart ordering platform. Real-time inventory visibility, automated order processing, and intelligent ordering workflows for sales teams.",
+  keywords: [
+    "order management",
+    "ordering system",
+    "order automation",
+    "inventory management",
+    "order processing",
+    "smart ordering",
+    "order tracking",
+    "sales ordering",
+  ],
   openGraph: {
-    title: "Returns Management | Paygos",
-    description: "Streamline returns processing in convenience, fuel, and pharmacy sectors. Bring structure and visibility to your returns with validated processes and real-time tracking.",
-    url: "https://www.paygos.ca/solutions/returns",
+    title: "Smart Ordering System | Paygos",
+    description:
+      "Streamline order management with Paygos smart ordering platform. Real-time inventory visibility, automated order processing, and intelligent ordering workflows for sales teams.",
+    url: "https://www.paygos.ca/sales-acceleration/ordering",
     siteName: "Paygos",
     images: [
       {
         url: "/paygos/logo-full.webp",
         width: 1200,
         height: 630,
-        alt: "Paygos Returns Management",
+        alt: "Paygos Smart Ordering System",
       },
     ],
     locale: "en_US",
@@ -42,8 +55,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Returns Management | Paygos",
-    description: "Streamline returns processing in convenience, fuel, and pharmacy sectors. Bring structure and visibility to your returns with validated processes and real-time tracking.",
+    title: "Smart Ordering System | Paygos",
+    description:
+      "Streamline order management with Paygos smart ordering platform. Real-time inventory visibility, automated order processing, and intelligent ordering workflows for sales teams.",
     images: ["/paygos/logo-full.webp"],
   },
   robots: {
@@ -51,19 +65,22 @@ export const metadata: Metadata = {
     follow: true,
   },
   alternates: {
-    canonical: "https://www.paygos.ca/solutions/returns",
+    canonical: "https://www.paygos.ca/sales-acceleration/ordering",
   },
 }
 
-export default function ReturnsPage() {
+export default function PaygosOrderingPage() {
   return (
     <main className="min-h-screen">
       {/* Hero */}
-      <section className="relative flex min-h-[90vh] items-center overflow-hidden bg-slate-950 pt-32 pb-24">
+      <section
+        data-navbar-theme="dark"
+        className="relative flex min-h-[70vh] items-center overflow-hidden bg-slate-950 pt-32 pb-16"
+      >
         <div className="absolute inset-0 z-0">
           <Image
-            src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d"
-            alt="Returns management"
+            src="https://images.unsplash.com/photo-1556742111-a301076d9d18"
+            alt="Smart ordering system"
             fill
             priority
             className="object-cover opacity-30"
@@ -74,18 +91,18 @@ export default function ReturnsPage() {
         <div className="relative z-10 container mx-auto px-6 lg:px-8">
           <div className="max-w-4xl">
             <div className="mb-8 inline-flex items-center gap-2 rounded-full border border-emerald-500/30 bg-emerald-500/20 px-4 py-1.5 text-xs font-black tracking-[0.2em] text-emerald-300 uppercase backdrop-blur-md">
-              Validated • Efficient • Transparent
+              Streamlined • Efficient • Transparent
             </div>
-            <h1 className="mb-10 text-6xl leading-[0.9] font-black tracking-tighter text-white md:text-9xl">
-              RECLAIM MARGIN. <br />
+            <h2 className="mb-10 text-6xl leading-[0.9] font-black tracking-tighter text-white md:text-6xl">
+              Tranforming Ordering into <br />
               <span className="bg-gradient-to-r from-emerald-400 to-cyan-400 bg-clip-text text-transparent">
-                REDEPLOY TIME.
+                Revenue.
               </span>
-            </h1>
-            <p className="mb-12 max-w-2xl text-xl leading-relaxed font-medium text-slate-300 md:text-2xl">
-              Returns in convenience, fuel, and independent pharmacy are often messy.
-              Paygos brings structure and visibility to a part of your business long
-              treated as a cost center.
+            </h2>
+            <p className="mb-12 text-slate-300">
+              Paygos empowers reps, account managers, and retail partners to
+              place and track orders for products and merchandising in one
+              streamlined platform.
             </p>
             <BookCallButton />
           </div>
@@ -93,48 +110,52 @@ export default function ReturnsPage() {
       </section>
 
       {/* Challenges */}
-      <section className="container mx-auto px-6 py-24">
+      <section
+        data-navbar-theme="light"
+        className="container mx-auto px-6 py-24"
+      >
         <h2 className="mb-12 text-center text-3xl font-black text-slate-900">
-          Common Returns Challenges
+          Common Ordering Challenges
         </h2>
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
           {/* Challenge 1 */}
           <div className="rounded-2xl border border-gray-100 bg-white p-8 shadow-lg transition-shadow hover:shadow-xl">
             <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-xl bg-red-100">
-              <AlertTriangle className="h-8 w-8 text-red-600" />
+              <Monitor className="h-8 w-8 text-red-600" />
             </div>
             <h3 className="mb-3 text-xl font-bold text-gray-900">
-              Unclear Return Reasons
+              Distributor Complexity
             </h3>
             <p className="text-gray-600">
-              Returns lack standardized categorization, making it hard to
-              identify root causes
+              Reps waste 6+ hours weekly managing orders across multiple
+              distributor portals
             </p>
           </div>
 
           {/* Challenge 2 */}
           <div className="rounded-2xl border border-gray-100 bg-white p-8 shadow-lg transition-shadow hover:shadow-xl">
             <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-xl bg-red-100">
-              <Clock className="h-8 w-8 text-red-600" />
+              <AlertCircle className="h-8 w-8 text-red-600" />
             </div>
             <h3 className="mb-3 text-xl font-bold text-gray-900">
-              Processing Delays
+              Order Errors
             </h3>
             <p className="text-gray-600">
-              Manual return validation causes 7-10 day processing delays
+              Manual data entry causes 15-20% order error rates
             </p>
           </div>
 
           {/* Challenge 3 */}
           <div className="rounded-2xl border border-gray-100 bg-white p-8 shadow-lg transition-shadow hover:shadow-xl">
             <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-xl bg-red-100">
-              <DollarSign className="h-8 w-8 text-red-600" />
+              <EyeOff className="h-8 w-8 text-red-600" />
             </div>
             <h3 className="mb-3 text-xl font-bold text-gray-900">
-              Lost Margin
+              No Visibility
             </h3>
             <p className="text-gray-600">
-              Unvalidated returns erode margin by 5-8% annually
+              Head office has no real-time view into ordering patterns or rep
+              activity
             </p>
           </div>
 
@@ -143,116 +164,136 @@ export default function ReturnsPage() {
             <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-xl bg-red-100">
               <PackageX className="h-8 w-8 text-red-600" />
             </div>
-            <h3 className="mb-3 text-xl font-bold text-gray-900">
-              Replacement Gaps
-            </h3>
+            <h3 className="mb-3 text-xl font-bold text-gray-900">Stock-Outs</h3>
             <p className="text-gray-600">
-              Bad goods lead to out-of-stocks instead of automatic replacements
+              Delayed reorders lead to 8-12% out-of-stock rates at retail
             </p>
           </div>
         </div>
       </section>
 
-      {/* Returns Capabilities */}
+      {/* Ordering Capabilities */}
       <section
+        data-navbar-theme="light"
         className="mx-auto mb-24 max-w-5xl px-4"
         role="region"
-        aria-labelledby="returns-capabilities"
+        aria-labelledby="ordering-capabilities"
       >
-        <h2 id="returns-capabilities" className="sr-only">
-          Returns Management Capabilities
+        <h2 id="ordering-capabilities" className="sr-only">
+          Ordering Capabilities
         </h2>
 
         <div className="grid auto-rows-[300px] grid-cols-1 gap-2 md:grid-cols-6">
-          {/* Card 1 - Validated Returns */}
+          {/* Card 1 */}
           <article
             className="bento-card md:col-span-4"
             role="group"
-            aria-labelledby="validated-returns"
-            aria-describedby="validated-returns-desc"
+            aria-labelledby="orders-one-platform"
+            aria-describedby="orders-one-platform-desc"
           >
             <Image
-              src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d"
-              alt="Validated returns processing with image capture"
+              src="https://images.unsplash.com/photo-1674027392842-29f8354e236c"
+              alt="Centralized online ordering system dashboard"
               fill
             />
             <div>
-              <Search size={32} aria-hidden="true" />
-              <h3 id="validated-returns" className="md:text-3xl">
-                Validated Returns
+              <Zap size={32} aria-hidden="true" />
+              <h3 id="orders-one-platform" className="md:text-3xl">
+                All Orders, One Platform
               </h3>
-              <p id="validated-returns-desc" className="md:max-w-lg md:text-lg">
-                Using image capture and scanning tech, returns are logged and
-                verified at the store level. No forms. No calls. Your reps stay
-                focused on growth.
+              <p
+                id="orders-one-platform-desc"
+                className="md:max-w-lg md:text-lg"
+              >
+                Route orders to any distributor or internal warehouse without
+                channel confusion or manual handoffs.
               </p>
             </div>
           </article>
 
-          {/* Card 2 - Replacement Orders */}
+          {/* Card 2 */}
           <article
             className="bento-card md:col-span-2"
             role="group"
-            aria-labelledby="replacement-orders"
-            aria-describedby="replacement-orders-desc"
+            aria-labelledby="save-reps-time"
+            aria-describedby="save-reps-time-desc"
           >
             <Image
-              src="https://images.unsplash.com/photo-1553413077-190dd305871c"
-              alt="Replacement order management"
+              src="https://images.unsplash.com/photo-1573497620053-ea5300f94f21"
+              alt="Sales representative working efficiently with digital tools"
               fill
             />
             <div>
-              <RefreshCcw size={32} aria-hidden="true" />
-              <h3 id="replacement-orders">Replacement—Not Just Credit</h3>
-              <p id="replacement-orders-desc">
-                Bad goods don't mean lost sales. Request replacements alongside
-                returns—retaining shelf space.
+              <Clock size={32} aria-hidden="true" />
+              <h3 id="save-reps-time">Save Reps Time</h3>
+              <p id="save-reps-time-desc">
+                Quick reorders and centralized tracking reduce administrative
+                workload.
               </p>
             </div>
           </article>
 
-          {/* Card 3 - Analytics by SKU */}
+          {/* Card 3 */}
           <article
             className="bento-card md:col-span-2"
             role="group"
-            aria-labelledby="returns-analytics"
-            aria-describedby="returns-analytics-desc"
+            aria-labelledby="products-merch"
+            aria-describedby="products-merch-desc"
           >
             <Image
-              src="https://images.unsplash.com/photo-1551288049-bebda4e38f71"
-              alt="Returns analytics dashboard"
+              src="https://images.unsplash.com/photo-1585939049495-7f87cd649405"
+              alt="Retail products and merchandising materials"
               fill
             />
             <div>
-              <BarChart3 size={32} aria-hidden="true" />
-              <h3 id="returns-analytics">Data That Pays You Back</h3>
-              <p id="returns-analytics-desc">
-                Analyze return rates by SKU, region, or retailer. Identify
-                damage tied to shipping.
+              <ShoppingBag size={32} aria-hidden="true" />
+              <h3 id="products-merch">Products & Merchandising</h3>
+              <p id="products-merch-desc">
+                Manage sellable goods and field marketing materials together.
               </p>
             </div>
           </article>
 
-          {/* Card 4 - Real-Time Tracking */}
+          {/* Card 4 */}
           <article
-            className="bento-card md:col-span-4"
+            className="bento-card md:col-span-2"
             role="group"
-            aria-labelledby="real-time-tracking"
-            aria-describedby="real-time-tracking-desc"
+            aria-labelledby="real-time-visibility"
+            aria-describedby="real-time-visibility-desc"
           >
             <Image
-              src="https://images.unsplash.com/photo-1460925895917-afdab827c52f"
-              alt="Real-time returns tracking interface"
+              src="https://images.unsplash.com/photo-1446776653964-20c1d3a81b06"
+              alt="Real-time order tracking interface"
               fill
             />
             <div>
-              <Package size={32} aria-hidden="true" />
-              <h3 id="real-time-tracking" className="md:text-3xl">
-                Real-Time Visibility
-              </h3>
-              <p id="real-time-tracking-desc" className="md:max-w-lg md:text-lg">
-                Track all returns from submission to credit processing.
-                Complete transparency for reps, retailers, and head office.
+              <Eye size={32} aria-hidden="true" />
+              <h3 id="real-time-visibility">Real-Time Visibility</h3>
+              <p id="real-time-visibility-desc">
+                Track order progress from submission to fulfillment across
+                partners and territories.
+              </p>
+            </div>
+          </article>
+
+          {/* Card 5 */}
+          <article
+            className="bento-card md:col-span-2"
+            role="group"
+            aria-labelledby="independent-focus"
+            aria-describedby="independent-focus-desc"
+          >
+            <Image
+              src="https://images.unsplash.com/photo-1441986300917-64674bd600d8"
+              alt="Independent specialty retail store"
+              fill
+            />
+            <div>
+              <Store size={32} aria-hidden="true" />
+              <h3 id="independent-focus">Independent Retail Focus</h3>
+              <p id="independent-focus-desc">
+                Built for the complexity of pet, convenience, pharmacy, and
+                specialty retail.
               </p>
             </div>
           </article>
@@ -260,14 +301,17 @@ export default function ReturnsPage() {
       </section>
 
       {/* Chart Section */}
-      <section className="container mx-auto px-6 py-40">
+      <section
+        data-navbar-theme="light"
+        className="container mx-auto px-6 py-40"
+      >
         <div className="grid items-center gap-32 lg:grid-cols-2">
-          <ReturnsTrendChart />
+          <OrderingVolumeChart />
           <div className="space-y-12">
-            <h2 className="text-5xl leading-[0.9] font-black tracking-tighter uppercase text-slate-900 md:text-7xl">
-              Visibility <br />
+            <h2 className="text-5xl leading-[0.9] font-black tracking-tighter text-slate-900 uppercase md:text-7xl">
+              Efficiency <br />
               <span className="text-teal-600 underline decoration-teal-200 underline-offset-[12px]">
-                That Pays Off.
+                That Scales.
               </span>
             </h2>
             <div className="space-y-10">
@@ -280,11 +324,11 @@ export default function ReturnsPage() {
                 </div>
                 <div>
                   <h4 className="mb-2 text-2xl font-black tracking-tight text-slate-900 uppercase">
-                    Identify Patterns
+                    Monitor Order Trends
                   </h4>
                   <p className="text-lg leading-relaxed font-medium text-slate-500">
-                    Analyze returns by category, SKU, region, or retailer to
-                    pinpoint damage tied to shipping or quality issues.
+                    Track order volume and fulfillment rates across product
+                    categories to optimize inventory and demand planning.
                   </p>
                 </div>
               </div>
@@ -297,11 +341,11 @@ export default function ReturnsPage() {
                 </div>
                 <div>
                   <h4 className="mb-2 text-2xl font-black tracking-tight text-slate-900 uppercase">
-                    Reduce Waste
+                    Reduce Stock-Outs
                   </h4>
                   <p className="text-lg leading-relaxed font-medium text-slate-500">
-                    Spot trends early and take corrective action before return
-                    rates impact your bottom line.
+                    Real-time visibility into order patterns helps prevent
+                    stockouts and ensures optimal shelf presence.
                   </p>
                 </div>
               </div>
@@ -313,17 +357,19 @@ export default function ReturnsPage() {
       <IndustryBadge />
 
       {/* ROI */}
-      <section className="mx-auto" role="region" aria-labelledby="roi-heading">
+      <section
+        data-navbar-theme="dark"
+        className="mx-auto"
+        role="region"
+        aria-labelledby="roi-heading"
+      >
         <div className="relative overflow-hidden bg-slate-900 p-8 text-white md:p-16">
           <div className="relative z-10 grid items-center gap-12 lg:grid-cols-2">
             <div>
-              <h2
-                id="roi-heading"
-                className="mb-8 text-4xl font-black md:text-6xl"
-              >
-                Proven Impact <br />
+              <h2 id="roi-heading" className="pb-8 text-4xl md:text-8xl">
+                Real ROI <br />
                 <span className="text-teal-500">
-                  Where Returns Drive Efficiency
+                  More Time Equals More Revenue
                 </span>
               </h2>
 
@@ -334,11 +380,11 @@ export default function ReturnsPage() {
                     className="mt-1 text-teal-500"
                   />
                   <p className="text-lg text-slate-300">
-                    Reduce returns processing time by{" "}
+                    Reps regain up to{" "}
                     <strong className="text-white">
-                      60% with automated validation
+                      15% of their weekly time
                     </strong>{" "}
-                    and image capture workflows.
+                    by removing manual entry.
                   </p>
                 </li>
 
@@ -348,27 +394,17 @@ export default function ReturnsPage() {
                     className="mt-1 text-teal-500"
                   />
                   <p className="text-lg text-slate-300">
-                    Stores process returns{" "}
-                    <strong className="text-white">on-site in under 5 minutes</strong>
-                    —no phone calls or paperwork required.
-                  </p>
-                </li>
-
-                <li className="flex items-start gap-4">
-                  <RefreshCcw
-                    aria-hidden="true"
-                    className="mt-1 text-teal-500"
-                  />
-                  <p className="text-lg text-slate-300">
-                    Replacement orders maintain{" "}
-                    <strong className="text-white">shelf presence and revenue</strong>
-                    —turning a cost center into a retention tool.
+                    That creates nearly{" "}
+                    <strong className="text-white">
+                      50 additional selling opportunities per year
+                    </strong>
+                    .
                   </p>
                 </li>
               </ul>
 
               <a href="/roi" className="btn btn-secondary text-white!">
-                Calculate Your ROI <ArrowRight aria-hidden="true" />
+                Calculate ROI <ArrowRight aria-hidden="true" />
               </a>
             </div>
 
@@ -379,34 +415,34 @@ export default function ReturnsPage() {
               aria-labelledby="roi-stats"
             >
               <div className="rounded-[2.5rem] border border-white/10 bg-white/5 p-12 text-center backdrop-blur-md">
-                <TrendingUp
+                <Calculator
                   className="mx-auto mb-6 text-teal-500"
                   size={48}
                   aria-hidden="true"
                 />
 
-                <h3
+                <div
                   id="roi-stats"
-                  className="mb-2 text-5xl font-black md:text-8xl"
+                  className="mb-2 text-5xl font-black md:text-6xl"
                 >
-                  60%
-                </h3>
+                  15%
+                </div>
                 <p className="text-sm font-bold tracking-[0.2em] text-teal-400 uppercase">
-                  Faster Processing
+                  Efficiency Gain
                 </p>
 
                 <div className="mt-10 grid grid-cols-2 gap-8 border-t border-white/10 pt-10">
                   <div>
-                    <h4 className="text-3xl font-black">5 min</h4>
+                    <h4 className="text-3xl font-black">50+</h4>
                     <p className="text-xs font-bold text-slate-500 uppercase">
-                      Average Return Time
+                      Extra Visits per Year
                     </p>
                   </div>
 
                   <div>
-                    <h4 className="text-3xl font-black">100%</h4>
+                    <h4 className="text-3xl font-black">0</h4>
                     <p className="text-xs font-bold text-slate-500 uppercase">
-                      Validated & Tracked
+                      Distribution Changes
                     </p>
                   </div>
                 </div>
@@ -417,6 +453,10 @@ export default function ReturnsPage() {
       </section>
 
       <CTA />
+
+      <div>
+        <CustomerStoriesCarousel />
+      </div>
     </main>
   )
 }

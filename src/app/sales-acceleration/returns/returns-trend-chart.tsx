@@ -44,7 +44,7 @@ export function ReturnsTrendChart() {
         <span>Returns Trend Analysis</span>
         <TrendingUp className="text-emerald-500" size={20} />
       </div>
-      <ChartContainer config={CHART_CONFIG} className="h-[400px] w-full">
+      <ChartContainer id="returns-trend" config={CHART_CONFIG} className="h-[400px] w-full">
         <AreaChart
           data={CHART_DATA}
           margin={{ left: 12, right: 12, top: 12 }}
