@@ -1,16 +1,13 @@
 import type { Metadata } from "next"
 import Image from "next/image"
 import Link from "next/link"
-import {
-  ArrowRight,
-  CheckCircle,
-  TrendingUp,
-  Zap,
-} from "lucide-react"
+import { ArrowRight, CheckCircle, TrendingUp, Zap } from "lucide-react"
 import { CTA } from "@/components/sections/cta/CTA"
 import { BookCallButton } from "@/components/sections/cta/BookCallButton"
 import { IndustryBadge } from "@/components/sections/solutions/IndustryBadge"
 import { SALES_ACCELERATION_TOOLS } from "./data/tools"
+import { PatternDots } from "@/components/ui/patterns"
+import { Button } from "@/components/ui/button"
 
 export const metadata: Metadata = {
   title: "Sales Acceleration Tools | Paygos",
@@ -78,29 +75,30 @@ export default function SalesAccelerationPage() {
           <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/70 to-transparent" />
         </div>
 
-        <div className="relative z-10 container mx-auto px-6 lg:px-8">
-          <div className="max-w-4xl">
-            <div className="mb-8 inline-flex items-center gap-2 rounded-full border border-emerald-500/30 bg-emerald-500/20 px-4 py-1.5 text-xs font-black tracking-[0.2em] text-emerald-300 uppercase backdrop-blur-md">
-              Integrated • Powerful • Scalable
-            </div>
-            <h1 className="mb-10 text-6xl leading-[0.9] font-black tracking-tighter text-white md:text-9xl">
-              ACCELERATE <br />{" "}
-              <span className="bg-gradient-to-r from-emerald-400 to-cyan-400 bg-clip-text text-transparent">
-                SALES.
-              </span>
-            </h1>
-            <p className="mb-12 max-w-2xl text-xl leading-relaxed font-medium text-slate-300 md:text-2xl">
-              A complete suite of tools designed to streamline operations,
-              maximize efficiency, and drive revenue growth across your sales
-              organization.
-            </p>
-            <BookCallButton />
+        <div className="section-container relative z-10 space-y-4">
+          <div className="inline-flex items-center gap-2 rounded-full border border-emerald-500/30 bg-emerald-500/20 px-4 py-1.5 text-xs font-black tracking-[0.2em] text-emerald-300 uppercase backdrop-blur-md">
+            Integrated • Powerful • Scalable
           </div>
+          <h1 className="text-hero">
+            Acellerate your <br />{" "}
+            <span className="bg-gradient-to-r from-emerald-400 to-cyan-400 bg-clip-text text-transparent">
+              Sales.
+            </span>
+          </h1>
+          <p className="max-w-[450px] text-white">
+            A complete suite of tools designed to streamline operations,
+            maximize efficiency, and drive revenue growth across your sales
+            organization.
+          </p>
+          <BookCallButton />
         </div>
       </section>
 
       {/* SECTION: Introduction */}
-      <section data-navbar-theme="light" className="container mx-auto px-6 py-24">
+      <section
+        data-navbar-theme="light"
+        className="section-container mx-auto px-6 py-16"
+      >
         <div className="mx-auto max-w-4xl text-center">
           <h2 className="mb-6 text-4xl font-black text-slate-900 md:text-5xl">
             Everything You Need to Win
@@ -117,127 +115,145 @@ export default function SalesAccelerationPage() {
       {/* SECTION: Tools Grid */}
       <section
         data-navbar-theme="light"
-        className="container mx-auto px-6 py-24"
+        className="relative mx-auto bg-teal-800 px-6 py-16"
       >
-        <h2 className="mb-12 text-center text-3xl font-black text-slate-900">
-          Sales Acceleration Tools
+        <PatternDots />
+        <h2 className="mb-6 text-center text-white">
+          Our Sales Acceleration Tools
         </h2>
-        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
-          {SALES_ACCELERATION_TOOLS.map((tool) => {
-            const Icon = tool.icon
-            return (
-              <Link
-                key={tool.href}
-                href={tool.href}
-                className="group relative overflow-hidden rounded-2xl border border-gray-100 bg-white p-8 shadow-lg transition-all duration-300 hover:shadow-2xl hover:scale-[1.02]"
-              >
-                <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-xl bg-teal-100 transition-colors duration-300 group-hover:bg-teal-500">
-                  <Icon className="h-8 w-8 text-teal-600 transition-colors duration-300 group-hover:text-white" />
-                </div>
-                <h3 className="mb-3 text-xl font-bold text-gray-900 group-hover:text-teal-600 transition-colors duration-300">
+
+        {/* Grid */}
+        <div className="section-container grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+          {SALES_ACCELERATION_TOOLS.map((tool) => (
+            <Link
+              key={tool.href}
+              href={tool.href}
+              className="group relative flex h-full flex-col justify-between overflow-hidden rounded-3xl bg-white/40 p-6 backdrop-blur-xl transition-all duration-500 hover:border-teal-500/50 hover:bg-white/60 hover:shadow-2xl hover:shadow-teal-500/10"
+            >
+              {/* 1. Content Area (Frosted Top) */}
+              <div className="relative z-10 space-y-3">
+                <h3 className="text-xl font-bold text-slate-900 transition-colors group-hover:text-teal-600">
                   {tool.title}
                 </h3>
-                <p className="mb-4 text-gray-600 leading-relaxed">
+
+                <p className="text-sm transition-opacity duration-300">
                   {tool.description}
                 </p>
-                <div className="flex items-center gap-2 text-sm font-bold text-teal-600 transition-transform duration-300 group-hover:translate-x-2">
-                  Learn More
-                  <ArrowRight className="h-4 w-4" />
-                </div>
-              </Link>
-            )
-          })}
+
+                <Button variant="link" size="sm">
+                  <div className="inline-flex items-center gap-2 group-hover:underline">
+                    Learn more
+                    <ArrowRight className="h-4 w-4 transition-transform" />
+                  </div>
+                </Button>
+              </div>
+
+              {/* 2. Image Area  */}
+              <div className="relative mt-8 h-44 w-full">
+                <Image
+                  src={tool.image}
+                  alt={tool.title}
+                  fill
+                  className="object-contain p-4 transition-transform duration-500 group-hover:scale-110"
+                />
+              </div>
+            </Link>
+          ))}
         </div>
       </section>
 
       {/* SECTION: Why Sales Acceleration */}
-      <section data-navbar-theme="light" className="bg-slate-50 py-24">
-        <div className="container mx-auto px-6">
+      <section data-navbar-theme="light" className="bg-slate-50 py-16">
+        <div className="section-container">
           <div className="grid items-center gap-16 lg:grid-cols-2">
-          <div className="space-y-12">
-            <h2 className="text-5xl leading-[0.9] font-black tracking-tighter text-slate-900 uppercase md:text-7xl">
-              Why Sales <br />{" "}
-              <span className="text-teal-600 underline decoration-teal-200 underline-offset-[12px]">
-                Acceleration?
-              </span>
-            </h2>
-            <div className="space-y-10">
-              <div className="group flex items-start gap-8">
-                <div className="shrink-0 rounded-3xl bg-teal-50 p-5 transition-colors duration-300 group-hover:bg-teal-500">
-                  <Zap
-                    size={28}
-                    className="text-teal-600 group-hover:text-white"
-                  />
+            <div className="space-y-12">
+              <h2 className="text-5xl leading-[0.9] font-black tracking-tighter text-slate-900 uppercase md:text-7xl">
+                Why{" "}
+                <span className="text-teal-600 underline decoration-teal-200 underline-offset-[12px]">
+                  Sales Acceleration?
+                </span>
+              </h2>
+              <div className="space-y-10">
+                <div className="group flex items-start gap-8">
+                  <div className="shrink-0 rounded-3xl bg-teal-50 p-5 transition-colors duration-300 group-hover:bg-teal-500">
+                    <Zap
+                      size={28}
+                      className="text-teal-600 group-hover:text-white"
+                    />
+                  </div>
+                  <div>
+                    <h4 className="mb-2 text-2xl font-black tracking-tight text-slate-900 uppercase">
+                      Unified Platform
+                    </h4>
+                    <p className="text-lg leading-relaxed font-medium text-slate-500">
+                      All your sales tools in one place. No more juggling
+                      multiple systems or struggling with data silos.
+                    </p>
+                  </div>
                 </div>
-                <div>
-                  <h4 className="mb-2 text-2xl font-black tracking-tight text-slate-900 uppercase">
-                    Unified Platform
-                  </h4>
-                  <p className="text-lg leading-relaxed font-medium text-slate-500">
-                    All your sales tools in one place. No more juggling multiple
-                    systems or struggling with data silos.
-                  </p>
-                </div>
-              </div>
-              <div className="group flex items-start gap-8">
-                <div className="shrink-0 rounded-3xl bg-teal-50 p-5 transition-colors duration-300 group-hover:bg-teal-500">
-                  <TrendingUp
-                    size={28}
-                    className="text-teal-600 group-hover:text-white"
-                  />
-                </div>
-                <div>
-                  <h4 className="mb-2 text-2xl font-black tracking-tight text-slate-900 uppercase">
-                    Measurable Results
-                  </h4>
-                  <p className="text-lg leading-relaxed font-medium text-slate-500">
-                    Track performance, optimize processes, and demonstrate ROI
-                    with comprehensive analytics and reporting.
-                  </p>
+                <div className="group flex items-start gap-8">
+                  <div className="shrink-0 rounded-3xl bg-teal-50 p-5 transition-colors duration-300 group-hover:bg-teal-500">
+                    <TrendingUp
+                      size={28}
+                      className="text-teal-600 group-hover:text-white"
+                    />
+                  </div>
+                  <div>
+                    <h4 className="mb-2 text-2xl font-black tracking-tight text-slate-900 uppercase">
+                      Measurable Results
+                    </h4>
+                    <p className="text-lg leading-relaxed font-medium text-slate-500">
+                      Track performance, optimize processes, and demonstrate ROI
+                      with comprehensive analytics and reporting.
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-          <div className="relative">
-            <div className="rounded-[2.5rem] border border-slate-200 bg-white p-12 shadow-2xl">
-              <Zap className="mx-auto mb-6 text-teal-500" size={48} />
-              <h3 className="mb-8 text-center text-3xl font-black text-slate-900">
-                The Paygos Advantage
-              </h3>
-              <ul className="space-y-6">
-                <li className="flex items-start gap-4">
-                  <CheckCircle className="mt-1 h-6 w-6 shrink-0 text-teal-500" />
-                  <p className="text-lg text-slate-700">
-                    <strong className="text-slate-900">
-                      Seamless Integration
-                    </strong>{" "}
-                    across all sales acceleration tools
-                  </p>
-                </li>
-                <li className="flex items-start gap-4">
-                  <CheckCircle className="mt-1 h-6 w-6 shrink-0 text-teal-500" />
-                  <p className="text-lg text-slate-700">
-                    <strong className="text-slate-900">Real-Time Insights</strong>{" "}
-                    to make data-driven decisions
-                  </p>
-                </li>
-                <li className="flex items-start gap-4">
-                  <CheckCircle className="mt-1 h-6 w-6 shrink-0 text-teal-500" />
-                  <p className="text-lg text-slate-700">
-                    <strong className="text-slate-900">Mobile-First Design</strong>{" "}
-                    for field teams on the go
-                  </p>
-                </li>
-                <li className="flex items-start gap-4">
-                  <CheckCircle className="mt-1 h-6 w-6 shrink-0 text-teal-500" />
-                  <p className="text-lg text-slate-700">
-                    <strong className="text-slate-900">Proven ROI</strong> with
-                    measurable impact on revenue
-                  </p>
-                </li>
-              </ul>
+            <div className="relative">
+              <div className="rounded-[2.5rem] border border-slate-200 bg-white p-12 shadow-2xl">
+                <Zap className="mx-auto mb-6 text-teal-500" size={48} />
+                <h3 className="mb-8 text-center text-3xl font-black text-slate-900">
+                  The Paygos Advantage
+                </h3>
+                <ul className="space-y-6">
+                  <li className="flex items-start gap-4">
+                    <CheckCircle className="mt-1 h-6 w-6 shrink-0 text-teal-500" />
+                    <p className="text-lg text-slate-700">
+                      <strong className="text-slate-900">
+                        Seamless Integration
+                      </strong>{" "}
+                      across all sales acceleration tools
+                    </p>
+                  </li>
+                  <li className="flex items-start gap-4">
+                    <CheckCircle className="mt-1 h-6 w-6 shrink-0 text-teal-500" />
+                    <p className="text-lg text-slate-700">
+                      <strong className="text-slate-900">
+                        Real-Time Insights
+                      </strong>{" "}
+                      to make data-driven decisions
+                    </p>
+                  </li>
+                  <li className="flex items-start gap-4">
+                    <CheckCircle className="mt-1 h-6 w-6 shrink-0 text-teal-500" />
+                    <p className="text-lg text-slate-700">
+                      <strong className="text-slate-900">
+                        Mobile-First Design
+                      </strong>{" "}
+                      for field teams on the go
+                    </p>
+                  </li>
+                  <li className="flex items-start gap-4">
+                    <CheckCircle className="mt-1 h-6 w-6 shrink-0 text-teal-500" />
+                    <p className="text-lg text-slate-700">
+                      <strong className="text-slate-900">Proven ROI</strong>{" "}
+                      with measurable impact on revenue
+                    </p>
+                  </li>
+                </ul>
+              </div>
             </div>
-          </div>
           </div>
         </div>
       </section>
@@ -251,7 +267,7 @@ export default function SalesAccelerationPage() {
         role="region"
         aria-labelledby="roi-heading"
       >
-        <div className="relative overflow-hidden bg-slate-900 p-8 text-white md:p-16">
+        <div className="relative overflow-hidden bg-slate-900 p-8 text-white">
           <div className="relative z-10 grid items-center gap-12 lg:grid-cols-2">
             <div>
               <h2
@@ -284,8 +300,8 @@ export default function SalesAccelerationPage() {
                   />
                   <p className="text-lg text-slate-300">
                     Reduce administrative overhead by{" "}
-                    <strong className="text-white">40%</strong>, giving your team
-                    more time to sell.
+                    <strong className="text-white">40%</strong>, giving your
+                    team more time to sell.
                   </p>
                 </li>
 

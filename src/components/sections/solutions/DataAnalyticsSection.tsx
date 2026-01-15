@@ -70,16 +70,13 @@ const ANALYTICS_FEATURES = [
 
 export function DataAnalytics() {
   return (
-    <section className="bg-slate-50 py-16 md:py-24">
+    <section className="bg-slate-50 py-16">
       <div className="section-container">
-        <header className="mb-12 text-center">
-          <h2 className="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl md:text-5xl">
-            Data-Driven Insights
+        <header className="mb-16 flex flex-col items-center gap-2 text-center">
+          <small className="text-teal-600 uppercase">Data & Analytics</small>
+          <h2 className="mx-auto max-w-3xl text-3xl sm:text-4xl md:text-5xl">
+            Insights that drive decisions
           </h2>
-          <p className="mx-auto mt-4 max-w-2xl text-lg text-slate-600">
-            Transform raw data into actionable intelligence with our analytics
-            suite.
-          </p>
         </header>
 
         <div className="grid grid-cols-1 gap-2 md:grid-cols-4 lg:gap-2">

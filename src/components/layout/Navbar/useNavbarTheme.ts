@@ -1,20 +1,41 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useState, useLayoutEffect } from "react"
+import { usePathname } from "next/navigation"
 
 export type NavbarTheme = "light" | "dark"
 
+const NAVBAR_HEIGHT = 80
+
+function calculateCurrentTheme(): NavbarTheme {
+  if (typeof window === "undefined") return "dark"
+
+  const sections = document.querySelectorAll<HTMLElement>("[data-navbar-theme]")
+
+  for (const section of sections) {
+    const rect = section.getBoundingClientRect()
+    // Check if section is at the navbar position
+    if (rect.top <= NAVBAR_HEIGHT && rect.bottom > NAVBAR_HEIGHT) {
+      return (section.getAttribute("data-navbar-theme") as NavbarTheme) || "dark"
+    }
+  }
+  return "dark"
+}
+
 export function useNavbarTheme(): NavbarTheme {
-  const [theme, setTheme] = useState<NavbarTheme>("dark") // Default to dark (hero)
+  const [theme, setTheme] = useState<NavbarTheme>("dark")
+  const pathname = usePathname()
 
-  useEffect(() => {
-    // Find all sections with data-navbar-theme attribute
+  useLayoutEffect(() => {
+    // Calculate initial theme synchronously before paint
+    setTheme(calculateCurrentTheme())
+
+    // Set up observer for scroll/navigation changes
     const sections = document.querySelectorAll<HTMLElement>("[data-navbar-theme]")
-
     if (sections.length === 0) return
 
     const observerOptions: IntersectionObserverInit = {
-      rootMargin: "-80px 0px -80% 0px", // Top 80px (navbar height + offset)
+      rootMargin: "-80px 0px -80% 0px",
       threshold: 0
     }
 
@@ -29,14 +50,10 @@ export function useNavbarTheme(): NavbarTheme {
       })
     }, observerOptions)
 
-    // Observe all sections
     sections.forEach((section) => observer.observe(section))
 
-    // Cleanup
-    return () => {
-      sections.forEach((section) => observer.unobserve(section))
-    }
-  }, [])
+    return () => observer.disconnect()
+  }, [pathname])
 
   return theme
 }

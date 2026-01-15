@@ -1,149 +1,96 @@
 "use client"
 
-import { useState, useEffect, useMemo } from "react"
+import { useMemo } from "react"
 import { Swiper, SwiperSlide } from "swiper/react"
 import { Pagination, Navigation } from "swiper/modules"
 import { CustomerStoryCard } from "./CustomerStoryCard"
 import { customerStories } from "./data/customer-stories"
 import { Button } from "../../ui/button"
 import Link from "next/link"
-import { ArrowRight } from "lucide-react"
+import { ArrowRight, ChevronLeft, ChevronRight } from "lucide-react"
+import { PatternDiagonal } from "@/components/ui/patterns"
 
-// Swiper styles - imported once
 import "swiper/css"
 import "swiper/css/pagination"
 import "swiper/css/navigation"
 
-// ============================================
-// STATIC CONFIGURATION
-// ============================================
-// Extract static config outside component to prevent recreation on each render
-// This improves performance by avoiding unnecessary object allocations
-
-/** Swiper modules array - prevents recreation on each render */
-const SWIPER_MODULES = [Pagination, Navigation]
-
-/** Pagination configuration for dot indicators */
-const PAGINATION_CONFIG = {
-  clickable: true, // Allow users to click dots to navigate
-  dynamicBullets: true, // Condense dots when there are many slides
-}
-
-/** Responsive breakpoints for different screen sizes */
-const BREAKPOINTS_CONFIG = {
-  640: {
-    // Small tablets and large phones
-    slidesPerView: 1.5, // Show 1.5 slides for swipe hint
-    spaceBetween: 20,
-  },
-  768: {
-    // Tablets
-    slidesPerView: 2, // Show 2 full cards
-    spaceBetween: 24,
-  },
-  1024: {
-    // Desktop
-    slidesPerView: 3, // Show 3 full cards
-    spaceBetween: 30,
+const SWIPER_CONFIG = {
+  modules: [Pagination, Navigation],
+  spaceBetween: 24,
+  slidesPerView: 1.2,
+  breakpoints: {
+    768: { slidesPerView: 2 },
+    1024: { slidesPerView: 3 },
   },
 }
-
-// ============================================
-// COMPONENT
-// ============================================
 
 export function CustomerStoriesCarousel() {
-  // ============================================
-  // STATE MANAGEMENT
-  // ============================================
-  // Track if viewport is mobile size (<768px) for conditional rendering
-  const [isMobile, setIsMobile] = useState(false)
-
-  // ============================================
-  // VIEWPORT DETECTION
-  // ============================================
-  // Use matchMedia API for efficient viewport tracking
-  // More performant than resize listeners as it uses native browser APIs
-  useEffect(() => {
-    // Define media query for mobile detection
-    const mediaQuery = window.matchMedia("(max-width: 767px)")
-
-    // Handler function to update mobile state
-    const handleMediaChange = (e: MediaQueryListEvent | MediaQueryList) => {
-      setIsMobile(e.matches)
-    }
-
-    // Set initial state
-    handleMediaChange(mediaQuery)
-
-    // Listen for changes (modern browsers)
-    if (mediaQuery.addEventListener) {
-      mediaQuery.addEventListener("change", handleMediaChange)
-      return () => mediaQuery.removeEventListener("change", handleMediaChange)
-    } else {
-      // Fallback for older browsers
-      mediaQuery.addListener(handleMediaChange)
-      return () => mediaQuery.removeListener(handleMediaChange)
-    }
-  }, [])
-
-  // ============================================
-  // MEMOIZED SLIDES
-  // ============================================
-  // Memoize slide generation to prevent unnecessary re-renders
-  // Only recreates if customerStories or isMobile changes
   const slides = useMemo(
     () =>
       customerStories.map((story) => (
-        <SwiperSlide key={story.id}>
-          <CustomerStoryCard story={story} isMobile={isMobile} />
+        <SwiperSlide key={story.id} className="pb-14">
+          <CustomerStoryCard story={story} />
         </SwiperSlide>
       )),
-    [isMobile]
+    []
   )
 
-  // ============================================
-  // RENDER
-  // ============================================
   return (
-    <section className="py-8">
-      <div className="relative w-full">
-        <div className="mx-auto text-center">
-          {/* Header */}
-          <h2>What would you do with more time?</h2>
+    <section className="relative overflow-hidden bg-teal-950 py-20 text-white">
+      <PatternDiagonal />
 
-          {/* Subtitle */}
-          <p className="mb-8">Over 2.5M+ hours saved for 5,000+ customers.</p>
+      <div className="relative container mx-auto px-4">
+        <div className="mb-12 text-center">
+          <h2 className="mb-3 text-3xl font-bold md:text-4xl">
+            What would you do with more time?
+          </h2>
+          <p className="text-lg text-teal-100/60">
+            Over 2.5M+ hours saved for 5,000+ customers.
+          </p>
         </div>
-        <Swiper
-          modules={SWIPER_MODULES}
-          spaceBetween={20}
-          slidesPerView={1.2}
-          centeredSlides={false}
-          pagination={PAGINATION_CONFIG}
-          navigation={true}
-          breakpoints={BREAKPOINTS_CONFIG}
-          className="customer-stories-swiper"
-        >
-          {slides}
-        </Swiper>
 
-        <div className="container">
-          {/* Button */}
-          <div className="mt-12 text-center">
-            <Button asChild size="lg" variant="ghost">
-              <Link
-                href="/customers"
-                className="inline-flex items-center gap-2"
-                aria-label="View all customer success stories"
-              >
-                View all customer stories
-                <ArrowRight className="h-5 w-5" />
-              </Link>
-            </Button>
-          </div>
+        <div className="relative md:px-12">
+          <button className="nav-prev absolute top-1/2 left-0 z-10 hidden h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full bg-black/20 text-white transition-all hover:bg-black/40 disabled:opacity-0 md:flex">
+            <ChevronLeft className="h-6 w-6" />
+          </button>
+          <button className="nav-next absolute top-1/2 right-0 z-10 hidden h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full bg-black/20 text-white transition-all hover:bg-black/40 disabled:opacity-0 md:flex">
+            <ChevronRight className="h-6 w-6" />
+          </button>
+
+          <Swiper
+            {...SWIPER_CONFIG}
+            navigation={{ prevEl: ".nav-prev", nextEl: ".nav-next" }}
+            pagination={{ clickable: true, dynamicBullets: true }}
+            className="!overflow-visible"
+          >
+            {slides}
+          </Swiper>
+        </div>
+
+        <div className="mt-8 text-center">
+          <Button
+            asChild
+            variant="ghost"
+            className="text-teal-300 hover:bg-white/5 hover:text-white"
+          >
+            <Link href="/customers" className="inline-flex items-center gap-2">
+              View all customer stories <ArrowRight className="h-5 w-5" />
+            </Link>
+          </Button>
         </div>
       </div>
+
+      <style jsx global>{`
+        .swiper-pagination-bullet {
+          background: white !important;
+          opacity: 0.3;
+        }
+        .swiper-pagination-bullet-active {
+          opacity: 1 !important;
+          width: 12px;
+          border-radius: 4px;
+        }
+      `}</style>
     </section>
   )
 }

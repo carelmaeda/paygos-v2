@@ -24,13 +24,11 @@ export function SolutionsSection() {
   return (
     <section className="py-16">
       <div className="section-container px-4 md:px-6">
-        <header className="mb-16 text-center">
-          <h2 className="text-3xl font-bold sm:text-4xl md:text-5xl">
-            Power Your Growth with Sales Acceleration
+        <header className="mb-16 flex flex-col items-center gap-2 text-center">
+          <small className="text-teal-600 uppercase">Sales Acceleration</small>
+          <h2 className="mx-auto max-w-3xl text-3xl sm:text-4xl md:text-5xl">
+            Tools tailored to your sales process
           </h2>
-          <p className="text-muted-foreground mx-auto mt-2">
-            Choose from these modules, all customized to fit your business.
-          </p>
         </header>
 
         <div className="space-y-16 md:space-y-8">
@@ -43,7 +41,7 @@ export function SolutionsSection() {
               >
                 {/* Image */}
                 <div
-                  className={`relative aspect-video w-full overflow-hidden rounded-xl md:col-span-6 ${
+                  className={`relative mb-4 aspect-video overflow-hidden rounded-lg md:col-span-6 ${
                     !isEven ? "md:order-last" : ""
                   }`}
                 >
@@ -59,26 +57,20 @@ export function SolutionsSection() {
 
                 {/* Text Content */}
                 <div
-                  className={`flex flex-col items-center text-center md:col-span-6 md:items-start md:text-left ${
+                  className={`flex flex-col items-center gap-2 text-center md:col-span-6 md:items-start md:text-left ${
                     isEven ? "md:pl-4" : "md:pr-4"
                   }`}
                 >
-                  <h3 className="text-2xl font-bold md:text-3xl">
-                    {solution.title}
-                  </h3>
-                  <p className="text-muted-foreground mt-4 md:text-lg">
+                  <h3 className="text-teal-700">{solution.title}</h3>
+                  <p className="text-muted-foreground">
                     {solution.description}
                   </p>
-                  <Button
-                    variant="link"
-                    asChild
-                    className="text-primary mt-4 h-auto p-0 font-semibold"
-                  >
+                  <Button variant="link" asChild>
                     <Link
                       href={solution.href}
                       className="inline-flex items-center gap-2"
                     >
-                      View All <ArrowRight className="h-4 w-4" />
+                      Learn More <ArrowRight className="h-4 w-4" />
                     </Link>
                   </Button>
                 </div>

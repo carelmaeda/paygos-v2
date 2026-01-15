@@ -1,93 +1,62 @@
 "use client"
 
-import { useState } from "react"
 import Link from "next/link"
 import Image from "next/image"
 import { cn } from "@/lib/utils"
 import { CustomerStory } from "./types/customer-story"
+import { ArrowRight } from "lucide-react"
 
 interface CustomerStoryCardProps {
   story: CustomerStory
-  isMobile: boolean
 }
 
-export function CustomerStoryCard({ story, isMobile }: CustomerStoryCardProps) {
-  const [isHovered, setIsHovered] = useState(false)
-
+export function CustomerStoryCard({ story }: CustomerStoryCardProps) {
   return (
     <Link
       href={`/customers/${story.slug}`}
-      className="block h-full"
-      onMouseEnter={() => !isMobile && setIsHovered(true)}
-      onMouseLeave={() => !isMobile && setIsHovered(false)}
+      className="group block h-full outline-none"
     >
-      <article
-        className={cn(
-          "relative overflow-hidden rounded-lg shadow-sm transition-all duration-300",
-          "hover:shadow-md",
-          "h-[400px] md:h-[450px]"
-        )}
-      >
-        {/* Background Image */}
-        <div className="absolute inset-0">
+      <article className="relative h-[420px] w-full overflow-hidden rounded-2xl shadow-xl transition-shadow duration-500 group-hover:shadow-2xl md:h-[480px]">
+        {/* Background & High-Contrast Overlay */}
+        <div className="absolute inset-0 transition-transform duration-700 ease-out group-hover:scale-105">
           <Image
             src={story.backgroundImage}
-            alt={story.companyName}
+            alt=""
             fill
             className="object-cover"
           />
-          {/* Gradient overlay */}
-          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/20" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-black/60 opacity-80 transition-opacity group-hover:opacity-95" />
         </div>
 
-        {/* Hover Overlay - Desktop Only */}
-        {!isMobile && (
-          <div
-            className={cn(
-              "absolute inset-0 z-20 flex items-center justify-center transition-opacity duration-300",
-              "bg-black/80",
-              isHovered ? "opacity-100" : "pointer-events-none opacity-0"
-            )}
-          >
-            <h3 className="px-6 text-center text-white">{story.title}</h3>
+        <div className="relative z-10 flex h-full flex-col justify-between p-8">
+          {/* Top: Tags */}
+          <div className="flex flex-wrap gap-2">
+            {story.tags.map((tag, i) => (
+              <span
+                key={i}
+                className="rounded-full bg-white/10 px-3 py-1 text-xs font-semibold text-white ring-1 ring-white/20 backdrop-blur-md"
+              >
+                {tag}
+              </span>
+            ))}
           </div>
-        )}
 
-        {/* Content */}
-        <div className="relative z-10 flex h-full flex-col justify-between p-6">
-          {/* Top: Company Logo */}
-          <div className="flex justify-start">
-            <div className="rounded-lg bg-white p-3 shadow-md">
-              <Image
-                src={story.companyLogo}
-                alt={story.companyName}
-                width={80}
-                height={40}
-                className="h-8 w-auto object-contain"
-              />
+          {/* Bottom: Revealable Title */}
+          <div className="flex flex-col gap-3">
+            <div className="overflow-hidden">
+              <h3
+                className={cn(
+                  "text-2xl leading-tight font-bold text-white transition-all duration-500 ease-out",
+                  "md:translate-y-8 md:opacity-0 md:group-hover:translate-y-0 md:group-hover:opacity-100"
+                )}
+              >
+                {story.title}
+              </h3>
             </div>
-          </div>
 
-          {/* Bottom Content */}
-          <div>
-            {/* Desktop: Tags at bottom */}
-            {!isMobile && (
-              <div className="flex flex-wrap gap-2">
-                {story.tags.map((tag, index) => (
-                  <span
-                    key={index}
-                    className="inline-flex rounded-lg bg-teal-100 px-3 py-1 text-sm font-medium text-teal-700"
-                  >
-                    {tag}
-                  </span>
-                ))}
-              </div>
-            )}
-
-            {/* Mobile: Title always visible */}
-            {isMobile && (
-              <h3 className="text-xl font-bold text-white">{story.title}</h3>
-            )}
+            <div className="flex items-center gap-2 text-sm font-bold text-teal-400 opacity-0 transition-all delay-75 duration-300 group-hover:opacity-100">
+              Read story <ArrowRight className="h-4 w-4" />
+            </div>
           </div>
         </div>
       </article>

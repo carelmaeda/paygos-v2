@@ -24,16 +24,15 @@ const FEATURES = [
 
 export function FieldSales() {
   return (
-    <section className="relative bg-teal-950 py-16 text-white md:py-24">
+    <section className="relative bg-teal-950 py-16 text-white">
       <PatternHexagon />
-      <div className="section-container relative z-10 px-4 md:px-6">
-        <header className="mb-16 text-center">
-          <p className="mb-4 text-sm font-medium tracking-widest text-teal-400 uppercase">
+      <div className="section-container relative z-10 px-6">
+        <header className="mb-16 flex flex-col items-center gap-2 text-center">
+          <small className="text-teal-400 uppercase">
             Field Sales Automation
-          </p>
-          <h2 className="mx-auto max-w-3xl text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
-            Our Field Sales Automation can save your company both time and
-            money.
+          </small>
+          <h2 className="mx-auto max-w-3xl text-3xl sm:text-4xl md:text-5xl">
+            Automate field sales to save time and money
           </h2>
         </header>
 
@@ -47,7 +46,7 @@ export function FieldSales() {
               >
                 {/* Image */}
                 <div
-                  className={`relative aspect-video w-full overflow-hidden rounded-xl md:col-span-6 ${
+                  className={`relative mb-4 aspect-video overflow-hidden rounded-lg md:col-span-6 ${
                     !isEven ? "md:order-last" : ""
                   }`}
                 >
@@ -63,20 +62,16 @@ export function FieldSales() {
 
                 {/* Text Content */}
                 <div
-                  className={`flex flex-col items-center text-center md:col-span-6 md:items-start md:text-left ${
+                  className={`flex flex-col items-center gap-2 text-center md:col-span-6 md:items-start md:text-left ${
                     isEven ? "md:pl-4" : "md:pr-4"
                   }`}
                 >
-                  <h3 className="text-2xl font-bold md:text-3xl">
-                    {feature.title}
-                  </h3>
-                  <p className="mt-4 text-teal-100/80 md:text-lg">
-                    {feature.description}
-                  </p>
+                  <h3 className="text-teal-300">{feature.title}</h3>
+                  <p className="text-teal-100">{feature.description}</p>
                   <Button
                     variant="link"
                     asChild
-                    className="mt-4 h-auto p-0 font-semibold text-white transition-colors hover:text-teal-400"
+                    className="text-white transition-colors hover:text-teal-400"
                   >
                     <Link
                       href={feature.href}

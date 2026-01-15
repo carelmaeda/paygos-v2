@@ -31,12 +31,12 @@ export function Hero() {
                   </div>
                 </div>
 
-                <h1>
+                <h1 className="text-hero">
                   Sell More. <br />
                   Spend Less.
                 </h1>
 
-                <p className="mt-6 max-w-[420px]">
+                <p className="mt-6 max-w-[450px]">
                   This is a subtitle that is very long and nice.
                   <br /> Explain the main value proposition clearly and
                   confidently in one or two lines.

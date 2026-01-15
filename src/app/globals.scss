@@ -8,7 +8,7 @@
 // ============================================
 
 // Colors - Light Mode
-$background-light: #ffffff;
+$white: #ffffff;
 $foreground-light: #171717;
 
 // Colors - Dark Mode
@@ -31,70 +31,6 @@ $breakpoint-md: 48rem;
 // ============================================
 // CSS CUSTOM PROPERTIES
 // ============================================
-:root {
-  --background: #{$background-light};
-  --foreground: #{$foreground-light};
-  --popover: #{$background-light};
-  --popover-foreground: #{$foreground-light};
-
-  // Card colors
-  --card: #{$background-light};
-  --card-foreground: #{$foreground-light};
-
-  // Primary colors (main brand color)
-  --primary: #{$primary-dark};
-  --primary-foreground: #{$background-light};
-
-  // Secondary colors
-  --secondary: #{$secondary-hover};
-  --secondary-foreground: #{$foreground-light};
-
-  // Muted colors (for subtle backgrounds)
-  --muted: #f4f4f5;
-  --muted-foreground: #71717a;
-
-  // Accent colors (for highlights)
-  --accent: #f4f4f5;
-  --accent-foreground: #{$foreground-light};
-
-  // Destructive colors (for errors/delete)
-  --destructive: #ef4444;
-  --destructive-foreground: #{$background-light};
-
-  // Border and input colors
-  --border: #{$secondary-border};
-  --input: #{$secondary-border};
-  --ring: #{$foreground-light};
-
-  @media (prefers-color-scheme: dark) {
-    --background: #{$background-dark};
-    --foreground: #{$foreground-dark};
-    --popover: #{$background-dark};
-    --popover-foreground: #{$foreground-dark};
-
-    --card: #{$background-dark};
-    --card-foreground: #{$foreground-dark};
-
-    --primary: #{$foreground-dark};
-    --primary-foreground: #{$background-dark};
-
-    --secondary: #27272a;
-    --secondary-foreground: #{$foreground-dark};
-
-    --muted: #27272a;
-    --muted-foreground: #a1a1aa;
-
-    --accent: #27272a;
-    --accent-foreground: #{$foreground-dark};
-
-    --destructive: #ef4444;
-    --destructive-foreground: #{$foreground-dark};
-
-    --border: #27272a;
-    --input: #27272a;
-    --ring: #{$foreground-dark};
-  }
-}
 
 // ============================================
 // TAILWIND THEME EXTENSION
@@ -150,6 +86,12 @@ h3 {
   text-transform: capitalize;
 }
 
+.text-hero {
+  color: $white;
+  letter-spacing: -0.04em;
+  text-transform: capitalize;
+}
+
 /* Heading Scale */
 h1,
 .h1 {
@@ -164,7 +106,7 @@ h1,
 h2,
 .h2 {
   font-size: 1.44rem;
-  letter-spacing: -0.01em;
+  letter-spacing: -0.03em;
 
   @media (min-width: $breakpoint-md) {
     font-size: 2rem;

@@ -1,61 +1,45 @@
-import {
-  ShoppingCart,
-  TrendingUp,
-  GraduationCap,
-  RotateCcw,
-  CreditCard,
-  Megaphone,
-  type LucideIcon,
-} from "lucide-react"
-
 export interface SalesAccelerationTool {
   title: string
   description: string
-  icon: LucideIcon
+  image: string
   href: string
 }
 
 export const SALES_ACCELERATION_TOOLS: SalesAccelerationTool[] = [
   {
     title: "Optimized Ordering",
-    description:
-      "Streamline order management with real-time inventory visibility, automated order processing, and intelligent ordering workflows for sales teams.",
-    icon: ShoppingCart,
+    description: "Faster, smarter order management.",
+    image: "/paygos-hero.svg",
     href: "/sales-acceleration/ordering",
   },
   {
     title: "Rebates",
-    description:
-      "Maximize ROI and drive growth with automated rebate management, real-time tracking, and comprehensive reporting.",
-    icon: TrendingUp,
+    description: "Automated rebates that drive growth.",
+    image: "/paygos-hero.svg",
     href: "/sales-acceleration/rebates",
   },
   {
     title: "Training Management",
-    description:
-      "Transform training into a loyalty-building journey with gamified learning, certification tracking, and engagement analytics.",
-    icon: GraduationCap,
+    description: "Engaging, trackable sales training.",
+    image: "/paygos-hero.svg",
     href: "/sales-acceleration/training",
   },
   {
     title: "Returns Management",
-    description:
-      "Minimize returns and maximize control with automated workflows, real-time tracking, and compliance management.",
-    icon: RotateCcw,
+    description: "Simplified, compliant returns.",
+    image: "/paygos-hero.svg",
     href: "/sales-acceleration/returns",
   },
   {
     title: "Payments",
-    description:
-      "Validate incentives, manage budgets, and ensure compliance with automated payment processing and real-time insights.",
-    icon: CreditCard,
+    description: "Secure, automated incentive payments.",
+    image: "/paygos-hero.svg",
     href: "/sales-acceleration/payments",
   },
   {
     title: "Marketing",
-    description:
-      "Keep your customers engaged and up-to-date with targeted campaigns, automated communications, and performance tracking.",
-    icon: Megaphone,
+    description: "Targeted campaigns that perform.",
+    image: "/paygos-hero.svg",
     href: "/sales-acceleration/marketing",
   },
 ]
