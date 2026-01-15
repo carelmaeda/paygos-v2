@@ -5,17 +5,17 @@ import { Button } from "@/components/ui/button"
 
 const SOLUTIONS = [
   {
-    title: "Sales Acceleration",
-    description: "Streamline operations and drive revenue growth.",
-    image:
-      "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2015&auto=format&fit=crop",
+    title: "Drive Growth. Maximize ROI.",
+    description:
+      "Automate ordering, rebates, training, returns, payments, and marketing in one connected platform that turns trade spend into revenue.",
+    image: "https://images.unsplash.com/photo-1713947505562-299114c58523",
     href: "/sales-acceleration",
   },
   {
-    title: "Field Sales Automation",
-    description: "Save your company both time and money.",
-    image:
-      "https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=2070&auto=format&fit=crop",
+    title: "Accelerate Sales. Amplify Results.",
+    description:
+      "Unified tools for ordering, rebates, training incentives, returns, payments, and marketing that drive performance across your distribution network.",
+    image: "https://images.unsplash.com/photo-1542744173-05336fcc7ad4",
     href: "/sales-acceleration",
   },
 ]
@@ -62,9 +62,7 @@ export function SolutionsSection() {
                   }`}
                 >
                   <h3 className="text-teal-700">{solution.title}</h3>
-                  <p className="text-muted-foreground">
-                    {solution.description}
-                  </p>
+                  <p>{solution.description}</p>
                   <Button variant="link" asChild>
                     <Link
                       href={solution.href}

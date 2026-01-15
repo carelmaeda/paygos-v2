@@ -76,7 +76,7 @@ export default function Home() {
       </section>
 
       {/* CustomerStories - Light background */}
-      <section data-navbar-theme="light">
+      <section data-navbar-theme="dark">
         <CustomerStoriesCarousel />
       </section>
 

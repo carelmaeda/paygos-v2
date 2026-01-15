@@ -71,6 +71,7 @@ export function CustomerStoriesCarousel() {
           <Button
             asChild
             variant="ghost"
+            size="lg"
             className="text-teal-300 hover:bg-white/5 hover:text-white"
           >
             <Link href="/customers" className="inline-flex items-center gap-2">

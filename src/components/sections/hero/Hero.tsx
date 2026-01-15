@@ -37,9 +37,9 @@ export function Hero() {
                 </h1>
 
                 <p className="mt-6 max-w-[450px]">
-                  This is a subtitle that is very long and nice.
-                  <br /> Explain the main value proposition clearly and
-                  confidently in one or two lines.
+                  Paygos is a customizable sales acceleration platform designed
+                  to drive incremental revenue, automate manual processes and
+                  surface actionable sales data & analytics.
                 </p>
 
                 <div className="mt-8 flex justify-center lg:justify-start">

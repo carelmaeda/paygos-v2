@@ -6,16 +6,17 @@ import { PatternHexagon } from "@/components/ui/patterns"
 
 const FEATURES = [
   {
-    title: "Our Field Sales Automation can do this.",
-    description: "This is a subtitle that is very long and nice.",
+    title: "Empower Reps. Execute Flawlessly.",
+    description:
+      "Smart territory planning, automated scheduling, and real-time data capture that turn every store visit into a revenue opportunity.",
     image:
       "https://images.unsplash.com/photo-1544256718-3bcf237f3974?q=80&w=2071&auto=format&fit=crop",
     href: "/solutions/fsa",
   },
   {
-    title: "Streamline your sales process effortlessly.",
+    title: "Optimize Routes. Maximize Impact.",
     description:
-      "Empower your field team with real-time data and automation tools.",
+      "PS-enabled territories, AI-powered insights, and mobile execution tools that boost productivity and deliver complete visibility across your field team.",
     image:
       "https://images.unsplash.com/photo-1556761175-b413da4baf72?q=80&w=2074&auto=format&fit=crop",
     href: "/solutions/fsa",
