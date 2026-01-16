@@ -1,8 +1,8 @@
 import type { Metadata } from "next"
 import { CTA } from "@/components/sections/cta/CTA"
-import { BookCallButton } from "@/components/sections/cta/BookCallButton"
 import Image from "next/image"
 import { IndustryBadge } from "@/components/sections/solutions/IndustryBadge"
+import { PatternDots } from "@/components/ui/patterns"
 import {
   Zap,
   Clock,
@@ -75,38 +75,24 @@ export default function PaygosOrderingPage() {
     <main className="min-h-screen">
       {/* Hero */}
       <section
+        className="relative flex min-h-[75vh] bg-cyan-950"
         data-navbar-theme="dark"
-        className="relative flex min-h-[70vh] items-center overflow-hidden bg-slate-950 pt-32 pb-16"
       >
-        <div className="absolute inset-0 z-0">
-          <Image
-            src="https://images.unsplash.com/photo-1556742111-a301076d9d18"
-            alt="Smart ordering system"
-            fill
-            priority
-            className="object-cover opacity-30"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/70 to-transparent" />
-        </div>
-
-        <div className="relative z-10 container mx-auto px-6 lg:px-8">
-          <div className="max-w-4xl">
-            <div className="mb-8 inline-flex items-center gap-2 rounded-full border border-emerald-500/30 bg-emerald-500/20 px-4 py-1.5 text-xs font-black tracking-[0.2em] text-emerald-300 uppercase backdrop-blur-md">
-              Streamlined • Efficient • Transparent
-            </div>
-            <h2 className="mb-10 text-6xl leading-[0.9] font-black tracking-tighter text-white md:text-6xl">
-              Tranforming Ordering into <br />
-              <span className="bg-gradient-to-r from-emerald-400 to-cyan-400 bg-clip-text text-transparent">
-                Revenue.
-              </span>
-            </h2>
-            <p className="mb-12 text-slate-300">
-              Paygos empowers reps, account managers, and retail partners to
-              place and track orders for products and merchandising in one
-              streamlined platform.
-            </p>
-            <BookCallButton />
-          </div>
+        <PatternDots />
+        <div className="text-hero">
+          <small className="text-teal-400">Streamlined Order Management</small>
+          <h1>
+            Transforming Ordering
+            <br />
+            <span className="bg-gradient-to-r from-teal-400 to-cyan-400 bg-clip-text text-transparent">
+              Into Revenue
+            </span>
+          </h1>
+          <p>
+            Paygos empowers reps, account managers, and retail partners to place
+            and track orders for products and merchandising in one streamlined
+            platform.
+          </p>
         </div>
       </section>
 

@@ -18,7 +18,7 @@ export default function VetGrowth() {
       <section className="relative flex bg-teal-950" data-navbar-theme="dark">
         <PatternDots />
 
-        <div className="text-hero relative z-10 flex flex-col justify-center py-32 text-white">
+        <div className="text-hero relative z-10 flex flex-col py-32 text-white">
           <small className="text-teal-400">
             Sales Acceleration • Automation • Analytics
           </small>

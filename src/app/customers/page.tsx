@@ -4,7 +4,6 @@ import Image from "next/image"
 import { ArrowRight, PawPrint } from "lucide-react"
 import { CustomersLogosCarousel } from "@/components/sections/customers/CustomersLogosCarousel"
 import { PatternDiagonal } from "@/components/ui/patterns"
-import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { CustomerStoriesCarousel } from "@/components/sections/customers/CustomerStoriesCarousel"
 import { CTA } from "@/components/sections/cta/CTA"
@@ -82,43 +81,40 @@ export default function CustomersPage() {
       </section>
 
       {/* Featured Story */}
-      <section className="section-container relative my-8 min-h-[65vh] overflow-hidden rounded-lg">
-        <Image
-          src="https://images.unsplash.com/photo-1655210913315-e8147faf7600"
-          alt="Pet Food"
-          fill
-          className="object-cover"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/20" />
-        <div className="absolute inset-0 flex items-end">
-          <div className="section-container space-y-4 pb-16 md:pb-24">
-            <Badge variant="secondary" className="badge badge-vet">
-              <PawPrint size={32} />
-              Veterinary
-            </Badge>
-            <h2 className="font-black text-white">
-              50% Reduction in Order Processing Time
-            </h2>
-            <p className="mb-8 max-w-md text-gray-200">
-              How this Veterinary Indutry leader streamlined their operations
-              with field sales automation, dramatically improving efficiency.
-            </p>
+      <Link href="/customers/vet-growth" className="group block">
+        <section className="section-container relative my-8 min-h-[65vh] overflow-hidden rounded-lg transition-transform duration-300 group-hover:shadow-xl">
+          <Image
+            src="https://images.unsplash.com/photo-1655210913315-e8147faf7600"
+            alt="Pet Food"
+            fill
+            className="object-cover transition-transform duration-500 group-hover:scale-105"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/20" />
 
-            <Button
-              variant="link"
-              asChild
-              className="text-white transition-colors hover:text-teal-400"
-            >
-              <Link
-                href="/customers/vet-growth"
-                className="inline-flex items-center gap-2"
-              >
-                Learn more <ArrowRight className="h-4 w-4" />
-              </Link>
-            </Button>
+          <div className="absolute inset-0 flex items-end">
+            <div className="section-container space-y-4 pb-16 md:pb-24">
+              <Badge variant="secondary" className="badge badge-vet">
+                <PawPrint size={32} />
+                Veterinary
+              </Badge>
+
+              <h2 className="font-black text-white">
+                50% Reduction in Order Processing Time
+              </h2>
+
+              <p className="mb-8 max-w-md text-gray-200">
+                How this Veterinary Industry leader streamlined their operations
+                with field sales automation, dramatically improving efficiency.
+              </p>
+
+              <div className="inline-flex items-center gap-2 font-medium text-white transition-colors group-hover:underline">
+                Learn more
+                <ArrowRight className="h-4 w-4" />
+              </div>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      </Link>
 
       <section className="py-8">
         <div className="text-center">

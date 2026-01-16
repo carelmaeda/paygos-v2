@@ -2,9 +2,9 @@ import type { Metadata } from "next"
 import React from "react"
 import Link from "next/link"
 import { CTA } from "@/components/sections/cta/CTA"
-import { BookCallButton } from "@/components/sections/cta/BookCallButton"
 import Image from "next/image"
 import { IndustryBadge } from "@/components/sections/solutions/IndustryBadge"
+import { PatternDots } from "@/components/ui/patterns"
 import {
   DollarSign,
   Target,
@@ -75,38 +75,24 @@ export default function PaygosRebatesPage() {
     <main className="min-h-screen">
       {/* Hero */}
       <section
-        className="relative flex min-h-[90vh] items-center overflow-hidden bg-slate-950 pt-32 pb-24"
+        className="relative flex min-h-[75vh] bg-cyan-950"
         data-navbar-theme="dark"
       >
-        <div className="absolute inset-0 z-0">
-          <Image
-            src="https://images.unsplash.com/photo-1554224155-6726b3ff858f"
-            alt="Rebates and incentives"
-            fill
-            priority
-            className="object-cover opacity-30"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/70 to-transparent" />
-        </div>
-
-        <div className="relative z-10 container mx-auto px-6 lg:px-8">
-          <div className="max-w-4xl">
-            <div className="mb-8 inline-flex items-center gap-2 rounded-full border border-emerald-500/30 bg-emerald-500/20 px-4 py-1.5 text-xs font-black tracking-[0.2em] text-emerald-300 uppercase backdrop-blur-md">
-              Automated • Validated • Transparent
-            </div>
-            <h1 className="mb-10 text-6xl leading-[0.9] font-black tracking-tighter text-white md:text-9xl">
-              REBATES THAT <br />
-              <span className="bg-gradient-to-r from-emerald-400 to-cyan-400 bg-clip-text text-transparent">
-                DRIVE LOYALTY.
-              </span>
-            </h1>
-            <p className="mb-12 max-w-2xl text-xl leading-relaxed font-medium text-slate-300 md:text-2xl">
-              Paygos automates rebate tracking, claim validation, and payout
-              management—giving your team real-time visibility into programs
-              that drive loyalty and maximize profitability.
-            </p>
-            <BookCallButton />
-          </div>
+        <PatternDots />
+        <div className="text-hero">
+          <small className="text-teal-400">Automated Rebate Management</small>
+          <h1>
+            Rebates That
+            <br />
+            <span className="bg-gradient-to-r from-teal-400 to-cyan-400 bg-clip-text text-transparent">
+              Drive Loyalty
+            </span>
+          </h1>
+          <p>
+            Paygos automates rebate tracking, claim validation, and payout
+            management—giving your team real-time visibility into programs that
+            drive loyalty and maximize profitability.
+          </p>
         </div>
       </section>
 

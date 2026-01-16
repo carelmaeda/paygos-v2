@@ -1,6 +1,7 @@
 import type { Metadata } from "next"
 import Image from "next/image"
 import Link from "next/link"
+import { PatternDots } from "@/components/ui/patterns"
 import {
   GraduationCap,
   FileText,
@@ -77,40 +78,23 @@ export default function TrainingPage() {
     <main>
       {/* Hero Section */}
       <section
-        className="relative flex min-h-[90vh] items-center overflow-hidden bg-slate-950 pt-32 pb-24"
+        className="relative flex min-h-[75vh] bg-cyan-950"
         data-navbar-theme="dark"
       >
-        <div className="absolute inset-0 z-0">
-          <Image
-            src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?q=80&w=2070&auto=format&fit=crop"
-            alt="Training and learning"
-            fill
-            priority
-            className="object-cover opacity-30"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/70 to-transparent" />
-        </div>
-
-        <div className="relative z-10 container mx-auto px-6 lg:px-8">
-          <div className="mb-12 inline-flex items-center gap-3 rounded-full border border-white/20 bg-white/10 px-6 py-3 text-sm font-bold tracking-widest text-white backdrop-blur-sm">
-            <GraduationCap size={20} />
-            <span>CERTIFICATION MANAGEMENT</span>
-          </div>
-
-          <h1 className="mb-10 text-6xl leading-[0.9] font-black tracking-tighter text-white md:text-9xl">
-            TRAIN SMARTER,
+        <PatternDots />
+        <div className="text-hero">
+          <small className="text-teal-400">Certification Management</small>
+          <h1>
+            Train Smarter
             <br />
-            <span className="bg-gradient-to-r from-emerald-400 to-cyan-400 bg-clip-text text-transparent">
-              NOT HARDER.
+            <span className="bg-gradient-to-r from-teal-400 to-cyan-400 bg-clip-text text-transparent">
+              Not Harder
             </span>
           </h1>
-
-          <p className="mb-12 max-w-2xl text-xl leading-relaxed text-slate-300 md:text-2xl">
+          <p>
             Interactive modules, certification tracking, and incentive-based
             rewards that drive completion and retention.
           </p>
-
-          <BookCallButton />
         </div>
       </section>
 
