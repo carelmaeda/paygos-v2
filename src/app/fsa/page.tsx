@@ -17,9 +17,10 @@ import {
   Timer,
 } from "lucide-react"
 import { CTA } from "@/components/sections/cta/CTA"
-import { BookCallButton } from "@/components/sections/cta/BookCallButton"
 import { FsaCoverageChart } from "./fsa-coverage-chart"
 import { IndustryBadge } from "@/components/sections/solutions/IndustryBadge"
+import { PatternHexagon } from "@/components/ui/patterns"
+import { Breadcrumbs } from "@/components/layout/Breadcrumbs"
 
 export const metadata: Metadata = {
   title: "Field Sales Automation | Paygos",
@@ -69,47 +70,37 @@ export const metadata: Metadata = {
 
 export default function FsaPage() {
   return (
-    <main className="min-h-screen">
+    <main>
       {/* Hero */}
       <section
-        className="relative flex min-h-[90vh] items-center overflow-hidden bg-slate-950 pt-32 pb-24 md:py-32"
+        className="relative flex min-h-[75vh] bg-teal-950"
         data-navbar-theme="dark"
       >
-        <div className="absolute inset-0 z-0">
-          <Image
-            src="https://images.unsplash.com/photo-1556761175-b413da4baf72"
-            alt="Field sales representative"
-            fill
-            priority
-            className="object-cover opacity-30"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/70 to-transparent" />
-        </div>
-
-        <div className="section-container relative z-10 mx-auto px-6 lg:px-8">
-          <div className="max-w-4xl">
-            <div className="mb-8 inline-flex items-center gap-2 rounded-full border border-emerald-500/30 bg-emerald-500/20 px-4 py-1.5 text-xs font-black tracking-[0.2em] text-emerald-300 uppercase backdrop-blur-md">
-              Mobile-First • Real-Time Execution
-            </div>
-            <h1 className="mb-8 text-6xl leading-[0.9] font-black tracking-tighter text-white md:text-9xl">
-              EMPOWER <br />
-              <span className="bg-gradient-to-r from-emerald-400 to-cyan-400 bg-clip-text text-transparent">
-                YOUR FIELD TEAM.
-              </span>
-            </h1>
-            <p className="mb-12 max-w-2xl text-xl leading-relaxed font-medium text-slate-300 md:text-2xl">
-              Paygos FSA equips field reps with mobile tools to manage visits,
-              capture photos, track activities, and execute flawlessly—all from
-              their phone.
-            </p>
-            <BookCallButton />
-          </div>
+        <PatternHexagon />
+        <div className="text-hero">
+          <small className="text-teal-400">
+            Mobile-First • Real-Time Execution
+          </small>
+          <h1>
+            Empower Your
+            <br />
+            <span className="bg-gradient-to-r from-teal-400 to-cyan-400 bg-clip-text text-transparent">
+              Field Team
+            </span>
+          </h1>
+          <p>
+            Paygos FSA equips field reps with mobile tools to manage visits,
+            capture photos, track activities, and execute flawlessly—all from
+            their phone.
+          </p>
         </div>
       </section>
 
+      <Breadcrumbs />
+
       {/* Challenges */}
       <section
-        className="section-container mx-auto px-6 py-24"
+        className="section-container mx-auto px-6 py-16"
         data-navbar-theme="light"
       >
         <h2 className="mb-8 text-center text-3xl font-black text-slate-900 md:text-5xl">
@@ -117,7 +108,7 @@ export default function FsaPage() {
         </h2>
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
           {/* Challenge 1 */}
-          <div className="rounded-2xl border border-gray-100 bg-white p-8 shadow-lg transition-shadow hover:shadow-xl">
+          <div className="rounded-lg border border-gray-100 bg-white p-8 shadow-lg transition-shadow hover:shadow-xl">
             <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-xl bg-red-100">
               <FileText className="h-8 w-8 text-red-600" />
             </div>
@@ -131,7 +122,7 @@ export default function FsaPage() {
           </div>
 
           {/* Challenge 2 */}
-          <div className="rounded-2xl border border-gray-100 bg-white p-8 shadow-lg transition-shadow hover:shadow-xl">
+          <div className="rounded-lg border border-gray-100 bg-white p-8 shadow-lg transition-shadow hover:shadow-xl">
             <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-xl bg-red-100">
               <Camera className="h-8 w-8 text-red-600" />
             </div>
@@ -145,7 +136,7 @@ export default function FsaPage() {
           </div>
 
           {/* Challenge 3 */}
-          <div className="rounded-2xl border border-gray-100 bg-white p-8 shadow-lg transition-shadow hover:shadow-xl">
+          <div className="rounded-lg border border-gray-100 bg-white p-8 shadow-lg transition-shadow hover:shadow-xl">
             <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-xl bg-red-100">
               <MapPin className="h-8 w-8 text-red-600" />
             </div>
@@ -159,7 +150,7 @@ export default function FsaPage() {
           </div>
 
           {/* Challenge 4 */}
-          <div className="rounded-2xl border border-gray-100 bg-white p-8 shadow-lg transition-shadow hover:shadow-xl">
+          <div className="rounded-lg border border-gray-100 bg-white p-8 shadow-lg transition-shadow hover:shadow-xl">
             <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-xl bg-red-100">
               <Clock className="h-8 w-8 text-red-600" />
             </div>
@@ -190,7 +181,7 @@ export default function FsaPage() {
           The Paygos Solution
         </h2>
 
-        <div className="grid auto-rows-[350px] grid-cols-1 gap-6 md:grid-cols-6">
+        <div className="grid auto-rows-[350px] grid-cols-1 gap-2 md:grid-cols-6">
           {/* Card 1 - Mobile Visit Capture */}
           <article
             className="bento-card md:col-span-4"
@@ -348,7 +339,7 @@ export default function FsaPage() {
             </h2>
             <div className="space-y-10">
               <div className="group flex items-start gap-8">
-                <div className="shrink-0 rounded-3xl bg-teal-50 p-5 transition-colors duration-300 group-hover:bg-teal-500">
+                <div className="shrink-0 rounded-lg bg-teal-50 p-5 transition-colors duration-300 group-hover:bg-teal-500">
                   <MapPin
                     size={28}
                     className="text-teal-600 group-hover:text-white"
@@ -365,7 +356,7 @@ export default function FsaPage() {
                 </div>
               </div>
               <div className="group flex items-start gap-8">
-                <div className="shrink-0 rounded-3xl bg-teal-50 p-5 transition-colors duration-300 group-hover:bg-teal-500">
+                <div className="shrink-0 rounded-lg bg-teal-50 p-5 transition-colors duration-300 group-hover:bg-teal-500">
                   <TrendingUp
                     size={28}
                     className="text-teal-600 group-hover:text-white"

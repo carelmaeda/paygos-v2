@@ -26,6 +26,7 @@ import {
 import { CTA } from "@/components/sections/cta/CTA"
 import { IndustryBadge } from "@/components/sections/solutions/IndustryBadge"
 import { BookCallButton } from "@/components/sections/cta/BookCallButton"
+import { Breadcrumbs } from "@/components/layout/Breadcrumbs"
 
 // --- Constants & Configuration ---
 
@@ -48,7 +49,10 @@ export default function PaymentsPage() {
   return (
     <main className="min-h-screen bg-white font-sans text-slate-900">
       {/* SECTION: Hero & Background */}
-      <section data-navbar-theme="dark" className="relative flex min-h-[90vh] items-center overflow-hidden bg-slate-950 pt-32 pb-24">
+      <section
+        data-navbar-theme="dark"
+        className="relative flex min-h-[90vh] items-center overflow-hidden bg-slate-950 pt-32 pb-24"
+      >
         <div className="absolute inset-0 z-0">
           <Image
             src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?q=80&w=2070&auto=format&fit=crop"
@@ -80,15 +84,20 @@ export default function PaymentsPage() {
         </div>
       </section>
 
+      <Breadcrumbs />
+
       {/* SECTION: Challenges */}
-      <section data-navbar-theme="light" className="container mx-auto px-6 py-24">
+      <section
+        data-navbar-theme="light"
+        className="container mx-auto px-6 py-24"
+      >
         <h2 className="mb-12 text-center text-3xl font-black text-slate-900">
           Common Payment Challenges
         </h2>
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
           {/* Challenge 1 */}
-          <div className="rounded-2xl border border-gray-100 bg-white p-8 shadow-lg transition-shadow hover:shadow-xl">
-            <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-xl bg-red-100">
+          <div className="rounded-lg border border-gray-100 bg-white p-8 shadow-lg transition-shadow hover:shadow-xl">
+            <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-lg bg-red-100">
               <AlertCircle className="h-8 w-8 text-red-600" />
             </div>
             <h3 className="mb-3 text-xl font-bold text-gray-900">
@@ -101,8 +110,8 @@ export default function PaymentsPage() {
           </div>
 
           {/* Challenge 2 */}
-          <div className="rounded-2xl border border-gray-100 bg-white p-8 shadow-lg transition-shadow hover:shadow-xl">
-            <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-xl bg-red-100">
+          <div className="rounded-lg border border-gray-100 bg-white p-8 shadow-lg transition-shadow hover:shadow-xl">
+            <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-lg bg-red-100">
               <TrendingDown className="h-8 w-8 text-red-600" />
             </div>
             <h3 className="mb-3 text-xl font-bold text-gray-900">
@@ -115,8 +124,8 @@ export default function PaymentsPage() {
           </div>
 
           {/* Challenge 3 */}
-          <div className="rounded-2xl border border-gray-100 bg-white p-8 shadow-lg transition-shadow hover:shadow-xl">
-            <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-xl bg-red-100">
+          <div className="rounded-lg border border-gray-100 bg-white p-8 shadow-lg transition-shadow hover:shadow-xl">
+            <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-lg bg-red-100">
               <FileSearch className="h-8 w-8 text-red-600" />
             </div>
             <h3 className="mb-3 text-xl font-bold text-gray-900">
@@ -129,8 +138,8 @@ export default function PaymentsPage() {
           </div>
 
           {/* Challenge 4 */}
-          <div className="rounded-2xl border border-gray-100 bg-white p-8 shadow-lg transition-shadow hover:shadow-xl">
-            <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-xl bg-red-100">
+          <div className="rounded-lg border border-gray-100 bg-white p-8 shadow-lg transition-shadow hover:shadow-xl">
+            <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-lg bg-red-100">
               <Shield className="h-8 w-8 text-red-600" />
             </div>
             <h3 className="mb-3 text-xl font-bold text-gray-900">
@@ -302,14 +311,21 @@ export default function PaymentsPage() {
       </section>
 
       {/* SECTION: Analytics & Chart */}
-      <section data-navbar-theme="light" className="container mx-auto px-6 py-40">
+      <section
+        data-navbar-theme="light"
+        className="container mx-auto px-6 py-40"
+      >
         <div className="grid items-center gap-32 lg:grid-cols-2">
           <div className="rounded-[4rem] border border-slate-50 bg-white p-12 shadow-xl">
             <div className="mb-12 flex items-center justify-between text-xs font-black tracking-widest uppercase">
               <span>Payment Distribution</span>
               <PieChart className="text-emerald-500" size={20} />
             </div>
-            <ChartContainer id="payment-distribution-page" config={CHART_CONFIG} className="h-[400px] w-full">
+            <ChartContainer
+              id="payment-distribution-page"
+              config={CHART_CONFIG}
+              className="h-[400px] w-full"
+            >
               <BarChart
                 data={CHART_DATA}
                 layout="vertical"
@@ -329,7 +345,7 @@ export default function PaymentsPage() {
                   cursor={false}
                   content={
                     <ChartTooltipContent
-                      className="rounded-2xl bg-slate-950 text-white"
+                      className="rounded-lg bg-slate-950 text-white"
                       formatter={(val) => (
                         <span className="font-black text-emerald-400">
                           ${Number(val).toLocaleString()}
@@ -358,7 +374,7 @@ export default function PaymentsPage() {
             </h2>
             <div className="space-y-10">
               <div className="group flex items-start gap-8">
-                <div className="shrink-0 rounded-3xl bg-teal-50 p-5 transition-colors duration-300 group-hover:bg-teal-500">
+                <div className="shrink-0 rounded-lg bg-teal-50 p-5 transition-colors duration-300 group-hover:bg-teal-500">
                   <ShieldCheck
                     size={28}
                     className="text-teal-600 group-hover:text-white"
@@ -375,7 +391,7 @@ export default function PaymentsPage() {
                 </div>
               </div>
               <div className="group flex items-start gap-8">
-                <div className="shrink-0 rounded-3xl bg-teal-50 p-5 transition-colors duration-300 group-hover:bg-teal-500">
+                <div className="shrink-0 rounded-lg bg-teal-50 p-5 transition-colors duration-300 group-hover:bg-teal-500">
                   <Smartphone
                     size={28}
                     className="text-teal-600 group-hover:text-white"
@@ -399,7 +415,12 @@ export default function PaymentsPage() {
       <IndustryBadge />
 
       {/* SECTION: ROI */}
-      <section data-navbar-theme="dark" className="mx-auto" role="region" aria-labelledby="roi-heading">
+      <section
+        data-navbar-theme="dark"
+        className="mx-auto"
+        role="region"
+        aria-labelledby="roi-heading"
+      >
         <div className="relative overflow-hidden bg-slate-900 p-8 text-white md:p-16">
           <div className="relative z-10 grid items-center gap-12 lg:grid-cols-2">
             <div>

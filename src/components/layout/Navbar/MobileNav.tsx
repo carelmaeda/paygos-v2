@@ -87,7 +87,7 @@ export function MobileNav({ theme }: MobileNavProps) {
           <Accordion type="single" collapsible className="w-full">
             <AccordionItem value="solutions" className="px-5">
               <AccordionTrigger>Solutions</AccordionTrigger>
-              <AccordionContent className="flex flex-col gap-2 rounded-xl bg-white p-6 text-black">
+              <AccordionContent className="flex flex-col gap-2 rounded-lg bg-white p-6 text-black">
                 {SOLUTIONS.map((item) => {
                   const Icon = item.icon
                   return (

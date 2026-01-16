@@ -21,7 +21,7 @@ export function RoiCalculator() {
   return (
     <div className="space-y-8">
       {/* Step 1 */}
-      <section className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+      <section className="rounded-lg border border-slate-200 bg-white p-6 shadow-sm">
         <div className="mb-4 flex items-center gap-3">
           <span className="flex h-8 w-8 items-center justify-center rounded-full bg-teal-600 text-sm font-bold text-white">
             1
@@ -32,23 +32,27 @@ export function RoiCalculator() {
       </section>
 
       {/* Step 2 */}
-      <section className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+      <section className="rounded-lg border border-slate-200 bg-white p-6 shadow-sm">
         <div className="mb-4 flex items-center gap-3">
           <span className="flex h-8 w-8 items-center justify-center rounded-full bg-teal-600 text-sm font-bold text-white">
             2
           </span>
-          <h2 className="text-lg font-bold text-slate-900">Enter Your Values</h2>
+          <h2 className="text-lg font-bold text-slate-900">
+            Enter Your Values
+          </h2>
         </div>
         <InputForm inputs={inputs} onChange={setInputs} />
       </section>
 
       {/* Step 3 */}
-      <section className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+      <section className="rounded-lg border border-slate-200 bg-white p-6 shadow-sm">
         <div className="mb-4 flex items-center gap-3">
           <span className="flex h-8 w-8 items-center justify-center rounded-full bg-teal-600 text-sm font-bold text-white">
             3
           </span>
-          <h2 className="text-lg font-bold text-slate-900">Your Estimated Results</h2>
+          <h2 className="text-lg font-bold text-slate-900">
+            Your Estimated Results
+          </h2>
         </div>
         <ResultsPanel results={results} mode={mode} />
       </section>

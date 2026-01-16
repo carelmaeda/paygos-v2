@@ -9,6 +9,9 @@ interface Props {
 }
 
 export function StepSelector({ value, onChange }: Props) {
+  const itemClass =
+    "min-w-[140px] data-[state=on]:bg-teal-600 data-[state=on]:text-white data-[state=on]:border-teal-600"
+
   return (
     <ToggleGroup
       type="single"
@@ -18,13 +21,13 @@ export function StepSelector({ value, onChange }: Props) {
       spacing={2}
       className="justify-start"
     >
-      <ToggleGroupItem value="sales" className="min-w-[140px]">
+      <ToggleGroupItem value="sales" className={itemClass}>
         Sales Acceleration
       </ToggleGroupItem>
-      <ToggleGroupItem value="fsa" className="min-w-[140px]">
+      <ToggleGroupItem value="fsa" className={itemClass}>
         FSA
       </ToggleGroupItem>
-      <ToggleGroupItem value="both" className="min-w-[140px]">
+      <ToggleGroupItem value="both" className={itemClass}>
         Both
       </ToggleGroupItem>
     </ToggleGroup>

@@ -3,14 +3,25 @@ import Link from "next/link"
 import Image from "next/image"
 import { ArrowLeft } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import { Breadcrumbs } from "@/components/layout/Breadcrumbs"
 
 export const metadata: Metadata = {
   title: "Manufacturing Efficiency Success Story | Paygos",
-  description: "Learn how manufacturers boost efficiency with Paygos. Discover streamlined operations, reduced waste, improved productivity, and optimized supply chain management.",
-  keywords: ["manufacturing efficiency", "operational efficiency", "productivity improvement", "supply chain optimization", "manufacturing automation", "lean manufacturing", "process optimization"],
+  description:
+    "Learn how manufacturers boost efficiency with Paygos. Discover streamlined operations, reduced waste, improved productivity, and optimized supply chain management.",
+  keywords: [
+    "manufacturing efficiency",
+    "operational efficiency",
+    "productivity improvement",
+    "supply chain optimization",
+    "manufacturing automation",
+    "lean manufacturing",
+    "process optimization",
+  ],
   openGraph: {
     title: "Manufacturing Efficiency Success Story | Paygos",
-    description: "Learn how manufacturers boost efficiency with Paygos. Discover streamlined operations, reduced waste, improved productivity, and optimized supply chain management.",
+    description:
+      "Learn how manufacturers boost efficiency with Paygos. Discover streamlined operations, reduced waste, improved productivity, and optimized supply chain management.",
     url: "https://www.paygos.ca/customers/manufacturing-efficiency",
     siteName: "Paygos",
     images: [
@@ -27,7 +38,8 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Manufacturing Efficiency Success Story | Paygos",
-    description: "Learn how manufacturers boost efficiency with Paygos. Discover streamlined operations, reduced waste, improved productivity, and optimized supply chain management.",
+    description:
+      "Learn how manufacturers boost efficiency with Paygos. Discover streamlined operations, reduced waste, improved productivity, and optimized supply chain management.",
     images: ["/paygos/logo-full.webp"],
   },
   robots: {
@@ -58,7 +70,7 @@ export default function ManufacturingEfficiencyPage() {
         </div>
 
         {/* Hero Section */}
-        <div className="relative mb-12 overflow-hidden rounded-xl">
+        <div className="relative mb-12 overflow-hidden rounded-lg">
           <div className="relative h-[300px] md:h-[400px]">
             <Image
               src="https://images.unsplash.com/photo-1565793298595-6a879b1d9492?q=80&w=2071&auto=format&fit=crop"
@@ -69,7 +81,7 @@ export default function ManufacturingEfficiencyPage() {
             <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-black/20" />
 
             {/* Content Overlay */}
-            <div className="absolute bottom-0 left-0 right-0 p-8 text-white">
+            <div className="absolute right-0 bottom-0 left-0 p-8 text-white">
               <div className="mb-4 inline-block rounded-lg bg-white p-4">
                 <Image
                   src="/customers/logos/manutech.svg"
@@ -93,6 +105,8 @@ export default function ManufacturingEfficiencyPage() {
             </div>
           </div>
         </div>
+
+        <Breadcrumbs />
 
         {/* Story Content */}
         <div className="mx-auto max-w-3xl">

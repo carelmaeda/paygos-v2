@@ -84,12 +84,9 @@ h3 {
   line-height: 0.9;
   font-weight: 700;
   text-transform: capitalize;
-}
-
-.text-hero {
-  color: $white;
-  letter-spacing: -0.04em;
-  text-transform: capitalize;
+  span {
+    font-family: var(--font-urbanist), sans-serif;
+  }
 }
 
 /* Heading Scale */
@@ -97,10 +94,39 @@ h1,
 .h1 {
   font-size: 3rem;
   letter-spacing: -0.03em;
+  line-height: 0.9;
 
   @media (min-width: $breakpoint-md) {
     font-size: 6rem;
   }
+}
+
+.text-hero {
+  display: grid;
+
+  justify-items: center;
+  gap: 0.5rem;
+  z-index: 10;
+  text-align: center;
+  margin: auto;
+  font-family: var(--font-urbanist), sans-serif;
+  small {
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+  }
+  h1 {
+    font-size: 6vw;
+    letter-spacing: -0.05em;
+    text-transform: capitalize;
+  }
+  p {
+    max-width: 450px;
+  }
+}
+
+.text-hero {
+  color: $white;
 }
 
 h2,
@@ -115,7 +141,7 @@ h2,
 
 h3,
 .h3 {
-  font-size: 1.2rem;
+  font-size: 1.5rem;
 
   @media (min-width: $breakpoint-md) {
     font-size: 1.15rem;
@@ -143,7 +169,7 @@ button {
 }
 
 p {
-  line-height: 1.3;
+  line-height: 1.4;
 }
 
 // ============================================
@@ -153,6 +179,34 @@ p {
 @layer components {
   .section-container {
     @apply container mx-auto max-w-6xl px-4 md:px-6;
+  }
+}
+
+// ============================================
+// BREADCRUMBS
+// ============================================
+.breadcrumbs {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0.75rem 0;
+  background: rgb(243, 243, 243);
+
+  nav {
+    font-size: 0.75rem;
+  }
+
+  a {
+    color: #64748b; // slate-500
+    transition: color 0.2s ease;
+
+    &:hover {
+      color: #0d9488; // teal-600
+    }
+  }
+
+  [aria-current="page"] {
+    color: #1e293b; // slate-800
+    font-weight: 500;
   }
 }
 
@@ -214,9 +268,8 @@ p {
 .badge {
   font-weight: 600;
   text-transform: uppercase;
-  padding: 0.5rem 1.5rem;
+  padding: 0.25rem 1rem;
   @media (min-width: $breakpoint-md) {
-    font-size: 1.2rem;
     svg {
       scale: 1.5;
       margin: 0.5rem;

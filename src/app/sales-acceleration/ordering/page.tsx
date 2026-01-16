@@ -21,6 +21,7 @@ import {
 } from "lucide-react"
 import { OrderingVolumeChart } from "./ordering-volume-chart"
 import { CustomerStoriesCarousel } from "@/components/sections/customers/CustomerStoriesCarousel"
+import { Breadcrumbs } from "@/components/layout/Breadcrumbs"
 
 export const metadata: Metadata = {
   title: "Smart Ordering System | Paygos",
@@ -109,18 +110,20 @@ export default function PaygosOrderingPage() {
         </div>
       </section>
 
+      <Breadcrumbs />
+
       {/* Challenges */}
       <section
         data-navbar-theme="light"
         className="container mx-auto px-6 py-24"
       >
         <h2 className="mb-12 text-center text-3xl font-black text-slate-900">
-          Common Ordering Challenges
+          Common Ordering Challenges``
         </h2>
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
           {/* Challenge 1 */}
-          <div className="rounded-2xl border border-gray-100 bg-white p-8 shadow-lg transition-shadow hover:shadow-xl">
-            <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-xl bg-red-100">
+          <div className="rounded-lg border border-gray-100 bg-white p-8 shadow-lg transition-shadow hover:shadow-xl">
+            <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-lg bg-red-100">
               <Monitor className="h-8 w-8 text-red-600" />
             </div>
             <h3 className="mb-3 text-xl font-bold text-gray-900">
@@ -133,8 +136,8 @@ export default function PaygosOrderingPage() {
           </div>
 
           {/* Challenge 2 */}
-          <div className="rounded-2xl border border-gray-100 bg-white p-8 shadow-lg transition-shadow hover:shadow-xl">
-            <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-xl bg-red-100">
+          <div className="rounded-lg border border-gray-100 bg-white p-8 shadow-lg transition-shadow hover:shadow-xl">
+            <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-lg bg-red-100">
               <AlertCircle className="h-8 w-8 text-red-600" />
             </div>
             <h3 className="mb-3 text-xl font-bold text-gray-900">
@@ -146,8 +149,8 @@ export default function PaygosOrderingPage() {
           </div>
 
           {/* Challenge 3 */}
-          <div className="rounded-2xl border border-gray-100 bg-white p-8 shadow-lg transition-shadow hover:shadow-xl">
-            <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-xl bg-red-100">
+          <div className="rounded-lg border border-gray-100 bg-white p-8 shadow-lg transition-shadow hover:shadow-xl">
+            <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-lg bg-red-100">
               <EyeOff className="h-8 w-8 text-red-600" />
             </div>
             <h3 className="mb-3 text-xl font-bold text-gray-900">
@@ -160,8 +163,8 @@ export default function PaygosOrderingPage() {
           </div>
 
           {/* Challenge 4 */}
-          <div className="rounded-2xl border border-gray-100 bg-white p-8 shadow-lg transition-shadow hover:shadow-xl">
-            <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-xl bg-red-100">
+          <div className="rounded-lg border border-gray-100 bg-white p-8 shadow-lg transition-shadow hover:shadow-xl">
+            <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-lg bg-red-100">
               <PackageX className="h-8 w-8 text-red-600" />
             </div>
             <h3 className="mb-3 text-xl font-bold text-gray-900">Stock-Outs</h3>
@@ -316,7 +319,7 @@ export default function PaygosOrderingPage() {
             </h2>
             <div className="space-y-10">
               <div className="group flex items-start gap-8">
-                <div className="shrink-0 rounded-3xl bg-teal-50 p-5 transition-colors duration-300 group-hover:bg-teal-500">
+                <div className="shrink-0 rounded-lg bg-teal-50 p-5 transition-colors duration-300 group-hover:bg-teal-500">
                   <BarChart3
                     size={28}
                     className="text-teal-600 group-hover:text-white"
@@ -333,7 +336,7 @@ export default function PaygosOrderingPage() {
                 </div>
               </div>
               <div className="group flex items-start gap-8">
-                <div className="shrink-0 rounded-3xl bg-teal-50 p-5 transition-colors duration-300 group-hover:bg-teal-500">
+                <div className="shrink-0 rounded-lg bg-teal-50 p-5 transition-colors duration-300 group-hover:bg-teal-500">
                   <TrendingUp
                     size={28}
                     className="text-teal-600 group-hover:text-white"
@@ -454,9 +457,9 @@ export default function PaygosOrderingPage() {
 
       <CTA />
 
-      <div>
+      <section className="overflow-hidden py-8">
         <CustomerStoriesCarousel />
-      </div>
+      </section>
     </main>
   )
 }

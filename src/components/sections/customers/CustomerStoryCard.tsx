@@ -16,7 +16,7 @@ export function CustomerStoryCard({ story }: CustomerStoryCardProps) {
       href={`/customers/${story.slug}`}
       className="group block h-full outline-none"
     >
-      <article className="relative h-[420px] w-full overflow-hidden rounded-2xl shadow-xl transition-shadow duration-500 group-hover:shadow-2xl md:h-[480px]">
+      <article className="relative h-[420px] w-full overflow-hidden rounded-lg shadow-xl transition-shadow duration-500 group-hover:shadow-2xl md:h-[480px]">
         {/* Background & High-Contrast Overlay */}
         <div className="absolute inset-0 transition-transform duration-700 ease-out group-hover:scale-105">
           <Image

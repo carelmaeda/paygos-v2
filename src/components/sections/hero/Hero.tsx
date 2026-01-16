@@ -5,20 +5,14 @@ import { CustomersLogosCarousel } from "../customers/CustomersLogosCarousel"
 
 export function Hero() {
   return (
-    <section
-      className="relative overflow-hidden py-8"
-      style={{
-        background:
-          "linear-gradient(270deg, rgba(255,255,255,0.22) 0%, rgba(0,0,0,0.18) 100%), #134E4A",
-      }}
-    >
+    <section className="relative overflow-hidden bg-cyan-950 py-8">
       {/* PATTERN OVERLAY */}
       <PatternHexagon />
       <div className="relative z-10 mx-auto max-w-screen-2xl">
         {/* HERO BODY */}
-        <div className="relative flex items-center pt-8 md:pt-16">
+        <div className="relative flex items-center pt-16">
           {/* CONTENT */}
-          <div className="relative mx-auto max-w-screen-xl px-4 md:px-8 lg:px-12">
+          <div className="relative mx-auto max-w-screen-xl px-4 md:p-8 lg:p-12">
             <div className="grid lg:grid-cols-2">
               {/* LEFT */}
               <article className="text-center text-white lg:text-left">
@@ -31,9 +25,11 @@ export function Hero() {
                   </div>
                 </div>
 
-                <h1 className="text-hero">
+                <h1>
                   Sell More. <br />
-                  Spend Less.
+                  <span className="bg-gradient-to-r from-emerald-400 to-cyan-400 bg-clip-text text-transparent">
+                    Spend Less.
+                  </span>
                 </h1>
 
                 <p className="mt-6 max-w-[450px]">
@@ -77,7 +73,7 @@ export function Hero() {
         </div>
 
         {/* LOGOS */}
-        <div className="my-8 md:mt-24">
+        <div className="my-8">
           <CustomersLogosCarousel />
         </div>
       </div>

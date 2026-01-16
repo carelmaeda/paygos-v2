@@ -11,7 +11,7 @@ export function Footer() {
   const currentYear = new Date().getFullYear()
 
   return (
-    <footer className="relative bg-teal-950 text-gray-300">
+    <footer className="relative bg-cyan-950 text-gray-300">
       <PatternDots />
 
       <div className="section-container relative z-10 py-12 md:py-16">

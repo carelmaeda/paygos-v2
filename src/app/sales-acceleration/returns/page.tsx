@@ -19,14 +19,25 @@ import { CTA } from "@/components/sections/cta/CTA"
 import { BookCallButton } from "@/components/sections/cta/BookCallButton"
 import { IndustryBadge } from "@/components/sections/solutions/IndustryBadge"
 import { ReturnsTrendChart } from "./returns-trend-chart"
+import { Breadcrumbs } from "@/components/layout/Breadcrumbs"
 
 export const metadata: Metadata = {
   title: "Returns Management | Paygos",
-  description: "Streamline returns processing in convenience, fuel, and pharmacy sectors. Bring structure and visibility to your returns with validated processes and real-time tracking.",
-  keywords: ["returns management", "product returns", "returns processing", "validated returns", "return analytics", "inventory returns", "replacement orders"],
+  description:
+    "Streamline returns processing in convenience, fuel, and pharmacy sectors. Bring structure and visibility to your returns with validated processes and real-time tracking.",
+  keywords: [
+    "returns management",
+    "product returns",
+    "returns processing",
+    "validated returns",
+    "return analytics",
+    "inventory returns",
+    "replacement orders",
+  ],
   openGraph: {
     title: "Returns Management | Paygos",
-    description: "Streamline returns processing in convenience, fuel, and pharmacy sectors. Bring structure and visibility to your returns with validated processes and real-time tracking.",
+    description:
+      "Streamline returns processing in convenience, fuel, and pharmacy sectors. Bring structure and visibility to your returns with validated processes and real-time tracking.",
     url: "https://www.paygos.ca/sales-acceleration/returns",
     siteName: "Paygos",
     images: [
@@ -43,7 +54,8 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Returns Management | Paygos",
-    description: "Streamline returns processing in convenience, fuel, and pharmacy sectors. Bring structure and visibility to your returns with validated processes and real-time tracking.",
+    description:
+      "Streamline returns processing in convenience, fuel, and pharmacy sectors. Bring structure and visibility to your returns with validated processes and real-time tracking.",
     images: ["/paygos/logo-full.webp"],
   },
   robots: {
@@ -59,7 +71,10 @@ export default function ReturnsPage() {
   return (
     <main className="min-h-screen">
       {/* Hero */}
-      <section className="relative flex min-h-[90vh] items-center overflow-hidden bg-slate-950 pt-32 pb-24" data-navbar-theme="dark">
+      <section
+        className="relative flex min-h-[90vh] items-center overflow-hidden bg-slate-950 pt-32 pb-24"
+        data-navbar-theme="dark"
+      >
         <div className="absolute inset-0 z-0">
           <Image
             src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d"
@@ -83,24 +98,29 @@ export default function ReturnsPage() {
               </span>
             </h1>
             <p className="mb-12 max-w-2xl text-xl leading-relaxed font-medium text-slate-300 md:text-2xl">
-              Returns in convenience, fuel, and independent pharmacy are often messy.
-              Paygos brings structure and visibility to a part of your business long
-              treated as a cost center.
+              Returns in convenience, fuel, and independent pharmacy are often
+              messy. Paygos brings structure and visibility to a part of your
+              business long treated as a cost center.
             </p>
             <BookCallButton />
           </div>
         </div>
       </section>
 
+      <Breadcrumbs />
+
       {/* Challenges */}
-      <section className="container mx-auto px-6 py-24" data-navbar-theme="light">
+      <section
+        className="container mx-auto px-6 py-24"
+        data-navbar-theme="light"
+      >
         <h2 className="mb-12 text-center text-3xl font-black text-slate-900">
           Common Returns Challenges
         </h2>
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
           {/* Challenge 1 */}
-          <div className="rounded-2xl border border-gray-100 bg-white p-8 shadow-lg transition-shadow hover:shadow-xl">
-            <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-xl bg-red-100">
+          <div className="rounded-lg border border-gray-100 bg-white p-8 shadow-lg transition-shadow hover:shadow-xl">
+            <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-lg bg-red-100">
               <AlertTriangle className="h-8 w-8 text-red-600" />
             </div>
             <h3 className="mb-3 text-xl font-bold text-gray-900">
@@ -113,8 +133,8 @@ export default function ReturnsPage() {
           </div>
 
           {/* Challenge 2 */}
-          <div className="rounded-2xl border border-gray-100 bg-white p-8 shadow-lg transition-shadow hover:shadow-xl">
-            <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-xl bg-red-100">
+          <div className="rounded-lg border border-gray-100 bg-white p-8 shadow-lg transition-shadow hover:shadow-xl">
+            <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-lg bg-red-100">
               <Clock className="h-8 w-8 text-red-600" />
             </div>
             <h3 className="mb-3 text-xl font-bold text-gray-900">
@@ -126,8 +146,8 @@ export default function ReturnsPage() {
           </div>
 
           {/* Challenge 3 */}
-          <div className="rounded-2xl border border-gray-100 bg-white p-8 shadow-lg transition-shadow hover:shadow-xl">
-            <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-xl bg-red-100">
+          <div className="rounded-lg border border-gray-100 bg-white p-8 shadow-lg transition-shadow hover:shadow-xl">
+            <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-lg bg-red-100">
               <DollarSign className="h-8 w-8 text-red-600" />
             </div>
             <h3 className="mb-3 text-xl font-bold text-gray-900">
@@ -139,8 +159,8 @@ export default function ReturnsPage() {
           </div>
 
           {/* Challenge 4 */}
-          <div className="rounded-2xl border border-gray-100 bg-white p-8 shadow-lg transition-shadow hover:shadow-xl">
-            <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-xl bg-red-100">
+          <div className="rounded-lg border border-gray-100 bg-white p-8 shadow-lg transition-shadow hover:shadow-xl">
+            <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-lg bg-red-100">
               <PackageX className="h-8 w-8 text-red-600" />
             </div>
             <h3 className="mb-3 text-xl font-bold text-gray-900">
@@ -251,9 +271,12 @@ export default function ReturnsPage() {
               <h3 id="real-time-tracking" className="md:text-3xl">
                 Real-Time Visibility
               </h3>
-              <p id="real-time-tracking-desc" className="md:max-w-lg md:text-lg">
-                Track all returns from submission to credit processing.
-                Complete transparency for reps, retailers, and head office.
+              <p
+                id="real-time-tracking-desc"
+                className="md:max-w-lg md:text-lg"
+              >
+                Track all returns from submission to credit processing. Complete
+                transparency for reps, retailers, and head office.
               </p>
             </div>
           </article>
@@ -261,11 +284,14 @@ export default function ReturnsPage() {
       </section>
 
       {/* Chart Section */}
-      <section className="container mx-auto px-6 py-40" data-navbar-theme="light">
+      <section
+        className="container mx-auto px-6 py-40"
+        data-navbar-theme="light"
+      >
         <div className="grid items-center gap-32 lg:grid-cols-2">
           <ReturnsTrendChart />
           <div className="space-y-12">
-            <h2 className="text-5xl leading-[0.9] font-black tracking-tighter uppercase text-slate-900 md:text-7xl">
+            <h2 className="text-5xl leading-[0.9] font-black tracking-tighter text-slate-900 uppercase md:text-7xl">
               Visibility <br />
               <span className="text-teal-600 underline decoration-teal-200 underline-offset-[12px]">
                 That Pays Off.
@@ -273,7 +299,7 @@ export default function ReturnsPage() {
             </h2>
             <div className="space-y-10">
               <div className="group flex items-start gap-8">
-                <div className="shrink-0 rounded-3xl bg-teal-50 p-5 transition-colors duration-300 group-hover:bg-teal-500">
+                <div className="shrink-0 rounded-lg bg-teal-50 p-5 transition-colors duration-300 group-hover:bg-teal-500">
                   <BarChart3
                     size={28}
                     className="text-teal-600 group-hover:text-white"
@@ -290,7 +316,7 @@ export default function ReturnsPage() {
                 </div>
               </div>
               <div className="group flex items-start gap-8">
-                <div className="shrink-0 rounded-3xl bg-teal-50 p-5 transition-colors duration-300 group-hover:bg-teal-500">
+                <div className="shrink-0 rounded-lg bg-teal-50 p-5 transition-colors duration-300 group-hover:bg-teal-500">
                   <TrendingUp
                     size={28}
                     className="text-teal-600 group-hover:text-white"
@@ -314,7 +340,12 @@ export default function ReturnsPage() {
       <IndustryBadge />
 
       {/* ROI */}
-      <section className="mx-auto" role="region" aria-labelledby="roi-heading" data-navbar-theme="dark">
+      <section
+        className="mx-auto"
+        role="region"
+        aria-labelledby="roi-heading"
+        data-navbar-theme="dark"
+      >
         <div className="relative overflow-hidden bg-slate-900 p-8 text-white md:p-16">
           <div className="relative z-10 grid items-center gap-12 lg:grid-cols-2">
             <div>
@@ -350,7 +381,9 @@ export default function ReturnsPage() {
                   />
                   <p className="text-lg text-slate-300">
                     Stores process returns{" "}
-                    <strong className="text-white">on-site in under 5 minutes</strong>
+                    <strong className="text-white">
+                      on-site in under 5 minutes
+                    </strong>
                     —no phone calls or paperwork required.
                   </p>
                 </li>
@@ -362,7 +395,9 @@ export default function ReturnsPage() {
                   />
                   <p className="text-lg text-slate-300">
                     Replacement orders maintain{" "}
-                    <strong className="text-white">shelf presence and revenue</strong>
+                    <strong className="text-white">
+                      shelf presence and revenue
+                    </strong>
                     —turning a cost center into a retention tool.
                   </p>
                 </li>

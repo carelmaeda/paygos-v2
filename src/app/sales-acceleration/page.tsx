@@ -3,11 +3,11 @@ import Image from "next/image"
 import Link from "next/link"
 import { ArrowRight, CheckCircle, TrendingUp, Zap } from "lucide-react"
 import { CTA } from "@/components/sections/cta/CTA"
-import { BookCallButton } from "@/components/sections/cta/BookCallButton"
 import { IndustryBadge } from "@/components/sections/solutions/IndustryBadge"
 import { SALES_ACCELERATION_TOOLS } from "./data/tools"
-import { PatternDots } from "@/components/ui/patterns"
+import { PatternCircuit, PatternDots } from "@/components/ui/patterns"
 import { Button } from "@/components/ui/button"
+import { Breadcrumbs } from "@/components/layout/Breadcrumbs"
 
 export const metadata: Metadata = {
   title: "Sales Acceleration Tools | Paygos",
@@ -59,40 +59,32 @@ export const metadata: Metadata = {
 export default function SalesAccelerationPage() {
   return (
     <main className="min-h-screen bg-white font-sans text-slate-900">
-      {/* SECTION: Hero & Background */}
+      {/* Hero */}
       <section
+        className="relative flex min-h-[75vh] bg-teal-950"
         data-navbar-theme="dark"
-        className="relative flex min-h-[90vh] items-center overflow-hidden bg-slate-950 pt-32 pb-24"
       >
-        <div className="absolute inset-0 z-0">
-          <Image
-            src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2070&auto=format&fit=crop"
-            alt="Sales acceleration"
-            fill
-            priority
-            className="object-cover opacity-30"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/70 to-transparent" />
-        </div>
-
-        <div className="section-container relative z-10 space-y-4">
-          <div className="inline-flex items-center gap-2 rounded-full border border-emerald-500/30 bg-emerald-500/20 px-4 py-1.5 text-xs font-black tracking-[0.2em] text-emerald-300 uppercase backdrop-blur-md">
+        <PatternCircuit />
+        <div className="text-hero">
+          <small className="text-teal-400">
             Integrated • Powerful • Scalable
-          </div>
-          <h1 className="text-hero">
-            Acellerate your <br />{" "}
-            <span className="bg-gradient-to-r from-emerald-400 to-cyan-400 bg-clip-text text-transparent">
-              Sales.
+          </small>
+          <h1>
+            Accelerate Your
+            <br />
+            <span className="bg-gradient-to-r from-teal-400 to-cyan-400 bg-clip-text text-transparent">
+              Sales
             </span>
           </h1>
-          <p className="max-w-[450px] text-white">
+          <p>
             A complete suite of tools designed to streamline operations,
             maximize efficiency, and drive revenue growth across your sales
             organization.
           </p>
-          <BookCallButton />
         </div>
       </section>
+
+      <Breadcrumbs />
 
       {/* SECTION: Introduction */}
       <section
@@ -128,7 +120,7 @@ export default function SalesAccelerationPage() {
             <Link
               key={tool.href}
               href={tool.href}
-              className="group relative flex h-full flex-col justify-between overflow-hidden rounded-3xl bg-white/40 p-6 backdrop-blur-xl transition-all duration-500 hover:border-teal-500/50 hover:bg-white/60 hover:shadow-2xl hover:shadow-teal-500/10"
+              className="group relative flex h-full flex-col justify-between overflow-hidden rounded-lg bg-white/40 p-6 backdrop-blur-xl transition-all duration-500 hover:border-teal-500/50 hover:bg-white/60 hover:shadow-2xl hover:shadow-teal-500/10"
             >
               {/* 1. Content Area (Frosted Top) */}
               <div className="relative z-10 space-y-3">
@@ -175,7 +167,7 @@ export default function SalesAccelerationPage() {
               </h2>
               <div className="space-y-10">
                 <div className="group flex items-start gap-8">
-                  <div className="shrink-0 rounded-3xl bg-teal-50 p-5 transition-colors duration-300 group-hover:bg-teal-500">
+                  <div className="shrink-0 rounded-lg bg-teal-50 p-5 transition-colors duration-300 group-hover:bg-teal-500">
                     <Zap
                       size={28}
                       className="text-teal-600 group-hover:text-white"
@@ -192,7 +184,7 @@ export default function SalesAccelerationPage() {
                   </div>
                 </div>
                 <div className="group flex items-start gap-8">
-                  <div className="shrink-0 rounded-3xl bg-teal-50 p-5 transition-colors duration-300 group-hover:bg-teal-500">
+                  <div className="shrink-0 rounded-lg bg-teal-50 p-5 transition-colors duration-300 group-hover:bg-teal-500">
                     <TrendingUp
                       size={28}
                       className="text-teal-600 group-hover:text-white"

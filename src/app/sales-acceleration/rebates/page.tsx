@@ -21,14 +21,26 @@ import {
   TrendingDown,
 } from "lucide-react"
 import { RebatesPerformanceChart } from "./rebates-performance-chart"
+import { Breadcrumbs } from "@/components/layout/Breadcrumbs"
 
 export const metadata: Metadata = {
   title: "Rebates & Incentives | Paygos",
-  description: "Turn rebates into revenue drivers with Paygos. Automate rebate management, track incentive programs, and maximize ROI with real-time validation and reporting.",
-  keywords: ["rebate management", "sales incentives", "rebate tracking", "incentive programs", "rebate automation", "promotional rebates", "trade promotions", "sales promotions"],
+  description:
+    "Turn rebates into revenue drivers with Paygos. Automate rebate management, track incentive programs, and maximize ROI with real-time validation and reporting.",
+  keywords: [
+    "rebate management",
+    "sales incentives",
+    "rebate tracking",
+    "incentive programs",
+    "rebate automation",
+    "promotional rebates",
+    "trade promotions",
+    "sales promotions",
+  ],
   openGraph: {
     title: "Rebates & Incentives | Paygos",
-    description: "Turn rebates into revenue drivers with Paygos. Automate rebate management, track incentive programs, and maximize ROI with real-time validation and reporting.",
+    description:
+      "Turn rebates into revenue drivers with Paygos. Automate rebate management, track incentive programs, and maximize ROI with real-time validation and reporting.",
     url: "https://www.paygos.ca/sales-acceleration/rebates",
     siteName: "Paygos",
     images: [
@@ -45,7 +57,8 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Rebates & Incentives | Paygos",
-    description: "Turn rebates into revenue drivers with Paygos. Automate rebate management, track incentive programs, and maximize ROI with real-time validation and reporting.",
+    description:
+      "Turn rebates into revenue drivers with Paygos. Automate rebate management, track incentive programs, and maximize ROI with real-time validation and reporting.",
     images: ["/paygos/logo-full.webp"],
   },
   robots: {
@@ -61,7 +74,10 @@ export default function PaygosRebatesPage() {
   return (
     <main className="min-h-screen">
       {/* Hero */}
-      <section className="relative flex min-h-[90vh] items-center overflow-hidden bg-slate-950 pt-32 pb-24" data-navbar-theme="dark">
+      <section
+        className="relative flex min-h-[90vh] items-center overflow-hidden bg-slate-950 pt-32 pb-24"
+        data-navbar-theme="dark"
+      >
         <div className="absolute inset-0 z-0">
           <Image
             src="https://images.unsplash.com/photo-1554224155-6726b3ff858f"
@@ -86,23 +102,28 @@ export default function PaygosRebatesPage() {
             </h1>
             <p className="mb-12 max-w-2xl text-xl leading-relaxed font-medium text-slate-300 md:text-2xl">
               Paygos automates rebate tracking, claim validation, and payout
-              management—giving your team real-time visibility into programs that
-              drive loyalty and maximize profitability.
+              management—giving your team real-time visibility into programs
+              that drive loyalty and maximize profitability.
             </p>
             <BookCallButton />
           </div>
         </div>
       </section>
 
+      <Breadcrumbs />
+
       {/* Challenges */}
-      <section className="container mx-auto px-6 py-24" data-navbar-theme="light">
+      <section
+        className="container mx-auto px-6 py-24"
+        data-navbar-theme="light"
+      >
         <h2 className="mb-12 text-center text-3xl font-black text-slate-900">
           Common Rebate Challenges
         </h2>
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
           {/* Challenge 1 */}
-          <div className="rounded-2xl border border-gray-100 bg-white p-8 shadow-lg transition-shadow hover:shadow-xl">
-            <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-xl bg-red-100">
+          <div className="rounded-lg border border-gray-100 bg-white p-8 shadow-lg transition-shadow hover:shadow-xl">
+            <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-lg bg-red-100">
               <FileSpreadsheet className="h-8 w-8 text-red-600" />
             </div>
             <h3 className="mb-3 text-xl font-bold text-gray-900">
@@ -115,8 +136,8 @@ export default function PaygosRebatesPage() {
           </div>
 
           {/* Challenge 2 */}
-          <div className="rounded-2xl border border-gray-100 bg-white p-8 shadow-lg transition-shadow hover:shadow-xl">
-            <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-xl bg-red-100">
+          <div className="rounded-lg border border-gray-100 bg-white p-8 shadow-lg transition-shadow hover:shadow-xl">
+            <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-lg bg-red-100">
               <AlertCircle className="h-8 w-8 text-red-600" />
             </div>
             <h3 className="mb-3 text-xl font-bold text-gray-900">
@@ -129,8 +150,8 @@ export default function PaygosRebatesPage() {
           </div>
 
           {/* Challenge 3 */}
-          <div className="rounded-2xl border border-gray-100 bg-white p-8 shadow-lg transition-shadow hover:shadow-xl">
-            <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-xl bg-red-100">
+          <div className="rounded-lg border border-gray-100 bg-white p-8 shadow-lg transition-shadow hover:shadow-xl">
+            <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-lg bg-red-100">
               <Clock className="h-8 w-8 text-red-600" />
             </div>
             <h3 className="mb-3 text-xl font-bold text-gray-900">
@@ -142,8 +163,8 @@ export default function PaygosRebatesPage() {
           </div>
 
           {/* Challenge 4 */}
-          <div className="rounded-2xl border border-gray-100 bg-white p-8 shadow-lg transition-shadow hover:shadow-xl">
-            <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-xl bg-red-100">
+          <div className="rounded-lg border border-gray-100 bg-white p-8 shadow-lg transition-shadow hover:shadow-xl">
+            <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-lg bg-red-100">
               <TrendingDown className="h-8 w-8 text-red-600" />
             </div>
             <h3 className="mb-3 text-xl font-bold text-gray-900">
@@ -208,7 +229,10 @@ export default function PaygosRebatesPage() {
               <h3 id="program-management" className="md:text-3xl">
                 Multi-Tier Program Management
               </h3>
-              <p id="program-management-desc" className="md:max-w-lg md:text-lg">
+              <p
+                id="program-management-desc"
+                className="md:max-w-lg md:text-lg"
+              >
                 Build volume-based, product-mix, or performance rebates with
                 flexible tiers and thresholds—no coding required.
               </p>
@@ -315,11 +339,14 @@ export default function PaygosRebatesPage() {
       </section>
 
       {/* Chart Section */}
-      <section className="container mx-auto px-6 py-40" data-navbar-theme="light">
+      <section
+        className="container mx-auto px-6 py-40"
+        data-navbar-theme="light"
+      >
         <div className="grid items-center gap-32 lg:grid-cols-2">
           <RebatesPerformanceChart />
           <div className="space-y-12">
-            <h2 className="text-5xl leading-[0.9] font-black tracking-tighter uppercase text-slate-900 md:text-7xl">
+            <h2 className="text-5xl leading-[0.9] font-black tracking-tighter text-slate-900 uppercase md:text-7xl">
               Growth <br />
               <span className="text-teal-600 underline decoration-teal-200 underline-offset-[12px]">
                 That's Measurable.
@@ -327,7 +354,7 @@ export default function PaygosRebatesPage() {
             </h2>
             <div className="space-y-10">
               <div className="group flex items-start gap-8">
-                <div className="shrink-0 rounded-3xl bg-teal-50 p-5 transition-colors duration-300 group-hover:bg-teal-500">
+                <div className="shrink-0 rounded-lg bg-teal-50 p-5 transition-colors duration-300 group-hover:bg-teal-500">
                   <TrendingUp
                     size={28}
                     className="text-teal-600 group-hover:text-white"
@@ -344,7 +371,7 @@ export default function PaygosRebatesPage() {
                 </div>
               </div>
               <div className="group flex items-start gap-8">
-                <div className="shrink-0 rounded-3xl bg-teal-50 p-5 transition-colors duration-300 group-hover:bg-teal-500">
+                <div className="shrink-0 rounded-lg bg-teal-50 p-5 transition-colors duration-300 group-hover:bg-teal-500">
                   <Target
                     size={28}
                     className="text-teal-600 group-hover:text-white"
@@ -368,7 +395,12 @@ export default function PaygosRebatesPage() {
       <IndustryBadge />
 
       {/* ROI */}
-      <section className="mx-auto" role="region" aria-labelledby="roi-heading" data-navbar-theme="dark">
+      <section
+        className="mx-auto"
+        role="region"
+        aria-labelledby="roi-heading"
+        data-navbar-theme="dark"
+      >
         <div className="relative overflow-hidden bg-slate-900 p-8 text-white md:p-16">
           <div className="relative z-10 grid items-center gap-12 lg:grid-cols-2">
             <div>

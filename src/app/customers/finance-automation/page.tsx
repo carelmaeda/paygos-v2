@@ -3,14 +3,25 @@ import Link from "next/link"
 import Image from "next/image"
 import { ArrowLeft } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import { Breadcrumbs } from "@/components/layout/Breadcrumbs"
 
 export const metadata: Metadata = {
   title: "Finance Automation Success Story | Paygos",
-  description: "Learn how finance companies achieve automation success with Paygos. Discover improved efficiency, reduced costs, and streamlined financial processes.",
-  keywords: ["finance automation", "financial services", "process automation", "cost reduction", "finance efficiency", "customer success", "case study"],
+  description:
+    "Learn how finance companies achieve automation success with Paygos. Discover improved efficiency, reduced costs, and streamlined financial processes.",
+  keywords: [
+    "finance automation",
+    "financial services",
+    "process automation",
+    "cost reduction",
+    "finance efficiency",
+    "customer success",
+    "case study",
+  ],
   openGraph: {
     title: "Finance Automation Success Story | Paygos",
-    description: "Learn how finance companies achieve automation success with Paygos. Discover improved efficiency, reduced costs, and streamlined financial processes.",
+    description:
+      "Learn how finance companies achieve automation success with Paygos. Discover improved efficiency, reduced costs, and streamlined financial processes.",
     url: "https://www.paygos.ca/customers/finance-automation",
     siteName: "Paygos",
     images: [
@@ -27,7 +38,8 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Finance Automation Success Story | Paygos",
-    description: "Learn how finance companies achieve automation success with Paygos. Discover improved efficiency, reduced costs, and streamlined financial processes.",
+    description:
+      "Learn how finance companies achieve automation success with Paygos. Discover improved efficiency, reduced costs, and streamlined financial processes.",
     images: ["/paygos/logo-full.webp"],
   },
   robots: {
@@ -58,7 +70,7 @@ export default function FinanceAutomationPage() {
         </div>
 
         {/* Hero Section */}
-        <div className="relative mb-12 overflow-hidden rounded-xl">
+        <div className="relative mb-12 overflow-hidden rounded-lg">
           <div className="relative h-[300px] md:h-[400px]">
             <Image
               src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2015&auto=format&fit=crop"
@@ -69,7 +81,7 @@ export default function FinanceAutomationPage() {
             <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-black/20" />
 
             {/* Content Overlay */}
-            <div className="absolute bottom-0 left-0 right-0 p-8 text-white">
+            <div className="absolute right-0 bottom-0 left-0 p-8 text-white">
               <div className="mb-4 inline-block rounded-lg bg-white p-4">
                 <Image
                   src="/customers/logos/financefirst.svg"
@@ -93,6 +105,8 @@ export default function FinanceAutomationPage() {
             </div>
           </div>
         </div>
+
+        <Breadcrumbs />
 
         {/* Story Content */}
         <div className="mx-auto max-w-3xl">

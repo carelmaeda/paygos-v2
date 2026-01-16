@@ -1,6 +1,5 @@
 import type { Metadata } from "next"
 import React from "react"
-import Link from "next/link"
 import Image from "next/image"
 import {
   ArrowRight,
@@ -23,14 +22,26 @@ import { CTA } from "@/components/sections/cta/CTA"
 import { BookCallButton } from "@/components/sections/cta/BookCallButton"
 import { IndustryBadge } from "@/components/sections/solutions/IndustryBadge"
 import { AnalyticsMetricsChart } from "./analytics-metrics-chart"
+import { Breadcrumbs } from "@/components/layout/Breadcrumbs"
 
 export const metadata: Metadata = {
   title: "Data & Analytics | Paygos",
-  description: "Transform data into strategy with Paygos analytics for CPG brands in independent retail. Real-time dashboards, sales insights, inventory tracking, and customer analytics.",
-  keywords: ["sales analytics", "data analytics", "CPG analytics", "retail insights", "sales dashboards", "inventory tracking", "customer analytics", "business intelligence"],
+  description:
+    "Transform data into strategy with Paygos analytics for CPG brands in independent retail. Real-time dashboards, sales insights, inventory tracking, and customer analytics.",
+  keywords: [
+    "sales analytics",
+    "data analytics",
+    "CPG analytics",
+    "retail insights",
+    "sales dashboards",
+    "inventory tracking",
+    "customer analytics",
+    "business intelligence",
+  ],
   openGraph: {
     title: "Data & Analytics | Paygos",
-    description: "Transform data into strategy with Paygos analytics for CPG brands in independent retail. Real-time dashboards, sales insights, inventory tracking, and customer analytics.",
+    description:
+      "Transform data into strategy with Paygos analytics for CPG brands in independent retail. Real-time dashboards, sales insights, inventory tracking, and customer analytics.",
     url: "https://www.paygos.ca/analytics",
     siteName: "Paygos",
     images: [
@@ -47,7 +58,8 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Data & Analytics | Paygos",
-    description: "Transform data into strategy with Paygos analytics for CPG brands in independent retail. Real-time dashboards, sales insights, inventory tracking, and customer analytics.",
+    description:
+      "Transform data into strategy with Paygos analytics for CPG brands in independent retail. Real-time dashboards, sales insights, inventory tracking, and customer analytics.",
     images: ["/paygos/logo-full.webp"],
   },
   robots: {
@@ -63,7 +75,10 @@ export default function AnalyticsPage() {
   return (
     <main className="min-h-screen">
       {/* Hero */}
-      <section className="relative flex min-h-[90vh] items-center overflow-hidden bg-slate-950 pt-32 pb-24" data-navbar-theme="dark">
+      <section
+        className="relative flex min-h-[90vh] items-center overflow-hidden bg-slate-950 pt-32 pb-24"
+        data-navbar-theme="dark"
+      >
         <div className="absolute inset-0 z-0">
           <Image
             src="https://images.unsplash.com/photo-1551288049-bebda4e38f71"
@@ -95,15 +110,20 @@ export default function AnalyticsPage() {
         </div>
       </section>
 
+      <Breadcrumbs />
+
       {/* Challenges */}
-      <section className="container mx-auto px-6 py-24" data-navbar-theme="light">
+      <section
+        className="container mx-auto px-6 py-24"
+        data-navbar-theme="light"
+      >
         <h2 className="mb-12 text-center text-3xl font-black text-slate-900">
           Common Analytics Challenges
         </h2>
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
           {/* Challenge 1 */}
-          <div className="rounded-2xl border border-gray-100 bg-white p-8 shadow-lg transition-shadow hover:shadow-xl">
-            <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-xl bg-red-100">
+          <div className="rounded-lg border border-gray-100 bg-white p-8 shadow-lg transition-shadow hover:shadow-xl">
+            <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-lg bg-red-100">
               <AlertTriangle className="h-8 w-8 text-red-600" />
             </div>
             <h3 className="mb-3 text-xl font-bold text-gray-900">
@@ -116,8 +136,8 @@ export default function AnalyticsPage() {
           </div>
 
           {/* Challenge 2 */}
-          <div className="rounded-2xl border border-gray-100 bg-white p-8 shadow-lg transition-shadow hover:shadow-xl">
-            <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-xl bg-red-100">
+          <div className="rounded-lg border border-gray-100 bg-white p-8 shadow-lg transition-shadow hover:shadow-xl">
+            <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-lg bg-red-100">
               <FileX className="h-8 w-8 text-red-600" />
             </div>
             <h3 className="mb-3 text-xl font-bold text-gray-900">
@@ -130,8 +150,8 @@ export default function AnalyticsPage() {
           </div>
 
           {/* Challenge 3 */}
-          <div className="rounded-2xl border border-gray-100 bg-white p-8 shadow-lg transition-shadow hover:shadow-xl">
-            <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-xl bg-red-100">
+          <div className="rounded-lg border border-gray-100 bg-white p-8 shadow-lg transition-shadow hover:shadow-xl">
+            <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-lg bg-red-100">
               <Database className="h-8 w-8 text-red-600" />
             </div>
             <h3 className="mb-3 text-xl font-bold text-gray-900">
@@ -144,8 +164,8 @@ export default function AnalyticsPage() {
           </div>
 
           {/* Challenge 4 */}
-          <div className="rounded-2xl border border-gray-100 bg-white p-8 shadow-lg transition-shadow hover:shadow-xl">
-            <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-xl bg-red-100">
+          <div className="rounded-lg border border-gray-100 bg-white p-8 shadow-lg transition-shadow hover:shadow-xl">
+            <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-lg bg-red-100">
               <TrendingDown className="h-8 w-8 text-red-600" />
             </div>
             <h3 className="mb-3 text-xl font-bold text-gray-900">
@@ -298,7 +318,10 @@ export default function AnalyticsPage() {
               <h3 id="export-integrations" className="md:text-3xl">
                 Export & Integrations
               </h3>
-              <p id="export-integrations-desc" className="md:max-w-lg md:text-lg">
+              <p
+                id="export-integrations-desc"
+                className="md:max-w-lg md:text-lg"
+              >
                 Connect to your BI tools or export data for deeper analysis—CSV,
                 Excel, API access.
               </p>
@@ -308,11 +331,14 @@ export default function AnalyticsPage() {
       </section>
 
       {/* Chart Section */}
-      <section className="container mx-auto px-6 py-40" data-navbar-theme="light">
+      <section
+        className="container mx-auto px-6 py-40"
+        data-navbar-theme="light"
+      >
         <div className="grid items-center gap-32 lg:grid-cols-2">
           <AnalyticsMetricsChart />
           <div className="space-y-12">
-            <h2 className="text-5xl leading-[0.9] font-black tracking-tighter uppercase text-slate-900 md:text-7xl">
+            <h2 className="text-5xl leading-[0.9] font-black tracking-tighter text-slate-900 uppercase md:text-7xl">
               Insights <br />
               <span className="text-teal-600 underline decoration-teal-200 underline-offset-[12px]">
                 That Drive Action.
@@ -320,7 +346,7 @@ export default function AnalyticsPage() {
             </h2>
             <div className="space-y-10">
               <div className="group flex items-start gap-8">
-                <div className="shrink-0 rounded-3xl bg-teal-50 p-5 transition-colors duration-300 group-hover:bg-teal-500">
+                <div className="shrink-0 rounded-lg bg-teal-50 p-5 transition-colors duration-300 group-hover:bg-teal-500">
                   <BarChart3
                     size={28}
                     className="text-teal-600 group-hover:text-white"
@@ -331,13 +357,13 @@ export default function AnalyticsPage() {
                     Monitor Key Metrics
                   </h4>
                   <p className="text-lg leading-relaxed font-medium text-slate-500">
-                    Track data quality, execution compliance, returns visibility,
-                    and ROI transparency in real-time.
+                    Track data quality, execution compliance, returns
+                    visibility, and ROI transparency in real-time.
                   </p>
                 </div>
               </div>
               <div className="group flex items-start gap-8">
-                <div className="shrink-0 rounded-3xl bg-teal-50 p-5 transition-colors duration-300 group-hover:bg-teal-500">
+                <div className="shrink-0 rounded-lg bg-teal-50 p-5 transition-colors duration-300 group-hover:bg-teal-500">
                   <Zap
                     size={28}
                     className="text-teal-600 group-hover:text-white"
@@ -361,7 +387,12 @@ export default function AnalyticsPage() {
       <IndustryBadge />
 
       {/* ROI */}
-      <section className="mx-auto" role="region" aria-labelledby="roi-heading" data-navbar-theme="dark">
+      <section
+        className="mx-auto"
+        role="region"
+        aria-labelledby="roi-heading"
+        data-navbar-theme="dark"
+      >
         <div className="relative overflow-hidden bg-slate-900 p-8 text-white md:p-16">
           <div className="relative z-10 grid items-center gap-12 lg:grid-cols-2">
             <div>
@@ -370,7 +401,9 @@ export default function AnalyticsPage() {
                 className="mb-8 text-4xl font-black md:text-6xl"
               >
                 Proven Impact <br />
-                <span className="text-teal-500">Where Data Drives Strategy</span>
+                <span className="text-teal-500">
+                  Where Data Drives Strategy
+                </span>
               </h2>
 
               <ul className="mb-10 space-y-6">

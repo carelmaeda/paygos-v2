@@ -31,17 +31,17 @@ const CHART_CONFIG = {
 
 export function FsaCoverageChart() {
   return (
-    <div className="rounded-[4rem] border border-slate-50 bg-white p-12 shadow-xl">
-      <div className="mb-12 flex items-center justify-between text-xs font-black tracking-widest uppercase">
+    <div className="overflow-hidden rounded-lg border border-slate-50 bg-white p-6 shadow-xl md:rounded-[4rem] md:p-12">
+      <div className="mb-8 flex items-center justify-between text-xs font-black tracking-widest uppercase md:mb-12">
         <span>Territory Visit Coverage</span>
         <MapPin className="text-emerald-500" size={20} />
       </div>
-      <ChartContainer id="fsa-coverage" config={CHART_CONFIG} className="h-[400px] w-full">
-        <BarChart
-          data={CHART_DATA}
-          layout="vertical"
-          margin={{ left: 30 }}
-        >
+      <ChartContainer
+        id="fsa-coverage"
+        config={CHART_CONFIG}
+        className="h-[280px] w-full min-w-0 md:h-[400px]"
+      >
+        <BarChart data={CHART_DATA} layout="vertical" margin={{ left: 30 }}>
           <CartesianGrid horizontal={false} stroke="#f8fafc" />
           <XAxis type="number" hide />
           <YAxis
@@ -55,11 +55,9 @@ export function FsaCoverageChart() {
           <ChartTooltip
             content={
               <ChartTooltipContent
-                className="rounded-2xl bg-slate-950 text-white"
-                formatter={(val, name) => (
-                  <span className="font-black text-teal-400">
-                    {val} visits
-                  </span>
+                className="rounded-lg bg-slate-950 text-white"
+                formatter={(val, _name) => (
+                  <span className="font-black text-teal-400">{val} visits</span>
                 )}
               />
             }

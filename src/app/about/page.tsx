@@ -2,6 +2,8 @@ import type { Metadata } from "next"
 import Image from "next/image"
 import { Target, Users, Lightbulb, Heart } from "lucide-react"
 import { CTA } from "@/components/sections/cta/CTA"
+import { PatternWaves } from "@/components/ui/patterns"
+import { Breadcrumbs } from "@/components/layout/Breadcrumbs"
 
 export const metadata: Metadata = {
   title: "About Us | Paygos",
@@ -11,20 +13,29 @@ export const metadata: Metadata = {
 export default function AboutPage() {
   return (
     <main className="min-h-screen">
-      {/* Hero Section - Dark Background */}
-      <section className="bg-teal-950 py-16 pt-32 md:py-24 md:pt-40" data-navbar-theme="dark">
-        <div className="container">
-          <div className="mx-auto max-w-4xl text-center text-white">
-            <h1 className="mb-6 text-4xl font-bold md:text-5xl lg:text-6xl">
-              Building the future of sales automation
-            </h1>
-            <p className="text-lg text-gray-200 md:text-xl lg:text-2xl">
-              Empowering businesses to sell more and spend less through
-              innovative technology and automation.
-            </p>
-          </div>
+      {/* Hero */}
+      <section
+        className="relative flex min-h-[75vh] bg-teal-950"
+        data-navbar-theme="dark"
+      >
+        <PatternWaves />
+        <div className="text-hero">
+          <small className="text-teal-400">About us</small>
+          <h1>
+            Building the Future of
+            <br />
+            <span className="bg-gradient-to-r from-teal-400 to-cyan-400 bg-clip-text text-transparent">
+              Sales Automation
+            </span>
+          </h1>
+          <p>
+            Empowering businesses to sell more and spend less through innovative
+            technology and intelligent automation.
+          </p>
         </div>
       </section>
+
+      <Breadcrumbs />
 
       {/* Our Story - Light Background */}
       <section className="bg-white py-16 md:py-24" data-navbar-theme="light">
@@ -61,7 +72,7 @@ export default function AboutPage() {
 
       {/* Our Values - Gray Background */}
       <section className="bg-gray-50 py-16 md:py-24" data-navbar-theme="light">
-        <div className="container">
+        <div className="section-container">
           <h2 className="mb-12 text-center text-3xl font-bold md:text-4xl lg:text-5xl">
             Our Values
           </h2>
@@ -129,7 +140,7 @@ export default function AboutPage() {
 
       {/* Our Team - White Background */}
       <section className="bg-white py-16 md:py-24" data-navbar-theme="light">
-        <div className="container">
+        <div className="section-container">
           <div className="mx-auto max-w-5xl">
             <div className="grid gap-12 md:grid-cols-2 md:items-center">
               {/* Text Content */}
@@ -158,7 +169,7 @@ export default function AboutPage() {
               </div>
 
               {/* Image */}
-              <div className="relative h-[300px] overflow-hidden rounded-xl md:h-[400px]">
+              <div className="relative h-[300px] overflow-hidden rounded-lg md:h-[400px]">
                 <Image
                   src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2070&auto=format&fit=crop"
                   alt="Team collaboration"

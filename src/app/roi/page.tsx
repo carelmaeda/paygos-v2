@@ -1,7 +1,9 @@
 import type { Metadata } from "next"
-import Image from "next/image"
 import { CTA } from "@/components/sections/cta/CTA"
-import { Calculator, TrendingUp, Clock, DollarSign } from "lucide-react"
+import { RoiCalculator } from "@/components/roi/RoiCalculator"
+import { TrendingUp, Clock, DollarSign } from "lucide-react"
+import { PatternDots } from "@/components/ui/patterns"
+import { Breadcrumbs } from "@/components/layout/Breadcrumbs"
 
 export const metadata: Metadata = {
   title: "ROI Calculator | Paygos",
@@ -50,42 +52,31 @@ export const metadata: Metadata = {
 
 export default function RoiPage() {
   return (
-    <main className="min-h-screen">
-      {/* Hero Section */}
+    <main>
+      {/* Hero */}
       <section
-        className="relative flex min-h-[50vh] items-center overflow-hidden bg-slate-950 pt-32 pb-16"
+        className="relative flex min-h-[75vh] bg-cyan-950"
         data-navbar-theme="dark"
       >
-        <div className="absolute inset-0 z-0">
-          <Image
-            src="https://images.unsplash.com/photo-1554224155-6726b3ff858f"
-            alt="ROI Calculator"
-            fill
-            priority
-            className="object-cover opacity-20"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/80 to-transparent" />
-        </div>
-
-        <div className="relative z-10 container mx-auto px-6 lg:px-8">
-          <div className="max-w-4xl">
-            <div className="mb-8 inline-flex items-center gap-2 rounded-full border border-teal-500/30 bg-teal-500/20 px-4 py-1.5 text-xs font-black tracking-[0.2em] text-teal-300 uppercase backdrop-blur-md">
-              <Calculator size={14} />
-              Measure Your Investment
-            </div>
-            <h1 className="mb-8 text-5xl leading-[0.9] font-black tracking-tighter text-white md:text-8xl">
-              CALCULATE <br />
-              <span className="bg-gradient-to-r from-teal-400 to-emerald-400 bg-clip-text text-transparent">
-                YOUR ROI.
-              </span>
-            </h1>
-            <p className="max-w-2xl text-xl leading-relaxed font-medium text-slate-300 md:text-2xl">
-              See the real impact of Paygos on your business. Enter your metrics
-              and discover potential savings and growth opportunities.
-            </p>
-          </div>
+        <PatternDots />
+        <div className="text-hero">
+          <small className="text-teal-400">Measure Your Investment</small>
+          <h1>
+            Calculate
+            <br />
+            <span className="bg-gradient-to-r from-teal-400 to-cyan-400 bg-clip-text text-transparent">
+              Your ROI
+            </span>
+          </h1>
+          <p>
+            See the real impact of Paygos on your business. Enter your metrics
+            to uncover potential savings, efficiency gains, and growth
+            opportunities.
+          </p>
         </div>
       </section>
+
+      <Breadcrumbs />
 
       {/* Value Props */}
       <section className="section-container py-12" data-navbar-theme="light">
@@ -141,6 +132,7 @@ export default function RoiPage() {
               potential returns.
             </p>
           </div>
+          <RoiCalculator />
         </div>
       </section>
 

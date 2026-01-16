@@ -3,14 +3,25 @@ import Link from "next/link"
 import Image from "next/image"
 import { ArrowLeft } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import { Breadcrumbs } from "@/components/layout/Breadcrumbs"
 
 export const metadata: Metadata = {
   title: "Retail Time Savings Success Story | Paygos",
-  description: "See how retail businesses save time with Paygos. Discover automated processes, reduced admin work, and increased productivity for retail operations.",
-  keywords: ["retail automation", "time savings", "retail efficiency", "productivity", "retail operations", "process automation", "retail technology"],
+  description:
+    "See how retail businesses save time with Paygos. Discover automated processes, reduced admin work, and increased productivity for retail operations.",
+  keywords: [
+    "retail automation",
+    "time savings",
+    "retail efficiency",
+    "productivity",
+    "retail operations",
+    "process automation",
+    "retail technology",
+  ],
   openGraph: {
     title: "Retail Time Savings Success Story | Paygos",
-    description: "See how retail businesses save time with Paygos. Discover automated processes, reduced admin work, and increased productivity for retail operations.",
+    description:
+      "See how retail businesses save time with Paygos. Discover automated processes, reduced admin work, and increased productivity for retail operations.",
     url: "https://www.paygos.ca/customers/retail-time-saved",
     siteName: "Paygos",
     images: [
@@ -27,7 +38,8 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Retail Time Savings Success Story | Paygos",
-    description: "See how retail businesses save time with Paygos. Discover automated processes, reduced admin work, and increased productivity for retail operations.",
+    description:
+      "See how retail businesses save time with Paygos. Discover automated processes, reduced admin work, and increased productivity for retail operations.",
     images: ["/paygos/logo-full.webp"],
   },
   robots: {
@@ -58,7 +70,7 @@ export default function RetailTimeSavedPage() {
         </div>
 
         {/* Hero Section */}
-        <div className="relative mb-12 overflow-hidden rounded-xl">
+        <div className="relative mb-12 overflow-hidden rounded-lg">
           <div className="relative h-[300px] md:h-[400px]">
             <Image
               src="https://images.unsplash.com/photo-1556740758-90de374c12ad?q=80&w=2070&auto=format&fit=crop"
@@ -69,7 +81,7 @@ export default function RetailTimeSavedPage() {
             <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-black/20" />
 
             {/* Content Overlay */}
-            <div className="absolute bottom-0 left-0 right-0 p-8 text-white">
+            <div className="absolute right-0 bottom-0 left-0 p-8 text-white">
               <div className="mb-4 inline-block rounded-lg bg-white p-4">
                 <Image
                   src="/customers/logos/retail-corp.svg"
@@ -94,12 +106,14 @@ export default function RetailTimeSavedPage() {
           </div>
         </div>
 
+        <Breadcrumbs />
+
         {/* Story Content */}
         <div className="mx-auto max-w-3xl">
           <div className="space-y-6 text-lg text-gray-600">
             <p>
-              How Retail Corp automated their month-end processes with Paygos and
-              saved significant time on operations.
+              How Retail Corp automated their month-end processes with Paygos
+              and saved significant time on operations.
             </p>
 
             {/* Add your custom content here */}

@@ -4,11 +4,9 @@ export const customerStories: CustomerStory[] = [
   {
     id: "1",
     slug: "retail-time-saved",
-    companyName: "Retail Corp",
-    companyLogo: "/customers/logos/retail-corp.svg",
     backgroundImage:
       "https://images.unsplash.com/photo-1556740758-90de374c12ad?q=80&w=2070&auto=format&fit=crop",
-    tags: ["Retail", "Time Saved"],
+    tags: ["Veterinary"],
     title: "19% YoY Sales Increase",
     excerpt:
       "How Retail Corp automated their month-end processes with Paygos and saved significant time on operations.",
@@ -16,8 +14,6 @@ export const customerStories: CustomerStory[] = [
   {
     id: "2",
     slug: "manufacturing-efficiency",
-    companyName: "ManuTech Industries",
-    companyLogo: "/customers/logos/manutech.svg",
     backgroundImage:
       "https://images.unsplash.com/photo-1565793298595-6a879b1d9492?q=80&w=2071&auto=format&fit=crop",
     tags: ["Manufacturing", "Efficiency"],
@@ -28,8 +24,6 @@ export const customerStories: CustomerStory[] = [
   {
     id: "3",
     slug: "finance-automation",
-    companyName: "FinanceFirst",
-    companyLogo: "/customers/logos/financefirst.svg",
     backgroundImage:
       "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2015&auto=format&fit=crop",
     tags: ["Finance", "Automation"],
@@ -40,8 +34,6 @@ export const customerStories: CustomerStory[] = [
   {
     id: "4",
     slug: "healthcare-compliance",
-    companyName: "HealthPro Solutions",
-    companyLogo: "/customers/logos/healthpro.svg",
     backgroundImage:
       "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=2070&auto=format&fit=crop",
     tags: ["Healthcare", "Compliance"],
@@ -52,8 +44,6 @@ export const customerStories: CustomerStory[] = [
   {
     id: "5",
     slug: "food-beverage-growth",
-    companyName: "TastyBites Distribution",
-    companyLogo: "/customers/logos/tastybites.svg",
     backgroundImage:
       "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=2070&auto=format&fit=crop",
     tags: ["Food & Beverage", "Growth"],
@@ -63,14 +53,12 @@ export const customerStories: CustomerStory[] = [
   },
   {
     id: "6",
-    slug: "technology-scale",
-    companyName: "TechFlow Systems",
-    companyLogo: "/customers/logos/techflow.svg",
+    slug: "vet-growth",
     backgroundImage:
-      "https://images.unsplash.com/photo-1551434678-e076c223a692?q=80&w=2070&auto=format&fit=crop",
-    tags: ["Technology", "Scale"],
-    title: "Scaled operations by 200% without adding staff",
+      "https://images.unsplash.com/photo-1565674244283-993fb27a215f",
+    tags: ["Veterinary", "Pet Food"],
+    title: "The 19% Sales Jump: How Automation Built a Pet Food Powerhouse",
     excerpt:
-      "TechFlow Systems grew their business dramatically while maintaining efficiency with Paygos.",
+      "See how one global brand turned inactive accounts into a 151% growth engine.",
   },
 ]

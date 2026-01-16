@@ -23,6 +23,7 @@ import { CTA } from "@/components/sections/cta/CTA"
 import { BookCallButton } from "@/components/sections/cta/BookCallButton"
 import { IndustryBadge } from "@/components/sections/solutions/IndustryBadge"
 import { TrainingCompletionChart } from "./training-completion-chart"
+import { Breadcrumbs } from "@/components/layout/Breadcrumbs"
 
 export const metadata: Metadata = {
   title: "Training Management | Paygos",
@@ -75,7 +76,10 @@ export default function TrainingPage() {
   return (
     <main>
       {/* Hero Section */}
-      <section className="relative flex min-h-[90vh] items-center overflow-hidden bg-slate-950 pt-32 pb-24" data-navbar-theme="dark">
+      <section
+        className="relative flex min-h-[90vh] items-center overflow-hidden bg-slate-950 pt-32 pb-24"
+        data-navbar-theme="dark"
+      >
         <div className="absolute inset-0 z-0">
           <Image
             src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?q=80&w=2070&auto=format&fit=crop"
@@ -110,14 +114,19 @@ export default function TrainingPage() {
         </div>
       </section>
 
+      <Breadcrumbs />
+
       {/* Challenges Section */}
-      <section className="container mx-auto px-6 py-24" data-navbar-theme="light">
+      <section
+        className="container mx-auto px-6 py-24"
+        data-navbar-theme="light"
+      >
         <h2 className="mb-12 text-center text-3xl font-black text-slate-900">
           Common Training Challenges
         </h2>
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
-          <div className="rounded-2xl border border-gray-100 bg-white p-8 shadow-lg transition-shadow hover:shadow-xl">
-            <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-xl bg-red-100">
+          <div className="rounded-lg border border-gray-100 bg-white p-8 shadow-lg transition-shadow hover:shadow-xl">
+            <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-lg bg-red-100">
               <UserX className="h-8 w-8 text-red-600" />
             </div>
             <h3 className="mb-3 text-xl font-bold text-gray-900">
@@ -129,8 +138,8 @@ export default function TrainingPage() {
             </p>
           </div>
 
-          <div className="rounded-2xl border border-gray-100 bg-white p-8 shadow-lg transition-shadow hover:shadow-xl">
-            <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-xl bg-red-100">
+          <div className="rounded-lg border border-gray-100 bg-white p-8 shadow-lg transition-shadow hover:shadow-xl">
+            <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-lg bg-red-100">
               <AlertCircle className="h-8 w-8 text-red-600" />
             </div>
             <h3 className="mb-3 text-xl font-bold text-gray-900">
@@ -142,8 +151,8 @@ export default function TrainingPage() {
             </p>
           </div>
 
-          <div className="rounded-2xl border border-gray-100 bg-white p-8 shadow-lg transition-shadow hover:shadow-xl">
-            <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-xl bg-red-100">
+          <div className="rounded-lg border border-gray-100 bg-white p-8 shadow-lg transition-shadow hover:shadow-xl">
+            <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-lg bg-red-100">
               <FileText className="h-8 w-8 text-red-600" />
             </div>
             <h3 className="mb-3 text-xl font-bold text-gray-900">
@@ -155,8 +164,8 @@ export default function TrainingPage() {
             </p>
           </div>
 
-          <div className="rounded-2xl border border-gray-100 bg-white p-8 shadow-lg transition-shadow hover:shadow-xl">
-            <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-xl bg-red-100">
+          <div className="rounded-lg border border-gray-100 bg-white p-8 shadow-lg transition-shadow hover:shadow-xl">
+            <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-lg bg-red-100">
               <ClipboardList className="h-8 w-8 text-red-600" />
             </div>
             <h3 className="mb-3 text-xl font-bold text-gray-900">
@@ -171,7 +180,11 @@ export default function TrainingPage() {
       </section>
 
       {/* Bento Grid Section */}
-      <section id="capabilities" className="mx-auto mb-24 max-w-5xl px-4" data-navbar-theme="light">
+      <section
+        id="capabilities"
+        className="mx-auto mb-24 max-w-5xl px-4"
+        data-navbar-theme="light"
+      >
         <div className="mb-16 text-center">
           <h2 className="mb-6 text-4xl font-black text-slate-900 md:text-6xl">
             What Paygos Offers
@@ -213,8 +226,8 @@ export default function TrainingPage() {
               <Award size={24} aria-hidden="true" />
               <h3 className="text-lg">Certification Tracking</h3>
               <p className="text-sm">
-                Issue digital certificates, track renewals, and prove
-                compliance with automated workflows.
+                Issue digital certificates, track renewals, and prove compliance
+                with automated workflows.
               </p>
             </div>
           </article>
@@ -294,7 +307,10 @@ export default function TrainingPage() {
       </section>
 
       {/* Chart Section */}
-      <section className="container mx-auto px-6 py-40" data-navbar-theme="light">
+      <section
+        className="container mx-auto px-6 py-40"
+        data-navbar-theme="light"
+      >
         <div className="grid items-center gap-32 lg:grid-cols-2">
           <TrainingCompletionChart />
 
@@ -307,7 +323,7 @@ export default function TrainingPage() {
 
             <div className="space-y-8">
               <div className="flex items-start gap-6">
-                <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-xl bg-emerald-100">
+                <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-lg bg-emerald-100">
                   <CheckCircle2 className="h-6 w-6 text-emerald-600" />
                 </div>
                 <div>
@@ -322,7 +338,7 @@ export default function TrainingPage() {
               </div>
 
               <div className="flex items-start gap-6">
-                <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-xl bg-emerald-100">
+                <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-lg bg-emerald-100">
                   <Users className="h-6 w-6 text-emerald-600" />
                 </div>
                 <div>
@@ -337,7 +353,7 @@ export default function TrainingPage() {
               </div>
 
               <div className="flex items-start gap-6">
-                <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-xl bg-emerald-100">
+                <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-lg bg-emerald-100">
                   <Target className="h-6 w-6 text-emerald-600" />
                 </div>
                 <div>
@@ -376,9 +392,7 @@ export default function TrainingPage() {
                 <li className="flex items-start gap-4">
                   <CheckCircle2 className="mt-1 h-6 w-6 flex-shrink-0 text-teal-500" />
                   <p className="text-lg text-slate-300">
-                    <strong className="text-white">
-                      75% completion rate
-                    </strong>{" "}
+                    <strong className="text-white">75% completion rate</strong>{" "}
                     with interactive modules vs 30% with traditional training
                   </p>
                 </li>
@@ -394,9 +408,7 @@ export default function TrainingPage() {
                 <li className="flex items-start gap-4">
                   <CheckCircle2 className="mt-1 h-6 w-6 flex-shrink-0 text-teal-500" />
                   <p className="text-lg text-slate-300">
-                    <strong className="text-white">
-                      40% higher retention
-                    </strong>{" "}
+                    <strong className="text-white">40% higher retention</strong>{" "}
                     when training is tied to incentive rewards
                   </p>
                 </li>

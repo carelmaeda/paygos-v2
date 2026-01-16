@@ -1,6 +1,5 @@
 import type { Metadata } from "next"
 import React from "react"
-import Link from "next/link"
 import Image from "next/image"
 import {
   ArrowRight,
@@ -22,14 +21,26 @@ import { CTA } from "@/components/sections/cta/CTA"
 import { BookCallButton } from "@/components/sections/cta/BookCallButton"
 import { IndustryBadge } from "@/components/sections/solutions/IndustryBadge"
 import { MarketingEngagementChart } from "./marketing-engagement-chart"
+import { Breadcrumbs } from "@/components/layout/Breadcrumbs"
 
 export const metadata: Metadata = {
   title: "Marketing Solutions | Paygos",
-  description: "Engage retailers at scale with targeted communications. Automate campaign delivery, track engagement, and reach the right retailers at the right time.",
-  keywords: ["marketing automation", "sales marketing", "customer communication", "marketing campaigns", "targeted marketing", "promotional marketing", "trade marketing", "retail marketing"],
+  description:
+    "Engage retailers at scale with targeted communications. Automate campaign delivery, track engagement, and reach the right retailers at the right time.",
+  keywords: [
+    "marketing automation",
+    "sales marketing",
+    "customer communication",
+    "marketing campaigns",
+    "targeted marketing",
+    "promotional marketing",
+    "trade marketing",
+    "retail marketing",
+  ],
   openGraph: {
     title: "Marketing Solutions | Paygos",
-    description: "Engage retailers at scale with targeted communications. Automate campaign delivery, track engagement, and reach the right retailers at the right time.",
+    description:
+      "Engage retailers at scale with targeted communications. Automate campaign delivery, track engagement, and reach the right retailers at the right time.",
     url: "https://www.paygos.ca/sales-acceleration/marketing",
     siteName: "Paygos",
     images: [
@@ -46,7 +57,8 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Marketing Solutions | Paygos",
-    description: "Engage retailers at scale with targeted communications. Automate campaign delivery, track engagement, and reach the right retailers at the right time.",
+    description:
+      "Engage retailers at scale with targeted communications. Automate campaign delivery, track engagement, and reach the right retailers at the right time.",
     images: ["/paygos/logo-full.webp"],
   },
   robots: {
@@ -62,7 +74,10 @@ export default function MarketingPage() {
   return (
     <main className="min-h-screen">
       {/* Hero */}
-      <section className="relative flex min-h-[90vh] items-center overflow-hidden bg-slate-950 pt-32 pb-24" data-navbar-theme="dark">
+      <section
+        className="relative flex min-h-[90vh] items-center overflow-hidden bg-slate-950 pt-32 pb-24"
+        data-navbar-theme="dark"
+      >
         <div className="absolute inset-0 z-0">
           <Image
             src="https://images.unsplash.com/photo-1557838923-2985c318be48"
@@ -95,15 +110,20 @@ export default function MarketingPage() {
         </div>
       </section>
 
+      <Breadcrumbs />
+
       {/* Challenges */}
-      <section className="container mx-auto px-6 py-24" data-navbar-theme="light">
+      <section
+        className="container mx-auto px-6 py-24"
+        data-navbar-theme="light"
+      >
         <h2 className="mb-12 text-center text-3xl font-black text-slate-900">
           Common Marketing Challenges
         </h2>
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
           {/* Challenge 1 */}
-          <div className="rounded-2xl border border-gray-100 bg-white p-8 shadow-lg transition-shadow hover:shadow-xl">
-            <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-xl bg-red-100">
+          <div className="rounded-lg border border-gray-100 bg-white p-8 shadow-lg transition-shadow hover:shadow-xl">
+            <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-lg bg-red-100">
               <Megaphone className="h-8 w-8 text-red-600" />
             </div>
             <h3 className="mb-3 text-xl font-bold text-gray-900">
@@ -116,22 +136,22 @@ export default function MarketingPage() {
           </div>
 
           {/* Challenge 2 */}
-          <div className="rounded-2xl border border-gray-100 bg-white p-8 shadow-lg transition-shadow hover:shadow-xl">
-            <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-xl bg-red-100">
+          <div className="rounded-lg border border-gray-100 bg-white p-8 shadow-lg transition-shadow hover:shadow-xl">
+            <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-lg bg-red-100">
               <UserX className="h-8 w-8 text-red-600" />
             </div>
             <h3 className="mb-3 text-xl font-bold text-gray-900">
               No Segmentation
             </h3>
             <p className="text-gray-600">
-              Can't target messages by region, purchase history, or retailer
-              profile
+              Can&apos;t target messages by region, purchase history, or
+              retailer profile
             </p>
           </div>
 
           {/* Challenge 3 */}
-          <div className="rounded-2xl border border-gray-100 bg-white p-8 shadow-lg transition-shadow hover:shadow-xl">
-            <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-xl bg-red-100">
+          <div className="rounded-lg border border-gray-100 bg-white p-8 shadow-lg transition-shadow hover:shadow-xl">
+            <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-lg bg-red-100">
               <Eye className="h-8 w-8 text-red-600" />
             </div>
             <h3 className="mb-3 text-xl font-bold text-gray-900">
@@ -143,8 +163,8 @@ export default function MarketingPage() {
           </div>
 
           {/* Challenge 4 */}
-          <div className="rounded-2xl border border-gray-100 bg-white p-8 shadow-lg transition-shadow hover:shadow-xl">
-            <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-xl bg-red-100">
+          <div className="rounded-lg border border-gray-100 bg-white p-8 shadow-lg transition-shadow hover:shadow-xl">
+            <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-lg bg-red-100">
               <ClockIcon className="h-8 w-8 text-red-600" />
             </div>
             <h3 className="mb-3 text-xl font-bold text-gray-900">
@@ -186,7 +206,10 @@ export default function MarketingPage() {
               <h3 id="segmented-campaigns" className="md:text-3xl">
                 Segmented Campaigns
               </h3>
-              <p id="segmented-campaigns-desc" className="md:max-w-lg md:text-lg">
+              <p
+                id="segmented-campaigns-desc"
+                className="md:max-w-lg md:text-lg"
+              >
                 Target by region, banner, purchase history, or custom attributes
                 to ensure relevance.
               </p>
@@ -297,7 +320,10 @@ export default function MarketingPage() {
               <h3 id="automated-triggers" className="md:text-3xl">
                 Automated Triggers
               </h3>
-              <p id="automated-triggers-desc" className="md:max-w-lg md:text-lg">
+              <p
+                id="automated-triggers-desc"
+                className="md:max-w-lg md:text-lg"
+              >
                 Send follow-ups based on retailer actions—order confirmations,
                 rebate milestones, training completion.
               </p>
@@ -307,11 +333,14 @@ export default function MarketingPage() {
       </section>
 
       {/* Chart Section */}
-      <section className="container mx-auto px-6 py-40" data-navbar-theme="light">
+      <section
+        className="container mx-auto px-6 py-40"
+        data-navbar-theme="light"
+      >
         <div className="grid items-center gap-32 lg:grid-cols-2">
           <MarketingEngagementChart />
           <div className="space-y-12">
-            <h2 className="text-5xl leading-[0.9] font-black tracking-tighter uppercase text-slate-900 md:text-7xl">
+            <h2 className="text-5xl leading-[0.9] font-black tracking-tighter text-slate-900 uppercase md:text-7xl">
               Engagement <br />
               <span className="text-teal-600 underline decoration-teal-200 underline-offset-[12px]">
                 That Converts.
@@ -319,7 +348,7 @@ export default function MarketingPage() {
             </h2>
             <div className="space-y-10">
               <div className="group flex items-start gap-8">
-                <div className="shrink-0 rounded-3xl bg-teal-50 p-5 transition-colors duration-300 group-hover:bg-teal-500">
+                <div className="shrink-0 rounded-lg bg-teal-50 p-5 transition-colors duration-300 group-hover:bg-teal-500">
                   <BarChart3
                     size={28}
                     className="text-teal-600 group-hover:text-white"
@@ -336,7 +365,7 @@ export default function MarketingPage() {
                 </div>
               </div>
               <div className="group flex items-start gap-8">
-                <div className="shrink-0 rounded-3xl bg-teal-50 p-5 transition-colors duration-300 group-hover:bg-teal-500">
+                <div className="shrink-0 rounded-lg bg-teal-50 p-5 transition-colors duration-300 group-hover:bg-teal-500">
                   <TrendingUp
                     size={28}
                     className="text-teal-600 group-hover:text-white"
@@ -360,7 +389,12 @@ export default function MarketingPage() {
       <IndustryBadge />
 
       {/* ROI */}
-      <section className="mx-auto" role="region" aria-labelledby="roi-heading" data-navbar-theme="dark">
+      <section
+        className="mx-auto"
+        role="region"
+        aria-labelledby="roi-heading"
+        data-navbar-theme="dark"
+      >
         <div className="relative overflow-hidden bg-slate-900 p-8 text-white md:p-16">
           <div className="relative z-10 grid items-center gap-12 lg:grid-cols-2">
             <div>
@@ -394,8 +428,8 @@ export default function MarketingPage() {
                   />
                   <p className="text-lg text-slate-300">
                     Increase campaign engagement by{" "}
-                    <strong className="text-white">45%</strong> with multi-channel
-                    delivery and automated triggers.
+                    <strong className="text-white">45%</strong> with
+                    multi-channel delivery and automated triggers.
                   </p>
                 </li>
 

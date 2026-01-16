@@ -7,14 +7,14 @@ const SOLUTIONS = [
   {
     title: "Drive Growth. Maximize ROI.",
     description:
-      "Automate ordering, rebates, training, returns, payments, and marketing in one connected platform that turns trade spend into revenue.",
+      "Accelerate revenue with streamlined ordering, frictionless returns, and integrated payments that remove barriers from every sale.",
     image: "https://images.unsplash.com/photo-1713947505562-299114c58523",
     href: "/sales-acceleration",
   },
   {
-    title: "Accelerate Sales. Amplify Results.",
+    title: "Build High-Performance Sales Organizations.",
     description:
-      "Unified tools for ordering, rebates, training incentives, returns, payments, and marketing that drive performance across your distribution network.",
+      "Power performance with targeted rebates, structured training management, and marketing tools designed to boost execution in the field.",
     image: "https://images.unsplash.com/photo-1542744173-05336fcc7ad4",
     href: "/sales-acceleration",
   },

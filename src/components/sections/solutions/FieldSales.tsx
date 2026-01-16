@@ -2,23 +2,21 @@ import Link from "next/link"
 import Image from "next/image"
 import { ArrowRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
-import { PatternHexagon } from "@/components/ui/patterns"
+import { PatternGrid } from "@/components/ui/patterns"
 
 const FEATURES = [
   {
     title: "Empower Reps. Execute Flawlessly.",
     description:
       "Smart territory planning, automated scheduling, and real-time data capture that turn every store visit into a revenue opportunity.",
-    image:
-      "https://images.unsplash.com/photo-1544256718-3bcf237f3974?q=80&w=2071&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1627820751059-43001b92c076",
     href: "/solutions/fsa",
   },
   {
     title: "Optimize Routes. Maximize Impact.",
     description:
       "PS-enabled territories, AI-powered insights, and mobile execution tools that boost productivity and deliver complete visibility across your field team.",
-    image:
-      "https://images.unsplash.com/photo-1556761175-b413da4baf72?q=80&w=2074&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1666281466387-0639381c5680",
     href: "/solutions/fsa",
   },
 ]
@@ -26,7 +24,7 @@ const FEATURES = [
 export function FieldSales() {
   return (
     <section className="relative bg-teal-950 py-16 text-white">
-      <PatternHexagon />
+      <PatternGrid />
       <div className="section-container relative z-10 px-6">
         <header className="mb-16 flex flex-col items-center gap-2 text-center">
           <small className="text-teal-400 uppercase">

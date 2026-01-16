@@ -21,18 +21,29 @@ export function InputForm({ inputs, onChange }: Props) {
     <div className="grid grid-cols-1 gap-3 md:grid-cols-4">
       <div className="space-y-1.5">
         <Label className="text-sm"># of Sales Reps</Label>
-        <Input type="number" onChange={handle("salesReps")} className="h-9" />
+        <Input
+          type="number"
+          value={inputs.salesReps || ""}
+          onChange={handle("salesReps")}
+          className="h-9"
+        />
       </div>
 
       <div className="space-y-1.5">
         <Label className="text-sm"># of Customers</Label>
-        <Input type="number" onChange={handle("customers")} className="h-9" />
+        <Input
+          type="number"
+          value={inputs.customers || ""}
+          onChange={handle("customers")}
+          className="h-9"
+        />
       </div>
 
       <div className="space-y-1.5">
         <Label className="text-sm"># of Distributors</Label>
         <Input
           type="number"
+          value={inputs.distributors || ""}
           onChange={handle("distributors")}
           className="h-9"
         />
@@ -42,6 +53,7 @@ export function InputForm({ inputs, onChange }: Props) {
         <Label className="text-sm">Corporate Spend / Month ($)</Label>
         <Input
           type="number"
+          value={inputs.monthlySpend || ""}
           onChange={handle("monthlySpend")}
           className="h-9"
         />
