@@ -42,7 +42,9 @@ export function ContactForm() {
         if (err.text) {
           setErrorMessage(String(err.text))
         } else if (err.status) {
-          setErrorMessage(`Status ${err.status}: ${err.text || "Request failed"}`)
+          setErrorMessage(
+            `Status ${err.status}: ${err.text || "Request failed"}`
+          )
         } else {
           setErrorMessage(JSON.stringify(error))
         }

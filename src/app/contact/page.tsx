@@ -20,15 +20,14 @@ export default function ContactPage() {
         <div className="text-hero">
           <small className="text-teal-400">Contact</small>
           <h1>
-            Get in
-            <br />
+            Book a {""}
             <span className="bg-gradient-to-r from-teal-400 to-cyan-400 bg-clip-text text-transparent">
-              Touch
+              Call
             </span>
           </h1>
           <p>
-            Have questions about our platform? We&apos;d love to hear from you.
-            Send us a message and we&apos;ll respond as soon as possible.
+            Let&apos;s discuss how Paygos can simplify and scale your sales
+            operations.
           </p>
         </div>
       </section>
