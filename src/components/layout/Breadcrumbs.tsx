@@ -16,6 +16,7 @@ import {
 const segmentLabels: Record<string, string> = {
   about: "About Us",
   analytics: "Analytics",
+  contact: "Contact Us",
   customers: "Customers",
   fsa: "Field Sales Automation",
   roi: "ROI Calculator",

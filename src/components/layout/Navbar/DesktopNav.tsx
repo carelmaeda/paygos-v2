@@ -91,7 +91,7 @@ export function DesktopNav({ theme }: DesktopNavProps) {
       {/* Desktop CTA Button */}
       <div className="hidden md:block">
         <Button size="sm" variant="default">
-          <Link href="mailto:johndoe@fakeemail.com" aria-label="Book a Call">
+          <Link href="/contact" aria-label="Book a Call">
             Book a Call
           </Link>
         </Button>
