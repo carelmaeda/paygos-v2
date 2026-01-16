@@ -15,36 +15,33 @@ export default function VetGrowth() {
   return (
     <main>
       {/* Hero */}
-      <section className="relative flex bg-teal-950" data-navbar-theme="dark">
+      <section
+        className="relative flex bg-cyan-950 p-32"
+        data-navbar-theme="dark"
+      >
         <PatternDots />
-
-        <div className="text-hero relative z-10 flex flex-col py-32 text-white">
+        <div className="text-hero">
           <small className="text-teal-400">
             Sales Acceleration • Automation • Analytics
           </small>
-
           <h1>
-            How a Global
-            <br />
+            Vet {""}
             <span className="bg-gradient-to-r from-teal-400 to-cyan-400 bg-clip-text text-transparent">
-              Pet Food Leader
-            </span>{" "}
+              Growth
+            </span>
             <br />
-            Unlocked Scalable Growth
           </h1>
-
-          <p>
-            By automating loyalty programs, ordering, and sales execution, this
-            Global Pet Food Brand increased revenue, reactivated accounts, and
-            empowered sales teams with real-time visibility.
-          </p>
         </div>
       </section>
 
       <Breadcrumbs />
-      <div className="section-container pt-16 pb-16 md:pb-24">
-        {/* Key Metrics Grid */}
-        <div className="mb-16 grid grid-cols-1 gap-4 md:grid-cols-3">
+
+      {/* Key Metrics Section */}
+      <section
+        className="section-container mx-auto px-6 py-16"
+        data-navbar-theme="light"
+      >
+        <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
           {[
             {
               label: "YoY Sales Increase",
@@ -67,7 +64,7 @@ export default function VetGrowth() {
           ].map((stat, i) => (
             <div
               key={i}
-              className="flex flex-col items-center justify-center rounded-2xl border border-gray-100 bg-white p-8 shadow-sm transition hover:shadow-md"
+              className="flex flex-col items-center justify-center rounded-lg border border-gray-100 bg-white p-8 shadow-sm transition hover:shadow-md"
             >
               <stat.icon className={`mb-3 h-8 w-8 ${stat.color}`} />
               <span className="text-3xl font-bold text-gray-900">
@@ -79,122 +76,143 @@ export default function VetGrowth() {
             </div>
           ))}
         </div>
+      </section>
 
-        {/* Story Content Layout */}
-        <div className="grid grid-cols-1 gap-16 lg:grid-cols-12">
-          <div className="lg:col-span-8">
-            <article className="prose prose-lg max-w-none text-gray-600">
-              <h2 className="mb-6 text-3xl font-bold text-gray-900">
-                The Challenge: Scaling Reach in a Competitive Market
-              </h2>
+      {/* Challenge Section */}
+      <section
+        className="section-container mx-auto px-6 pb-16"
+        data-navbar-theme="light"
+      >
+        <div className="mx-auto max-w-3xl">
+          <h2 className="mb-8 text-center text-4xl font-black text-gray-900">
+            The Challenge: Scaling Reach in a Competitive Market
+          </h2>
+          <p className="text-center text-lg leading-relaxed text-gray-600">
+            Operating in a highly competitive pet food market, a global pet food
+            leader needed to expand its footprint while strengthening long-term
+            customer loyalty. Many accounts were incremental or inactive, and
+            manual sales processes limited visibility, efficiency, and growth.
+          </p>
+        </div>
+      </section>
 
-              <p className="mb-6 leading-relaxed">
-                Operating in a highly competitive pet food market, a global pet
-                food leader needed to expand its footprint while strengthening
-                long-term customer loyalty. Many accounts were incremental or
-                inactive, and manual sales processes limited visibility,
-                efficiency, and growth.
-              </p>
+      {/* Solution Section */}
+      <section className="bg-slate-900 py-16" data-navbar-theme="dark">
+        <div className="section-container mx-auto px-6">
+          <div className="mx-auto max-w-3xl">
+            <h2 className="mb-12 flex items-center justify-center gap-3 text-2xl font-bold text-teal-400">
+              <CheckCircle2 className="h-6 w-6" /> The Paygos Solution
+            </h2>
 
-              <div className="my-10 rounded-2xl bg-slate-900 p-8 text-white">
-                <h3 className="mb-4 flex items-center gap-2 text-xl font-semibold text-teal-400">
-                  <CheckCircle2 className="h-5 w-5" /> The Paygos Solution
-                </h3>
-
-                <ul className="space-y-4">
-                  <li className="flex gap-3">
-                    <span className="font-bold text-teal-500">01.</span>
-                    <span>
-                      <strong>Incentivized Loyalty:</strong> Strategic staff
-                      feeding and loyalty programs activated incremental
-                      locations and strengthened engagement.
-                    </span>
-                  </li>
-
-                  <li className="flex gap-3">
-                    <span className="font-bold text-teal-500">02.</span>
-                    <span>
-                      <strong>Sales Automation:</strong> Deal management and
-                      manual tasks were automated, freeing sales teams to expand
-                      coverage and reduce back-office workload.
-                    </span>
-                  </li>
-
-                  <li className="flex gap-3">
-                    <span className="font-bold text-teal-500">03.</span>
-                    <span>
-                      <strong>Actionable Data:</strong> Real-time analytics
-                      delivered visibility across service, fulfillment, and
-                      brand performance.
-                    </span>
-                  </li>
-                </ul>
-              </div>
-
-              <h2 className="mb-6 text-3xl font-bold text-gray-900">
-                The Impact: Measurable, Scalable Growth
-              </h2>
-
-              <p className="mb-8 leading-relaxed">
-                By reactivating 30% of previously inactive accounts, the company
-                achieved a 25% increase in active accounts. Staff feeding
-                programs grew by 151%, while automation enabled a 19%
-                year-over-year increase in sales.
-              </p>
-
-              <Image
-                src="https://images.unsplash.com/photo-1551288049-bbbda536339a?q=80&w=2070&auto=format&fit=crop"
-                alt="Sales Data Analytics Chart"
-                width={800}
-                height={400}
-                className="mb-8 rounded-2xl shadow-lg"
-              />
-            </article>
-          </div>
-
-          {/* Sidebar / Testimonial */}
-          <div className="lg:col-span-4">
-            <div className="sticky top-32 space-y-8">
-              <div className="rounded-2xl border border-teal-100 bg-teal-50 p-8">
-                <p className="mb-6 text-lg text-teal-900 italic">
-                  &quot;Paygos has been an exceptional partner in helping us
-                  drive efficiency and innovation across our business. Since
-                  2020 their platform has streamlined our rebate management and
-                  ordering processes, allowing us to focus on what matters
-                  most—delivering value to our customers.
-                  <br />
-                  <br />
-                  The Paygos team is extraordinary, consistently going above and
-                  beyond to service our unique needs with a personal touch.
-                  Their ability to customize solutions specifically for our
-                  business has made a world of difference, enabling us to
-                  operate with greater speed and precision. We couldn’t ask for
-                  a better partner in our journey toward growth and
-                  success.&quot;
-                </p>
-
-                <div className="flex items-center gap-4">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-full bg-teal-200">
-                    <Users className="h-6 w-6 text-teal-700" />
-                  </div>
-                  <div>
-                    <p className="text-sm font-bold text-gray-900">
-                      Global Pet Food Client
-                    </p>
-                    <p className="text-xs font-medium text-teal-700 uppercase">
-                      Enterprise Sales Leader
-                    </p>
-                  </div>
+            <div className="space-y-8">
+              <div className="flex gap-6">
+                <span className="text-2xl font-black text-teal-500">01.</span>
+                <div>
+                  <h4 className="mb-2 text-xl font-bold text-white">
+                    Incentivized Loyalty
+                  </h4>
+                  <p className="text-slate-300">
+                    Strategic staff feeding and loyalty programs activated
+                    incremental locations and strengthened engagement.
+                  </p>
                 </div>
               </div>
 
-              <div className="overflow-hidden rounded-lg">
-                <CTA />
+              <div className="flex gap-6">
+                <span className="text-2xl font-black text-teal-500">02.</span>
+                <div>
+                  <h4 className="mb-2 text-xl font-bold text-white">
+                    Sales Automation
+                  </h4>
+                  <p className="text-slate-300">
+                    Deal management and manual tasks were automated, freeing
+                    sales teams to expand coverage and reduce back-office
+                    workload.
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex gap-6">
+                <span className="text-2xl font-black text-teal-500">03.</span>
+                <div>
+                  <h4 className="mb-2 text-xl font-bold text-white">
+                    Actionable Data
+                  </h4>
+                  <p className="text-slate-300">
+                    Real-time analytics delivered visibility across service,
+                    fulfillment, and brand performance.
+                  </p>
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
+      </section>
+
+      {/* Impact Section */}
+      <section
+        className="section-container mx-auto px-6 py-16"
+        data-navbar-theme="light"
+      >
+        <div className="mx-auto max-w-3xl text-center">
+          <h2 className="mb-8 text-4xl font-black text-gray-900">
+            The Impact: Measurable, Scalable Growth
+          </h2>
+          <p className="mb-12 text-lg leading-relaxed text-gray-600">
+            By reactivating 30% of previously inactive accounts, the company
+            achieved a 25% increase in active accounts. Staff feeding programs
+            grew by 151%, while automation enabled a 19% year-over-year increase
+            in sales.
+          </p>
+          <Image
+            src="https://images.unsplash.com/photo-1551288049-bbbda536339a?q=80&w=2070&auto=format&fit=crop"
+            alt="Sales Data Analytics Chart"
+            width={800}
+            height={400}
+            className="mx-auto rounded-2xl shadow-lg"
+          />
+        </div>
+      </section>
+
+      {/* Testimonial Section */}
+      <section className="bg-gray-100 py-16" data-navbar-theme="light">
+        <h2 className="mb-8 text-center">Customer Testimonial</h2>
+        <div className="section-container mx-auto px-6">
+          <div className="mx-auto max-w-3xl text-center">
+            <p className="mb-8 italic">
+              &quot;Paygos has been an exceptional partner in helping us drive
+              efficiency and innovation across our business. Since 2020 their
+              platform has streamlined our rebate management and ordering
+              processes, allowing us to focus on what matters most—delivering
+              value to our customers.
+              <br />
+              <br />
+              The Paygos team is extraordinary, consistently going above and
+              beyond to service our unique needs with a personal touch. Their
+              ability to customize solutions specifically for our business has
+              made a world of difference, enabling us to operate with greater
+              speed and precision. We couldn&apos;t ask for a better partner in
+              our journey toward growth and success.&quot;
+            </p>
+
+            <div className="flex items-center justify-center gap-4">
+              <div className="flex h-12 w-12 items-center justify-center rounded-full bg-teal-200">
+                <Users className="h-6 w-6 text-teal-700" />
+              </div>
+              <div className="text-left">
+                <p className="text-sm font-bold text-gray-900">
+                  Global Pet Food Client
+                </p>
+                <p className="text-xs font-medium text-teal-700 uppercase">
+                  Marketing Director
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <CTA />
     </main>
   )
 }
