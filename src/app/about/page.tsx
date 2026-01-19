@@ -37,7 +37,7 @@ export default function AboutPage() {
 
       {/* Our Story - Light Background */}
       <section className="bg-white py-16 md:py-24" data-navbar-theme="light">
-        <div className="container">
+        <div className="section-container">
           <div className="mx-auto max-w-3xl">
             <h2 className="mb-8 text-3xl font-bold md:text-4xl lg:text-5xl">
               Our Story
@@ -68,8 +68,37 @@ export default function AboutPage() {
         </div>
       </section>
 
+      {/* President Testimonial */}
+      <section className="bg-gray-200 py-16" data-navbar-theme="light">
+        <div className="section-container">
+          <div className="mx-auto max-w-4xl">
+            <div className="flex flex-col items-center gap-8 md:flex-row md:items-start">
+              <Image
+                src="/paygos/hesham.jpg"
+                alt="Hesham Shafie - President of Paygos"
+                width={160}
+                height={160}
+                className="h-32 w-32 flex-shrink-0 rounded-full object-cover md:h-40 md:w-40"
+              />
+              <div className="text-center md:text-left">
+                <blockquote className="mb-4 italic">
+                  &ldquo;At Paygos, we believe that technology should empower
+                  people, not replace them. Our mission is to give sales teams
+                  the tools they need to build meaningful relationships and
+                  achieve extraordinary results.&rdquo;
+                </blockquote>
+                <div>
+                  <p className="font-semibold text-teal-600">Hesham Shafie</p>
+                  <p className="text-cyan-900">President, Paygos</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Our Values - Gray Background */}
-      <section className="bg-gray-50 py-16 md:py-24" data-navbar-theme="light">
+      <section className="bg-white py-16 md:py-24" data-navbar-theme="light">
         <div className="section-container">
           <h2 className="mb-12 text-center text-3xl font-bold md:text-4xl lg:text-5xl">
             Our Values

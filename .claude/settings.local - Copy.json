@@ -1,0 +1,32 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm run format:*)",
+      "Bash(npm run build:*)",
+      "Bash(cat:*)",
+      "Bash(powershell \"Get-Process node -ErrorAction SilentlyContinue | Select-Object Id, ProcessName, StartTime\")",
+      "Bash(taskkill:*)",
+      "Bash(find:*)",
+      "Bash(npx tsc:*)",
+      "Bash(npx next build)",
+      "Bash(npm install:*)",
+      "Bash(npm run dev:*)",
+      "Bash(git mv:*)",
+      "Bash(move:*)"
+    ]
+  },
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Bash(git commit*)",
+        "hooks": [
+          {
+            "type": "prompt",
+            "prompt": "Review the git commit that was just made. Check if README.md needs to be updated based on the changes in this commit. If significant features, components, configuration changes, or dependencies were added/modified, output a brief reminder to update the README.md file with:\n\n- New features/components in the 'Features' section\n- New dependencies in 'Tech Stack'\n- New files/directories in 'Project Structure'\n- Configuration changes in 'Configuration' section\n- Update 'Last Updated' date\n\nIf the README doesn't need updating or was already updated in this commit, output nothing.",
+            "statusMessage": "Checking if README.md needs updating..."
+          }
+        ]
+      }
+    ]
+  }
+}
