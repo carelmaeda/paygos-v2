@@ -1,6 +1,6 @@
 import Link from "next/link"
 import Image from "next/image"
-import { Facebook, Twitter, Linkedin, Instagram } from "lucide-react"
+import { Linkedin } from "lucide-react"
 import { PatternDots } from "@/components/ui/patterns"
 
 // ============================================
@@ -29,7 +29,7 @@ export function Footer() {
               />
             </Link>
             <p className="my-4 max-w-xs text-sm leading-relaxed">
-              A customizable sales acceleration platform designed to drive
+              Our customizable sales acceleration platform is designed to drive
               incremental revenue, automate manual processes and surface
               actionable sales data & analytics.
             </p>
@@ -43,28 +43,7 @@ export function Footer() {
                   aria-label="Follow us on LinkedIn"
                   className="transition-colors hover:text-teal-400"
                 >
-                  <Linkedin className="h-5 w-5" />
-                </Link>
-                <Link
-                  href="#"
-                  aria-label="Follow us on Twitter"
-                  className="hidden transition-colors hover:text-teal-400"
-                >
-                  <Twitter className="h-5 w-5" />
-                </Link>
-                <Link
-                  href="#"
-                  aria-label="Follow us on Facebook"
-                  className="hidden transition-colors hover:text-teal-400"
-                >
-                  <Facebook className="h-5 w-5" />
-                </Link>
-                <Link
-                  href="#"
-                  aria-label="Follow us on Instagram"
-                  className="hidden transition-colors hover:text-teal-400"
-                >
-                  <Instagram className="h-5 w-5" />
+                  <Linkedin className="h-8 w-8" />
                 </Link>
               </div>
             </div>
@@ -78,50 +57,18 @@ export function Footer() {
             <ul className="space-y-3 text-sm">
               <li>
                 <Link
-                  href="/solutions/ordering"
+                  href="/sales-acceleration"
                   className="transition-colors hover:text-white"
                 >
-                  Optimized Ordering
+                  Sales Acceleration
                 </Link>
               </li>
               <li>
                 <Link
-                  href="/solutions/rebates"
-                  className="transition-colors hover:text-white"
-                >
-                  Rebates Management
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/solutions/training"
-                  className="transition-colors hover:text-white"
-                >
-                  Training & Development
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/solutions/analytics"
-                  className="transition-colors hover:text-white"
-                >
-                  Analytics & Reporting
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/solutions/field-sales"
+                  href="/fsa"
                   className="transition-colors hover:text-white"
                 >
                   Field Sales Automation
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/solutions/inventory"
-                  className="transition-colors hover:text-white"
-                >
-                  Inventory Management
                 </Link>
               </li>
             </ul>
@@ -150,18 +97,11 @@ export function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="#" className="transition-colors hover:text-white">
-                  Careers
-                </Link>
-              </li>
-              <li>
-                <Link href="#" className="transition-colors hover:text-white">
+                <Link
+                  href="/contact"
+                  className="transition-colors hover:text-white"
+                >
                   Contact Us
-                </Link>
-              </li>
-              <li>
-                <Link href="#" className="transition-colors hover:text-white">
-                  Press
                 </Link>
               </li>
             </ul>
@@ -174,13 +114,11 @@ export function Footer() {
             </h3>
             <ul className="space-y-3 text-sm">
               <li>
-                <Link href="#" className="transition-colors hover:text-white">
-                  Roi Calculator
-                </Link>
-              </li>
-              <li>
-                <Link href="#" className="transition-colors hover:text-white">
-                  Status Page
+                <Link
+                  href="/roi"
+                  className="transition-colors hover:text-white"
+                >
+                  ROI Calculator
                 </Link>
               </li>
             </ul>
@@ -188,7 +126,7 @@ export function Footer() {
         </div>
 
         {/* Bottom Section */}
-        <div className="mt-12 border-t border-gray-800 pt-8">
+        <div className="mt-8">
           <div className="flex flex-col items-center justify-between gap-4 text-sm text-gray-400 md:flex-row">
             <p>&copy; {currentYear} Paygos. All rights reserved.</p>
             <div className="flex flex-wrap justify-center gap-6">
@@ -205,20 +143,6 @@ export function Footer() {
                 className="transition-colors hover:text-white"
               >
                 Accessibility Plan
-              </Link>
-              <Link
-                target="_blank"
-                href="#"
-                className="transition-colors hover:text-white"
-              >
-                Cookie Policy
-              </Link>
-              <Link
-                target="_blank"
-                href="#"
-                className="transition-colors hover:text-white"
-              >
-                Security
               </Link>
             </div>
           </div>

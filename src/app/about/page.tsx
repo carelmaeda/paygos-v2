@@ -1,8 +1,8 @@
 import type { Metadata } from "next"
 import Image from "next/image"
-import { Target, Users, Lightbulb, Heart } from "lucide-react"
+import { Target, Users, Heart, Shield, Lock } from "lucide-react"
 import { CTA } from "@/components/sections/cta/CTA"
-import { PatternWaves } from "@/components/ui/patterns"
+import { PatternCircuit, PatternWaves } from "@/components/ui/patterns"
 import { Breadcrumbs } from "@/components/layout/Breadcrumbs"
 
 export const metadata: Metadata = {
@@ -15,7 +15,7 @@ export default function AboutPage() {
     <main className="min-h-screen">
       {/* Hero */}
       <section
-        className="relative flex bg-teal-950 py-24"
+        className="relative flex bg-teal-950 py-16"
         data-navbar-theme="dark"
       >
         <PatternWaves />
@@ -36,7 +36,7 @@ export default function AboutPage() {
       <Breadcrumbs />
 
       {/* Our Story - Light Background */}
-      <section className="bg-white py-16 md:py-24" data-navbar-theme="light">
+      <section className="bg-white py-16" data-navbar-theme="light">
         <div className="section-container">
           <div className="mx-auto max-w-3xl">
             <h2 className="mb-8 text-3xl font-bold md:text-4xl lg:text-5xl">
@@ -81,7 +81,7 @@ export default function AboutPage() {
                 className="h-32 w-32 flex-shrink-0 rounded-full object-cover md:h-40 md:w-40"
               />
               <div className="text-center md:text-left">
-                <blockquote className="mb-4 italic">
+                <blockquote className="mb-4 text-justify italic">
                   &ldquo;At Paygos, we believe that technology should empower
                   people, not replace them. Our mission is to give sales teams
                   the tools they need to build meaningful relationships and
@@ -97,85 +97,103 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Our Values - Gray Background */}
-      <section className="bg-white py-16 md:py-24" data-navbar-theme="light">
+      {/* Our Values - Bento Grid */}
+      <section className="bg-white py-16" data-navbar-theme="light">
         <div className="section-container">
-          <h2 className="mb-12 text-center text-3xl font-bold md:text-4xl lg:text-5xl">
-            Our Values
-          </h2>
-          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
-            {/* Innovation */}
-            <div className="flex flex-col items-center text-center">
-              <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-teal-100">
-                <Lightbulb className="h-8 w-8 text-teal-700" />
+          <h2 className="mb-12 text-center">Our Values</h2>
+          <div className="grid grid-cols-1 gap-4 lg:grid-cols-2">
+            {/* Goodness - Large card spanning full height */}
+            <div className="relative flex flex-col justify-between overflow-hidden rounded-lg p-8 text-white lg:row-span-4">
+              <Image
+                src="https://images.unsplash.com/photo-1579208575657-c595a05383b7"
+                alt="People holding hands together"
+                fill
+                className="object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/20" />
+              <div className="relative z-10 mb-6 flex h-14 w-14 items-center justify-center rounded-lg bg-white/20">
+                <Heart className="h-9 w-9 text-white" />
               </div>
-              <h3 className="mb-3 text-xl font-semibold md:text-2xl">
-                Innovation
-              </h3>
-              <p className="text-gray-600">
-                We constantly push boundaries in sales technology, staying ahead
-                of the curve to deliver cutting-edge solutions that drive real
-                results.
-              </p>
+              <div className="relative z-10">
+                <h3 className="mb-2 text-3xl! font-bold md:text-5xl!">
+                  Goodness
+                </h3>
+                <p className="text-lg text-white/90">
+                  At our core, we believe in doing what&apos;s right. We lead
+                  with empathy, act with integrity, and strive to make a
+                  positive impact in everything we do.
+                </p>
+              </div>
             </div>
 
             {/* Customer Focus */}
-            <div className="flex flex-col items-center text-center">
-              <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-teal-100">
-                <Target className="h-8 w-8 text-teal-700" />
+            <div className="flex items-center gap-4 rounded-lg bg-gray-100 p-4">
+              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-teal-100">
+                <Target className="h-5 w-5 text-teal-700" />
               </div>
-              <h3 className="mb-3 text-xl font-semibold md:text-2xl">
-                Customer Focus
-              </h3>
-              <p className="text-gray-600">
-                Your success is our success. We build every feature with our
-                customers in mind, ensuring their needs drive our product
-                decisions.
-              </p>
+              <div>
+                <h3 className="font-semibold">Customer Focus</h3>
+                <p className="text-sm text-gray-600">
+                  Your success is our success.
+                </p>
+              </div>
             </div>
 
             {/* Simplicity */}
-            <div className="flex flex-col items-center text-center">
-              <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-teal-100">
-                <Users className="h-8 w-8 text-teal-700" />
+            <div className="flex items-center gap-4 rounded-lg bg-gray-100 p-4">
+              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-teal-100">
+                <Users className="h-5 w-5 text-teal-700" />
               </div>
-              <h3 className="mb-3 text-xl font-semibold md:text-2xl">
-                Simplicity
-              </h3>
-              <p className="text-gray-600">
-                Complex problems deserve simple solutions. We believe in making
-                powerful technology accessible and easy to use for everyone.
-              </p>
+              <div>
+                <h3 className="font-semibold">Simplicity</h3>
+                <p className="text-sm text-gray-600">
+                  Powerful technology made accessible.
+                </p>
+              </div>
+            </div>
+
+            {/* Security */}
+            <div className="flex items-center gap-4 rounded-lg bg-gray-100 p-4">
+              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-teal-100">
+                <Lock className="h-5 w-5 text-teal-700" />
+              </div>
+              <div>
+                <h3 className="font-semibold">Security</h3>
+                <p className="text-sm text-gray-600">
+                  Your data protection is our priority.
+                </p>
+              </div>
             </div>
 
             {/* Integrity */}
-            <div className="flex flex-col items-center text-center">
-              <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-teal-100">
-                <Heart className="h-8 w-8 text-teal-700" />
+            <div className="flex items-center gap-4 rounded-lg bg-gray-100 p-4">
+              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-teal-100">
+                <Shield className="h-5 w-5 text-teal-700" />
               </div>
-              <h3 className="mb-3 text-xl font-semibold md:text-2xl">
-                Integrity
-              </h3>
-              <p className="text-gray-600">
-                We operate with transparency and honesty in everything we do,
-                building trust with our customers, partners, and team members.
-              </p>
+              <div>
+                <h3 className="font-semibold">Integrity</h3>
+                <p className="text-sm text-gray-600">
+                  Transparency and honesty in everything.
+                </p>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
       {/* Our Team - White Background */}
-      <section className="bg-white py-16 md:py-24" data-navbar-theme="light">
+      <section
+        className="relative bg-emerald-900 py-16"
+        data-navbar-theme="light"
+      >
+        <PatternCircuit />
         <div className="section-container">
           <div className="mx-auto max-w-5xl">
-            <div className="grid gap-12 md:grid-cols-2 md:items-center">
+            <div className="grid gap-12 text-white md:grid-cols-2 md:items-center">
               {/* Text Content */}
               <div>
-                <h2 className="mb-6 text-3xl font-bold md:text-4xl lg:text-5xl">
-                  Our Team
-                </h2>
-                <div className="space-y-4 text-lg text-gray-600">
+                <h2 className="mb-4">Our Team</h2>
+                <div className="space-y-4">
                   <p>
                     Behind Paygos is a diverse team of passionate innovators,
                     engineers, designers, and sales experts who share a common
@@ -188,7 +206,7 @@ export default function AboutPage() {
                     perspectives and expertise, contributing to our mission of
                     transforming the sales landscape.
                   </p>
-                  <p className="font-semibold text-gray-900">
+                  <p className="font-semibold text-gray-400">
                     Together, we build the future of sales—one innovation at a
                     time.
                   </p>
