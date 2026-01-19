@@ -63,7 +63,7 @@ function NavigationMenuItem({
 
 // Trigger button styles
 const navigationMenuTriggerStyle = cva(
-  "group inline-flex h-9 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors hover:bg-teal-200 focus:bg-teal-200 disabled:pointer-events-none disabled:opacity-50 data-[state=open]:hover:bg-teal-200 data-[state=open]:focus:bg-teal-200 data-[state=open]:bg-teal-200/50 focus-visible:ring-ring/50 outline-none focus-visible:ring-[3px] focus-visible:outline-1"
+  "group inline-flex h-9 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors hover:bg-teal-200 hover:text-teal-800 focus:bg-teal-200 focus:text-teal-800 disabled:pointer-events-none disabled:opacity-50 data-[state=open]:hover:bg-teal-200 data-[state=open]:focus:bg-teal-200 data-[state=open]:bg-teal-200/50 data-[state=open]:text-teal-800 focus-visible:ring-ring/50 outline-none focus-visible:ring-[3px] focus-visible:outline-1"
 )
 
 // Dropdown trigger button

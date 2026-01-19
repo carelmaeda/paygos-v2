@@ -15,7 +15,7 @@ export default function AboutPage() {
     <main className="min-h-screen">
       {/* Hero */}
       <section
-        className="relative flex bg-teal-950 py-16"
+        className="relative flex bg-teal-950 py-24"
         data-navbar-theme="dark"
       >
         <PatternWaves />

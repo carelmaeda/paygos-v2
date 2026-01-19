@@ -2,6 +2,7 @@
 
 import { useState } from "react"
 import Link from "next/link"
+import { usePathname } from "next/navigation"
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -12,6 +13,7 @@ import {
 } from "@/components/ui/navigation-menu"
 import { SOLUTIONS } from "./SolutionsMenu"
 import { Button } from "@/components/ui/button"
+import { cn } from "@/lib/utils"
 import type { NavbarTheme } from "./useNavbarTheme"
 
 interface DesktopNavProps {
@@ -28,6 +30,7 @@ interface DesktopNavProps {
  */
 export function DesktopNav({ theme }: DesktopNavProps) {
   const [value, setValue] = useState("")
+  const pathname = usePathname()
   const textColor = theme === "dark" ? "text-white" : "text-black"
 
   return (
@@ -37,7 +40,11 @@ export function DesktopNav({ theme }: DesktopNavProps) {
         <NavigationMenu value={value} onValueChange={setValue}>
           <NavigationMenuList>
             <NavigationMenuItem value="solutions">
-              <NavigationMenuTrigger>Solutions</NavigationMenuTrigger>
+              <NavigationMenuTrigger
+                className={cn(pathname.startsWith("/solutions") && "bg-teal-100/50")}
+              >
+                Solutions
+              </NavigationMenuTrigger>
               <NavigationMenuContent>
                 <div className="grid w-150 max-w-[90vw] grid-cols-2 gap-3 p-4 text-black">
                   {SOLUTIONS.map((item) => {
@@ -68,13 +75,31 @@ export function DesktopNav({ theme }: DesktopNavProps) {
         </NavigationMenu>
 
         {/* Top-level Navigation Links */}
-        <Link href="/customers" className={navigationMenuTriggerStyle()}>
+        <Link
+          href="/customers"
+          className={cn(
+            navigationMenuTriggerStyle(),
+            pathname === "/customers" && "bg-teal-100/50"
+          )}
+        >
           Customers
         </Link>
-        <Link href="/roi" className={navigationMenuTriggerStyle()}>
+        <Link
+          href="/roi"
+          className={cn(
+            navigationMenuTriggerStyle(),
+            pathname === "/roi" && "bg-teal-100/50"
+          )}
+        >
           ROI Calculator
         </Link>
-        <Link href="/about" className={navigationMenuTriggerStyle()}>
+        <Link
+          href="/about"
+          className={cn(
+            navigationMenuTriggerStyle(),
+            pathname === "/about" && "bg-teal-100/50"
+          )}
+        >
           About Us
         </Link>
       </nav>

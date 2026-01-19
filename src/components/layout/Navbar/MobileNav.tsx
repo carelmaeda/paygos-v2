@@ -1,4 +1,7 @@
+"use client"
+
 import Link from "next/link"
+import { usePathname } from "next/navigation"
 import { Menu, X } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import Image from "next/image"
@@ -39,6 +42,7 @@ interface MobileNavProps {
  * Visible only on mobile (md:hidden)
  */
 export function MobileNav({ theme }: MobileNavProps) {
+  const pathname = usePathname()
   const iconColor = theme === "dark" ? "text-white" : "text-black"
   const textColor = theme === "dark" ? "text-white" : "text-black"
 
@@ -88,7 +92,11 @@ export function MobileNav({ theme }: MobileNavProps) {
           {/* Solutions Accordion */}
           <Accordion type="single" collapsible className="w-full">
             <AccordionItem value="solutions" className="px-5">
-              <AccordionTrigger>Solutions</AccordionTrigger>
+              <AccordionTrigger
+                className={cn(pathname.startsWith("/solutions") && "bg-teal-100/50 rounded-md")}
+              >
+                Solutions
+              </AccordionTrigger>
               <AccordionContent className="flex flex-col gap-2 rounded-lg bg-white p-6 text-black">
                 {SOLUTIONS.map((item) => {
                   const Icon = item.icon
@@ -114,7 +122,8 @@ export function MobileNav({ theme }: MobileNavProps) {
               href="/customers"
               className={cn(
                 navigationMenuTriggerStyle(),
-                "w-full justify-start py-8"
+                "w-full justify-start py-8",
+                pathname === "/customers" && "bg-teal-100/50"
               )}
             >
               Customers
@@ -125,7 +134,8 @@ export function MobileNav({ theme }: MobileNavProps) {
               href="/roi"
               className={cn(
                 navigationMenuTriggerStyle(),
-                "w-full justify-start py-8"
+                "w-full justify-start py-8",
+                pathname === "/roi" && "bg-teal-100/50"
               )}
             >
               ROI Calculator
@@ -136,7 +146,8 @@ export function MobileNav({ theme }: MobileNavProps) {
               href="/about"
               className={cn(
                 navigationMenuTriggerStyle(),
-                "w-full justify-start py-8"
+                "w-full justify-start py-8",
+                pathname === "/about" && "bg-teal-100/50"
               )}
             >
               About Us
