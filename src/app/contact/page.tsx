@@ -13,7 +13,7 @@ export default function ContactPage() {
     <main className="min-h-screen">
       {/* Hero */}
       <section
-        className="relative flex min-h-[75vh] bg-teal-950"
+        className="relative flex bg-slate-900 py-24"
         data-navbar-theme="dark"
       >
         <PatternWaves />
@@ -21,9 +21,7 @@ export default function ContactPage() {
           <small className="text-teal-400">Contact</small>
           <h1>
             Book a {""}
-            <span className="bg-gradient-to-r from-teal-400 to-cyan-400 bg-clip-text text-transparent">
-              Call
-            </span>
+            <span className="text-highlight">Call</span>
           </h1>
           <p>
             Let&apos;s discuss how Paygos can simplify and scale your sales
@@ -35,16 +33,8 @@ export default function ContactPage() {
       <Breadcrumbs />
 
       {/* Contact Form Section */}
-      <section className="bg-white py-16 md:py-24" data-navbar-theme="light">
-        <div className="container">
-          <div className="mx-auto max-w-3xl text-center">
-            <h2 className="mb-4 text-3xl font-bold md:text-4xl lg:text-5xl">
-              Send Us a Message
-            </h2>
-            <p className="mb-12 text-lg text-gray-600">
-              Fill out the form below and our team will get back to you shortly.
-            </p>
-          </div>
+      <section className="bg-white py-8" data-navbar-theme="light">
+        <div className="section-container">
           <ContactForm />
         </div>
       </section>

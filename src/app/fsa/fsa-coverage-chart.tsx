@@ -31,10 +31,10 @@ const CHART_CONFIG = {
 
 export function FsaCoverageChart() {
   return (
-    <div className="overflow-hidden rounded-lg border border-slate-50 bg-white p-6 shadow-xl md:rounded-[4rem] md:p-12">
-      <div className="mb-8 flex items-center justify-between text-xs font-black tracking-widest uppercase md:mb-12">
-        <span>Territory Visit Coverage</span>
-        <MapPin className="text-emerald-500" size={20} />
+    <div className="overflow-hidden rounded-lg border border-slate-50 p-6 shadow-xl md:p-12">
+      <div className="mb-8 flex items-center justify-between text-xs font-black uppercase">
+        <small className="text-teal-500">Territory Visit Coverage</small>
+        <MapPin className="text-teal-500" size={20} />
       </div>
       <ChartContainer
         id="fsa-coverage"
@@ -56,7 +56,7 @@ export function FsaCoverageChart() {
             content={
               <ChartTooltipContent
                 className="rounded-lg bg-slate-950 text-white"
-                formatter={(val, _name) => (
+                formatter={(val) => (
                   <span className="font-black text-teal-400">{val} visits</span>
                 )}
               />

@@ -1,17 +1,17 @@
 import type { Metadata } from "next"
 import Image from "next/image"
-import { Rocket, Users, TrendingUp } from "lucide-react"
+import { ClipboardList, Clock, DollarSign } from "lucide-react"
 import { Breadcrumbs } from "@/components/layout/Breadcrumbs"
 import { CTA } from "@/components/sections/cta/CTA"
 import { PatternDiagonal, PatternDots } from "@/components/ui/patterns"
 
 export const metadata: Metadata = {
-  title: "Pet Food Leader Case Study: Driving Scalable Growth | Paygos",
+  title: "Rebate Management Case Study | Paygos",
   description:
-    "Discover how a global pet food leader achieved a 19% YoY sales increase and 25% account growth through Paygos automation.",
+    "Discover how a major pet nutrition brand achieved 40% reduction in administrative overheads and 25% decrease in finance operating costs through Paygos rebate automation.",
 }
 
-export default function VetGrowth() {
+export default function RebateManagement() {
   return (
     <main>
       {/* Hero */}
@@ -22,11 +22,11 @@ export default function VetGrowth() {
         <PatternDots />
         <div className="text-hero">
           <small className="text-teal-400">
-            Sales Acceleration • Automation • Analytics
+            Rebate Management • Sales Acceleration • Automation
           </small>
           <h1>
-            Vet {""}
-            <span className="text-highlight">Growth</span>
+            Rebate {""}
+            <span className="text-highlight">Management</span>
             <br />
           </h1>
         </div>
@@ -42,21 +42,21 @@ export default function VetGrowth() {
         <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
           {[
             {
-              label: "YoY Sales Increase",
-              value: "19%",
-              icon: TrendingUp,
+              label: "Reduction in Admin Overheads",
+              value: "40%",
+              icon: ClipboardList,
               color: "text-emerald-600",
             },
             {
-              label: "Active Account Growth",
-              value: "25%",
-              icon: Users,
+              label: "Faster Rebate Fulfillment",
+              value: "30%",
+              icon: Clock,
               color: "text-blue-600",
             },
             {
-              label: "Staff Feeding Growth",
-              value: "151%",
-              icon: Rocket,
+              label: "Decrease in Finance Costs",
+              value: "25%",
+              icon: DollarSign,
               color: "text-teal-600",
             },
           ].map((stat, i) => (
@@ -84,13 +84,15 @@ export default function VetGrowth() {
         <div className="mx-auto max-w-3xl text-center">
           <small className="text-green-700">The Challenge</small>
           <h2 className="mb-8 text-4xl font-black text-gray-900">
-            Scaling Reach in a Competitive Market
+            Manual Rebate Processes Slowing Growth
           </h2>
           <p className="text-center text-lg leading-relaxed text-gray-600">
-            Operating in a highly competitive pet food market, a global pet food
-            leader needed to expand its footprint while strengthening long-term
-            customer loyalty. Many accounts were incremental or inactive, and
-            manual sales processes limited visibility, efficiency, and growth.
+            A major pet nutrition industry brand struggled with manual rebate
+            management processes that placed a heavy administrative burden on
+            sales and finance teams. Excessive manual tasks, operational
+            inefficiencies, and delayed reward payments led to internal friction
+            and customer frustration, negatively impacting both team
+            productivity and customer satisfaction.
           </p>
         </div>
       </section>
@@ -109,11 +111,12 @@ export default function VetGrowth() {
                 <span className="text-2xl font-black text-teal-500">01.</span>
                 <div>
                   <h4 className="mb-2 text-xl font-bold text-white">
-                    Incentivized Loyalty
+                    Seamless Automation
                   </h4>
                   <p className="text-slate-300">
-                    Strategic staff feeding and loyalty programs activated
-                    incremental locations and strengthened engagement.
+                    The Paygos Sales Acceleration Rebate Solution transformed
+                    the brand&apos;s rebate management approach by eliminating
+                    manual processes and streamlining rebate workflows.
                   </p>
                 </div>
               </div>
@@ -122,12 +125,12 @@ export default function VetGrowth() {
                 <span className="text-2xl font-black text-teal-500">02.</span>
                 <div>
                   <h4 className="mb-2 text-xl font-bold text-white">
-                    Sales Automation
+                    Reduced Administrative Effort
                   </h4>
                   <p className="text-slate-300">
-                    Deal management and manual tasks were automated, freeing
-                    sales teams to expand coverage and reduce back-office
-                    workload.
+                    Significant reductions in administrative effort and lower
+                    finance operating costs through automated calculations and
+                    approvals.
                   </p>
                 </div>
               </div>
@@ -136,11 +139,12 @@ export default function VetGrowth() {
                 <span className="text-2xl font-black text-teal-500">03.</span>
                 <div>
                   <h4 className="mb-2 text-xl font-bold text-white">
-                    Actionable Data
+                    Faster Fulfillment
                   </h4>
                   <p className="text-slate-300">
-                    Real-time analytics delivered visibility across service,
-                    fulfillment, and brand performance.
+                    Faster and more reliable rebate fulfillment, improving
+                    customer satisfaction and strengthening partner
+                    relationships.
                   </p>
                 </div>
               </div>
@@ -157,17 +161,21 @@ export default function VetGrowth() {
         <div className="mx-auto max-w-3xl text-center">
           <small className="text-green-700">The Impact</small>
           <h2 className="mb-8 text-4xl font-black text-gray-900">
-            Measurable, Scalable Growth
+            Strategic Focus Restored
           </h2>
           <p className="mb-12 text-gray-600">
-            By reactivating 30% of previously inactive accounts, the company
-            achieved a <strong>25% increase</strong> in active accounts. Staff
-            feeding programs grew by <strong>151%</strong>, while automation
-            enabled a <strong>19%</strong> year-over-year increase in sales.
+            With the Paygos Sales Acceleration Rebate Solution in place, sales
+            and finance teams achieved a{" "}
+            <strong>40% reduction in administrative overheads</strong>, a{" "}
+            <strong>30% reduction in time spent on rebate fulfillment</strong>,
+            and a <strong>25% decrease in finance operating costs</strong>.
+            Teams were able to shift focus toward strategic initiatives and
+            meaningful customer engagement rather than managing rebate-related
+            inefficiencies.
           </p>
           <Image
-            src="https://images.unsplash.com/photo-1551288049-bbbda536339a?q=80&w=2070&auto=format&fit=crop"
-            alt="Sales Data Analytics Chart"
+            src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop"
+            alt="Rebate Management Analytics"
             width={800}
             height={400}
             className="mx-auto rounded-2xl shadow-lg"
@@ -175,40 +183,19 @@ export default function VetGrowth() {
         </div>
       </section>
 
-      {/* Testimonial Section */}
+      {/* Conclusion Section */}
       <section className="bg-gray-100 py-16" data-navbar-theme="light">
-        <h2 className="mb-8 text-center">Customer Testimonial</h2>
+        <h2 className="mb-8 text-center">Conclusion</h2>
         <div className="section-container mx-auto px-6">
           <div className="mx-auto max-w-3xl text-center">
-            <p className="mb-8 italic">
-              &quot;Paygos has been an exceptional partner in helping us drive
-              efficiency and innovation across our business. Since 2020 their
-              platform has streamlined our rebate management and ordering
-              processes, allowing us to focus on what matters most—delivering
-              value to our customers.
-              <br />
-              <br />
-              The Paygos team is extraordinary, consistently going above and
-              beyond to service our unique needs with a personal touch. Their
-              ability to customize solutions specifically for our business has
-              made a world of difference, enabling us to operate with greater
-              speed and precision. We couldn&apos;t ask for a better partner in
-              our journey toward growth and success.&quot;
+            <p className="text-lg text-gray-700">
+              The implementation of the Paygos Sales Acceleration Rebate
+              Solution demonstrated the transformative impact of automation on
+              rebate management. By simplifying volume incentive program
+              management, the major pet nutrition industry brand improved
+              efficiency, reduced costs, and created a smoother experience for
+              both internal teams and customers.
             </p>
-
-            <div className="flex items-center justify-center gap-4">
-              <div className="flex h-12 w-12 items-center justify-center rounded-full bg-teal-200">
-                <Users className="h-6 w-6 text-teal-700" />
-              </div>
-              <div className="text-left">
-                <p className="text-sm font-bold text-gray-900">
-                  Global Pet Food Client
-                </p>
-                <p className="text-xs font-medium text-teal-700 uppercase">
-                  Marketing Director
-                </p>
-              </div>
-            </div>
           </div>
         </div>
       </section>

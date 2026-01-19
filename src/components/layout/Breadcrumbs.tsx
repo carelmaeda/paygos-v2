@@ -22,11 +22,11 @@ const segmentLabels: Record<string, string> = {
   roi: "ROI Calculator",
   "sales-acceleration": "Sales Acceleration",
   // Customer story pages
-  "finance-automation": "Finance Automation",
-  "food-beverage-growth": "Food & Beverage Growth",
-  "healthcare-compliance": "Healthcare Compliance",
-  "manufacturing-efficiency": "Manufacturing Efficiency",
-  "retail-time-saved": "Retail Time Saved",
+  "pharma-returns": "Pharma Returns",
+  "training-incentives": "Training Incentives",
+  "returns-management": "Returns Management",
+  "retail-efficiency": "Retail Efficiency",
+  "rebate-management": "Rebate Management",
   "technology-scale": "Technology Scale",
   // Sales acceleration sub-pages
   marketing: "Marketing",

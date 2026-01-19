@@ -78,7 +78,7 @@ export default function TrainingPage() {
     <main>
       {/* Hero Section */}
       <section
-        className="relative flex min-h-[75vh] bg-cyan-950"
+        className="relative flex bg-cyan-950 py-24"
         data-navbar-theme="dark"
       >
         <PatternDots />
@@ -87,9 +87,7 @@ export default function TrainingPage() {
           <h1>
             Train Smarter
             <br />
-            <span className="bg-gradient-to-r from-teal-400 to-cyan-400 bg-clip-text text-transparent">
-              Not Harder
-            </span>
+            <span className="text-highlight">Not Harder</span>
           </h1>
           <p>
             Interactive modules, certification tracking, and incentive-based

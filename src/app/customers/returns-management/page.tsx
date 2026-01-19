@@ -1,17 +1,17 @@
 import type { Metadata } from "next"
 import Image from "next/image"
-import { Rocket, Users, TrendingUp } from "lucide-react"
+import { Users, ClipboardList, Clock } from "lucide-react"
 import { Breadcrumbs } from "@/components/layout/Breadcrumbs"
 import { CTA } from "@/components/sections/cta/CTA"
 import { PatternDiagonal, PatternDots } from "@/components/ui/patterns"
 
 export const metadata: Metadata = {
-  title: "Pet Food Leader Case Study: Driving Scalable Growth | Paygos",
+  title: "Returns Management Case Study | Paygos",
   description:
-    "Discover how a global pet food leader achieved a 19% YoY sales increase and 25% account growth through Paygos automation.",
+    "Discover how a major CPG brand achieved 50% decrease in support staff and 20% reduction in administrative tasks through Paygos returns management.",
 }
 
-export default function VetGrowth() {
+export default function ReturnsManagement() {
   return (
     <main>
       {/* Hero */}
@@ -22,11 +22,11 @@ export default function VetGrowth() {
         <PatternDots />
         <div className="text-hero">
           <small className="text-teal-400">
-            Sales Acceleration • Automation • Analytics
+            Returns Management • Automation • Compliance
           </small>
           <h1>
-            Vet {""}
-            <span className="text-highlight">Growth</span>
+            Returns {""}
+            <span className="text-highlight">Management</span>
             <br />
           </h1>
         </div>
@@ -42,21 +42,21 @@ export default function VetGrowth() {
         <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
           {[
             {
-              label: "YoY Sales Increase",
-              value: "19%",
-              icon: TrendingUp,
+              label: "Decrease in Support Staff",
+              value: "50%",
+              icon: Users,
               color: "text-emerald-600",
             },
             {
-              label: "Active Account Growth",
-              value: "25%",
-              icon: Users,
+              label: "Reduction in Admin Tasks",
+              value: "20%",
+              icon: ClipboardList,
               color: "text-blue-600",
             },
             {
-              label: "Staff Feeding Growth",
-              value: "151%",
-              icon: Rocket,
+              label: "Sales Rep Time Reclaimed",
+              value: "15%",
+              icon: Clock,
               color: "text-teal-600",
             },
           ].map((stat, i) => (
@@ -84,13 +84,16 @@ export default function VetGrowth() {
         <div className="mx-auto max-w-3xl text-center">
           <small className="text-green-700">The Challenge</small>
           <h2 className="mb-8 text-4xl font-black text-gray-900">
-            Scaling Reach in a Competitive Market
+            Managing Returns at Scale
           </h2>
           <p className="text-center text-lg leading-relaxed text-gray-600">
-            Operating in a highly competitive pet food market, a global pet food
-            leader needed to expand its footprint while strengthening long-term
-            customer loyalty. Many accounts were incremental or inactive, and
-            manual sales processes limited visibility, efficiency, and growth.
+            A major consumer packaged goods brand faced challenges efficiently
+            managing returns from thousands of independent customers. Manual
+            validation, frequent errors, and disbursement processes consumed
+            significant time and resources, negatively impacting operational
+            efficiency and customer satisfaction. Additionally, ensuring
+            compliance with regulatory and corporate standards added another
+            layer of complexity to the returns management process.
           </p>
         </div>
       </section>
@@ -109,11 +112,12 @@ export default function VetGrowth() {
                 <span className="text-2xl font-black text-teal-500">01.</span>
                 <div>
                   <h4 className="mb-2 text-xl font-bold text-white">
-                    Incentivized Loyalty
+                    Seamless System Integration
                   </h4>
                   <p className="text-slate-300">
-                    Strategic staff feeding and loyalty programs activated
-                    incremental locations and strengthened engagement.
+                    Paygos seamlessly integrated with the brand&apos;s existing
+                    systems, including ERP platforms, national carriers and
+                    transporters, warehouses, and disposal partners.
                   </p>
                 </div>
               </div>
@@ -122,12 +126,12 @@ export default function VetGrowth() {
                 <span className="text-2xl font-black text-teal-500">02.</span>
                 <div>
                   <h4 className="mb-2 text-xl font-bold text-white">
-                    Sales Automation
+                    Automated Validation
                   </h4>
                   <p className="text-slate-300">
-                    Deal management and manual tasks were automated, freeing
-                    sales teams to expand coverage and reduce back-office
-                    workload.
+                    The solution eliminated sales rep involvement, automated
+                    manual steps, and delivered validation with image capture
+                    for accurate returns processing.
                   </p>
                 </div>
               </div>
@@ -136,11 +140,12 @@ export default function VetGrowth() {
                 <span className="text-2xl font-black text-teal-500">03.</span>
                 <div>
                   <h4 className="mb-2 text-xl font-bold text-white">
-                    Actionable Data
+                    Turnkey Disbursement & Compliance
                   </h4>
                   <p className="text-slate-300">
-                    Real-time analytics delivered visibility across service,
-                    fulfillment, and brand performance.
+                    Paygos deployed turnkey disbursement, ensured regulatory
+                    compliance, and fundamentally transformed the brand&apos;s
+                    returns management process.
                   </p>
                 </div>
               </div>
@@ -157,17 +162,20 @@ export default function VetGrowth() {
         <div className="mx-auto max-w-3xl text-center">
           <small className="text-green-700">The Impact</small>
           <h2 className="mb-8 text-4xl font-black text-gray-900">
-            Measurable, Scalable Growth
+            Operational Excellence Achieved
           </h2>
           <p className="mb-12 text-gray-600">
-            By reactivating 30% of previously inactive accounts, the company
-            achieved a <strong>25% increase</strong> in active accounts. Staff
-            feeding programs grew by <strong>151%</strong>, while automation
-            enabled a <strong>19%</strong> year-over-year increase in sales.
+            The major consumer packaged goods brand achieved a{" "}
+            <strong>50% decrease in support staff</strong>, a{" "}
+            <strong>20% reduction in administrative tasks</strong>, and{" "}
+            <strong>15% of sales rep time reclaimed</strong>. With streamlined
+            processes and access to comprehensive returns data and analytics,
+            the brand gained valuable insights into customer behavior, return
+            patterns, and product quality issues.
           </p>
           <Image
-            src="https://images.unsplash.com/photo-1551288049-bbbda536339a?q=80&w=2070&auto=format&fit=crop"
-            alt="Sales Data Analytics Chart"
+            src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=2070&auto=format&fit=crop"
+            alt="Returns Management Analytics"
             width={800}
             height={400}
             className="mx-auto rounded-2xl shadow-lg"
@@ -175,40 +183,20 @@ export default function VetGrowth() {
         </div>
       </section>
 
-      {/* Testimonial Section */}
+      {/* Conclusion Section */}
       <section className="bg-gray-100 py-16" data-navbar-theme="light">
-        <h2 className="mb-8 text-center">Customer Testimonial</h2>
+        <h2 className="mb-8 text-center">Conclusion</h2>
         <div className="section-container mx-auto px-6">
           <div className="mx-auto max-w-3xl text-center">
-            <p className="mb-8 italic">
-              &quot;Paygos has been an exceptional partner in helping us drive
-              efficiency and innovation across our business. Since 2020 their
-              platform has streamlined our rebate management and ordering
-              processes, allowing us to focus on what matters most—delivering
-              value to our customers.
-              <br />
-              <br />
-              The Paygos team is extraordinary, consistently going above and
-              beyond to service our unique needs with a personal touch. Their
-              ability to customize solutions specifically for our business has
-              made a world of difference, enabling us to operate with greater
-              speed and precision. We couldn&apos;t ask for a better partner in
-              our journey toward growth and success.&quot;
+            <p className="text-lg text-gray-700">
+              The implementation of the Paygos Returns Management Solution
+              transformed returns operations, driving measurable operational
+              efficiencies while reinforcing a strong commitment to customer
+              satisfaction and regulatory compliance. By leveraging Paygos, the
+              organization optimized returns processing while maintaining its
+              commitment to product quality, freshness, and customer
+              satisfaction.
             </p>
-
-            <div className="flex items-center justify-center gap-4">
-              <div className="flex h-12 w-12 items-center justify-center rounded-full bg-teal-200">
-                <Users className="h-6 w-6 text-teal-700" />
-              </div>
-              <div className="text-left">
-                <p className="text-sm font-bold text-gray-900">
-                  Global Pet Food Client
-                </p>
-                <p className="text-xs font-medium text-teal-700 uppercase">
-                  Marketing Director
-                </p>
-              </div>
-            </div>
           </div>
         </div>
       </section>

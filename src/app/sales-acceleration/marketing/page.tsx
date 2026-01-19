@@ -76,7 +76,7 @@ export default function MarketingPage() {
     <main className="min-h-screen">
       {/* Hero */}
       <section
-        className="relative flex min-h-[75vh] bg-cyan-950"
+        className="relative flex bg-cyan-950 py-24"
         data-navbar-theme="dark"
       >
         <PatternDots />
@@ -85,9 +85,7 @@ export default function MarketingPage() {
           <h1>
             Engage Retailers
             <br />
-            <span className="bg-gradient-to-r from-teal-400 to-cyan-400 bg-clip-text text-transparent">
-              At Scale
-            </span>
+            <span className="text-highlight">At Scale</span>
           </h1>
           <p>
             Paygos Marketing automates campaign delivery, tracks engagement, and

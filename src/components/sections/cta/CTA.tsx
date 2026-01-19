@@ -11,7 +11,7 @@ import { BookCallButton } from "./BookCallButton"
  */
 export function CTA() {
   return (
-    <section className="bg-gray-200 py-16">
+    <section className="bg-gray-200 px-4 py-16">
       <div className="mx-auto text-center">
         {/* Main CTA Heading */}
         <h2 className="mb-8">Ready to accelerate your sales?</h2>

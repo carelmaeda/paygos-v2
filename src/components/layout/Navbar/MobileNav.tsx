@@ -66,16 +66,18 @@ export function MobileNav({ theme }: MobileNavProps) {
 
         {/* Header with Logo and Close Button */}
         <div className="flex items-center justify-between p-5">
-          <Link href="/">
-            <Image
-              src="/paygos/logo-full-white.webp"
-              alt="Brand Logo"
-              width={130}
-              height={50}
-              priority
-              className="hover:opacity-70"
-            />
-          </Link>
+          <SheetClose asChild>
+            <Link href="/">
+              <Image
+                src="/paygos/logo-full-white.webp"
+                alt="Brand Logo"
+                width={130}
+                height={50}
+                priority
+                className="hover:opacity-70"
+              />
+            </Link>
+          </SheetClose>
           <SheetClose className="focus:ring-ring rounded-sm opacity-70 transition-opacity hover:opacity-100 focus:ring-2 focus:ring-offset-2 focus:outline-none">
             <X className="size-8" />
             <span className="sr-only">Close</span>

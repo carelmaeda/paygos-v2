@@ -75,7 +75,7 @@ export default function PaygosRebatesPage() {
     <main className="min-h-screen">
       {/* Hero */}
       <section
-        className="relative flex min-h-[75vh] bg-cyan-950"
+        className="relative flex bg-cyan-950 py-24"
         data-navbar-theme="dark"
       >
         <PatternDots />
@@ -84,9 +84,7 @@ export default function PaygosRebatesPage() {
           <h1>
             Rebates That
             <br />
-            <span className="bg-gradient-to-r from-teal-400 to-cyan-400 bg-clip-text text-transparent">
-              Drive Loyalty
-            </span>
+            <span className="text-highlight">Drive Loyalty</span>
           </h1>
           <p>
             Paygos automates rebate tracking, claim validation, and payout

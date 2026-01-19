@@ -5,7 +5,11 @@ import { ArrowRight, CheckCircle, TrendingUp, Zap } from "lucide-react"
 import { CTA } from "@/components/sections/cta/CTA"
 import { IndustryBadge } from "@/components/sections/solutions/IndustryBadge"
 import { SALES_ACCELERATION_TOOLS } from "./data/tools"
-import { PatternCircuit, PatternDots } from "@/components/ui/patterns"
+import {
+  PatternCircuit,
+  PatternDots,
+  PatternWaves,
+} from "@/components/ui/patterns"
 import { Button } from "@/components/ui/button"
 import { Breadcrumbs } from "@/components/layout/Breadcrumbs"
 
@@ -61,7 +65,7 @@ export default function SalesAccelerationPage() {
     <main className="min-h-screen bg-white font-sans text-slate-900">
       {/* Hero */}
       <section
-        className="relative flex min-h-[75vh] bg-teal-950"
+        className="relative flex bg-teal-950 py-24"
         data-navbar-theme="dark"
       >
         <PatternCircuit />
@@ -72,9 +76,7 @@ export default function SalesAccelerationPage() {
           <h1>
             Accelerate Your
             <br />
-            <span className="bg-gradient-to-r from-teal-400 to-cyan-400 bg-clip-text text-transparent">
-              Sales
-            </span>
+            <span className="text-highlight">Sales</span>
           </h1>
           <p>
             A complete suite of tools designed to streamline operations,
@@ -160,10 +162,7 @@ export default function SalesAccelerationPage() {
           <div className="grid items-center gap-16 lg:grid-cols-2">
             <div className="space-y-12">
               <h2 className="text-5xl leading-[0.9] font-black tracking-tighter text-slate-900 uppercase md:text-7xl">
-                Why{" "}
-                <span className="text-teal-600 underline decoration-teal-200 underline-offset-[12px]">
-                  Sales Acceleration?
-                </span>
+                Why <span className="text-highlight">Sales Acceleration?</span>
               </h2>
               <div className="space-y-10">
                 <div className="group flex items-start gap-8">
@@ -255,125 +254,104 @@ export default function SalesAccelerationPage() {
       {/* SECTION: ROI */}
       <section
         data-navbar-theme="dark"
-        className="mx-auto"
+        className="relative mx-auto bg-teal-950 py-16 text-white"
         role="region"
         aria-labelledby="roi-heading"
       >
-        <div className="relative overflow-hidden bg-slate-900 p-8 text-white">
-          <div className="relative z-10 grid items-center gap-12 lg:grid-cols-2">
-            <div>
-              <h2
-                id="roi-heading"
-                className="mb-8 text-4xl font-black md:text-6xl"
-              >
-                Proven Impact <br />
-                <span className="text-teal-500">
-                  Across Your Sales Organization
-                </span>
-              </h2>
-
-              <ul className="mb-10 space-y-6">
-                <li className="flex items-start gap-4">
-                  <TrendingUp
-                    aria-hidden="true"
-                    className="mt-1 text-teal-500"
-                  />
-                  <p className="text-lg text-slate-300">
-                    Increase sales productivity by{" "}
-                    <strong className="text-white">up to 25%</strong> with
-                    streamlined workflows and automation.
-                  </p>
-                </li>
-
-                <li className="flex items-start gap-4">
-                  <CheckCircle
-                    aria-hidden="true"
-                    className="mt-1 text-teal-500"
-                  />
-                  <p className="text-lg text-slate-300">
-                    Reduce administrative overhead by{" "}
-                    <strong className="text-white">40%</strong>, giving your
-                    team more time to sell.
-                  </p>
-                </li>
-
-                <li className="flex items-start gap-4">
-                  <CheckCircle
-                    aria-hidden="true"
-                    className="mt-1 text-teal-500"
-                  />
-                  <p className="text-lg text-slate-300">
-                    Improve customer satisfaction with{" "}
-                    <strong className="text-white">
-                      faster response times
-                    </strong>{" "}
-                    and better service.
-                  </p>
-                </li>
-              </ul>
-
-              <a href="/roi" className="btn btn-secondary text-white!">
-                Calculate Your ROI <ArrowRight aria-hidden="true" />
-              </a>
-            </div>
-
-            {/* ROI Stats */}
-            <aside
-              className="relative"
-              role="group"
-              aria-labelledby="roi-stats"
+        <PatternWaves />
+        <div className="section-container relative z-10 grid items-center gap-12 lg:grid-cols-2">
+          <div>
+            <h2
+              id="roi-heading"
+              className="mb-8 text-4xl font-black md:text-6xl"
             >
-              <div className="rounded-[2.5rem] border border-white/10 bg-white/5 p-12 text-center backdrop-blur-md">
-                <TrendingUp
-                  className="mx-auto mb-6 text-teal-500"
-                  size={48}
-                  aria-hidden="true"
-                />
-
-                <h3
-                  id="roi-stats"
-                  className="mb-2 text-5xl font-black md:text-8xl"
-                >
-                  25%
-                </h3>
-                <p className="text-sm font-bold tracking-[0.2em] text-teal-400 uppercase">
-                  Productivity Increase
+              Proven Impact <br />
+              <span className="text-teal-500">
+                Across Your Sales Organization
+              </span>
+            </h2>
+            <ul className="mb-10 space-y-6">
+              <li className="flex items-start gap-4">
+                <TrendingUp aria-hidden="true" className="mt-1 text-teal-500" />
+                <p className="text-lg text-slate-300">
+                  Increase sales productivity by{" "}
+                  <strong className="text-white">up to 25%</strong> with
+                  streamlined workflows and automation.
                 </p>
+              </li>
 
-                <div className="mt-10 grid grid-cols-2 gap-8 border-t border-white/10 pt-10">
-                  <div>
-                    <h4 className="text-3xl font-black">40%</h4>
-                    <p className="text-xs font-bold text-slate-500 uppercase">
-                      Less Admin Work
-                    </p>
-                  </div>
+              <li className="flex items-start gap-4">
+                <CheckCircle
+                  aria-hidden="true"
+                  className="mt-1 text-teal-500"
+                />
+                <p className="text-lg text-slate-300">
+                  Reduce administrative overhead by{" "}
+                  <strong className="text-white">40%</strong>, giving your team
+                  more time to sell.
+                </p>
+              </li>
 
-                  <div>
-                    <h4 className="text-3xl font-black">6</h4>
-                    <p className="text-xs font-bold text-slate-500 uppercase">
-                      Integrated Tools
-                    </p>
-                  </div>
+              <li className="flex items-start gap-4">
+                <CheckCircle
+                  aria-hidden="true"
+                  className="mt-1 text-teal-500"
+                />
+                <p className="text-lg text-slate-300">
+                  Improve customer satisfaction with{" "}
+                  <strong className="text-white">faster response times</strong>{" "}
+                  and better service.
+                </p>
+              </li>
+            </ul>
+            <Button variant="secondary" size="lg">
+              <Link href="/roi" className="flex items-center gap-2">
+                Calculate Your ROI <ArrowRight aria-hidden="true" />
+              </Link>
+            </Button>
+          </div>
+
+          {/* ROI Stats */}
+          <aside className="relative" role="group" aria-labelledby="roi-stats">
+            <div className="rounded-[2.5rem] border border-white/10 bg-white/5 p-12 text-center backdrop-blur-md">
+              <TrendingUp
+                className="mx-auto mb-6 text-teal-500"
+                size={48}
+                aria-hidden="true"
+              />
+
+              <h3
+                id="roi-stats"
+                className="mb-2 text-5xl font-black md:text-8xl"
+              >
+                25%
+              </h3>
+              <p className="text-sm font-bold tracking-[0.2em] text-teal-400 uppercase">
+                Productivity Increase
+              </p>
+
+              <div className="mt-10 grid grid-cols-2 gap-8 border-t border-white/10 pt-10">
+                <div>
+                  <h4 className="text-3xl font-black">40%</h4>
+                  <p className="text-xs font-bold text-slate-500 uppercase">
+                    Less Admin Work
+                  </p>
+                </div>
+
+                <div>
+                  <h4 className="text-3xl font-black">6</h4>
+                  <p className="text-xs font-bold text-slate-500 uppercase">
+                    Integrated Tools
+                  </p>
                 </div>
               </div>
-            </aside>
-          </div>
+            </div>
+          </aside>
         </div>
       </section>
 
       {/* SECTION: Final CTA */}
-      <section className="mx-6 mb-6">
-        <CTA />
-      </section>
-
-      <footer className="py-24 text-center">
-        <Link
-          href="/"
-          className="text-xs font-black tracking-[0.4em] text-slate-300 uppercase transition-colors hover:text-emerald-500"
-        >
-          &larr; Back to Platform Overview
-        </Link>
-      </footer>
+      <CTA />
     </main>
   )
 }

@@ -6,6 +6,9 @@ import { FieldSales } from "@/components/sections/solutions/FieldSales"
 import { CTA } from "@/components/sections/cta/CTA"
 import { CustomerStoriesCarousel } from "@/components/sections/customers/CustomerStoriesCarousel"
 import { PatternDots } from "@/components/ui/patterns"
+import { Button } from "@/components/ui/button"
+import Link from "next/link"
+import { ArrowRight } from "lucide-react"
 
 export const metadata: Metadata = {
   title: "Paygos - Sales Automation Platform",
@@ -79,18 +82,29 @@ export default function Home() {
       {/* CustomerStories - Dark background */}
       <section
         data-navbar-theme="dark"
-        className="relative overflow-hidden bg-teal-900 py-16 text-white"
+        className="relative overflow-hidden bg-teal-900 py-16 text-center text-white"
       >
         <PatternDots />
         <div className="section-container space-y-8">
-          <div className="text-center">
-            <h2 className="mb-3">What would you do with more time?</h2>
-            <p className="text-gray-300">
-              Discover how PAYGOS customers turned saved time into real results.
-            </p>
-          </div>
+          <h2 className="mb-3">What would you do with more time?</h2>
+          <p className="text-gray-300">
+            Discover how PAYGOS customers turned saved time into real results.
+          </p>
         </div>
+
         <CustomerStoriesCarousel />
+
+        <div className="p-4">
+          <Button
+            variant="link"
+            asChild
+            className="text-white transition-colors hover:text-teal-400"
+          >
+            <Link href="/customers" className="inline-flex items-center gap-2">
+              View All Customer Stories <ArrowRight className="h-4 w-4" />
+            </Link>
+          </Button>
+        </div>
       </section>
 
       {/* CTA - Light background */}

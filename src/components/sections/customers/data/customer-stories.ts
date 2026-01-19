@@ -3,62 +3,52 @@ import { CustomerStory } from "../types/customer-story"
 export const customerStories: CustomerStory[] = [
   {
     id: "1",
-    slug: "retail-time-saved",
+    slug: "rebate-management",
     backgroundImage:
-      "https://images.unsplash.com/photo-1556740758-90de374c12ad?q=80&w=2070&auto=format&fit=crop",
-    tags: ["Veterinary"],
-    title: "19% YoY Sales Increase",
+      "https://images.unsplash.com/photo-1565674244283-993fb27a215f",
+    tags: ["Pet Nutrition", "Rebates"],
+    title: "40% Less Admin Work",
     excerpt:
-      "How Retail Corp automated their month-end processes with Paygos and saved significant time on operations.",
+      "A behind-the-scenes look at how rebate automation eliminated complexity and freed teams to focus on growth.",
   },
   {
     id: "2",
-    slug: "manufacturing-efficiency",
+    slug: "retail-efficiency",
     backgroundImage:
-      "https://images.unsplash.com/photo-1565793298595-6a879b1d9492?q=80&w=2071&auto=format&fit=crop",
-    tags: ["Manufacturing", "Efficiency"],
-    title: "50% reduction in order processing time",
+      "https://images.unsplash.com/photo-1512568400610-62da28bc8a13",
+    tags: ["Coffee Retail", "Paygos 360"],
+    title: "10% More Efficient Operations",
     excerpt:
-      "Streamlining operations with field sales automation to improve manufacturing efficiency.",
+      "How Canada’s favorite coffee brand streamlined daily operations without slowing down a single store.",
   },
   {
     id: "3",
-    slug: "finance-automation",
+    slug: "pharma-returns",
     backgroundImage:
-      "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2015&auto=format&fit=crop",
-    tags: ["Finance", "Automation"],
-    title: "Automated rebate processing saves 15 hours weekly",
+      "https://images.unsplash.com/photo-1583088580009-2d947c3e90a6",
+    tags: ["Pharma", "Returns"],
+    title: "40% More Sales Visits",
     excerpt:
-      "FinanceFirst leveraged Paygos to automate complex rebate calculations and approvals.",
+      "What happened when a global pharma brand turned returns from a bottleneck into a growth enabler.",
   },
   {
     id: "4",
-    slug: "healthcare-compliance",
+    slug: "returns-management",
     backgroundImage:
-      "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=2070&auto=format&fit=crop",
-    tags: ["Healthcare", "Compliance"],
-    title: "100% compliance tracking achieved",
+      "https://images.unsplash.com/photo-1534640076976-2ffafd40fe07",
+    tags: ["CPG", "Returns"],
+    title: "20% Reduction in Admin Tasks",
     excerpt:
-      "HealthPro Solutions maintains perfect compliance records with automated training management.",
+      "A smarter returns strategy that simplified operations and removed the need for constant manual support.",
   },
   {
     id: "5",
-    slug: "food-beverage-growth",
+    slug: "training-incentives",
     backgroundImage:
-      "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=2070&auto=format&fit=crop",
-    tags: ["Food & Beverage", "Growth"],
-    title: "30% increase in order accuracy",
+      "https://images.unsplash.com/photo-1638202993928-7267aad84c31",
+    tags: ["Pharma", "Training"],
+    title: "20% Higher Sales Activity",
     excerpt:
-      "TastyBites Distribution transformed their ordering process and reduced errors significantly.",
-  },
-  {
-    id: "6",
-    slug: "vet-growth",
-    backgroundImage:
-      "https://images.unsplash.com/photo-1565674244283-993fb27a215f",
-    tags: ["Veterinary", "Pet Food"],
-    title: "The 19% Sales Jump: How Automation Built a Pet Food Powerhouse",
-    excerpt:
-      "See how one global brand turned inactive accounts into a 151% growth engine.",
+      "How rethinking incentives turned training programs into a powerful sales engagement driver.",
   },
 ]

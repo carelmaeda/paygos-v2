@@ -1,17 +1,17 @@
 import type { Metadata } from "next"
 import Image from "next/image"
-import { Rocket, Users, TrendingUp } from "lucide-react"
+import { TrendingUp, ThumbsUp, Percent } from "lucide-react"
 import { Breadcrumbs } from "@/components/layout/Breadcrumbs"
 import { CTA } from "@/components/sections/cta/CTA"
 import { PatternDiagonal, PatternDots } from "@/components/ui/patterns"
 
 export const metadata: Metadata = {
-  title: "Pet Food Leader Case Study: Driving Scalable Growth | Paygos",
+  title: "Training Incentive Programs Case Study | Paygos",
   description:
-    "Discover how a global pet food leader achieved a 19% YoY sales increase and 25% account growth through Paygos automation.",
+    "Discover how a major pharma brand achieved 20% more sales visits and 10% increase in product recommendations through Paygos training incentive management.",
 }
 
-export default function VetGrowth() {
+export default function TrainingIncentives() {
   return (
     <main>
       {/* Hero */}
@@ -22,11 +22,11 @@ export default function VetGrowth() {
         <PatternDots />
         <div className="text-hero">
           <small className="text-teal-400">
-            Sales Acceleration • Automation • Analytics
+            Training Management • Sales Acceleration • Automation
           </small>
           <h1>
-            Vet {""}
-            <span className="text-highlight">Growth</span>
+            Training {""}
+            <span className="text-highlight">Incentives</span>
             <br />
           </h1>
         </div>
@@ -42,21 +42,21 @@ export default function VetGrowth() {
         <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
           {[
             {
-              label: "YoY Sales Increase",
-              value: "19%",
+              label: "Increase in Sales Visits",
+              value: "20%",
               icon: TrendingUp,
               color: "text-emerald-600",
             },
             {
-              label: "Active Account Growth",
-              value: "25%",
-              icon: Users,
+              label: "Increase in Recommendations",
+              value: "10%",
+              icon: ThumbsUp,
               color: "text-blue-600",
             },
             {
-              label: "Staff Feeding Growth",
-              value: "151%",
-              icon: Rocket,
+              label: "Reduction in Payments",
+              value: "18%",
+              icon: Percent,
               color: "text-teal-600",
             },
           ].map((stat, i) => (
@@ -84,13 +84,16 @@ export default function VetGrowth() {
         <div className="mx-auto max-w-3xl text-center">
           <small className="text-green-700">The Challenge</small>
           <h2 className="mb-8 text-4xl font-black text-gray-900">
-            Scaling Reach in a Competitive Market
+            Manual Processes Limiting Growth
           </h2>
           <p className="text-center text-lg leading-relaxed text-gray-600">
-            Operating in a highly competitive pet food market, a global pet food
-            leader needed to expand its footprint while strengthening long-term
-            customer loyalty. Many accounts were incremental or inactive, and
-            manual sales processes limited visibility, efficiency, and growth.
+            A major pharma industry brand faced challenges with its medical
+            device training and education program for pharmacies. Program
+            adherence was inconsistent, and sales representatives were
+            frustrated by manual documentation and results processing. Sales
+            reps lost valuable relationship-building opportunities due to time
+            spent manually calculating and documenting trainings and credit
+            payments during visits.
           </p>
         </div>
       </section>
@@ -109,11 +112,12 @@ export default function VetGrowth() {
                 <span className="text-2xl font-black text-teal-500">01.</span>
                 <div>
                   <h4 className="mb-2 text-xl font-bold text-white">
-                    Incentivized Loyalty
+                    Geolocation Store Identification
                   </h4>
                   <p className="text-slate-300">
-                    Strategic staff feeding and loyalty programs activated
-                    incremental locations and strengthened engagement.
+                    Automatically identified stores visited through geolocation,
+                    eliminating manual check-ins and streamlining the visit
+                    process.
                   </p>
                 </div>
               </div>
@@ -122,12 +126,12 @@ export default function VetGrowth() {
                 <span className="text-2xl font-black text-teal-500">02.</span>
                 <div>
                   <h4 className="mb-2 text-xl font-bold text-white">
-                    Sales Automation
+                    Automated Data Access
                   </h4>
                   <p className="text-slate-300">
-                    Deal management and manual tasks were automated, freeing
-                    sales teams to expand coverage and reduce back-office
-                    workload.
+                    Automatically accessed store-level data history, giving reps
+                    instant visibility into program progress and completion
+                    status.
                   </p>
                 </div>
               </div>
@@ -136,11 +140,12 @@ export default function VetGrowth() {
                 <span className="text-2xl font-black text-teal-500">03.</span>
                 <div>
                   <h4 className="mb-2 text-xl font-bold text-white">
-                    Actionable Data
+                    Seamless Payment Processing
                   </h4>
                   <p className="text-slate-300">
-                    Real-time analytics delivered visibility across service,
-                    fulfillment, and brand performance.
+                    Handled credit payment calculations and session
+                    documentation across thousands of locations seamlessly,
+                    eliminating administrative overhead.
                   </p>
                 </div>
               </div>
@@ -157,17 +162,20 @@ export default function VetGrowth() {
         <div className="mx-auto max-w-3xl text-center">
           <small className="text-green-700">The Impact</small>
           <h2 className="mb-8 text-4xl font-black text-gray-900">
-            Measurable, Scalable Growth
+            Cross-Departmental Efficiency Gains
           </h2>
           <p className="mb-12 text-gray-600">
-            By reactivating 30% of previously inactive accounts, the company
-            achieved a <strong>25% increase</strong> in active accounts. Staff
-            feeding programs grew by <strong>151%</strong>, while automation
-            enabled a <strong>19%</strong> year-over-year increase in sales.
+            Sales, marketing, and finance teams regained valuable time. Sales
+            and Marketing achieved increased program adherence and consistency,
+            resulting in a <strong>20% increase in sales visits</strong> and a{" "}
+            <strong>10% increase in product recommendations</strong> by
+            pharmacies. The Finance department gained greater control over
+            payment capture validation and payment release, resulting in an{" "}
+            <strong>18% reduction in payments issued per month</strong>.
           </p>
           <Image
-            src="https://images.unsplash.com/photo-1551288049-bbbda536339a?q=80&w=2070&auto=format&fit=crop"
-            alt="Sales Data Analytics Chart"
+            src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=2070&auto=format&fit=crop"
+            alt="Pharmacy Training Program"
             width={800}
             height={400}
             className="mx-auto rounded-2xl shadow-lg"
@@ -175,40 +183,20 @@ export default function VetGrowth() {
         </div>
       </section>
 
-      {/* Testimonial Section */}
+      {/* Conclusion Section */}
       <section className="bg-gray-100 py-16" data-navbar-theme="light">
-        <h2 className="mb-8 text-center">Customer Testimonial</h2>
+        <h2 className="mb-8 text-center">Conclusion</h2>
         <div className="section-container mx-auto px-6">
           <div className="mx-auto max-w-3xl text-center">
-            <p className="mb-8 italic">
-              &quot;Paygos has been an exceptional partner in helping us drive
-              efficiency and innovation across our business. Since 2020 their
-              platform has streamlined our rebate management and ordering
-              processes, allowing us to focus on what matters most—delivering
-              value to our customers.
-              <br />
-              <br />
-              The Paygos team is extraordinary, consistently going above and
-              beyond to service our unique needs with a personal touch. Their
-              ability to customize solutions specifically for our business has
-              made a world of difference, enabling us to operate with greater
-              speed and precision. We couldn&apos;t ask for a better partner in
-              our journey toward growth and success.&quot;
+            <p className="text-lg text-gray-700">
+              The implementation of the Paygos Training Management Platform
+              improved cross-departmental efficiency, accuracy, and overall
+              effectiveness of the pharmacy medical device training program.
+              This white-labeled, turnkey technology solution eliminated all
+              training program pain points, delivered a better experience to
+              pharmacy customers, and enabled reps to engage more meaningfully
+              during visits.
             </p>
-
-            <div className="flex items-center justify-center gap-4">
-              <div className="flex h-12 w-12 items-center justify-center rounded-full bg-teal-200">
-                <Users className="h-6 w-6 text-teal-700" />
-              </div>
-              <div className="text-left">
-                <p className="text-sm font-bold text-gray-900">
-                  Global Pet Food Client
-                </p>
-                <p className="text-xs font-medium text-teal-700 uppercase">
-                  Marketing Director
-                </p>
-              </div>
-            </div>
           </div>
         </div>
       </section>

@@ -19,13 +19,13 @@ export function StepSelector({ value, onChange }: Props) {
       onValueChange={(val) => val && onChange(val as RoiMode)}
       variant="outline"
       spacing={2}
-      className="justify-start"
+      className="justify-start gap-2"
     >
       <ToggleGroupItem value="sales" className={itemClass}>
         Sales Acceleration
       </ToggleGroupItem>
       <ToggleGroupItem value="fsa" className={itemClass}>
-        FSA
+        Field Sales Automation
       </ToggleGroupItem>
       <ToggleGroupItem value="both" className={itemClass}>
         Both

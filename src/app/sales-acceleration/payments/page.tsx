@@ -51,18 +51,18 @@ export default function PaymentsPage() {
     <main className="min-h-screen bg-white font-sans text-slate-900">
       {/* SECTION: Hero & Background */}
       <section
-        className="relative flex min-h-[75vh] bg-cyan-950"
+        className="relative flex bg-cyan-950 py-24"
         data-navbar-theme="dark"
       >
         <PatternDots />
         <div className="text-hero">
-          <small className="text-teal-400">Reliable Results • Real-Time Insights</small>
+          <small className="text-teal-400">
+            Reliable Results • Real-Time Insights
+          </small>
           <h1>
             Rethink
             <br />
-            <span className="bg-gradient-to-r from-teal-400 to-cyan-400 bg-clip-text text-transparent">
-              Payments
-            </span>
+            <span className="text-highlight">Payments</span>
           </h1>
           <p>
             Modern tools to validate incentives, manage budgets, and ensure

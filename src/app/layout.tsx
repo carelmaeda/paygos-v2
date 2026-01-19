@@ -1,8 +1,9 @@
 import type { Metadata } from "next"
 import { Inter, Urbanist } from "next/font/google"
-import "./globals.scss"
+import "@/styles/globals.scss"
 import { Navbar } from "@/components/layout/Navbar"
 import { Footer } from "@/components/layout/Footer"
+import { Toaster } from "@/components/ui/sonner"
 
 const inter = Inter({
   variable: "--font-inter",
@@ -63,6 +64,7 @@ export default function RootLayout({
         <Navbar />
         {children}
         <Footer />
+        <Toaster />
       </body>
     </html>
   )

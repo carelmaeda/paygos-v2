@@ -14,14 +14,6 @@ import { SOLUTIONS } from "./SolutionsMenu"
 import { Button } from "@/components/ui/button"
 import type { NavbarTheme } from "./useNavbarTheme"
 
-// ============================================
-// COMPONENT
-// ============================================
-
-// ============================================
-// PROPS
-// ============================================
-
 interface DesktopNavProps {
   theme: NavbarTheme
 }
@@ -32,7 +24,6 @@ interface DesktopNavProps {
 
 /**
  * DesktopNav Component
- * Desktop navigation menu with Solutions dropdown and top-level links
  * Hidden on mobile (md:flex)
  */
 export function DesktopNav({ theme }: DesktopNavProps) {
@@ -91,7 +82,7 @@ export function DesktopNav({ theme }: DesktopNavProps) {
       {/* Desktop CTA Button */}
       <div className="hidden md:block">
         <Button size="sm" variant="default">
-          <Link href="/contact" aria-label="Book a Call">
+          <Link href="/contact" aria-label="Book a Call" className="text-sm">
             Book a Call
           </Link>
         </Button>

@@ -10,14 +10,14 @@ const FEATURES = [
     description:
       "Smart territory planning, automated scheduling, and real-time data capture that turn every store visit into a revenue opportunity.",
     image: "https://images.unsplash.com/photo-1627820751059-43001b92c076",
-    href: "/solutions/fsa",
+    href: "/fsa",
   },
   {
     title: "Optimize Routes. Maximize Impact.",
     description:
       "PS-enabled territories, AI-powered insights, and mobile execution tools that boost productivity and deliver complete visibility across your field team.",
     image: "https://images.unsplash.com/photo-1666281466387-0639381c5680",
-    href: "/solutions/fsa",
+    href: "/fsa",
   },
 ]
 

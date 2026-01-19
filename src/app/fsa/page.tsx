@@ -1,5 +1,6 @@
 import type { Metadata } from "next"
 import React from "react"
+import Link from "next/link"
 import Image from "next/image"
 import {
   ArrowRight,
@@ -21,6 +22,7 @@ import { FsaCoverageChart } from "./fsa-coverage-chart"
 import { IndustryBadge } from "@/components/sections/solutions/IndustryBadge"
 import { PatternHexagon } from "@/components/ui/patterns"
 import { Breadcrumbs } from "@/components/layout/Breadcrumbs"
+import { Button } from "@/components/ui/button"
 
 export const metadata: Metadata = {
   title: "Field Sales Automation | Paygos",
@@ -73,7 +75,7 @@ export default function FsaPage() {
     <main>
       {/* Hero */}
       <section
-        className="relative flex min-h-[75vh] bg-teal-950"
+        className="relative flex bg-teal-950 py-24"
         data-navbar-theme="dark"
       >
         <PatternHexagon />
@@ -84,14 +86,12 @@ export default function FsaPage() {
           <h1>
             Empower Your
             <br />
-            <span className="bg-gradient-to-r from-teal-400 to-cyan-400 bg-clip-text text-transparent">
-              Field Team
-            </span>
+            <span className="text-highlight">Field Team</span>
           </h1>
           <p>
-            Paygos FSA equips field reps with mobile tools to manage visits,
-            capture photos, track activities, and execute flawlessly—all from
-            their phone.
+            Our Field Sales Automation equips Sale Reps with mobile tools to
+            manage visits, capture photos, track activities, and execute
+            flawlessly—all from their phone.
           </p>
         </div>
       </section>
@@ -116,8 +116,8 @@ export default function FsaPage() {
               Paper-Based Chaos
             </h3>
             <p className="text-gray-600">
-              Reps waste 10 hours per week on manual data entry after filling
-              out paper forms
+              Reps waste around 10 hours per week on manual data entry after
+              filling out paper forms
             </p>
           </div>
 
@@ -333,9 +333,7 @@ export default function FsaPage() {
           <div className="space-y-12">
             <h2 className="text-5xl leading-[0.9] font-black tracking-tighter text-slate-900 uppercase md:text-7xl">
               Coverage <br />
-              <span className="text-teal-600 underline decoration-teal-200 underline-offset-[12px]">
-                That&apos;s Complete.
-              </span>
+              <span className="text-highlight">That&apos;s Complete.</span>
             </h2>
             <div className="space-y-10">
               <div className="group flex items-start gap-8">
@@ -432,10 +430,11 @@ export default function FsaPage() {
                 </li>
               </ul>
 
-              <a href="/roi" className="btn btn-secondary text-white!">
-                Calculate Your ROI
-                <ArrowRight aria-hidden="true" className="mx-2" />
-              </a>
+              <Button variant="secondary" size="lg">
+                <Link href="/roi" className="flex items-center gap-2">
+                  Calculate Your ROI <ArrowRight aria-hidden="true" />
+                </Link>
+              </Button>
             </div>
 
             {/* ROI Stats */}

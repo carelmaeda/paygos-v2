@@ -58,15 +58,13 @@ export default function CustomersPage() {
   return (
     <main>
       {/* Hero */}
-      <section className="bg-teal-950" data-navbar-theme="dark">
+      <section className="bg-teal-950 pt-24" data-navbar-theme="dark">
         <PatternDiagonal />
         <div className="text-hero pt-24">
           <small className="text-teal-400">Real Results • Proven Impact</small>
           <h1>
             Customer {""}
-            <span className="bg-gradient-to-r from-teal-400 to-cyan-400 bg-clip-text text-transparent">
-              Stories
-            </span>
+            <span className="text-highlight">Stories</span>
           </h1>
           <p>
             Discover how leading brands use Paygos to streamline operations,
@@ -81,7 +79,11 @@ export default function CustomersPage() {
       </section>
 
       {/* Featured Story */}
-      <Link href="/customers/vet-growth" className="group block">
+      <Link
+        href="/customers/vet-growth"
+        className="group mx-4 block"
+        data-navbar-theme="light"
+      >
         <section className="section-container relative my-8 min-h-[65vh] overflow-hidden rounded-lg transition-transform duration-300 group-hover:shadow-xl">
           <Image
             src="https://images.unsplash.com/photo-1655210913315-e8147faf7600"
@@ -93,7 +95,7 @@ export default function CustomersPage() {
 
           <div className="absolute inset-0 flex items-end">
             <div className="section-container space-y-4 pb-16 md:pb-24">
-              <Badge variant="secondary" className="badge badge-vet">
+              <Badge className="rounded-full bg-white/10 px-3 py-1 font-semibold text-white ring-1 ring-white/20 backdrop-blur-md">
                 <PawPrint size={32} />
                 Veterinary
               </Badge>

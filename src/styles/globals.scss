@@ -2,35 +2,7 @@
 // IMPORTS
 // ============================================
 @use "tailwindcss";
-
-// ============================================
-// VARIABLES
-// ============================================
-
-// Colors - Light Mode
-$white: #ffffff;
-$foreground-light: #171717;
-
-// Colors - Dark Mode
-$background-dark: #0a0a0a;
-$foreground-dark: #ededed;
-
-// Colors - UI Components
-$primary-dark: #1d1d1d;
-$primary-hover: #27272a;
-$secondary-border: #e4e4e7;
-$secondary-hover: #f4f4f5;
-
-// Colors - Hero Section
-$accent-teal: #3b82f6;
-$text-gray: #6b7280;
-
-// Breakpoints
-$breakpoint-md: 48rem;
-
-// ============================================
-// CSS CUSTOM PROPERTIES
-// ============================================
+@use "variables.scss" as *;
 
 // ============================================
 // TAILWIND THEME EXTENSION
@@ -66,7 +38,7 @@ $breakpoint-md: 48rem;
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-inter), sans-serif;
+  font-family: var(--font-primary);
   -webkit-font-smoothing: antialiased;
   margin: 0;
 }
@@ -79,81 +51,82 @@ body {
 h1,
 h2,
 h3 {
-  font-family: var(--font-urbanist), sans-serif;
-  letter-spacing: -0.02em;
+  font-family: $font-family-heading;
+  letter-spacing: $letter-spacing-tight;
   line-height: 0.9;
-  font-weight: 700;
+  font-weight: $font-weight-bold;
   text-transform: capitalize;
+
   span {
-    font-family: var(--font-urbanist), sans-serif;
+    font-family: $font-family-heading;
   }
 }
 
 /* Heading Scale */
 h1,
 .h1 {
-  font-size: 3rem;
-  letter-spacing: -0.03em;
+  font-size: $font-size-5xl;
+  letter-spacing: $letter-spacing-tight;
   line-height: 0.9;
 
   @media (min-width: $breakpoint-md) {
-    font-size: 6rem;
+    font-size: $font-size-8xl;
   }
 }
 
 .text-hero {
   display: grid;
-
   justify-items: center;
-  gap: 0.5rem;
-  z-index: 10;
+  padding: 0 1rem;
+  gap: $spacing-2;
+  z-index: $z-index-dropdown;
   text-align: center;
   margin: auto;
-  font-family: var(--font-urbanist), sans-serif;
+  font-family: $font-family-heading;
+  color: $neutral-white;
+
   small {
-    font-weight: 700;
-    letter-spacing: 0.5px;
+    font-weight: $font-weight-bold;
+    letter-spacing: $letter-spacing-wide;
     text-transform: uppercase;
   }
+
   h1 {
-    font-size: 6vw;
-    letter-spacing: -0.05em;
+    font-size: $font-size-7xl;
+    letter-spacing: $letter-spacing-tighter;
     text-transform: capitalize;
   }
+
   p {
     max-width: 450px;
   }
 }
 
-.text-hero {
-  color: $white;
-}
-
 h2,
 .h2 {
   font-size: 1.44rem;
-  letter-spacing: -0.03em;
+  letter-spacing: $letter-spacing-tight;
 
   @media (min-width: $breakpoint-md) {
-    font-size: 2rem;
+    font-size: $font-size-4xl;
   }
 }
 
 h3,
 .h3 {
-  font-size: 1.5rem;
+  font-size: $font-size-2xl;
 
   @media (min-width: $breakpoint-md) {
-    font-size: 1.15rem;
+    font-size: $font-size-lg;
   }
 }
 
 h4,
 .h4 {
-  font-size: 1.1rem;
+  font-size: $font-size-lg;
 
   @media (min-width: $breakpoint-md) {
-    font-size: 1rem;
+    font-size: $font-size-base;
   }
 }
 
@@ -165,11 +138,28 @@ p,
 span,
 a,
 button {
-  font-family: var(--font-inter), sans-serif;
+  font-family: $font-family-primary;
 }
 
 p {
-  line-height: 1.4;
+  line-height: $line-height-snug;
+}
+
+small {
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.text-highlight {
+  display: inline-block;
+  line-height: 1.1;
+  padding-bottom: 0.05em;
+
+  background-image: linear-gradient(to right, #2dd4bf, #22d3ee);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
 
 // ============================================
@@ -188,25 +178,25 @@ p {
 .breadcrumbs {
   width: 100%;
   margin: 0 auto;
-  padding: 0.75rem 0;
-  background: rgb(243, 243, 243);
+  padding: $spacing-3 0;
+  background: $neutral-100;
 
   nav {
-    font-size: 0.75rem;
+    font-size: $font-size-xs;
   }
 
   a {
-    color: #64748b; // slate-500
-    transition: color 0.2s ease;
+    color: $slate-500;
+    transition: $transition-color;
 
     &:hover {
-      color: #0d9488; // teal-600
+      color: $color-primary;
     }
   }
 
   [aria-current="page"] {
-    color: #1e293b; // slate-800
-    font-weight: 500;
+    color: $slate-800;
+    font-weight: $font-weight-medium;
   }
 }
 
@@ -218,22 +208,22 @@ p {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 0.75rem 1.5rem;
-  font-size: 1rem;
-  font-weight: 500;
-  line-height: 1.25rem;
-  border-radius: 6px;
-  border: 1px solid transparent;
+  padding: $button-padding-y $button-padding-x;
+  font-size: $font-size-base;
+  font-weight: $button-font-weight;
+  line-height: $line-height-tight;
+  border-radius: $button-border-radius;
+  border: $border-width-1 solid transparent;
   cursor: pointer;
   text-decoration: none;
-  transition: all 0.2s ease;
+  transition: $transition-base;
 
   // Mobile: full-width, bigger touch targets
   @media (max-width: calc($breakpoint-md - 0.0625rem)) {
     width: 100%;
-    padding: 0.75rem 1.25rem;
-    font-size: 1rem;
-    min-height: 44px;
+    padding: $button-padding-y $spacing-5;
+    font-size: $font-size-base;
+    min-height: $button-min-height;
   }
 
   &:disabled {
@@ -242,23 +232,28 @@ p {
   }
 
   &-primary {
-    background-color: rgb(0, 255, 255);
-    color: #000000;
+    background-color: $color-primary;
+    color: $neutral-white;
 
     &:hover {
-      background-color: $primary-hover;
+      background-color: $color-primary-hover;
     }
   }
 
   &-secondary {
     background-color: transparent;
-    color: $foreground-light;
-    border-color: $secondary-border;
+    color: $color-text-primary;
+    border-color: $color-border-default;
 
     &:hover {
-      background-color: $secondary-hover;
+      background-color: $color-bg-muted;
     }
   }
+}
+
+button:not(:disabled),
+[role="button"]:not(:disabled) {
+  cursor: pointer;
 }
 
 // ============================================
@@ -266,30 +261,32 @@ p {
 // ============================================
 
 .badge {
-  font-weight: 600;
+  font-weight: $badge-font-weight;
   text-transform: uppercase;
-  padding: 0.25rem 1rem;
+  padding: $badge-padding-y $badge-padding-x;
+  border-radius: $badge-border-radius;
+
   @media (min-width: $breakpoint-md) {
     svg {
       scale: 1.5;
-      margin: 0.5rem;
+      margin: $spacing-2;
     }
   }
 }
 
 .badge-vet {
-  background: #dbeafe;
-  color: #2563eb;
+  background: $cyan-100;
+  color: $cyan-700;
 }
 
 .badge-confectionary {
-  background: #fee2e2;
-  color: #dc2626;
+  background: $color-error-light;
+  color: $color-error;
 }
 
 .badge-pharma {
-  background: #cffafe;
-  color: #0891b2;
+  background: $cyan-100;
+  color: $cyan-600;
 }
 
 // ============================================
@@ -329,37 +326,35 @@ p {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 2.5rem; // 40px
-    width: 5rem; // 80px
+    height: $spacing-10;
+    width: $spacing-20;
     flex-shrink: 0;
 
-    // Medium screens and up
     @media (min-width: $breakpoint-md) {
-      height: 3rem; // 48px
-      width: 6rem; // 96px
+      height: $spacing-12;
+      width: $spacing-24;
     }
   }
 
   // Base logo styles
   &-image {
-    max-height: 2.5rem; // 40px
-    max-width: 5rem; // 80px
+    max-height: $spacing-10;
+    max-width: $spacing-20;
     width: auto;
     height: auto;
     object-fit: contain;
     filter: invert(1);
     opacity: 0.35;
-    transition: all 300ms ease;
+    transition: $transition-slow;
 
     &:hover {
       filter: grayscale(0%);
       opacity: 1;
     }
 
-    // Medium screens and up
     @media (min-width: $breakpoint-md) {
-      max-height: 3rem; // 48px
-      max-width: 6rem; // 96px
+      max-height: $spacing-12;
+      max-width: $spacing-24;
     }
   }
 
@@ -368,18 +363,17 @@ p {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 2.5rem; // 40px
-    width: 5rem; // 80px
-    border-radius: 0.25rem;
-    background-color: rgba(19, 78, 74, 0.3); // teal-900/30
-    color: rgba(204, 251, 241, 0.5); // teal-100/50
-    font-size: 0.875rem; // text-sm
-    font-weight: 500; // font-medium
+    height: $spacing-10;
+    width: $spacing-20;
+    border-radius: $border-radius-base;
+    background-color: rgba($teal-900, 0.3);
+    color: rgba($teal-100, 0.5);
+    font-size: $font-size-sm;
+    font-weight: $font-weight-medium;
 
-    // Medium screens and up
     @media (min-width: $breakpoint-md) {
-      height: 3rem; // 48px
-      width: 6rem; // 96px
+      height: $spacing-12;
+      width: $spacing-24;
     }
   }
 }
@@ -389,7 +383,7 @@ p {
 // ============================================
 
 .customer-stories-swiper {
-  padding-bottom: 3rem;
+  padding-bottom: $spacing-12;
 
   .swiper-pagination {
     bottom: 0;
@@ -398,41 +392,39 @@ p {
   .swiper-pagination-bullet {
     width: 10px;
     height: 10px;
-    background: #dbd1d6;
+    background: $neutral-300;
     opacity: 1;
-    transition: all 0.3s ease;
+    transition: $transition-slow;
 
     &-active {
-      background: #0d9488;
+      background: $color-primary;
       width: 24px;
-      border-radius: 5px;
+      border-radius: $border-radius-md;
     }
   }
 
   .swiper-button-next,
   .swiper-button-prev {
-    color: #0d9488;
+    color: $color-primary;
     width: 32px;
     height: 32px;
-    background: white;
-    border-radius: 50%;
-    box-shadow:
-      0 4px 6px -1px rgb(0 0 0 / 0.1),
-      0 2px 4px -1px rgb(0 0 0 / 0.06);
-    transition: all 0.3s ease;
-    z-index: 10;
+    background: $neutral-white;
+    border-radius: $border-radius-full;
+    box-shadow: $shadow-md;
+    transition: $transition-slow;
+    z-index: $z-index-dropdown;
     margin-top: 0;
     top: 50%;
     transform: translateY(-50%);
 
     &:hover {
-      background: #f0fdfa;
+      background: $teal-50;
       transform: translateY(-50%) scale(1.1);
     }
 
     &::after {
       font-size: 18px;
-      font-weight: 900;
+      font-weight: $font-weight-extrabold;
     }
 
     &.swiper-button-disabled {
@@ -449,14 +441,14 @@ p {
     right: 10px;
   }
 
-  @media (max-width: 767px) {
+  @media (max-width: calc($breakpoint-md - 0.0625rem)) {
     .swiper-button-next,
     .swiper-button-prev {
       display: none;
     }
   }
 
-  @media (min-width: 768px) and (max-width: 1023px) {
+  @media (min-width: $breakpoint-md) and (max-width: calc($breakpoint-lg - 0.0625rem)) {
     .swiper-button-prev {
       left: 5px;
     }
@@ -466,7 +458,7 @@ p {
     }
   }
 
-  @media (min-width: 1024px) {
+  @media (min-width: $breakpoint-lg) {
     .swiper-button-prev {
       left: 20px;
     }
@@ -483,15 +475,15 @@ p {
 
 footer {
   a {
-    transition: color 0.2s ease;
+    transition: $transition-color;
 
     &:hover {
-      color: white;
+      color: $neutral-white;
     }
   }
 
   h3 {
-    color: white;
+    color: $neutral-white;
   }
 }
 
@@ -502,8 +494,8 @@ footer {
 .bento-card {
   position: relative;
   overflow: hidden;
-  border-radius: 0.5rem;
-  background-color: #0f172a; // Dark slate background
+  border-radius: $border-radius-lg;
+  background-color: $slate-900;
   height: 100%;
 
   // Selects the Next.js Image or standard img
@@ -514,7 +506,7 @@ footer {
     height: 100%;
     object-fit: cover;
     opacity: 0.7;
-    transition: transform 0.7s ease;
+    transition: transform $transition-duration-slower $transition-timing-default;
   }
 
   // The text wrapper (the overlay)
@@ -524,36 +516,31 @@ footer {
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    padding: 2rem;
-    z-index: 10;
-    // Lighter gradient: only covers the bottom area for legibility
-    background: linear-gradient(
-      to top,
-      rgba(0, 0, 0, 0.5) 0%,
-      rgba(0, 0, 0, 0) 60%
-    );
+    padding: $spacing-8;
+    z-index: $z-index-dropdown;
+    background: linear-gradient(to top, $color-bg-overlay 0%, transparent 60%);
   }
 
   // Icon styling (Lucide icons render as SVGs)
   svg {
-    color: #2dd4bf; // Teal
-    margin-bottom: 1rem;
+    color: $teal-400;
+    margin-bottom: $spacing-4;
     flex-shrink: 0;
   }
 
   h3 {
-    color: #ffffff;
-    font-weight: 700;
-    margin-bottom: 0.5rem;
-    font-size: 1.5rem;
-    line-height: 1.2;
+    color: $neutral-white;
+    font-weight: $font-weight-bold;
+    margin-bottom: $spacing-2;
+    font-size: $font-size-2xl;
+    line-height: $line-height-tight;
   }
 
   p {
-    color: #cbd5e1; // Muted white/slate
-    font-size: 0.875rem;
+    color: $slate-300;
+    font-size: $font-size-sm;
     margin: 0;
-    line-height: 1.5;
+    line-height: $line-height-normal;
   }
 
   // Hover animation

@@ -2,17 +2,17 @@
 
 import { useRef, useState } from "react"
 import emailjs from "@emailjs/browser"
+import { toast } from "sonner"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Button } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
 
-type FormStatus = "idle" | "sending" | "success" | "error"
+type FormStatus = "idle" | "sending"
 
 export function ContactForm() {
   const formRef = useRef<HTMLFormElement>(null)
   const [status, setStatus] = useState<FormStatus>("idle")
-  const [errorMessage, setErrorMessage] = useState<string>("")
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
@@ -28,29 +28,34 @@ export function ContactForm() {
         formRef.current,
         "LtEcgbsTKwZo1-fbA"
       )
-      setStatus("success")
+      setStatus("idle")
       formRef.current.reset()
+      toast.success(
+        <div>
+          <div className="font-semibold">Thanks for reaching out!</div>
+          <div className="text-sm text-gray-600">
+            Our sales team will follow up shortly to explore how we can support
+            your goals.
+          </div>
+        </div>
+      )
     } catch (error) {
-      setStatus("error")
+      setStatus("idle")
       console.error("EmailJS error:", JSON.stringify(error, null, 2))
       console.error("Full error object:", error)
 
+      let errorMessage = "Please try again later."
       if (error instanceof Error) {
-        setErrorMessage(error.message)
+        errorMessage = error.message
       } else if (typeof error === "object" && error !== null) {
         const err = error as Record<string, unknown>
         if (err.text) {
-          setErrorMessage(String(err.text))
+          errorMessage = String(err.text)
         } else if (err.status) {
-          setErrorMessage(
-            `Status ${err.status}: ${err.text || "Request failed"}`
-          )
-        } else {
-          setErrorMessage(JSON.stringify(error))
+          errorMessage = `Status ${err.status}: ${err.text || "Request failed"}`
         }
-      } else {
-        setErrorMessage("Unknown error occurred")
       }
+      toast.error(`Something went wrong: ${errorMessage}`)
     }
   }
 
@@ -58,7 +63,7 @@ export function ContactForm() {
     <form
       ref={formRef}
       onSubmit={handleSubmit}
-      className="mx-auto max-w-lg space-y-6"
+      className="mx-auto max-w-lg space-y-6 p-4"
     >
       <div className="space-y-2">
         <Label htmlFor="user_name">Name</Label>
@@ -99,21 +104,15 @@ export function ContactForm() {
         />
       </div>
 
-      <Button type="submit" size="lg" disabled={status === "sending"}>
+      <Button
+        variant="default"
+        type="submit"
+        size="lg"
+        className="w-full!"
+        disabled={status === "sending"}
+      >
         {status === "sending" ? "Sending..." : "Send Message"}
       </Button>
-
-      {status === "success" && (
-        <p className="text-sm text-green-600">
-          Thank you! Your message has been sent successfully.
-        </p>
-      )}
-
-      {status === "error" && (
-        <p className="text-sm text-red-600">
-          Something went wrong: {errorMessage || "Please try again later."}
-        </p>
-      )}
     </form>
   )
 }

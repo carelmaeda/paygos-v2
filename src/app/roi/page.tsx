@@ -55,7 +55,7 @@ export default function RoiPage() {
     <main>
       {/* Hero */}
       <section
-        className="relative flex min-h-[75vh] bg-cyan-950"
+        className="relative flex bg-cyan-950 py-24"
         data-navbar-theme="dark"
       >
         <PatternDots />
@@ -64,9 +64,7 @@ export default function RoiPage() {
           <h1>
             Calculate
             <br />
-            <span className="bg-gradient-to-r from-teal-400 to-cyan-400 bg-clip-text text-transparent">
-              Your ROI
-            </span>
+            <span className="text-highlight">Your ROI</span>
           </h1>
           <p>
             See the real impact of Paygos on your business. Enter your metrics
@@ -78,62 +76,16 @@ export default function RoiPage() {
 
       <Breadcrumbs />
 
-      {/* Value Props */}
-      <section className="section-container py-12" data-navbar-theme="light">
-        <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
-          <div className="flex items-start gap-4">
-            <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-teal-100">
-              <TrendingUp className="h-6 w-6 text-teal-600" />
-            </div>
-            <div>
-              <h3 className="font-bold text-slate-900">Increase Sales</h3>
-              <p className="text-sm text-slate-600">
-                Drive revenue growth with automation
-              </p>
-            </div>
-          </div>
-          <div className="flex items-start gap-4">
-            <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-teal-100">
-              <Clock className="h-6 w-6 text-teal-600" />
-            </div>
-            <div>
-              <h3 className="font-bold text-slate-900">Save Time</h3>
-              <p className="text-sm text-slate-600">
-                Reduce admin hours every week
-              </p>
-            </div>
-          </div>
-          <div className="flex items-start gap-4">
-            <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-teal-100">
-              <DollarSign className="h-6 w-6 text-teal-600" />
-            </div>
-            <div>
-              <h3 className="font-bold text-slate-900">Cut Costs</h3>
-              <p className="text-sm text-slate-600">
-                Lower operational expenses significantly
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Calculator Section */}
       <section
         className="section-container bg-slate-50 py-16"
         data-navbar-theme="light"
       >
-        <div className="mx-auto max-w-5xl">
-          <div className="mb-10 text-center">
-            <h2 className="mb-4 text-3xl font-black tracking-tight text-slate-900 md:text-4xl">
-              Estimate Your Savings
-            </h2>
-            <p className="mx-auto max-w-2xl text-lg text-slate-600">
-              Select your solution type and enter your business metrics to see
-              potential returns.
-            </p>
-          </div>
-          <RoiCalculator />
-        </div>
+        <h3 className="mb-6 text-center">
+          Select your solution type and enter your business metrics to see
+          potential returns.
+        </h3>
+        <RoiCalculator />
       </section>
 
       {/* CTA Section */}

@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useLayoutEffect } from "react"
+import { useSyncExternalStore, useCallback, useRef } from "react"
 import { usePathname } from "next/navigation"
 
 export type NavbarTheme = "light" | "dark"
@@ -14,7 +14,6 @@ function calculateCurrentTheme(): NavbarTheme {
 
   for (const section of sections) {
     const rect = section.getBoundingClientRect()
-    // Check if section is at the navbar position
     if (rect.top <= NAVBAR_HEIGHT && rect.bottom > NAVBAR_HEIGHT) {
       return (section.getAttribute("data-navbar-theme") as NavbarTheme) || "dark"
     }
@@ -22,17 +21,17 @@ function calculateCurrentTheme(): NavbarTheme {
   return "dark"
 }
 
+function getServerSnapshot(): NavbarTheme {
+  return "dark"
+}
+
 export function useNavbarTheme(): NavbarTheme {
-  const [theme, setTheme] = useState<NavbarTheme>("dark")
   const pathname = usePathname()
+  const themeRef = useRef<NavbarTheme>("dark")
 
-  useLayoutEffect(() => {
-    // Calculate initial theme synchronously before paint
-    setTheme(calculateCurrentTheme())
-
-    // Set up observer for scroll/navigation changes
-    const sections = document.querySelectorAll<HTMLElement>("[data-navbar-theme]")
-    if (sections.length === 0) return
+  const subscribe = useCallback((onStoreChange: () => void) => {
+    // Calculate initial theme
+    themeRef.current = calculateCurrentTheme()
 
     const observerOptions: IntersectionObserverInit = {
       rootMargin: "-80px 0px -80% 0px",
@@ -43,17 +42,33 @@ export function useNavbarTheme(): NavbarTheme {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           const sectionTheme = entry.target.getAttribute("data-navbar-theme") as NavbarTheme
-          if (sectionTheme) {
-            setTheme(sectionTheme)
+          if (sectionTheme && sectionTheme !== themeRef.current) {
+            themeRef.current = sectionTheme
+            onStoreChange()
           }
         }
       })
     }, observerOptions)
 
-    sections.forEach((section) => observer.observe(section))
+    // Observe sections after a microtask to ensure DOM is ready after navigation
+    queueMicrotask(() => {
+      const sections = document.querySelectorAll<HTMLElement>("[data-navbar-theme]")
+      sections.forEach((section) => observer.observe(section))
+
+      // Recalculate after observing in case sections changed
+      const newTheme = calculateCurrentTheme()
+      if (newTheme !== themeRef.current) {
+        themeRef.current = newTheme
+        onStoreChange()
+      }
+    })
 
     return () => observer.disconnect()
-  }, [pathname])
+  }, [pathname]) // Re-subscribe when pathname changes
+
+  const getSnapshot = useCallback(() => themeRef.current, [])
+
+  const theme = useSyncExternalStore(subscribe, getSnapshot, getServerSnapshot)
 
   return theme
 }

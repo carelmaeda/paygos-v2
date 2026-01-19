@@ -15,7 +15,7 @@ export default function AboutPage() {
     <main className="min-h-screen">
       {/* Hero */}
       <section
-        className="relative flex min-h-[75vh] bg-teal-950"
+        className="relative flex bg-teal-950 py-24"
         data-navbar-theme="dark"
       >
         <PatternWaves />
@@ -24,9 +24,7 @@ export default function AboutPage() {
           <h1>
             Building the Future of
             <br />
-            <span className="bg-gradient-to-r from-teal-400 to-cyan-400 bg-clip-text text-transparent">
-              Sales Automation
-            </span>
+            <span className="text-highlight">Sales Automation</span>
           </h1>
           <p>
             Empowering businesses to sell more and spend less through innovative

@@ -43,15 +43,18 @@ export function CustomerStoryCard({ story }: CustomerStoryCardProps) {
 
           {/* Bottom: Revealable Title */}
           <div className="flex flex-col gap-3">
-            <div className="overflow-hidden">
+            <div className="overflow-hidden text-white">
               <h3
                 className={cn(
-                  "text-2xl leading-tight font-bold text-white transition-all duration-500 ease-out",
+                  "transition-all duration-500 ease-out",
                   "md:translate-y-8 md:opacity-0 md:group-hover:translate-y-0 md:group-hover:opacity-100"
                 )}
               >
                 {story.title}
               </h3>
+              <p className="mt-4 text-sm font-light transition-all duration-500 ease-out md:translate-y-8 md:opacity-0 md:group-hover:translate-y-0 md:group-hover:opacity-100">
+                {story.excerpt}
+              </p>
             </div>
 
             <div className="flex items-center gap-2 text-sm font-bold text-teal-400 opacity-0 transition-all delay-75 duration-300 group-hover:opacity-100">
