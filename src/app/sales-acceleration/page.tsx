@@ -62,20 +62,16 @@ export const metadata: Metadata = {
 
 export default function SalesAccelerationPage() {
   return (
-    <main className="min-h-screen bg-white font-sans text-slate-900">
+    <main className="min-h-screen">
       {/* Hero */}
-      <section
-        className="relative flex bg-teal-950 py-24"
-        data-navbar-theme="dark"
-      >
+      <section className="hero-sm bg-sky-950" data-navbar-theme="dark">
         <PatternCircuit />
         <div className="text-hero">
           <small className="text-teal-400">
             Integrated • Powerful • Scalable
           </small>
           <h1>
-            Accelerate Your
-            <br />
+            Accelerate Your {""}
             <span className="text-highlight">Sales</span>
           </h1>
           <p>
@@ -109,7 +105,7 @@ export default function SalesAccelerationPage() {
       {/* SECTION: Tools Grid */}
       <section
         data-navbar-theme="light"
-        className="relative mx-auto bg-teal-800 px-6 py-16"
+        className="relative mx-auto bg-teal-900 px-6 py-16"
       >
         <PatternDots />
         <h2 className="mb-6 text-center text-white">
@@ -117,7 +113,7 @@ export default function SalesAccelerationPage() {
         </h2>
 
         {/* Grid */}
-        <div className="section-container grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+        <div className="section-container grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
           {SALES_ACCELERATION_TOOLS.map((tool) => (
             <Link
               key={tool.href}

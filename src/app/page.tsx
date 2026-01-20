@@ -82,10 +82,10 @@ export default function Home() {
       {/* CustomerStories - Dark background */}
       <section
         data-navbar-theme="dark"
-        className="relative overflow-hidden bg-teal-900 py-16 text-center text-white"
+        className="relative overflow-hidden bg-teal-900 py-16 text-white"
       >
         <PatternDots />
-        <div className="section-container space-y-8">
+        <div className="section-container space-y-8 text-center">
           <h2 className="mb-3">What would you do with more time?</h2>
           <p className="text-gray-300">
             Discover how PAYGOS customers turned saved time into real results.

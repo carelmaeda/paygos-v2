@@ -58,7 +58,7 @@ export default function CustomersPage() {
   return (
     <main>
       {/* Hero */}
-      <section className="bg-teal-950 pt-24" data-navbar-theme="dark">
+      <section className="hero-sm bg-teal-950" data-navbar-theme="dark">
         <PatternDiagonal />
         <div className="text-hero pt-24">
           <small className="text-teal-400">Real Results • Proven Impact</small>
@@ -73,7 +73,7 @@ export default function CustomersPage() {
           </p>
         </div>
         {/* LOGOS */}
-        <div className="pt-20 pb-8 opacity-60">
+        <div className="pt-8 opacity-60">
           <CustomersLogosCarousel />
         </div>
       </section>

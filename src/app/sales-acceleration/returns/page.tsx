@@ -72,10 +72,7 @@ export default function ReturnsPage() {
   return (
     <main className="min-h-screen">
       {/* Hero */}
-      <section
-        className="relative flex bg-cyan-950 py-24"
-        data-navbar-theme="dark"
-      >
+      <section className="hero-sm bg-cyan-950" data-navbar-theme="dark">
         <PatternDots />
         <div className="text-hero">
           <small className="text-teal-400">Validated Returns Processing</small>

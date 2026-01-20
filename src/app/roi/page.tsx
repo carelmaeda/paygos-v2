@@ -54,16 +54,12 @@ export default function RoiPage() {
   return (
     <main>
       {/* Hero */}
-      <section
-        className="relative flex bg-cyan-950 py-24"
-        data-navbar-theme="dark"
-      >
+      <section className="hero-sm bg-emerald-950" data-navbar-theme="dark">
         <PatternDots />
         <div className="text-hero">
           <small className="text-teal-400">Measure Your Investment</small>
           <h1>
-            Calculate
-            <br />
+            Calculate {""}
             <span className="text-highlight">Your ROI</span>
           </h1>
           <p>

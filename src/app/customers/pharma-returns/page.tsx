@@ -15,10 +15,7 @@ export default function PharmaReturns() {
   return (
     <main>
       {/* Hero */}
-      <section
-        className="relative flex bg-cyan-950 pt-24 pb-16"
-        data-navbar-theme="dark"
-      >
+      <section className="hero-sm bg-green-950" data-navbar-theme="dark">
         <PatternDots />
         <div className="text-hero">
           <small className="text-teal-400">
@@ -27,7 +24,6 @@ export default function PharmaReturns() {
           <h1>
             Pharma {""}
             <span className="text-highlight">Returns</span>
-            <br />
           </h1>
         </div>
       </section>
@@ -39,7 +35,7 @@ export default function PharmaReturns() {
         className="section-container mx-auto px-6 py-16"
         data-navbar-theme="light"
       >
-        <div className="grid grid-cols-1 gap-4 md:grid-cols-2 md:max-w-2xl md:mx-auto">
+        <div className="grid grid-cols-1 gap-4 md:mx-auto md:max-w-2xl md:grid-cols-2">
           {[
             {
               label: "Increase in Sales Visits",

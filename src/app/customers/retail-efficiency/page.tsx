@@ -1,12 +1,6 @@
 import type { Metadata } from "next"
 import Image from "next/image"
-import {
-  TrendingUp,
-  BarChart3,
-  Package,
-  Workflow,
-  Users,
-} from "lucide-react"
+import { TrendingUp, BarChart3, Package, Workflow, Users } from "lucide-react"
 import { Breadcrumbs } from "@/components/layout/Breadcrumbs"
 import { CTA } from "@/components/sections/cta/CTA"
 import { PatternDiagonal, PatternDots } from "@/components/ui/patterns"
@@ -21,10 +15,7 @@ export default function RetailEfficiency() {
   return (
     <main>
       {/* Hero */}
-      <section
-        className="relative flex bg-cyan-950 pt-24 pb-16"
-        data-navbar-theme="dark"
-      >
+      <section className="hero-sm bg-emerald-950" data-navbar-theme="dark">
         <PatternDots />
         <div className="text-hero">
           <small className="text-teal-400">
@@ -33,7 +24,6 @@ export default function RetailEfficiency() {
           <h1>
             Retail {""}
             <span className="text-highlight">Efficiency</span>
-            <br />
           </h1>
         </div>
       </section>
@@ -88,7 +78,7 @@ export default function RetailEfficiency() {
                   {stat.value}
                 </span>
               )}
-              <span className="text-sm font-medium tracking-wider text-gray-500 uppercase text-center">
+              <span className="text-center text-sm font-medium tracking-wider text-gray-500 uppercase">
                 {stat.label}
               </span>
             </div>

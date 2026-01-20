@@ -15,10 +15,7 @@ export default function VetGrowth() {
   return (
     <main>
       {/* Hero */}
-      <section
-        className="relative flex bg-cyan-950 pt-24 pb-16"
-        data-navbar-theme="dark"
-      >
+      <section className="hero-sm bg-emerald-950" data-navbar-theme="dark">
         <PatternDots />
         <div className="text-hero">
           <small className="text-teal-400">
@@ -27,7 +24,6 @@ export default function VetGrowth() {
           <h1>
             Vet {""}
             <span className="text-highlight">Growth</span>
-            <br />
           </h1>
         </div>
       </section>

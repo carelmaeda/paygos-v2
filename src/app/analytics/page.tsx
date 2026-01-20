@@ -75,10 +75,7 @@ export default function AnalyticsPage() {
   return (
     <main className="min-h-screen">
       {/* Hero */}
-      <section
-        className="relative flex min-h-[90vh] items-center overflow-hidden bg-slate-950 pt-32 pb-24"
-        data-navbar-theme="dark"
-      >
+      <section className="hero-sm bg-teal-950" data-navbar-theme="dark">
         <div className="absolute inset-0 z-0">
           <Image
             src="https://images.unsplash.com/photo-1551288049-bebda4e38f71"

@@ -14,7 +14,7 @@ export function Footer() {
     <footer className="relative bg-cyan-950 text-gray-300">
       <PatternDots />
 
-      <div className="section-container relative z-10 py-12 md:py-16">
+      <div className="section-container relative z-10 py-12">
         {/* Main Footer Content */}
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-5">
           {/* Brand Column */}
@@ -28,7 +28,7 @@ export function Footer() {
                 className="h-8 w-auto"
               />
             </Link>
-            <p className="my-4 max-w-xs text-sm leading-relaxed">
+            <p className="my-2 max-w-xs text-sm leading-relaxed">
               Our customizable sales acceleration platform is designed to drive
               incremental revenue, automate manual processes and surface
               actionable sales data & analytics.
@@ -52,7 +52,7 @@ export function Footer() {
           {/* Products Column */}
           <div>
             <h3 className="mb-4 text-sm font-semibold tracking-wider text-white uppercase">
-              Products
+              Solutions
             </h3>
             <ul className="space-y-3 text-sm">
               <li>

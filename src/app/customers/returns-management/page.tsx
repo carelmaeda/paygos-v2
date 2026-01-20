@@ -15,10 +15,7 @@ export default function ReturnsManagement() {
   return (
     <main>
       {/* Hero */}
-      <section
-        className="relative flex bg-cyan-950 pt-24 pb-16"
-        data-navbar-theme="dark"
-      >
+      <section className="hero-sm bg-cyan-950" data-navbar-theme="dark">
         <PatternDots />
         <div className="text-hero">
           <small className="text-teal-400">
@@ -27,7 +24,6 @@ export default function ReturnsManagement() {
           <h1>
             Returns {""}
             <span className="text-highlight">Management</span>
-            <br />
           </h1>
         </div>
       </section>

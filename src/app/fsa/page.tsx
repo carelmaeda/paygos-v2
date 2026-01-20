@@ -74,18 +74,14 @@ export default function FsaPage() {
   return (
     <main>
       {/* Hero */}
-      <section
-        className="relative flex bg-teal-950 py-24"
-        data-navbar-theme="dark"
-      >
+      <section className="hero-sm bg-cyan-950" data-navbar-theme="dark">
         <PatternHexagon />
         <div className="text-hero">
           <small className="text-teal-400">
             Mobile-First • Real-Time Execution
           </small>
           <h1>
-            Empower Your
-            <br />
+            Empower Your {""}
             <span className="text-highlight">Field Team</span>
           </h1>
           <p>

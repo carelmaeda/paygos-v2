@@ -12,10 +12,7 @@ export default function ContactPage() {
   return (
     <main className="min-h-screen">
       {/* Hero */}
-      <section
-        className="relative flex bg-slate-900 py-24"
-        data-navbar-theme="dark"
-      >
+      <section className="hero-sm bg-teal-950" data-navbar-theme="dark">
         <PatternWaves />
         <div className="text-hero">
           <small className="text-teal-400">Contact</small>
