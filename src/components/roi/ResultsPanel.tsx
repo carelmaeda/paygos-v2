@@ -1,128 +1,66 @@
-import { Card, CardContent } from "@/components/ui/card"
+/**
+ * ResultsPanel - ROI Metrics Grid Component
+ *
+ * Renders a responsive grid of result cards based on the selected mode.
+ * Filters and displays only the metrics relevant to the current mode.
+ *
+ * Features:
+ * - Mode-based metric filtering (different metrics for Sales vs FSA vs Both)
+ * - Staggered animation delays for visual appeal
+ * - Responsive grid layout (1-4 columns based on viewport)
+ */
+"use client"
+
 import { RoiMode, RoiResults } from "./types"
+import { ResultCard } from "./ResultCard"
+import { RESULT_METRICS, MODE_VISIBILITY } from "./constants"
+
+// ============================================================================
+// Types
+// ============================================================================
 
 interface Props {
   results: RoiResults
   mode: RoiMode
 }
 
-// ============================================
-// VISIBILITY LOGIC
-// ============================================
-
-function shouldShowIndicator(indicator: string, mode: RoiMode): boolean {
-  const visibilityRules = {
-    sales: [
-      "engagementIncrease",
-      "salesIncrease",
-      "productInterestIncrease",
-      "customerTrafficIncrease",
-      "adminHoursSaved",
-    ],
-    fsa: ["adminHoursSaved", "salesRepHoursSaved"],
-    both: [
-      "engagementIncrease",
-      "salesIncrease",
-      "productInterestIncrease",
-      "customerTrafficIncrease",
-      "adminHoursSaved",
-      "salesRepHoursSaved",
-    ],
-  }
-  return visibilityRules[mode].includes(indicator)
-}
-
-// ============================================
-// COMPONENT
-// ============================================
+// ============================================================================
+// Main Component
+// ============================================================================
 
 export function ResultsPanel({ results, mode }: Props) {
+  // Filter metrics based on current mode visibility settings
+  const visibleMetrics = RESULT_METRICS.filter((metric) =>
+    MODE_VISIBILITY[mode].includes(metric.key)
+  )
+
+  // Helper to get result value by key
+  const getResultValue = (key: string): string | number | undefined => {
+    return results[key as keyof RoiResults]
+  }
+
+  // Filter out metrics with no calculated values
+  const activeMetrics = visibleMetrics.filter(
+    (metric) => getResultValue(metric.key) !== undefined
+  )
+
   return (
-    <div className="grid auto-cols-fr grid-flow-col gap-3 overflow-x-auto">
-      {/* Improve Customer Engagement by */}
-      {shouldShowIndicator("engagementIncrease", mode) &&
-        results.engagementIncrease && (
-          <Card>
-            <CardContent className="p-4">
-              <p className="text-xs text-muted-foreground">
-                Improve Customer Engagement by
-              </p>
-              <p className="mt-1 text-2xl font-bold">
-                {results.engagementIncrease}
-              </p>
-            </CardContent>
-          </Card>
-        )}
+    <div className="grid grid-cols-1 gap-2 sm:grid-cols-2 xl:grid-cols-5">
+      {activeMetrics.map((metric, index) => {
+        const value = getResultValue(metric.key)
+        if (value === undefined) return null
 
-      {/* Sales Increase of */}
-      {shouldShowIndicator("salesIncrease", mode) && results.salesIncrease && (
-        <Card>
-          <CardContent className="p-4">
-            <p className="text-xs text-muted-foreground">Sales Increase of</p>
-            <p className="mt-1 text-2xl font-bold">{results.salesIncrease}</p>
-          </CardContent>
-        </Card>
-      )}
-
-      {/* Increase Interest in Products by */}
-      {shouldShowIndicator("productInterestIncrease", mode) &&
-        results.productInterestIncrease && (
-          <Card>
-            <CardContent className="p-4">
-              <p className="text-xs text-muted-foreground">
-                Increase Interest in Products by
-              </p>
-              <p className="mt-1 text-2xl font-bold">
-                {results.productInterestIncrease}
-              </p>
-            </CardContent>
-          </Card>
-        )}
-
-      {/* Improve Customer Traffic by */}
-      {shouldShowIndicator("customerTrafficIncrease", mode) &&
-        results.customerTrafficIncrease && (
-          <Card>
-            <CardContent className="p-4">
-              <p className="text-xs text-muted-foreground">
-                Improve Customer Traffic by
-              </p>
-              <p className="mt-1 text-2xl font-bold">
-                {results.customerTrafficIncrease}
-              </p>
-            </CardContent>
-          </Card>
-        )}
-
-      {/* Administration Saved */}
-      {shouldShowIndicator("adminHoursSaved", mode) &&
-        results.adminHoursSaved !== undefined && (
-          <Card>
-            <CardContent className="p-4">
-              <p className="text-xs text-muted-foreground">
-                Administration Saved
-              </p>
-              <p className="mt-1 text-2xl font-bold">
-                {results.adminHoursSaved}{" "}
-                <span className="text-base">Hours / Week</span>
-              </p>
-            </CardContent>
-          </Card>
-        )}
-
-      {/* Hours Saved */}
-      {shouldShowIndicator("salesRepHoursSaved", mode) &&
-        results.salesRepHoursSaved !== undefined && (
-          <Card>
-            <CardContent className="p-4">
-              <p className="text-xs text-muted-foreground">Hours Saved</p>
-              <p className="mt-1 text-2xl font-bold">
-                {results.salesRepHoursSaved}{" "}
-                <span className="text-base">Hours / Week</span>
-              </p>
-            </CardContent>
-          </Card>
-        )}
+        return (
+          <ResultCard
+            key={metric.key}
+            label={metric.label}
+            value={value}
+            tooltip={metric.tooltip}
+            unit={metric.unit}
+            animationDelay={index * 100}
+          />
+        )
+      })}
     </div>
   )
 }

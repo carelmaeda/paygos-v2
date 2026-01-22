@@ -28,7 +28,7 @@ export function Footer() {
                 className="h-8 w-auto"
               />
             </Link>
-            <p className="my-2 max-w-xs text-sm leading-relaxed">
+            <p className="my-2 max-w-xs text-xs leading-relaxed">
               Our customizable sales acceleration platform is designed to drive
               incremental revenue, automate manual processes and surface
               actionable sales data & analytics.
@@ -39,11 +39,12 @@ export function Footer() {
               {/* Social Links */}
               <div className="flex gap-4">
                 <Link
-                  href="#"
+                  href="https://www.linkedin.com/company/paygos"
+                  target="_blank"
                   aria-label="Follow us on LinkedIn"
                   className="transition-colors hover:text-teal-400"
                 >
-                  <Linkedin className="h-8 w-8" />
+                  <Linkedin className="h-6 w-6" />
                 </Link>
               </div>
             </div>

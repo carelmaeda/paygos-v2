@@ -1,7 +1,5 @@
 import type { Metadata } from "next"
-import { CTA } from "@/components/sections/cta/CTA"
 import { RoiCalculator } from "@/components/roi/RoiCalculator"
-import { TrendingUp, Clock, DollarSign } from "lucide-react"
 import { PatternDots } from "@/components/ui/patterns"
 import { Breadcrumbs } from "@/components/layout/Breadcrumbs"
 
@@ -78,15 +76,10 @@ export default function RoiPage() {
         data-navbar-theme="light"
       >
         <h3 className="mb-6 text-center">
-          Select your solution type and enter your business metrics to see
+          Select the ideal solutions and enter your business metrics to see
           potential returns.
         </h3>
         <RoiCalculator />
-      </section>
-
-      {/* CTA Section */}
-      <section data-navbar-theme="light">
-        <CTA />
       </section>
     </main>
   )

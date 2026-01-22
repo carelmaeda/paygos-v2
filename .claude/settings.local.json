@@ -12,7 +12,9 @@
       "Bash(npm install:*)",
       "Bash(npm run dev:*)",
       "Bash(git mv:*)",
-      "Bash(move:*)"
+      "Bash(move:*)",
+      "Bash(npx shadcn@latest add:*)",
+      "Bash(npx eslint:*)"
     ]
   },
   "hooks": {

@@ -1,6 +1,6 @@
 import type { Metadata } from "next"
 import Image from "next/image"
-import { Target, Users, Heart, Shield, Lock } from "lucide-react"
+import { Target, Heart, Lock, Eye, Handshake } from "lucide-react"
 import { CTA } from "@/components/sections/cta/CTA"
 import { PatternCircuit, PatternWaves } from "@/components/ui/patterns"
 import { Breadcrumbs } from "@/components/layout/Breadcrumbs"
@@ -14,84 +14,136 @@ export default function AboutPage() {
   return (
     <main className="min-h-screen">
       {/* Hero */}
-      <section className="hero-sm bg-slate-900" data-navbar-theme="dark">
+      <section className="hero-sm bg-slate-800" data-navbar-theme="dark">
         <PatternWaves />
         <div className="text-hero">
           <small className="text-teal-400">About us</small>
           <h1>
-            Building the Future of
+            Built from Experience,
             <br />
-            <span className="text-highlight">Sales Automation</span>
+            <span className="text-highlight">Designed for Growth</span>
           </h1>
           <p>
-            Empowering businesses to sell more and spend less through innovative
-            technology and intelligent automation.
+            How decades of real-world sales operations shaped the platform that
+            empowers teams today
           </p>
         </div>
       </section>
 
       <Breadcrumbs />
 
-      {/* Our Story - Light Background */}
-      <section className="bg-white py-16" data-navbar-theme="light">
-        <div className="section-container">
-          <div className="mx-auto max-w-3xl">
-            <h2 className="mb-8 text-3xl font-bold md:text-4xl lg:text-5xl">
-              Our Story
-            </h2>
-            <div className="space-y-6 text-lg text-gray-600">
-              <p>
-                Founded with a vision to revolutionize the way businesses manage
-                their sales operations, Paygos emerged from a simple
-                observation: sales teams were spending too much time on
-                administrative tasks and not enough time selling.
-              </p>
-              <p>
-                Our founders, experienced sales professionals themselves,
-                understood the pain points firsthand. They witnessed talented
-                sales representatives bogged down by manual data entry,
-                inefficient order processing, and disconnected systems that
-                created more problems than they solved.
-              </p>
-              <p>
-                Today, Paygos serves thousands of businesses worldwide, helping
-                them save millions of hours and increase their sales efficiency.
-                Our mission remains unchanged: to empower every sales
-                professional with the tools they need to focus on what they do
-                best—building relationships and closing deals.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* President Testimonial */}
-      <section className="bg-gray-200 py-16" data-navbar-theme="light">
-        <div className="section-container">
-          <div className="mx-auto max-w-4xl">
-            <div className="flex flex-col items-center gap-8 md:flex-row md:items-start">
+      {/* Our Story - Refined Article Style */}
+      <section className="py-16" data-navbar-theme="light">
+        <article className="mx-auto max-w-2xl px-6">
+          {/* Author / Signature Section */}
+          <div className="flex items-center gap-4 pb-8">
+            <div className="relative h-16 w-16 overflow-hidden rounded-full ring-4 ring-slate-50 md:h-20 md:w-20">
               <Image
                 src="/paygos/hesham.jpg"
                 alt="Hesham Shafie - President of Paygos"
-                width={160}
-                height={160}
-                className="h-32 w-32 flex-shrink-0 rounded-full object-cover md:h-40 md:w-40"
+                fill
+                className="object-cover"
               />
-              <div className="text-center md:text-left">
-                <blockquote className="mb-4 text-justify italic">
-                  &ldquo;At Paygos, we believe that technology should empower
-                  people, not replace them. Our mission is to give sales teams
-                  the tools they need to build meaningful relationships and
-                  achieve extraordinary results.&rdquo;
-                </blockquote>
-                <div>
-                  <p className="font-semibold text-teal-600">Hesham Shafie</p>
-                  <p className="text-cyan-900">President, Paygos</p>
-                </div>
-              </div>
+            </div>
+            <div>
+              <p className="text-lg font-bold text-slate-900">Hesham Shafie</p>
+              <p className="text-sm font-medium text-teal-600">
+                President, Paygos
+              </p>
             </div>
           </div>
-        </div>
+
+          {/* Article Content */}
+          <div className="space-y-6 text-lg leading-relaxed text-slate-600">
+            <p className="text-justify first-letter:float-left first-letter:mr-3 first-letter:text-7xl first-letter:font-bold first-letter:text-slate-900">
+              Paygos was built from real-world experience. For decades,
+              we&apos;ve operated large, distributed sales organizations,
+              supported thousands of sales representatives, and built and
+              managed consumer brands ourselves. Along the way, we tested
+              countless technologies and learned, firsthand, what actually works
+              and what doesn&apos;t. What we saw was consistent: sales teams
+              were spending too much time on administration and disconnected
+              systems, and not enough time building relationships and selling
+              with confidence.
+            </p>
+
+            <div className="text-xl font-bold tracking-tight text-slate-900 md:text-2xl">
+              So we built Paygos.
+            </div>
+
+            {/* Quote/Mission Pull-out */}
+            <blockquote className="relative border-l-4 border-teal-500 bg-slate-50 py-8 pr-6 pl-8">
+              <p className="text-justify text-lg font-medium text-slate-800 italic md:text-xl">
+                &ldquo;Our mission is simple: to equip sales organizations with
+                the right tools and the right information, at the right time, so
+                sales reps can focus on relationships, fact-based selling, and
+                growth.&rdquo;
+              </p>
+            </blockquote>
+            <div className="text-justify">
+              <p>
+                Security and trust are foundational to everything we do. Data is
+                encrypted. Payments are validated before clearing. Controls are
+                built in to ensure compliance, transparency, and integrity at
+                every step.
+              </p>
+              <br />
+              <p>
+                Beyond automation, Paygos turns data from the field, customers,
+                retailers, and distributors into actionable insights that help
+                our clients continuously advance their business and grow their
+                brands.
+              </p>
+            </div>
+
+            {/* Stats Grid - More Sophisticated Layout */}
+            <div className="my-6 grid grid-cols-1 divide-y divide-slate-200 overflow-hidden rounded-2xl border border-slate-200 sm:grid-cols-3 sm:divide-x sm:divide-y-0">
+              <div className="flex flex-col items-center p-8 text-center">
+                <span className="text-4xl font-bold tracking-tight text-teal-600 md:text-5xl">
+                  20+
+                </span>
+                <span className="mt-2 text-xs font-bold tracking-widest text-slate-400 uppercase">
+                  Years of Dev
+                </span>
+              </div>
+              <div className="flex flex-col items-center p-8 text-center">
+                <span className="text-4xl font-bold tracking-tight text-teal-600 md:text-5xl">
+                  3
+                </span>
+                <span className="mt-2 text-xs font-bold tracking-widest text-slate-400 uppercase">
+                  Countries Served
+                </span>
+              </div>
+              <div className="flex flex-col items-center p-8 text-center">
+                <span className="text-4xl font-bold tracking-tight text-teal-600 md:text-5xl">
+                  1000s
+                </span>
+                <span className="mt-2 text-xs font-bold tracking-widest text-slate-400 uppercase">
+                  Reps Supported
+                </span>
+              </div>
+            </div>
+            <div className="text-justify">
+              <p>
+                Paygos is the result of over 20 years of learning, refining, and
+                building, supported by industry recognition and
+                government-backed research and development funding, and is
+                deployed with clients across North America, including Canada,
+                the United States, and Mexico.
+              </p>
+            </div>
+
+            {/* Closing Statement */}
+            <div className="rounded-lg bg-slate-100 p-8 text-center text-slate-500 italic">
+              <div className="mx-auto" />
+              <p className="text-md text-justify">
+                At our core, we are rooted in goodness, transparency, and trust.
+                We partner with our clients to help them grow their business
+                with confidence.
+              </p>
+            </div>
+          </div>
+        </article>
       </section>
 
       {/* Our Values - Bento Grid */}
@@ -136,15 +188,15 @@ export default function AboutPage() {
               </div>
             </div>
 
-            {/* Simplicity */}
+            {/* Transparency */}
             <div className="flex items-center gap-4 rounded-lg bg-gray-100 p-4">
               <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-teal-100">
-                <Users className="h-5 w-5 text-teal-700" />
+                <Eye className="h-5 w-5 text-teal-700" />
               </div>
               <div>
-                <h3 className="font-semibold">Simplicity</h3>
+                <h3 className="font-semibold">Transparency</h3>
                 <p className="text-sm text-gray-600">
-                  Powerful technology made accessible.
+                  Open communication and clear expectations.
                 </p>
               </div>
             </div>
@@ -162,15 +214,15 @@ export default function AboutPage() {
               </div>
             </div>
 
-            {/* Integrity */}
+            {/* Trust */}
             <div className="flex items-center gap-4 rounded-lg bg-gray-100 p-4">
               <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-teal-100">
-                <Shield className="h-5 w-5 text-teal-700" />
+                <Handshake className="h-5 w-5 text-teal-700" />
               </div>
               <div>
-                <h3 className="font-semibold">Integrity</h3>
+                <h3 className="font-semibold">Trust</h3>
                 <p className="text-sm text-gray-600">
-                  Transparency and honesty in everything.
+                  Building lasting partnerships through reliability.
                 </p>
               </div>
             </div>

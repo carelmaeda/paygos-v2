@@ -1,20 +1,22 @@
 export type RoiMode = "sales" | "fsa" | "both"
 
+export interface RangeDefinition {
+  label: string
+  min: number
+  max: number
+  midpoint: number
+}
+
 export interface RoiInputs {
-  salesReps: number
-  customers: number
-  distributors: number
-  monthlySpend: number
+  salesRepsIndex: number
+  distributorsIndex: number
+  customersIndex: number
 }
 
 export interface RoiResults {
-  // Percentage strings (e.g., "25%")
   engagementIncrease?: string
-  salesIncrease?: string
   productInterestIncrease?: string
   customerTrafficIncrease?: string
-
-  // Numeric hours per week
   adminHoursSaved?: number
   salesRepHoursSaved?: number
 }
