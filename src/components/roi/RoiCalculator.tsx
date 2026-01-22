@@ -16,11 +16,20 @@ import { useMemo, useState } from "react"
 import { StepSelector } from "./StepSelector"
 import { InputForm } from "./InputForm"
 import { ResultsModal } from "./ResultsModal"
+import { LeadCaptureModal } from "./LeadCaptureModal"
 import { calculateROI } from "./roiFormulas"
+import { sendRoiResults } from "./emailService"
 import { RoiInputs, RoiMode } from "./types"
+import {
+  MODE_OPTIONS,
+  SALES_REP_RANGES,
+  DISTRIBUTOR_RANGES,
+  CUSTOMER_RANGES,
+} from "./constants"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { ArrowRight } from "lucide-react"
+import { toast } from "sonner"
 
 // ============================================================================
 // Helper Components
@@ -86,8 +95,42 @@ export function RoiCalculator() {
   // State for results modal visibility
   const [isModalOpen, setIsModalOpen] = useState(false)
 
+  // State for lead capture modal
+  const [isLeadCaptureOpen, setIsLeadCaptureOpen] = useState(false)
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [submitError, setSubmitError] = useState<string | null>(null)
+
   // Memoized ROI calculation - recalculates when mode or inputs change
   const results = useMemo(() => calculateROI(mode, inputs), [mode, inputs])
+
+  // Handle email submission from lead capture modal
+  const handleEmailSubmit = async (email: string) => {
+    setIsSubmitting(true)
+    setSubmitError(null)
+    try {
+      const modeLabel =
+        MODE_OPTIONS.find((o) => o.value === mode)?.label ?? mode
+      await sendRoiResults({
+        user_email: email,
+        mode: modeLabel,
+        sales_reps: SALES_REP_RANGES[inputs.salesRepsIndex].label,
+        distributors: DISTRIBUTOR_RANGES[inputs.distributorsIndex].label,
+        customers: CUSTOMER_RANGES[inputs.customersIndex].label,
+        engagement_increase: results.engagementIncrease ?? "N/A",
+        product_interest_increase: results.productInterestIncrease ?? "N/A",
+        customer_traffic_increase: results.customerTrafficIncrease ?? "N/A",
+        admin_hours_saved: results.adminHoursSaved?.toString() ?? "N/A",
+        sales_rep_hours_saved: results.salesRepHoursSaved?.toString() ?? "N/A",
+      })
+      setIsLeadCaptureOpen(false)
+      setIsModalOpen(true)
+      toast.success("Results sent to your email!")
+    } catch {
+      setSubmitError("Failed to send. Please try again.")
+    } finally {
+      setIsSubmitting(false)
+    }
+  }
 
   return (
     <div className="space-y-16">
@@ -101,17 +144,26 @@ export function RoiCalculator() {
         <InputForm inputs={inputs} onChange={setInputs} />
       </StepCard>
 
-      {/* CTA Button - Opens Results Modal */}
+      {/* CTA Button - Opens Lead Capture Modal */}
       <div className="mt-4 flex justify-center">
         <Button
           variant="default"
           size="lg"
-          onClick={() => setIsModalOpen(true)}
+          onClick={() => setIsLeadCaptureOpen(true)}
         >
           View Your Results
           <ArrowRight />
         </Button>
       </div>
+
+      {/* Lead Capture Modal - Collects email before showing results */}
+      <LeadCaptureModal
+        isOpen={isLeadCaptureOpen}
+        onClose={() => setIsLeadCaptureOpen(false)}
+        onSubmit={handleEmailSubmit}
+        isLoading={isSubmitting}
+        error={submitError}
+      />
 
       {/* Results Modal - Displays calculated ROI metrics */}
       <ResultsModal
