@@ -1,15 +1,11 @@
-import type { Metadata } from "next"
+"use client"
+
 import Image from "next/image"
 import { Rocket, Users, TrendingUp } from "lucide-react"
 import { Breadcrumbs } from "@/components/layout/Breadcrumbs"
 import { CTA } from "@/components/sections/cta/CTA"
 import { PatternDiagonal, PatternDots } from "@/components/ui/patterns"
-
-export const metadata: Metadata = {
-  title: "Pet Food Leader Case Study: Driving Scalable Growth | Paygos",
-  description:
-    "Discover how a global pet food leader achieved a 19% YoY sales increase and 25% account growth through Paygos automation.",
-}
+import { MotionSection } from "@/components/motion"
 
 export default function VetGrowth() {
   return (
@@ -17,7 +13,12 @@ export default function VetGrowth() {
       {/* Hero */}
       <section className="hero-sm bg-emerald-950" data-navbar-theme="dark">
         <PatternDots />
-        <div className="text-hero">
+        <MotionSection
+          as="div"
+          variant="slideUp"
+          className="text-hero"
+          viewport={{ once: true }}
+        >
           <small className="text-teal-400">
             Sales Acceleration • Automation • Analytics
           </small>
@@ -25,7 +26,7 @@ export default function VetGrowth() {
             Vet {""}
             <span className="text-highlight">Growth</span>
           </h1>
-        </div>
+        </MotionSection>
       </section>
 
       <Breadcrumbs />
@@ -56,8 +57,10 @@ export default function VetGrowth() {
               color: "text-teal-600",
             },
           ].map((stat, i) => (
-            <div
+            <MotionSection
+              as="div"
               key={i}
+              variant="scaleIn"
               className="flex flex-col items-center justify-center rounded-lg border border-gray-100 bg-white p-8 shadow-sm transition hover:shadow-md"
             >
               <stat.icon className={`mb-3 h-8 w-8 ${stat.color}`} />
@@ -67,7 +70,7 @@ export default function VetGrowth() {
               <span className="text-sm font-medium tracking-wider text-gray-500 uppercase">
                 {stat.label}
               </span>
-            </div>
+            </MotionSection>
           ))}
         </div>
       </section>
@@ -77,7 +80,7 @@ export default function VetGrowth() {
         className="section-container mx-auto px-6 pb-16"
         data-navbar-theme="light"
       >
-        <div className="mx-auto max-w-3xl text-center">
+        <MotionSection as="div" variant="slideUp" className="mx-auto max-w-3xl text-center">
           <small className="text-green-700">The Challenge</small>
           <h2 className="mb-8 text-4xl font-black text-gray-900">
             Scaling Reach in a Competitive Market
@@ -88,7 +91,7 @@ export default function VetGrowth() {
             customer loyalty. Many accounts were incremental or inactive, and
             manual sales processes limited visibility, efficiency, and growth.
           </p>
-        </div>
+        </MotionSection>
       </section>
 
       {/* Solution Section */}
@@ -96,12 +99,12 @@ export default function VetGrowth() {
         <PatternDiagonal />
         <div className="section-container mx-auto px-6">
           <div className="mx-auto max-w-3xl">
-            <h2 className="text-highlight mb-6 text-center">
+            <MotionSection as="h2" variant="slideUp" className="text-highlight mb-6 text-center">
               The Paygos Solution
-            </h2>
+            </MotionSection>
 
             <div className="space-y-8">
-              <div className="flex gap-6">
+              <MotionSection as="div" variant="slideUp" className="flex gap-6">
                 <span className="text-2xl font-black text-teal-500">01.</span>
                 <div>
                   <h4 className="mb-2 text-xl font-bold text-white">
@@ -112,9 +115,9 @@ export default function VetGrowth() {
                     incremental locations and strengthened engagement.
                   </p>
                 </div>
-              </div>
+              </MotionSection>
 
-              <div className="flex gap-6">
+              <MotionSection as="div" variant="slideUp" className="flex gap-6">
                 <span className="text-2xl font-black text-teal-500">02.</span>
                 <div>
                   <h4 className="mb-2 text-xl font-bold text-white">
@@ -126,9 +129,9 @@ export default function VetGrowth() {
                     workload.
                   </p>
                 </div>
-              </div>
+              </MotionSection>
 
-              <div className="flex gap-6">
+              <MotionSection as="div" variant="slideUp" className="flex gap-6">
                 <span className="text-2xl font-black text-teal-500">03.</span>
                 <div>
                   <h4 className="mb-2 text-xl font-bold text-white">
@@ -139,7 +142,7 @@ export default function VetGrowth() {
                     fulfillment, and brand performance.
                   </p>
                 </div>
-              </div>
+              </MotionSection>
             </div>
           </div>
         </div>
@@ -150,7 +153,7 @@ export default function VetGrowth() {
         className="section-container mx-auto px-6 py-16"
         data-navbar-theme="light"
       >
-        <div className="mx-auto max-w-3xl text-center">
+        <MotionSection as="div" variant="slideUp" className="mx-auto max-w-3xl text-center">
           <small className="text-green-700">The Impact</small>
           <h2 className="mb-8 text-4xl font-black text-gray-900">
             Measurable, Scalable Growth
@@ -161,6 +164,8 @@ export default function VetGrowth() {
             feeding programs grew by <strong>151%</strong>, while automation
             enabled a <strong>19%</strong> year-over-year increase in sales.
           </p>
+        </MotionSection>
+        <MotionSection as="div" variant="scaleIn" className="mx-auto max-w-3xl">
           <Image
             src="https://images.unsplash.com/photo-1551288049-bbbda536339a?q=80&w=2070&auto=format&fit=crop"
             alt="Sales Data Analytics Chart"
@@ -168,14 +173,16 @@ export default function VetGrowth() {
             height={400}
             className="mx-auto rounded-2xl shadow-lg"
           />
-        </div>
+        </MotionSection>
       </section>
 
       {/* Testimonial Section */}
       <section className="bg-gray-100 py-16" data-navbar-theme="light">
-        <h2 className="mb-8 text-center">Customer Testimonial</h2>
+        <MotionSection as="h2" variant="slideUp" className="mb-8 text-center">
+          Customer Testimonial
+        </MotionSection>
         <div className="section-container mx-auto px-6">
-          <div className="mx-auto max-w-3xl text-center">
+          <MotionSection as="div" variant="fadeIn" className="mx-auto max-w-3xl text-center">
             <p className="mb-8 italic">
               &quot;Paygos has been an exceptional partner in helping us drive
               efficiency and innovation across our business. Since 2020 their
@@ -205,7 +212,7 @@ export default function VetGrowth() {
                 </p>
               </div>
             </div>
-          </div>
+          </MotionSection>
         </div>
       </section>
 

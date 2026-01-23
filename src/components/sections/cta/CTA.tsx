@@ -1,8 +1,7 @@
-import { BookCallButton } from "./BookCallButton"
+"use client"
 
-// ============================================
-// COMPONENT
-// ============================================
+import { BookCallButton } from "./BookCallButton"
+import { MotionSection } from "@/components/motion"
 
 /**
  * CTA Component
@@ -14,9 +13,13 @@ export function CTA() {
     <section className="bg-gray-200 px-4 py-16">
       <div className="mx-auto text-center">
         {/* Main CTA Heading */}
-        <h2 className="mb-8">Ready to accelerate your sales?</h2>
+        <MotionSection as="div" variant="slideUp">
+          <h2 className="mb-8">Ready to accelerate your sales?</h2>
+        </MotionSection>
         {/* CTA Button */}
-        <BookCallButton />
+        <MotionSection as="div" variant="scaleIn">
+          <BookCallButton />
+        </MotionSection>
       </div>
     </section>
   )

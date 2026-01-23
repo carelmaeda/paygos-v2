@@ -1,15 +1,11 @@
-import type { Metadata } from "next"
+"use client"
+
 import Image from "next/image"
 import { TrendingUp, BarChart3, Package, Workflow, Users } from "lucide-react"
 import { Breadcrumbs } from "@/components/layout/Breadcrumbs"
 import { CTA } from "@/components/sections/cta/CTA"
 import { PatternDiagonal, PatternDots } from "@/components/ui/patterns"
-
-export const metadata: Metadata = {
-  title: "Retail Efficiency Case Study | Paygos 360",
-  description:
-    "Discover how a major national retail brand achieved 10% increase in operational efficiency through Paygos 360 analytics and automation.",
-}
+import { MotionSection } from "@/components/motion"
 
 export default function RetailEfficiency() {
   return (
@@ -17,7 +13,12 @@ export default function RetailEfficiency() {
       {/* Hero */}
       <section className="hero-sm bg-emerald-950" data-navbar-theme="dark">
         <PatternDots />
-        <div className="text-hero">
+        <MotionSection
+          as="div"
+          variant="slideUp"
+          className="text-hero"
+          viewport={{ once: true }}
+        >
           <small className="text-teal-400">
             Paygos 360 • Retail Operations • Analytics
           </small>
@@ -25,7 +26,7 @@ export default function RetailEfficiency() {
             Retail {""}
             <span className="text-highlight">Efficiency</span>
           </h1>
-        </div>
+        </MotionSection>
       </section>
 
       <Breadcrumbs />
@@ -68,8 +69,10 @@ export default function RetailEfficiency() {
               color: "text-orange-600",
             },
           ].map((stat, i) => (
-            <div
+            <MotionSection
+              as="div"
               key={i}
+              variant="scaleIn"
               className="flex flex-col items-center justify-center rounded-lg border border-gray-100 bg-white p-6 shadow-sm transition hover:shadow-md"
             >
               <stat.icon className={`mb-3 h-8 w-8 ${stat.color}`} />
@@ -81,7 +84,7 @@ export default function RetailEfficiency() {
               <span className="text-center text-sm font-medium tracking-wider text-gray-500 uppercase">
                 {stat.label}
               </span>
-            </div>
+            </MotionSection>
           ))}
         </div>
       </section>
@@ -91,7 +94,7 @@ export default function RetailEfficiency() {
         className="section-container mx-auto px-6 pb-16"
         data-navbar-theme="light"
       >
-        <div className="mx-auto max-w-3xl text-center">
+        <MotionSection as="div" variant="slideUp" className="mx-auto max-w-3xl text-center">
           <small className="text-green-700">The Challenge</small>
           <h2 className="mb-8 text-4xl font-black text-gray-900">
             Launching a New Retail Concept
@@ -106,7 +109,7 @@ export default function RetailEfficiency() {
             delivering real-time visibility and automation across retail
             operations.
           </p>
-        </div>
+        </MotionSection>
       </section>
 
       {/* Solution Section */}
@@ -114,12 +117,12 @@ export default function RetailEfficiency() {
         <PatternDiagonal />
         <div className="section-container mx-auto px-6">
           <div className="mx-auto max-w-3xl">
-            <h2 className="text-highlight mb-6 text-center">
+            <MotionSection as="h2" variant="slideUp" className="text-highlight mb-6 text-center">
               The Paygos Solution
-            </h2>
+            </MotionSection>
 
             <div className="space-y-8">
-              <div className="flex gap-6">
+              <MotionSection as="div" variant="slideUp" className="flex gap-6">
                 <span className="text-2xl font-black text-teal-500">01.</span>
                 <div>
                   <h4 className="mb-2 text-xl font-bold text-white">
@@ -131,9 +134,9 @@ export default function RetailEfficiency() {
                     across retail operations.
                   </p>
                 </div>
-              </div>
+              </MotionSection>
 
-              <div className="flex gap-6">
+              <MotionSection as="div" variant="slideUp" className="flex gap-6">
                 <span className="text-2xl font-black text-teal-500">02.</span>
                 <div>
                   <h4 className="mb-2 text-xl font-bold text-white">
@@ -145,9 +148,9 @@ export default function RetailEfficiency() {
                     inventory demand planning.
                   </p>
                 </div>
-              </div>
+              </MotionSection>
 
-              <div className="flex gap-6">
+              <MotionSection as="div" variant="slideUp" className="flex gap-6">
                 <span className="text-2xl font-black text-teal-500">03.</span>
                 <div>
                   <h4 className="mb-2 text-xl font-bold text-white">
@@ -159,7 +162,7 @@ export default function RetailEfficiency() {
                     time managing inventory and processing orders.
                   </p>
                 </div>
-              </div>
+              </MotionSection>
             </div>
           </div>
         </div>
@@ -170,7 +173,7 @@ export default function RetailEfficiency() {
         className="section-container mx-auto px-6 py-16"
         data-navbar-theme="light"
       >
-        <div className="mx-auto max-w-3xl text-center">
+        <MotionSection as="div" variant="slideUp" className="mx-auto max-w-3xl text-center">
           <small className="text-green-700">The Impact</small>
           <h2 className="mb-8 text-4xl font-black text-gray-900">
             Measurable Operational Gains
@@ -183,6 +186,8 @@ export default function RetailEfficiency() {
             operate more effectively while supporting the successful rollout of
             its new retail concept.
           </p>
+        </MotionSection>
+        <MotionSection as="div" variant="scaleIn" className="mx-auto max-w-3xl">
           <Image
             src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?q=80&w=2070&auto=format&fit=crop"
             alt="Retail Store Operations"
@@ -190,14 +195,16 @@ export default function RetailEfficiency() {
             height={400}
             className="mx-auto rounded-2xl shadow-lg"
           />
-        </div>
+        </MotionSection>
       </section>
 
       {/* Conclusion Section */}
       <section className="bg-gray-100 py-16" data-navbar-theme="light">
-        <h2 className="mb-8 text-center">Conclusion</h2>
+        <MotionSection as="h2" variant="slideUp" className="mb-8 text-center">
+          Conclusion
+        </MotionSection>
         <div className="section-container mx-auto px-6">
-          <div className="mx-auto max-w-3xl text-center">
+          <MotionSection as="div" variant="fadeIn" className="mx-auto max-w-3xl text-center">
             <p className="text-lg text-gray-700">
               The implementation of Paygos 360 provided the major national
               retail brand with the visibility, automation, and analytics
@@ -206,7 +213,7 @@ export default function RetailEfficiency() {
               inventory and supply chain management, positioning the brand for
               continued retail innovation and growth.
             </p>
-          </div>
+          </MotionSection>
         </div>
       </section>
 

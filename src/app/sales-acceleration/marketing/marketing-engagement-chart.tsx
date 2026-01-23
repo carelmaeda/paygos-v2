@@ -29,7 +29,7 @@ export function MarketingEngagementChart() {
     <div className="overflow-hidden rounded-lg border border-slate-50 bg-white p-6 shadow-xl md:rounded-[4rem] md:p-12">
       <div className="mb-8 flex items-center justify-between text-xs font-black tracking-widest uppercase md:mb-12">
         <span>Campaign Engagement Funnel</span>
-        <Filter className="text-emerald-500" size={20} />
+        <Filter className="text-emerald-600" size={20} />
       </div>
       <ChartContainer
         id="marketing-engagement"
@@ -53,7 +53,7 @@ export function MarketingEngagementChart() {
                 className="rounded-lg bg-slate-950 text-white"
                 formatter={(val, name, entry) => (
                   <div>
-                    <div className="font-black text-teal-400">
+                    <div className="font-black text-emerald-600">
                       {entry.payload.count.toLocaleString()} recipients
                     </div>
                     <div className="text-sm text-slate-300">

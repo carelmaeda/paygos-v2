@@ -1,7 +1,10 @@
+"use client"
+
 import Link from "next/link"
 import Image from "next/image"
 import { ArrowRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import { MotionSection } from "@/components/motion"
 
 const SOLUTIONS = [
   {
@@ -24,12 +27,16 @@ export function SolutionsSection() {
   return (
     <section className="py-16">
       <div className="section-container px-4 md:px-6">
-        <header className="mb-16 flex flex-col items-center gap-2 text-center">
+        <MotionSection
+          as="header"
+          variant="slideUp"
+          className="mb-16 flex flex-col items-center gap-2 text-center"
+        >
           <small className="text-teal-600 uppercase">Sales Acceleration</small>
           <h2 className="mx-auto max-w-3xl text-3xl sm:text-4xl md:text-5xl">
             Tools tailored to your sales process
           </h2>
-        </header>
+        </MotionSection>
 
         <div className="space-y-16 md:space-y-8">
           {SOLUTIONS.map((solution, index) => {
@@ -40,7 +47,9 @@ export function SolutionsSection() {
                 className="grid items-center md:grid-cols-12 md:gap-8"
               >
                 {/* Image */}
-                <div
+                <MotionSection
+                  as="div"
+                  variant={isEven ? "slideInLeft" : "fadeIn"}
                   className={`relative mb-4 aspect-video overflow-hidden rounded-lg md:col-span-6 ${
                     !isEven ? "md:order-last" : ""
                   }`}
@@ -53,10 +62,12 @@ export function SolutionsSection() {
                     priority={index === 0}
                     sizes="(max-width: 768px) 100vw, 33vw"
                   />
-                </div>
+                </MotionSection>
 
                 {/* Text Content */}
-                <div
+                <MotionSection
+                  as="div"
+                  variant="slideUp"
                   className={`flex flex-col items-center gap-2 text-center md:col-span-6 md:items-start md:text-left ${
                     isEven ? "md:pl-4" : "md:pr-4"
                   }`}
@@ -71,7 +82,7 @@ export function SolutionsSection() {
                       Learn More <ArrowRight className="h-4 w-4" />
                     </Link>
                   </Button>
-                </div>
+                </MotionSection>
               </div>
             )
           })}

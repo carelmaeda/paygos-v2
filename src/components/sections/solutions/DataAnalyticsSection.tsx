@@ -1,3 +1,5 @@
+"use client"
+
 import Image from "next/image"
 import {
   Activity,
@@ -8,6 +10,7 @@ import {
   Users,
   Smartphone,
 } from "lucide-react"
+import { MotionSection } from "@/components/motion"
 
 const ANALYTICS_FEATURES = [
   {
@@ -66,19 +69,25 @@ export function DataAnalytics() {
   return (
     <section className="bg-slate-50 py-16">
       <div className="section-container">
-        <header className="mb-16 flex flex-col items-center gap-2 text-center">
+        <MotionSection
+          as="header"
+          variant="slideUp"
+          className="mb-16 flex flex-col items-center gap-2 text-center"
+        >
           <small className="text-teal-600 uppercase">Data & Analytics</small>
           <h2 className="mx-auto max-w-3xl text-3xl sm:text-4xl md:text-5xl">
             Insights that drive decisions
           </h2>
-        </header>
+        </MotionSection>
 
         <div className="grid grid-cols-1 gap-2 md:grid-cols-4 lg:gap-2">
           {ANALYTICS_FEATURES.map((item) => {
             const Icon = item.icon
             return (
-              <article
+              <MotionSection
+                as="article"
                 key={item.slug}
+                variant="scaleIn"
                 className={`group relative flex flex-col justify-end overflow-hidden rounded-lg p-6 transition-all duration-500 hover:shadow-2xl ${item.className}`}
               >
                 {/* Background Image Container */}
@@ -110,7 +119,7 @@ export function DataAnalytics() {
                     {item.subtitle}
                   </p>
                 </div>
-              </article>
+              </MotionSection>
             )
           })}
         </div>

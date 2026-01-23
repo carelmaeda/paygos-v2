@@ -4,6 +4,7 @@ import "@/styles/globals.scss"
 import { Navbar } from "@/components/layout/Navbar"
 import { Footer } from "@/components/layout/Footer"
 import { Toaster } from "@/components/ui/sonner"
+import { MotionProvider } from "@/components/motion"
 
 const inter = Inter({
   variable: "--font-inter",
@@ -61,10 +62,12 @@ export default function RootLayout({
         className={`${inter.variable} ${urbanist.variable} antialiased`}
         suppressHydrationWarning={true}
       >
-        <Navbar />
-        {children}
-        <Footer />
-        <Toaster />
+        <MotionProvider>
+          <Navbar />
+          {children}
+          <Footer />
+          <Toaster />
+        </MotionProvider>
       </body>
     </html>
   )

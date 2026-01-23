@@ -76,10 +76,10 @@ export default function MarketingPage() {
   return (
     <main className="min-h-screen">
       {/* Hero */}
-      <section className="hero-sm bg-cyan-950" data-navbar-theme="dark">
+      <section className="hero-sm bg-emerald-950" data-navbar-theme="dark">
         <PatternDots />
         <div className="text-hero">
-          <small className="text-teal-400">Targeted Marketing Automation</small>
+          <small className="text-emerald-400">Targeted Marketing Automation</small>
           <h1>
             Engage Retailers
             <br />
@@ -103,8 +103,8 @@ export default function MarketingPage() {
         <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4">
           {/* Challenge 1 */}
           <div className="rounded-lg border border-gray-100 bg-white p-5 shadow-lg transition-shadow hover:shadow-xl">
-            <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-lg bg-teal-100">
-              <Megaphone className="h-8 w-8 text-teal-600" />
+            <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-lg bg-emerald-100">
+              <Megaphone className="h-8 w-8 text-emerald-600" />
             </div>
             <h3 className="mb-2 text-gray-900">Generic Blasts</h3>
             <p className="text-gray-600">
@@ -115,8 +115,8 @@ export default function MarketingPage() {
 
           {/* Challenge 2 */}
           <div className="rounded-lg border border-gray-100 bg-white p-5 shadow-lg transition-shadow hover:shadow-xl">
-            <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-lg bg-teal-100">
-              <UserX className="h-8 w-8 text-teal-600" />
+            <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-lg bg-emerald-100">
+              <UserX className="h-8 w-8 text-emerald-600" />
             </div>
             <h3 className="mb-2 text-gray-900">No Segmentation</h3>
             <p className="text-gray-600">
@@ -127,8 +127,8 @@ export default function MarketingPage() {
 
           {/* Challenge 3 */}
           <div className="rounded-lg border border-gray-100 bg-white p-5 shadow-lg transition-shadow hover:shadow-xl">
-            <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-lg bg-teal-100">
-              <Eye className="h-8 w-8 text-teal-600" />
+            <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-lg bg-emerald-100">
+              <Eye className="h-8 w-8 text-emerald-600" />
             </div>
             <h3 className="mb-2 text-gray-900">Tracking Blind Spots</h3>
             <p className="text-gray-600">
@@ -138,8 +138,8 @@ export default function MarketingPage() {
 
           {/* Challenge 4 */}
           <div className="rounded-lg border border-gray-100 bg-white p-5 shadow-lg transition-shadow hover:shadow-xl">
-            <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-lg bg-teal-100">
-              <ClockIcon className="h-8 w-8 text-teal-600" />
+            <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-lg bg-emerald-100">
+              <ClockIcon className="h-8 w-8 text-emerald-600" />
             </div>
             <h3 className="mb-2 text-gray-900">Manual Campaigns</h3>
             <p className="text-gray-600">
@@ -174,7 +174,7 @@ export default function MarketingPage() {
               fill
             />
             <div>
-              <Target size={32} aria-hidden="true" className="text-teal-400" />
+              <Target size={32} aria-hidden="true" className="text-emerald-400" />
               <h3 id="segmented-campaigns" className="md:text-3xl">
                 Segmented Campaigns
               </h3>
@@ -201,7 +201,7 @@ export default function MarketingPage() {
               fill
             />
             <div>
-              <MessageSquare size={32} aria-hidden="true" className="text-teal-400" />
+              <MessageSquare size={32} aria-hidden="true" className="text-emerald-400" />
               <h3 id="multi-channel">Multi-Channel</h3>
               <p id="multi-channel-desc">
                 Email, SMS, in-app notifications—choose your channel per
@@ -223,7 +223,7 @@ export default function MarketingPage() {
               fill
             />
             <div>
-              <Mail size={32} aria-hidden="true" className="text-teal-400" />
+              <Mail size={32} aria-hidden="true" className="text-emerald-400" />
               <h3 id="campaign-builder">Easy Builder</h3>
               <p id="campaign-builder-desc">
                 Build beautiful campaigns in minutes with drag-and-drop
@@ -245,7 +245,7 @@ export default function MarketingPage() {
               fill
             />
             <div>
-              <BarChart3 size={32} aria-hidden="true" className="text-teal-400" />
+              <BarChart3 size={32} aria-hidden="true" className="text-emerald-400" />
               <h3 id="engagement-analytics">Track Engagement</h3>
               <p id="engagement-analytics-desc">
                 Track opens, clicks, and conversion by retailer segment in
@@ -267,7 +267,7 @@ export default function MarketingPage() {
               fill
             />
             <div>
-              <Percent size={32} aria-hidden="true" className="text-teal-400" />
+              <Percent size={32} aria-hidden="true" className="text-emerald-400" />
               <h3 id="promo-codes">Promo Codes</h3>
               <p id="promo-codes-desc">
                 Embed unique codes tied to rebates or ordering incentives.
@@ -288,7 +288,7 @@ export default function MarketingPage() {
               fill
             />
             <div>
-              <Zap size={32} aria-hidden="true" className="text-teal-400" />
+              <Zap size={32} aria-hidden="true" className="text-emerald-400" />
               <h3 id="automated-triggers" className="md:text-3xl">
                 Automated Triggers
               </h3>
@@ -317,10 +317,10 @@ export default function MarketingPage() {
             </h2>
             <div className="space-y-10">
               <div className="group flex items-start gap-8">
-                <div className="shrink-0 rounded-lg bg-teal-50 p-5 transition-colors duration-300 group-hover:bg-teal-500">
+                <div className="shrink-0 rounded-lg bg-emerald-50 p-5 transition-colors duration-300 group-hover:bg-emerald-500">
                   <BarChart3
                     size={28}
-                    className="text-teal-600 group-hover:text-white"
+                    className="text-emerald-600 group-hover:text-white"
                   />
                 </div>
                 <div>
@@ -334,10 +334,10 @@ export default function MarketingPage() {
                 </div>
               </div>
               <div className="group flex items-start gap-8">
-                <div className="shrink-0 rounded-lg bg-teal-50 p-5 transition-colors duration-300 group-hover:bg-teal-500">
+                <div className="shrink-0 rounded-lg bg-emerald-50 p-5 transition-colors duration-300 group-hover:bg-emerald-500">
                   <TrendingUp
                     size={28}
-                    className="text-teal-600 group-hover:text-white"
+                    className="text-emerald-600 group-hover:text-white"
                   />
                 </div>
                 <div>
@@ -367,7 +367,7 @@ export default function MarketingPage() {
             <div>
               <h2 id="roi-heading" className="pb-8 text-4xl md:text-8xl">
                 Proven Impact <br />
-                <span className="text-teal-500">
+                <span className="text-emerald-500">
                   Where Marketing Drives Action
                 </span>
               </h2>
@@ -376,7 +376,7 @@ export default function MarketingPage() {
                 <li className="flex items-start gap-4">
                   <TrendingUp
                     aria-hidden="true"
-                    className="mt-1 text-teal-500"
+                    className="mt-1 text-emerald-500"
                   />
                   <p className="text-lg text-slate-300">
                     Achieve{" "}
@@ -388,7 +388,7 @@ export default function MarketingPage() {
                 <li className="flex items-start gap-4">
                   <CheckCircle2
                     aria-hidden="true"
-                    className="mt-1 text-teal-500"
+                    className="mt-1 text-emerald-500"
                   />
                   <p className="text-lg text-slate-300">
                     Increase campaign engagement by{" "}
@@ -413,7 +413,7 @@ export default function MarketingPage() {
             >
               <div className="rounded-[2.5rem] border border-white/10 bg-white/5 p-12 text-center backdrop-blur-md">
                 <Calculator
-                  className="mx-auto mb-6 text-teal-500"
+                  className="mx-auto mb-6 text-emerald-500"
                   size={48}
                   aria-hidden="true"
                 />
@@ -424,7 +424,7 @@ export default function MarketingPage() {
                 >
                   3x
                 </div>
-                <p className="text-sm font-bold tracking-[0.2em] text-teal-400 uppercase">
+                <p className="text-sm font-bold tracking-[0.2em] text-emerald-400 uppercase">
                   Better Engagement
                 </p>
 

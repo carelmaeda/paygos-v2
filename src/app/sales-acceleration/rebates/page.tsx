@@ -75,10 +75,10 @@ export default function PaygosRebatesPage() {
   return (
     <main className="min-h-screen">
       {/* Hero */}
-      <section className="hero-sm bg-teal-950" data-navbar-theme="dark">
+      <section className="hero-sm bg-sky-950" data-navbar-theme="dark">
         <PatternDots />
         <div className="text-hero">
-          <small className="text-teal-400">Automated Rebate Management</small>
+          <small className="text-sky-400">Automated Rebate Management</small>
           <h1>
             Rebates That
             <br />
@@ -103,8 +103,8 @@ export default function PaygosRebatesPage() {
         <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4">
           {/* Challenge 1 */}
           <div className="rounded-lg border border-gray-100 bg-white p-5 shadow-lg transition-shadow hover:shadow-xl">
-            <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-lg bg-teal-100">
-              <FileSpreadsheet className="h-8 w-8 text-teal-600" />
+            <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-lg bg-sky-100">
+              <FileSpreadsheet className="h-8 w-8 text-sky-600" />
             </div>
             <h3 className="mb-2 text-gray-900">Spreadsheet Chaos</h3>
             <p className="text-gray-600">
@@ -115,8 +115,8 @@ export default function PaygosRebatesPage() {
 
           {/* Challenge 2 */}
           <div className="rounded-lg border border-gray-100 bg-white p-5 shadow-lg transition-shadow hover:shadow-xl">
-            <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-lg bg-teal-100">
-              <AlertCircle className="h-8 w-8 text-teal-600" />
+            <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-lg bg-sky-100">
+              <AlertCircle className="h-8 w-8 text-sky-600" />
             </div>
             <h3 className="mb-2 text-gray-900">Claim Disputes</h3>
             <p className="text-gray-600">
@@ -127,8 +127,8 @@ export default function PaygosRebatesPage() {
 
           {/* Challenge 3 */}
           <div className="rounded-lg border border-gray-100 bg-white p-5 shadow-lg transition-shadow hover:shadow-xl">
-            <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-lg bg-teal-100">
-              <Clock className="h-8 w-8 text-teal-600" />
+            <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-lg bg-sky-100">
+              <Clock className="h-8 w-8 text-sky-600" />
             </div>
             <h3 className="mb-2 text-gray-900">Delayed Payouts</h3>
             <p className="text-gray-600">
@@ -138,8 +138,8 @@ export default function PaygosRebatesPage() {
 
           {/* Challenge 4 */}
           <div className="rounded-lg border border-gray-100 bg-white p-5 shadow-lg transition-shadow hover:shadow-xl">
-            <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-lg bg-teal-100">
-              <TrendingDown className="h-8 w-8 text-teal-600" />
+            <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-lg bg-sky-100">
+              <TrendingDown className="h-8 w-8 text-sky-600" />
             </div>
             <h3 className="mb-2 text-gray-900">Lost Opportunities</h3>
             <p className="text-gray-600">
@@ -178,7 +178,7 @@ export default function PaygosRebatesPage() {
               <Sparkles
                 size={32}
                 aria-hidden="true"
-                className="text-teal-400"
+                className="text-sky-400"
               />
               <h3 id="automated-tracking">Automated Tracking</h3>
               <p id="automated-tracking-desc">
@@ -201,7 +201,7 @@ export default function PaygosRebatesPage() {
               fill
             />
             <div>
-              <Target size={32} aria-hidden="true" className="text-teal-400" />
+              <Target size={32} aria-hidden="true" className="text-sky-400" />
               <h3 id="program-management" className="md:text-3xl">
                 Multi-Tier Program Management
               </h3>
@@ -231,7 +231,7 @@ export default function PaygosRebatesPage() {
               <BarChart3
                 size={32}
                 aria-hidden="true"
-                className="text-teal-400"
+                className="text-sky-400"
               />
               <h3 id="real-time-visibility" className="md:text-2xl">
                 Real-Time Visibility
@@ -259,7 +259,7 @@ export default function PaygosRebatesPage() {
               <CheckCircle2
                 size={32}
                 aria-hidden="true"
-                className="text-teal-400"
+                className="text-sky-400"
               />
               <h3 id="claim-validation" className="md:text-2xl">
                 Automated Claim Validation
@@ -284,7 +284,7 @@ export default function PaygosRebatesPage() {
               fill
             />
             <div>
-              <Users size={32} aria-hidden="true" className="text-teal-400" />
+              <Users size={32} aria-hidden="true" className="text-sky-400" />
               <h3 id="partner-engagement">Partner Engagement</h3>
               <p id="partner-engagement-desc">
                 Self-service portals let retailers track earnings and submit
@@ -309,7 +309,7 @@ export default function PaygosRebatesPage() {
               <DollarSign
                 size={32}
                 aria-hidden="true"
-                className="text-teal-400"
+                className="text-sky-400"
               />
               <h3 id="payout-reconciliation" className="md:text-3xl">
                 Seamless Payout & Reconciliation
@@ -339,10 +339,10 @@ export default function PaygosRebatesPage() {
             </h2>
             <div className="space-y-10">
               <div className="group flex items-start gap-8">
-                <div className="shrink-0 rounded-lg bg-teal-50 p-5 transition-colors duration-300 group-hover:bg-teal-500">
+                <div className="shrink-0 rounded-lg bg-sky-50 p-5 transition-colors duration-300 group-hover:bg-sky-500">
                   <TrendingUp
                     size={28}
-                    className="text-teal-600 group-hover:text-white"
+                    className="text-sky-600 group-hover:text-white"
                   />
                 </div>
                 <div>
@@ -356,10 +356,10 @@ export default function PaygosRebatesPage() {
                 </div>
               </div>
               <div className="group flex items-start gap-8">
-                <div className="shrink-0 rounded-lg bg-teal-50 p-5 transition-colors duration-300 group-hover:bg-teal-500">
+                <div className="shrink-0 rounded-lg bg-sky-50 p-5 transition-colors duration-300 group-hover:bg-sky-500">
                   <Target
                     size={28}
-                    className="text-teal-600 group-hover:text-white"
+                    className="text-sky-600 group-hover:text-white"
                   />
                 </div>
                 <div>
@@ -389,7 +389,7 @@ export default function PaygosRebatesPage() {
             <div>
               <h2 id="roi-heading" className="pb-8 text-4xl md:text-8xl">
                 Proven Impact <br />
-                <span className="text-teal-500">
+                <span className="text-sky-500">
                   Where Rebates Drive Real Growth
                 </span>
               </h2>
@@ -398,7 +398,7 @@ export default function PaygosRebatesPage() {
                 <li className="flex items-start gap-4">
                   <TrendingUp
                     aria-hidden="true"
-                    className="mt-1 text-teal-500"
+                    className="mt-1 text-sky-500"
                   />
                   <p className="text-lg text-slate-300">
                     Customers see{" "}
@@ -412,7 +412,7 @@ export default function PaygosRebatesPage() {
                 <li className="flex items-start gap-4">
                   <CheckCircle2
                     aria-hidden="true"
-                    className="mt-1 text-teal-500"
+                    className="mt-1 text-sky-500"
                   />
                   <p className="text-lg text-slate-300">
                     Retailers increase incremental purchases by{" "}
@@ -422,7 +422,7 @@ export default function PaygosRebatesPage() {
                 </li>
 
                 <li className="flex items-start gap-4">
-                  <Rocket aria-hidden="true" className="mt-1 text-teal-500" />
+                  <Rocket aria-hidden="true" className="mt-1 text-sky-500" />
                   <p className="text-lg text-slate-300">
                     Reduce admin workload by{" "}
                     <strong className="text-white">up to 70%</strong>—freeing
@@ -446,7 +446,7 @@ export default function PaygosRebatesPage() {
             >
               <div className="rounded-[2.5rem] border border-white/10 bg-white/5 p-12 text-center backdrop-blur-md">
                 <Calculator
-                  className="mx-auto mb-6 text-teal-500"
+                  className="mx-auto mb-6 text-sky-500"
                   size={48}
                   aria-hidden="true"
                 />
@@ -457,7 +457,7 @@ export default function PaygosRebatesPage() {
                 >
                   30%
                 </div>
-                <p className="text-sm font-bold tracking-[0.2em] text-teal-400 uppercase">
+                <p className="text-sm font-bold tracking-[0.2em] text-sky-400 uppercase">
                   Faster Processing
                 </p>
 

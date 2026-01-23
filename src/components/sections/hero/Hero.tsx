@@ -1,7 +1,10 @@
+"use client"
+
 import Image from "next/image"
 import { PatternHexagon } from "@/components/ui/patterns"
 import { BookCallButton } from "../cta/BookCallButton"
 import { CustomersLogosCarousel } from "../customers/CustomersLogosCarousel"
+import { MotionSection } from "@/components/motion"
 
 export function Hero() {
   return (
@@ -25,28 +28,52 @@ export function Hero() {
                   </div>
                 </div>
 
-                <h1>
-                  Sell More. <br />
-                  <span className="bg-gradient-to-r from-emerald-400 to-cyan-400 bg-clip-text text-transparent">
-                    Spend Less.
-                  </span>
-                </h1>
+                <MotionSection
+                  as="div"
+                  variant="slideUp"
+                  viewport={{ once: true }}
+                >
+                  <h1>
+                    Sell More. <br />
+                    <span className="bg-gradient-to-r from-emerald-400 to-cyan-400 bg-clip-text text-transparent">
+                      Spend Less.
+                    </span>
+                  </h1>
+                </MotionSection>
 
-                <p className="mt-6 max-w-[450px]">
+                <MotionSection
+                  as="p"
+                  variant="slideUp"
+                  delay={0.1}
+                  viewport={{ once: true }}
+                  className="mt-6 max-w-[450px]"
+                >
                   Paygos is a customizable sales acceleration platform designed
                   to drive incremental revenue, automate manual processes and
                   surface actionable sales data & analytics.
-                </p>
+                </MotionSection>
 
-                <div className="mt-8 flex justify-center lg:justify-start">
+                <MotionSection
+                  as="div"
+                  variant="slideUp"
+                  delay={0.2}
+                  viewport={{ once: true }}
+                  className="mt-8 flex justify-center lg:justify-start"
+                >
                   <BookCallButton />
-                </div>
+                </MotionSection>
               </article>
             </div>
           </div>
 
           {/* DESKTOP IMAGE */}
-          <div className="pointer-events-none absolute top-8 right-0 hidden lg:block">
+          <MotionSection
+            as="div"
+            variant="fadeIn"
+            delay={0.3}
+            viewport={{ once: true }}
+            className="pointer-events-none absolute top-8 right-0 hidden lg:block"
+          >
             <div className="w-[500px] xl:w-[570px]">
               <Image
                 src="/paygos-hero.svg"
@@ -57,11 +84,17 @@ export function Hero() {
                 className="h-auto w-full max-w-none"
               />
             </div>
-          </div>
+          </MotionSection>
         </div>
 
         {/* MOBILE IMAGE */}
-        <div className="relative mt-10 px-4 lg:hidden">
+        <MotionSection
+          as="div"
+          variant="fadeIn"
+          delay={0.2}
+          viewport={{ once: true }}
+          className="relative mt-10 px-4 lg:hidden"
+        >
           <Image
             src="/paygos-hero.svg"
             alt="Paygos product UI"
@@ -70,12 +103,18 @@ export function Hero() {
             className="mx-auto w-80"
             priority
           />
-        </div>
+        </MotionSection>
 
         {/* LOGOS */}
-        <div className="my-8">
+        <MotionSection
+          as="div"
+          variant="fadeIn"
+          delay={0.4}
+          viewport={{ once: true }}
+          className="my-8"
+        >
           <CustomersLogosCarousel />
-        </div>
+        </MotionSection>
       </div>
     </section>
   )

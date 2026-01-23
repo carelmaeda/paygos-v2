@@ -38,7 +38,7 @@ export function RebatesPerformanceChart() {
     <div className="overflow-hidden rounded-lg border border-slate-50 bg-white p-6 shadow-xl md:rounded-[4rem] md:p-12">
       <div className="mb-8 flex items-center justify-between text-xs font-black tracking-widest uppercase md:mb-12">
         <span>Rebate Program Performance</span>
-        <TrendingUp className="text-emerald-500" size={20} />
+        <TrendingUp className="text-sky-600" size={20} />
       </div>
       <ChartContainer
         id="rebates-performance"
@@ -66,7 +66,7 @@ export function RebatesPerformanceChart() {
               <ChartTooltipContent
                 className="rounded-lg bg-slate-950 text-white"
                 formatter={(val) => (
-                  <span className="font-black text-teal-400">
+                  <span className="font-black text-sky-600">
                     ${Number(val).toLocaleString()}
                   </span>
                 )}

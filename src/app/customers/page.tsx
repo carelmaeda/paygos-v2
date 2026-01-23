@@ -1,4 +1,5 @@
-import type { Metadata } from "next"
+"use client"
+
 import Link from "next/link"
 import Image from "next/image"
 import { ArrowRight, PawPrint } from "lucide-react"
@@ -7,52 +8,7 @@ import { PatternDiagonal } from "@/components/ui/patterns"
 import { Badge } from "@/components/ui/badge"
 import { CustomerStoriesCarousel } from "@/components/sections/customers/CustomerStoriesCarousel"
 import { CTA } from "@/components/sections/cta/CTA"
-
-export const metadata: Metadata = {
-  title: "Customer Stories | Paygos",
-  description:
-    "Discover how businesses across finance, food & beverage, healthcare, manufacturing, retail, and technology sectors achieve success with Paygos sales automation platform.",
-  keywords: [
-    "customer success stories",
-    "case studies",
-    "client testimonials",
-    "success stories",
-    "Paygos customers",
-    "sales automation results",
-    "customer wins",
-  ],
-  openGraph: {
-    title: "Customer Stories | Paygos",
-    description:
-      "Discover how businesses across finance, food & beverage, healthcare, manufacturing, retail, and technology sectors achieve success with Paygos sales automation platform.",
-    url: "https://www.paygos.ca/customers",
-    siteName: "Paygos",
-    images: [
-      {
-        url: "/paygos/logo-full.webp",
-        width: 1200,
-        height: 630,
-        alt: "Paygos Customer Stories",
-      },
-    ],
-    locale: "en_US",
-    type: "website",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Customer Stories | Paygos",
-    description:
-      "Discover how businesses across finance, food & beverage, healthcare, manufacturing, retail, and technology sectors achieve success with Paygos sales automation platform.",
-    images: ["/paygos/logo-full.webp"],
-  },
-  robots: {
-    index: true,
-    follow: true,
-  },
-  alternates: {
-    canonical: "https://www.paygos.ca/customers",
-  },
-}
+import { MotionSection } from "@/components/motion"
 
 export default function CustomersPage() {
   return (
@@ -60,7 +16,12 @@ export default function CustomersPage() {
       {/* Hero */}
       <section className="hero-sm bg-teal-950" data-navbar-theme="dark">
         <PatternDiagonal />
-        <div className="text-hero pt-24">
+        <MotionSection
+          as="div"
+          variant="slideUp"
+          className="text-hero pt-24"
+          viewport={{ once: true }}
+        >
           <small className="text-teal-400">Real Results • Proven Impact</small>
           <h1>
             Customer {""}
@@ -71,61 +32,64 @@ export default function CustomersPage() {
             empower their teams, and drive measurable business growth through
             real-world success stories.
           </p>
-        </div>
+        </MotionSection>
         {/* LOGOS */}
-        <div className="pt-8 opacity-60">
+        <MotionSection
+          as="div"
+          variant="fadeIn"
+          className="pt-8 opacity-60"
+          viewport={{ once: true }}
+        >
           <CustomersLogosCarousel />
-        </div>
+        </MotionSection>
       </section>
 
       {/* Featured Story */}
-      <Link
-        href="/customers/vet-growth"
-        className="group mx-4 block"
-        data-navbar-theme="light"
-      >
-        <section className="section-container relative my-8 min-h-[65vh] overflow-hidden rounded-lg transition-transform duration-300 group-hover:shadow-xl">
-          <Image
-            src="https://images.unsplash.com/photo-1655210913315-e8147faf7600"
-            alt="Pet Food"
-            fill
-            className="object-cover transition-transform duration-500 group-hover:scale-105"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/20" />
+      <MotionSection as="div" variant="scaleIn" data-navbar-theme="light">
+        <Link href="/customers/vet-growth" className="group mx-4 block">
+          <section className="section-container relative my-8 min-h-[65vh] overflow-hidden rounded-lg transition-transform duration-300 group-hover:shadow-xl">
+            <Image
+              src="https://images.unsplash.com/photo-1655210913315-e8147faf7600"
+              alt="Pet Food"
+              fill
+              className="object-cover transition-transform duration-500 group-hover:scale-105"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/20" />
 
-          <div className="absolute inset-0 flex items-end">
-            <div className="section-container space-y-4 pb-16 md:pb-24">
-              <Badge className="rounded-full bg-white/10 px-3 py-1 font-semibold text-white ring-1 ring-white/20 backdrop-blur-md">
-                <PawPrint size={32} />
-                Veterinary
-              </Badge>
+            <div className="absolute inset-0 flex items-end">
+              <div className="section-container space-y-4 pb-16 md:pb-24">
+                <Badge className="rounded-full bg-white/10 px-3 py-1 font-semibold text-white ring-1 ring-white/20 backdrop-blur-md">
+                  <PawPrint size={32} />
+                  Veterinary
+                </Badge>
 
-              <h2 className="font-black text-white">
-                50% Reduction in Order Processing Time
-              </h2>
+                <h2 className="font-black text-white">
+                  50% Reduction in Order Processing Time
+                </h2>
 
-              <p className="mb-8 max-w-md text-gray-200">
-                How this Veterinary Industry leader streamlined their operations
-                with field sales automation, dramatically improving efficiency.
-              </p>
+                <p className="mb-8 max-w-md text-gray-200">
+                  How this Veterinary Industry leader streamlined their operations
+                  with field sales automation, dramatically improving efficiency.
+                </p>
 
-              <div className="inline-flex items-center gap-2 font-medium text-white transition-colors group-hover:underline">
-                Learn more
-                <ArrowRight className="h-4 w-4" />
+                <div className="inline-flex items-center gap-2 font-medium text-white transition-colors group-hover:underline">
+                  Learn more
+                  <ArrowRight className="h-4 w-4" />
+                </div>
               </div>
             </div>
-          </div>
-        </section>
-      </Link>
+          </section>
+        </Link>
+      </MotionSection>
 
       <section className="py-8">
-        <div className="text-center">
+        <MotionSection as="div" variant="slideUp" className="text-center">
           <h2 className="mb-3 text-3xl font-bold md:text-4xl">All Stories</h2>
           <p>
             Built in partnership with PAYGOS, told through real customer
             stories.
           </p>
-        </div>
+        </MotionSection>
         <CustomerStoriesCarousel />
       </section>
 

@@ -78,10 +78,10 @@ export default function TrainingPage() {
   return (
     <main>
       {/* Hero Section */}
-      <section className="hero-sm bg-cyan-950" data-navbar-theme="dark">
+      <section className="hero-sm bg-indigo-950" data-navbar-theme="dark">
         <PatternDots />
         <div className="text-hero">
-          <small className="text-teal-400">Certification Management</small>
+          <small className="text-indigo-400">Certification Management</small>
           <h1>
             Train Smarter
             <br />
@@ -104,8 +104,8 @@ export default function TrainingPage() {
         <h2 className="mb-6 text-center">Common Training Challenges</h2>
         <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4">
           <div className="rounded-lg border border-gray-100 bg-white p-5 shadow-lg transition-shadow hover:shadow-xl">
-            <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-lg bg-teal-100">
-              <UserX className="h-8 w-8 text-teal-600" />
+            <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-lg bg-indigo-100">
+              <UserX className="h-8 w-8 text-indigo-600" />
             </div>
             <h3 className="mb-2 text-gray-900">Low Completion</h3>
             <p className="text-gray-600">
@@ -115,8 +115,8 @@ export default function TrainingPage() {
           </div>
 
           <div className="rounded-lg border border-gray-100 bg-white p-5 shadow-lg transition-shadow hover:shadow-xl">
-            <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-lg bg-teal-100">
-              <AlertCircle className="h-8 w-8 text-teal-600" />
+            <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-lg bg-indigo-100">
+              <AlertCircle className="h-8 w-8 text-indigo-600" />
             </div>
             <h3 className="mb-2 text-gray-900">No Verification</h3>
             <p className="text-gray-600">
@@ -126,8 +126,8 @@ export default function TrainingPage() {
           </div>
 
           <div className="rounded-lg border border-gray-100 bg-white p-5 shadow-lg transition-shadow hover:shadow-xl">
-            <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-lg bg-teal-100">
-              <FileText className="h-8 w-8 text-teal-600" />
+            <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-lg bg-indigo-100">
+              <FileText className="h-8 w-8 text-indigo-600" />
             </div>
             <h3 className="mb-2 text-gray-900">Static Content</h3>
             <p className="text-gray-600">
@@ -137,8 +137,8 @@ export default function TrainingPage() {
           </div>
 
           <div className="rounded-lg border border-gray-100 bg-white p-5 shadow-lg transition-shadow hover:shadow-xl">
-            <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-lg bg-teal-100">
-              <ClipboardList className="h-8 w-8 text-teal-600" />
+            <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-lg bg-indigo-100">
+              <ClipboardList className="h-8 w-8 text-indigo-600" />
             </div>
             <h3 className="mb-2 text-gray-900">Manual Tracking</h3>
             <p className="text-gray-600">
@@ -170,7 +170,7 @@ export default function TrainingPage() {
               className="object-cover"
             />
             <div>
-              <Video size={32} aria-hidden="true" className="text-teal-400" />
+              <Video size={32} aria-hidden="true" className="text-indigo-400" />
               <h3 className="md:text-3xl">Interactive Modules</h3>
               <p className="md:max-w-lg md:text-lg">
                 Video, quizzes, and interactive scenarios keep learners engaged
@@ -188,7 +188,7 @@ export default function TrainingPage() {
               className="object-cover"
             />
             <div>
-              <Award size={32} aria-hidden="true" className="text-teal-400" />
+              <Award size={32} aria-hidden="true" className="text-indigo-400" />
               <h3>Certification Tracking</h3>
               <p>
                 Issue digital certificates, track renewals, and prove compliance
@@ -206,7 +206,7 @@ export default function TrainingPage() {
               className="object-cover"
             />
             <div>
-              <Smartphone size={32} aria-hidden="true" className="text-teal-400" />
+              <Smartphone size={32} aria-hidden="true" className="text-indigo-400" />
               <h3>Mobile Learning</h3>
               <p>
                 Train on-the-go with mobile-optimized content. Complete modules
@@ -224,7 +224,7 @@ export default function TrainingPage() {
               className="object-cover"
             />
             <div>
-              <Trophy size={32} aria-hidden="true" className="text-teal-400" />
+              <Trophy size={32} aria-hidden="true" className="text-indigo-400" />
               <h3>Gamification & Rewards</h3>
               <p>
                 Award points, badges, and incentive payments based on
@@ -242,7 +242,7 @@ export default function TrainingPage() {
               className="object-cover"
             />
             <div>
-              <BarChart3 size={32} aria-hidden="true" className="text-teal-400" />
+              <BarChart3 size={32} aria-hidden="true" className="text-indigo-400" />
               <h3>Manager Dashboards</h3>
               <p>
                 See progress by store, region, or individual. Identify gaps and
@@ -260,7 +260,7 @@ export default function TrainingPage() {
               className="object-cover"
             />
             <div>
-              <Upload size={32} aria-hidden="true" className="text-teal-400" />
+              <Upload size={32} aria-hidden="true" className="text-indigo-400" />
               <h3 className="md:text-3xl">Content Builder</h3>
               <p className="md:max-w-lg md:text-lg">
                 Upload videos, PDFs, and quizzes with drag-and-drop simplicity.
@@ -284,10 +284,10 @@ export default function TrainingPage() {
             </h2>
             <div className="space-y-10">
               <div className="group flex items-start gap-8">
-                <div className="shrink-0 rounded-lg bg-teal-50 p-5 transition-colors duration-300 group-hover:bg-teal-500">
+                <div className="shrink-0 rounded-lg bg-indigo-50 p-5 transition-colors duration-300 group-hover:bg-indigo-500">
                   <CheckCircle2
                     size={28}
-                    className="text-teal-600 group-hover:text-white"
+                    className="text-indigo-600 group-hover:text-white"
                   />
                 </div>
                 <div>
@@ -301,10 +301,10 @@ export default function TrainingPage() {
                 </div>
               </div>
               <div className="group flex items-start gap-8">
-                <div className="shrink-0 rounded-lg bg-teal-50 p-5 transition-colors duration-300 group-hover:bg-teal-500">
+                <div className="shrink-0 rounded-lg bg-indigo-50 p-5 transition-colors duration-300 group-hover:bg-indigo-500">
                   <Users
                     size={28}
-                    className="text-teal-600 group-hover:text-white"
+                    className="text-indigo-600 group-hover:text-white"
                   />
                 </div>
                 <div>
@@ -334,7 +334,7 @@ export default function TrainingPage() {
             <div>
               <h2 id="roi-heading" className="pb-8 text-4xl md:text-8xl">
                 Proven Impact <br />
-                <span className="text-teal-500">
+                <span className="text-indigo-500">
                   Where Training Drives Loyalty
                 </span>
               </h2>
@@ -343,7 +343,7 @@ export default function TrainingPage() {
                 <li className="flex items-start gap-4">
                   <TrendingUp
                     aria-hidden="true"
-                    className="mt-1 text-teal-500"
+                    className="mt-1 text-indigo-500"
                   />
                   <p className="text-lg text-slate-300">
                     <strong className="text-white">75% completion rate</strong>{" "}
@@ -353,7 +353,7 @@ export default function TrainingPage() {
                 <li className="flex items-start gap-4">
                   <CheckCircle2
                     aria-hidden="true"
-                    className="mt-1 text-teal-500"
+                    className="mt-1 text-indigo-500"
                   />
                   <p className="text-lg text-slate-300">
                     <strong className="text-white">
@@ -379,7 +379,7 @@ export default function TrainingPage() {
             >
               <div className="rounded-[2.5rem] border border-white/10 bg-white/5 p-12 text-center backdrop-blur-md">
                 <Calculator
-                  className="mx-auto mb-6 text-teal-500"
+                  className="mx-auto mb-6 text-indigo-500"
                   size={48}
                   aria-hidden="true"
                 />
@@ -390,7 +390,7 @@ export default function TrainingPage() {
                 >
                   75%
                 </div>
-                <p className="text-sm font-bold tracking-[0.2em] text-teal-400 uppercase">
+                <p className="text-sm font-bold tracking-[0.2em] text-indigo-400 uppercase">
                   Completion Rate
                 </p>
 

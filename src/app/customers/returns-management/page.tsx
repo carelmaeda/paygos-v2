@@ -1,15 +1,11 @@
-import type { Metadata } from "next"
+"use client"
+
 import Image from "next/image"
 import { Users, ClipboardList, Clock } from "lucide-react"
 import { Breadcrumbs } from "@/components/layout/Breadcrumbs"
 import { CTA } from "@/components/sections/cta/CTA"
 import { PatternDiagonal, PatternDots } from "@/components/ui/patterns"
-
-export const metadata: Metadata = {
-  title: "Returns Management Case Study | Paygos",
-  description:
-    "Discover how a major CPG brand achieved 50% decrease in support staff and 20% reduction in administrative tasks through Paygos returns management.",
-}
+import { MotionSection } from "@/components/motion"
 
 export default function ReturnsManagement() {
   return (
@@ -17,7 +13,12 @@ export default function ReturnsManagement() {
       {/* Hero */}
       <section className="hero-sm bg-cyan-950" data-navbar-theme="dark">
         <PatternDots />
-        <div className="text-hero">
+        <MotionSection
+          as="div"
+          variant="slideUp"
+          className="text-hero"
+          viewport={{ once: true }}
+        >
           <small className="text-teal-400">
             Returns Management • Automation • Compliance
           </small>
@@ -25,7 +26,7 @@ export default function ReturnsManagement() {
             Returns {""}
             <span className="text-highlight">Management</span>
           </h1>
-        </div>
+        </MotionSection>
       </section>
 
       <Breadcrumbs />
@@ -56,8 +57,10 @@ export default function ReturnsManagement() {
               color: "text-teal-600",
             },
           ].map((stat, i) => (
-            <div
+            <MotionSection
+              as="div"
               key={i}
+              variant="scaleIn"
               className="flex flex-col items-center justify-center rounded-lg border border-gray-100 bg-white p-8 shadow-sm transition hover:shadow-md"
             >
               <stat.icon className={`mb-3 h-8 w-8 ${stat.color}`} />
@@ -67,7 +70,7 @@ export default function ReturnsManagement() {
               <span className="text-sm font-medium tracking-wider text-gray-500 uppercase">
                 {stat.label}
               </span>
-            </div>
+            </MotionSection>
           ))}
         </div>
       </section>
@@ -77,7 +80,7 @@ export default function ReturnsManagement() {
         className="section-container mx-auto px-6 pb-16"
         data-navbar-theme="light"
       >
-        <div className="mx-auto max-w-3xl text-center">
+        <MotionSection as="div" variant="slideUp" className="mx-auto max-w-3xl text-center">
           <small className="text-green-700">The Challenge</small>
           <h2 className="mb-8 text-4xl font-black text-gray-900">
             Managing Returns at Scale
@@ -91,7 +94,7 @@ export default function ReturnsManagement() {
             compliance with regulatory and corporate standards added another
             layer of complexity to the returns management process.
           </p>
-        </div>
+        </MotionSection>
       </section>
 
       {/* Solution Section */}
@@ -99,12 +102,12 @@ export default function ReturnsManagement() {
         <PatternDiagonal />
         <div className="section-container mx-auto px-6">
           <div className="mx-auto max-w-3xl">
-            <h2 className="text-highlight mb-6 text-center">
+            <MotionSection as="h2" variant="slideUp" className="text-highlight mb-6 text-center">
               The Paygos Solution
-            </h2>
+            </MotionSection>
 
             <div className="space-y-8">
-              <div className="flex gap-6">
+              <MotionSection as="div" variant="slideUp" className="flex gap-6">
                 <span className="text-2xl font-black text-teal-500">01.</span>
                 <div>
                   <h4 className="mb-2 text-xl font-bold text-white">
@@ -116,9 +119,9 @@ export default function ReturnsManagement() {
                     transporters, warehouses, and disposal partners.
                   </p>
                 </div>
-              </div>
+              </MotionSection>
 
-              <div className="flex gap-6">
+              <MotionSection as="div" variant="slideUp" className="flex gap-6">
                 <span className="text-2xl font-black text-teal-500">02.</span>
                 <div>
                   <h4 className="mb-2 text-xl font-bold text-white">
@@ -130,9 +133,9 @@ export default function ReturnsManagement() {
                     for accurate returns processing.
                   </p>
                 </div>
-              </div>
+              </MotionSection>
 
-              <div className="flex gap-6">
+              <MotionSection as="div" variant="slideUp" className="flex gap-6">
                 <span className="text-2xl font-black text-teal-500">03.</span>
                 <div>
                   <h4 className="mb-2 text-xl font-bold text-white">
@@ -144,7 +147,7 @@ export default function ReturnsManagement() {
                     returns management process.
                   </p>
                 </div>
-              </div>
+              </MotionSection>
             </div>
           </div>
         </div>
@@ -155,7 +158,7 @@ export default function ReturnsManagement() {
         className="section-container mx-auto px-6 py-16"
         data-navbar-theme="light"
       >
-        <div className="mx-auto max-w-3xl text-center">
+        <MotionSection as="div" variant="slideUp" className="mx-auto max-w-3xl text-center">
           <small className="text-green-700">The Impact</small>
           <h2 className="mb-8 text-4xl font-black text-gray-900">
             Operational Excellence Achieved
@@ -169,6 +172,8 @@ export default function ReturnsManagement() {
             the brand gained valuable insights into customer behavior, return
             patterns, and product quality issues.
           </p>
+        </MotionSection>
+        <MotionSection as="div" variant="scaleIn" className="mx-auto max-w-3xl">
           <Image
             src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=2070&auto=format&fit=crop"
             alt="Returns Management Analytics"
@@ -176,14 +181,16 @@ export default function ReturnsManagement() {
             height={400}
             className="mx-auto rounded-2xl shadow-lg"
           />
-        </div>
+        </MotionSection>
       </section>
 
       {/* Conclusion Section */}
       <section className="bg-gray-100 py-16" data-navbar-theme="light">
-        <h2 className="mb-8 text-center">Conclusion</h2>
+        <MotionSection as="h2" variant="slideUp" className="mb-8 text-center">
+          Conclusion
+        </MotionSection>
         <div className="section-container mx-auto px-6">
-          <div className="mx-auto max-w-3xl text-center">
+          <MotionSection as="div" variant="fadeIn" className="mx-auto max-w-3xl text-center">
             <p className="text-lg text-gray-700">
               The implementation of the Paygos Returns Management Solution
               transformed returns operations, driving measurable operational
@@ -193,7 +200,7 @@ export default function ReturnsManagement() {
               commitment to product quality, freshness, and customer
               satisfaction.
             </p>
-          </div>
+          </MotionSection>
         </div>
       </section>
 

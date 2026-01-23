@@ -1,15 +1,11 @@
-import type { Metadata } from "next"
+"use client"
+
 import Image from "next/image"
 import { ClipboardList, Clock, DollarSign } from "lucide-react"
 import { Breadcrumbs } from "@/components/layout/Breadcrumbs"
 import { CTA } from "@/components/sections/cta/CTA"
 import { PatternDiagonal, PatternDots } from "@/components/ui/patterns"
-
-export const metadata: Metadata = {
-  title: "Rebate Management Case Study | Paygos",
-  description:
-    "Discover how a major pet nutrition brand achieved 40% reduction in administrative overheads and 25% decrease in finance operating costs through Paygos rebate automation.",
-}
+import { MotionSection } from "@/components/motion"
 
 export default function RebateManagement() {
   return (
@@ -17,7 +13,12 @@ export default function RebateManagement() {
       {/* Hero */}
       <section className="hero-sm bg-green-950" data-navbar-theme="dark">
         <PatternDots />
-        <div className="text-hero">
+        <MotionSection
+          as="div"
+          variant="slideUp"
+          className="text-hero"
+          viewport={{ once: true }}
+        >
           <small className="text-teal-400">
             Rebate Management • Sales Acceleration • Automation
           </small>
@@ -25,7 +26,7 @@ export default function RebateManagement() {
             Rebate {""}
             <span className="text-highlight">Management</span>
           </h1>
-        </div>
+        </MotionSection>
       </section>
 
       <Breadcrumbs />
@@ -56,8 +57,10 @@ export default function RebateManagement() {
               color: "text-teal-600",
             },
           ].map((stat, i) => (
-            <div
+            <MotionSection
+              as="div"
               key={i}
+              variant="scaleIn"
               className="flex flex-col items-center justify-center rounded-lg border border-gray-100 bg-white p-8 shadow-sm transition hover:shadow-md"
             >
               <stat.icon className={`mb-3 h-8 w-8 ${stat.color}`} />
@@ -67,7 +70,7 @@ export default function RebateManagement() {
               <span className="text-sm font-medium tracking-wider text-gray-500 uppercase">
                 {stat.label}
               </span>
-            </div>
+            </MotionSection>
           ))}
         </div>
       </section>
@@ -77,7 +80,7 @@ export default function RebateManagement() {
         className="section-container mx-auto px-6 pb-16"
         data-navbar-theme="light"
       >
-        <div className="mx-auto max-w-3xl text-center">
+        <MotionSection as="div" variant="slideUp" className="mx-auto max-w-3xl text-center">
           <small className="text-green-700">The Challenge</small>
           <h2 className="mb-8 text-4xl font-black text-gray-900">
             Manual Rebate Processes Slowing Growth
@@ -90,7 +93,7 @@ export default function RebateManagement() {
             and customer frustration, negatively impacting both team
             productivity and customer satisfaction.
           </p>
-        </div>
+        </MotionSection>
       </section>
 
       {/* Solution Section */}
@@ -98,12 +101,12 @@ export default function RebateManagement() {
         <PatternDiagonal />
         <div className="section-container mx-auto px-6">
           <div className="mx-auto max-w-3xl">
-            <h2 className="text-highlight mb-6 text-center">
+            <MotionSection as="h2" variant="slideUp" className="text-highlight mb-6 text-center">
               The Paygos Solution
-            </h2>
+            </MotionSection>
 
             <div className="space-y-8">
-              <div className="flex gap-6">
+              <MotionSection as="div" variant="slideUp" className="flex gap-6">
                 <span className="text-2xl font-black text-teal-500">01.</span>
                 <div>
                   <h4 className="mb-2 text-xl font-bold text-white">
@@ -115,9 +118,9 @@ export default function RebateManagement() {
                     manual processes and streamlining rebate workflows.
                   </p>
                 </div>
-              </div>
+              </MotionSection>
 
-              <div className="flex gap-6">
+              <MotionSection as="div" variant="slideUp" className="flex gap-6">
                 <span className="text-2xl font-black text-teal-500">02.</span>
                 <div>
                   <h4 className="mb-2 text-xl font-bold text-white">
@@ -129,9 +132,9 @@ export default function RebateManagement() {
                     approvals.
                   </p>
                 </div>
-              </div>
+              </MotionSection>
 
-              <div className="flex gap-6">
+              <MotionSection as="div" variant="slideUp" className="flex gap-6">
                 <span className="text-2xl font-black text-teal-500">03.</span>
                 <div>
                   <h4 className="mb-2 text-xl font-bold text-white">
@@ -143,7 +146,7 @@ export default function RebateManagement() {
                     relationships.
                   </p>
                 </div>
-              </div>
+              </MotionSection>
             </div>
           </div>
         </div>
@@ -154,7 +157,7 @@ export default function RebateManagement() {
         className="section-container mx-auto px-6 py-16"
         data-navbar-theme="light"
       >
-        <div className="mx-auto max-w-3xl text-center">
+        <MotionSection as="div" variant="slideUp" className="mx-auto max-w-3xl text-center">
           <small className="text-green-700">The Impact</small>
           <h2 className="mb-8 text-4xl font-black text-gray-900">
             Strategic Focus Restored
@@ -169,6 +172,8 @@ export default function RebateManagement() {
             meaningful customer engagement rather than managing rebate-related
             inefficiencies.
           </p>
+        </MotionSection>
+        <MotionSection as="div" variant="scaleIn" className="mx-auto max-w-3xl">
           <Image
             src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop"
             alt="Rebate Management Analytics"
@@ -176,14 +181,16 @@ export default function RebateManagement() {
             height={400}
             className="mx-auto rounded-2xl shadow-lg"
           />
-        </div>
+        </MotionSection>
       </section>
 
       {/* Conclusion Section */}
       <section className="bg-gray-100 py-16" data-navbar-theme="light">
-        <h2 className="mb-8 text-center">Conclusion</h2>
+        <MotionSection as="h2" variant="slideUp" className="mb-8 text-center">
+          Conclusion
+        </MotionSection>
         <div className="section-container mx-auto px-6">
-          <div className="mx-auto max-w-3xl text-center">
+          <MotionSection as="div" variant="fadeIn" className="mx-auto max-w-3xl text-center">
             <p className="text-lg text-gray-700">
               The implementation of the Paygos Sales Acceleration Rebate
               Solution demonstrated the transformative impact of automation on
@@ -192,7 +199,7 @@ export default function RebateManagement() {
               efficiency, reduced costs, and created a smoother experience for
               both internal teams and customers.
             </p>
-          </div>
+          </MotionSection>
         </div>
       </section>
 

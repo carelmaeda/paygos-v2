@@ -5,6 +5,7 @@ import { DataAnalytics } from "@/components/sections/solutions/DataAnalyticsSect
 import { FieldSales } from "@/components/sections/solutions/FieldSales"
 import { CTA } from "@/components/sections/cta/CTA"
 import { CustomerStoriesCarousel } from "@/components/sections/customers/CustomerStoriesCarousel"
+import { CustomerStoriesHeader } from "@/components/sections/customers/CustomerStoriesHeader"
 import { PatternDots } from "@/components/ui/patterns"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
@@ -85,12 +86,7 @@ export default function Home() {
         className="relative overflow-hidden bg-teal-900 py-16 text-white"
       >
         <PatternDots />
-        <div className="section-container space-y-8 text-center">
-          <h2 className="mb-3">What would you do with more time?</h2>
-          <p className="text-gray-300">
-            Discover how PAYGOS customers turned saved time into real results.
-          </p>
-        </div>
+        <CustomerStoriesHeader />
 
         <CustomerStoriesCarousel />
 

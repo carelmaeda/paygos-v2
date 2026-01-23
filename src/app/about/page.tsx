@@ -1,14 +1,11 @@
-import type { Metadata } from "next"
+"use client"
+
 import Image from "next/image"
 import { Target, Heart, Lock, Eye, Handshake } from "lucide-react"
 import { CTA } from "@/components/sections/cta/CTA"
 import { PatternCircuit, PatternWaves } from "@/components/ui/patterns"
 import { Breadcrumbs } from "@/components/layout/Breadcrumbs"
-
-export const metadata: Metadata = {
-  title: "About Us | Paygos",
-  description: "Learn about our mission to transform sales automation.",
-}
+import { MotionSection } from "@/components/motion"
 
 export default function AboutPage() {
   return (
@@ -16,7 +13,12 @@ export default function AboutPage() {
       {/* Hero */}
       <section className="hero-sm bg-slate-800" data-navbar-theme="dark">
         <PatternWaves />
-        <div className="text-hero">
+        <MotionSection
+          as="div"
+          variant="slideUp"
+          className="text-hero"
+          viewport={{ once: true }}
+        >
           <small className="text-teal-400">About us</small>
           <h1>
             Built from Experience,
@@ -27,7 +29,7 @@ export default function AboutPage() {
             How decades of real-world sales operations shaped the platform that
             empowers teams today
           </p>
-        </div>
+        </MotionSection>
       </section>
 
       <Breadcrumbs />
@@ -36,7 +38,11 @@ export default function AboutPage() {
       <section className="py-16" data-navbar-theme="light">
         <article className="mx-auto max-w-2xl px-6">
           {/* Author / Signature Section */}
-          <div className="flex items-center gap-4 pb-8">
+          <MotionSection
+            as="div"
+            variant="fadeIn"
+            className="flex items-center gap-4 pb-8"
+          >
             <div className="relative h-16 w-16 overflow-hidden rounded-full md:h-20 md:w-20">
               <Image
                 src="/paygos/hesham.jpg"
@@ -51,11 +57,15 @@ export default function AboutPage() {
                 President, Paygos
               </p>
             </div>
-          </div>
+          </MotionSection>
 
           {/* Article Content */}
           <div className="space-y-6 text-lg text-slate-600">
-            <p className="text-justify first-letter:float-left first-letter:mr-3 first-letter:text-7xl first-letter:font-bold first-letter:text-slate-900">
+            <MotionSection
+              as="p"
+              variant="slideUp"
+              className="text-justify first-letter:float-left first-letter:mr-3 first-letter:text-7xl first-letter:font-bold first-letter:text-slate-900"
+            >
               Paygos was built from real-world experience. For decades,
               we&apos;ve operated large, distributed sales organizations,
               supported thousands of sales representatives, and built and
@@ -65,22 +75,31 @@ export default function AboutPage() {
               were spending too much time on administration and disconnected
               systems, and not enough time building relationships and selling
               with confidence.
-            </p>
+            </MotionSection>
 
-            <div className="text-xl font-bold tracking-tight text-slate-900 md:text-2xl">
+            <MotionSection
+              as="div"
+              variant="slideUp"
+              className="text-xl font-bold tracking-tight text-slate-900 md:text-2xl"
+            >
               So we built Paygos.
-            </div>
+            </MotionSection>
 
             {/* Quote/Mission Pull-out */}
-            <blockquote className="relative border-l-4 border-teal-500 bg-slate-50 py-8 pr-6 pl-8">
+            <MotionSection
+              as="blockquote"
+              variant="slideInLeft"
+              className="relative border-l-4 border-teal-500 bg-slate-50 py-8 pr-6 pl-8"
+            >
               <p className="text-justify text-lg font-medium text-slate-800 italic md:text-xl">
                 &ldquo;Our mission is simple: to equip sales organizations with
                 the right tools and the right information, at the right time, so
                 sales reps can focus on relationships, fact-based selling, and
                 growth.&rdquo;
               </p>
-            </blockquote>
-            <div className="text-justify">
+            </MotionSection>
+
+            <MotionSection as="div" variant="slideUp" className="text-justify">
               <p>
                 Security and trust are foundational to everything we do. Data is
                 encrypted. Payments are validated before clearing. Controls are
@@ -94,10 +113,14 @@ export default function AboutPage() {
                 our clients continuously advance their business and grow their
                 brands.
               </p>
-            </div>
+            </MotionSection>
 
             {/* Stats Grid - More Sophisticated Layout */}
-            <div className="my-6 grid grid-cols-1 divide-y divide-slate-200 overflow-hidden rounded-2xl border border-slate-200 sm:grid-cols-3 sm:divide-x sm:divide-y-0">
+            <MotionSection
+              as="div"
+              variant="scaleIn"
+              className="my-6 grid grid-cols-1 divide-y divide-slate-200 overflow-hidden rounded-2xl border border-slate-200 sm:grid-cols-3 sm:divide-x sm:divide-y-0"
+            >
               <div className="flex flex-col items-center p-8 text-center">
                 <span className="text-4xl font-bold tracking-tight text-teal-600 md:text-5xl">
                   20+
@@ -122,8 +145,9 @@ export default function AboutPage() {
                   Reps Supported
                 </span>
               </div>
-            </div>
-            <div className="text-justify">
+            </MotionSection>
+
+            <MotionSection as="div" variant="slideUp" className="text-justify">
               <p>
                 Paygos is the result of over 20 years of learning, refining, and
                 building, supported by industry recognition and
@@ -131,17 +155,21 @@ export default function AboutPage() {
                 deployed with clients across North America, including Canada,
                 the United States, and Mexico.
               </p>
-            </div>
+            </MotionSection>
 
             {/* Closing Statement */}
-            <div className="rounded-lg bg-slate-100 p-8 text-center text-slate-500 italic">
+            <MotionSection
+              as="div"
+              variant="fadeIn"
+              className="rounded-lg bg-slate-100 p-8 text-center text-slate-500 italic"
+            >
               <div className="mx-auto" />
               <p className="text-md text-justify">
                 At our core, we are rooted in goodness, transparency, and trust.
                 We partner with our clients to help them grow their business
                 with confidence.
               </p>
-            </div>
+            </MotionSection>
           </div>
         </article>
       </section>
@@ -149,10 +177,20 @@ export default function AboutPage() {
       {/* Our Values - Bento Grid */}
       <section className="bg-slate-200 py-16" data-navbar-theme="light">
         <div className="section-container">
-          <h2 className="mb-12 text-center">Our Values</h2>
+          <MotionSection
+            as="h2"
+            variant="slideUp"
+            className="mb-12 text-center"
+          >
+            Our Values
+          </MotionSection>
           <div className="grid grid-cols-1 gap-4 lg:grid-cols-2">
             {/* Goodness - Large card spanning full height */}
-            <div className="relative flex flex-col justify-between overflow-hidden rounded-lg p-8 text-white lg:row-span-4">
+            <MotionSection
+              as="div"
+              variant="slideInLeft"
+              className="relative flex flex-col justify-between overflow-hidden rounded-lg p-8 text-white lg:row-span-4"
+            >
               <Image
                 src="https://images.unsplash.com/photo-1579208575657-c595a05383b7"
                 alt="People holding hands together"
@@ -173,10 +211,14 @@ export default function AboutPage() {
                   positive impact in everything we do.
                 </p>
               </div>
-            </div>
+            </MotionSection>
 
             {/* Customer Focus */}
-            <div className="flex items-center gap-4 rounded-lg bg-gray-100 p-4">
+            <MotionSection
+              as="div"
+              variant="slideUp"
+              className="flex items-center gap-4 rounded-lg bg-gray-100 p-4"
+            >
               <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-teal-100">
                 <Target className="h-5 w-5 text-teal-700" />
               </div>
@@ -186,10 +228,14 @@ export default function AboutPage() {
                   Your success is our success.
                 </p>
               </div>
-            </div>
+            </MotionSection>
 
             {/* Transparency */}
-            <div className="flex items-center gap-4 rounded-lg bg-gray-100 p-4">
+            <MotionSection
+              as="div"
+              variant="slideUp"
+              className="flex items-center gap-4 rounded-lg bg-gray-100 p-4"
+            >
               <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-teal-100">
                 <Eye className="h-5 w-5 text-teal-700" />
               </div>
@@ -199,10 +245,14 @@ export default function AboutPage() {
                   Open communication and clear expectations.
                 </p>
               </div>
-            </div>
+            </MotionSection>
 
             {/* Security */}
-            <div className="flex items-center gap-4 rounded-lg bg-gray-100 p-4">
+            <MotionSection
+              as="div"
+              variant="slideUp"
+              className="flex items-center gap-4 rounded-lg bg-gray-100 p-4"
+            >
               <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-teal-100">
                 <Lock className="h-5 w-5 text-teal-700" />
               </div>
@@ -212,10 +262,14 @@ export default function AboutPage() {
                   Your data protection is our priority.
                 </p>
               </div>
-            </div>
+            </MotionSection>
 
             {/* Trust */}
-            <div className="flex items-center gap-4 rounded-lg bg-gray-100 p-4">
+            <MotionSection
+              as="div"
+              variant="slideUp"
+              className="flex items-center gap-4 rounded-lg bg-gray-100 p-4"
+            >
               <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-teal-100">
                 <Handshake className="h-5 w-5 text-teal-700" />
               </div>
@@ -225,7 +279,7 @@ export default function AboutPage() {
                   Building lasting partnerships through reliability.
                 </p>
               </div>
-            </div>
+            </MotionSection>
           </div>
         </div>
       </section>
@@ -240,7 +294,7 @@ export default function AboutPage() {
           <div className="mx-auto max-w-5xl">
             <div className="grid gap-12 text-white md:grid-cols-2 md:items-center">
               {/* Text Content */}
-              <div>
+              <MotionSection as="div" variant="slideUp">
                 <h2 className="mb-4">Our Team</h2>
                 <div className="space-y-4">
                   <p>
@@ -260,17 +314,21 @@ export default function AboutPage() {
                     time.
                   </p>
                 </div>
-              </div>
+              </MotionSection>
 
               {/* Image */}
-              <div className="relative h-[300px] overflow-hidden rounded-lg md:h-[400px]">
+              <MotionSection
+                as="div"
+                variant="scaleIn"
+                className="relative h-[300px] overflow-hidden rounded-lg md:h-[400px]"
+              >
                 <Image
                   src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2070&auto=format&fit=crop"
                   alt="Team collaboration"
                   fill
                   className="object-cover"
                 />
-              </div>
+              </MotionSection>
             </div>
           </div>
         </div>
