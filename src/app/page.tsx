@@ -94,12 +94,8 @@ export default function Home() {
 
         <CustomerStoriesCarousel />
 
-        <div className="p-4">
-          <Button
-            variant="link"
-            asChild
-            className="text-white transition-colors hover:text-teal-400"
-          >
+        <div className="p-4 text-center">
+          <Button variant="ghost" asChild>
             <Link href="/customers" className="inline-flex items-center gap-2">
               View All Customer Stories <ArrowRight className="h-4 w-4" />
             </Link>

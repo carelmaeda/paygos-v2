@@ -124,7 +124,7 @@ export function RoiCalculator() {
       })
       setIsLeadCaptureOpen(false)
       setIsModalOpen(true)
-      toast.success("Results sent to your email!")
+      toast.success("We sent a copy of your ROI to your email!")
     } catch {
       setSubmitError("Failed to send. Please try again.")
     } finally {

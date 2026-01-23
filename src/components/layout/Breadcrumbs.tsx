@@ -3,6 +3,7 @@
 import { Fragment } from "react"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
+import { CheckIcon, ChevronDownIcon } from "lucide-react"
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -11,6 +12,12 @@ import {
   BreadcrumbPage,
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb"
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu"
 
 // Map of path segments to readable labels
 const segmentLabels: Record<string, string> = {
@@ -36,6 +43,16 @@ const segmentLabels: Record<string, string> = {
   returns: "Returns",
   training: "Training",
 }
+
+// Sales Acceleration sub-pages for dropdown navigation
+const SALES_ACCELERATION_PAGES = [
+  { label: "Ordering", href: "/sales-acceleration/ordering" },
+  { label: "Marketing", href: "/sales-acceleration/marketing" },
+  { label: "Payments", href: "/sales-acceleration/payments" },
+  { label: "Rebates", href: "/sales-acceleration/rebates" },
+  { label: "Returns", href: "/sales-acceleration/returns" },
+  { label: "Training", href: "/sales-acceleration/training" },
+]
 
 function formatSegment(segment: string): string {
   // Check if we have a custom label
@@ -70,8 +87,14 @@ export function Breadcrumbs() {
       href,
       label,
       isLast,
+      segment,
     }
   })
+
+  // Check if we're on a sales-acceleration page (to highlight current in dropdown)
+  const currentSalesAccelerationPage = pathname.startsWith("/sales-acceleration/")
+    ? pathname
+    : null
 
   return (
     <div className="breadcrumbs">
@@ -86,8 +109,50 @@ export function Breadcrumbs() {
           <BreadcrumbSeparator />
 
           {/* Dynamic segments */}
-          {breadcrumbItems.map((item) =>
-            item.isLast ? (
+          {breadcrumbItems.map((item) => {
+            // Check if this is the sales-acceleration segment
+            const isSalesAcceleration = item.segment === "sales-acceleration"
+
+            if (isSalesAcceleration) {
+              // Render with dropdown
+              return (
+                <Fragment key={item.href}>
+                  <BreadcrumbItem>
+                    <DropdownMenu>
+                      <DropdownMenuTrigger className="flex items-center gap-1 hover:text-foreground transition-colors">
+                        {item.isLast ? (
+                          <span className="text-foreground font-normal">
+                            {item.label}
+                          </span>
+                        ) : (
+                          <Link href={item.href}>{item.label}</Link>
+                        )}
+                        <ChevronDownIcon className="size-3.5" />
+                      </DropdownMenuTrigger>
+                      <DropdownMenuContent align="start">
+                        {SALES_ACCELERATION_PAGES.map((page) => (
+                          <DropdownMenuItem key={page.href} asChild>
+                            <Link
+                              href={page.href}
+                              className="flex items-center justify-between w-full"
+                            >
+                              {page.label}
+                              {currentSalesAccelerationPage === page.href && (
+                                <CheckIcon className="size-4 ml-2" />
+                              )}
+                            </Link>
+                          </DropdownMenuItem>
+                        ))}
+                      </DropdownMenuContent>
+                    </DropdownMenu>
+                  </BreadcrumbItem>
+                  {!item.isLast && <BreadcrumbSeparator />}
+                </Fragment>
+              )
+            }
+
+            // Regular breadcrumb items
+            return item.isLast ? (
               <BreadcrumbItem key={item.href}>
                 <BreadcrumbPage>{item.label}</BreadcrumbPage>
               </BreadcrumbItem>
@@ -101,7 +166,7 @@ export function Breadcrumbs() {
                 <BreadcrumbSeparator />
               </Fragment>
             )
-          )}
+          })}
         </BreadcrumbList>
       </Breadcrumb>
     </div>

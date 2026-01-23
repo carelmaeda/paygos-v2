@@ -41,12 +41,14 @@ export function DesktopNav({ theme }: DesktopNavProps) {
           <NavigationMenuList>
             <NavigationMenuItem value="solutions">
               <NavigationMenuTrigger
-                className={cn(pathname.startsWith("/solutions") && "bg-teal-100/50")}
+                className={cn(
+                  pathname.startsWith("/solutions") && "bg-teal-100/50"
+                )}
               >
                 Solutions
               </NavigationMenuTrigger>
               <NavigationMenuContent>
-                <div className="grid w-150 max-w-[90vw] grid-cols-2 gap-3 p-4 text-black">
+                <div className="grid w-150 max-w-[90vw] grid-cols-2 gap-3 p-1 text-black">
                   {SOLUTIONS.map((item) => {
                     const Icon = item.icon
                     return (

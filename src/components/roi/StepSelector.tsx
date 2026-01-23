@@ -19,12 +19,7 @@ import Image from "next/image"
 import { RoiMode } from "./types"
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
 import { Label } from "@/components/ui/label"
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipTrigger,
-} from "@/components/ui/tooltip"
-import { Zap, MapPin, Info, LucideIcon } from "lucide-react"
+import { Zap, MapPin, LucideIcon } from "lucide-react"
 import { cn } from "@/lib/utils"
 
 // ============================================================================
@@ -42,7 +37,6 @@ interface SolutionOption {
   imageSrc?: string
   title: string
   description: string
-  tooltip: string
 }
 
 // ============================================================================
@@ -50,29 +44,24 @@ interface SolutionOption {
 // ============================================================================
 
 const SOLUTION_OPTIONS: SolutionOption[] = [
-  {
-    value: "both",
-    imageSrc: "/icons/paygos-icon-black.svg",
-    title: "Paygos Full",
-    description: "The complete suite for both inside and outside sales.",
-    tooltip: "Get the full power of Paygos.",
-  },
+  // {
+  //   value: "both",
+  //   imageSrc: "/icons/paygos-icon-black.svg",
+  //   title: "Paygos Full",
+  //   description: "The complete suite for both inside and outside sales.",
+  // },
   {
     value: "sales",
     icon: Zap,
     title: "Sales Acceleration",
     description:
       "Intelligent tools that streamline ordering, payments, and customer engagement.",
-    tooltip:
-      "Includes digital ordering, payment processing, rebates & returns, marketing tools, and training modules.",
   },
   {
     value: "fsa",
     icon: MapPin,
     title: "Field Sales Automation",
     description: "Optimize routes and manage territories in real-time.",
-    tooltip:
-      "GPS-enabled route optimization, territory management, and real-time field rep tracking.",
   },
 ]
 
@@ -85,7 +74,7 @@ export function StepSelector({ value, onChange }: Props) {
     <RadioGroup
       value={value}
       onValueChange={(val) => onChange(val as RoiMode)}
-      className="grid grid-cols-1 gap-4 md:grid-cols-3"
+      className="grid grid-cols-1 gap-4 md:grid-cols-2"
     >
       {SOLUTION_OPTIONS.map((option) => {
         const Icon = option.icon
@@ -135,24 +124,6 @@ export function StepSelector({ value, onChange }: Props) {
 
                 {/* Title */}
                 <h5 className="font-semibold">{option.title}</h5>
-
-                {/* Info Tooltip */}
-                <Tooltip>
-                  <TooltipTrigger asChild>
-                    <button
-                      type="button"
-                      className="text-muted-foreground hover:text-foreground"
-                    >
-                      <Info className="h-4 w-4 text-black" />
-                    </button>
-                  </TooltipTrigger>
-                  <TooltipContent
-                    side="top"
-                    className="max-w-xs bg-teal-900 p-3 text-sm text-white"
-                  >
-                    {option.tooltip}
-                  </TooltipContent>
-                </Tooltip>
               </div>
 
               {/* Description Text */}

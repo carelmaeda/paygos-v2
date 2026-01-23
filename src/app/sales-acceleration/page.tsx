@@ -87,7 +87,7 @@ export default function SalesAccelerationPage() {
       {/* SECTION: Introduction */}
       <section
         data-navbar-theme="light"
-        className="section-container mx-auto px-6 py-16"
+        className="section-container mx-auto px-6 py-12"
       >
         <div className="mx-auto max-w-4xl text-center">
           <h2 className="mb-6 text-4xl font-black text-slate-900 md:text-5xl">
@@ -102,10 +102,12 @@ export default function SalesAccelerationPage() {
         </div>
       </section>
 
+      <IndustryBadge />
+
       {/* SECTION: Tools Grid */}
       <section
-        data-navbar-theme="light"
-        className="relative mx-auto bg-teal-900 px-6 py-16"
+        data-navbar-theme="dark"
+        className="relative mx-auto bg-teal-900 px-6 py-12"
       >
         <PatternDots />
         <h2 className="mb-6 text-center text-white">
@@ -113,20 +115,20 @@ export default function SalesAccelerationPage() {
         </h2>
 
         {/* Grid */}
-        <div className="section-container grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
+        <div className="section-container grid grid-cols-1 gap-3 md:grid-cols-2 lg:grid-cols-3">
           {SALES_ACCELERATION_TOOLS.map((tool) => (
             <Link
               key={tool.href}
               href={tool.href}
-              className="group relative flex h-full flex-col justify-between overflow-hidden rounded-lg bg-white/40 p-6 backdrop-blur-xl transition-all duration-500 hover:border-teal-500/50 hover:bg-white/60 hover:shadow-2xl hover:shadow-teal-500/10"
+              className="group relative flex h-full flex-col justify-between overflow-hidden rounded-lg bg-white/40 p-6 backdrop-blur-xl transition-all duration-500 hover:border-teal-500/50"
             >
               {/* 1. Content Area (Frosted Top) */}
-              <div className="relative z-10 space-y-3">
-                <h3 className="text-xl font-bold text-slate-900 transition-colors group-hover:text-teal-600">
+              <div className="relative z-10 space-y-1">
+                <h3 className="text-slate-900 transition-colors group-hover:opacity-60">
                   {tool.title}
                 </h3>
 
-                <p className="text-sm transition-opacity duration-300">
+                <p className="text-sm transition-opacity duration-300 group-hover:opacity-60">
                   {tool.description}
                 </p>
 
@@ -153,7 +155,7 @@ export default function SalesAccelerationPage() {
       </section>
 
       {/* SECTION: Why Sales Acceleration */}
-      <section data-navbar-theme="light" className="bg-slate-50 py-16">
+      <section data-navbar-theme="light" className="bg-slate-50 py-12">
         <div className="section-container">
           <div className="grid items-center gap-16 lg:grid-cols-2">
             <div className="space-y-12">
@@ -245,12 +247,10 @@ export default function SalesAccelerationPage() {
         </div>
       </section>
 
-      <IndustryBadge />
-
       {/* SECTION: ROI */}
       <section
         data-navbar-theme="dark"
-        className="relative mx-auto bg-teal-950 py-16 text-white"
+        className="relative mx-auto bg-teal-950 py-12 text-white"
         role="region"
         aria-labelledby="roi-heading"
       >

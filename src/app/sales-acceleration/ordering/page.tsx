@@ -79,7 +79,7 @@ export default function PaygosOrderingPage() {
       <section className="hero-sm bg-emerald-950" data-navbar-theme="dark">
         <PatternDots />
         <div className="text-hero">
-          <small className="text-teal-400">Streamlined Order Management</small>
+          <small className="text-teal-500">Streamlined Order Management</small>
           <h1>
             Transforming Ordering
             <br />
@@ -105,7 +105,7 @@ export default function PaygosOrderingPage() {
           {/* Challenge 1 */}
           <div className="rounded-lg border border-gray-100 bg-white p-5 shadow-lg transition-shadow hover:shadow-xl">
             <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-lg bg-teal-100">
-              <Monitor className="h-8 w-8 text-teal-600" />
+              <Monitor className="h-8 w-8 text-teal-500" />
             </div>
             <h3 className="mb-2 text-gray-900">Distributor Complexity</h3>
             <p className="text-gray-600">
@@ -117,7 +117,7 @@ export default function PaygosOrderingPage() {
           {/* Challenge 2 */}
           <div className="rounded-lg border border-gray-100 bg-white p-5 shadow-lg transition-shadow hover:shadow-xl">
             <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-lg bg-teal-100">
-              <AlertCircle className="h-8 w-8 text-teal-600" />
+              <AlertCircle className="h-8 w-8 text-teal-500" />
             </div>
             <h3 className="mb-2 text-gray-900">Order Errors</h3>
             <p className="text-gray-600">
@@ -128,7 +128,7 @@ export default function PaygosOrderingPage() {
           {/* Challenge 3 */}
           <div className="rounded-lg border border-gray-100 bg-white p-5 shadow-lg transition-shadow hover:shadow-xl">
             <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-lg bg-teal-100">
-              <EyeOff className="h-8 w-8 text-teal-600" />
+              <EyeOff className="h-8 w-8 text-teal-500" />
             </div>
             <h3 className="mb-2 text-gray-900">No Visibility</h3>
             <p className="text-gray-600">
@@ -140,7 +140,7 @@ export default function PaygosOrderingPage() {
           {/* Challenge 4 */}
           <div className="rounded-lg border border-gray-100 bg-white p-5 shadow-lg transition-shadow hover:shadow-xl">
             <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-lg bg-teal-100">
-              <PackageX className="h-8 w-8 text-teal-600" />
+              <PackageX className="h-8 w-8 text-teal-500" />
             </div>
             <h3 className="mb-2 text-gray-900">Stock-Outs</h3>
             <p className="text-gray-600">
@@ -175,7 +175,7 @@ export default function PaygosOrderingPage() {
               fill
             />
             <div>
-              <Zap size={32} aria-hidden="true" className="text-teal-400" />
+              <Zap size={32} aria-hidden="true" className="text-teal-500" />
               <h3 id="orders-one-platform" className="md:text-3xl">
                 All Orders, One Platform
               </h3>
@@ -202,7 +202,7 @@ export default function PaygosOrderingPage() {
               fill
             />
             <div>
-              <Clock size={32} aria-hidden="true" className="text-teal-400" />
+              <Clock size={32} aria-hidden="true" className="text-teal-500" />
               <h3 id="save-reps-time">Save Reps Time</h3>
               <p id="save-reps-time-desc">
                 Quick reorders and centralized tracking reduce administrative
@@ -227,7 +227,7 @@ export default function PaygosOrderingPage() {
               <ShoppingBag
                 size={32}
                 aria-hidden="true"
-                className="text-teal-400"
+                className="text-teal-500"
               />
               <h3 id="products-merch">Products & Merchandising</h3>
               <p id="products-merch-desc">
@@ -249,7 +249,7 @@ export default function PaygosOrderingPage() {
               fill
             />
             <div>
-              <Eye size={32} aria-hidden="true" className="text-teal-400" />
+              <Eye size={32} aria-hidden="true" className="text-teal-500" />
               <h3 id="real-time-visibility">Real-Time Visibility</h3>
               <p id="real-time-visibility-desc">
                 Track order progress from submission to fulfillment across
@@ -271,7 +271,7 @@ export default function PaygosOrderingPage() {
               fill
             />
             <div>
-              <Store size={32} aria-hidden="true" className="text-teal-400" />
+              <Store size={32} aria-hidden="true" className="text-teal-500" />
               <h3 id="independent-focus">Independent Retail Focus</h3>
               <p id="independent-focus-desc">
                 Built for the complexity of pet, convenience, pharmacy, and
@@ -298,7 +298,7 @@ export default function PaygosOrderingPage() {
                 <div className="shrink-0 rounded-lg bg-teal-50 p-5 transition-colors duration-300 group-hover:bg-teal-500">
                   <BarChart3
                     size={28}
-                    className="text-teal-600 group-hover:text-white"
+                    className="text-teal-500 group-hover:text-white"
                   />
                 </div>
                 <div>
@@ -315,7 +315,7 @@ export default function PaygosOrderingPage() {
                 <div className="shrink-0 rounded-lg bg-teal-50 p-5 transition-colors duration-300 group-hover:bg-teal-500">
                   <TrendingUp
                     size={28}
-                    className="text-teal-600 group-hover:text-white"
+                    className="text-teal-500 group-hover:text-white"
                   />
                 </div>
                 <div>
@@ -380,7 +380,7 @@ export default function PaygosOrderingPage() {
                 </li>
               </ul>
 
-              <Button variant="secondary" size="lg">
+              <Button variant="outline" size="lg">
                 <Link href="/roi" className="flex items-center gap-2">
                   Calculate Your ROI <ArrowRight aria-hidden="true" />
                 </Link>
@@ -406,7 +406,7 @@ export default function PaygosOrderingPage() {
                 >
                   15%
                 </div>
-                <p className="text-sm font-bold tracking-[0.2em] text-teal-400 uppercase">
+                <p className="text-sm font-bold tracking-[0.2em] text-teal-500 uppercase">
                   Efficiency Gain
                 </p>
 

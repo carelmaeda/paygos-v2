@@ -15,7 +15,7 @@ export const SALES_REP_RANGES: RangeDefinition[] = [
 export const DISTRIBUTOR_RANGES: RangeDefinition[] = [
   { label: "1-5", min: 1, max: 5, midpoint: 3 },
   { label: "5-10", min: 5, max: 10, midpoint: 7 },
-  { label: "10-15", min: 10, max: 15, midpoint: 12 },
+  { label: "10+", min: 10, max: 15, midpoint: 12 },
 ]
 
 export const CUSTOMER_RANGES: RangeDefinition[] = [

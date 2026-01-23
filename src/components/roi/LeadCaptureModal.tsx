@@ -119,7 +119,7 @@ export function LeadCaptureModal({
                   Sending...
                 </>
               ) : (
-                "Send Results"
+                "Show Results"
               )}
             </Button>
 

@@ -15,7 +15,9 @@ function calculateCurrentTheme(): NavbarTheme {
   for (const section of sections) {
     const rect = section.getBoundingClientRect()
     if (rect.top <= NAVBAR_HEIGHT && rect.bottom > NAVBAR_HEIGHT) {
-      return (section.getAttribute("data-navbar-theme") as NavbarTheme) || "dark"
+      return (
+        (section.getAttribute("data-navbar-theme") as NavbarTheme) || "dark"
+      )
     }
   }
   return "dark"
@@ -35,13 +37,15 @@ export function useNavbarTheme(): NavbarTheme {
 
     const observerOptions: IntersectionObserverInit = {
       rootMargin: "-80px 0px -80% 0px",
-      threshold: 0
+      threshold: 0,
     }
 
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          const sectionTheme = entry.target.getAttribute("data-navbar-theme") as NavbarTheme
+          const sectionTheme = entry.target.getAttribute(
+            "data-navbar-theme"
+          ) as NavbarTheme
           if (sectionTheme && sectionTheme !== themeRef.current) {
             themeRef.current = sectionTheme
             onStoreChange()
@@ -52,7 +56,9 @@ export function useNavbarTheme(): NavbarTheme {
 
     // Observe sections after a microtask to ensure DOM is ready after navigation
     queueMicrotask(() => {
-      const sections = document.querySelectorAll<HTMLElement>("[data-navbar-theme]")
+      const sections = document.querySelectorAll<HTMLElement>(
+        "[data-navbar-theme]"
+      )
       sections.forEach((section) => observer.observe(section))
 
       // Recalculate after observing in case sections changed
@@ -64,7 +70,8 @@ export function useNavbarTheme(): NavbarTheme {
     })
 
     return () => observer.disconnect()
-  }, [pathname]) // Re-subscribe when pathname changes
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [pathname])
 
   const getSnapshot = useCallback(() => themeRef.current, [])
 
