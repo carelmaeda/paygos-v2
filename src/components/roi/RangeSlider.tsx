@@ -36,7 +36,13 @@ interface Props {
 // Main Component
 // ============================================================================
 
-export function RangeSlider({ label, icon: Icon, ranges, value, onChange }: Props) {
+export function RangeSlider({
+  label,
+  icon: Icon,
+  ranges,
+  value,
+  onChange,
+}: Props) {
   // Get the currently selected range object
   const selectedRange = ranges[value]
 

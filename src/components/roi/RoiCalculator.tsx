@@ -40,7 +40,7 @@ import { toast } from "sonner"
  */
 function StepBadge({ step }: { step: number }) {
   return (
-    <Badge className="h-8 w-8 shrink-0 rounded-full bg-gray-200 font-bold">
+    <Badge className="h-8 w-8 shrink-0 rounded-full bg-gray-200 font-bold text-black">
       {step}
     </Badge>
   )

@@ -67,19 +67,19 @@ export function LeadCaptureModal({
       >
         <DialogHeader className="shrink-0 space-y-0 bg-white px-8 pt-10 pb-6">
           <DialogTitle className="text-center">
-            <span className="flex items-center justify-center text-2xl leading-none font-extrabold tracking-tight text-slate-900">
-              Get Your Results from
+            <span className="flex items-center justify-center text-lg leading-none font-extrabold tracking-tight text-slate-900">
+              Get Your ROI Report from
               <Image
                 src="/paygos/logo-full.webp"
                 alt="Paygos"
-                width={120}
-                height={30}
-                className="ml-2 inline-block h-8 w-auto"
+                width={80}
+                height={20}
+                className="ml-2 inline-block h-6 w-auto"
               />
             </span>
           </DialogTitle>
-          <DialogDescription className="text-md mt-2 text-center text-slate-500">
-            Enter your email to receive your personalized ROI results.
+          <DialogDescription className="mt-2 text-center text-slate-500">
+            Enter your email to receive a copy of you personalized ROI results.
           </DialogDescription>
         </DialogHeader>
 
@@ -110,7 +110,7 @@ export function LeadCaptureModal({
             <Button
               type="submit"
               size="lg"
-              className="w-full"
+              className="w-full!"
               disabled={isLoading}
             >
               {isLoading ? (

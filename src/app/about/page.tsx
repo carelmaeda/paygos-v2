@@ -37,7 +37,7 @@ export default function AboutPage() {
         <article className="mx-auto max-w-2xl px-6">
           {/* Author / Signature Section */}
           <div className="flex items-center gap-4 pb-8">
-            <div className="relative h-16 w-16 overflow-hidden rounded-full ring-4 ring-slate-50 md:h-20 md:w-20">
+            <div className="relative h-16 w-16 overflow-hidden rounded-full md:h-20 md:w-20">
               <Image
                 src="/paygos/hesham.jpg"
                 alt="Hesham Shafie - President of Paygos"
@@ -46,7 +46,7 @@ export default function AboutPage() {
               />
             </div>
             <div>
-              <p className="text-lg font-bold text-slate-900">Hesham Shafie</p>
+              <p className="text-lg font-bold">Hesham Shafie</p>
               <p className="text-sm font-medium text-teal-600">
                 President, Paygos
               </p>
@@ -54,7 +54,7 @@ export default function AboutPage() {
           </div>
 
           {/* Article Content */}
-          <div className="space-y-6 text-lg leading-relaxed text-slate-600">
+          <div className="space-y-6 text-lg text-slate-600">
             <p className="text-justify first-letter:float-left first-letter:mr-3 first-letter:text-7xl first-letter:font-bold first-letter:text-slate-900">
               Paygos was built from real-world experience. For decades,
               we&apos;ve operated large, distributed sales organizations,
@@ -147,7 +147,7 @@ export default function AboutPage() {
       </section>
 
       {/* Our Values - Bento Grid */}
-      <section className="bg-white py-16" data-navbar-theme="light">
+      <section className="bg-slate-200 py-16" data-navbar-theme="light">
         <div className="section-container">
           <h2 className="mb-12 text-center">Our Values</h2>
           <div className="grid grid-cols-1 gap-4 lg:grid-cols-2">

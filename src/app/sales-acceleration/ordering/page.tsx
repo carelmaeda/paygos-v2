@@ -96,20 +96,16 @@ export default function PaygosOrderingPage() {
       {/* Challenges */}
       <section
         data-navbar-theme="light"
-        className="container mx-auto px-6 py-24"
+        className="section-container mx-auto py-16"
       >
-        <h2 className="mb-12 text-center text-3xl font-black text-slate-900">
-          Common Ordering Challenges``
-        </h2>
-        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
+        <h2 className="mb-6 text-center">Common Ordering Challenges</h2>
+        <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4">
           {/* Challenge 1 */}
-          <div className="rounded-lg border border-gray-100 bg-white p-8 shadow-lg transition-shadow hover:shadow-xl">
-            <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-lg bg-red-100">
-              <Monitor className="h-8 w-8 text-red-600" />
+          <div className="rounded-lg border border-gray-100 bg-white p-5 shadow-lg transition-shadow hover:shadow-xl">
+            <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-lg bg-teal-100">
+              <Monitor className="h-8 w-8 text-teal-600" />
             </div>
-            <h3 className="mb-3 text-xl font-bold text-gray-900">
-              Distributor Complexity
-            </h3>
+            <h3 className="mb-2 text-gray-900">Distributor Complexity</h3>
             <p className="text-gray-600">
               Reps waste 6+ hours weekly managing orders across multiple
               distributor portals
@@ -117,26 +113,22 @@ export default function PaygosOrderingPage() {
           </div>
 
           {/* Challenge 2 */}
-          <div className="rounded-lg border border-gray-100 bg-white p-8 shadow-lg transition-shadow hover:shadow-xl">
-            <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-lg bg-red-100">
-              <AlertCircle className="h-8 w-8 text-red-600" />
+          <div className="rounded-lg border border-gray-100 bg-white p-5 shadow-lg transition-shadow hover:shadow-xl">
+            <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-lg bg-teal-100">
+              <AlertCircle className="h-8 w-8 text-teal-600" />
             </div>
-            <h3 className="mb-3 text-xl font-bold text-gray-900">
-              Order Errors
-            </h3>
+            <h3 className="mb-2 text-gray-900">Order Errors</h3>
             <p className="text-gray-600">
               Manual data entry causes 15-20% order error rates
             </p>
           </div>
 
           {/* Challenge 3 */}
-          <div className="rounded-lg border border-gray-100 bg-white p-8 shadow-lg transition-shadow hover:shadow-xl">
-            <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-lg bg-red-100">
-              <EyeOff className="h-8 w-8 text-red-600" />
+          <div className="rounded-lg border border-gray-100 bg-white p-5 shadow-lg transition-shadow hover:shadow-xl">
+            <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-lg bg-teal-100">
+              <EyeOff className="h-8 w-8 text-teal-600" />
             </div>
-            <h3 className="mb-3 text-xl font-bold text-gray-900">
-              No Visibility
-            </h3>
+            <h3 className="mb-2 text-gray-900">No Visibility</h3>
             <p className="text-gray-600">
               Head office has no real-time view into ordering patterns or rep
               activity
@@ -144,11 +136,11 @@ export default function PaygosOrderingPage() {
           </div>
 
           {/* Challenge 4 */}
-          <div className="rounded-lg border border-gray-100 bg-white p-8 shadow-lg transition-shadow hover:shadow-xl">
-            <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-lg bg-red-100">
-              <PackageX className="h-8 w-8 text-red-600" />
+          <div className="rounded-lg border border-gray-100 bg-white p-5 shadow-lg transition-shadow hover:shadow-xl">
+            <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-lg bg-teal-100">
+              <PackageX className="h-8 w-8 text-teal-600" />
             </div>
-            <h3 className="mb-3 text-xl font-bold text-gray-900">Stock-Outs</h3>
+            <h3 className="mb-2 text-gray-900">Stock-Outs</h3>
             <p className="text-gray-600">
               Delayed reorders lead to 8-12% out-of-stock rates at retail
             </p>
@@ -159,12 +151,12 @@ export default function PaygosOrderingPage() {
       {/* Ordering Capabilities */}
       <section
         data-navbar-theme="light"
-        className="mx-auto mb-24 max-w-5xl px-4"
+        className="mx-auto max-w-5xl py-16"
         role="region"
         aria-labelledby="ordering-capabilities"
       >
-        <h2 id="ordering-capabilities" className="sr-only">
-          Ordering Capabilities
+        <h2 id="ordering-capabilities" className="mb-6 text-center">
+          Our Solution
         </h2>
 
         <div className="grid auto-rows-[300px] grid-cols-1 gap-2 md:grid-cols-6">
@@ -284,10 +276,12 @@ export default function PaygosOrderingPage() {
         </div>
       </section>
 
+      <IndustryBadge />
+
       {/* Chart Section */}
       <section
         data-navbar-theme="light"
-        className="container mx-auto px-6 py-40"
+        className="section-container mx-auto py-16"
       >
         <div className="grid items-center gap-32 lg:grid-cols-2">
           <OrderingVolumeChart />
@@ -337,8 +331,6 @@ export default function PaygosOrderingPage() {
           </div>
         </div>
       </section>
-
-      <IndustryBadge />
 
       {/* ROI */}
       <section

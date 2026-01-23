@@ -50,7 +50,7 @@ export const metadata: Metadata = {
 
 export default function RoiPage() {
   return (
-    <main>
+    <main className="min-h-screen bg-slate-100">
       {/* Hero */}
       <section className="hero-sm bg-emerald-950" data-navbar-theme="dark">
         <PatternDots />
@@ -71,10 +71,7 @@ export default function RoiPage() {
       <Breadcrumbs />
 
       {/* Calculator Section */}
-      <section
-        className="section-container bg-slate-50 py-16"
-        data-navbar-theme="light"
-      >
+      <section className="section-container py-16" data-navbar-theme="light">
         <h3 className="mb-6 text-center">
           Select the ideal solutions and enter your business metrics to see
           potential returns.
