@@ -1,5 +1,5 @@
 import type { Metadata } from "next"
-import React from "react"
+import Link from "next/link"
 import Image from "next/image"
 import { PatternDots } from "@/components/ui/patterns"
 import {
@@ -14,11 +14,12 @@ import {
   Zap,
   Megaphone,
   UserX,
-  Users,
   Eye,
   Clock as ClockIcon,
+  Calculator,
 } from "lucide-react"
 import { CTA } from "@/components/sections/cta/CTA"
+import { Button } from "@/components/ui/button"
 import { BookCallButton } from "@/components/sections/cta/BookCallButton"
 import { IndustryBadge } from "@/components/sections/solutions/IndustryBadge"
 import { MarketingEngagementChart } from "./marketing-engagement-chart"
@@ -95,21 +96,17 @@ export default function MarketingPage() {
 
       {/* Challenges */}
       <section
-        className="container mx-auto px-6 py-24"
         data-navbar-theme="light"
+        className="section-container mx-auto py-12"
       >
-        <h2 className="mb-12 text-center text-3xl font-black text-slate-900">
-          Common Marketing Challenges
-        </h2>
-        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
+        <h2 className="mb-6 text-center">Common Marketing Challenges</h2>
+        <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4">
           {/* Challenge 1 */}
-          <div className="rounded-lg border border-gray-100 bg-white p-8 shadow-lg transition-shadow hover:shadow-xl">
-            <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-lg bg-red-100">
-              <Megaphone className="h-8 w-8 text-red-600" />
+          <div className="rounded-lg border border-gray-100 bg-white p-5 shadow-lg transition-shadow hover:shadow-xl">
+            <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-lg bg-teal-100">
+              <Megaphone className="h-8 w-8 text-teal-600" />
             </div>
-            <h3 className="mb-3 text-xl font-bold text-gray-900">
-              Generic Blasts
-            </h3>
+            <h3 className="mb-2 text-gray-900">Generic Blasts</h3>
             <p className="text-gray-600">
               Mass emails to all retailers result in 8% open rates and ignored
               promotions
@@ -117,13 +114,11 @@ export default function MarketingPage() {
           </div>
 
           {/* Challenge 2 */}
-          <div className="rounded-lg border border-gray-100 bg-white p-8 shadow-lg transition-shadow hover:shadow-xl">
-            <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-lg bg-red-100">
-              <UserX className="h-8 w-8 text-red-600" />
+          <div className="rounded-lg border border-gray-100 bg-white p-5 shadow-lg transition-shadow hover:shadow-xl">
+            <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-lg bg-teal-100">
+              <UserX className="h-8 w-8 text-teal-600" />
             </div>
-            <h3 className="mb-3 text-xl font-bold text-gray-900">
-              No Segmentation
-            </h3>
+            <h3 className="mb-2 text-gray-900">No Segmentation</h3>
             <p className="text-gray-600">
               Can&apos;t target messages by region, purchase history, or
               retailer profile
@@ -131,26 +126,22 @@ export default function MarketingPage() {
           </div>
 
           {/* Challenge 3 */}
-          <div className="rounded-lg border border-gray-100 bg-white p-8 shadow-lg transition-shadow hover:shadow-xl">
-            <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-lg bg-red-100">
-              <Eye className="h-8 w-8 text-red-600" />
+          <div className="rounded-lg border border-gray-100 bg-white p-5 shadow-lg transition-shadow hover:shadow-xl">
+            <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-lg bg-teal-100">
+              <Eye className="h-8 w-8 text-teal-600" />
             </div>
-            <h3 className="mb-3 text-xl font-bold text-gray-900">
-              Tracking Blind Spots
-            </h3>
+            <h3 className="mb-2 text-gray-900">Tracking Blind Spots</h3>
             <p className="text-gray-600">
               No visibility into who opened emails or clicked promo links
             </p>
           </div>
 
           {/* Challenge 4 */}
-          <div className="rounded-lg border border-gray-100 bg-white p-8 shadow-lg transition-shadow hover:shadow-xl">
-            <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-lg bg-red-100">
-              <ClockIcon className="h-8 w-8 text-red-600" />
+          <div className="rounded-lg border border-gray-100 bg-white p-5 shadow-lg transition-shadow hover:shadow-xl">
+            <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-lg bg-teal-100">
+              <ClockIcon className="h-8 w-8 text-teal-600" />
             </div>
-            <h3 className="mb-3 text-xl font-bold text-gray-900">
-              Manual Campaigns
-            </h3>
+            <h3 className="mb-2 text-gray-900">Manual Campaigns</h3>
             <p className="text-gray-600">
               Building and sending campaigns takes 5-6 hours per launch
             </p>
@@ -160,16 +151,16 @@ export default function MarketingPage() {
 
       {/* Marketing Capabilities - Bento Grid */}
       <section
-        className="mx-auto mb-24 max-w-5xl px-4"
+        data-navbar-theme="light"
+        className="section-container mx-auto py-12"
         role="region"
         aria-labelledby="marketing-capabilities"
-        data-navbar-theme="light"
       >
-        <h2 id="marketing-capabilities" className="sr-only">
-          Marketing Automation Capabilities
+        <h2 id="marketing-capabilities" className="mb-6 text-center">
+          Our Solution
         </h2>
 
-        <div className="grid auto-rows-[300px] grid-cols-1 gap-2 md:grid-cols-6">
+        <div className="grid auto-rows-[200px] grid-cols-1 gap-2 md:grid-cols-6">
           {/* Card 1 - Segmented Campaigns */}
           <article
             className="bento-card md:col-span-4"
@@ -183,7 +174,7 @@ export default function MarketingPage() {
               fill
             />
             <div>
-              <Target size={32} aria-hidden="true" />
+              <Target size={32} aria-hidden="true" className="text-teal-400" />
               <h3 id="segmented-campaigns" className="md:text-3xl">
                 Segmented Campaigns
               </h3>
@@ -210,7 +201,7 @@ export default function MarketingPage() {
               fill
             />
             <div>
-              <MessageSquare size={32} aria-hidden="true" />
+              <MessageSquare size={32} aria-hidden="true" className="text-teal-400" />
               <h3 id="multi-channel">Multi-Channel</h3>
               <p id="multi-channel-desc">
                 Email, SMS, in-app notifications—choose your channel per
@@ -232,7 +223,7 @@ export default function MarketingPage() {
               fill
             />
             <div>
-              <Mail size={32} aria-hidden="true" />
+              <Mail size={32} aria-hidden="true" className="text-teal-400" />
               <h3 id="campaign-builder">Easy Builder</h3>
               <p id="campaign-builder-desc">
                 Build beautiful campaigns in minutes with drag-and-drop
@@ -254,7 +245,7 @@ export default function MarketingPage() {
               fill
             />
             <div>
-              <BarChart3 size={32} aria-hidden="true" />
+              <BarChart3 size={32} aria-hidden="true" className="text-teal-400" />
               <h3 id="engagement-analytics">Track Engagement</h3>
               <p id="engagement-analytics-desc">
                 Track opens, clicks, and conversion by retailer segment in
@@ -276,7 +267,7 @@ export default function MarketingPage() {
               fill
             />
             <div>
-              <Percent size={32} aria-hidden="true" />
+              <Percent size={32} aria-hidden="true" className="text-teal-400" />
               <h3 id="promo-codes">Promo Codes</h3>
               <p id="promo-codes-desc">
                 Embed unique codes tied to rebates or ordering incentives.
@@ -297,7 +288,7 @@ export default function MarketingPage() {
               fill
             />
             <div>
-              <Zap size={32} aria-hidden="true" />
+              <Zap size={32} aria-hidden="true" className="text-teal-400" />
               <h3 id="automated-triggers" className="md:text-3xl">
                 Automated Triggers
               </h3>
@@ -313,19 +304,16 @@ export default function MarketingPage() {
         </div>
       </section>
 
+      <IndustryBadge />
+
       {/* Chart Section */}
-      <section
-        className="container mx-auto px-6 py-40"
-        data-navbar-theme="light"
-      >
-        <div className="grid items-center gap-32 lg:grid-cols-2">
+      <section data-navbar-theme="light" className="mx-auto bg-slate-200 py-12">
+        <div className="section-container grid items-center gap-32 lg:grid-cols-2">
           <MarketingEngagementChart />
           <div className="space-y-12">
             <h2 className="text-5xl leading-[0.9] font-black tracking-tighter text-slate-900 uppercase md:text-7xl">
               Engagement <br />
-              <span className="text-teal-600 underline decoration-teal-200 underline-offset-[12px]">
-                That Converts.
-              </span>
+              <span className="text-highlight">That Converts.</span>
             </h2>
             <div className="space-y-10">
               <div className="group flex items-start gap-8">
@@ -367,22 +355,17 @@ export default function MarketingPage() {
         </div>
       </section>
 
-      <IndustryBadge />
-
       {/* ROI */}
       <section
+        data-navbar-theme="dark"
         className="mx-auto"
         role="region"
         aria-labelledby="roi-heading"
-        data-navbar-theme="dark"
       >
         <div className="relative overflow-hidden bg-slate-900 p-8 text-white md:p-16">
-          <div className="relative z-10 grid items-center gap-12 lg:grid-cols-2">
+          <div className="section-container relative z-10 grid items-center gap-12 lg:grid-cols-2">
             <div>
-              <h2
-                id="roi-heading"
-                className="mb-8 text-4xl font-black md:text-6xl"
-              >
+              <h2 id="roi-heading" className="pb-8 text-4xl md:text-8xl">
                 Proven Impact <br />
                 <span className="text-teal-500">
                   Where Marketing Drives Action
@@ -413,20 +396,13 @@ export default function MarketingPage() {
                     multi-channel delivery and automated triggers.
                   </p>
                 </li>
-
-                <li className="flex items-start gap-4">
-                  <Zap aria-hidden="true" className="mt-1 text-teal-500" />
-                  <p className="text-lg text-slate-300">
-                    Build campaigns{" "}
-                    <strong className="text-white">60% faster</strong> with
-                    drag-and-drop templates and automated workflows.
-                  </p>
-                </li>
               </ul>
 
-              <a href="/roi" className="btn btn-secondary text-white!">
-                Calculate Your ROI <ArrowRight aria-hidden="true" />
-              </a>
+              <Button variant="secondary" size="lg">
+                <Link href="/roi" className="flex items-center gap-2">
+                  Calculate Your ROI <ArrowRight aria-hidden="true" />
+                </Link>
+              </Button>
             </div>
 
             {/* ROI Stats */}
@@ -436,18 +412,18 @@ export default function MarketingPage() {
               aria-labelledby="roi-stats"
             >
               <div className="rounded-[2.5rem] border border-white/10 bg-white/5 p-12 text-center backdrop-blur-md">
-                <Users
+                <Calculator
                   className="mx-auto mb-6 text-teal-500"
                   size={48}
                   aria-hidden="true"
                 />
 
-                <h3
+                <div
                   id="roi-stats"
-                  className="mb-2 text-5xl font-black md:text-8xl"
+                  className="mb-2 text-5xl font-black md:text-6xl"
                 >
                   3x
-                </h3>
+                </div>
                 <p className="text-sm font-bold tracking-[0.2em] text-teal-400 uppercase">
                   Better Engagement
                 </p>

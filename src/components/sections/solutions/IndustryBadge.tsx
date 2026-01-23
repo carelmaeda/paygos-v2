@@ -4,7 +4,7 @@ import { PawPrint, Pill, Candy } from "lucide-react"
 export function IndustryBadge() {
   return (
     /* Ideal FOR */
-    <section className="mx-auto max-w-7xl p-8">
+    <section className="mx-auto max-w-7xl pb-8">
       <div className="section-container">
         <h2 className="mb-6 text-center">Ideal For</h2>
         <div className="my-4 flex flex-wrap justify-center gap-2">

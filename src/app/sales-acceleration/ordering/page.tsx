@@ -1,5 +1,7 @@
 import type { Metadata } from "next"
+import Link from "next/link"
 import { CTA } from "@/components/sections/cta/CTA"
+import { Button } from "@/components/ui/button"
 import Image from "next/image"
 import { IndustryBadge } from "@/components/sections/solutions/IndustryBadge"
 import { PatternDots } from "@/components/ui/patterns"
@@ -96,7 +98,7 @@ export default function PaygosOrderingPage() {
       {/* Challenges */}
       <section
         data-navbar-theme="light"
-        className="section-container mx-auto py-16"
+        className="section-container mx-auto py-12"
       >
         <h2 className="mb-6 text-center">Common Ordering Challenges</h2>
         <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4">
@@ -151,7 +153,7 @@ export default function PaygosOrderingPage() {
       {/* Ordering Capabilities */}
       <section
         data-navbar-theme="light"
-        className="mx-auto max-w-5xl py-16"
+        className="section-container mx-auto py-12"
         role="region"
         aria-labelledby="ordering-capabilities"
       >
@@ -159,7 +161,7 @@ export default function PaygosOrderingPage() {
           Our Solution
         </h2>
 
-        <div className="grid auto-rows-[300px] grid-cols-1 gap-2 md:grid-cols-6">
+        <div className="grid auto-rows-[200px] grid-cols-1 gap-2 md:grid-cols-6">
           {/* Card 1 */}
           <article
             className="bento-card md:col-span-4"
@@ -173,7 +175,7 @@ export default function PaygosOrderingPage() {
               fill
             />
             <div>
-              <Zap size={32} aria-hidden="true" />
+              <Zap size={32} aria-hidden="true" className="text-teal-400" />
               <h3 id="orders-one-platform" className="md:text-3xl">
                 All Orders, One Platform
               </h3>
@@ -200,7 +202,7 @@ export default function PaygosOrderingPage() {
               fill
             />
             <div>
-              <Clock size={32} aria-hidden="true" />
+              <Clock size={32} aria-hidden="true" className="text-teal-400" />
               <h3 id="save-reps-time">Save Reps Time</h3>
               <p id="save-reps-time-desc">
                 Quick reorders and centralized tracking reduce administrative
@@ -222,7 +224,11 @@ export default function PaygosOrderingPage() {
               fill
             />
             <div>
-              <ShoppingBag size={32} aria-hidden="true" />
+              <ShoppingBag
+                size={32}
+                aria-hidden="true"
+                className="text-teal-400"
+              />
               <h3 id="products-merch">Products & Merchandising</h3>
               <p id="products-merch-desc">
                 Manage sellable goods and field marketing materials together.
@@ -243,7 +249,7 @@ export default function PaygosOrderingPage() {
               fill
             />
             <div>
-              <Eye size={32} aria-hidden="true" />
+              <Eye size={32} aria-hidden="true" className="text-teal-400" />
               <h3 id="real-time-visibility">Real-Time Visibility</h3>
               <p id="real-time-visibility-desc">
                 Track order progress from submission to fulfillment across
@@ -265,7 +271,7 @@ export default function PaygosOrderingPage() {
               fill
             />
             <div>
-              <Store size={32} aria-hidden="true" />
+              <Store size={32} aria-hidden="true" className="text-teal-400" />
               <h3 id="independent-focus">Independent Retail Focus</h3>
               <p id="independent-focus-desc">
                 Built for the complexity of pet, convenience, pharmacy, and
@@ -279,18 +285,13 @@ export default function PaygosOrderingPage() {
       <IndustryBadge />
 
       {/* Chart Section */}
-      <section
-        data-navbar-theme="light"
-        className="section-container mx-auto py-16"
-      >
-        <div className="grid items-center gap-32 lg:grid-cols-2">
+      <section data-navbar-theme="light" className="mx-auto bg-slate-200 py-12">
+        <div className="section-container grid items-center gap-32 lg:grid-cols-2">
           <OrderingVolumeChart />
           <div className="space-y-12">
             <h2 className="text-5xl leading-[0.9] font-black tracking-tighter text-slate-900 uppercase md:text-7xl">
               Efficiency <br />
-              <span className="text-teal-600 underline decoration-teal-200 underline-offset-[12px]">
-                That Scales.
-              </span>
+              <span className="text-highlight">That Scales.</span>
             </h2>
             <div className="space-y-10">
               <div className="group flex items-start gap-8">
@@ -340,7 +341,7 @@ export default function PaygosOrderingPage() {
         aria-labelledby="roi-heading"
       >
         <div className="relative overflow-hidden bg-slate-900 p-8 text-white md:p-16">
-          <div className="relative z-10 grid items-center gap-12 lg:grid-cols-2">
+          <div className="section-container relative z-10 grid items-center gap-12 lg:grid-cols-2">
             <div>
               <h2 id="roi-heading" className="pb-8 text-4xl md:text-8xl">
                 Real ROI <br />
@@ -379,9 +380,11 @@ export default function PaygosOrderingPage() {
                 </li>
               </ul>
 
-              <a href="/roi" className="btn btn-secondary text-white!">
-                Calculate ROI <ArrowRight aria-hidden="true" />
-              </a>
+              <Button variant="secondary" size="lg">
+                <Link href="/roi" className="flex items-center gap-2">
+                  Calculate Your ROI <ArrowRight aria-hidden="true" />
+                </Link>
+              </Button>
             </div>
 
             {/* ROI Stats */}

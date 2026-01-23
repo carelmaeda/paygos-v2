@@ -16,6 +16,7 @@ import {
   FileSearch,
   Shield,
   TrendingUp,
+  Calculator,
 } from "lucide-react"
 import { Bar, BarChart, CartesianGrid, XAxis, YAxis } from "recharts"
 import {
@@ -25,6 +26,7 @@ import {
   ChartTooltipContent,
 } from "@/components/ui/chart"
 import { CTA } from "@/components/sections/cta/CTA"
+import { Button } from "@/components/ui/button"
 import { IndustryBadge } from "@/components/sections/solutions/IndustryBadge"
 import { BookCallButton } from "@/components/sections/cta/BookCallButton"
 import { Breadcrumbs } from "@/components/layout/Breadcrumbs"
@@ -48,12 +50,9 @@ const CHART_CONFIG = {
 
 export default function PaymentsPage() {
   return (
-    <main className="min-h-screen bg-white font-sans text-slate-900">
+    <main className="min-h-screen">
       {/* SECTION: Hero & Background */}
-      <section
-        className="relative flex bg-cyan-950 py-24"
-        data-navbar-theme="dark"
-      >
+      <section className="hero-sm bg-cyan-950" data-navbar-theme="dark">
         <PatternDots />
         <div className="text-hero">
           <small className="text-teal-400">
@@ -76,20 +75,16 @@ export default function PaymentsPage() {
       {/* SECTION: Challenges */}
       <section
         data-navbar-theme="light"
-        className="container mx-auto px-6 py-24"
+        className="section-container mx-auto py-12"
       >
-        <h2 className="mb-12 text-center text-3xl font-black text-slate-900">
-          Common Payment Challenges
-        </h2>
-        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
+        <h2 className="mb-6 text-center">Common Payment Challenges</h2>
+        <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4">
           {/* Challenge 1 */}
-          <div className="rounded-lg border border-gray-100 bg-white p-8 shadow-lg transition-shadow hover:shadow-xl">
-            <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-lg bg-red-100">
-              <AlertCircle className="h-8 w-8 text-red-600" />
+          <div className="rounded-lg border border-gray-100 bg-white p-5 shadow-lg transition-shadow hover:shadow-xl">
+            <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-lg bg-teal-100">
+              <AlertCircle className="h-8 w-8 text-teal-600" />
             </div>
-            <h3 className="mb-3 text-xl font-bold text-gray-900">
-              Manual Payment Processing
-            </h3>
+            <h3 className="mb-2 text-gray-900">Manual Payment Processing</h3>
             <p className="text-gray-600">
               Validating incentive execution requires manual verification,
               leading to delays and errors
@@ -97,13 +92,11 @@ export default function PaymentsPage() {
           </div>
 
           {/* Challenge 2 */}
-          <div className="rounded-lg border border-gray-100 bg-white p-8 shadow-lg transition-shadow hover:shadow-xl">
-            <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-lg bg-red-100">
-              <TrendingDown className="h-8 w-8 text-red-600" />
+          <div className="rounded-lg border border-gray-100 bg-white p-5 shadow-lg transition-shadow hover:shadow-xl">
+            <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-lg bg-teal-100">
+              <TrendingDown className="h-8 w-8 text-teal-600" />
             </div>
-            <h3 className="mb-3 text-xl font-bold text-gray-900">
-              Budget Overruns
-            </h3>
+            <h3 className="mb-2 text-gray-900">Budget Overruns</h3>
             <p className="text-gray-600">
               Without spending limits, promotional budgets frequently exceed
               allocation
@@ -111,13 +104,11 @@ export default function PaymentsPage() {
           </div>
 
           {/* Challenge 3 */}
-          <div className="rounded-lg border border-gray-100 bg-white p-8 shadow-lg transition-shadow hover:shadow-xl">
-            <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-lg bg-red-100">
-              <FileSearch className="h-8 w-8 text-red-600" />
+          <div className="rounded-lg border border-gray-100 bg-white p-5 shadow-lg transition-shadow hover:shadow-xl">
+            <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-lg bg-teal-100">
+              <FileSearch className="h-8 w-8 text-teal-600" />
             </div>
-            <h3 className="mb-3 text-xl font-bold text-gray-900">
-              Payment Reconciliation
-            </h3>
+            <h3 className="mb-2 text-gray-900">Payment Reconciliation</h3>
             <p className="text-gray-600">
               Tracking EFT payments across multiple retailers creates
               reconciliation nightmares
@@ -125,13 +116,11 @@ export default function PaymentsPage() {
           </div>
 
           {/* Challenge 4 */}
-          <div className="rounded-lg border border-gray-100 bg-white p-8 shadow-lg transition-shadow hover:shadow-xl">
-            <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-lg bg-red-100">
-              <Shield className="h-8 w-8 text-red-600" />
+          <div className="rounded-lg border border-gray-100 bg-white p-5 shadow-lg transition-shadow hover:shadow-xl">
+            <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-lg bg-teal-100">
+              <Shield className="h-8 w-8 text-teal-600" />
             </div>
-            <h3 className="mb-3 text-xl font-bold text-gray-900">
-              Compliance Issues
-            </h3>
+            <h3 className="mb-2 text-gray-900">Compliance Issues</h3>
             <p className="text-gray-600">
               Audit trails are incomplete, making compliance verification
               difficult
@@ -143,15 +132,15 @@ export default function PaymentsPage() {
       {/* SECTION: Payment Capabilities - Bento Grid */}
       <section
         data-navbar-theme="light"
-        className="mx-auto mb-24 max-w-5xl px-4"
+        className="section-container mx-auto py-12"
         role="region"
         aria-labelledby="payment-capabilities"
       >
-        <h2 id="payment-capabilities" className="sr-only">
-          Payment Management Capabilities
+        <h2 id="payment-capabilities" className="mb-6 text-center">
+          Our Solution
         </h2>
 
-        <div className="grid auto-rows-[300px] grid-cols-1 gap-2 md:grid-cols-6">
+        <div className="grid auto-rows-[200px] grid-cols-1 gap-2 md:grid-cols-6">
           {/* Card 1 - Automated Validation */}
           <article
             className="bento-card md:col-span-4"
@@ -165,7 +154,7 @@ export default function PaymentsPage() {
               fill
             />
             <div>
-              <ShieldCheck size={32} aria-hidden="true" />
+              <ShieldCheck size={32} aria-hidden="true" className="text-teal-400" />
               <h3 id="automated-validation" className="md:text-3xl">
                 Automated Validation
               </h3>
@@ -192,7 +181,7 @@ export default function PaymentsPage() {
               fill
             />
             <div>
-              <Wallet size={32} aria-hidden="true" />
+              <Wallet size={32} aria-hidden="true" className="text-teal-400" />
               <h3 id="budget-control">Spending Limits</h3>
               <p id="budget-control-desc">
                 Set promotional budgets and approval thresholds to prevent
@@ -214,7 +203,7 @@ export default function PaymentsPage() {
               fill
             />
             <div>
-              <History size={32} aria-hidden="true" />
+              <History size={32} aria-hidden="true" className="text-teal-400" />
               <h3 id="real-time-tracking">Real-Time Activity</h3>
               <p id="real-time-tracking-desc">
                 Track all payments from submission to EFT processing with
@@ -236,7 +225,7 @@ export default function PaymentsPage() {
               fill
             />
             <div>
-              <Smartphone size={32} aria-hidden="true" />
+              <Smartphone size={32} aria-hidden="true" className="text-teal-400" />
               <h3 id="mobile-validation" className="md:text-3xl">
                 Mobile-First Validation
               </h3>
@@ -260,7 +249,7 @@ export default function PaymentsPage() {
               fill
             />
             <div>
-              <Shield size={32} aria-hidden="true" />
+              <Shield size={32} aria-hidden="true" className="text-teal-400" />
               <h3 id="compliance-audit" className="md:text-2xl">
                 Complete Audit Trails
               </h3>
@@ -284,7 +273,7 @@ export default function PaymentsPage() {
               fill
             />
             <div>
-              <PieChart size={32} aria-hidden="true" />
+              <PieChart size={32} aria-hidden="true" className="text-teal-400" />
               <h3 id="payment-distribution" className="md:text-2xl">
                 Payment Analytics
               </h3>
@@ -297,12 +286,11 @@ export default function PaymentsPage() {
         </div>
       </section>
 
+      <IndustryBadge />
+
       {/* SECTION: Analytics & Chart */}
-      <section
-        data-navbar-theme="light"
-        className="container mx-auto px-6 py-40"
-      >
-        <div className="grid items-center gap-32 lg:grid-cols-2">
+      <section data-navbar-theme="light" className="mx-auto bg-slate-200 py-12">
+        <div className="section-container grid items-center gap-32 lg:grid-cols-2">
           <div className="rounded-[4rem] border border-slate-50 bg-white p-12 shadow-xl">
             <div className="mb-12 flex items-center justify-between text-xs font-black tracking-widest uppercase">
               <span>Payment Distribution</span>
@@ -354,10 +342,8 @@ export default function PaymentsPage() {
 
           <div className="space-y-12">
             <h2 className="text-5xl leading-[0.9] font-black tracking-tighter text-slate-900 uppercase md:text-7xl">
-              Transparency <br />{" "}
-              <span className="text-teal-600 underline decoration-teal-200 underline-offset-[12px]">
-                At Every Level.
-              </span>
+              Transparency <br />
+              <span className="text-highlight">At Every Level.</span>
             </h2>
             <div className="space-y-10">
               <div className="group flex items-start gap-8">
@@ -399,8 +385,6 @@ export default function PaymentsPage() {
         </div>
       </section>
 
-      <IndustryBadge />
-
       {/* SECTION: ROI */}
       <section
         data-navbar-theme="dark"
@@ -409,12 +393,9 @@ export default function PaymentsPage() {
         aria-labelledby="roi-heading"
       >
         <div className="relative overflow-hidden bg-slate-900 p-8 text-white md:p-16">
-          <div className="relative z-10 grid items-center gap-12 lg:grid-cols-2">
+          <div className="section-container relative z-10 grid items-center gap-12 lg:grid-cols-2">
             <div>
-              <h2
-                id="roi-heading"
-                className="mb-8 text-4xl font-black md:text-6xl"
-              >
+              <h2 id="roi-heading" className="pb-8 text-4xl md:text-8xl">
                 Proven Impact <br />
                 <span className="text-teal-500">
                   Where Payments Drive Accountability
@@ -447,25 +428,13 @@ export default function PaymentsPage() {
                     limits and approval workflows.
                   </p>
                 </li>
-
-                <li className="flex items-start gap-4">
-                  <ShieldCheck
-                    aria-hidden="true"
-                    className="mt-1 text-teal-500"
-                  />
-                  <p className="text-lg text-slate-300">
-                    Achieve{" "}
-                    <strong className="text-white">
-                      100% audit compliance
-                    </strong>{" "}
-                    with complete payment trails and documentation.
-                  </p>
-                </li>
               </ul>
 
-              <a href="/roi" className="btn btn-secondary text-white!">
-                Calculate Your ROI <ArrowRight aria-hidden="true" />
-              </a>
+              <Button variant="secondary" size="lg">
+                <Link href="/roi" className="flex items-center gap-2">
+                  Calculate Your ROI <ArrowRight aria-hidden="true" />
+                </Link>
+              </Button>
             </div>
 
             {/* ROI Stats */}
@@ -475,18 +444,18 @@ export default function PaymentsPage() {
               aria-labelledby="roi-stats"
             >
               <div className="rounded-[2.5rem] border border-white/10 bg-white/5 p-12 text-center backdrop-blur-md">
-                <TrendingUp
+                <Calculator
                   className="mx-auto mb-6 text-teal-500"
                   size={48}
                   aria-hidden="true"
                 />
 
-                <h3
+                <div
                   id="roi-stats"
-                  className="mb-2 text-5xl font-black md:text-8xl"
+                  className="mb-2 text-5xl font-black md:text-6xl"
                 >
                   75%
-                </h3>
+                </div>
                 <p className="text-sm font-bold tracking-[0.2em] text-teal-400 uppercase">
                   Faster Processing
                 </p>
@@ -512,19 +481,7 @@ export default function PaymentsPage() {
         </div>
       </section>
 
-      {/* SECTION: Final CTA */}
-      <section className="mx-6 mb-6">
-        <CTA />
-      </section>
-
-      <footer className="py-24 text-center">
-        <Link
-          href="/"
-          className="text-xs font-black tracking-[0.4em] text-slate-300 uppercase transition-colors hover:text-emerald-500"
-        >
-          &larr; Back to Platform Overview
-        </Link>
-      </footer>
+      <CTA />
     </main>
   )
 }

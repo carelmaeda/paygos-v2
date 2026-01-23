@@ -1,7 +1,7 @@
 import type { Metadata } from "next"
-import React from "react"
 import Link from "next/link"
 import { CTA } from "@/components/sections/cta/CTA"
+import { Button } from "@/components/ui/button"
 import Image from "next/image"
 import { IndustryBadge } from "@/components/sections/solutions/IndustryBadge"
 import { PatternDots } from "@/components/ui/patterns"
@@ -19,6 +19,7 @@ import {
   AlertCircle,
   Clock,
   TrendingDown,
+  Calculator,
 } from "lucide-react"
 import { RebatesPerformanceChart } from "./rebates-performance-chart"
 import { Breadcrumbs } from "@/components/layout/Breadcrumbs"
@@ -95,21 +96,17 @@ export default function PaygosRebatesPage() {
 
       {/* Challenges */}
       <section
-        className="container mx-auto px-6 py-24"
         data-navbar-theme="light"
+        className="section-container mx-auto py-12"
       >
-        <h2 className="mb-12 text-center text-3xl font-black text-slate-900">
-          Common Rebate Challenges
-        </h2>
-        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
+        <h2 className="mb-6 text-center">Common Rebate Challenges</h2>
+        <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4">
           {/* Challenge 1 */}
-          <div className="rounded-lg border border-gray-100 bg-white p-8 shadow-lg transition-shadow hover:shadow-xl">
-            <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-lg bg-red-100">
-              <FileSpreadsheet className="h-8 w-8 text-red-600" />
+          <div className="rounded-lg border border-gray-100 bg-white p-5 shadow-lg transition-shadow hover:shadow-xl">
+            <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-lg bg-teal-100">
+              <FileSpreadsheet className="h-8 w-8 text-teal-600" />
             </div>
-            <h3 className="mb-3 text-xl font-bold text-gray-900">
-              Spreadsheet Chaos
-            </h3>
+            <h3 className="mb-2 text-gray-900">Spreadsheet Chaos</h3>
             <p className="text-gray-600">
               Tracking rebate tiers across 100+ retailers in Excel leads to
               calculation errors
@@ -117,13 +114,11 @@ export default function PaygosRebatesPage() {
           </div>
 
           {/* Challenge 2 */}
-          <div className="rounded-lg border border-gray-100 bg-white p-8 shadow-lg transition-shadow hover:shadow-xl">
-            <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-lg bg-red-100">
-              <AlertCircle className="h-8 w-8 text-red-600" />
+          <div className="rounded-lg border border-gray-100 bg-white p-5 shadow-lg transition-shadow hover:shadow-xl">
+            <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-lg bg-teal-100">
+              <AlertCircle className="h-8 w-8 text-teal-600" />
             </div>
-            <h3 className="mb-3 text-xl font-bold text-gray-900">
-              Claim Disputes
-            </h3>
+            <h3 className="mb-2 text-gray-900">Claim Disputes</h3>
             <p className="text-gray-600">
               Retailers dispute 25% of rebate calculations due to lack of
               transparency
@@ -131,28 +126,24 @@ export default function PaygosRebatesPage() {
           </div>
 
           {/* Challenge 3 */}
-          <div className="rounded-lg border border-gray-100 bg-white p-8 shadow-lg transition-shadow hover:shadow-xl">
-            <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-lg bg-red-100">
-              <Clock className="h-8 w-8 text-red-600" />
+          <div className="rounded-lg border border-gray-100 bg-white p-5 shadow-lg transition-shadow hover:shadow-xl">
+            <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-lg bg-teal-100">
+              <Clock className="h-8 w-8 text-teal-600" />
             </div>
-            <h3 className="mb-3 text-xl font-bold text-gray-900">
-              Delayed Payouts
-            </h3>
+            <h3 className="mb-2 text-gray-900">Delayed Payouts</h3>
             <p className="text-gray-600">
               Manual validation takes 30-45 days, frustrating partners
             </p>
           </div>
 
           {/* Challenge 4 */}
-          <div className="rounded-lg border border-gray-100 bg-white p-8 shadow-lg transition-shadow hover:shadow-xl">
-            <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-lg bg-red-100">
-              <TrendingDown className="h-8 w-8 text-red-600" />
+          <div className="rounded-lg border border-gray-100 bg-white p-5 shadow-lg transition-shadow hover:shadow-xl">
+            <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-lg bg-teal-100">
+              <TrendingDown className="h-8 w-8 text-teal-600" />
             </div>
-            <h3 className="mb-3 text-xl font-bold text-gray-900">
-              Lost Opportunities
-            </h3>
+            <h3 className="mb-2 text-gray-900">Lost Opportunities</h3>
             <p className="text-gray-600">
-              Retailers don't see progress toward thresholds, missing
+              Retailers don&apos;t see progress toward thresholds, missing
               incremental sales
             </p>
           </div>
@@ -161,16 +152,16 @@ export default function PaygosRebatesPage() {
 
       {/* Rebate Capabilities */}
       <section
-        className="mx-auto mb-24 max-w-5xl px-4"
+        data-navbar-theme="light"
+        className="section-container mx-auto py-12"
         role="region"
         aria-labelledby="rebate-capabilities"
-        data-navbar-theme="light"
       >
-        <h2 id="rebate-capabilities" className="sr-only">
-          Rebate Management Capabilities
+        <h2 id="rebate-capabilities" className="mb-6 text-center">
+          Our Solution
         </h2>
 
-        <div className="grid auto-rows-[300px] grid-cols-1 gap-2 md:grid-cols-6">
+        <div className="grid auto-rows-[200px] grid-cols-1 gap-2 md:grid-cols-6">
           {/* Card 1 - Smaller left card */}
           <article
             className="bento-card md:col-span-2"
@@ -184,7 +175,11 @@ export default function PaygosRebatesPage() {
               fill
             />
             <div>
-              <Sparkles size={32} aria-hidden="true" />
+              <Sparkles
+                size={32}
+                aria-hidden="true"
+                className="text-teal-400"
+              />
               <h3 id="automated-tracking">Automated Tracking</h3>
               <p id="automated-tracking-desc">
                 Eliminate spreadsheets. Capture every purchase, calculate
@@ -206,7 +201,7 @@ export default function PaygosRebatesPage() {
               fill
             />
             <div>
-              <Target size={32} aria-hidden="true" />
+              <Target size={32} aria-hidden="true" className="text-teal-400" />
               <h3 id="program-management" className="md:text-3xl">
                 Multi-Tier Program Management
               </h3>
@@ -233,7 +228,11 @@ export default function PaygosRebatesPage() {
               fill
             />
             <div>
-              <BarChart3 size={32} aria-hidden="true" />
+              <BarChart3
+                size={32}
+                aria-hidden="true"
+                className="text-teal-400"
+              />
               <h3 id="real-time-visibility" className="md:text-2xl">
                 Real-Time Visibility
               </h3>
@@ -257,7 +256,11 @@ export default function PaygosRebatesPage() {
               fill
             />
             <div>
-              <CheckCircle2 size={32} aria-hidden="true" />
+              <CheckCircle2
+                size={32}
+                aria-hidden="true"
+                className="text-teal-400"
+              />
               <h3 id="claim-validation" className="md:text-2xl">
                 Automated Claim Validation
               </h3>
@@ -281,7 +284,7 @@ export default function PaygosRebatesPage() {
               fill
             />
             <div>
-              <Users size={32} aria-hidden="true" />
+              <Users size={32} aria-hidden="true" className="text-teal-400" />
               <h3 id="partner-engagement">Partner Engagement</h3>
               <p id="partner-engagement-desc">
                 Self-service portals let retailers track earnings and submit
@@ -303,7 +306,11 @@ export default function PaygosRebatesPage() {
               fill
             />
             <div>
-              <DollarSign size={32} aria-hidden="true" />
+              <DollarSign
+                size={32}
+                aria-hidden="true"
+                className="text-teal-400"
+              />
               <h3 id="payout-reconciliation" className="md:text-3xl">
                 Seamless Payout & Reconciliation
               </h3>
@@ -319,19 +326,16 @@ export default function PaygosRebatesPage() {
         </div>
       </section>
 
+      <IndustryBadge />
+
       {/* Chart Section */}
-      <section
-        className="container mx-auto px-6 py-40"
-        data-navbar-theme="light"
-      >
-        <div className="grid items-center gap-32 lg:grid-cols-2">
+      <section data-navbar-theme="light" className="mx-auto bg-slate-200 py-12">
+        <div className="section-container grid items-center gap-32 lg:grid-cols-2">
           <RebatesPerformanceChart />
           <div className="space-y-12">
             <h2 className="text-5xl leading-[0.9] font-black tracking-tighter text-slate-900 uppercase md:text-7xl">
               Growth <br />
-              <span className="text-teal-600 underline decoration-teal-200 underline-offset-[12px]">
-                That's Measurable.
-              </span>
+              <span className="text-highlight">That&apos;s Measurable.</span>
             </h2>
             <div className="space-y-10">
               <div className="group flex items-start gap-8">
@@ -373,8 +377,6 @@ export default function PaygosRebatesPage() {
         </div>
       </section>
 
-      <IndustryBadge />
-
       {/* ROI */}
       <section
         className="mx-auto"
@@ -383,12 +385,9 @@ export default function PaygosRebatesPage() {
         data-navbar-theme="dark"
       >
         <div className="relative overflow-hidden bg-slate-900 p-8 text-white md:p-16">
-          <div className="relative z-10 grid items-center gap-12 lg:grid-cols-2">
+          <div className="section-container relative z-10 grid items-center gap-12 lg:grid-cols-2">
             <div>
-              <h2
-                id="roi-heading"
-                className="mb-8 text-4xl font-black md:text-6xl"
-              >
+              <h2 id="roi-heading" className="pb-8 text-4xl md:text-8xl">
                 Proven Impact <br />
                 <span className="text-teal-500">
                   Where Rebates Drive Real Growth
@@ -432,9 +431,11 @@ export default function PaygosRebatesPage() {
                 </li>
               </ul>
 
-              <a href="/roi" className="btn btn-secondary text-white!">
-                Calculate Your ROI <ArrowRight aria-hidden="true" />
-              </a>
+              <Button variant="secondary" size="lg">
+                <Link href="/roi" className="flex items-center gap-2">
+                  Calculate Your ROI <ArrowRight aria-hidden="true" />
+                </Link>
+              </Button>
             </div>
 
             {/* ROI Stats */}
@@ -444,18 +445,18 @@ export default function PaygosRebatesPage() {
               aria-labelledby="roi-stats"
             >
               <div className="rounded-[2.5rem] border border-white/10 bg-white/5 p-12 text-center backdrop-blur-md">
-                <TrendingUp
+                <Calculator
                   className="mx-auto mb-6 text-teal-500"
                   size={48}
                   aria-hidden="true"
                 />
 
-                <h3
+                <div
                   id="roi-stats"
-                  className="mb-2 text-5xl font-black md:text-8xl"
+                  className="mb-2 text-5xl font-black md:text-6xl"
                 >
                   30%
-                </h3>
+                </div>
                 <p className="text-sm font-bold tracking-[0.2em] text-teal-400 uppercase">
                   Faster Processing
                 </p>

@@ -1,5 +1,4 @@
 import type { Metadata } from "next"
-import React from "react"
 import Link from "next/link"
 import Image from "next/image"
 import { PatternDots } from "@/components/ui/patterns"
@@ -15,8 +14,10 @@ import {
   Clock,
   DollarSign,
   PackageX,
+  Calculator,
 } from "lucide-react"
 import { CTA } from "@/components/sections/cta/CTA"
+import { Button } from "@/components/ui/button"
 import { BookCallButton } from "@/components/sections/cta/BookCallButton"
 import { IndustryBadge } from "@/components/sections/solutions/IndustryBadge"
 import { ReturnsTrendChart } from "./returns-trend-chart"
@@ -93,21 +94,17 @@ export default function ReturnsPage() {
 
       {/* Challenges */}
       <section
-        className="container mx-auto px-6 py-24"
         data-navbar-theme="light"
+        className="section-container mx-auto py-12"
       >
-        <h2 className="mb-12 text-center text-3xl font-black text-slate-900">
-          Common Returns Challenges
-        </h2>
-        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
+        <h2 className="mb-6 text-center">Common Returns Challenges</h2>
+        <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4">
           {/* Challenge 1 */}
-          <div className="rounded-lg border border-gray-100 bg-white p-8 shadow-lg transition-shadow hover:shadow-xl">
-            <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-lg bg-red-100">
-              <AlertTriangle className="h-8 w-8 text-red-600" />
+          <div className="rounded-lg border border-gray-100 bg-white p-5 shadow-lg transition-shadow hover:shadow-xl">
+            <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-lg bg-teal-100">
+              <AlertTriangle className="h-8 w-8 text-teal-600" />
             </div>
-            <h3 className="mb-3 text-xl font-bold text-gray-900">
-              Unclear Return Reasons
-            </h3>
+            <h3 className="mb-2 text-gray-900">Unclear Return Reasons</h3>
             <p className="text-gray-600">
               Returns lack standardized categorization, making it hard to
               identify root causes
@@ -115,39 +112,33 @@ export default function ReturnsPage() {
           </div>
 
           {/* Challenge 2 */}
-          <div className="rounded-lg border border-gray-100 bg-white p-8 shadow-lg transition-shadow hover:shadow-xl">
-            <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-lg bg-red-100">
-              <Clock className="h-8 w-8 text-red-600" />
+          <div className="rounded-lg border border-gray-100 bg-white p-5 shadow-lg transition-shadow hover:shadow-xl">
+            <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-lg bg-teal-100">
+              <Clock className="h-8 w-8 text-teal-600" />
             </div>
-            <h3 className="mb-3 text-xl font-bold text-gray-900">
-              Processing Delays
-            </h3>
+            <h3 className="mb-2 text-gray-900">Processing Delays</h3>
             <p className="text-gray-600">
               Manual return validation causes 7-10 day processing delays
             </p>
           </div>
 
           {/* Challenge 3 */}
-          <div className="rounded-lg border border-gray-100 bg-white p-8 shadow-lg transition-shadow hover:shadow-xl">
-            <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-lg bg-red-100">
-              <DollarSign className="h-8 w-8 text-red-600" />
+          <div className="rounded-lg border border-gray-100 bg-white p-5 shadow-lg transition-shadow hover:shadow-xl">
+            <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-lg bg-teal-100">
+              <DollarSign className="h-8 w-8 text-teal-600" />
             </div>
-            <h3 className="mb-3 text-xl font-bold text-gray-900">
-              Lost Margin
-            </h3>
+            <h3 className="mb-2 text-gray-900">Lost Margin</h3>
             <p className="text-gray-600">
               Unvalidated returns erode margin by 5-8% annually
             </p>
           </div>
 
           {/* Challenge 4 */}
-          <div className="rounded-lg border border-gray-100 bg-white p-8 shadow-lg transition-shadow hover:shadow-xl">
-            <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-lg bg-red-100">
-              <PackageX className="h-8 w-8 text-red-600" />
+          <div className="rounded-lg border border-gray-100 bg-white p-5 shadow-lg transition-shadow hover:shadow-xl">
+            <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-lg bg-teal-100">
+              <PackageX className="h-8 w-8 text-teal-600" />
             </div>
-            <h3 className="mb-3 text-xl font-bold text-gray-900">
-              Replacement Gaps
-            </h3>
+            <h3 className="mb-2 text-gray-900">Replacement Gaps</h3>
             <p className="text-gray-600">
               Bad goods lead to out-of-stocks instead of automatic replacements
             </p>
@@ -157,16 +148,16 @@ export default function ReturnsPage() {
 
       {/* Returns Capabilities */}
       <section
-        className="mx-auto mb-24 max-w-5xl px-4"
+        data-navbar-theme="light"
+        className="section-container mx-auto py-12"
         role="region"
         aria-labelledby="returns-capabilities"
-        data-navbar-theme="light"
       >
-        <h2 id="returns-capabilities" className="sr-only">
-          Returns Management Capabilities
+        <h2 id="returns-capabilities" className="mb-6 text-center">
+          Our Solution
         </h2>
 
-        <div className="grid auto-rows-[300px] grid-cols-1 gap-2 md:grid-cols-6">
+        <div className="grid auto-rows-[200px] grid-cols-1 gap-2 md:grid-cols-6">
           {/* Card 1 - Validated Returns */}
           <article
             className="bento-card md:col-span-4"
@@ -180,7 +171,7 @@ export default function ReturnsPage() {
               fill
             />
             <div>
-              <Search size={32} aria-hidden="true" />
+              <Search size={32} aria-hidden="true" className="text-teal-400" />
               <h3 id="validated-returns" className="md:text-3xl">
                 Validated Returns
               </h3>
@@ -205,7 +196,7 @@ export default function ReturnsPage() {
               fill
             />
             <div>
-              <RefreshCcw size={32} aria-hidden="true" />
+              <RefreshCcw size={32} aria-hidden="true" className="text-teal-400" />
               <h3 id="replacement-orders">Replacement—Not Just Credit</h3>
               <p id="replacement-orders-desc">
                 Bad goods don't mean lost sales. Request replacements alongside
@@ -227,7 +218,7 @@ export default function ReturnsPage() {
               fill
             />
             <div>
-              <BarChart3 size={32} aria-hidden="true" />
+              <BarChart3 size={32} aria-hidden="true" className="text-teal-400" />
               <h3 id="returns-analytics">Data That Pays You Back</h3>
               <p id="returns-analytics-desc">
                 Analyze return rates by SKU, region, or retailer. Identify
@@ -249,7 +240,7 @@ export default function ReturnsPage() {
               fill
             />
             <div>
-              <Package size={32} aria-hidden="true" />
+              <Package size={32} aria-hidden="true" className="text-teal-400" />
               <h3 id="real-time-tracking" className="md:text-3xl">
                 Real-Time Visibility
               </h3>
@@ -265,19 +256,16 @@ export default function ReturnsPage() {
         </div>
       </section>
 
+      <IndustryBadge />
+
       {/* Chart Section */}
-      <section
-        className="container mx-auto px-6 py-40"
-        data-navbar-theme="light"
-      >
-        <div className="grid items-center gap-32 lg:grid-cols-2">
+      <section data-navbar-theme="light" className="mx-auto bg-slate-200 py-12">
+        <div className="section-container grid items-center gap-32 lg:grid-cols-2">
           <ReturnsTrendChart />
           <div className="space-y-12">
             <h2 className="text-5xl leading-[0.9] font-black tracking-tighter text-slate-900 uppercase md:text-7xl">
               Visibility <br />
-              <span className="text-teal-600 underline decoration-teal-200 underline-offset-[12px]">
-                That Pays Off.
-              </span>
+              <span className="text-highlight">That Pays Off.</span>
             </h2>
             <div className="space-y-10">
               <div className="group flex items-start gap-8">
@@ -319,22 +307,17 @@ export default function ReturnsPage() {
         </div>
       </section>
 
-      <IndustryBadge />
-
       {/* ROI */}
       <section
+        data-navbar-theme="dark"
         className="mx-auto"
         role="region"
         aria-labelledby="roi-heading"
-        data-navbar-theme="dark"
       >
         <div className="relative overflow-hidden bg-slate-900 p-8 text-white md:p-16">
-          <div className="relative z-10 grid items-center gap-12 lg:grid-cols-2">
+          <div className="section-container relative z-10 grid items-center gap-12 lg:grid-cols-2">
             <div>
-              <h2
-                id="roi-heading"
-                className="mb-8 text-4xl font-black md:text-6xl"
-              >
+              <h2 id="roi-heading" className="pb-8 text-4xl md:text-8xl">
                 Proven Impact <br />
                 <span className="text-teal-500">
                   Where Returns Drive Efficiency
@@ -369,25 +352,13 @@ export default function ReturnsPage() {
                     —no phone calls or paperwork required.
                   </p>
                 </li>
-
-                <li className="flex items-start gap-4">
-                  <RefreshCcw
-                    aria-hidden="true"
-                    className="mt-1 text-teal-500"
-                  />
-                  <p className="text-lg text-slate-300">
-                    Replacement orders maintain{" "}
-                    <strong className="text-white">
-                      shelf presence and revenue
-                    </strong>
-                    —turning a cost center into a retention tool.
-                  </p>
-                </li>
               </ul>
 
-              <a href="/roi" className="btn btn-secondary text-white!">
-                Calculate Your ROI <ArrowRight aria-hidden="true" />
-              </a>
+              <Button variant="secondary" size="lg">
+                <Link href="/roi" className="flex items-center gap-2">
+                  Calculate Your ROI <ArrowRight aria-hidden="true" />
+                </Link>
+              </Button>
             </div>
 
             {/* ROI Stats */}
@@ -397,18 +368,18 @@ export default function ReturnsPage() {
               aria-labelledby="roi-stats"
             >
               <div className="rounded-[2.5rem] border border-white/10 bg-white/5 p-12 text-center backdrop-blur-md">
-                <TrendingUp
+                <Calculator
                   className="mx-auto mb-6 text-teal-500"
                   size={48}
                   aria-hidden="true"
                 />
 
-                <h3
+                <div
                   id="roi-stats"
-                  className="mb-2 text-5xl font-black md:text-8xl"
+                  className="mb-2 text-5xl font-black md:text-6xl"
                 >
                   60%
-                </h3>
+                </div>
                 <p className="text-sm font-bold tracking-[0.2em] text-teal-400 uppercase">
                   Faster Processing
                 </p>
