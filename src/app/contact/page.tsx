@@ -2,6 +2,7 @@ import type { Metadata } from "next"
 import { PatternWaves } from "@/components/ui/patterns"
 import { Breadcrumbs } from "@/components/layout/Breadcrumbs"
 import { ContactForm } from "@/components/sections/contact/ContactForm"
+import { MotionSection } from "@/components/motion"
 
 export const metadata: Metadata = {
   title: "Contact Us | Paygos",
@@ -14,7 +15,12 @@ export default function ContactPage() {
       {/* Hero */}
       <section className="hero-sm bg-teal-950" data-navbar-theme="dark">
         <PatternWaves />
-        <div className="text-hero">
+        <MotionSection
+          as="div"
+          variant="slideUp"
+          className="text-hero"
+          viewport={{ once: true }}
+        >
           <small className="text-teal-400">Contact</small>
           <h1>
             Book a {""}
@@ -24,16 +30,16 @@ export default function ContactPage() {
             Let&apos;s discuss how Paygos can simplify and scale your sales
             operations.
           </p>
-        </div>
+        </MotionSection>
       </section>
 
       <Breadcrumbs />
 
       {/* Contact Form Section */}
       <section className="bg-white py-8" data-navbar-theme="light">
-        <div className="section-container">
+        <MotionSection as="div" variant="fadeIn" className="section-container">
           <ContactForm />
-        </div>
+        </MotionSection>
       </section>
     </main>
   )

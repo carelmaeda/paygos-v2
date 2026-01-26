@@ -8,6 +8,7 @@ export type MotionVariantName =
   | "fadeIn"
   | "slideUp"
   | "slideInLeft"
+  | "slideInRight"
   | "scaleIn"
   | "staggerContainer"
 

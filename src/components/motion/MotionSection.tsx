@@ -15,6 +15,34 @@ import type { MotionSectionProps, MotionVariantName } from "@/lib/motion"
 /** Default delay applied to all animations for a subtle stagger effect */
 const DEFAULT_DELAY = 0.1
 
+// Pre-create motion components at module level to avoid creating during render
+const motionComponents = {
+  section: m.section,
+  div: m.div,
+  span: m.span,
+  article: m.article,
+  aside: m.aside,
+  header: m.header,
+  footer: m.footer,
+  main: m.main,
+  nav: m.nav,
+  ul: m.ul,
+  ol: m.ol,
+  li: m.li,
+  p: m.p,
+  h1: m.h1,
+  h2: m.h2,
+  h3: m.h3,
+  h4: m.h4,
+  h5: m.h5,
+  h6: m.h6,
+  blockquote: m.blockquote,
+  figure: m.figure,
+  figcaption: m.figcaption,
+} as const
+
+type MotionComponentKey = keyof typeof motionComponents
+
 type PolymorphicProps<E extends ElementType> = MotionSectionProps &
   Omit<ComponentPropsWithoutRef<E>, keyof MotionSectionProps>
 
@@ -74,8 +102,9 @@ export function MotionSection<E extends ElementType = "section">({
     ...viewport,
   }
 
-  // Create the motion component with the specified element type
-  const Component = as ? m(as as keyof typeof m) : m.section
+  // Get the motion component from pre-created map (not creating new components, just lookup)
+  // eslint-disable-next-line react-hooks/static-components
+  const Component = motionComponents[as as MotionComponentKey] || motionComponents.section
 
   return (
     <Component

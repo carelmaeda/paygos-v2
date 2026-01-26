@@ -92,35 +92,35 @@ export function ResultsModal({
   return (
     <Dialog open={isOpen} onOpenChange={(open) => !open && onClose()}>
       <DialogContent
-        className="flex max-h-[90vh] flex-col gap-0 overflow-hidden rounded-3xl border-none p-0 sm:max-w-2xl lg:max-w-3xl"
+        className="flex max-h-[95vh] flex-col gap-0 overflow-hidden rounded-3xl border-none p-0 sm:max-w-2xl lg:max-w-3xl"
         onOpenAutoFocus={(e) => e.preventDefault()}
       >
         {/* 1. FIXED HEADER */}
-        <DialogHeader className="shrink-0 space-y-0 bg-white px-8 pt-10 pb-6">
+        <DialogHeader className="shrink-0 space-y-0 bg-white px-0 pt-10 pb-2">
           <DialogTitle className="text-center">
-            <span className="flex items-center justify-center text-2xl leading-none font-extrabold tracking-tight text-slate-900">
+            <span className="flex items-center justify-center text-lg leading-none font-extrabold tracking-tight text-slate-900">
               Your potential with
               <Image
                 src="/paygos/logo-full.webp"
                 alt="Paygos"
                 width={120}
                 height={30}
-                className="ml-2 inline-block h-8 w-auto"
+                className="ml-2 inline-block h-6 w-auto"
               />
             </span>
           </DialogTitle>
-          <DialogDescription className="text-md mt-2 text-center text-slate-500">
+          <DialogDescription className="text-center text-slate-500">
             Based on your current setup, here is the impact we can make
             together.
           </DialogDescription>
         </DialogHeader>
 
         {/* 2. SCROLLABLE BODY */}
-        <div className="custom-scrollbar flex-1 overflow-y-auto bg-white px-8 pt-2">
+        <div className="custom-scrollbar flex-1 overflow-y-auto bg-white px-4 pt-2">
           {/* Selection Summary */}
-          <div className="mb-8">
+          <div className="mb-4">
             <div className="border border-slate-100 p-2">
-              <div className="flex flex-col items-center gap-3">
+              <div className="flex flex-col items-center gap-1">
                 <small className="text-slate-400">Your Configuration</small>
                 <div className="flex flex-wrap items-center justify-center gap-2">
                   <Badge className="gap-1 border-none bg-teal-300 px-3 py-2">
@@ -156,7 +156,7 @@ export function ResultsModal({
 
           {/* Trust Microcopy */}
           <div className="mb-2">
-            <div className="flex items-center justify-center gap-3 rounded-2xl border border-teal-100/50 bg-teal-50/50 p-4">
+            <div className="flex items-center justify-center gap-2 p-2">
               <ShieldCheck className="h-4 w-4 shrink-0 text-black" />
               <p className="text-center text-sm font-medium text-teal-900/70">
                 These estimates are based on typical results from teams similar

@@ -45,7 +45,7 @@ export function ResultsPanel({ results, mode }: Props) {
   )
 
   return (
-    <div className="grid grid-cols-1 gap-2 sm:grid-cols-2 xl:grid-cols-5">
+    <div className="flex gap-2">
       {activeMetrics.map((metric, index) => {
         const value = getResultValue(metric.key)
         if (value === undefined) return null

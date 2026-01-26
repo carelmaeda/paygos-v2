@@ -45,14 +45,13 @@ export function ResultCard({
   // Determine value type for appropriate rendering
   const isNumeric = typeof value === "number"
   const animatedValue = useCountUp(isNumeric ? value : 0)
-  const isPercentage = typeof value === "string" && value.includes("%")
 
   // Use Clock icon for time-based metrics, TrendingUp for others
   const Icon = unit ? Clock : TrendingUp
 
   return (
     <div
-      className="group animate-in fade-in slide-in-from-bottom-4 relative flex h-full flex-col overflow-hidden rounded-lg p-4 ring-1 ring-black/10 transition-all duration-300 hover:shadow-md"
+      className="group animate-in fade-in slide-in-from-bottom-4 relative flex w-100 flex-col overflow-hidden rounded-lg p-4 ring-1 ring-black/10 transition-all duration-300 hover:shadow-md"
       style={{ animationDelay: `${animationDelay}ms` }}
     >
       {/* Header Row - Icon and Tooltip */}
@@ -82,15 +81,12 @@ export function ResultCard({
       </div>
 
       {/* Metric Label */}
-      <p className="text-muted-foreground mb-3 text-xs">{label}</p>
+      <p className="text-sm text-gray-700">{label}</p>
 
       {/* Value Display - The "hero" moment of the card */}
       <div className="mt-auto">
         <p className="text-foreground text-2xl font-bold tracking-tight">
-          {/* Render animated value for numbers, raw value for strings */}
-          {isNumeric ? animatedValue : isPercentage ? value : value}
-
-          {/* Optional unit suffix */}
+          {isNumeric ? animatedValue : value}
           {unit && (
             <span className="text-muted-foreground ml-2 text-sm font-medium">
               {unit}

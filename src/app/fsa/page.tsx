@@ -23,6 +23,7 @@ import { IndustryBadge } from "@/components/sections/solutions/IndustryBadge"
 import { PatternHexagon } from "@/components/ui/patterns"
 import { Breadcrumbs } from "@/components/layout/Breadcrumbs"
 import { Button } from "@/components/ui/button"
+import { MotionSection } from "@/components/motion"
 
 export const metadata: Metadata = {
   title: "Field Sales Automation | Paygos",
@@ -76,7 +77,12 @@ export default function FsaPage() {
       {/* Hero */}
       <section className="hero-sm bg-cyan-950" data-navbar-theme="dark">
         <PatternHexagon />
-        <div className="text-hero">
+        <MotionSection
+          as="div"
+          variant="slideUp"
+          className="text-hero"
+          viewport={{ once: true }}
+        >
           <small className="text-teal-400">
             Mobile-First • Real-Time Execution
           </small>
@@ -89,7 +95,7 @@ export default function FsaPage() {
             manage visits, capture photos, track activities, and execute
             flawlessly—all from their phone.
           </p>
-        </div>
+        </MotionSection>
       </section>
 
       <Breadcrumbs />
@@ -99,12 +105,21 @@ export default function FsaPage() {
         className="section-container mx-auto px-6 py-16"
         data-navbar-theme="light"
       >
-        <h2 className="mb-8 text-center text-3xl font-black text-slate-900 md:text-5xl">
+        <MotionSection
+          as="h2"
+          variant="slideUp"
+          className="mb-8 text-center text-3xl font-black text-slate-900 md:text-5xl"
+        >
           Common Field Sales Challenges
-        </h2>
+        </MotionSection>
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
           {/* Challenge 1 */}
-          <div className="rounded-lg border border-gray-100 bg-white p-8 shadow-lg transition-shadow hover:shadow-xl">
+          <MotionSection
+            as="div"
+            variant="scaleIn"
+            delay={0.1}
+            className="rounded-lg border border-gray-100 bg-white p-8 shadow-lg transition-shadow hover:shadow-xl"
+          >
             <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-xl bg-red-100">
               <FileText className="h-8 w-8 text-red-600" />
             </div>
@@ -115,10 +130,15 @@ export default function FsaPage() {
               Reps waste around 10 hours per week on manual data entry after
               filling out paper forms
             </p>
-          </div>
+          </MotionSection>
 
           {/* Challenge 2 */}
-          <div className="rounded-lg border border-gray-100 bg-white p-8 shadow-lg transition-shadow hover:shadow-xl">
+          <MotionSection
+            as="div"
+            variant="scaleIn"
+            delay={0.15}
+            className="rounded-lg border border-gray-100 bg-white p-8 shadow-lg transition-shadow hover:shadow-xl"
+          >
             <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-xl bg-red-100">
               <Camera className="h-8 w-8 text-red-600" />
             </div>
@@ -129,10 +149,15 @@ export default function FsaPage() {
               No photo proof means execution claims cannot be validated,
               creating accountability gaps
             </p>
-          </div>
+          </MotionSection>
 
           {/* Challenge 3 */}
-          <div className="rounded-lg border border-gray-100 bg-white p-8 shadow-lg transition-shadow hover:shadow-xl">
+          <MotionSection
+            as="div"
+            variant="scaleIn"
+            delay={0.2}
+            className="rounded-lg border border-gray-100 bg-white p-8 shadow-lg transition-shadow hover:shadow-xl"
+          >
             <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-xl bg-red-100">
               <MapPin className="h-8 w-8 text-red-600" />
             </div>
@@ -143,10 +168,15 @@ export default function FsaPage() {
               Managers lack visibility into which stores are being visited and
               when
             </p>
-          </div>
+          </MotionSection>
 
           {/* Challenge 4 */}
-          <div className="rounded-lg border border-gray-100 bg-white p-8 shadow-lg transition-shadow hover:shadow-xl">
+          <MotionSection
+            as="div"
+            variant="scaleIn"
+            delay={0.25}
+            className="rounded-lg border border-gray-100 bg-white p-8 shadow-lg transition-shadow hover:shadow-xl"
+          >
             <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-xl bg-red-100">
               <Clock className="h-8 w-8 text-red-600" />
             </div>
@@ -157,7 +187,7 @@ export default function FsaPage() {
               Field data reaches head office 5-7 days late, slowing critical
               decisions
             </p>
-          </div>
+          </MotionSection>
         </div>
       </section>
 
@@ -170,16 +200,21 @@ export default function FsaPage() {
         aria-labelledby="fsa-capabilities"
         data-navbar-theme="light"
       >
-        <h2
+        <MotionSection
+          as="h2"
+          variant="slideUp"
           id="fsa-capabilities"
           className="mb-8 text-center text-4xl font-black md:text-5xl"
         >
           The Paygos Solution
-        </h2>
+        </MotionSection>
 
         <div className="grid auto-rows-[350px] grid-cols-1 gap-2 md:grid-cols-6">
           {/* Card 1 - Mobile Visit Capture */}
-          <article
+          <MotionSection
+            as="article"
+            variant="scaleIn"
+            delay={0.1}
             className="bento-card md:col-span-4"
             role="group"
             aria-labelledby="mobile-visit-capture"
@@ -203,10 +238,13 @@ export default function FsaPage() {
                 app that works seamlessly on any device.
               </p>
             </div>
-          </article>
+          </MotionSection>
 
           {/* Card 2 - GPS Route Optimization */}
-          <article
+          <MotionSection
+            as="article"
+            variant="scaleIn"
+            delay={0.15}
             className="bento-card md:col-span-2"
             role="group"
             aria-labelledby="gps-routes"
@@ -225,10 +263,13 @@ export default function FsaPage() {
                 expense reporting.
               </p>
             </div>
-          </article>
+          </MotionSection>
 
           {/* Card 3 - Real-Time Photo Validation */}
-          <article
+          <MotionSection
+            as="article"
+            variant="scaleIn"
+            delay={0.2}
             className="bento-card md:col-span-2"
             role="group"
             aria-labelledby="photo-validation"
@@ -247,10 +288,13 @@ export default function FsaPage() {
                 instantly with timestamp and GPS.
               </p>
             </div>
-          </article>
+          </MotionSection>
 
           {/* Card 4 - Activity Dashboard */}
-          <article
+          <MotionSection
+            as="article"
+            variant="scaleIn"
+            delay={0.25}
             className="bento-card md:col-span-2"
             role="group"
             aria-labelledby="activity-dashboard"
@@ -269,10 +313,13 @@ export default function FsaPage() {
                 gaps in real-time.
               </p>
             </div>
-          </article>
+          </MotionSection>
 
           {/* Card 5 - Offline Mode */}
-          <article
+          <MotionSection
+            as="article"
+            variant="scaleIn"
+            delay={0.3}
             className="bento-card md:col-span-2"
             role="group"
             aria-labelledby="offline-mode"
@@ -291,10 +338,13 @@ export default function FsaPage() {
                 online.
               </p>
             </div>
-          </article>
+          </MotionSection>
 
           {/* Card 6 - Incentive Tie-In */}
-          <article
+          <MotionSection
+            as="article"
+            variant="scaleIn"
+            delay={0.35}
             className="bento-card md:col-span-4"
             role="group"
             aria-labelledby="incentive-tie-in"
@@ -315,7 +365,7 @@ export default function FsaPage() {
                 validated execution and performance.
               </p>
             </div>
-          </article>
+          </MotionSection>
         </div>
       </section>
 
@@ -325,8 +375,10 @@ export default function FsaPage() {
         data-navbar-theme="light"
       >
         <div className="grid items-center gap-16 lg:grid-cols-2">
-          <FsaCoverageChart />
-          <div className="space-y-12">
+          <MotionSection as="div" variant="fadeIn">
+            <FsaCoverageChart />
+          </MotionSection>
+          <MotionSection as="div" variant="slideUp" className="space-y-12">
             <h2 className="text-5xl leading-[0.9] font-black tracking-tighter text-slate-900 uppercase md:text-7xl">
               Coverage <br />
               <span className="text-highlight">That&apos;s Complete.</span>
@@ -367,7 +419,7 @@ export default function FsaPage() {
                 </div>
               </div>
             </div>
-          </div>
+          </MotionSection>
         </div>
       </section>
 
@@ -380,7 +432,7 @@ export default function FsaPage() {
       >
         <div className="section-container mx-auto px-6">
           <div className="grid items-center gap-16 lg:grid-cols-2">
-            <div>
+            <MotionSection as="div" variant="slideUp">
               <h2
                 id="roi-heading"
                 className="mb-8 text-4xl font-black text-white md:text-6xl"
@@ -431,10 +483,12 @@ export default function FsaPage() {
                   Calculate Your ROI <ArrowRight aria-hidden="true" />
                 </Link>
               </Button>
-            </div>
+            </MotionSection>
 
             {/* ROI Stats */}
-            <aside
+            <MotionSection
+              as="aside"
+              variant="scaleIn"
               className="relative"
               role="group"
               aria-labelledby="roi-stats"
@@ -474,7 +528,7 @@ export default function FsaPage() {
                   </div>
                 </div>
               </div>
-            </aside>
+            </MotionSection>
           </div>
         </div>
       </section>

@@ -1,7 +1,4 @@
-import {
-  Zap,
-  UserCog,
-} from "lucide-react"
+import { Zap, MapPin } from "lucide-react"
 import type { LucideIcon } from "lucide-react"
 
 // ============================================
@@ -32,6 +29,6 @@ export const SOLUTIONS: readonly SolutionItem[] = [
     title: "Field Sales Automation",
     href: "/fsa",
     description: "Save your company both time and money.",
-    icon: UserCog,
+    icon: MapPin,
   },
 ] as const

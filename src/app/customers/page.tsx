@@ -90,7 +90,9 @@ export default function CustomersPage() {
             stories.
           </p>
         </MotionSection>
-        <CustomerStoriesCarousel />
+        <MotionSection as="div" variant="slideInRight">
+          <CustomerStoriesCarousel />
+        </MotionSection>
       </section>
 
       <CTA />

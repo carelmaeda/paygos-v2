@@ -17,6 +17,24 @@ type PolymorphicListProps<E extends ElementType> = MotionListProps &
 type PolymorphicItemProps<E extends ElementType> = MotionListItemProps &
   Omit<ComponentPropsWithoutRef<E>, keyof MotionListItemProps>
 
+// Pre-create motion components at module level to avoid creating during render
+const motionComponents = {
+  ul: m.ul,
+  ol: m.ol,
+  li: m.li,
+  div: m.div,
+  span: m.span,
+  section: m.section,
+  article: m.article,
+  nav: m.nav,
+  aside: m.aside,
+  header: m.header,
+  footer: m.footer,
+  main: m.main,
+} as const
+
+type MotionComponentKey = keyof typeof motionComponents
+
 /**
  * Container component for staggered list animations
  *
@@ -50,7 +68,9 @@ export function MotionList<E extends ElementType = "ul">({
     ...viewport,
   }
 
-  const Component = as ? m(as as keyof typeof m) : m.ul
+  // Get the motion component from pre-created map (not creating new components, just lookup)
+  // eslint-disable-next-line react-hooks/static-components
+  const Component = motionComponents[as as MotionComponentKey] || motionComponents.ul
 
   return (
     <Component
@@ -81,7 +101,9 @@ export function MotionListItem<E extends ElementType = "li">({
 
   const itemVariant = prefersReducedMotion ? reducedMotionVariants : staggerItem
 
-  const Component = as ? m(as as keyof typeof m) : m.li
+  // Get the motion component from pre-created map (not creating new components, just lookup)
+  // eslint-disable-next-line react-hooks/static-components
+  const Component = motionComponents[as as MotionComponentKey] || motionComponents.li
 
   return (
     <Component variants={itemVariant} className={className} {...rest}>

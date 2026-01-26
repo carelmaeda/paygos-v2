@@ -12,6 +12,7 @@ import {
 } from "@/components/ui/patterns"
 import { Button } from "@/components/ui/button"
 import { Breadcrumbs } from "@/components/layout/Breadcrumbs"
+import { MotionSection } from "@/components/motion"
 
 export const metadata: Metadata = {
   title: "Sales Acceleration Tools | Paygos",
@@ -66,7 +67,12 @@ export default function SalesAccelerationPage() {
       {/* Hero */}
       <section className="hero-sm bg-sky-950" data-navbar-theme="dark">
         <PatternCircuit />
-        <div className="text-hero">
+        <MotionSection
+          as="div"
+          variant="slideUp"
+          className="text-hero"
+          viewport={{ once: true }}
+        >
           <small className="text-teal-400">
             Integrated • Powerful • Scalable
           </small>
@@ -79,7 +85,7 @@ export default function SalesAccelerationPage() {
             maximize efficiency, and drive revenue growth across your sales
             organization.
           </p>
-        </div>
+        </MotionSection>
       </section>
 
       <Breadcrumbs />
@@ -89,7 +95,11 @@ export default function SalesAccelerationPage() {
         data-navbar-theme="light"
         className="section-container mx-auto px-6 py-12"
       >
-        <div className="mx-auto max-w-4xl text-center">
+        <MotionSection
+          as="div"
+          variant="slideUp"
+          className="mx-auto max-w-4xl text-center"
+        >
           <h2 className="mb-6 text-4xl font-black text-slate-900 md:text-5xl">
             Everything You Need to Win
           </h2>
@@ -99,7 +109,7 @@ export default function SalesAccelerationPage() {
             platform eliminates complexity and empowers your team to focus on
             what matters most: growing revenue.
           </p>
-        </div>
+        </MotionSection>
       </section>
 
       <IndustryBadge />
@@ -110,46 +120,52 @@ export default function SalesAccelerationPage() {
         className="relative mx-auto bg-teal-900 px-6 py-12"
       >
         <PatternDots />
-        <h2 className="mb-6 text-center text-white">
+        <MotionSection as="h2" variant="slideUp" className="mb-6 text-center text-white">
           Our Sales Acceleration Tools
-        </h2>
+        </MotionSection>
 
         {/* Grid */}
         <div className="section-container grid grid-cols-1 gap-3 md:grid-cols-2 lg:grid-cols-3">
-          {SALES_ACCELERATION_TOOLS.map((tool) => (
-            <Link
+          {SALES_ACCELERATION_TOOLS.map((tool, index) => (
+            <MotionSection
+              as="div"
               key={tool.href}
-              href={tool.href}
-              className="group relative flex h-full flex-col justify-between overflow-hidden rounded-lg bg-white/40 p-6 backdrop-blur-xl transition-all duration-500 hover:border-teal-500/50"
+              variant="scaleIn"
+              delay={0.1 + index * 0.05}
             >
-              {/* 1. Content Area (Frosted Top) */}
-              <div className="relative z-10 space-y-1">
-                <h3 className="text-slate-900 transition-colors group-hover:opacity-60">
-                  {tool.title}
-                </h3>
+              <Link
+                href={tool.href}
+                className="group relative flex h-full flex-col justify-between overflow-hidden rounded-lg bg-white/40 p-6 backdrop-blur-xl transition-all duration-500 hover:border-teal-500/50"
+              >
+                {/* 1. Content Area (Frosted Top) */}
+                <div className="relative z-10 space-y-1">
+                  <h3 className="text-slate-900 transition-colors group-hover:opacity-60">
+                    {tool.title}
+                  </h3>
 
-                <p className="text-sm transition-opacity duration-300 group-hover:opacity-60">
-                  {tool.description}
-                </p>
+                  <p className="text-sm transition-opacity duration-300 group-hover:opacity-60">
+                    {tool.description}
+                  </p>
 
-                <Button variant="link" size="sm">
-                  <div className="inline-flex items-center gap-2 group-hover:underline">
-                    Learn more
-                    <ArrowRight className="h-4 w-4 transition-transform" />
-                  </div>
-                </Button>
-              </div>
+                  <Button variant="link" size="sm">
+                    <div className="inline-flex items-center gap-2 group-hover:underline">
+                      Learn more
+                      <ArrowRight className="h-4 w-4 transition-transform" />
+                    </div>
+                  </Button>
+                </div>
 
-              {/* 2. Image Area  */}
-              <div className="relative mt-8 h-44 w-full">
-                <Image
-                  src={tool.image}
-                  alt={tool.title}
-                  fill
-                  className="object-contain p-4 transition-transform duration-500 group-hover:scale-110"
-                />
-              </div>
-            </Link>
+                {/* 2. Image Area  */}
+                <div className="relative mt-8 h-44 w-full">
+                  <Image
+                    src={tool.image}
+                    alt={tool.title}
+                    fill
+                    className="object-contain p-4 transition-transform duration-500 group-hover:scale-110"
+                  />
+                </div>
+              </Link>
+            </MotionSection>
           ))}
         </div>
       </section>
@@ -158,7 +174,7 @@ export default function SalesAccelerationPage() {
       <section data-navbar-theme="light" className="bg-slate-50 py-12">
         <div className="section-container">
           <div className="grid items-center gap-16 lg:grid-cols-2">
-            <div className="space-y-12">
+            <MotionSection as="div" variant="slideUp" className="space-y-12">
               <h2 className="text-5xl leading-[0.9] font-black tracking-tighter text-slate-900 uppercase md:text-7xl">
                 Why <span className="text-highlight">Sales Acceleration?</span>
               </h2>
@@ -198,8 +214,8 @@ export default function SalesAccelerationPage() {
                   </div>
                 </div>
               </div>
-            </div>
-            <div className="relative">
+            </MotionSection>
+            <MotionSection as="div" variant="scaleIn" className="relative">
               <div className="rounded-[2.5rem] border border-slate-200 bg-white p-12 shadow-2xl">
                 <Zap className="mx-auto mb-6 text-teal-500" size={48} />
                 <h3 className="mb-8 text-center text-3xl font-black text-slate-900">
@@ -242,7 +258,7 @@ export default function SalesAccelerationPage() {
                   </li>
                 </ul>
               </div>
-            </div>
+            </MotionSection>
           </div>
         </div>
       </section>
@@ -256,7 +272,7 @@ export default function SalesAccelerationPage() {
       >
         <PatternWaves />
         <div className="section-container relative z-10 grid items-center gap-12 lg:grid-cols-2">
-          <div>
+          <MotionSection as="div" variant="slideUp">
             <h2
               id="roi-heading"
               className="mb-8 text-4xl font-black md:text-6xl"
@@ -305,10 +321,16 @@ export default function SalesAccelerationPage() {
                 Calculate Your ROI <ArrowRight aria-hidden="true" />
               </Link>
             </Button>
-          </div>
+          </MotionSection>
 
           {/* ROI Stats */}
-          <aside className="relative" role="group" aria-labelledby="roi-stats">
+          <MotionSection
+            as="aside"
+            variant="scaleIn"
+            className="relative"
+            role="group"
+            aria-labelledby="roi-stats"
+          >
             <div className="rounded-[2.5rem] border border-white/10 bg-white/5 p-12 text-center backdrop-blur-md">
               <TrendingUp
                 className="mx-auto mb-6 text-teal-500"
@@ -342,7 +364,7 @@ export default function SalesAccelerationPage() {
                 </div>
               </div>
             </div>
-          </aside>
+          </MotionSection>
         </div>
       </section>
 
