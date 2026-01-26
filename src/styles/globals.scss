@@ -177,62 +177,6 @@ small {
   }
 }
 
-// ============================================
-// BUTTON COMPONENTS
-// ============================================
-
-// .btn {
-//   display: inline-flex;
-//   align-items: center;
-//   justify-content: center;
-//   padding: $button-padding-y $button-padding-x;
-//   font-size: $font-size-base;
-//   font-weight: $button-font-weight;
-//   line-height: $line-height-tight;
-//   border-radius: $button-border-radius;
-//   border: $border-width-1 solid transparent;
-//   cursor: pointer;
-//   text-decoration: none;
-//   transition: $transition-base;
-
-//   // Mobile: full-width, bigger touch targets
-//   @media (max-width: calc($breakpoint-md - 0.0625rem)) {
-//     width: 100%;
-//     padding: $button-padding-y $spacing-5;
-//     font-size: $font-size-base;
-//     min-height: $button-min-height;
-//   }
-
-//   &:disabled {
-//     opacity: 0.5;
-//     cursor: not-allowed;
-//   }
-
-//   &-primary {
-//     background-color: $color-primary;
-//     color: $neutral-white;
-
-//     &:hover {
-//       background-color: $color-primary-hover;
-//     }
-//   }
-
-//   &-secondary {
-//     background-color: transparent;
-//     color: $color-text-primary;
-//     border-color: $color-border-default;
-
-//     &:hover {
-//       background-color: $color-bg-muted;
-//     }
-//   }
-// }
-
-// button:not(:disabled),
-// [role="button"]:not(:disabled) {
-//   cursor: pointer;
-// }
-
 @layer base {
   button:not(:disabled),
   [role="button"]:not(:disabled) {

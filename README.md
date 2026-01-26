@@ -28,7 +28,6 @@ Paygos V2 is a complete redesign of the Paygos marketing platform, featuring a m
 - **Prettier 3.7.4** - Code formatting with Tailwind plugin
 - **ESLint 9.x** - Code linting with Next.js config
 - **Swiper 11.1.15** - Touch-enabled slider for customer stories
-- **tw-animate-css** - Additional Tailwind animations
 
 ## Project Structure
 

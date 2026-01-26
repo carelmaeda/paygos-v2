@@ -76,7 +76,7 @@ export const metadata: Metadata = {
 
 export default function TrainingPage() {
   return (
-    <main>
+    <main id="main-content">
       {/* Hero Section */}
       <section className="hero-sm bg-indigo-950" data-navbar-theme="dark">
         <PatternDots />

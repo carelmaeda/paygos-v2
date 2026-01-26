@@ -12,7 +12,7 @@ import { MotionSection } from "@/components/motion"
 
 export default function CustomersPage() {
   return (
-    <main>
+    <main id="main-content">
       {/* Hero */}
       <section className="hero-sm bg-teal-950" data-navbar-theme="dark">
         <PatternDiagonal />

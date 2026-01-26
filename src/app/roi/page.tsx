@@ -7,7 +7,7 @@ import { MotionSection } from "@/components/motion"
 
 export default function RoiPage() {
   return (
-    <main className="min-h-screen bg-slate-100">
+    <main id="main-content" className="min-h-screen bg-slate-100">
       {/* Hero */}
       <section className="hero-sm bg-emerald-950" data-navbar-theme="dark">
         <PatternDots />

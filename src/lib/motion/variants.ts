@@ -3,10 +3,10 @@ import type { ViewportConfig, CustomVariantConfig } from "./types"
 
 /**
  * Default viewport configuration
- * once: false means animations re-trigger every time element enters viewport
+ * once: true means animations play once when element first enters viewport
  */
 export const defaultViewport: ViewportConfig = {
-  once: false,
+  once: true,
   amount: 0.2,
   margin: "0px",
 }

@@ -23,10 +23,10 @@ export function ContactForm() {
 
     try {
       await emailjs.sendForm(
-        "service_8e0otbs",
-        "template_2eour8r",
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_CONTACT!,
         formRef.current,
-        "LtEcgbsTKwZo1-fbA"
+        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!
       )
       setStatus("idle")
       formRef.current.reset()
@@ -41,8 +41,6 @@ export function ContactForm() {
       )
     } catch (error) {
       setStatus("idle")
-      console.error("EmailJS error:", JSON.stringify(error, null, 2))
-      console.error("Full error object:", error)
 
       let errorMessage = "Please try again later."
       if (error instanceof Error) {

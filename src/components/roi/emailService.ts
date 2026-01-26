@@ -15,9 +15,9 @@ export interface RoiEmailData {
 
 export async function sendRoiResults(data: RoiEmailData): Promise<void> {
   await emailjs.send(
-    "service_8e0otbs",
-    "template_09cu4ym",
+    process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
+    process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ROI!,
     data as unknown as Record<string, unknown>,
-    "LtEcgbsTKwZo1-fbA"
+    process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!
   )
 }

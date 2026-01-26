@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 
 export default function ContactPage() {
   return (
-    <main className="min-h-screen">
+    <main id="main-content" className="min-h-screen">
       {/* Hero */}
       <section className="hero-sm bg-teal-950" data-navbar-theme="dark">
         <PatternWaves />

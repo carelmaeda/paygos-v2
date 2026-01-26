@@ -59,7 +59,7 @@ export const metadata: Metadata = {
 
 export default function Home() {
   return (
-    <>
+    <main id="main-content">
       {/* Hero - Dark background */}
       <section data-navbar-theme="dark">
         <Hero />
@@ -103,6 +103,6 @@ export default function Home() {
       <section data-navbar-theme="light">
         <CTA />
       </section>
-    </>
+    </main>
   )
 }

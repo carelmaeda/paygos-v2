@@ -9,7 +9,7 @@ import { MotionSection } from "@/components/motion"
 
 export default function PharmaReturns() {
   return (
-    <main>
+    <main id="main-content">
       {/* Hero */}
       <section className="hero-sm bg-green-950" data-navbar-theme="dark">
         <PatternDots />

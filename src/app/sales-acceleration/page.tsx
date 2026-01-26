@@ -63,7 +63,7 @@ export const metadata: Metadata = {
 
 export default function SalesAccelerationPage() {
   return (
-    <main className="min-h-screen">
+    <main id="main-content" className="min-h-screen">
       {/* Hero */}
       <section className="hero-sm bg-sky-950" data-navbar-theme="dark">
         <PatternCircuit />

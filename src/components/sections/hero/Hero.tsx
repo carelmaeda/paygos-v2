@@ -19,15 +19,6 @@ export function Hero() {
             <div className="grid lg:grid-cols-2">
               {/* LEFT */}
               <article className="text-center text-white lg:text-left">
-                <div className="mb-6 flex hidden justify-center lg:justify-start">
-                  <div className="flex items-center gap-2 text-sm">
-                    <span className="font-semibold">2,000+</span>
-                    <span className="text-muted-foreground">
-                      5-star reviews
-                    </span>
-                  </div>
-                </div>
-
                 <MotionSection
                   as="div"
                   variant="slideUp"

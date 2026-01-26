@@ -9,7 +9,7 @@ import { MotionSection } from "@/components/motion"
 
 export default function AboutPage() {
   return (
-    <main className="min-h-screen">
+    <main id="main-content" className="min-h-screen">
       {/* Hero */}
       <section className="hero-sm bg-slate-800" data-navbar-theme="dark">
         <PatternWaves />

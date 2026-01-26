@@ -73,7 +73,7 @@ export const metadata: Metadata = {
 
 export default function FsaPage() {
   return (
-    <main>
+    <main id="main-content">
       {/* Hero */}
       <section className="hero-sm bg-cyan-950" data-navbar-theme="dark">
         <PatternHexagon />

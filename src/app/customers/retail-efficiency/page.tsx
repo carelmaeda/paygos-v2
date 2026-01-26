@@ -9,7 +9,7 @@ import { MotionSection } from "@/components/motion"
 
 export default function RetailEfficiency() {
   return (
-    <main>
+    <main id="main-content">
       {/* Hero */}
       <section className="hero-sm bg-emerald-950" data-navbar-theme="dark">
         <PatternDots />

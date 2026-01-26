@@ -50,7 +50,7 @@ const CHART_CONFIG = {
 
 export default function PaymentsPage() {
   return (
-    <main className="min-h-screen">
+    <main id="main-content" className="min-h-screen">
       {/* SECTION: Hero & Background */}
       <section className="hero-sm bg-cyan-950" data-navbar-theme="dark">
         <PatternDots />
