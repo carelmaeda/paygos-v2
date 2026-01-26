@@ -23,6 +23,7 @@ import {
 } from "lucide-react"
 import { RebatesPerformanceChart } from "./rebates-performance-chart"
 import { Breadcrumbs } from "@/components/layout/Breadcrumbs"
+import { MotionSection } from "@/components/motion"
 
 export const metadata: Metadata = {
   title: "Rebates & Incentives | Paygos",
@@ -77,7 +78,12 @@ export default function PaygosRebatesPage() {
       {/* Hero */}
       <section className="hero-sm bg-sky-950" data-navbar-theme="dark">
         <PatternDots />
-        <div className="text-hero">
+        <MotionSection
+          as="div"
+          variant="slideUp"
+          className="text-hero"
+          viewport={{ once: true }}
+        >
           <small className="text-sky-400">Automated Rebate Management</small>
           <h1>
             Rebates That
@@ -89,7 +95,7 @@ export default function PaygosRebatesPage() {
             management—giving your team real-time visibility into programs that
             drive loyalty and maximize profitability.
           </p>
-        </div>
+        </MotionSection>
       </section>
 
       <Breadcrumbs />
@@ -99,54 +105,57 @@ export default function PaygosRebatesPage() {
         data-navbar-theme="light"
         className="section-container mx-auto py-12"
       >
-        <h2 className="mb-6 text-center">Common Rebate Challenges</h2>
+        <MotionSection
+          as="h2"
+          variant="slideUp"
+          className="mb-6 text-center"
+          viewport={{ once: true }}
+        >
+          Common Rebate Challenges
+        </MotionSection>
+
         <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4">
-          {/* Challenge 1 */}
-          <div className="rounded-lg border border-gray-100 bg-white p-5 shadow-lg transition-shadow hover:shadow-xl">
-            <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-lg bg-sky-100">
-              <FileSpreadsheet className="h-8 w-8 text-sky-600" />
-            </div>
-            <h3 className="mb-2 text-gray-900">Spreadsheet Chaos</h3>
-            <p className="text-gray-600">
-              Tracking rebate tiers across 100+ retailers in Excel leads to
-              calculation errors
-            </p>
-          </div>
-
-          {/* Challenge 2 */}
-          <div className="rounded-lg border border-gray-100 bg-white p-5 shadow-lg transition-shadow hover:shadow-xl">
-            <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-lg bg-sky-100">
-              <AlertCircle className="h-8 w-8 text-sky-600" />
-            </div>
-            <h3 className="mb-2 text-gray-900">Claim Disputes</h3>
-            <p className="text-gray-600">
-              Retailers dispute 25% of rebate calculations due to lack of
-              transparency
-            </p>
-          </div>
-
-          {/* Challenge 3 */}
-          <div className="rounded-lg border border-gray-100 bg-white p-5 shadow-lg transition-shadow hover:shadow-xl">
-            <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-lg bg-sky-100">
-              <Clock className="h-8 w-8 text-sky-600" />
-            </div>
-            <h3 className="mb-2 text-gray-900">Delayed Payouts</h3>
-            <p className="text-gray-600">
-              Manual validation takes 30-45 days, frustrating partners
-            </p>
-          </div>
-
-          {/* Challenge 4 */}
-          <div className="rounded-lg border border-gray-100 bg-white p-5 shadow-lg transition-shadow hover:shadow-xl">
-            <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-lg bg-sky-100">
-              <TrendingDown className="h-8 w-8 text-sky-600" />
-            </div>
-            <h3 className="mb-2 text-gray-900">Lost Opportunities</h3>
-            <p className="text-gray-600">
-              Retailers don&apos;t see progress toward thresholds, missing
-              incremental sales
-            </p>
-          </div>
+          {[
+            {
+              title: "Spreadsheet Chaos",
+              desc: "Tracking rebate tiers across 100+ retailers in Excel leads to calculation errors",
+              Icon: FileSpreadsheet,
+              delay: 0.1,
+            },
+            {
+              title: "Claim Disputes",
+              desc: "Retailers dispute 25% of rebate calculations due to lack of transparency",
+              Icon: AlertCircle,
+              delay: 0.15,
+            },
+            {
+              title: "Delayed Payouts",
+              desc: "Manual validation takes 30-45 days, frustrating partners",
+              Icon: Clock,
+              delay: 0.2,
+            },
+            {
+              title: "Lost Opportunities",
+              desc: "Retailers don&apos;t see progress toward thresholds, missing incremental sales",
+              Icon: TrendingDown,
+              delay: 0.25,
+            },
+          ].map(({ title, desc, Icon, delay }) => (
+            <MotionSection
+              key={title}
+              as="div"
+              variant="scaleIn"
+              delay={delay}
+              viewport={{ once: true }}
+              className="rounded-lg border border-gray-100 bg-white p-5 shadow-lg transition-shadow hover:shadow-xl"
+            >
+              <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-lg bg-sky-100">
+                <Icon className="h-8 w-8 text-sky-600" />
+              </div>
+              <h3 className="mb-2 text-gray-900">{title}</h3>
+              <p className="text-gray-600">{desc}</p>
+            </MotionSection>
+          ))}
         </div>
       </section>
 
@@ -157,13 +166,23 @@ export default function PaygosRebatesPage() {
         role="region"
         aria-labelledby="rebate-capabilities"
       >
-        <h2 id="rebate-capabilities" className="mb-6 text-center">
+        <MotionSection
+          as="h2"
+          variant="slideUp"
+          id="rebate-capabilities"
+          className="mb-6 text-center"
+          viewport={{ once: true }}
+        >
           Our Solution
-        </h2>
+        </MotionSection>
 
         <div className="grid auto-rows-[200px] grid-cols-1 gap-2 md:grid-cols-6">
           {/* Card 1 - Smaller left card */}
-          <article
+          <MotionSection
+            as="article"
+            variant="scaleIn"
+            delay={0.1}
+            viewport={{ once: true }}
             className="bento-card md:col-span-2"
             role="group"
             aria-labelledby="automated-tracking"
@@ -175,21 +194,21 @@ export default function PaygosRebatesPage() {
               fill
             />
             <div>
-              <Sparkles
-                size={32}
-                aria-hidden="true"
-                className="text-sky-400"
-              />
+              <Sparkles size={32} aria-hidden="true" className="text-sky-400" />
               <h3 id="automated-tracking">Automated Tracking</h3>
               <p id="automated-tracking-desc">
                 Eliminate spreadsheets. Capture every purchase, calculate
                 rebates instantly.
               </p>
             </div>
-          </article>
+          </MotionSection>
 
           {/* Card 2 - Larger right card */}
-          <article
+          <MotionSection
+            as="article"
+            variant="scaleIn"
+            delay={0.15}
+            viewport={{ once: true }}
             className="bento-card md:col-span-4"
             role="group"
             aria-labelledby="program-management"
@@ -213,10 +232,14 @@ export default function PaygosRebatesPage() {
                 flexible tiers and thresholds—no coding required.
               </p>
             </div>
-          </article>
+          </MotionSection>
 
           {/* Card 3 - Medium left */}
-          <article
+          <MotionSection
+            as="article"
+            variant="scaleIn"
+            delay={0.2}
+            viewport={{ once: true }}
             className="bento-card md:col-span-3"
             role="group"
             aria-labelledby="real-time-visibility"
@@ -241,10 +264,14 @@ export default function PaygosRebatesPage() {
                 real-time, driving urgency and incremental sales.
               </p>
             </div>
-          </article>
+          </MotionSection>
 
           {/* Card 4 - Medium right */}
-          <article
+          <MotionSection
+            as="article"
+            variant="scaleIn"
+            delay={0.25}
+            viewport={{ once: true }}
             className="bento-card md:col-span-3"
             role="group"
             aria-labelledby="claim-validation"
@@ -269,10 +296,14 @@ export default function PaygosRebatesPage() {
                 faster—with audit trails baked in.
               </p>
             </div>
-          </article>
+          </MotionSection>
 
           {/* Card 5 - Smaller left */}
-          <article
+          <MotionSection
+            as="article"
+            variant="scaleIn"
+            delay={0.3}
+            viewport={{ once: true }}
             className="bento-card md:col-span-2"
             role="group"
             aria-labelledby="partner-engagement"
@@ -291,10 +322,14 @@ export default function PaygosRebatesPage() {
                 claims effortlessly.
               </p>
             </div>
-          </article>
+          </MotionSection>
 
           {/* Card 6 - Larger right */}
-          <article
+          <MotionSection
+            as="article"
+            variant="scaleIn"
+            delay={0.35}
+            viewport={{ once: true }}
             className="bento-card md:col-span-4"
             role="group"
             aria-labelledby="payout-reconciliation"
@@ -312,7 +347,7 @@ export default function PaygosRebatesPage() {
                 className="text-sky-400"
               />
               <h3 id="payout-reconciliation" className="md:text-3xl">
-                Seamless Payout & Reconciliation
+                Seamless Payout &amp; Reconciliation
               </h3>
               <p
                 id="payout-reconciliation-desc"
@@ -322,7 +357,7 @@ export default function PaygosRebatesPage() {
                 automated GL coding—no manual reconciliation.
               </p>
             </div>
-          </article>
+          </MotionSection>
         </div>
       </section>
 
@@ -331,12 +366,21 @@ export default function PaygosRebatesPage() {
       {/* Chart Section */}
       <section data-navbar-theme="light" className="mx-auto bg-slate-200 py-12">
         <div className="section-container grid items-center gap-32 lg:grid-cols-2">
+          {/* Keep chart stable to avoid jank */}
           <RebatesPerformanceChart />
-          <div className="space-y-12">
+
+          {/* Animate the content block only */}
+          <MotionSection
+            as="div"
+            variant="slideUp"
+            viewport={{ once: true }}
+            className="space-y-12"
+          >
             <h2 className="text-5xl leading-[0.9] font-black tracking-tighter text-slate-900 uppercase md:text-7xl">
               Growth <br />
               <span className="text-highlight">That&apos;s Measurable.</span>
             </h2>
+
             <div className="space-y-10">
               <div className="group flex items-start gap-8">
                 <div className="shrink-0 rounded-lg bg-sky-50 p-5 transition-colors duration-300 group-hover:bg-sky-500">
@@ -355,6 +399,7 @@ export default function PaygosRebatesPage() {
                   </p>
                 </div>
               </div>
+
               <div className="group flex items-start gap-8">
                 <div className="shrink-0 rounded-lg bg-sky-50 p-5 transition-colors duration-300 group-hover:bg-sky-500">
                   <Target
@@ -373,7 +418,7 @@ export default function PaygosRebatesPage() {
                 </div>
               </div>
             </div>
-          </div>
+          </MotionSection>
         </div>
       </section>
 
@@ -386,7 +431,8 @@ export default function PaygosRebatesPage() {
       >
         <div className="relative overflow-hidden bg-slate-900 p-8 text-white md:p-16">
           <div className="section-container relative z-10 grid items-center gap-12 lg:grid-cols-2">
-            <div>
+            {/* Animate ROI copy separately */}
+            <MotionSection as="div" variant="slideUp" viewport={{ once: true }}>
               <h2 id="roi-heading" className="pb-8 text-4xl md:text-8xl">
                 Proven Impact <br />
                 <span className="text-sky-500">
@@ -431,15 +477,20 @@ export default function PaygosRebatesPage() {
                 </li>
               </ul>
 
-              <Button variant="secondary" size="lg">
+              {/* Fix: avoid nested interactive elements */}
+              <Button asChild variant="secondary" size="lg">
                 <Link href="/roi" className="flex items-center gap-2">
                   Calculate Your ROI <ArrowRight aria-hidden="true" />
                 </Link>
               </Button>
-            </div>
+            </MotionSection>
 
             {/* ROI Stats */}
-            <aside
+            <MotionSection
+              as="aside"
+              variant="scaleIn"
+              delay={0.15}
+              viewport={{ once: true }}
               className="relative"
               role="group"
               aria-labelledby="roi-stats"
@@ -477,7 +528,7 @@ export default function PaygosRebatesPage() {
                   </div>
                 </div>
               </div>
-            </aside>
+            </MotionSection>
           </div>
         </div>
       </section>

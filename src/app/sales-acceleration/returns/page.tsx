@@ -18,10 +18,10 @@ import {
 } from "lucide-react"
 import { CTA } from "@/components/sections/cta/CTA"
 import { Button } from "@/components/ui/button"
-import { BookCallButton } from "@/components/sections/cta/BookCallButton"
 import { IndustryBadge } from "@/components/sections/solutions/IndustryBadge"
 import { ReturnsTrendChart } from "./returns-trend-chart"
 import { Breadcrumbs } from "@/components/layout/Breadcrumbs"
+import { MotionSection } from "@/components/motion"
 
 export const metadata: Metadata = {
   title: "Returns Management | Paygos",
@@ -75,7 +75,12 @@ export default function ReturnsPage() {
       {/* Hero */}
       <section className="hero-sm bg-green-950" data-navbar-theme="dark">
         <PatternDots />
-        <div className="text-hero">
+        <MotionSection
+          as="div"
+          variant="slideUp"
+          className="text-hero"
+          viewport={{ once: true }}
+        >
           <small className="text-green-400">Validated Returns Processing</small>
           <h1>
             Reclaim Margin
@@ -87,7 +92,7 @@ export default function ReturnsPage() {
             messy. Paygos brings structure and visibility to a part of your
             business long treated as a cost center.
           </p>
-        </div>
+        </MotionSection>
       </section>
 
       <Breadcrumbs />
@@ -97,52 +102,57 @@ export default function ReturnsPage() {
         data-navbar-theme="light"
         className="section-container mx-auto py-12"
       >
-        <h2 className="mb-6 text-center">Common Returns Challenges</h2>
+        <MotionSection
+          as="h2"
+          variant="slideUp"
+          className="mb-6 text-center"
+          viewport={{ once: true }}
+        >
+          Common Returns Challenges
+        </MotionSection>
+
         <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4">
-          {/* Challenge 1 */}
-          <div className="rounded-lg border border-gray-100 bg-white p-5 shadow-lg transition-shadow hover:shadow-xl">
-            <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-lg bg-green-100">
-              <AlertTriangle className="h-8 w-8 text-green-600" />
-            </div>
-            <h3 className="mb-2 text-gray-900">Unclear Return Reasons</h3>
-            <p className="text-gray-600">
-              Returns lack standardized categorization, making it hard to
-              identify root causes
-            </p>
-          </div>
-
-          {/* Challenge 2 */}
-          <div className="rounded-lg border border-gray-100 bg-white p-5 shadow-lg transition-shadow hover:shadow-xl">
-            <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-lg bg-green-100">
-              <Clock className="h-8 w-8 text-green-600" />
-            </div>
-            <h3 className="mb-2 text-gray-900">Processing Delays</h3>
-            <p className="text-gray-600">
-              Manual return validation causes 7-10 day processing delays
-            </p>
-          </div>
-
-          {/* Challenge 3 */}
-          <div className="rounded-lg border border-gray-100 bg-white p-5 shadow-lg transition-shadow hover:shadow-xl">
-            <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-lg bg-green-100">
-              <DollarSign className="h-8 w-8 text-green-600" />
-            </div>
-            <h3 className="mb-2 text-gray-900">Lost Margin</h3>
-            <p className="text-gray-600">
-              Unvalidated returns erode margin by 5-8% annually
-            </p>
-          </div>
-
-          {/* Challenge 4 */}
-          <div className="rounded-lg border border-gray-100 bg-white p-5 shadow-lg transition-shadow hover:shadow-xl">
-            <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-lg bg-green-100">
-              <PackageX className="h-8 w-8 text-green-600" />
-            </div>
-            <h3 className="mb-2 text-gray-900">Replacement Gaps</h3>
-            <p className="text-gray-600">
-              Bad goods lead to out-of-stocks instead of automatic replacements
-            </p>
-          </div>
+          {[
+            {
+              title: "Unclear Return Reasons",
+              desc: "Returns lack standardized categorization, making it hard to identify root causes",
+              Icon: AlertTriangle,
+              delay: 0.1,
+            },
+            {
+              title: "Processing Delays",
+              desc: "Manual return validation causes 7-10 day processing delays",
+              Icon: Clock,
+              delay: 0.15,
+            },
+            {
+              title: "Lost Margin",
+              desc: "Unvalidated returns erode margin by 5-8% annually",
+              Icon: DollarSign,
+              delay: 0.2,
+            },
+            {
+              title: "Replacement Gaps",
+              desc: "Bad goods lead to out-of-stocks instead of automatic replacements",
+              Icon: PackageX,
+              delay: 0.25,
+            },
+          ].map(({ title, desc, Icon, delay }) => (
+            <MotionSection
+              key={title}
+              as="div"
+              variant="scaleIn"
+              delay={delay}
+              viewport={{ once: true }}
+              className="rounded-lg border border-gray-100 bg-white p-5 shadow-lg transition-shadow hover:shadow-xl"
+            >
+              <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-lg bg-green-100">
+                <Icon className="h-8 w-8 text-green-600" />
+              </div>
+              <h3 className="mb-2 text-gray-900">{title}</h3>
+              <p className="text-gray-600">{desc}</p>
+            </MotionSection>
+          ))}
         </div>
       </section>
 
@@ -153,13 +163,23 @@ export default function ReturnsPage() {
         role="region"
         aria-labelledby="returns-capabilities"
       >
-        <h2 id="returns-capabilities" className="mb-6 text-center">
+        <MotionSection
+          as="h2"
+          variant="slideUp"
+          id="returns-capabilities"
+          className="mb-6 text-center"
+          viewport={{ once: true }}
+        >
           Our Solution
-        </h2>
+        </MotionSection>
 
         <div className="grid auto-rows-[200px] grid-cols-1 gap-2 md:grid-cols-6">
           {/* Card 1 - Validated Returns */}
-          <article
+          <MotionSection
+            as="article"
+            variant="scaleIn"
+            delay={0.1}
+            viewport={{ once: true }}
             className="bento-card md:col-span-4"
             role="group"
             aria-labelledby="validated-returns"
@@ -181,10 +201,14 @@ export default function ReturnsPage() {
                 focused on growth.
               </p>
             </div>
-          </article>
+          </MotionSection>
 
           {/* Card 2 - Replacement Orders */}
-          <article
+          <MotionSection
+            as="article"
+            variant="scaleIn"
+            delay={0.15}
+            viewport={{ once: true }}
             className="bento-card md:col-span-2"
             role="group"
             aria-labelledby="replacement-orders"
@@ -196,17 +220,25 @@ export default function ReturnsPage() {
               fill
             />
             <div>
-              <RefreshCcw size={32} aria-hidden="true" className="text-green-400" />
+              <RefreshCcw
+                size={32}
+                aria-hidden="true"
+                className="text-green-400"
+              />
               <h3 id="replacement-orders">Replacement—Not Just Credit</h3>
               <p id="replacement-orders-desc">
-                Bad goods don't mean lost sales. Request replacements alongside
-                returns—retaining shelf space.
+                Bad goods don&apos;t mean lost sales. Request replacements
+                alongside returns—retaining shelf space.
               </p>
             </div>
-          </article>
+          </MotionSection>
 
           {/* Card 3 - Analytics by SKU */}
-          <article
+          <MotionSection
+            as="article"
+            variant="scaleIn"
+            delay={0.2}
+            viewport={{ once: true }}
             className="bento-card md:col-span-2"
             role="group"
             aria-labelledby="returns-analytics"
@@ -218,17 +250,25 @@ export default function ReturnsPage() {
               fill
             />
             <div>
-              <BarChart3 size={32} aria-hidden="true" className="text-green-400" />
+              <BarChart3
+                size={32}
+                aria-hidden="true"
+                className="text-green-400"
+              />
               <h3 id="returns-analytics">Data That Pays You Back</h3>
               <p id="returns-analytics-desc">
                 Analyze return rates by SKU, region, or retailer. Identify
                 damage tied to shipping.
               </p>
             </div>
-          </article>
+          </MotionSection>
 
           {/* Card 4 - Real-Time Tracking */}
-          <article
+          <MotionSection
+            as="article"
+            variant="scaleIn"
+            delay={0.25}
+            viewport={{ once: true }}
             className="bento-card md:col-span-4"
             role="group"
             aria-labelledby="real-time-tracking"
@@ -240,7 +280,11 @@ export default function ReturnsPage() {
               fill
             />
             <div>
-              <Package size={32} aria-hidden="true" className="text-green-400" />
+              <Package
+                size={32}
+                aria-hidden="true"
+                className="text-green-400"
+              />
               <h3 id="real-time-tracking" className="md:text-3xl">
                 Real-Time Visibility
               </h3>
@@ -252,7 +296,7 @@ export default function ReturnsPage() {
                 transparency for reps, retailers, and head office.
               </p>
             </div>
-          </article>
+          </MotionSection>
         </div>
       </section>
 
@@ -261,12 +305,21 @@ export default function ReturnsPage() {
       {/* Chart Section */}
       <section data-navbar-theme="light" className="mx-auto bg-slate-200 py-12">
         <div className="section-container grid items-center gap-32 lg:grid-cols-2">
+          {/* Keep chart stable (no animation) */}
           <ReturnsTrendChart />
-          <div className="space-y-12">
+
+          {/* Animate copy only */}
+          <MotionSection
+            as="div"
+            variant="slideUp"
+            viewport={{ once: true }}
+            className="space-y-12"
+          >
             <h2 className="text-5xl leading-[0.9] font-black tracking-tighter text-slate-900 uppercase md:text-7xl">
               Visibility <br />
               <span className="text-highlight">That Pays Off.</span>
             </h2>
+
             <div className="space-y-10">
               <div className="group flex items-start gap-8">
                 <div className="shrink-0 rounded-lg bg-green-50 p-5 transition-colors duration-300 group-hover:bg-green-500">
@@ -285,6 +338,7 @@ export default function ReturnsPage() {
                   </p>
                 </div>
               </div>
+
               <div className="group flex items-start gap-8">
                 <div className="shrink-0 rounded-lg bg-green-50 p-5 transition-colors duration-300 group-hover:bg-green-500">
                   <TrendingUp
@@ -303,7 +357,7 @@ export default function ReturnsPage() {
                 </div>
               </div>
             </div>
-          </div>
+          </MotionSection>
         </div>
       </section>
 
@@ -316,7 +370,8 @@ export default function ReturnsPage() {
       >
         <div className="relative overflow-hidden bg-slate-900 p-8 text-white md:p-16">
           <div className="section-container relative z-10 grid items-center gap-12 lg:grid-cols-2">
-            <div>
+            {/* Animate ROI copy separately */}
+            <MotionSection as="div" variant="slideUp" viewport={{ once: true }}>
               <h2 id="roi-heading" className="pb-8 text-4xl md:text-8xl">
                 Proven Impact <br />
                 <span className="text-green-500">
@@ -354,15 +409,20 @@ export default function ReturnsPage() {
                 </li>
               </ul>
 
-              <Button variant="secondary" size="lg">
+              {/* Fix: avoid nested interactive elements */}
+              <Button asChild variant="secondary" size="lg">
                 <Link href="/roi" className="flex items-center gap-2">
                   Calculate Your ROI <ArrowRight aria-hidden="true" />
                 </Link>
               </Button>
-            </div>
+            </MotionSection>
 
             {/* ROI Stats */}
-            <aside
+            <MotionSection
+              as="aside"
+              variant="scaleIn"
+              delay={0.15}
+              viewport={{ once: true }}
               className="relative"
               role="group"
               aria-labelledby="roi-stats"
@@ -395,12 +455,12 @@ export default function ReturnsPage() {
                   <div>
                     <h4 className="text-3xl font-black">100%</h4>
                     <p className="text-xs font-bold text-slate-500 uppercase">
-                      Validated & Tracked
+                      Validated &amp; Tracked
                     </p>
                   </div>
                 </div>
               </div>
-            </aside>
+            </MotionSection>
           </div>
         </div>
       </section>

@@ -16,16 +16,15 @@ import {
   CheckCircle2,
   TrendingUp,
   Users,
-  Target,
   ArrowRight,
   Calculator,
 } from "lucide-react"
 import { CTA } from "@/components/sections/cta/CTA"
 import { Button } from "@/components/ui/button"
-import { BookCallButton } from "@/components/sections/cta/BookCallButton"
 import { IndustryBadge } from "@/components/sections/solutions/IndustryBadge"
 import { TrainingCompletionChart } from "./training-completion-chart"
 import { Breadcrumbs } from "@/components/layout/Breadcrumbs"
+import { MotionSection } from "@/components/motion"
 
 export const metadata: Metadata = {
   title: "Training Management | Paygos",
@@ -80,7 +79,12 @@ export default function TrainingPage() {
       {/* Hero Section */}
       <section className="hero-sm bg-indigo-950" data-navbar-theme="dark">
         <PatternDots />
-        <div className="text-hero">
+        <MotionSection
+          as="div"
+          variant="slideUp"
+          className="text-hero"
+          viewport={{ once: true }}
+        >
           <small className="text-indigo-400">Certification Management</small>
           <h1>
             Train Smarter
@@ -91,7 +95,7 @@ export default function TrainingPage() {
             Interactive modules, certification tracking, and incentive-based
             rewards that drive completion and retention.
           </p>
-        </div>
+        </MotionSection>
       </section>
 
       <Breadcrumbs />
@@ -101,51 +105,57 @@ export default function TrainingPage() {
         data-navbar-theme="light"
         className="section-container mx-auto py-12"
       >
-        <h2 className="mb-6 text-center">Common Training Challenges</h2>
+        <MotionSection
+          as="h2"
+          variant="slideUp"
+          className="mb-6 text-center"
+          viewport={{ once: true }}
+        >
+          Common Training Challenges
+        </MotionSection>
+
         <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4">
-          <div className="rounded-lg border border-gray-100 bg-white p-5 shadow-lg transition-shadow hover:shadow-xl">
-            <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-lg bg-indigo-100">
-              <UserX className="h-8 w-8 text-indigo-600" />
-            </div>
-            <h3 className="mb-2 text-gray-900">Low Completion</h3>
-            <p className="text-gray-600">
-              Only 30% of retail staff complete traditional training programs,
-              limiting product knowledge and sales effectiveness.
-            </p>
-          </div>
-
-          <div className="rounded-lg border border-gray-100 bg-white p-5 shadow-lg transition-shadow hover:shadow-xl">
-            <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-lg bg-indigo-100">
-              <AlertCircle className="h-8 w-8 text-indigo-600" />
-            </div>
-            <h3 className="mb-2 text-gray-900">No Verification</h3>
-            <p className="text-gray-600">
-              Without digital tracking, you cannot prove which employees
-              completed training or earned certifications.
-            </p>
-          </div>
-
-          <div className="rounded-lg border border-gray-100 bg-white p-5 shadow-lg transition-shadow hover:shadow-xl">
-            <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-lg bg-indigo-100">
-              <FileText className="h-8 w-8 text-indigo-600" />
-            </div>
-            <h3 className="mb-2 text-gray-900">Static Content</h3>
-            <p className="text-gray-600">
-              PDFs and videos do not engage learners—staff forget information
-              within weeks of training sessions.
-            </p>
-          </div>
-
-          <div className="rounded-lg border border-gray-100 bg-white p-5 shadow-lg transition-shadow hover:shadow-xl">
-            <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-lg bg-indigo-100">
-              <ClipboardList className="h-8 w-8 text-indigo-600" />
-            </div>
-            <h3 className="mb-2 text-gray-900">Manual Tracking</h3>
-            <p className="text-gray-600">
-              Tracking completion in spreadsheets leads to gaps, errors, and
-              inability to tie training to incentives.
-            </p>
-          </div>
+          {[
+            {
+              title: "Low Completion",
+              desc: "Only 30% of retail staff complete traditional training programs, limiting product knowledge and sales effectiveness.",
+              Icon: UserX,
+              delay: 0.1,
+            },
+            {
+              title: "No Verification",
+              desc: "Without digital tracking, you cannot prove which employees completed training or earned certifications.",
+              Icon: AlertCircle,
+              delay: 0.15,
+            },
+            {
+              title: "Static Content",
+              desc: "PDFs and videos do not engage learners—staff forget information within weeks of training sessions.",
+              Icon: FileText,
+              delay: 0.2,
+            },
+            {
+              title: "Manual Tracking",
+              desc: "Tracking completion in spreadsheets leads to gaps, errors, and inability to tie training to incentives.",
+              Icon: ClipboardList,
+              delay: 0.25,
+            },
+          ].map(({ title, desc, Icon, delay }) => (
+            <MotionSection
+              key={title}
+              as="div"
+              variant="scaleIn"
+              delay={delay}
+              viewport={{ once: true }}
+              className="rounded-lg border border-gray-100 bg-white p-5 shadow-lg transition-shadow hover:shadow-xl"
+            >
+              <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-lg bg-indigo-100">
+                <Icon className="h-8 w-8 text-indigo-600" />
+              </div>
+              <h3 className="mb-2 text-gray-900">{title}</h3>
+              <p className="text-gray-600">{desc}</p>
+            </MotionSection>
+          ))}
         </div>
       </section>
 
@@ -156,13 +166,25 @@ export default function TrainingPage() {
         role="region"
         aria-labelledby="training-capabilities"
       >
-        <h2 id="training-capabilities" className="mb-6 text-center">
+        <MotionSection
+          as="h2"
+          variant="slideUp"
+          id="training-capabilities"
+          className="mb-6 text-center"
+          viewport={{ once: true }}
+        >
           Our Solution
-        </h2>
+        </MotionSection>
 
         <div className="grid auto-rows-[200px] grid-cols-1 gap-2 md:grid-cols-6">
           {/* Interactive Modules */}
-          <article className="bento-card md:col-span-4">
+          <MotionSection
+            as="article"
+            variant="scaleIn"
+            delay={0.1}
+            viewport={{ once: true }}
+            className="bento-card md:col-span-4"
+          >
             <Image
               src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=2070&auto=format&fit=crop"
               alt="Interactive training modules"
@@ -177,10 +199,16 @@ export default function TrainingPage() {
                 and retain information longer than static content.
               </p>
             </div>
-          </article>
+          </MotionSection>
 
           {/* Certification Tracking */}
-          <article className="bento-card md:col-span-2">
+          <MotionSection
+            as="article"
+            variant="scaleIn"
+            delay={0.15}
+            viewport={{ once: true }}
+            className="bento-card md:col-span-2"
+          >
             <Image
               src="https://images.unsplash.com/photo-1589330694653-ded6df03f754?q=80&w=1888&auto=format&fit=crop"
               alt="Digital certificates"
@@ -195,10 +223,16 @@ export default function TrainingPage() {
                 with automated workflows.
               </p>
             </div>
-          </article>
+          </MotionSection>
 
           {/* Mobile Learning */}
-          <article className="bento-card md:col-span-2">
+          <MotionSection
+            as="article"
+            variant="scaleIn"
+            delay={0.2}
+            viewport={{ once: true }}
+            className="bento-card md:col-span-2"
+          >
             <Image
               src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?q=80&w=2070&auto=format&fit=crop"
               alt="Mobile learning"
@@ -206,35 +240,55 @@ export default function TrainingPage() {
               className="object-cover"
             />
             <div>
-              <Smartphone size={32} aria-hidden="true" className="text-indigo-400" />
+              <Smartphone
+                size={32}
+                aria-hidden="true"
+                className="text-indigo-400"
+              />
               <h3>Mobile Learning</h3>
               <p>
                 Train on-the-go with mobile-optimized content. Complete modules
                 in 5-10 minute bursts during downtime.
               </p>
             </div>
-          </article>
+          </MotionSection>
 
           {/* Gamification & Rewards */}
-          <article className="bento-card md:col-span-2">
+          <MotionSection
+            as="article"
+            variant="scaleIn"
+            delay={0.25}
+            viewport={{ once: true }}
+            className="bento-card md:col-span-2"
+          >
             <Image
-              src="https://images.unsplash.com/photo-1579546929518-9e396f3cc809?q=80&w=2070&auto=format&fit=crop"
+              src="https://images.unsplash.com/photo-1612287230202-1ff1d85d1bdf"
               alt="Gamification and rewards"
               fill
               className="object-cover"
             />
             <div>
-              <Trophy size={32} aria-hidden="true" className="text-indigo-400" />
+              <Trophy
+                size={32}
+                aria-hidden="true"
+                className="text-indigo-400"
+              />
               <h3>Gamification & Rewards</h3>
               <p>
                 Award points, badges, and incentive payments based on
                 completion, quiz scores, and time-to-complete.
               </p>
             </div>
-          </article>
+          </MotionSection>
 
           {/* Manager Dashboards */}
-          <article className="bento-card md:col-span-2">
+          <MotionSection
+            as="article"
+            variant="scaleIn"
+            delay={0.3}
+            viewport={{ once: true }}
+            className="bento-card md:col-span-2"
+          >
             <Image
               src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop"
               alt="Manager dashboards"
@@ -242,17 +296,27 @@ export default function TrainingPage() {
               className="object-cover"
             />
             <div>
-              <BarChart3 size={32} aria-hidden="true" className="text-indigo-400" />
+              <BarChart3
+                size={32}
+                aria-hidden="true"
+                className="text-indigo-400"
+              />
               <h3>Manager Dashboards</h3>
               <p>
                 See progress by store, region, or individual. Identify gaps and
                 follow up with non-completers.
               </p>
             </div>
-          </article>
+          </MotionSection>
 
           {/* Content Builder */}
-          <article className="bento-card md:col-span-4">
+          <MotionSection
+            as="article"
+            variant="scaleIn"
+            delay={0.35}
+            viewport={{ once: true }}
+            className="bento-card md:col-span-6"
+          >
             <Image
               src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=2070&auto=format&fit=crop"
               alt="Content builder"
@@ -260,14 +324,18 @@ export default function TrainingPage() {
               className="object-cover"
             />
             <div>
-              <Upload size={32} aria-hidden="true" className="text-indigo-400" />
+              <Upload
+                size={32}
+                aria-hidden="true"
+                className="text-indigo-400"
+              />
               <h3 className="md:text-3xl">Content Builder</h3>
               <p className="md:max-w-lg md:text-lg">
                 Upload videos, PDFs, and quizzes with drag-and-drop simplicity.
                 No IT or design skills needed.
               </p>
             </div>
-          </article>
+          </MotionSection>
         </div>
       </section>
 
@@ -276,12 +344,21 @@ export default function TrainingPage() {
       {/* Chart Section */}
       <section data-navbar-theme="light" className="mx-auto bg-slate-200 py-12">
         <div className="section-container grid items-center gap-32 lg:grid-cols-2">
+          {/* Keep chart stable (no animation) to avoid jank */}
           <TrainingCompletionChart />
-          <div className="space-y-12">
+
+          {/* Animate the content block only */}
+          <MotionSection
+            as="div"
+            variant="slideUp"
+            viewport={{ once: true }}
+            className="space-y-12"
+          >
             <h2 className="text-5xl leading-[0.9] font-black tracking-tighter text-slate-900 uppercase md:text-7xl">
               Track Progress <br />
               <span className="text-highlight">in Real-Time.</span>
             </h2>
+
             <div className="space-y-10">
               <div className="group flex items-start gap-8">
                 <div className="shrink-0 rounded-lg bg-indigo-50 p-5 transition-colors duration-300 group-hover:bg-indigo-500">
@@ -300,6 +377,7 @@ export default function TrainingPage() {
                   </p>
                 </div>
               </div>
+
               <div className="group flex items-start gap-8">
                 <div className="shrink-0 rounded-lg bg-indigo-50 p-5 transition-colors duration-300 group-hover:bg-indigo-500">
                   <Users
@@ -309,7 +387,7 @@ export default function TrainingPage() {
                 </div>
                 <div>
                   <h4 className="mb-2 text-2xl font-black tracking-tight text-slate-900 uppercase">
-                    Individual & Cohort Reporting
+                    Individual &amp; Cohort Reporting
                   </h4>
                   <p className="text-lg leading-relaxed font-medium text-slate-500">
                     Track progress by individual employee, store, or region to
@@ -318,7 +396,7 @@ export default function TrainingPage() {
                 </div>
               </div>
             </div>
-          </div>
+          </MotionSection>
         </div>
       </section>
 
@@ -331,7 +409,8 @@ export default function TrainingPage() {
       >
         <div className="relative overflow-hidden bg-slate-900 p-8 text-white md:p-16">
           <div className="section-container relative z-10 grid items-center gap-12 lg:grid-cols-2">
-            <div>
+            {/* Animate ROI copy separately */}
+            <MotionSection as="div" variant="slideUp" viewport={{ once: true }}>
               <h2 id="roi-heading" className="pb-8 text-4xl md:text-8xl">
                 Proven Impact <br />
                 <span className="text-indigo-500">
@@ -350,6 +429,7 @@ export default function TrainingPage() {
                     with interactive modules vs 30% with traditional training
                   </p>
                 </li>
+
                 <li className="flex items-start gap-4">
                   <CheckCircle2
                     aria-hidden="true"
@@ -364,15 +444,20 @@ export default function TrainingPage() {
                 </li>
               </ul>
 
-              <Button variant="secondary" size="lg">
+              {/* Fix: avoid nested interactive elements */}
+              <Button asChild variant="secondary" size="lg">
                 <Link href="/roi" className="flex items-center gap-2">
                   Calculate Your ROI <ArrowRight aria-hidden="true" />
                 </Link>
               </Button>
-            </div>
+            </MotionSection>
 
             {/* ROI Stats */}
-            <aside
+            <MotionSection
+              as="aside"
+              variant="scaleIn"
+              delay={0.15}
+              viewport={{ once: true }}
               className="relative"
               role="group"
               aria-labelledby="roi-stats"
@@ -410,7 +495,7 @@ export default function TrainingPage() {
                   </div>
                 </div>
               </div>
-            </aside>
+            </MotionSection>
           </div>
         </div>
       </section>

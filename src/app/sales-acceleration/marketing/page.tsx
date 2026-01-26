@@ -20,10 +20,10 @@ import {
 } from "lucide-react"
 import { CTA } from "@/components/sections/cta/CTA"
 import { Button } from "@/components/ui/button"
-import { BookCallButton } from "@/components/sections/cta/BookCallButton"
 import { IndustryBadge } from "@/components/sections/solutions/IndustryBadge"
 import { MarketingEngagementChart } from "./marketing-engagement-chart"
 import { Breadcrumbs } from "@/components/layout/Breadcrumbs"
+import { MotionSection } from "@/components/motion"
 
 export const metadata: Metadata = {
   title: "Marketing Solutions | Paygos",
@@ -78,8 +78,15 @@ export default function MarketingPage() {
       {/* Hero */}
       <section className="hero-sm bg-emerald-950" data-navbar-theme="dark">
         <PatternDots />
-        <div className="text-hero">
-          <small className="text-emerald-400">Targeted Marketing Automation</small>
+        <MotionSection
+          as="div"
+          variant="slideUp"
+          className="text-hero"
+          viewport={{ once: true }}
+        >
+          <small className="text-emerald-400">
+            Targeted Marketing Automation
+          </small>
           <h1>
             Engage Retailers
             <br />
@@ -89,7 +96,7 @@ export default function MarketingPage() {
             Paygos Marketing automates campaign delivery, tracks engagement, and
             ensures your message reaches the right retailers at the right time.
           </p>
-        </div>
+        </MotionSection>
       </section>
 
       <Breadcrumbs />
@@ -99,53 +106,57 @@ export default function MarketingPage() {
         data-navbar-theme="light"
         className="section-container mx-auto py-12"
       >
-        <h2 className="mb-6 text-center">Common Marketing Challenges</h2>
+        <MotionSection
+          as="h2"
+          variant="slideUp"
+          className="mb-6 text-center"
+          viewport={{ once: true }}
+        >
+          Common Marketing Challenges
+        </MotionSection>
+
         <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4">
-          {/* Challenge 1 */}
-          <div className="rounded-lg border border-gray-100 bg-white p-5 shadow-lg transition-shadow hover:shadow-xl">
-            <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-lg bg-emerald-100">
-              <Megaphone className="h-8 w-8 text-emerald-600" />
-            </div>
-            <h3 className="mb-2 text-gray-900">Generic Blasts</h3>
-            <p className="text-gray-600">
-              Mass emails to all retailers result in 8% open rates and ignored
-              promotions
-            </p>
-          </div>
-
-          {/* Challenge 2 */}
-          <div className="rounded-lg border border-gray-100 bg-white p-5 shadow-lg transition-shadow hover:shadow-xl">
-            <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-lg bg-emerald-100">
-              <UserX className="h-8 w-8 text-emerald-600" />
-            </div>
-            <h3 className="mb-2 text-gray-900">No Segmentation</h3>
-            <p className="text-gray-600">
-              Can&apos;t target messages by region, purchase history, or
-              retailer profile
-            </p>
-          </div>
-
-          {/* Challenge 3 */}
-          <div className="rounded-lg border border-gray-100 bg-white p-5 shadow-lg transition-shadow hover:shadow-xl">
-            <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-lg bg-emerald-100">
-              <Eye className="h-8 w-8 text-emerald-600" />
-            </div>
-            <h3 className="mb-2 text-gray-900">Tracking Blind Spots</h3>
-            <p className="text-gray-600">
-              No visibility into who opened emails or clicked promo links
-            </p>
-          </div>
-
-          {/* Challenge 4 */}
-          <div className="rounded-lg border border-gray-100 bg-white p-5 shadow-lg transition-shadow hover:shadow-xl">
-            <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-lg bg-emerald-100">
-              <ClockIcon className="h-8 w-8 text-emerald-600" />
-            </div>
-            <h3 className="mb-2 text-gray-900">Manual Campaigns</h3>
-            <p className="text-gray-600">
-              Building and sending campaigns takes 5-6 hours per launch
-            </p>
-          </div>
+          {[
+            {
+              title: "Generic Blasts",
+              desc: "Mass emails to all retailers result in 8% open rates and ignored promotions",
+              Icon: Megaphone,
+              delay: 0.1,
+            },
+            {
+              title: "No Segmentation",
+              desc: "Can&apos;t target messages by region, purchase history, or retailer profile",
+              Icon: UserX,
+              delay: 0.15,
+            },
+            {
+              title: "Tracking Blind Spots",
+              desc: "No visibility into who opened emails or clicked promo links",
+              Icon: Eye,
+              delay: 0.2,
+            },
+            {
+              title: "Manual Campaigns",
+              desc: "Building and sending campaigns takes 5-6 hours per launch",
+              Icon: ClockIcon,
+              delay: 0.25,
+            },
+          ].map(({ title, desc, Icon, delay }) => (
+            <MotionSection
+              key={title}
+              as="div"
+              variant="scaleIn"
+              delay={delay}
+              viewport={{ once: true }}
+              className="rounded-lg border border-gray-100 bg-white p-5 shadow-lg transition-shadow hover:shadow-xl"
+            >
+              <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-lg bg-emerald-100">
+                <Icon className="h-8 w-8 text-emerald-600" />
+              </div>
+              <h3 className="mb-2 text-gray-900">{title}</h3>
+              <p className="text-gray-600">{desc}</p>
+            </MotionSection>
+          ))}
         </div>
       </section>
 
@@ -156,13 +167,23 @@ export default function MarketingPage() {
         role="region"
         aria-labelledby="marketing-capabilities"
       >
-        <h2 id="marketing-capabilities" className="mb-6 text-center">
+        <MotionSection
+          as="h2"
+          variant="slideUp"
+          id="marketing-capabilities"
+          className="mb-6 text-center"
+          viewport={{ once: true }}
+        >
           Our Solution
-        </h2>
+        </MotionSection>
 
         <div className="grid auto-rows-[200px] grid-cols-1 gap-2 md:grid-cols-6">
           {/* Card 1 - Segmented Campaigns */}
-          <article
+          <MotionSection
+            as="article"
+            variant="scaleIn"
+            delay={0.1}
+            viewport={{ once: true }}
             className="bento-card md:col-span-4"
             role="group"
             aria-labelledby="segmented-campaigns"
@@ -174,7 +195,11 @@ export default function MarketingPage() {
               fill
             />
             <div>
-              <Target size={32} aria-hidden="true" className="text-emerald-400" />
+              <Target
+                size={32}
+                aria-hidden="true"
+                className="text-emerald-400"
+              />
               <h3 id="segmented-campaigns" className="md:text-3xl">
                 Segmented Campaigns
               </h3>
@@ -186,10 +211,14 @@ export default function MarketingPage() {
                 to ensure relevance.
               </p>
             </div>
-          </article>
+          </MotionSection>
 
           {/* Card 2 - Multi-Channel Delivery */}
-          <article
+          <MotionSection
+            as="article"
+            variant="scaleIn"
+            delay={0.15}
+            viewport={{ once: true }}
             className="bento-card md:col-span-2"
             role="group"
             aria-labelledby="multi-channel"
@@ -201,17 +230,25 @@ export default function MarketingPage() {
               fill
             />
             <div>
-              <MessageSquare size={32} aria-hidden="true" className="text-emerald-400" />
+              <MessageSquare
+                size={32}
+                aria-hidden="true"
+                className="text-emerald-400"
+              />
               <h3 id="multi-channel">Multi-Channel</h3>
               <p id="multi-channel-desc">
                 Email, SMS, in-app notifications—choose your channel per
                 campaign.
               </p>
             </div>
-          </article>
+          </MotionSection>
 
           {/* Card 3 - Drag-and-Drop Builder */}
-          <article
+          <MotionSection
+            as="article"
+            variant="scaleIn"
+            delay={0.2}
+            viewport={{ once: true }}
             className="bento-card md:col-span-2"
             role="group"
             aria-labelledby="campaign-builder"
@@ -230,10 +267,14 @@ export default function MarketingPage() {
                 templates.
               </p>
             </div>
-          </article>
+          </MotionSection>
 
           {/* Card 4 - Engagement Analytics */}
-          <article
+          <MotionSection
+            as="article"
+            variant="scaleIn"
+            delay={0.25}
+            viewport={{ once: true }}
             className="bento-card md:col-span-2"
             role="group"
             aria-labelledby="engagement-analytics"
@@ -245,17 +286,25 @@ export default function MarketingPage() {
               fill
             />
             <div>
-              <BarChart3 size={32} aria-hidden="true" className="text-emerald-400" />
+              <BarChart3
+                size={32}
+                aria-hidden="true"
+                className="text-emerald-400"
+              />
               <h3 id="engagement-analytics">Track Engagement</h3>
               <p id="engagement-analytics-desc">
                 Track opens, clicks, and conversion by retailer segment in
                 real-time.
               </p>
             </div>
-          </article>
+          </MotionSection>
 
           {/* Card 5 - Promo Code Integration */}
-          <article
+          <MotionSection
+            as="article"
+            variant="scaleIn"
+            delay={0.3}
+            viewport={{ once: true }}
             className="bento-card md:col-span-2"
             role="group"
             aria-labelledby="promo-codes"
@@ -267,17 +316,25 @@ export default function MarketingPage() {
               fill
             />
             <div>
-              <Percent size={32} aria-hidden="true" className="text-emerald-400" />
+              <Percent
+                size={32}
+                aria-hidden="true"
+                className="text-emerald-400"
+              />
               <h3 id="promo-codes">Promo Codes</h3>
               <p id="promo-codes-desc">
                 Embed unique codes tied to rebates or ordering incentives.
               </p>
             </div>
-          </article>
+          </MotionSection>
 
           {/* Card 6 - Automated Triggers */}
-          <article
-            className="bento-card md:col-span-4"
+          <MotionSection
+            as="article"
+            variant="scaleIn"
+            delay={0.35}
+            viewport={{ once: true }}
+            className="bento-card md:col-span-6"
             role="group"
             aria-labelledby="automated-triggers"
             aria-describedby="automated-triggers-desc"
@@ -300,7 +357,7 @@ export default function MarketingPage() {
                 rebate milestones, training completion.
               </p>
             </div>
-          </article>
+          </MotionSection>
         </div>
       </section>
 
@@ -309,12 +366,21 @@ export default function MarketingPage() {
       {/* Chart Section */}
       <section data-navbar-theme="light" className="mx-auto bg-slate-200 py-12">
         <div className="section-container grid items-center gap-32 lg:grid-cols-2">
+          {/* Keep chart stable (no motion) */}
           <MarketingEngagementChart />
-          <div className="space-y-12">
+
+          {/* Animate copy only */}
+          <MotionSection
+            as="div"
+            variant="slideUp"
+            viewport={{ once: true }}
+            className="space-y-12"
+          >
             <h2 className="text-5xl leading-[0.9] font-black tracking-tighter text-slate-900 uppercase md:text-7xl">
               Engagement <br />
               <span className="text-highlight">That Converts.</span>
             </h2>
+
             <div className="space-y-10">
               <div className="group flex items-start gap-8">
                 <div className="shrink-0 rounded-lg bg-emerald-50 p-5 transition-colors duration-300 group-hover:bg-emerald-500">
@@ -333,6 +399,7 @@ export default function MarketingPage() {
                   </p>
                 </div>
               </div>
+
               <div className="group flex items-start gap-8">
                 <div className="shrink-0 rounded-lg bg-emerald-50 p-5 transition-colors duration-300 group-hover:bg-emerald-500">
                   <TrendingUp
@@ -351,7 +418,7 @@ export default function MarketingPage() {
                 </div>
               </div>
             </div>
-          </div>
+          </MotionSection>
         </div>
       </section>
 
@@ -364,7 +431,8 @@ export default function MarketingPage() {
       >
         <div className="relative overflow-hidden bg-slate-900 p-8 text-white md:p-16">
           <div className="section-container relative z-10 grid items-center gap-12 lg:grid-cols-2">
-            <div>
+            {/* Animate ROI copy separately */}
+            <MotionSection as="div" variant="slideUp" viewport={{ once: true }}>
               <h2 id="roi-heading" className="pb-8 text-4xl md:text-8xl">
                 Proven Impact <br />
                 <span className="text-emerald-500">
@@ -398,15 +466,20 @@ export default function MarketingPage() {
                 </li>
               </ul>
 
-              <Button variant="secondary" size="lg">
+              {/* Fix: avoid nested interactive elements */}
+              <Button asChild variant="secondary" size="lg">
                 <Link href="/roi" className="flex items-center gap-2">
                   Calculate Your ROI <ArrowRight aria-hidden="true" />
                 </Link>
               </Button>
-            </div>
+            </MotionSection>
 
             {/* ROI Stats */}
-            <aside
+            <MotionSection
+              as="aside"
+              variant="scaleIn"
+              delay={0.15}
+              viewport={{ once: true }}
               className="relative"
               role="group"
               aria-labelledby="roi-stats"
@@ -444,7 +517,7 @@ export default function MarketingPage() {
                   </div>
                 </div>
               </div>
-            </aside>
+            </MotionSection>
           </div>
         </div>
       </section>

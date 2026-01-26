@@ -24,6 +24,7 @@ import {
 import { OrderingVolumeChart } from "./ordering-volume-chart"
 import { CustomerStoriesCarousel } from "@/components/sections/customers/CustomerStoriesCarousel"
 import { Breadcrumbs } from "@/components/layout/Breadcrumbs"
+import { MotionSection } from "@/components/motion"
 
 export const metadata: Metadata = {
   title: "Smart Ordering System | Paygos",
@@ -78,7 +79,12 @@ export default function PaygosOrderingPage() {
       {/* Hero */}
       <section className="hero-sm bg-teal-950" data-navbar-theme="dark">
         <PatternDots />
-        <div className="text-hero">
+        <MotionSection
+          as="div"
+          variant="slideUp"
+          className="text-hero"
+          viewport={{ once: true }}
+        >
           <small className="text-teal-400">Streamlined Order Management</small>
           <h1>
             Transforming Ordering
@@ -90,7 +96,7 @@ export default function PaygosOrderingPage() {
             and track orders for products and merchandising in one streamlined
             platform.
           </p>
-        </div>
+        </MotionSection>
       </section>
 
       <Breadcrumbs />
@@ -100,53 +106,57 @@ export default function PaygosOrderingPage() {
         data-navbar-theme="light"
         className="section-container mx-auto py-12"
       >
-        <h2 className="mb-6 text-center">Common Ordering Challenges</h2>
+        <MotionSection
+          as="h2"
+          variant="slideUp"
+          className="mb-6 text-center"
+          viewport={{ once: true }}
+        >
+          Common Ordering Challenges
+        </MotionSection>
+
         <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4">
-          {/* Challenge 1 */}
-          <div className="rounded-lg border border-gray-100 bg-white p-5 shadow-lg transition-shadow hover:shadow-xl">
-            <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-lg bg-teal-100">
-              <Monitor className="h-8 w-8 text-teal-600" />
-            </div>
-            <h3 className="mb-2 text-gray-900">Distributor Complexity</h3>
-            <p className="text-gray-600">
-              Reps waste 6+ hours weekly managing orders across multiple
-              distributor portals
-            </p>
-          </div>
-
-          {/* Challenge 2 */}
-          <div className="rounded-lg border border-gray-100 bg-white p-5 shadow-lg transition-shadow hover:shadow-xl">
-            <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-lg bg-teal-100">
-              <AlertCircle className="h-8 w-8 text-teal-600" />
-            </div>
-            <h3 className="mb-2 text-gray-900">Order Errors</h3>
-            <p className="text-gray-600">
-              Manual data entry causes 15-20% order error rates
-            </p>
-          </div>
-
-          {/* Challenge 3 */}
-          <div className="rounded-lg border border-gray-100 bg-white p-5 shadow-lg transition-shadow hover:shadow-xl">
-            <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-lg bg-teal-100">
-              <EyeOff className="h-8 w-8 text-teal-600" />
-            </div>
-            <h3 className="mb-2 text-gray-900">No Visibility</h3>
-            <p className="text-gray-600">
-              Head office has no real-time view into ordering patterns or rep
-              activity
-            </p>
-          </div>
-
-          {/* Challenge 4 */}
-          <div className="rounded-lg border border-gray-100 bg-white p-5 shadow-lg transition-shadow hover:shadow-xl">
-            <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-lg bg-teal-100">
-              <PackageX className="h-8 w-8 text-teal-600" />
-            </div>
-            <h3 className="mb-2 text-gray-900">Stock-Outs</h3>
-            <p className="text-gray-600">
-              Delayed reorders lead to 8-12% out-of-stock rates at retail
-            </p>
-          </div>
+          {[
+            {
+              title: "Distributor Complexity",
+              desc: "Reps waste 6+ hours weekly managing orders across multiple distributor portals",
+              Icon: Monitor,
+              delay: 0.1,
+            },
+            {
+              title: "Order Errors",
+              desc: "Manual data entry causes 15-20% order error rates",
+              Icon: AlertCircle,
+              delay: 0.15,
+            },
+            {
+              title: "No Visibility",
+              desc: "Head office has no real-time view into ordering patterns or rep activity",
+              Icon: EyeOff,
+              delay: 0.2,
+            },
+            {
+              title: "Stock-Outs",
+              desc: "Delayed reorders lead to 8-12% out-of-stock rates at retail",
+              Icon: PackageX,
+              delay: 0.25,
+            },
+          ].map(({ title, desc, Icon, delay }) => (
+            <MotionSection
+              key={title}
+              as="div"
+              variant="scaleIn"
+              delay={delay}
+              viewport={{ once: true }}
+              className="rounded-lg border border-gray-100 bg-white p-5 shadow-lg transition-shadow hover:shadow-xl"
+            >
+              <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-lg bg-teal-100">
+                <Icon className="h-8 w-8 text-teal-600" />
+              </div>
+              <h3 className="mb-2 text-gray-900">{title}</h3>
+              <p className="text-gray-600">{desc}</p>
+            </MotionSection>
+          ))}
         </div>
       </section>
 
@@ -157,13 +167,23 @@ export default function PaygosOrderingPage() {
         role="region"
         aria-labelledby="ordering-capabilities"
       >
-        <h2 id="ordering-capabilities" className="mb-6 text-center">
+        <MotionSection
+          as="h2"
+          variant="slideUp"
+          id="ordering-capabilities"
+          className="mb-6 text-center"
+          viewport={{ once: true }}
+        >
           Our Solution
-        </h2>
+        </MotionSection>
 
         <div className="grid auto-rows-[200px] grid-cols-1 gap-2 md:grid-cols-6">
           {/* Card 1 */}
-          <article
+          <MotionSection
+            as="article"
+            variant="scaleIn"
+            delay={0.1}
+            viewport={{ once: true }}
             className="bento-card md:col-span-4"
             role="group"
             aria-labelledby="orders-one-platform"
@@ -187,10 +207,14 @@ export default function PaygosOrderingPage() {
                 channel confusion or manual handoffs.
               </p>
             </div>
-          </article>
+          </MotionSection>
 
           {/* Card 2 */}
-          <article
+          <MotionSection
+            as="article"
+            variant="scaleIn"
+            delay={0.15}
+            viewport={{ once: true }}
             className="bento-card md:col-span-2"
             role="group"
             aria-labelledby="save-reps-time"
@@ -209,10 +233,14 @@ export default function PaygosOrderingPage() {
                 workload.
               </p>
             </div>
-          </article>
+          </MotionSection>
 
           {/* Card 3 */}
-          <article
+          <MotionSection
+            as="article"
+            variant="scaleIn"
+            delay={0.2}
+            viewport={{ once: true }}
             className="bento-card md:col-span-2"
             role="group"
             aria-labelledby="products-merch"
@@ -234,10 +262,14 @@ export default function PaygosOrderingPage() {
                 Manage sellable goods and field marketing materials together.
               </p>
             </div>
-          </article>
+          </MotionSection>
 
           {/* Card 4 */}
-          <article
+          <MotionSection
+            as="article"
+            variant="scaleIn"
+            delay={0.25}
+            viewport={{ once: true }}
             className="bento-card md:col-span-2"
             role="group"
             aria-labelledby="real-time-visibility"
@@ -256,10 +288,14 @@ export default function PaygosOrderingPage() {
                 partners and territories.
               </p>
             </div>
-          </article>
+          </MotionSection>
 
           {/* Card 5 */}
-          <article
+          <MotionSection
+            as="article"
+            variant="scaleIn"
+            delay={0.3}
+            viewport={{ once: true }}
             className="bento-card md:col-span-2"
             role="group"
             aria-labelledby="independent-focus"
@@ -278,7 +314,7 @@ export default function PaygosOrderingPage() {
                 specialty retail.
               </p>
             </div>
-          </article>
+          </MotionSection>
         </div>
       </section>
 
@@ -287,12 +323,21 @@ export default function PaygosOrderingPage() {
       {/* Chart Section */}
       <section data-navbar-theme="light" className="mx-auto bg-slate-200 py-12">
         <div className="section-container grid items-center gap-32 lg:grid-cols-2">
+          {/* Keep the chart stable (no animation to avoid jank) */}
           <OrderingVolumeChart />
-          <div className="space-y-12">
+
+          {/* Animate the content block only */}
+          <MotionSection
+            as="div"
+            variant="slideUp"
+            viewport={{ once: true }}
+            className="space-y-12"
+          >
             <h2 className="text-5xl leading-[0.9] font-black tracking-tighter text-slate-900 uppercase md:text-7xl">
               Efficiency <br />
               <span className="text-highlight">That Scales.</span>
             </h2>
+
             <div className="space-y-10">
               <div className="group flex items-start gap-8">
                 <div className="shrink-0 rounded-lg bg-teal-50 p-5 transition-colors duration-300 group-hover:bg-teal-600">
@@ -311,6 +356,7 @@ export default function PaygosOrderingPage() {
                   </p>
                 </div>
               </div>
+
               <div className="group flex items-start gap-8">
                 <div className="shrink-0 rounded-lg bg-teal-50 p-5 transition-colors duration-300 group-hover:bg-teal-600">
                   <TrendingUp
@@ -329,7 +375,7 @@ export default function PaygosOrderingPage() {
                 </div>
               </div>
             </div>
-          </div>
+          </MotionSection>
         </div>
       </section>
 
@@ -342,7 +388,8 @@ export default function PaygosOrderingPage() {
       >
         <div className="relative overflow-hidden bg-slate-900 p-8 text-white md:p-16">
           <div className="section-container relative z-10 grid items-center gap-12 lg:grid-cols-2">
-            <div>
+            {/* Animate ROI copy separately */}
+            <MotionSection as="div" variant="slideUp" viewport={{ once: true }}>
               <h2 id="roi-heading" className="pb-8 text-4xl md:text-8xl">
                 Real ROI <br />
                 <span className="text-teal-600">
@@ -380,15 +427,20 @@ export default function PaygosOrderingPage() {
                 </li>
               </ul>
 
-              <Button variant="outline" size="lg">
+              {/* Fix: avoid nested interactive elements */}
+              <Button asChild variant="secondary" size="lg">
                 <Link href="/roi" className="flex items-center gap-2">
                   Calculate Your ROI <ArrowRight aria-hidden="true" />
                 </Link>
               </Button>
-            </div>
+            </MotionSection>
 
             {/* ROI Stats */}
-            <aside
+            <MotionSection
+              as="aside"
+              variant="scaleIn"
+              delay={0.15}
+              viewport={{ once: true }}
               className="relative"
               role="group"
               aria-labelledby="roi-stats"
@@ -426,7 +478,7 @@ export default function PaygosOrderingPage() {
                   </div>
                 </div>
               </div>
-            </aside>
+            </MotionSection>
           </div>
         </div>
       </section>

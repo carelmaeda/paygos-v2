@@ -28,8 +28,8 @@ import {
 import { CTA } from "@/components/sections/cta/CTA"
 import { Button } from "@/components/ui/button"
 import { IndustryBadge } from "@/components/sections/solutions/IndustryBadge"
-import { BookCallButton } from "@/components/sections/cta/BookCallButton"
 import { Breadcrumbs } from "@/components/layout/Breadcrumbs"
+import { MotionSection } from "@/components/motion"
 
 // --- Constants & Configuration ---
 
@@ -54,20 +54,23 @@ export default function PaymentsPage() {
       {/* SECTION: Hero & Background */}
       <section className="hero-sm bg-cyan-950" data-navbar-theme="dark">
         <PatternDots />
-        <div className="text-hero">
+        <MotionSection
+          as="div"
+          variant="slideUp"
+          className="text-hero"
+          viewport={{ once: true }}
+        >
           <small className="text-cyan-400">
             Reliable Results • Real-Time Insights
           </small>
           <h1>
-            Rethink
-            <br />
-            <span className="text-highlight">Payments</span>
+            Rethink <span className="text-highlight">Payments</span>
           </h1>
           <p>
             Modern tools to validate incentives, manage budgets, and ensure
             compliance in one unified platform.
           </p>
-        </div>
+        </MotionSection>
       </section>
 
       <Breadcrumbs />
@@ -77,55 +80,57 @@ export default function PaymentsPage() {
         data-navbar-theme="light"
         className="section-container mx-auto py-12"
       >
-        <h2 className="mb-6 text-center">Common Payment Challenges</h2>
+        <MotionSection
+          as="h2"
+          variant="slideUp"
+          className="mb-6 text-center"
+          viewport={{ once: true }}
+        >
+          Common Payment Challenges
+        </MotionSection>
+
         <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4">
-          {/* Challenge 1 */}
-          <div className="rounded-lg border border-gray-100 bg-white p-5 shadow-lg transition-shadow hover:shadow-xl">
-            <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-lg bg-cyan-100">
-              <AlertCircle className="h-8 w-8 text-cyan-600" />
-            </div>
-            <h3 className="mb-2 text-gray-900">Manual Payment Processing</h3>
-            <p className="text-gray-600">
-              Validating incentive execution requires manual verification,
-              leading to delays and errors
-            </p>
-          </div>
-
-          {/* Challenge 2 */}
-          <div className="rounded-lg border border-gray-100 bg-white p-5 shadow-lg transition-shadow hover:shadow-xl">
-            <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-lg bg-cyan-100">
-              <TrendingDown className="h-8 w-8 text-cyan-600" />
-            </div>
-            <h3 className="mb-2 text-gray-900">Budget Overruns</h3>
-            <p className="text-gray-600">
-              Without spending limits, promotional budgets frequently exceed
-              allocation
-            </p>
-          </div>
-
-          {/* Challenge 3 */}
-          <div className="rounded-lg border border-gray-100 bg-white p-5 shadow-lg transition-shadow hover:shadow-xl">
-            <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-lg bg-cyan-100">
-              <FileSearch className="h-8 w-8 text-cyan-600" />
-            </div>
-            <h3 className="mb-2 text-gray-900">Payment Reconciliation</h3>
-            <p className="text-gray-600">
-              Tracking EFT payments across multiple retailers creates
-              reconciliation nightmares
-            </p>
-          </div>
-
-          {/* Challenge 4 */}
-          <div className="rounded-lg border border-gray-100 bg-white p-5 shadow-lg transition-shadow hover:shadow-xl">
-            <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-lg bg-cyan-100">
-              <Shield className="h-8 w-8 text-cyan-600" />
-            </div>
-            <h3 className="mb-2 text-gray-900">Compliance Issues</h3>
-            <p className="text-gray-600">
-              Audit trails are incomplete, making compliance verification
-              difficult
-            </p>
-          </div>
+          {[
+            {
+              title: "Manual Payment Processing",
+              desc: "Validating incentive execution requires manual verification, leading to delays and errors",
+              Icon: AlertCircle,
+              delay: 0.1,
+            },
+            {
+              title: "Budget Overruns",
+              desc: "Without spending limits, promotional budgets frequently exceed allocation",
+              Icon: TrendingDown,
+              delay: 0.15,
+            },
+            {
+              title: "Payment Reconciliation",
+              desc: "Tracking EFT payments across multiple retailers creates reconciliation nightmares",
+              Icon: FileSearch,
+              delay: 0.2,
+            },
+            {
+              title: "Compliance Issues",
+              desc: "Audit trails are incomplete, making compliance verification difficult",
+              Icon: Shield,
+              delay: 0.25,
+            },
+          ].map(({ title, desc, Icon, delay }) => (
+            <MotionSection
+              key={title}
+              as="div"
+              variant="scaleIn"
+              delay={delay}
+              viewport={{ once: true }}
+              className="rounded-lg border border-gray-100 bg-white p-5 shadow-lg transition-shadow hover:shadow-xl"
+            >
+              <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-lg bg-cyan-100">
+                <Icon className="h-8 w-8 text-cyan-600" />
+              </div>
+              <h3 className="mb-2 text-gray-900">{title}</h3>
+              <p className="text-gray-600">{desc}</p>
+            </MotionSection>
+          ))}
         </div>
       </section>
 
@@ -136,13 +141,23 @@ export default function PaymentsPage() {
         role="region"
         aria-labelledby="payment-capabilities"
       >
-        <h2 id="payment-capabilities" className="mb-6 text-center">
+        <MotionSection
+          as="h2"
+          variant="slideUp"
+          id="payment-capabilities"
+          className="mb-6 text-center"
+          viewport={{ once: true }}
+        >
           Our Solution
-        </h2>
+        </MotionSection>
 
         <div className="grid auto-rows-[200px] grid-cols-1 gap-2 md:grid-cols-6">
           {/* Card 1 - Automated Validation */}
-          <article
+          <MotionSection
+            as="article"
+            variant="scaleIn"
+            delay={0.1}
+            viewport={{ once: true }}
             className="bento-card md:col-span-4"
             role="group"
             aria-labelledby="automated-validation"
@@ -154,7 +169,11 @@ export default function PaymentsPage() {
               fill
             />
             <div>
-              <ShieldCheck size={32} aria-hidden="true" className="text-cyan-400" />
+              <ShieldCheck
+                size={32}
+                aria-hidden="true"
+                className="text-cyan-400"
+              />
               <h3 id="automated-validation" className="md:text-3xl">
                 Automated Validation
               </h3>
@@ -166,10 +185,14 @@ export default function PaymentsPage() {
                 validation, and approve EFT payments instantly.
               </p>
             </div>
-          </article>
+          </MotionSection>
 
           {/* Card 2 - Budget Control */}
-          <article
+          <MotionSection
+            as="article"
+            variant="scaleIn"
+            delay={0.15}
+            viewport={{ once: true }}
             className="bento-card md:col-span-2"
             role="group"
             aria-labelledby="budget-control"
@@ -188,10 +211,14 @@ export default function PaymentsPage() {
                 overruns.
               </p>
             </div>
-          </article>
+          </MotionSection>
 
           {/* Card 3 - Real-Time Tracking */}
-          <article
+          <MotionSection
+            as="article"
+            variant="scaleIn"
+            delay={0.2}
+            viewport={{ once: true }}
             className="bento-card md:col-span-2"
             role="group"
             aria-labelledby="real-time-tracking"
@@ -210,10 +237,14 @@ export default function PaymentsPage() {
                 complete transparency.
               </p>
             </div>
-          </article>
+          </MotionSection>
 
           {/* Card 4 - Mobile Validation */}
-          <article
+          <MotionSection
+            as="article"
+            variant="scaleIn"
+            delay={0.25}
+            viewport={{ once: true }}
             className="bento-card md:col-span-4"
             role="group"
             aria-labelledby="mobile-validation"
@@ -225,7 +256,11 @@ export default function PaymentsPage() {
               fill
             />
             <div>
-              <Smartphone size={32} aria-hidden="true" className="text-cyan-400" />
+              <Smartphone
+                size={32}
+                aria-hidden="true"
+                className="text-cyan-400"
+              />
               <h3 id="mobile-validation" className="md:text-3xl">
                 Mobile-First Validation
               </h3>
@@ -234,10 +269,14 @@ export default function PaymentsPage() {
                 instant payment workflows.
               </p>
             </div>
-          </article>
+          </MotionSection>
 
           {/* Card 5 - Compliance & Audit */}
-          <article
+          <MotionSection
+            as="article"
+            variant="scaleIn"
+            delay={0.3}
+            viewport={{ once: true }}
             className="bento-card md:col-span-3"
             role="group"
             aria-labelledby="compliance-audit"
@@ -258,10 +297,14 @@ export default function PaymentsPage() {
                 documentation for compliance.
               </p>
             </div>
-          </article>
+          </MotionSection>
 
           {/* Card 6 - Payment Distribution */}
-          <article
+          <MotionSection
+            as="article"
+            variant="scaleIn"
+            delay={0.35}
+            viewport={{ once: true }}
             className="bento-card md:col-span-3"
             role="group"
             aria-labelledby="payment-distribution"
@@ -273,7 +316,11 @@ export default function PaymentsPage() {
               fill
             />
             <div>
-              <PieChart size={32} aria-hidden="true" className="text-cyan-400" />
+              <PieChart
+                size={32}
+                aria-hidden="true"
+                className="text-cyan-400"
+              />
               <h3 id="payment-distribution" className="md:text-2xl">
                 Payment Analytics
               </h3>
@@ -282,7 +329,7 @@ export default function PaymentsPage() {
                 optimize incentive programs.
               </p>
             </div>
-          </article>
+          </MotionSection>
         </div>
       </section>
 
@@ -291,6 +338,7 @@ export default function PaymentsPage() {
       {/* SECTION: Analytics & Chart */}
       <section data-navbar-theme="light" className="mx-auto bg-slate-200 py-12">
         <div className="section-container grid items-center gap-32 lg:grid-cols-2">
+          {/* Keep the chart stable (no motion) to avoid jank */}
           <div className="rounded-[4rem] border border-slate-50 bg-white p-12 shadow-xl">
             <div className="mb-12 flex items-center justify-between text-xs font-black tracking-widest uppercase">
               <span>Payment Distribution</span>
@@ -340,11 +388,18 @@ export default function PaymentsPage() {
             </ChartContainer>
           </div>
 
-          <div className="space-y-12">
+          {/* Animate the copy only */}
+          <MotionSection
+            as="div"
+            variant="slideUp"
+            viewport={{ once: true }}
+            className="space-y-12"
+          >
             <h2 className="text-5xl leading-[0.9] font-black tracking-tighter text-slate-900 uppercase md:text-7xl">
               Transparency <br />
               <span className="text-highlight">At Every Level.</span>
             </h2>
+
             <div className="space-y-10">
               <div className="group flex items-start gap-8">
                 <div className="shrink-0 rounded-lg bg-cyan-50 p-5 transition-colors duration-300 group-hover:bg-cyan-500">
@@ -355,7 +410,7 @@ export default function PaymentsPage() {
                 </div>
                 <div>
                   <h4 className="mb-2 text-2xl font-black tracking-tight text-slate-900 uppercase">
-                    Compliance & Control
+                    Compliance &amp; Control
                   </h4>
                   <p className="text-lg leading-relaxed font-medium text-slate-500">
                     Set spending limits and approval workflows to prevent budget
@@ -363,6 +418,7 @@ export default function PaymentsPage() {
                   </p>
                 </div>
               </div>
+
               <div className="group flex items-start gap-8">
                 <div className="shrink-0 rounded-lg bg-cyan-50 p-5 transition-colors duration-300 group-hover:bg-cyan-500">
                   <Smartphone
@@ -381,7 +437,7 @@ export default function PaymentsPage() {
                 </div>
               </div>
             </div>
-          </div>
+          </MotionSection>
         </div>
       </section>
 
@@ -394,7 +450,8 @@ export default function PaymentsPage() {
       >
         <div className="relative overflow-hidden bg-slate-900 p-8 text-white md:p-16">
           <div className="section-container relative z-10 grid items-center gap-12 lg:grid-cols-2">
-            <div>
+            {/* Animate ROI copy separately */}
+            <MotionSection as="div" variant="slideUp" viewport={{ once: true }}>
               <h2 id="roi-heading" className="pb-8 text-4xl md:text-8xl">
                 Proven Impact <br />
                 <span className="text-cyan-500">
@@ -430,15 +487,20 @@ export default function PaymentsPage() {
                 </li>
               </ul>
 
-              <Button variant="secondary" size="lg">
+              {/* Fix: avoid nested interactive elements */}
+              <Button asChild variant="secondary" size="lg">
                 <Link href="/roi" className="flex items-center gap-2">
                   Calculate Your ROI <ArrowRight aria-hidden="true" />
                 </Link>
               </Button>
-            </div>
+            </MotionSection>
 
             {/* ROI Stats */}
-            <aside
+            <MotionSection
+              as="aside"
+              variant="scaleIn"
+              delay={0.15}
+              viewport={{ once: true }}
               className="relative"
               role="group"
               aria-labelledby="roi-stats"
@@ -476,7 +538,7 @@ export default function PaymentsPage() {
                   </div>
                 </div>
               </div>
-            </aside>
+            </MotionSection>
           </div>
         </div>
       </section>

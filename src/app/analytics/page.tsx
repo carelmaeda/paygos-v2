@@ -23,6 +23,7 @@ import { BookCallButton } from "@/components/sections/cta/BookCallButton"
 import { IndustryBadge } from "@/components/sections/solutions/IndustryBadge"
 import { AnalyticsMetricsChart } from "./analytics-metrics-chart"
 import { Breadcrumbs } from "@/components/layout/Breadcrumbs"
+import { MotionSection } from "@/components/motion"
 
 export const metadata: Metadata = {
   title: "Data & Analytics | Paygos",
@@ -88,7 +89,7 @@ export default function AnalyticsPage() {
         </div>
 
         <div className="relative z-10 container mx-auto px-6 lg:px-8">
-          <div className="max-w-4xl">
+          <MotionSection as="div" variant="slideUp" className="max-w-4xl">
             <div className="mb-8 inline-flex items-center gap-2 rounded-full border border-emerald-500/30 bg-emerald-500/20 px-4 py-1.5 text-xs font-black tracking-[0.2em] text-emerald-300 uppercase backdrop-blur-md">
               Real-Time Insights • Data-Driven Decisions
             </div>
@@ -103,7 +104,7 @@ export default function AnalyticsPage() {
               insights that drive sales, reduce waste, and prove ROI.
             </p>
             <BookCallButton />
-          </div>
+          </MotionSection>
         </div>
       </section>
 
@@ -114,12 +115,12 @@ export default function AnalyticsPage() {
         className="container mx-auto px-6 py-24"
         data-navbar-theme="light"
       >
-        <h2 className="mb-12 text-center text-3xl font-black text-slate-900">
+        <MotionSection as="h2" variant="slideUp" className="mb-12 text-center text-3xl font-black text-slate-900">
           Common Analytics Challenges
-        </h2>
+        </MotionSection>
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
           {/* Challenge 1 */}
-          <div className="rounded-lg border border-gray-100 bg-white p-8 shadow-lg transition-shadow hover:shadow-xl">
+          <MotionSection as="div" variant="scaleIn" delay={0.1} className="rounded-lg border border-gray-100 bg-white p-8 shadow-lg transition-shadow hover:shadow-xl">
             <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-lg bg-red-100">
               <AlertTriangle className="h-8 w-8 text-red-600" />
             </div>
@@ -130,10 +131,10 @@ export default function AnalyticsPage() {
               Without photo proof and real-time data, validating field execution
               is guesswork
             </p>
-          </div>
+          </MotionSection>
 
           {/* Challenge 2 */}
-          <div className="rounded-lg border border-gray-100 bg-white p-8 shadow-lg transition-shadow hover:shadow-xl">
+          <MotionSection as="div" variant="scaleIn" delay={0.15} className="rounded-lg border border-gray-100 bg-white p-8 shadow-lg transition-shadow hover:shadow-xl">
             <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-lg bg-red-100">
               <FileX className="h-8 w-8 text-red-600" />
             </div>
@@ -144,10 +145,10 @@ export default function AnalyticsPage() {
               Return data sits in spreadsheets, making it impossible to spot
               trends or root causes
             </p>
-          </div>
+          </MotionSection>
 
           {/* Challenge 3 */}
-          <div className="rounded-lg border border-gray-100 bg-white p-8 shadow-lg transition-shadow hover:shadow-xl">
+          <MotionSection as="div" variant="scaleIn" delay={0.2} className="rounded-lg border border-gray-100 bg-white p-8 shadow-lg transition-shadow hover:shadow-xl">
             <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-lg bg-red-100">
               <Database className="h-8 w-8 text-red-600" />
             </div>
@@ -158,10 +159,10 @@ export default function AnalyticsPage() {
               Different systems and manual entry create conflicting data across
               the business
             </p>
-          </div>
+          </MotionSection>
 
           {/* Challenge 4 */}
-          <div className="rounded-lg border border-gray-100 bg-white p-8 shadow-lg transition-shadow hover:shadow-xl">
+          <MotionSection as="div" variant="scaleIn" delay={0.25} className="rounded-lg border border-gray-100 bg-white p-8 shadow-lg transition-shadow hover:shadow-xl">
             <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-lg bg-red-100">
               <TrendingDown className="h-8 w-8 text-red-600" />
             </div>
@@ -172,7 +173,7 @@ export default function AnalyticsPage() {
               Promotional spend is scattered, making ROI analysis nearly
               impossible
             </p>
-          </div>
+          </MotionSection>
         </div>
       </section>
 
@@ -189,7 +190,10 @@ export default function AnalyticsPage() {
 
         <div className="grid auto-rows-[300px] grid-cols-1 gap-2 md:grid-cols-6">
           {/* Card 1 - Unified Dashboard */}
-          <article
+          <MotionSection
+            as="article"
+            variant="scaleIn"
+            delay={0.1}
             className="bento-card md:col-span-4"
             role="group"
             aria-labelledby="unified-dashboard"
@@ -210,10 +214,13 @@ export default function AnalyticsPage() {
                 across all retailers in one platform.
               </p>
             </div>
-          </article>
+          </MotionSection>
 
           {/* Card 2 - Custom Reports */}
-          <article
+          <MotionSection
+            as="article"
+            variant="scaleIn"
+            delay={0.15}
             className="bento-card md:col-span-2"
             role="group"
             aria-labelledby="custom-reports"
@@ -232,10 +239,13 @@ export default function AnalyticsPage() {
                 date ranges.
               </p>
             </div>
-          </article>
+          </MotionSection>
 
           {/* Card 3 - SKU-Level Tracking */}
-          <article
+          <MotionSection
+            as="article"
+            variant="scaleIn"
+            delay={0.2}
             className="bento-card md:col-span-2"
             role="group"
             aria-labelledby="sku-tracking"
@@ -254,10 +264,13 @@ export default function AnalyticsPage() {
                 velocity.
               </p>
             </div>
-          </article>
+          </MotionSection>
 
           {/* Card 4 - Territory Analytics */}
-          <article
+          <MotionSection
+            as="article"
+            variant="scaleIn"
+            delay={0.25}
             className="bento-card md:col-span-2"
             role="group"
             aria-labelledby="territory-analytics"
@@ -275,10 +288,13 @@ export default function AnalyticsPage() {
                 Compare rep performance and regional trends side-by-side.
               </p>
             </div>
-          </article>
+          </MotionSection>
 
           {/* Card 5 - Predictive Insights */}
-          <article
+          <MotionSection
+            as="article"
+            variant="scaleIn"
+            delay={0.3}
             className="bento-card md:col-span-2"
             role="group"
             aria-labelledby="predictive-insights"
@@ -296,10 +312,13 @@ export default function AnalyticsPage() {
                 AI-powered forecasting for inventory and promotion planning.
               </p>
             </div>
-          </article>
+          </MotionSection>
 
           {/* Card 6 - Export & Integrations */}
-          <article
+          <MotionSection
+            as="article"
+            variant="scaleIn"
+            delay={0.35}
             className="bento-card md:col-span-4"
             role="group"
             aria-labelledby="export-integrations"
@@ -323,7 +342,7 @@ export default function AnalyticsPage() {
                 Excel, API access.
               </p>
             </div>
-          </article>
+          </MotionSection>
         </div>
       </section>
 
