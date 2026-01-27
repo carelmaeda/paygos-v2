@@ -116,11 +116,11 @@ export default function SalesAccelerationPage() {
 
       {/* SECTION: Tools Grid */}
       <section
-        data-navbar-theme="dark"
-        className="relative mx-auto bg-teal-900 px-6 py-12"
+        data-navbar-theme="light"
+        className="relative mx-auto bg-stone-100 px-6 py-12"
       >
         <PatternDots />
-        <MotionSection as="h2" variant="slideUp" className="mb-6 text-center text-white">
+        <MotionSection as="h2" variant="slideUp" className="mb-6 text-center">
           Our Sales Acceleration Tools
         </MotionSection>
 
@@ -135,20 +135,15 @@ export default function SalesAccelerationPage() {
             >
               <Link
                 href={tool.href}
-                className="group relative flex h-full flex-col justify-between overflow-hidden rounded-lg bg-white/40 p-6 backdrop-blur-xl transition-all duration-500 hover:border-teal-500/50"
+                className="group relative flex h-full flex-col justify-between overflow-hidden rounded-lg bg-black/10 backdrop-blur-xl transition-all duration-500"
               >
                 {/* 1. Content Area (Frosted Top) */}
-                <div className="relative z-10 space-y-1">
-                  <h3 className="text-slate-900 transition-colors group-hover:opacity-60">
-                    {tool.title}
-                  </h3>
+                <div className="relative z-10 space-y-1 px-6 pt-6 pb-1">
+                  <h3 className="">{tool.title}</h3>
+                  <p className="text-sm font-extralight">{tool.description}</p>
 
-                  <p className="text-sm transition-opacity duration-300 group-hover:opacity-60">
-                    {tool.description}
-                  </p>
-
-                  <Button variant="link" size="sm">
-                    <div className="inline-flex items-center gap-2 group-hover:underline">
+                  <Button variant="link" size="default" className="p-0!">
+                    <div className="inline-flex items-center gap-2 text-black group-hover:underline">
                       Learn more
                       <ArrowRight className="h-4 w-4 transition-transform" />
                     </div>
@@ -156,12 +151,12 @@ export default function SalesAccelerationPage() {
                 </div>
 
                 {/* 2. Image Area  */}
-                <div className="relative mt-8 h-44 w-full">
+                <div className="relative h-50 w-full">
                   <Image
                     src={tool.image}
                     alt={tool.title}
                     fill
-                    className="object-contain p-4 transition-transform duration-500 group-hover:scale-110"
+                    className="object-cover"
                   />
                 </div>
               </Link>

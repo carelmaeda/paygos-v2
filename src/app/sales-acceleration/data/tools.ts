@@ -9,13 +9,13 @@ export const SALES_ACCELERATION_TOOLS: SalesAccelerationTool[] = [
   {
     title: "Optimized Ordering",
     description: "Faster, smarter order management.",
-    image: "/paygos-hero.svg",
+    image: "/solutions/ordering.png",
     href: "/sales-acceleration/ordering",
   },
   {
     title: "Rebates",
     description: "Automated rebates that drive growth.",
-    image: "/paygos-hero.svg",
+    image: "/solutions/rebates.png",
     href: "/sales-acceleration/rebates",
   },
   {
@@ -27,7 +27,7 @@ export const SALES_ACCELERATION_TOOLS: SalesAccelerationTool[] = [
   {
     title: "Returns Management",
     description: "Simplified, compliant returns.",
-    image: "/paygos-hero.svg",
+    image: "/solutions/returns.png",
     href: "/sales-acceleration/returns",
   },
   {
