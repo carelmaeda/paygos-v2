@@ -16,6 +16,7 @@ import { useMemo, useState } from "react"
 import { StepSelector } from "./StepSelector"
 import { InputForm } from "./InputForm"
 import { ResultsModal } from "./ResultsModal"
+import { ResultsPanel } from "./ResultsPanel"
 import { LeadCaptureModal } from "./LeadCaptureModal"
 import { calculateROI } from "./roiFormulas"
 import { sendRoiResults } from "./emailService"
@@ -142,6 +143,13 @@ export function RoiCalculator() {
       {/* Step 2: Business Metrics Input */}
       <StepCard step={2} title="About your Company">
         <InputForm inputs={inputs} onChange={setInputs} />
+        {/* Temporary: Real-time ROI results preview */}
+        <div className="mt-8 border-t pt-6">
+          <p className="mb-4 text-sm font-medium text-muted-foreground">
+            Live Results Preview:
+          </p>
+          <ResultsPanel results={results} mode={mode} />
+        </div>
       </StepCard>
 
       {/* CTA Button - Opens Lead Capture Modal */}
