@@ -39,7 +39,7 @@ export const SALES_ACCELERATION_TOOLS: SalesAccelerationTool[] = [
   {
     title: "Marketing",
     description: "Targeted campaigns that perform.",
-    image: "/paygos-hero.svg",
+    image: "/solutions/marketing.png",
     href: "/sales-acceleration/marketing",
   },
 ]

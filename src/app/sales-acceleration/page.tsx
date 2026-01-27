@@ -125,7 +125,7 @@ export default function SalesAccelerationPage() {
         </MotionSection>
 
         {/* Grid */}
-        <div className="section-container grid grid-cols-1 gap-3 md:grid-cols-2 lg:grid-cols-3">
+        <div className="section-container grid grid-cols-1 gap-4 md:grid-cols-2 md:px-32 lg:grid-cols-3 lg:px-48">
           {SALES_ACCELERATION_TOOLS.map((tool, index) => (
             <MotionSection
               as="div"
@@ -151,7 +151,7 @@ export default function SalesAccelerationPage() {
                 </div>
 
                 {/* 2. Image Area  */}
-                <div className="relative h-50 w-full">
+                <div className="relative h-32 w-full md:h-50">
                   <Image
                     src={tool.image}
                     alt={tool.title}
