@@ -83,12 +83,12 @@ export default function FsaPage() {
           className="text-hero"
           viewport={{ once: true }}
         >
-          <small className="text-teal-400">
+          <small className="text-cyan-400">
             Mobile-First • Real-Time Execution
           </small>
           <h1>
             Empower Your {""}
-            <span className="text-highlight">Field Team</span>
+            <span className="text-cyan-400">Field Team</span>
           </h1>
           <p>
             Our Field Sales Automation equips Sale Reps with mobile tools to
@@ -101,10 +101,7 @@ export default function FsaPage() {
       <Breadcrumbs />
 
       {/* Challenges */}
-      <section
-        className="section-container mx-auto px-6 py-16"
-        data-navbar-theme="light"
-      >
+      <section className="section-container py-12" data-navbar-theme="light">
         <MotionSection
           as="h2"
           variant="slideUp"
@@ -120,8 +117,8 @@ export default function FsaPage() {
             delay={0.1}
             className="rounded-lg border border-gray-100 bg-white p-8 shadow-lg transition-shadow hover:shadow-xl"
           >
-            <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-xl bg-red-100">
-              <FileText className="h-8 w-8 text-red-600" />
+            <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-xl bg-cyan-100">
+              <FileText className="h-8 w-8 text-cyan-600" />
             </div>
             <h3 className="mb-3 text-xl font-bold text-gray-900">
               Paper-Based Chaos
@@ -139,8 +136,8 @@ export default function FsaPage() {
             delay={0.15}
             className="rounded-lg border border-gray-100 bg-white p-8 shadow-lg transition-shadow hover:shadow-xl"
           >
-            <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-xl bg-red-100">
-              <Camera className="h-8 w-8 text-red-600" />
+            <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-xl bg-cyan-100">
+              <Camera className="h-8 w-8 text-cyan-600" />
             </div>
             <h3 className="mb-3 text-xl font-bold text-gray-900">
               Visit Verification
@@ -158,8 +155,8 @@ export default function FsaPage() {
             delay={0.2}
             className="rounded-lg border border-gray-100 bg-white p-8 shadow-lg transition-shadow hover:shadow-xl"
           >
-            <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-xl bg-red-100">
-              <MapPin className="h-8 w-8 text-red-600" />
+            <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-xl bg-cyan-100">
+              <MapPin className="h-8 w-8 text-cyan-600" />
             </div>
             <h3 className="mb-3 text-xl font-bold text-gray-900">
               Territory Gaps
@@ -177,8 +174,8 @@ export default function FsaPage() {
             delay={0.25}
             className="rounded-lg border border-gray-100 bg-white p-8 shadow-lg transition-shadow hover:shadow-xl"
           >
-            <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-xl bg-red-100">
-              <Clock className="h-8 w-8 text-red-600" />
+            <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-xl bg-cyan-100">
+              <Clock className="h-8 w-8 text-cyan-600" />
             </div>
             <h3 className="mb-3 text-xl font-bold text-gray-900">
               Delayed Reporting
@@ -195,7 +192,7 @@ export default function FsaPage() {
 
       {/* FSA Capabilities - Bento Grid */}
       <section
-        className="section-container mx-auto px-6 py-24"
+        className="section-container py-12"
         role="region"
         aria-labelledby="fsa-capabilities"
         data-navbar-theme="light"
@@ -209,7 +206,7 @@ export default function FsaPage() {
           The Paygos Solution
         </MotionSection>
 
-        <div className="grid auto-rows-[350px] grid-cols-1 gap-2 md:grid-cols-6">
+        <div className="grid auto-rows-[200px] grid-cols-1 gap-2 md:grid-cols-6">
           {/* Card 1 - Mobile Visit Capture */}
           <MotionSection
             as="article"
@@ -226,7 +223,11 @@ export default function FsaPage() {
               fill
             />
             <div className="p-8">
-              <Smartphone size={32} aria-hidden="true" />
+              <Smartphone
+                size={32}
+                aria-hidden="true"
+                className="text-cyan-400"
+              />
               <h3 id="mobile-visit-capture" className="md:text-3xl">
                 Mobile Visit Capture
               </h3>
@@ -256,7 +257,7 @@ export default function FsaPage() {
               fill
             />
             <div className="p-8">
-              <Map size={32} aria-hidden="true" />
+              <Map size={32} aria-hidden="true" className="text-cyan-400" />
               <h3 id="gps-routes">Route Optimization</h3>
               <p id="gps-routes-desc">
                 Plan efficient routes and track mileage automatically for
@@ -281,7 +282,7 @@ export default function FsaPage() {
               fill
             />
             <div className="p-8">
-              <Camera size={32} aria-hidden="true" />
+              <Camera size={32} aria-hidden="true" className="text-cyan-400" />
               <h3 id="photo-validation">Photo Validation</h3>
               <p id="photo-validation-desc">
                 Capture planogram compliance, displays, and stock levels
@@ -306,8 +307,12 @@ export default function FsaPage() {
               fill
             />
             <div className="p-8">
-              <Activity size={32} aria-hidden="true" />
-              <h3 id="activity-dashboard">Live Dashboard</h3>
+              <Activity
+                size={32}
+                aria-hidden="true"
+                className="text-cyan-400"
+              />
+              <h3 id="activity-dashboard">Live Dashboards</h3>
               <p id="activity-dashboard-desc">
                 Managers see visit completions, rep productivity, and coverage
                 gaps in real-time.
@@ -331,7 +336,11 @@ export default function FsaPage() {
               fill
             />
             <div className="p-8">
-              <CloudOff size={32} aria-hidden="true" />
+              <CloudOff
+                size={32}
+                aria-hidden="true"
+                className="text-cyan-400"
+              />
               <h3 id="offline-mode">Offline Mode</h3>
               <p id="offline-mode-desc">
                 Work in low-signal areas—data automatically syncs when back
@@ -345,7 +354,7 @@ export default function FsaPage() {
             as="article"
             variant="scaleIn"
             delay={0.35}
-            className="bento-card md:col-span-4"
+            className="bento-card md:col-span-6"
             role="group"
             aria-labelledby="incentive-tie-in"
             aria-describedby="incentive-tie-in-desc"
@@ -356,7 +365,11 @@ export default function FsaPage() {
               fill
             />
             <div className="p-8">
-              <DollarSign size={32} aria-hidden="true" />
+              <DollarSign
+                size={32}
+                aria-hidden="true"
+                className="text-cyan-400"
+              />
               <h3 id="incentive-tie-in" className="md:text-3xl">
                 Incentive Automation
               </h3>
@@ -370,10 +383,7 @@ export default function FsaPage() {
       </section>
 
       {/* Chart Section */}
-      <section
-        className="section-container mx-auto px-6 py-24"
-        data-navbar-theme="light"
-      >
+      <section className="section-container py-12" data-navbar-theme="light">
         <div className="grid items-center gap-16 lg:grid-cols-2">
           <MotionSection as="div" variant="fadeIn">
             <FsaCoverageChart />
@@ -381,14 +391,14 @@ export default function FsaPage() {
           <MotionSection as="div" variant="slideUp" className="space-y-12">
             <h2 className="text-5xl leading-[0.9] font-black tracking-tighter text-slate-900 uppercase md:text-7xl">
               Coverage <br />
-              <span className="text-highlight">That&apos;s Complete.</span>
+              <span className="text-cyan-400">That&apos;s Complete.</span>
             </h2>
             <div className="space-y-10">
               <div className="group flex items-start gap-8">
-                <div className="shrink-0 rounded-lg bg-teal-50 p-5 transition-colors duration-300 group-hover:bg-teal-500">
+                <div className="shrink-0 rounded-lg bg-cyan-50 p-5 transition-colors duration-300 group-hover:bg-cyan-500">
                   <MapPin
                     size={28}
-                    className="text-teal-600 group-hover:text-white"
+                    className="text-cyan-600 group-hover:text-white"
                   />
                 </div>
                 <div>
@@ -402,10 +412,10 @@ export default function FsaPage() {
                 </div>
               </div>
               <div className="group flex items-start gap-8">
-                <div className="shrink-0 rounded-lg bg-teal-50 p-5 transition-colors duration-300 group-hover:bg-teal-500">
+                <div className="shrink-0 rounded-lg bg-cyan-50 p-5 transition-colors duration-300 group-hover:bg-cyan-500">
                   <TrendingUp
                     size={28}
-                    className="text-teal-600 group-hover:text-white"
+                    className="text-cyan-600 group-hover:text-white"
                   />
                 </div>
                 <div>
@@ -425,12 +435,12 @@ export default function FsaPage() {
 
       {/* ROI */}
       <section
-        className="bg-slate-900 py-24"
+        className="bg-slate-900 py-12"
         role="region"
         aria-labelledby="roi-heading"
         data-navbar-theme="dark"
       >
-        <div className="section-container mx-auto px-6">
+        <div className="section-container">
           <div className="grid items-center gap-16 lg:grid-cols-2">
             <MotionSection as="div" variant="slideUp">
               <h2
@@ -438,14 +448,14 @@ export default function FsaPage() {
                 className="mb-8 text-4xl font-black text-white md:text-6xl"
               >
                 Proven Impact <br />
-                <span className="text-teal-500">
+                <span className="text-cyan-500">
                   Where Field Teams Execute Flawlessly
                 </span>
               </h2>
 
               <ul className="mb-12 space-y-6">
                 <li className="flex items-start gap-4">
-                  <Timer aria-hidden="true" className="mt-1 text-teal-500" />
+                  <Timer aria-hidden="true" className="mt-1 text-cyan-500" />
                   <p className="text-lg text-slate-300">
                     Reduce admin time by{" "}
                     <strong className="text-white">50%</strong> with mobile
@@ -456,7 +466,7 @@ export default function FsaPage() {
                 <li className="flex items-start gap-4">
                   <CheckCircle2
                     aria-hidden="true"
-                    className="mt-1 text-teal-500"
+                    className="mt-1 text-cyan-500"
                   />
                   <p className="text-lg text-slate-300">
                     Increase visit validation by{" "}
@@ -468,7 +478,7 @@ export default function FsaPage() {
                 <li className="flex items-start gap-4">
                   <TrendingUp
                     aria-hidden="true"
-                    className="mt-1 text-teal-500"
+                    className="mt-1 text-cyan-500"
                   />
                   <p className="text-lg text-slate-300">
                     Improve territory coverage by{" "}
@@ -495,7 +505,7 @@ export default function FsaPage() {
             >
               <div className="rounded-[2.5rem] border border-white/10 bg-white/5 p-12 text-center backdrop-blur-md">
                 <Timer
-                  className="mx-auto mb-6 text-teal-500"
+                  className="mx-auto mb-6 text-cyan-500"
                   size={48}
                   aria-hidden="true"
                 />
@@ -506,7 +516,7 @@ export default function FsaPage() {
                 >
                   10 hrs
                 </h3>
-                <p className="text-sm font-bold tracking-[0.2em] text-teal-400 uppercase">
+                <p className="text-sm font-bold tracking-[0.2em] text-cyan-400 uppercase">
                   Saved Per Rep Per Week
                 </p>
 

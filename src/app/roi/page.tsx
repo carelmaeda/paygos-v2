@@ -33,7 +33,10 @@ export default function RoiPage() {
       <Breadcrumbs />
 
       {/* Calculator Section */}
-      <section className="section-container py-16" data-navbar-theme="light">
+      <section
+        className="section-container py-16 md:px-32 lg:px-48"
+        data-navbar-theme="light"
+      >
         <MotionSection as="h3" variant="slideUp" className="mb-6 text-center">
           Select the ideal solutions and enter your business metrics to see
           potential returns.

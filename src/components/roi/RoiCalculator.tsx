@@ -68,7 +68,7 @@ function StepCard({
   children: React.ReactNode
 }) {
   return (
-    <section className="section-container">
+    <section>
       <div className="mb-4 flex items-center gap-2">
         <StepBadge step={step} />
         <SectionTitle>{title}</SectionTitle>
@@ -143,7 +143,7 @@ export function RoiCalculator() {
         <InputForm inputs={inputs} onChange={setInputs} />
         {/* Temporary: Real-time ROI results preview */}
         <div className="mt-8 border-t pt-6">
-          <p className="mb-4 text-sm font-medium text-muted-foreground">
+          <p className="text-muted-foreground mb-4 text-sm font-medium">
             Live Results Preview:
           </p>
           <ResultsPanel results={results} mode={mode} />

@@ -65,7 +65,7 @@ export default function SalesAccelerationPage() {
   return (
     <main id="main-content" className="min-h-screen">
       {/* Hero */}
-      <section className="hero-sm bg-sky-950" data-navbar-theme="dark">
+      <section className="hero-sm bg-teal-950" data-navbar-theme="dark">
         <PatternCircuit />
         <MotionSection
           as="div"
@@ -279,10 +279,13 @@ export default function SalesAccelerationPage() {
             </h2>
             <ul className="mb-10 space-y-6">
               <li className="flex items-start gap-4">
-                <TrendingUp aria-hidden="true" className="mt-1 text-teal-500" />
+                <CheckCircle
+                  aria-hidden="true"
+                  className="mt-1 text-teal-500"
+                />
                 <p className="text-lg text-slate-300">
-                  Increase sales productivity by{" "}
-                  <strong className="text-white">up to 25%</strong> with
+                  Increase Customer Engagement by{" "}
+                  <strong className="text-white">up to 15%</strong> with
                   streamlined workflows and automation.
                 </p>
               </li>
@@ -294,7 +297,7 @@ export default function SalesAccelerationPage() {
                 />
                 <p className="text-lg text-slate-300">
                   Reduce administrative overhead by{" "}
-                  <strong className="text-white">40%</strong>, giving your team
+                  <strong className="text-white">18%</strong>, giving your team
                   more time to sell.
                 </p>
               </li>
@@ -335,17 +338,17 @@ export default function SalesAccelerationPage() {
 
               <h3
                 id="roi-stats"
-                className="mb-2 text-5xl font-black md:text-8xl"
+                className="mb-2 text-5xl font-black md:text-5xl!"
               >
-                25%
+                15%
               </h3>
               <p className="text-sm font-bold tracking-[0.2em] text-teal-400 uppercase">
-                Productivity Increase
+                Customer engagement increase
               </p>
 
               <div className="mt-10 grid grid-cols-2 gap-8 border-t border-white/10 pt-10">
                 <div>
-                  <h4 className="text-3xl font-black">40%</h4>
+                  <h4 className="text-3xl font-black">18%</h4>
                   <p className="text-xs font-bold text-slate-500 uppercase">
                     Less Admin Work
                   </p>

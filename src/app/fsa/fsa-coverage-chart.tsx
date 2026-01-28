@@ -25,7 +25,7 @@ const CHART_CONFIG = {
   },
   actual: {
     label: "Actual Visits",
-    color: "#14b8a6",
+    color: "#0891b2",
   },
 } satisfies ChartConfig
 
@@ -33,8 +33,8 @@ export function FsaCoverageChart() {
   return (
     <div className="overflow-hidden rounded-lg border border-slate-50 p-6 shadow-xl md:p-12">
       <div className="mb-8 flex items-center justify-between text-xs font-black uppercase">
-        <small className="text-teal-500">Territory Visit Coverage</small>
-        <MapPin className="text-teal-500" size={20} />
+        <small className="text-cyan-600">Territory Visit Coverage</small>
+        <MapPin className="text-cyan-600" size={20} />
       </div>
       <ChartContainer
         id="fsa-coverage"
@@ -57,7 +57,7 @@ export function FsaCoverageChart() {
               <ChartTooltipContent
                 className="rounded-lg bg-slate-950 text-white"
                 formatter={(val) => (
-                  <span className="font-black text-teal-400">{val} visits</span>
+                  <span className="font-black text-cyan-400">{val} visits</span>
                 )}
               />
             }
@@ -70,7 +70,7 @@ export function FsaCoverageChart() {
           />
           <Bar
             dataKey="actual"
-            fill="#14b8a6"
+            fill="#0891b2"
             radius={[0, 8, 8, 0]}
             barSize={30}
           />

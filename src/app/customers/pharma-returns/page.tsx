@@ -32,10 +32,7 @@ export default function PharmaReturns() {
       <Breadcrumbs />
 
       {/* Key Metrics Section */}
-      <section
-        className="section-container mx-auto px-6 py-16"
-        data-navbar-theme="light"
-      >
+      <section className="section-container py-12" data-navbar-theme="light">
         <div className="grid grid-cols-1 gap-4 md:mx-auto md:max-w-2xl md:grid-cols-2">
           {[
             {
@@ -70,11 +67,12 @@ export default function PharmaReturns() {
       </section>
 
       {/* Challenge Section */}
-      <section
-        className="section-container mx-auto px-6 pb-16"
-        data-navbar-theme="light"
-      >
-        <MotionSection as="div" variant="slideUp" className="mx-auto max-w-3xl text-center">
+      <section className="section-container pb-12" data-navbar-theme="light">
+        <MotionSection
+          as="div"
+          variant="slideUp"
+          className="mx-auto max-w-3xl text-center"
+        >
           <small className="text-green-700">The Challenge</small>
           <h2 className="mb-8 text-4xl font-black text-gray-900">
             Manual Returns Hindering Sales
@@ -93,11 +91,15 @@ export default function PharmaReturns() {
       </section>
 
       {/* Solution Section */}
-      <section className="relative bg-slate-900 py-16" data-navbar-theme="dark">
+      <section className="relative bg-slate-900 py-12" data-navbar-theme="dark">
         <PatternDiagonal />
-        <div className="section-container mx-auto px-6">
+        <div className="section-container">
           <div className="mx-auto max-w-3xl">
-            <MotionSection as="h2" variant="slideUp" className="text-highlight mb-6 text-center">
+            <MotionSection
+              as="h2"
+              variant="slideUp"
+              className="text-highlight mb-6 text-center"
+            >
               The Paygos Solution
             </MotionSection>
 
@@ -149,11 +151,12 @@ export default function PharmaReturns() {
       </section>
 
       {/* Impact Section */}
-      <section
-        className="section-container mx-auto px-6 py-16"
-        data-navbar-theme="light"
-      >
-        <MotionSection as="div" variant="slideUp" className="mx-auto max-w-3xl text-center">
+      <section className="section-container py-12" data-navbar-theme="light">
+        <MotionSection
+          as="div"
+          variant="slideUp"
+          className="mx-auto max-w-3xl text-center"
+        >
           <small className="text-green-700">The Impact</small>
           <h2 className="mb-8 text-4xl font-black text-gray-900">
             Territory Managers Empowered
@@ -181,12 +184,19 @@ export default function PharmaReturns() {
       </section>
 
       {/* Conclusion Section */}
-      <section className="bg-gray-100 py-16" data-navbar-theme="light">
+      <section
+        className="section-container bg-gray-100 py-12"
+        data-navbar-theme="light"
+      >
         <MotionSection as="h2" variant="slideUp" className="mb-8 text-center">
           Conclusion
         </MotionSection>
         <div className="section-container mx-auto px-6">
-          <MotionSection as="div" variant="fadeIn" className="mx-auto max-w-3xl text-center">
+          <MotionSection
+            as="div"
+            variant="fadeIn"
+            className="mx-auto max-w-3xl text-center"
+          >
             <p className="text-lg text-gray-700">
               The implementation of a digital order and returns management
               system reduced operational pain points and allowed the

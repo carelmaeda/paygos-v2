@@ -46,7 +46,7 @@ export default function CustomersPage() {
 
       {/* Featured Story */}
       <MotionSection as="div" variant="scaleIn" data-navbar-theme="light">
-        <Link href="/customers/vet-growth" className="group mx-4 block">
+        <Link href="/customers/vet-growth" className="group block">
           <section className="section-container relative my-8 min-h-[65vh] overflow-hidden rounded-lg transition-transform duration-300 group-hover:shadow-xl">
             <Image
               src="https://images.unsplash.com/photo-1655210913315-e8147faf7600"
@@ -68,8 +68,9 @@ export default function CustomersPage() {
                 </h2>
 
                 <p className="mb-8 max-w-md text-gray-200">
-                  How this Veterinary Industry leader streamlined their operations
-                  with field sales automation, dramatically improving efficiency.
+                  How this Veterinary Industry leader streamlined their
+                  operations with field sales automation, dramatically improving
+                  efficiency.
                 </p>
 
                 <div className="inline-flex items-center gap-2 font-medium text-white transition-colors group-hover:underline">

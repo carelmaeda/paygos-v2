@@ -59,9 +59,9 @@ function calculateEngagement(
  * Returns "X Minutes per Visit"
  */
 function calculateSalesRepHoursSaved(customersIndex: number): string {
-  if (customersIndex === 0) return "10 Minutes per Visit" // < 1,000
-  if (customersIndex === 1) return "15 Minutes per Visit" // < 10,000
-  return "20 Minutes per Visit" // > 10,001
+  if (customersIndex === 0) return "10 Minutes" // < 1,000
+  if (customersIndex === 1) return "15 Minutes" // < 10,000
+  return "20 Minutes" // > 10,001
 }
 
 /**

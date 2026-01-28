@@ -32,10 +32,7 @@ export default function VetGrowth() {
       <Breadcrumbs />
 
       {/* Key Metrics Section */}
-      <section
-        className="section-container mx-auto px-6 py-16"
-        data-navbar-theme="light"
-      >
+      <section className="section-container py-12" data-navbar-theme="light">
         <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
           {[
             {
@@ -76,11 +73,12 @@ export default function VetGrowth() {
       </section>
 
       {/* Challenge Section */}
-      <section
-        className="section-container mx-auto px-6 pb-16"
-        data-navbar-theme="light"
-      >
-        <MotionSection as="div" variant="slideUp" className="mx-auto max-w-3xl text-center">
+      <section className="section-container pb-16" data-navbar-theme="light">
+        <MotionSection
+          as="div"
+          variant="slideUp"
+          className="mx-auto max-w-3xl text-center"
+        >
           <small className="text-green-700">The Challenge</small>
           <h2 className="mb-8 text-4xl font-black text-gray-900">
             Scaling Reach in a Competitive Market
@@ -95,11 +93,15 @@ export default function VetGrowth() {
       </section>
 
       {/* Solution Section */}
-      <section className="relative bg-slate-900 py-16" data-navbar-theme="dark">
+      <section className="relative bg-slate-900 py-12" data-navbar-theme="dark">
         <PatternDiagonal />
-        <div className="section-container mx-auto px-6">
+        <div className="section-container">
           <div className="mx-auto max-w-3xl">
-            <MotionSection as="h2" variant="slideUp" className="text-highlight mb-6 text-center">
+            <MotionSection
+              as="h2"
+              variant="slideUp"
+              className="text-highlight mb-6 text-center"
+            >
               The Paygos Solution
             </MotionSection>
 
@@ -149,11 +151,12 @@ export default function VetGrowth() {
       </section>
 
       {/* Impact Section */}
-      <section
-        className="section-container mx-auto px-6 py-16"
-        data-navbar-theme="light"
-      >
-        <MotionSection as="div" variant="slideUp" className="mx-auto max-w-3xl text-center">
+      <section className="section-container py-12" data-navbar-theme="light">
+        <MotionSection
+          as="div"
+          variant="slideUp"
+          className="mx-auto max-w-3xl text-center"
+        >
           <small className="text-green-700">The Impact</small>
           <h2 className="mb-8 text-4xl font-black text-gray-900">
             Measurable, Scalable Growth
@@ -177,12 +180,16 @@ export default function VetGrowth() {
       </section>
 
       {/* Testimonial Section */}
-      <section className="bg-gray-100 py-16" data-navbar-theme="light">
+      <section className="bg-gray-100 py-12" data-navbar-theme="light">
         <MotionSection as="h2" variant="slideUp" className="mb-8 text-center">
           Customer Testimonial
         </MotionSection>
-        <div className="section-container mx-auto px-6">
-          <MotionSection as="div" variant="fadeIn" className="mx-auto max-w-3xl text-center">
+        <div className="section-container">
+          <MotionSection
+            as="div"
+            variant="fadeIn"
+            className="mx-auto max-w-3xl text-center"
+          >
             <p className="mb-8 italic">
               &quot;Paygos has been an exceptional partner in helping us drive
               efficiency and innovation across our business. Since 2020 their

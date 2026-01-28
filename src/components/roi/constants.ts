@@ -1,4 +1,5 @@
 import { RangeDefinition, RoiMode } from "./types"
+import { Users, Timer, FileCheck, LucideIcon } from "lucide-react"
 
 export const MODE_OPTIONS: { value: RoiMode; label: string }[] = [
   { value: "sales", label: "Sales Acceleration" },
@@ -18,37 +19,41 @@ export const DISTRIBUTOR_RANGES: RangeDefinition[] = [
 ]
 
 export const CUSTOMER_RANGES: RangeDefinition[] = [
-  { label: "Under 1,000", min: 0, max: 1000, midpoint: 500 },
-  { label: "1,000-10,000", min: 1000, max: 10000, midpoint: 5500 },
-  { label: "10,000+", min: 10000, max: Infinity, midpoint: 15000 },
+  { label: "Under 1K", min: 0, max: 1000, midpoint: 500 },
+  { label: "1K-10K", min: 1000, max: 10000, midpoint: 5500 },
+  { label: "10K+", min: 10000, max: Infinity, midpoint: 15000 },
 ]
 
 export interface ResultMetric {
   key: string
   label: string
   tooltip: string
+  icon: LucideIcon
   primaryFor: RoiMode[]
 }
 
 export const RESULT_METRICS: ResultMetric[] = [
   {
     key: "engagementIncrease",
-    label: "Improve Customer Engagement",
+    label: "Boost Engagement",
     tooltip:
       "Estimated increase in customer interactions based on your team size and distribution network.",
+    icon: Users,
     primaryFor: ["sales", "fsa"],
   },
   {
     key: "salesRepHoursSaved",
-    label: "Rep Time",
+    label: "Save Rep Time",
     tooltip:
       "Time your sales reps save per customer visit through streamlined workflows and automation.",
+    icon: Timer,
     primaryFor: ["sales", "fsa"],
   },
   {
     key: "adminHoursSaved",
-    label: "Reduce Admin Time",
+    label: "Cut Admin Work",
     tooltip: "Percentage reduction in administrative tasks through automation.",
+    icon: FileCheck,
     primaryFor: ["sales", "fsa"],
   },
 ]
