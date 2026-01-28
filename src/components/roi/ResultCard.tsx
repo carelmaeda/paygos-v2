@@ -1,11 +1,10 @@
 /**
  * ResultCard - Individual ROI Metric Display Card
  *
- * Displays a single ROI metric with animated value, tooltip, and visual styling.
- * Supports both numeric values (with count-up animation) and string values.
+ * Displays a single ROI metric with tooltip and visual styling.
+ * All values are now strings (percentages or formatted text).
  *
  * Features:
- * - Animated count-up for numeric values
  * - Info tooltip for metric explanation
  * - Staggered entrance animation
  */
@@ -16,8 +15,7 @@ import {
   TooltipContent,
   TooltipTrigger,
 } from "@/components/ui/tooltip"
-import { Info, TrendingUp, Clock } from "lucide-react"
-import { useCountUp } from "./hooks/useCountUp"
+import { Info, TrendingUp } from "lucide-react"
 
 // ============================================================================
 // Types
@@ -25,9 +23,8 @@ import { useCountUp } from "./hooks/useCountUp"
 
 interface Props {
   label: string
-  value: string | number
+  value: string
   tooltip: string
-  unit?: string
   animationDelay?: number
 }
 
@@ -39,16 +36,8 @@ export function ResultCard({
   label,
   value,
   tooltip,
-  unit,
   animationDelay = 0,
 }: Props) {
-  // Determine value type for appropriate rendering
-  const isNumeric = typeof value === "number"
-  const animatedValue = useCountUp(isNumeric ? value : 0)
-
-  // Use Clock icon for time-based metrics, TrendingUp for others
-  const Icon = unit ? Clock : TrendingUp
-
   return (
     <div
       className="group animate-in fade-in slide-in-from-bottom-4 relative flex w-100 flex-col overflow-hidden rounded-lg p-4 ring-1 ring-black/10 transition-all duration-300 hover:shadow-md"
@@ -58,7 +47,7 @@ export function ResultCard({
       <div className="mb-4 flex items-start justify-between gap-3">
         {/* Metric Type Icon */}
         <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-teal-100 text-teal-500">
-          <Icon className="h-4 w-4" />
+          <TrendingUp className="h-4 w-4" />
         </div>
 
         {/* Info Tooltip Button */}
@@ -86,12 +75,7 @@ export function ResultCard({
       {/* Value Display - The "hero" moment of the card */}
       <div className="mt-auto">
         <p className="text-foreground text-2xl font-bold tracking-tight">
-          {isNumeric ? animatedValue : value}
-          {unit && (
-            <span className="text-muted-foreground ml-2 text-sm font-medium">
-              {unit}
-            </span>
-          )}
+          {value}
         </p>
       </div>
     </div>

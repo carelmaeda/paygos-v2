@@ -1,4 +1,4 @@
-export type RoiMode = "sales" | "fsa" | "both"
+export type RoiMode = "sales" | "fsa"
 
 export interface RangeDefinition {
   label: string
@@ -15,8 +15,6 @@ export interface RoiInputs {
 
 export interface RoiResults {
   engagementIncrease?: string
-  productInterestIncrease?: string
-  customerTrafficIncrease?: string
-  adminHoursSaved?: number
-  salesRepHoursSaved?: number
+  adminHoursSaved?: string
+  salesRepHoursSaved?: string
 }

@@ -7,8 +7,6 @@ export interface RoiEmailData {
   distributors: string
   customers: string
   engagement_increase: string
-  product_interest_increase: string
-  customer_traffic_increase: string
   admin_hours_saved: string
   sales_rep_hours_saved: string
 }

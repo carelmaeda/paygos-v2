@@ -3,7 +3,6 @@ import { RangeDefinition, RoiMode } from "./types"
 export const MODE_OPTIONS: { value: RoiMode; label: string }[] = [
   { value: "sales", label: "Sales Acceleration" },
   { value: "fsa", label: "Field Sales Automation" },
-  { value: "both", label: "Paygos Full" },
 ]
 
 export const SALES_REP_RANGES: RangeDefinition[] = [
@@ -28,65 +27,35 @@ export interface ResultMetric {
   key: string
   label: string
   tooltip: string
-  unit?: string
   primaryFor: RoiMode[]
 }
 
 export const RESULT_METRICS: ResultMetric[] = [
   {
     key: "engagementIncrease",
-    label: "Improve Customer Engagement by",
+    label: "Improve Customer Engagement",
     tooltip:
       "Estimated increase in customer interactions based on your team size and distribution network.",
-    primaryFor: ["sales"],
-  },
-  {
-    key: "productInterestIncrease",
-    label: "Increase Interest in Products by",
-    tooltip:
-      "Projected boost in product awareness and customer curiosity through targeted outreach.",
-    primaryFor: ["sales"],
-  },
-  {
-    key: "customerTrafficIncrease",
-    label: "Improve Customer Traffic by",
-    tooltip:
-      "Expected growth in customer visits and touchpoints across your sales channels.",
-    primaryFor: ["sales"],
-  },
-  {
-    key: "adminHoursSaved",
-    label: "Administration Saved",
-    tooltip:
-      "Hours your team saves weekly by automating routine administrative tasks.",
-    unit: "Hours / Week",
-    primaryFor: ["fsa"],
+    primaryFor: ["sales", "fsa"],
   },
   {
     key: "salesRepHoursSaved",
-    label: "Hours Saved",
+    label: "Rep Time",
     tooltip:
-      "Time your sales reps reclaim each week through streamlined workflows and automation.",
-    unit: "Hours / Week",
-    primaryFor: ["fsa", "both"],
+      "Time your sales reps save per customer visit through streamlined workflows and automation.",
+    primaryFor: ["sales", "fsa"],
+  },
+  {
+    key: "adminHoursSaved",
+    label: "Reduce Admin Time",
+    tooltip: "Percentage reduction in administrative tasks through automation.",
+    primaryFor: ["sales", "fsa"],
   },
 ]
 
 export const MODE_VISIBILITY: Record<RoiMode, string[]> = {
-  sales: [
-    "engagementIncrease",
-    "productInterestIncrease",
-    "customerTrafficIncrease",
-    "adminHoursSaved",
-  ],
-  fsa: ["adminHoursSaved", "salesRepHoursSaved"],
-  both: [
-    "engagementIncrease",
-    "productInterestIncrease",
-    "customerTrafficIncrease",
-    "adminHoursSaved",
-    "salesRepHoursSaved",
-  ],
+  sales: ["engagementIncrease", "salesRepHoursSaved", "adminHoursSaved"],
+  fsa: ["engagementIncrease", "salesRepHoursSaved", "adminHoursSaved"],
 }
 
 export const CONVERSION_CTA = {

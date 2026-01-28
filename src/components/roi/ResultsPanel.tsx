@@ -35,7 +35,7 @@ export function ResultsPanel({ results, mode }: Props) {
   )
 
   // Helper to get result value by key
-  const getResultValue = (key: string): string | number | undefined => {
+  const getResultValue = (key: string): string | undefined => {
     return results[key as keyof RoiResults]
   }
 
@@ -56,7 +56,6 @@ export function ResultsPanel({ results, mode }: Props) {
             label={metric.label}
             value={value}
             tooltip={metric.tooltip}
-            unit={metric.unit}
             animationDelay={index * 100}
           />
         )

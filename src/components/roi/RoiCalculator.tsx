@@ -118,10 +118,8 @@ export function RoiCalculator() {
         distributors: DISTRIBUTOR_RANGES[inputs.distributorsIndex].label,
         customers: CUSTOMER_RANGES[inputs.customersIndex].label,
         engagement_increase: results.engagementIncrease ?? "N/A",
-        product_interest_increase: results.productInterestIncrease ?? "N/A",
-        customer_traffic_increase: results.customerTrafficIncrease ?? "N/A",
-        admin_hours_saved: results.adminHoursSaved?.toString() ?? "N/A",
-        sales_rep_hours_saved: results.salesRepHoursSaved?.toString() ?? "N/A",
+        admin_hours_saved: results.adminHoursSaved ?? "N/A",
+        sales_rep_hours_saved: results.salesRepHoursSaved ?? "N/A",
       })
       setIsLeadCaptureOpen(false)
       setIsModalOpen(true)
