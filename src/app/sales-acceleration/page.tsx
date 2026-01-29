@@ -138,9 +138,9 @@ export default function SalesAccelerationPage() {
                 className="group relative flex h-full flex-col justify-between overflow-hidden rounded-lg bg-black/10 backdrop-blur-xl transition-all duration-500"
               >
                 {/* 1. Content Area (Frosted Top) */}
-                <div className="relative z-10 space-y-1 px-6 pt-6 pb-1">
-                  <h3 className="">{tool.title}</h3>
-                  <p className="text-sm font-extralight">{tool.description}</p>
+                <div className="relative z-10 space-y-1 px-6 pt-6">
+                  <h3 className="pb-1">{tool.title}</h3>
+                  <p className="text-xs font-light">{tool.description}</p>
 
                   <Button variant="link" size="default" className="p-0!">
                     <div className="inline-flex items-center gap-2 text-black group-hover:underline">

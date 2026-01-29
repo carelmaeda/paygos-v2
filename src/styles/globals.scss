@@ -507,3 +507,32 @@ footer {
     padding: $spacing-12;
   }
 }
+
+// ============================================
+// SOLUTION IMAGES
+// ============================================
+
+.solution-image {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  border-radius: $border-radius-lg;
+  height: 16rem; // 256px - mobile
+
+  @media (min-width: $breakpoint-sm) {
+    height: 20rem; // 320px
+  }
+
+  @media (min-width: $breakpoint-md) {
+    height: 24rem; // 384px
+  }
+
+  @media (min-width: $breakpoint-lg) {
+    height: 31.25rem; // 500px
+  }
+
+  img {
+    object-fit: cover;
+    border-radius: $border-radius-lg;
+  }
+}

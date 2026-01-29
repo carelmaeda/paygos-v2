@@ -383,8 +383,8 @@ export default function FsaPage() {
       </section>
 
       {/* Chart Section */}
-      <section className="section-container py-12" data-navbar-theme="light">
-        <div className="grid items-center gap-16 lg:grid-cols-2">
+      <section data-navbar-theme="light">
+        <div className="section-container grid items-center gap-16 lg:grid-cols-2">
           <MotionSection as="div" variant="fadeIn" className="chart-grid-cell">
             <FsaCoverageChart />
           </MotionSection>
@@ -431,6 +431,20 @@ export default function FsaPage() {
             </div>
           </MotionSection>
         </div>
+      </section>
+
+      {/* FSA Devices Image */}
+      <section className="section-container py-12" data-navbar-theme="light">
+        <MotionSection variant="slideUp">
+          <div className="solution-image">
+            <Image
+              src="/solutions/fsa-devices.webp"
+              alt="FSA Devices with Power BI"
+              fill
+              aria-hidden="true"
+            />
+          </div>
+        </MotionSection>
       </section>
 
       {/* ROI */}

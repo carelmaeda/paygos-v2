@@ -87,12 +87,12 @@ export function Hero() {
           className="relative mt-10 px-4 lg:hidden"
         >
           <Image
-            src="/paygos-hero.svg"
+            src="/paygos/paygos-hero.webp"
             alt="Paygos product UI"
-            width={1200}
-            height={800}
-            className="mx-auto w-80"
+            width={1600}
+            height={1000}
             priority
+            className="h-auto w-full max-w-none"
           />
         </MotionSection>
 
