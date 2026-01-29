@@ -12,7 +12,7 @@ const FEATURES = [
     title: "Empower Reps. Execute Flawlessly.",
     description:
       "Smart territory planning, automated scheduling, and real-time data capture that turn every store visit into a revenue opportunity.",
-    image: "https://images.unsplash.com/photo-1627820751059-43001b92c076",
+    image: "/solutions/sales-rep1.webp",
     href: "/fsa",
   },
   {

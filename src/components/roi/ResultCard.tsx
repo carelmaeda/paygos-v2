@@ -16,7 +16,7 @@ interface Props {
 
 export function ResultCard({ label, value, tooltip, icon: Icon }: Props) {
   return (
-    <article className="group relative flex flex-1 flex-col rounded-2xl p-5 ring-1 ring-black/10 transition-all hover:bg-teal-100 hover:ring-teal-300">
+    <article className="group relative flex flex-1 flex-col justify-between rounded-2xl p-5 ring-1 ring-black/10 transition-all hover:bg-teal-100 hover:ring-teal-300">
       <Tooltip>
         <TooltipTrigger asChild>
           <button

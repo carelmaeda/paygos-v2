@@ -35,7 +35,7 @@ export interface ResultMetric {
 export const RESULT_METRICS: ResultMetric[] = [
   {
     key: "engagementIncrease",
-    label: "Boost Engagement",
+    label: "Customer Engagement Increase",
     tooltip:
       "Estimated increase in customer interactions based on your team size and distribution network.",
     icon: Users,
@@ -43,7 +43,7 @@ export const RESULT_METRICS: ResultMetric[] = [
   },
   {
     key: "salesRepHoursSaved",
-    label: "Save Rep Time",
+    label: "Rep Time Saved per Visit",
     tooltip:
       "Time your sales reps save per customer visit through streamlined workflows and automation.",
     icon: Timer,
@@ -51,7 +51,7 @@ export const RESULT_METRICS: ResultMetric[] = [
   },
   {
     key: "adminHoursSaved",
-    label: "Cut Admin Work",
+    label: "Reduce Admin Work by",
     tooltip: "Percentage reduction in administrative tasks through automation.",
     icon: FileCheck,
     primaryFor: ["sales", "fsa"],
