@@ -65,9 +65,9 @@ export function Hero() {
             viewport={{ once: true }}
             className="pointer-events-none absolute top-8 right-0 hidden lg:block"
           >
-            <div className="w-[500px] xl:w-[570px]">
+            <div className="w-[500px] md:mr-12 xl:w-[570px]">
               <Image
-                src="/paygos-hero.svg"
+                src="/paygos/paygos-hero.webp"
                 alt="Paygos product UI"
                 width={1600}
                 height={1000}

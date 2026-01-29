@@ -1,12 +1,10 @@
-"use client"
-
+import type { Metadata } from "next"
 import Link from "next/link"
 import Image from "next/image"
 import { PatternDots } from "@/components/ui/patterns"
 import {
   ArrowRight,
   ShieldCheck,
-  PieChart,
   Wallet,
   History,
   CheckCircle,
@@ -17,36 +15,60 @@ import {
   Shield,
   TrendingUp,
   Calculator,
+  PieChart,
 } from "lucide-react"
-import { Bar, BarChart, CartesianGrid, XAxis, YAxis } from "recharts"
-import {
-  ChartConfig,
-  ChartContainer,
-  ChartTooltip,
-  ChartTooltipContent,
-} from "@/components/ui/chart"
 import { CTA } from "@/components/sections/cta/CTA"
 import { Button } from "@/components/ui/button"
 import { IndustryBadge } from "@/components/sections/solutions/IndustryBadge"
 import { Breadcrumbs } from "@/components/layout/Breadcrumbs"
 import { MotionSection } from "@/components/motion"
+import { PaymentDistributionChart } from "./payment-distribution-chart"
 
-// --- Constants & Configuration ---
-
-const CHART_DATA = [
-  { reason: "Display", amount: 1800 },
-  { reason: "Incentive", amount: 1200 },
-  { reason: "Credit", amount: 600 },
-]
-
-const CHART_CONFIG = {
-  amount: {
-    label: "Payment Amount",
-    color: "#10b981",
+export const metadata: Metadata = {
+  title: "Payment Solutions | Paygos",
+  description:
+    "Modern tools to validate incentives, manage budgets, and ensure compliance. Automate payment validation and EFT processing in one unified platform.",
+  keywords: [
+    "payment automation",
+    "incentive validation",
+    "EFT payments",
+    "budget management",
+    "payment compliance",
+    "trade payments",
+    "retailer payments",
+  ],
+  openGraph: {
+    title: "Payment Solutions | Paygos",
+    description:
+      "Modern tools to validate incentives, manage budgets, and ensure compliance. Automate payment validation and EFT processing in one unified platform.",
+    url: "https://www.paygos.ca/sales-acceleration/payments",
+    siteName: "Paygos",
+    images: [
+      {
+        url: "/paygos/logo-full.webp",
+        width: 1200,
+        height: 630,
+        alt: "Paygos Payment Solutions",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
   },
-} satisfies ChartConfig
-
-// --- Main Page Component ---
+  twitter: {
+    card: "summary_large_image",
+    title: "Payment Solutions | Paygos",
+    description:
+      "Modern tools to validate incentives, manage budgets, and ensure compliance. Automate payment validation and EFT processing in one unified platform.",
+    images: ["/paygos/logo-full.webp"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
+  alternates: {
+    canonical: "https://www.paygos.ca/sales-acceleration/payments",
+  },
+}
 
 export default function PaymentsPage() {
   return (
@@ -245,7 +267,7 @@ export default function PaymentsPage() {
             variant="scaleIn"
             delay={0.25}
             viewport={{ once: true }}
-            className="bento-card md:col-span-4"
+            className="bento-card md:col-span-2"
             role="group"
             aria-labelledby="mobile-validation"
             aria-describedby="mobile-validation-desc"
@@ -261,10 +283,8 @@ export default function PaymentsPage() {
                 aria-hidden="true"
                 className="text-cyan-400"
               />
-              <h3 id="mobile-validation" className="md:text-3xl">
-                Mobile-First Validation
-              </h3>
-              <p id="mobile-validation-desc" className="md:max-w-lg md:text-lg">
+              <h3 id="mobile-validation">Mobile Validation</h3>
+              <p id="mobile-validation-desc">
                 Field reps capture execution proof on their phones, triggering
                 instant payment workflows.
               </p>
@@ -277,7 +297,7 @@ export default function PaymentsPage() {
             variant="scaleIn"
             delay={0.3}
             viewport={{ once: true }}
-            className="bento-card md:col-span-3"
+            className="bento-card md:col-span-2"
             role="group"
             aria-labelledby="compliance-audit"
             aria-describedby="compliance-audit-desc"
@@ -289,26 +309,24 @@ export default function PaymentsPage() {
             />
             <div>
               <Shield size={32} aria-hidden="true" className="text-cyan-400" />
-              <h3 id="compliance-audit" className="md:text-2xl">
-                Complete Audit Trails
-              </h3>
-              <p id="compliance-audit-desc" className="md:text-base">
+              <h3 id="compliance-audit">Audit Trails</h3>
+              <p id="compliance-audit-desc">
                 Every payment logged with timestamps, approvals, and supporting
-                documentation for compliance.
+                documentation.
               </p>
             </div>
           </MotionSection>
 
-          {/* Card 6 - Payment Distribution */}
+          {/* Card 6 - Payment Analytics */}
           <MotionSection
             as="article"
             variant="scaleIn"
             delay={0.35}
             viewport={{ once: true }}
-            className="bento-card md:col-span-3"
+            className="bento-card md:col-span-6"
             role="group"
-            aria-labelledby="payment-distribution"
-            aria-describedby="payment-distribution-desc"
+            aria-labelledby="payment-analytics"
+            aria-describedby="payment-analytics-desc"
           >
             <Image
               src="https://images.unsplash.com/photo-1551288049-bebda4e38f71"
@@ -321,12 +339,12 @@ export default function PaymentsPage() {
                 aria-hidden="true"
                 className="text-cyan-400"
               />
-              <h3 id="payment-distribution" className="md:text-2xl">
+              <h3 id="payment-analytics" className="md:text-3xl">
                 Payment Analytics
               </h3>
-              <p id="payment-distribution-desc" className="md:text-base">
+              <p id="payment-analytics-desc" className="md:max-w-lg md:text-lg">
                 Analyze payment patterns by type, region, and retailer to
-                optimize incentive programs.
+                optimize incentive programs and track ROI.
               </p>
             </div>
           </MotionSection>
@@ -339,53 +357,8 @@ export default function PaymentsPage() {
       <section data-navbar-theme="light" className="mx-auto bg-slate-200 py-12">
         <div className="section-container grid items-center gap-32 lg:grid-cols-2">
           {/* Keep the chart stable (no motion) to avoid jank */}
-          <div className="rounded-[4rem] border border-slate-50 bg-white p-12 shadow-xl">
-            <div className="mb-12 flex items-center justify-between text-xs font-black tracking-widest uppercase">
-              <span>Payment Distribution</span>
-              <PieChart className="text-emerald-500" size={20} />
-            </div>
-            <ChartContainer
-              id="payment-distribution-page"
-              config={CHART_CONFIG}
-              className="h-[400px] w-full"
-            >
-              <BarChart
-                data={CHART_DATA}
-                layout="vertical"
-                margin={{ left: 30 }}
-              >
-                <CartesianGrid horizontal={false} stroke="#f8fafc" />
-                <XAxis type="number" hide />
-                <YAxis
-                  dataKey="reason"
-                  type="category"
-                  tickLine={false}
-                  tickMargin={15}
-                  axisLine={false}
-                  tick={{ fill: "#475569", fontSize: 13, fontWeight: 900 }}
-                />
-                <ChartTooltip
-                  cursor={false}
-                  content={
-                    <ChartTooltipContent
-                      className="rounded-lg bg-slate-950 text-white"
-                      formatter={(val) => (
-                        <span className="font-black text-emerald-400">
-                          ${Number(val).toLocaleString()}
-                        </span>
-                      )}
-                    />
-                  }
-                />
-                <Bar
-                  dataKey="amount"
-                  fill="#10b981"
-                  radius={[0, 12, 12, 0]}
-                  barSize={40}
-                  activeBar={{ fill: "#34d399" }}
-                />
-              </BarChart>
-            </ChartContainer>
+          <div className="chart-grid-cell">
+            <PaymentDistributionChart />
           </div>
 
           {/* Animate the copy only */}

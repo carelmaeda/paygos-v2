@@ -367,7 +367,9 @@ export default function MarketingPage() {
       <section data-navbar-theme="light" className="mx-auto bg-slate-200 py-12">
         <div className="section-container grid items-center gap-32 lg:grid-cols-2">
           {/* Keep chart stable (no motion) */}
-          <MarketingEngagementChart />
+          <div className="chart-grid-cell">
+            <MarketingEngagementChart />
+          </div>
 
           {/* Animate copy only */}
           <MotionSection

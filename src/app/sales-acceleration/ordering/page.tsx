@@ -324,7 +324,9 @@ export default function PaygosOrderingPage() {
       <section data-navbar-theme="light" className="mx-auto bg-slate-200 py-12">
         <div className="section-container grid items-center gap-32 lg:grid-cols-2">
           {/* Keep the chart stable (no animation to avoid jank) */}
-          <OrderingVolumeChart />
+          <div className="chart-grid-cell">
+            <OrderingVolumeChart />
+          </div>
 
           {/* Animate the content block only */}
           <MotionSection

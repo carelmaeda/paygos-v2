@@ -54,7 +54,7 @@ const CHART_CONFIG = {
 
 export function TrainingCompletionChart() {
   return (
-    <div className="overflow-hidden rounded-lg border border-slate-50 bg-white p-6 shadow-xl md:rounded-[4rem] md:p-12">
+    <div className="chart-container">
       <div className="mb-8 flex items-center justify-between text-xs font-black tracking-widest uppercase md:mb-12">
         <span>Training Module Completion</span>
         <GraduationCap className="text-indigo-600" size={20} />

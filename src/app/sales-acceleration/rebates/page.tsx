@@ -367,7 +367,9 @@ export default function PaygosRebatesPage() {
       <section data-navbar-theme="light" className="mx-auto bg-slate-200 py-12">
         <div className="section-container grid items-center gap-32 lg:grid-cols-2">
           {/* Keep chart stable to avoid jank */}
-          <RebatesPerformanceChart />
+          <div className="chart-grid-cell">
+            <RebatesPerformanceChart />
+          </div>
 
           {/* Animate the content block only */}
           <MotionSection

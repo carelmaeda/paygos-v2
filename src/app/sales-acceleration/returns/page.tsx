@@ -304,9 +304,11 @@ export default function ReturnsPage() {
 
       {/* Chart Section */}
       <section data-navbar-theme="light" className="mx-auto bg-slate-200 py-12">
-        <div className="section-container grid items-center gap-32 lg:grid-cols-2">
+        <div className="section-container grid items-center gap-12 md:gap-32 lg:grid-cols-2">
           {/* Keep chart stable (no animation) */}
-          <ReturnsTrendChart />
+          <div className="chart-grid-cell">
+            <ReturnsTrendChart />
+          </div>
 
           {/* Animate copy only */}
           <MotionSection

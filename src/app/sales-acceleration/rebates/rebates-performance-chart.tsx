@@ -1,103 +1,96 @@
 "use client"
 
 import { TrendingUp } from "lucide-react"
-import { Line, LineChart, CartesianGrid, XAxis, YAxis } from "recharts"
+import { Pie, PieChart, Cell } from "recharts"
 import {
   ChartConfig,
   ChartContainer,
   ChartTooltip,
   ChartTooltipContent,
 } from "@/components/ui/chart"
+import { useMediaQuery } from "@/hooks/use-media-query"
 
 const CHART_DATA = [
-  { month: "Jan", tier1: 12500, tier2: 8200, tier3: 4800 },
-  { month: "Feb", tier1: 15200, tier2: 9800, tier3: 5200 },
-  { month: "Mar", tier1: 18500, tier2: 11200, tier3: 6100 },
-  { month: "Apr", tier1: 21000, tier2: 12800, tier3: 6800 },
-  { month: "May", tier1: 24500, tier2: 14500, tier3: 7500 },
-  { month: "Jun", tier1: 28200, tier2: 16800, tier3: 8400 },
+  { region: "North", contracts: 320 },
+  { region: "South", contracts: 250 },
+  { region: "East", contracts: 210 },
+  { region: "West", contracts: 180 },
+  { region: "Downtown", contracts: 140 },
 ]
 
 const CHART_CONFIG = {
-  tier1: {
-    label: "Platinum Tier",
-    color: "#10b981",
-  },
-  tier2: {
-    label: "Gold Tier",
-    color: "#06b6d4",
-  },
-  tier3: {
-    label: "Silver Tier",
-    color: "#8b5cf6",
+  contracts: {
+    label: "Active Contracts",
+    // shadcn ChartContainer wants a color per key; slices use per-item colors below
+    color: "#0ea5e9", // sky-500
   },
 } satisfies ChartConfig
 
+// Tailwind palette hex values (no custom colors)
+const SLICE_COLORS = [
+  "#14b8a6", // teal-500
+  "#06b6d4", // cyan-500
+  "#0ea5e9", // sky-500
+  "#22c55e", // green-500
+  "#a3e635", // lime-400
+  "#f59e0b", // amber-500
+  "#f97316", // orange-500
+  "#8b5cf6", // violet-500
+]
+
 export function RebatesPerformanceChart() {
+  const isMobile = useMediaQuery("(max-width: 640px)")
+
   return (
-    <div className="overflow-hidden rounded-lg border border-slate-50 bg-white p-6 shadow-xl md:rounded-[4rem] md:p-12">
+    <div className="chart-container">
       <div className="mb-8 flex items-center justify-between text-xs font-black tracking-widest uppercase md:mb-12">
-        <span>Rebate Program Performance</span>
-        <TrendingUp className="text-sky-600" size={20} />
+        <span>Top Regions per Number of Active Contracts</span>
+        <TrendingUp className="text-sky-600" size={isMobile ? 16 : 20} />
       </div>
+
       <ChartContainer
-        id="rebates-performance"
+        id="top-regions-active-contracts"
         config={CHART_CONFIG}
-        className="h-[280px] w-full min-w-0 md:h-[400px]"
+        className="h-[240px] w-full min-w-0 sm:h-[280px] md:h-[400px]"
       >
-        <LineChart data={CHART_DATA} margin={{ left: 12, right: 12, top: 12 }}>
-          <CartesianGrid strokeDasharray="3 3" stroke="#f1f5f9" />
-          <XAxis
-            dataKey="month"
-            tickLine={false}
-            axisLine={false}
-            tickMargin={8}
-            tick={{ fill: "#475569", fontSize: 13, fontWeight: 900 }}
-          />
-          <YAxis
-            tickLine={false}
-            axisLine={false}
-            tickMargin={8}
-            tick={{ fill: "#475569", fontSize: 13, fontWeight: 900 }}
-            tickFormatter={(value) => `$${value / 1000}k`}
-          />
+        <PieChart>
           <ChartTooltip
+            cursor={{ fill: "rgba(2,6,23,0.04)" }}
             content={
               <ChartTooltipContent
                 className="rounded-lg bg-slate-950 text-white"
-                formatter={(val) => (
-                  <span className="font-black text-sky-600">
-                    ${Number(val).toLocaleString()}
-                  </span>
-                )}
+                formatter={(val, _name, item) => {
+                  const region = item?.payload?.region ?? "Region"
+                  return (
+                    <span className="font-black text-sky-600">
+                      {region}: {Number(val).toLocaleString()}
+                    </span>
+                  )
+                }}
               />
             }
           />
-          <Line
-            type="monotone"
-            dataKey="tier1"
-            stroke="#10b981"
-            strokeWidth={3}
-            dot={{ fill: "#10b981", r: 5 }}
-            activeDot={{ r: 7, fill: "#34d399" }}
-          />
-          <Line
-            type="monotone"
-            dataKey="tier2"
-            stroke="#06b6d4"
-            strokeWidth={3}
-            dot={{ fill: "#06b6d4", r: 5 }}
-            activeDot={{ r: 7, fill: "#22d3ee" }}
-          />
-          <Line
-            type="monotone"
-            dataKey="tier3"
-            stroke="#8b5cf6"
-            strokeWidth={3}
-            dot={{ fill: "#8b5cf6", r: 5 }}
-            activeDot={{ r: 7, fill: "#a78bfa" }}
-          />
-        </LineChart>
+
+          <Pie
+            data={CHART_DATA}
+            dataKey="contracts"
+            nameKey="region"
+            cx="50%"
+            cy="50%"
+            // ✅ donut
+            innerRadius={isMobile ? "52%" : "58%"}
+            outerRadius={isMobile ? "78%" : "82%"}
+            paddingAngle={2}
+            strokeWidth={0}
+          >
+            {CHART_DATA.map((_, index) => (
+              <Cell
+                key={`cell-${index}`}
+                fill={SLICE_COLORS[index % SLICE_COLORS.length]}
+              />
+            ))}
+          </Pie>
+        </PieChart>
       </ChartContainer>
     </div>
   )

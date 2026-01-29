@@ -25,7 +25,7 @@ const CHART_CONFIG = {
 
 export function AnalyticsMetricsChart() {
   return (
-    <div className="overflow-hidden rounded-lg border border-slate-50 bg-white p-6 shadow-xl md:p-12">
+    <div className="chart-container">
       <div className="mb-8 flex items-center justify-between text-xs font-black tracking-widest uppercase md:mb-12">
         <span>Dashboard Metrics Overview</span>
         <BarChart3 className="text-emerald-500" size={20} />

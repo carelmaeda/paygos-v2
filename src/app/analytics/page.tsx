@@ -352,7 +352,9 @@ export default function AnalyticsPage() {
         data-navbar-theme="light"
       >
         <div className="grid items-center gap-32 lg:grid-cols-2">
-          <AnalyticsMetricsChart />
+          <div className="chart-grid-cell">
+            <AnalyticsMetricsChart />
+          </div>
           <div className="space-y-12">
             <h2 className="text-5xl leading-[0.9] font-black tracking-tighter text-slate-900 uppercase md:text-7xl">
               Insights <br />

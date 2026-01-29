@@ -1,132 +1,89 @@
 "use client"
 
 import { TrendingUp } from "lucide-react"
-import { Area, AreaChart, CartesianGrid, XAxis, YAxis } from "recharts"
+import { Bar, BarChart, CartesianGrid, XAxis, YAxis } from "recharts"
 import {
   ChartConfig,
   ChartContainer,
   ChartTooltip,
   ChartTooltipContent,
 } from "@/components/ui/chart"
+import { useMediaQuery } from "@/hooks/use-media-query"
 
 const CHART_DATA = [
-  { month: "Jan", damaged: 45, expired: 28, overstock: 15, other: 12 },
-  { month: "Feb", damaged: 38, expired: 32, overstock: 18, other: 10 },
-  { month: "Mar", damaged: 42, expired: 25, overstock: 20, other: 15 },
-  { month: "Apr", damaged: 35, expired: 30, overstock: 16, other: 14 },
-  { month: "May", damaged: 40, expired: 27, overstock: 19, other: 11 },
-  { month: "Jun", damaged: 33, expired: 29, overstock: 17, other: 13 },
+  { banner: "Banner A", returns: 248 },
+  { banner: "Banner B", returns: 214 },
+  { banner: "Banner C", returns: 187 },
+  { banner: "Banner D", returns: 156 },
+  { banner: "Banner E", returns: 132 },
 ]
 
+// Tailwind palette hex values
 const CHART_CONFIG = {
-  damaged: {
-    label: "Damaged",
-    color: "#14b8a6",
-  },
-  expired: {
-    label: "Expired",
-    color: "#0d9488",
-  },
-  overstock: {
-    label: "Overstock",
-    color: "#0f766e",
-  },
-  other: {
-    label: "Other",
-    color: "#115e59",
-  },
+  returns: { label: "Submitted Returns", color: "#129755" }, // sky-500
 } satisfies ChartConfig
 
 export function ReturnsTrendChart() {
+  const isMobile = useMediaQuery("(max-width: 640px)")
+
   return (
-    <div className="overflow-hidden rounded-lg border border-slate-50 bg-white p-6 shadow-xl md:rounded-[4rem] md:p-12">
-      <div className="mb-8 flex items-center justify-between text-xs font-black tracking-widest uppercase md:mb-12">
-        <span>Returns Trend Analysis</span>
+    <div className="chart-container">
+      <div className="mb-6 flex items-center justify-between text-xs font-black uppercase sm:mb-8">
+        <small className="text-green-600">
+          Top 5 Banners Submitted Returns
+        </small>
         <TrendingUp className="text-green-600" size={20} />
       </div>
+
       <ChartContainer
-        id="returns-trend"
+        id="returns-top-banners"
         config={CHART_CONFIG}
-        className="h-[280px] w-full min-w-0 md:h-[400px]"
+        className="h-[240px] w-full sm:h-[280px] md:h-[400px]"
       >
-        <AreaChart data={CHART_DATA} margin={{ left: 12, right: 12, top: 12 }}>
-          <defs>
-            <linearGradient id="fillDamaged" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="5%" stopColor="#14b8a6" stopOpacity={0.8} />
-              <stop offset="95%" stopColor="#14b8a6" stopOpacity={0.1} />
-            </linearGradient>
-            <linearGradient id="fillExpired" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="5%" stopColor="#0d9488" stopOpacity={0.8} />
-              <stop offset="95%" stopColor="#0d9488" stopOpacity={0.1} />
-            </linearGradient>
-            <linearGradient id="fillOverstock" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="5%" stopColor="#0f766e" stopOpacity={0.8} />
-              <stop offset="95%" stopColor="#0f766e" stopOpacity={0.1} />
-            </linearGradient>
-            <linearGradient id="fillOther" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="5%" stopColor="#115e59" stopOpacity={0.8} />
-              <stop offset="95%" stopColor="#115e59" stopOpacity={0.1} />
-            </linearGradient>
-          </defs>
-          <CartesianGrid strokeDasharray="3 3" stroke="#f1f5f9" />
-          <XAxis
-            dataKey="month"
-            tickLine={false}
-            axisLine={false}
-            tickMargin={8}
-            tick={{ fill: "#475569", fontSize: 13, fontWeight: 900 }}
-          />
+        <BarChart
+          data={CHART_DATA}
+          layout="vertical"
+          margin={{ left: isMobile ? 0 : 0, right: isMobile ? 4 : 6 }}
+          barGap={isMobile ? 4 : 8}
+          barCategoryGap={isMobile ? 12 : 20}
+        >
+          <CartesianGrid horizontal={false} stroke="#f8fafc" />
+          <XAxis type="number" hide />
           <YAxis
+            dataKey="banner"
+            type="category"
             tickLine={false}
+            tickMargin={isMobile ? 8 : 15}
             axisLine={false}
-            tickMargin={8}
-            tick={{ fill: "#475569", fontSize: 13, fontWeight: 900 }}
+            width={isMobile ? 80 : 90}
+            tick={{
+              fill: "#475569",
+              fontSize: isMobile ? 11 : 13,
+              fontWeight: 500,
+            }}
           />
+
           <ChartTooltip
+            cursor={{ fill: "rgba(2,6,23,0.04)" }}
             content={
               <ChartTooltipContent
                 className="rounded-lg bg-slate-950 text-white"
-                formatter={(val, name) => (
-                  <span className="font-black text-green-600">
-                    {val} returns
+                formatter={(val) => (
+                  <span className="font-black text-green-400">
+                    {Number(val).toLocaleString()} returns
                   </span>
                 )}
               />
             }
           />
-          <Area
-            type="monotone"
-            dataKey="damaged"
-            stackId="1"
-            stroke="#14b8a6"
-            fill="url(#fillDamaged)"
-            strokeWidth={2}
+
+          <Bar
+            dataKey="returns"
+            fill={CHART_CONFIG.returns.color}
+            radius={[0, 6, 6, 0]}
+            barSize={isMobile ? 32 : 40}
           />
-          <Area
-            type="monotone"
-            dataKey="expired"
-            stackId="1"
-            stroke="#0d9488"
-            fill="url(#fillExpired)"
-            strokeWidth={2}
-          />
-          <Area
-            type="monotone"
-            dataKey="overstock"
-            stackId="1"
-            stroke="#0f766e"
-            fill="url(#fillOverstock)"
-            strokeWidth={2}
-          />
-          <Area
-            type="monotone"
-            dataKey="other"
-            stackId="1"
-            stroke="#115e59"
-            fill="url(#fillOther)"
-            strokeWidth={2}
-          />
-        </AreaChart>
+        </BarChart>
       </ChartContainer>
     </div>
   )

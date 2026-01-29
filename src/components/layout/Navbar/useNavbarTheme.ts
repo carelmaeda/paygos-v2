@@ -32,15 +32,14 @@ export function useNavbarTheme(): NavbarTheme {
   const themeRef = useRef<NavbarTheme>("dark")
 
   const subscribe = useCallback((onStoreChange: () => void) => {
-    // Calculate initial theme
-    themeRef.current = calculateCurrentTheme()
+    const observedElements = new Set<Element>()
 
-    const observerOptions: IntersectionObserverInit = {
+    const intersectionObserverOptions: IntersectionObserverInit = {
       rootMargin: "-80px 0px -80% 0px",
       threshold: 0,
     }
 
-    const observer = new IntersectionObserver((entries) => {
+    const intersectionObserver = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           const sectionTheme = entry.target.getAttribute(
@@ -52,24 +51,83 @@ export function useNavbarTheme(): NavbarTheme {
           }
         }
       })
-    }, observerOptions)
+    }, intersectionObserverOptions)
 
-    // Observe sections after a microtask to ensure DOM is ready after navigation
-    queueMicrotask(() => {
+    // Function to observe all theme sections and update theme
+    const observeSections = () => {
       const sections = document.querySelectorAll<HTMLElement>(
         "[data-navbar-theme]"
       )
-      sections.forEach((section) => observer.observe(section))
 
-      // Recalculate after observing in case sections changed
+      sections.forEach((section) => {
+        if (!observedElements.has(section)) {
+          observedElements.add(section)
+          intersectionObserver.observe(section)
+        }
+      })
+
+      // Recalculate current theme
       const newTheme = calculateCurrentTheme()
       if (newTheme !== themeRef.current) {
         themeRef.current = newTheme
         onStoreChange()
       }
+    }
+
+    // MutationObserver to detect when new theme sections are added to the DOM
+    // This handles Next.js client-side navigation where new page content is injected
+    const mutationObserver = new MutationObserver((mutations) => {
+      let shouldReobserve = false
+
+      for (const mutation of mutations) {
+        if (mutation.type === "childList" && mutation.addedNodes.length > 0) {
+          for (const node of mutation.addedNodes) {
+            if (node instanceof HTMLElement) {
+              // Check if the added node or its descendants have data-navbar-theme
+              if (
+                node.hasAttribute("data-navbar-theme") ||
+                node.querySelector("[data-navbar-theme]")
+              ) {
+                shouldReobserve = true
+                break
+              }
+            }
+          }
+        }
+        if (shouldReobserve) break
+      }
+
+      if (shouldReobserve) {
+        // Use requestAnimationFrame to ensure layout is complete
+        requestAnimationFrame(() => {
+          observeSections()
+        })
+      }
     })
 
-    return () => observer.disconnect()
+    // Start observing DOM changes
+    mutationObserver.observe(document.body, {
+      childList: true,
+      subtree: true,
+    })
+
+    // Initial observation with multiple RAF frames to ensure DOM is ready
+    // after Next.js client-side navigation completes rendering
+    const scheduleInitialObservation = () => {
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+          observeSections()
+        })
+      })
+    }
+
+    scheduleInitialObservation()
+
+    return () => {
+      intersectionObserver.disconnect()
+      mutationObserver.disconnect()
+      observedElements.clear()
+    }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [pathname])
 

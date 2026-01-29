@@ -1,93 +1,106 @@
 "use client"
 
 import { ShoppingCart } from "lucide-react"
-import { Bar, BarChart, CartesianGrid, XAxis, YAxis } from "recharts"
+import { Area, AreaChart, CartesianGrid, XAxis } from "recharts"
 import {
   ChartConfig,
   ChartContainer,
+  ChartLegend,
+  ChartLegendContent,
   ChartTooltip,
   ChartTooltipContent,
 } from "@/components/ui/chart"
+import { useMediaQuery } from "@/hooks/use-media-query"
 
 const CHART_DATA = [
-  { category: "Beverages", total: 450, fulfilled: 425 },
-  { category: "Snacks", total: 380, fulfilled: 360 },
-  { category: "Pharmacy", total: 320, fulfilled: 310 },
-  { category: "Grocery", total: 290, fulfilled: 275 },
-  { category: "Personal Care", total: 240, fulfilled: 235 },
+  { month: "January", y2025: 186, y2026: 210 },
+  { month: "February", y2025: 205, y2026: 232 },
+  { month: "March", y2025: 198, y2026: 255 },
+  { month: "April", y2025: 214, y2026: 260 },
+  { month: "May", y2025: 226, y2026: 302 },
+  { month: "June", y2025: 219, y2026: 300 },
+  { month: "July", y2025: 233, y2026: 310 },
 ]
 
 const CHART_CONFIG = {
-  total: {
-    label: "Total Orders",
-    color: "#14b8a6",
-  },
-  fulfilled: {
-    label: "Fulfilled",
-    color: "#10b981",
-  },
+  y2025: { label: "2025", color: "#14b8a6" }, // teal-500
+  y2026: { label: "2026", color: "#0ea5e9" }, // sky-500
 } satisfies ChartConfig
 
 export function OrderingVolumeChart() {
+  const isMobile = useMediaQuery("(max-width: 640px)")
+
   return (
-    <div className="overflow-hidden rounded-lg border border-slate-50 bg-white p-6 shadow-xl md:rounded-[4rem] md:p-12">
-      <div className="mb-8 flex items-center justify-between text-xs font-black tracking-widest uppercase md:mb-12">
-        <span>Order Volume by Category</span>
-        <ShoppingCart className="text-teal-600" size={20} />
+    <div className="chart-container">
+      <div className="mb-6 flex items-center justify-between text-xs font-black uppercase sm:mb-8">
+        <small className="text-cyan-600">Sales per Month</small>
+        <ShoppingCart className="text-cyan-600" size={isMobile ? 16 : 20} />
       </div>
+
       <ChartContainer
-        id="ordering-volume"
+        id="ordering-sales"
         config={CHART_CONFIG}
-        className="h-[280px] w-full min-w-0 md:h-[400px]"
+        className="h-[240px] w-full sm:h-[280px] md:h-[400px]"
       >
-        <BarChart
+        <AreaChart
+          accessibilityLayer
           data={CHART_DATA}
-          margin={{ left: 12, right: 12, top: 12, bottom: 12 }}
+          margin={{
+            left: isMobile ? 0 : 12,
+            right: isMobile ? 4 : 12,
+            top: 12,
+          }}
         >
-          <CartesianGrid
-            strokeDasharray="3 3"
-            stroke="#f1f5f9"
-            vertical={false}
-          />
+          <CartesianGrid vertical={false} stroke="#f8fafc" />
           <XAxis
-            dataKey="category"
-            tickLine={false}
-            tickMargin={10}
-            axisLine={false}
-            tick={{ fill: "#475569", fontSize: 12, fontWeight: 900 }}
-            angle={-45}
-            textAnchor="end"
-            height={80}
-          />
-          <YAxis
+            dataKey="month"
             tickLine={false}
             axisLine={false}
-            tickMargin={8}
-            tick={{ fill: "#475569", fontSize: 13, fontWeight: 900 }}
+            tickMargin={isMobile ? 6 : 8}
+            tick={{
+              fill: "#475569",
+              fontSize: isMobile ? 11 : 13,
+              fontWeight: 700,
+            }}
+            tickFormatter={(value) => value.slice(0, 3)}
+            interval={isMobile ? 1 : 0}
           />
+
           <ChartTooltip
+            cursor={false}
             content={
               <ChartTooltipContent
                 className="rounded-lg bg-slate-950 text-white"
-                formatter={(val, _name) => (
-                  <span className="font-black text-teal-600">{val} orders</span>
+                indicator="line"
+                formatter={(val, name) => (
+                  <span className="font-black text-cyan-400">
+                    {name === "y2025" ? "2025" : "2026"}:{" "}
+                    {Number(val).toLocaleString()}
+                  </span>
                 )}
               />
             }
           />
-          <Bar
-            dataKey="total"
-            fill="#14b8a6"
-            radius={[8, 8, 0, 0]}
-            barSize={60}
+
+          <Area
+            dataKey="y2025"
+            type="natural"
+            fill="var(--color-y2025)"
+            fillOpacity={0.35}
+            stroke="var(--color-y2025)"
+            strokeWidth={2.5}
           />
-          <Bar
-            dataKey="fulfilled"
-            fill="#10b981"
-            radius={[8, 8, 0, 0]}
-            barSize={60}
+          <Area
+            dataKey="y2026"
+            type="natural"
+            fill="var(--color-y2026)"
+            fillOpacity={0.35}
+            stroke="var(--color-y2026)"
+            strokeWidth={2.5}
           />
-        </BarChart>
+
+          <ChartLegend content={<ChartLegendContent />} />
+        </AreaChart>
       </ChartContainer>
     </div>
   )

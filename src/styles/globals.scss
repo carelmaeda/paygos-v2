@@ -475,3 +475,35 @@ footer {
     transform: scale(1.05);
   }
 }
+
+// ============================================
+// CHART STYLES
+// ============================================
+
+// Use on grid/flex children that contain a chart to prevent overflow
+// Example: <div className="chart-grid-cell"><MyChart /></div>
+.chart-grid-cell {
+  min-width: 0;
+  overflow: hidden;
+}
+
+// Card container for chart components
+.chart-container {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  overflow: hidden;
+  border-radius: $border-radius-lg;
+  border: 1px solid $slate-50;
+  background-color: $neutral-white;
+  padding: $spacing-4;
+  box-shadow: $shadow-xl;
+
+  @media (min-width: $breakpoint-sm) {
+    padding: $spacing-6;
+  }
+
+  @media (min-width: $breakpoint-md) {
+    padding: $spacing-12;
+  }
+}

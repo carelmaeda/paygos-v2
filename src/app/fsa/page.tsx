@@ -385,7 +385,7 @@ export default function FsaPage() {
       {/* Chart Section */}
       <section className="section-container py-12" data-navbar-theme="light">
         <div className="grid items-center gap-16 lg:grid-cols-2">
-          <MotionSection as="div" variant="fadeIn">
+          <MotionSection as="div" variant="fadeIn" className="chart-grid-cell">
             <FsaCoverageChart />
           </MotionSection>
           <MotionSection as="div" variant="slideUp" className="space-y-12">

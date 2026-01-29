@@ -345,7 +345,9 @@ export default function TrainingPage() {
       <section data-navbar-theme="light" className="mx-auto bg-slate-200 py-12">
         <div className="section-container grid items-center gap-32 lg:grid-cols-2">
           {/* Keep chart stable (no animation) to avoid jank */}
-          <TrainingCompletionChart />
+          <div className="chart-grid-cell">
+            <TrainingCompletionChart />
+          </div>
 
           {/* Animate the content block only */}
           <MotionSection
