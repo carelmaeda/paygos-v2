@@ -112,6 +112,7 @@ export function RoiCalculator() {
       const modeLabel =
         MODE_OPTIONS.find((o) => o.value === mode)?.label ?? mode
       await sendRoiResults({
+        to_email: email,
         user_email: email,
         mode: modeLabel,
         sales_reps: SALES_REP_RANGES[inputs.salesRepsIndex].label,

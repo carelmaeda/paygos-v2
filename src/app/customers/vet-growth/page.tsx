@@ -161,21 +161,27 @@ export default function VetGrowth() {
           <h2 className="mb-8 text-4xl font-black text-gray-900">
             Measurable, Scalable Growth
           </h2>
-          <p className="mb-12 text-gray-600">
+          <p className="text-gray-600">
             By reactivating 30% of previously inactive accounts, the company
             achieved a <strong>25% increase</strong> in active accounts. Staff
             feeding programs grew by <strong>151%</strong>, while automation
-            enabled a <strong>19%</strong> year-over-year increase in sales.
+            enabled a <strong>19%</strong> year-over-year increase in sales.s
           </p>
         </MotionSection>
-        <MotionSection as="div" variant="scaleIn" className="mx-auto max-w-3xl">
-          <Image
-            src="https://images.unsplash.com/photo-1551288049-bbbda536339a?q=80&w=2070&auto=format&fit=crop"
-            alt="Sales Data Analytics Chart"
-            width={800}
-            height={400}
-            className="mx-auto rounded-2xl shadow-lg"
-          />
+      </section>
+
+      {/* FSA Devices Image */}
+      <section className="section-container py-12" data-navbar-theme="light">
+        <MotionSection variant="slideUp">
+          <div className="solution-image">
+            <Image
+              src="/solutions/vetgrowth.webp"
+              alt="FSA Devices with Power BI"
+              fill
+              className="object-contain!"
+              aria-hidden="true"
+            />
+          </div>
         </MotionSection>
       </section>
 

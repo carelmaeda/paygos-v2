@@ -1,6 +1,7 @@
 import emailjs from "@emailjs/browser"
 
 export interface RoiEmailData {
+  to_email: string
   user_email: string
   mode: string
   sales_reps: string

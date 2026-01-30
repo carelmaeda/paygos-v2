@@ -4,7 +4,7 @@ Modern marketing website for Paygos built with Next.js 16, React 19, and Tailwin
 
 ## Overview
 
-Paygos V2 is a complete redesign of the Paygos marketing platform, featuring a modern tech stack with cutting-edge frameworks and libraries. The application showcases sales automation solutions including ordering, rebates management, training, returns, payments, marketing, and field sales automation.
+Paygos V2 is a complete redesign of the Paygos marketing platform, featuring a modern tech stack with cutting-edge frameworks and libraries. The application showcases sales acceleration solutions including ordering, rebates management, training, returns, payments, marketing, and field sales automation with interactive data visualizations.
 
 ## Tech Stack
 
@@ -23,68 +23,89 @@ Paygos V2 is a complete redesign of the Paygos marketing platform, featuring a m
 - **Lucide React 0.562.0** - Beautiful icon library
 - **Class Variance Authority** - Type-safe component variants
 
+### Animation & Visualization
+
+- **Framer Motion 11.15.0** - Production-ready motion library for React
+- **Recharts 2.15.4** - Composable charting library for data visualizations
+- **Embla Carousel 8.6.0** - Lightweight carousel library
+
+### Integrations
+
+- **EmailJS 4.4.1** - Client-side email sending for forms
+- **Sonner 2.0.7** - Toast notifications
+
 ### Development Tools
 
 - **Prettier 3.7.4** - Code formatting with Tailwind plugin
 - **ESLint 9.x** - Code linting with Next.js config
-- **Swiper 11.1.15** - Touch-enabled slider for customer stories
 
 ## Project Structure
 
 ```
 paygos-v2/
-├── public/                      # Static assets
-│   ├── paygos/                  # Paygos brand assets
-│   │   ├── logo-full-*.webp    # Logo variations
-│   │   └── wheel-full-*.webp   # Wheel icon variations
+├── public/
+│   ├── paygos/                  # Brand assets (logos, wheel icons)
+│   ├── icons/                   # Paygos icon variations
 │   ├── solutions/               # Solution page images
-│   └── customers/               # Customer logos
-│       └── logos/
+│   ├── analytics/               # Analytics feature icons
+│   └── customers/               # Customer logos (Haleon, Mars, Nestlé, etc.)
 ├── src/
 │   ├── app/
-│   │   ├── _components/
-│   │   │   ├── layout/          # Layout components
-│   │   │   │   ├── Navbar/      # Navigation (Desktop + Mobile)
-│   │   │   │   └── Footer/      # Site footer
-│   │   │   ├── sections/        # Page sections
-│   │   │   │   ├── hero/
-│   │   │   │   ├── solutions/
-│   │   │   │   ├── customers/   # Customer stories
-│   │   │   │   ├── cta/
-│   │   │   │   └── roi/
-│   │   │   └── ui/              # shadcn/ui components
 │   │   ├── about/               # About Us page
-│   │   │   └── page.tsx
-│   │   ├── customers/           # Customer stories pages
+│   │   ├── analytics/           # Data Analytics page
+│   │   ├── contact/             # Contact form page
+│   │   ├── customers/           # Customer stories
 │   │   │   ├── page.tsx         # Stories listing
-│   │   │   ├── retail-time-saved/
-│   │   │   ├── manufacturing-efficiency/
-│   │   │   ├── finance-automation/
-│   │   │   ├── healthcare-compliance/
-│   │   │   ├── food-beverage-growth/
-│   │   │   └── technology-scale/
+│   │   │   ├── pharma-returns/
+│   │   │   ├── rebate-management/
+│   │   │   ├── retail-efficiency/
+│   │   │   ├── returns-management/
+│   │   │   ├── training-incentives/
+│   │   │   └── vet-growth/
+│   │   ├── fsa/                 # Field Sales Automation page
 │   │   ├── roi/                 # ROI Calculator page
-│   │   │   └── page.tsx
-│   │   ├── solutions/           # Solution pages
-│   │   │   ├── data/            # Solutions metadata
-│   │   │   │   └── solutions.ts
-│   │   │   ├── ordering/
-│   │   │   ├── rebates/
-│   │   │   ├── training/
-│   │   │   ├── returns/
-│   │   │   ├── payments/
+│   │   ├── sales-acceleration/  # Sales Acceleration tools
+│   │   │   ├── page.tsx         # Tools overview
+│   │   │   ├── data/tools.ts    # Tools metadata
 │   │   │   ├── marketing/
-│   │   │   └── fsa/
-│   │   ├── globals.scss         # Global styles and animations
+│   │   │   ├── ordering/
+│   │   │   ├── payments/
+│   │   │   ├── rebates/
+│   │   │   ├── returns/
+│   │   │   └── training/
 │   │   ├── layout.tsx           # Root layout
 │   │   └── page.tsx             # Homepage
-│   └── lib/
-│       └── utils.ts             # Utility functions (cn, etc.)
-├── .claude/                      # Claude Code configuration
-├── .vscode/                      # VSCode settings
-├── components.json               # shadcn/ui config
+│   ├── components/
+│   │   ├── layout/              # Layout components
+│   │   │   ├── Navbar/          # Navigation (Desktop + Mobile)
+│   │   │   ├── Footer/          # Site footer
+│   │   │   └── Breadcrumbs.tsx
+│   │   ├── motion/              # Framer Motion components
+│   │   │   ├── MotionProvider.tsx
+│   │   │   ├── MotionSection.tsx
+│   │   │   └── MotionList.tsx
+│   │   ├── roi/                 # ROI Calculator components
+│   │   │   ├── RoiCalculator.tsx
+│   │   │   ├── InputForm.tsx
+│   │   │   ├── ResultsPanel.tsx
+│   │   │   ├── ResultsModal.tsx
+│   │   │   ├── LeadCaptureModal.tsx
+│   │   │   └── roiFormulas.ts
+│   │   ├── sections/            # Page sections
+│   │   │   ├── contact/         # Contact form
+│   │   │   ├── cta/             # Call-to-action sections
+│   │   │   ├── customers/       # Customer stories & logos
+│   │   │   └── solutions/       # Solutions display
+│   │   └── ui/                  # shadcn/ui components
+│   │       └── patterns/        # SVG background patterns
+│   ├── hooks/                   # Custom React hooks
+│   ├── lib/
+│   │   ├── utils.ts             # Utility functions
+│   │   └── motion/              # Motion variants & types
+│   └── styles/
+│       └── _variables.scss      # SCSS variables
+├── components.json              # shadcn/ui config
 ├── next.config.ts               # Next.js configuration
-├── tailwind.config.ts           # Tailwind configuration
 └── tsconfig.json                # TypeScript configuration
 ```
 
@@ -98,75 +119,116 @@ paygos-v2/
    - Field Sales Automation section
    - Data Analytics section
    - Customer stories carousel
+   - Customer logos carousel
    - CTA section with booking button
 
 2. **About Us** (`/about`)
    - Company story
-   - Core values (Innovation, Customer Focus, Simplicity, Integrity)
+   - Core values
    - Team information
    - CTA section
 
-3. **Customers** (`/customers`)
+3. **Contact** (`/contact`)
+   - Contact form with EmailJS integration
+   - Toast notifications for form submission
+
+4. **Customers** (`/customers`)
    - Customer stories carousel
    - 6 detailed customer success stories
 
-4. **ROI Calculator** (`/roi`)
-   - Interactive calculator for sales automation ROI
+5. **ROI Calculator** (`/roi`)
+   - Interactive multi-step calculator
+   - Lead capture modal
+   - Results visualization with charts
 
-### Solution Pages
+6. **Data Analytics** (`/analytics`)
+   - Analytics metrics visualization
+   - Interactive charts
 
-Each solution has its own dedicated page with customizable HTML/Tailwind content:
+7. **Field Sales Automation** (`/fsa`)
+   - FSA coverage chart
+   - Feature highlights
 
-1. **Optimized Ordering** (`/solutions/ordering`) - Full content with features, benefits, how-it-works
-2. **Rebates** (`/solutions/rebates`) - Full content with custom indigo theme
-3. **Training Management** (`/solutions/training`) - Basic template
-4. **Returns Management** (`/solutions/returns`) - Basic template
-5. **Payments** (`/solutions/payments`) - Basic template
-6. **Marketing** (`/solutions/marketing`) - Basic template
-7. **Field Sales Automation** (`/solutions/fsa`) - Basic template
+### Sales Acceleration Pages
+
+Main landing page (`/sales-acceleration`) with 6 individual tool pages:
+
+1. **Optimized Ordering** (`/sales-acceleration/ordering`) - Order management with volume charts
+2. **Rebates** (`/sales-acceleration/rebates`) - Rebate automation with performance charts
+3. **Training Management** (`/sales-acceleration/training`) - Training programs with completion charts
+4. **Returns Management** (`/sales-acceleration/returns`) - Returns processing with trend charts
+5. **Payments** (`/sales-acceleration/payments`) - Payment processing with distribution charts
+6. **Marketing** (`/sales-acceleration/marketing`) - Marketing campaigns with engagement charts
 
 ### Customer Story Pages
 
-6 individual customer success stories, each with:
-- Hero image with company logo overlay
-- Industry/category tags
-- Story content area (customizable HTML)
+6 individual customer success stories with industry-specific results:
 
-1. **Retail Corp** (`/customers/retail-time-saved`) - 19% YoY Sales Increase
-2. **ManuTech Industries** (`/customers/manufacturing-efficiency`) - 50% reduction in processing time
-3. **FinanceFirst** (`/customers/finance-automation`) - 15 hours weekly savings
-4. **HealthPro Solutions** (`/customers/healthcare-compliance`) - 100% compliance tracking
-5. **TastyBites Distribution** (`/customers/food-beverage-growth`) - 30% increase in accuracy
-6. **TechFlow Systems** (`/customers/technology-scale`) - 200% operations scale
+1. **Rebate Management** (`/customers/rebate-management`) - 40% Less Admin Work (Pet Nutrition)
+2. **Retail Efficiency** (`/customers/retail-efficiency`) - 10% More Efficient Operations (Coffee Retail)
+3. **Pharma Returns** (`/customers/pharma-returns`) - 40% More Sales Visits (Pharma)
+4. **Returns Management** (`/customers/returns-management`) - 20% Reduction in Admin Tasks (CPG)
+5. **Training Incentives** (`/customers/training-incentives`) - 20% Higher Sales Activity (Pharma)
+6. **Vet Growth** (`/customers/vet-growth`) - Sales Acceleration & Analytics (Veterinary)
 
 ## Features
 
 ### Navigation System
 
 #### Desktop Navigation
+
 - **Dropdown menu** with NavigationMenu component (Radix UI)
-- **Solutions menu** with 7 solution pages
-- **Main links**: Customers, ROI Calculator, About Us
+- **Solutions menu** with Sales Acceleration and FSA pages
+- **Main links**: Customers, ROI Calculator, About Us, Contact
 - **CTA button**: Book a Call
 
 #### Mobile Navigation
+
 - **Sheet drawer** with collapsible accordion
 - **Solutions submenu** with icons
 - **Full-width touch targets** (44px minimum)
 - **Responsive design** for all mobile devices
 
+### ROI Calculator
+
+- **Multi-step form** with step selector navigation
+- **Real-time calculations** using custom ROI formulas
+- **Results visualization** with charts (Recharts)
+- **Lead capture modal** for gated results
+- **Email integration** via EmailJS
+
+### Data Visualizations
+
+Each Sales Acceleration tool page includes interactive charts:
+
+- **Ordering**: Volume charts
+- **Rebates**: Performance charts
+- **Training**: Completion charts
+- **Returns**: Trend charts
+- **Payments**: Distribution charts
+- **Marketing**: Engagement charts
+
+### Customer Logos
+
+Trusted by industry leaders:
+- Haleon, Hill's Pet, Lindt, Mars, Nestlé, Roche, Royal Canin, Sandoz, Vital Essentials
+
 ### Component Architecture
 
 All components follow a feature-based organization:
 
-- **`layout/`** - Navbar, Footer
-- **`sections/`** - Homepage sections (Hero, Solutions, Customers, CTA, etc.)
-- **`ui/`** - Reusable shadcn/ui components
+- **`layout/`** - Navbar, Footer, Breadcrumbs
+- **`motion/`** - Framer Motion wrappers (MotionSection, MotionList)
+- **`roi/`** - ROI Calculator components
+- **`sections/`** - Homepage sections (Hero, Solutions, Customers, CTA)
+- **`ui/`** - shadcn/ui components + SVG patterns
 - **`data/`** - Static data for solutions and customer stories
 
 ### Styling System
 
 #### SCSS Variables
+
+Located in `src/styles/_variables.scss`:
 
 ```scss
 // Colors - Light Mode
@@ -194,22 +256,11 @@ $text-gray: #6b7280;
 - **Body/UI**: Inter (clean, readable)
 - **Responsive scale**: Mobile to desktop typography
 
-#### Custom Animations
+#### Animation System
 
-```scss
-@keyframes scroll {
-  from { transform: translateX(0); }
-  to { transform: translateX(-50%); }
-}
-
-.animate-scroll {
-  animation: scroll 20s linear infinite;
-}
-
-.animate-pause:hover {
-  animation-play-state: paused;
-}
-```
+- **Framer Motion** for page transitions and component animations
+- **MotionProvider** for reduced motion preferences
+- **Custom variants** in `src/lib/motion/variants.ts`
 
 ### Responsive Design
 
@@ -220,36 +271,40 @@ $text-gray: #6b7280;
 
 ## Content Management
 
-### Solutions
+### Sales Acceleration Tools
 
-Each solution page is **hard-coded HTML/JSX** for maximum flexibility. To customize:
+Each tool page is located at `/src/app/sales-acceleration/{tool-slug}/page.tsx` with:
 
-1. Navigate to `/src/app/solutions/{solution-slug}/page.tsx`
-2. Edit the HTML/Tailwind markup directly
-3. Change colors, layout, sections, or add new content
+- Custom content and features
+- Interactive data visualization chart
+- Consistent layout with hero and CTA sections
 
-**Example**: Rebates page uses indigo theme (`bg-indigo-100`, `text-indigo-700`) instead of default teal.
+**Tools metadata** (`src/app/sales-acceleration/data/tools.ts`):
+
+- Used by Sales Acceleration landing page
+- Used by navbar Solutions Menu
 
 ### Customer Stories
 
-Each customer story is an **individual page** with:
-- Background image (same as card thumbnail)
-- Company logo overlay
-- Title and tags
+Each customer story is an **individual page** at `/src/app/customers/{story-slug}/page.tsx` with:
+
+- Background image
+- Industry/category tags
+- Title with key metric
 - Customizable content area
 
-To edit: Navigate to `/src/app/customers/{story-slug}/page.tsx`
+**Customer stories data** (`src/components/sections/customers/data/customer-stories.ts`):
 
-### Shared Data
-
-**Solutions metadata** (`src/app/solutions/data/solutions.ts`):
-- Used by homepage SolutionsSection
-- Used by navbar SolutionsMenu
-- Single source of truth for solution links
-
-**Customer stories** (`src/app/_components/sections/customers/data/customer-stories.ts`):
 - Used by CustomerStoriesCarousel
 - Links to individual customer pages
+
+### Solutions Metadata
+
+**Solutions** (`src/components/sections/solutions/data/solutions.ts`):
+
+- Sales Acceleration and FSA entries
+- Used by homepage SolutionsSection
+- Used by navbar SolutionsMenu
 
 ## Getting Started
 
@@ -344,19 +399,27 @@ npm run format:check # Check code formatting
 
 ## Development Guidelines
 
-### Adding a New Solution Page
+### Adding a New Sales Acceleration Tool
 
-1. Create folder: `src/app/solutions/{slug}/`
-2. Create `page.tsx` with your custom HTML
-3. Add solution to `src/app/solutions/data/solutions.ts`
-4. Solution automatically appears in navbar and homepage
+1. Create folder: `src/app/sales-acceleration/{slug}/`
+2. Create `page.tsx` with custom content and chart component
+3. Create `{slug}-chart.tsx` for data visualization
+4. Add tool to `src/app/sales-acceleration/data/tools.ts`
+5. Tool automatically appears on the Sales Acceleration landing page
 
 ### Adding a New Customer Story
 
 1. Create folder: `src/app/customers/{slug}/`
 2. Create `page.tsx` with story content
-3. Add story to `src/app/_components/sections/customers/data/customer-stories.ts`
+3. Add story to `src/components/sections/customers/data/customer-stories.ts`
 4. Story automatically appears in carousel
+
+### Adding Motion Animations
+
+1. Import motion components from `src/components/motion/`
+2. Use `MotionSection` for page sections with entrance animations
+3. Use `MotionList` for staggered list animations
+4. Configure variants in `src/lib/motion/variants.ts`
 
 ### Styling Guidelines
 
@@ -364,6 +427,7 @@ npm run format:check # Check code formatting
 - Follow existing color scheme (teal accent, neutral base)
 - Maintain responsive design patterns
 - Keep accessibility in mind (color contrast, touch targets)
+- Use Framer Motion for complex animations
 
 ## Contributing
 
@@ -384,6 +448,6 @@ For questions or support, please contact the Paygos development team.
 
 ---
 
-**Last Updated**: 2026-01-09
+**Last Updated**: 2026-01-29
 **Version**: 0.2.0
-**Built with**: Next.js 16 + React 19 + Tailwind CSS v4
+**Built with**: Next.js 16 + React 19 + Tailwind CSS v4 + Framer Motion + Recharts

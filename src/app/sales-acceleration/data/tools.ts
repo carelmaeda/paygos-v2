@@ -33,7 +33,7 @@ export const SALES_ACCELERATION_TOOLS: SalesAccelerationTool[] = [
   {
     title: "Payments",
     description: "Secure, automated incentive payments.",
-    image: "/paygos-hero.svg",
+    image: "/solutions/payments.png",
     href: "/sales-acceleration/payments",
   },
   {

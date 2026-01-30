@@ -19,7 +19,7 @@ const ANALYTICS_FEATURES = [
     icon: Activity,
     image: "https://images.unsplash.com/photo-1520333789090-1afc82db536a",
     slug: "live-ops",
-    className: "md:col-span-2 md:row-span-1 min-h-[180px]",
+    className: "md:col-span-2 md:row-span-1 min-h-[200px]",
   },
   {
     title: "Predictive Trends",
@@ -27,7 +27,7 @@ const ANALYTICS_FEATURES = [
     icon: BrainCircuit,
     image: "https://images.unsplash.com/photo-1739036868260-c26b292cd85d",
     slug: "predictive",
-    className: "md:col-span-2 md:row-span-1 min-h-[180px]",
+    className: "md:col-span-2 md:row-span-1 min-h-[200px]",
   },
   {
     title: "Performance History",
@@ -36,7 +36,7 @@ const ANALYTICS_FEATURES = [
     icon: FileText,
     image: "https://images.unsplash.com/photo-1590098563176-07884b06d7f7",
     slug: "history",
-    className: "md:col-span-1 md:row-span-2 min-h-[380px]",
+    className: "md:col-span-1 md:row-span-2 min-h-[200px]",
   },
   {
     title: "Market Intelligence",
@@ -61,7 +61,7 @@ const ANALYTICS_FEATURES = [
     icon: Smartphone,
     image: "https://images.unsplash.com/photo-1608222351212-18fe0ec7b13b",
     slug: "reporting",
-    className: "md:col-span-3 md:row-span-1 min-h-[180px]",
+    className: "md:col-span-3 md:row-span-1 min-h-[200px]",
   },
 ]
 
