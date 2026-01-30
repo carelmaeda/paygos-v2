@@ -37,7 +37,7 @@ export default function PharmaReturns() {
           {[
             {
               label: "Increase in Sales Visits",
-              value: "40%",
+              value: "20%",
               icon: TrendingUp,
               color: "text-emerald-600",
             },
@@ -163,7 +163,7 @@ export default function PharmaReturns() {
           </h2>
           <p className="mb-12 text-gray-600">
             Territory Managers experienced the greatest impact from the Paygos
-            solution. Nearly <strong>40% of visit time</strong> shifted from
+            solution. Nearly <strong>20% of visit time</strong> shifted from
             return processing to promotional and revenue-generating activities.
             The improved efficiency encouraged the launch of additional
             promotional programs and enabled better targeting of market

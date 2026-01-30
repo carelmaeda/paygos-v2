@@ -33,14 +33,8 @@ export default function RetailEfficiency() {
 
       {/* Key Metrics Section */}
       <section className="section-container py-12" data-navbar-theme="light">
-        <div className="grid grid-cols-1 gap-4 md:grid-cols-5">
+        <div className="grid grid-cols-1 gap-4 md:grid-cols-4">
           {[
-            {
-              label: "Operational Efficiency",
-              value: "10%",
-              icon: TrendingUp,
-              color: "text-emerald-600",
-            },
             {
               label: "Enhanced Forecasting",
               value: "",
@@ -182,7 +176,7 @@ export default function RetailEfficiency() {
             Measurable Operational Gains
           </h2>
           <p className="mb-12 text-gray-600">
-            By leveraging Paygos 360, the major national retail brand achieved a{" "}
+            By leveraging Paygos, the major national retail brand achieved a{" "}
             <strong>10% increase in operational efficiency</strong> and
             measurable gains in execution. Improved forecasting, inventory
             management, and streamlined workflows enabled the organization to
@@ -213,12 +207,12 @@ export default function RetailEfficiency() {
             className="mx-auto max-w-3xl text-center"
           >
             <p className="text-lg text-gray-700">
-              The implementation of Paygos 360 provided the major national
-              retail brand with the visibility, automation, and analytics
-              required to modernize retail operations. The solution delivered
-              tangible efficiency gains, improved productivity, and strengthened
-              inventory and supply chain management, positioning the brand for
-              continued retail innovation and growth.
+              The implementation of Field Sales Automation provided the major
+              national retail brand with the visibility, automation, and
+              analytics required to modernize retail operations. The solution
+              delivered tangible efficiency gains, improved productivity, and
+              strengthened inventory and supply chain management, positioning
+              the brand for continued retail innovation and growth.
             </p>
           </MotionSection>
         </div>

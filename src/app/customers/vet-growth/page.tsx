@@ -37,7 +37,7 @@ export default function VetGrowth() {
           {[
             {
               label: "YoY Sales Increase",
-              value: "19%",
+              value: "9%",
               icon: TrendingUp,
               color: "text-emerald-600",
             },
@@ -49,7 +49,7 @@ export default function VetGrowth() {
             },
             {
               label: "Staff Feeding Growth",
-              value: "151%",
+              value: "50%",
               icon: Rocket,
               color: "text-teal-600",
             },
@@ -164,8 +164,8 @@ export default function VetGrowth() {
           <p className="text-gray-600">
             By reactivating 30% of previously inactive accounts, the company
             achieved a <strong>25% increase</strong> in active accounts. Staff
-            feeding programs grew by <strong>151%</strong>, while automation
-            enabled a <strong>19%</strong> year-over-year increase in sales.s
+            feeding programs grew by <strong>50%</strong>, while automation
+            enabled a <strong>9%</strong> year-over-year increase in sales
           </p>
         </MotionSection>
       </section>

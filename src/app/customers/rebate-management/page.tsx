@@ -37,19 +37,19 @@ export default function RebateManagement() {
           {[
             {
               label: "Reduction in Admin Overheads",
-              value: "40%",
+              value: "20%",
               icon: ClipboardList,
               color: "text-emerald-600",
             },
             {
               label: "Faster Rebate Fulfillment",
-              value: "30%",
+              value: "25%",
               icon: Clock,
               color: "text-blue-600",
             },
             {
               label: "Decrease in Finance Costs",
-              value: "25%",
+              value: "5%",
               icon: DollarSign,
               color: "text-teal-600",
             },
@@ -58,7 +58,7 @@ export default function RebateManagement() {
               as="div"
               key={i}
               variant="scaleIn"
-              className="flex flex-col items-center justify-center rounded-lg border border-gray-100 bg-white p-8 shadow-sm transition hover:shadow-md"
+              className="flex flex-col items-center justify-center rounded-lg border border-gray-100 bg-white p-8 text-center shadow-sm transition hover:shadow-md"
             >
               <stat.icon className={`mb-3 h-8 w-8 ${stat.color}`} />
               <span className="text-3xl font-bold text-gray-900">
@@ -167,13 +167,10 @@ export default function RebateManagement() {
           </h2>
           <p className="mb-12 text-gray-600">
             With the Paygos Sales Acceleration Rebate Solution in place, sales
-            and finance teams achieved a{" "}
-            <strong>40% reduction in administrative overheads</strong>, a{" "}
-            <strong>30% reduction in time spent on rebate fulfillment</strong>,
-            and a <strong>25% decrease in finance operating costs</strong>.
-            Teams were able to shift focus toward strategic initiatives and
-            meaningful customer engagement rather than managing rebate-related
-            inefficiencies.
+            and finance teams achieved a <strong>20% </strong>reduction in
+            administrative overheads, a <strong>25%</strong> reduction in time
+            spent on rebate fulfillment, and a <strong>5%</strong> decrease in
+            finance operating costs.
           </p>
         </MotionSection>
         <MotionSection as="div" variant="scaleIn" className="mx-auto max-w-3xl">
