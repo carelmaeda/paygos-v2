@@ -61,7 +61,8 @@ const SOLUTION_OPTIONS: SolutionOption[] = [
     value: "fsa",
     icon: MapPin,
     title: "Field Sales Automation",
-    description: "Optimize routes and manage territories in real-time.",
+    description:
+      "Mobile tools to manage visits, capture photos, track activities, and execute flawlessly.",
   },
 ]
 

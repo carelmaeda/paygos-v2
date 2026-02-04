@@ -55,7 +55,7 @@ h2,
   letter-spacing: $letter-spacing-tight;
 
   @media (min-width: $breakpoint-md) {
-    font-size: $font-size-4xl;
+    font-size: $font-size-3xl;
   }
 }
 
@@ -64,7 +64,7 @@ h3,
   font-size: $font-size-2xl;
 
   @media (min-width: $breakpoint-md) {
-    font-size: $font-size-lg;
+    font-size: $font-size-xl;
   }
 }
 
@@ -93,9 +93,9 @@ p {
 }
 
 small {
+  font-size: 0.9rem;
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.5px;
 }
 
 .text-highlight {

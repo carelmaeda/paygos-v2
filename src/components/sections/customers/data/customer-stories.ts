@@ -13,36 +13,16 @@ export const customerStories: CustomerStory[] = [
   },
   {
     id: "2",
-    slug: "retail-efficiency",
-    backgroundImage:
-      "https://images.unsplash.com/photo-1512568400610-62da28bc8a13",
-    tags: ["Coffee Retail", "Paygos 360"],
-    title: "10% More Efficient Operations",
-    excerpt:
-      "How Canada’s favorite coffee brand streamlined daily operations without slowing down a single store.",
-  },
-  {
-    id: "3",
-    slug: "pharma-returns",
-    backgroundImage:
-      "https://images.unsplash.com/photo-1512069772995-ec65ed45afd6",
-    tags: ["Pharma", "Returns"],
-    title: "40% More Sales Visits",
-    excerpt:
-      "What happened when a global pharma brand turned returns from a bottleneck into a growth enabler.",
-  },
-  {
-    id: "4",
     slug: "returns-management",
     backgroundImage:
-      "https://images.unsplash.com/photo-1534640076976-2ffafd40fe07",
+      "https://images.unsplash.com/photo-1601598851547-4302969d0614",
     tags: ["CPG", "Returns"],
     title: "20% Reduction in Admin Tasks",
     excerpt:
       "A smarter returns strategy that simplified operations and removed the need for constant manual support.",
   },
   {
-    id: "5",
+    id: "3",
     slug: "training-incentives",
     backgroundImage:
       "https://images.unsplash.com/photo-1638202993928-7267aad84c31",
@@ -50,5 +30,25 @@ export const customerStories: CustomerStory[] = [
     title: "20% Higher Sales Activity",
     excerpt:
       "How rethinking incentives turned training programs into a powerful sales engagement driver.",
+  },
+  {
+    id: "4",
+    slug: "retail-efficiency",
+    backgroundImage:
+      "https://images.unsplash.com/photo-1512568400610-62da28bc8a13",
+    tags: ["Coffee Retail", "Field Sales Automation"],
+    title: "10% More Efficient Operations",
+    excerpt:
+      "How Canada’s favorite coffee brand streamlined daily operations without slowing down a single store.",
+  },
+  {
+    id: "5",
+    slug: "pharma-returns",
+    backgroundImage:
+      "https://images.unsplash.com/photo-1512069772995-ec65ed45afd6",
+    tags: ["Pharma", "Returns"],
+    title: "40% More Sales Visits",
+    excerpt:
+      "What happened when a global pharma brand turned returns from a bottleneck into a growth enabler.",
   },
 ]

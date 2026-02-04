@@ -39,9 +39,9 @@ export function Hero() {
                   viewport={{ once: true }}
                   className="mt-6 max-w-[450px]"
                 >
-                  Paygos is a customizable sales acceleration platform designed
-                  to drive incremental revenue, automate manual processes and
-                  surface actionable sales data & analytics.
+                  Paygos is a customizable platform designed to drive
+                  incremental revenue, automate manual processes and surface
+                  actionable sales data & analytics.
                 </MotionSection>
 
                 <MotionSection
