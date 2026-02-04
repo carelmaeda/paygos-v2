@@ -29,9 +29,9 @@ export function Footer() {
               />
             </Link>
             <p className="my-2 max-w-xs text-xs leading-relaxed">
-              Our customizable sales acceleration platform is designed to drive
-              incremental revenue, automate manual processes and surface
-              actionable sales data & analytics.
+              Our customizable platform is designed to drive incremental
+              revenue, automate manual processes and surface actionable sales
+              data & analytics.
             </p>
 
             <div>

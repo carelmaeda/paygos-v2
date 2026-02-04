@@ -1,7 +1,7 @@
 "use client"
 
 import Image from "next/image"
-import { TrendingUp, BarChart3, Package, Workflow, Users } from "lucide-react"
+import { BarChart3, Package, Workflow, Users } from "lucide-react"
 import { Breadcrumbs } from "@/components/layout/Breadcrumbs"
 import { CTA } from "@/components/sections/cta/CTA"
 import { PatternDiagonal, PatternDots } from "@/components/ui/patterns"
@@ -186,7 +186,7 @@ export default function RetailEfficiency() {
         </MotionSection>
         <MotionSection as="div" variant="scaleIn" className="mx-auto max-w-3xl">
           <Image
-            src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?q=80&w=2070&auto=format&fit=crop"
+            src="/customers/retail-efficiency.webp"
             alt="Retail Store Operations"
             width={800}
             height={400}

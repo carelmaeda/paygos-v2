@@ -65,14 +65,24 @@ export function Hero() {
             viewport={{ once: true }}
             className="pointer-events-none absolute top-8 right-0 hidden lg:block"
           >
-            <div className="w-[500px] md:mr-12 xl:w-[570px]">
+            <div className="relative w-[500px] p-3 md:mr-12 xl:w-[570px]">
+              {/* GLOW LAYER */}
+              <div
+                className="pointer-events-none absolute inset-0 -z-10 scale-120"
+                style={{
+                  background:
+                    "radial-gradient(50% 50% at 50% 50%, rgb(16, 185, 129) 0%, rgb(20, 184, 166) 80%, transparent 100%)",
+                  filter: "blur(100px)",
+                  opacity: 0.5,
+                }}
+              />
               <Image
                 src="/paygos/paygos-hero.webp"
                 alt="Paygos product UI"
                 width={1600}
                 height={1000}
                 priority
-                className="h-auto w-full max-w-none"
+                className="relative z-10 h-auto w-full max-w-none"
               />
             </div>
           </MotionSection>
@@ -86,14 +96,26 @@ export function Hero() {
           viewport={{ once: true }}
           className="relative mt-10 px-4 lg:hidden"
         >
-          <Image
-            src="/paygos/paygos-hero.webp"
-            alt="Paygos product UI"
-            width={1600}
-            height={1000}
-            priority
-            className="h-auto w-full max-w-none"
-          />
+          <div className="relative">
+            {/* GLOW LAYER - reduced opacity on mobile */}
+            <div
+              className="pointer-events-none absolute inset-0 -z-10 scale-105"
+              style={{
+                background:
+                  "radial-gradient(50% 50% at 50% 50%, rgb(16, 185, 129) 0%, rgb(20, 184, 166) 50%, transparent 100%)",
+                filter: "blur(80px)",
+                opacity: 0.5,
+              }}
+            />
+            <Image
+              src="/paygos/paygos-hero.webp"
+              alt="Paygos product UI"
+              width={1600}
+              height={1000}
+              priority
+              className="relative z-10 h-auto w-full max-w-none"
+            />
+          </div>
         </MotionSection>
 
         {/* LOGOS */}

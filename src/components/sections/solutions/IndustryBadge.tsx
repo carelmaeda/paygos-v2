@@ -25,7 +25,7 @@ export function IndustryBadge() {
         <MotionSection as="div" variant="scaleIn" delay={0.2}>
           <Badge variant="secondary" className="bg-sky-200 px-6 py-3">
             <Candy size={64} />
-            Confectionary
+            Consumer Packaged Goods
           </Badge>
         </MotionSection>
       </div>

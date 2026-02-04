@@ -19,9 +19,9 @@ export const SALES_ACCELERATION_TOOLS: SalesAccelerationTool[] = [
     href: "/sales-acceleration/rebates",
   },
   {
-    title: "Training Management",
+    title: "Training Rewards",
     description: "Engaging, trackable sales training.",
-    image: "/paygos-hero.svg",
+    image: "/solutions/training.png",
     href: "/sales-acceleration/training",
   },
   {

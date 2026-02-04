@@ -19,12 +19,18 @@ const CHART_DATA = [
   { month: "April", y2025: 214, y2026: 260 },
   { month: "May", y2025: 226, y2026: 302 },
   { month: "June", y2025: 219, y2026: 300 },
-  { month: "July", y2025: 233, y2026: 310 },
+  { month: "July", y2025: 215, y2026: 310 },
 ]
 
 const CHART_CONFIG = {
-  y2025: { label: "2025", color: "#14b8a6" }, // teal-500
-  y2026: { label: "2026", color: "#0ea5e9" }, // sky-500
+  y2025: {
+    label: "2025",
+    color: "#f43f5e", // rose-500
+  },
+  y2026: {
+    label: "2026",
+    color: "#0ea5e9", // sky-500
+  },
 } satisfies ChartConfig
 
 export function OrderingVolumeChart() {
@@ -33,14 +39,14 @@ export function OrderingVolumeChart() {
   return (
     <div className="chart-container">
       <div className="mb-6 flex items-center justify-between text-xs font-black uppercase sm:mb-8">
-        <small className="text-cyan-600">Sales per Month</small>
-        <ShoppingCart className="text-cyan-600" size={isMobile ? 16 : 20} />
+        <small className="text-sky-600">Sales per Month</small>
+        <ShoppingCart className="text-sky-600" size={isMobile ? 16 : 20} />
       </div>
 
       <ChartContainer
         id="ordering-sales"
         config={CHART_CONFIG}
-        className="h-[240px] w-full sm:h-[280px] md:h-[400px]"
+        className="h-[240px] w-full sm:h-[280px] md:h-[300px]"
       >
         <AreaChart
           accessibilityLayer
@@ -52,13 +58,14 @@ export function OrderingVolumeChart() {
           }}
         >
           <CartesianGrid vertical={false} stroke="#f8fafc" />
+
           <XAxis
             dataKey="month"
             tickLine={false}
             axisLine={false}
             tickMargin={isMobile ? 6 : 8}
             tick={{
-              fill: "#475569",
+              fill: "#475569", // slate-600
               fontSize: isMobile ? 11 : 13,
               fontWeight: 700,
             }}
@@ -73,7 +80,11 @@ export function OrderingVolumeChart() {
                 className="rounded-lg bg-slate-950 text-white"
                 indicator="line"
                 formatter={(val, name) => (
-                  <span className="font-black text-cyan-400">
+                  <span
+                    className={`font-black ${
+                      name === "y2025" ? "text-rose-400" : "text-sky-400"
+                    }`}
+                  >
                     {name === "y2025" ? "2025" : "2026"}:{" "}
                     {Number(val).toLocaleString()}
                   </span>
@@ -88,15 +99,16 @@ export function OrderingVolumeChart() {
             fill="var(--color-y2025)"
             fillOpacity={0.35}
             stroke="var(--color-y2025)"
-            strokeWidth={2.5}
+            strokeWidth={3}
           />
+
           <Area
             dataKey="y2026"
             type="natural"
             fill="var(--color-y2026)"
             fillOpacity={0.35}
             stroke="var(--color-y2026)"
-            strokeWidth={2.5}
+            strokeWidth={3}
           />
 
           <ChartLegend content={<ChartLegendContent />} />

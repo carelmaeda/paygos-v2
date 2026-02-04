@@ -27,21 +27,21 @@ import { Breadcrumbs } from "@/components/layout/Breadcrumbs"
 import { MotionSection } from "@/components/motion"
 
 export const metadata: Metadata = {
-  title: "Training Management | Paygos",
+  title: "Training Rewards | Paygos",
   description:
     "Transform training into a loyalty-building journey with Paygos. Interactive modules, certification tracking, and incentive-based rewards that drive completion.",
   keywords: [
-    "training management",
+    "training rewards",
     "employee training",
     "certification tracking",
-    "learning management",
+    "learning rewards",
     "training programs",
     "staff development",
     "mobile learning",
     "gamification",
   ],
   openGraph: {
-    title: "Training Management | Paygos",
+    title: "Training Rewards | Paygos",
     description:
       "Transform training into a loyalty-building journey with Paygos. Interactive modules, certification tracking, and incentive-based rewards that drive completion.",
     url: "https://www.paygos.ca/sales-acceleration/training",
@@ -51,7 +51,7 @@ export const metadata: Metadata = {
         url: "/paygos/logo-full.webp",
         width: 1200,
         height: 630,
-        alt: "Paygos Training Management",
+        alt: "Paygos Training Rewards",
       },
     ],
     locale: "en_US",
@@ -59,7 +59,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Training Management | Paygos",
+    title: "Training Rewards | Paygos",
     description:
       "Transform training into a loyalty-building journey with Paygos. Interactive modules, certification tracking, and incentive-based rewards that drive completion.",
     images: ["/paygos/logo-full.webp"],

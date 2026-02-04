@@ -25,7 +25,7 @@ export const customerStories: CustomerStory[] = [
     id: "3",
     slug: "pharma-returns",
     backgroundImage:
-      "https://images.unsplash.com/photo-1583088580009-2d947c3e90a6",
+      "https://images.unsplash.com/photo-1512069772995-ec65ed45afd6",
     tags: ["Pharma", "Returns"],
     title: "40% More Sales Visits",
     excerpt:
