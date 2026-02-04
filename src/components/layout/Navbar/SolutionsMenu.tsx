@@ -28,8 +28,7 @@ export const SOLUTIONS: readonly SolutionItem[] = [
   {
     title: "Field Sales Automation",
     href: "/fsa",
-    description:
-      "Manage visits, capture photos, track activities, and execute flawlessly",
+    description: "Manage Visits, Capture Photos, and track Activities",
     icon: MapPin,
   },
 ] as const

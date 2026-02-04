@@ -15,7 +15,6 @@
  */
 "use client"
 
-import Image from "next/image"
 import { RoiMode } from "./types"
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
 import { Label } from "@/components/ui/label"
@@ -33,8 +32,7 @@ interface Props {
 
 interface SolutionOption {
   value: RoiMode
-  icon?: LucideIcon
-  imageSrc?: string
+  icon: LucideIcon
   title: string
   description: string
 }
@@ -54,15 +52,13 @@ const SOLUTION_OPTIONS: SolutionOption[] = [
     value: "sales",
     icon: Zap,
     title: "Sales Acceleration",
-    description:
-      "Intelligent tools that streamline ordering, payments, and customer engagement.",
+    description: "Streamline operations and drive revenue growth.",
   },
   {
     value: "fsa",
     icon: MapPin,
     title: "Field Sales Automation",
-    description:
-      "Mobile tools to manage visits, capture photos, track activities, and execute flawlessly.",
+    description: "Manage Visits, Capture Photos, and track Activities.",
   },
 ]
 
@@ -110,18 +106,8 @@ export function StepSelector({ value, onChange }: Props) {
             <div className="ml-6 space-y-3">
               {/* Header Row: Icon + Title + Info Tooltip */}
               <div className="flex items-center gap-2">
-                {/* Icon - Either custom image or Lucide icon */}
-                {option.imageSrc ? (
-                  <Image
-                    src={option.imageSrc}
-                    alt=""
-                    width={20}
-                    height={20}
-                    className="h-4 w-4"
-                  />
-                ) : Icon ? (
-                  <Icon className="h-4 w-4 text-black" />
-                ) : null}
+                {/* Icon */}
+                <Icon className="h-4 w-4 text-black" />
 
                 {/* Title */}
                 <h5 className="font-semibold">{option.title}</h5>
