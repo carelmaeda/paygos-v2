@@ -1,6 +1,5 @@
 "use client"
 
-import Image from "next/image"
 import { PatternHexagon } from "@/components/ui/patterns"
 import { BookCallButton } from "../cta/BookCallButton"
 import { CustomersLogosCarousel } from "../customers/CustomersLogosCarousel"
@@ -57,14 +56,8 @@ export function Hero() {
             </div>
           </div>
 
-          {/* DESKTOP IMAGE */}
-          <MotionSection
-            as="div"
-            variant="fadeIn"
-            delay={0.3}
-            viewport={{ once: true }}
-            className="pointer-events-none absolute top-8 right-0 hidden lg:block"
-          >
+          {/* DESKTOP IMAGE - Native img for guaranteed LCP optimization */}
+          <div className="pointer-events-none absolute top-8 right-0 hidden lg:block">
             <div className="relative w-[500px] p-3 md:mr-12 xl:w-[570px]">
               {/* GLOW LAYER */}
               <div
@@ -76,26 +69,22 @@ export function Hero() {
                   opacity: 0.5,
                 }}
               />
-              <Image
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
                 src="/paygos/paygos-hero.webp"
                 alt="Paygos product UI"
                 width={1600}
                 height={1000}
-                priority
+                fetchPriority="high"
+                decoding="async"
                 className="relative z-10 h-auto w-full max-w-none"
               />
             </div>
-          </MotionSection>
+          </div>
         </div>
 
-        {/* MOBILE IMAGE */}
-        <MotionSection
-          as="div"
-          variant="fadeIn"
-          delay={0.2}
-          viewport={{ once: true }}
-          className="relative mt-10 px-4 lg:hidden"
-        >
+        {/* MOBILE IMAGE - Native img for guaranteed LCP optimization */}
+        <div className="relative mt-10 px-4 lg:hidden">
           <div className="relative">
             {/* GLOW LAYER - reduced opacity on mobile */}
             <div
@@ -107,16 +96,18 @@ export function Hero() {
                 opacity: 0.5,
               }}
             />
-            <Image
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
               src="/paygos/paygos-hero.webp"
               alt="Paygos product UI"
               width={1600}
               height={1000}
-              priority
+              fetchPriority="high"
+              decoding="async"
               className="relative z-10 h-auto w-full max-w-none"
             />
           </div>
-        </MotionSection>
+        </div>
 
         {/* LOGOS */}
         <MotionSection

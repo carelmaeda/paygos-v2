@@ -175,10 +175,11 @@ export default function RebateManagement() {
         </MotionSection>
         <MotionSection as="div" variant="scaleIn" className="mx-auto max-w-3xl">
           <Image
-            src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop"
+            src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=75"
             alt="Rebate Management Analytics"
             width={800}
             height={400}
+            sizes="(max-width: 768px) 100vw, 800px"
             className="mx-auto rounded-2xl shadow-lg"
           />
         </MotionSection>

@@ -1,4 +1,5 @@
 import type { Metadata } from "next"
+import dynamic from "next/dynamic"
 import Link from "next/link"
 import Image from "next/image"
 import { PatternDots } from "@/components/ui/patterns"
@@ -22,9 +23,22 @@ import {
 import { CTA } from "@/components/sections/cta/CTA"
 import { Button } from "@/components/ui/button"
 import { IndustryBadge } from "@/components/sections/solutions/IndustryBadge"
-import { TrainingCompletionChart } from "./training-completion-chart"
 import { Breadcrumbs } from "@/components/layout/Breadcrumbs"
 import { MotionSection } from "@/components/motion"
+
+// Dynamic import chart to reduce initial bundle - Recharts is heavy (~40KB)
+const TrainingCompletionChart = dynamic(
+  () =>
+    import("./training-completion-chart").then(
+      (mod) => mod.TrainingCompletionChart
+    ),
+  {
+    ssr: true,
+    loading: () => (
+      <div className="h-[400px] animate-pulse rounded-lg bg-slate-200" />
+    ),
+  }
+)
 
 export const metadata: Metadata = {
   title: "Training Rewards | Paygos",
@@ -186,9 +200,10 @@ export default function TrainingPage() {
             className="bento-card md:col-span-4"
           >
             <Image
-              src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=2070&auto=format&fit=crop"
+              src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=800&q=75"
               alt="Interactive training modules"
               fill
+              sizes="(max-width: 768px) 100vw, 66vw"
               className="object-cover"
             />
             <div>
@@ -210,9 +225,10 @@ export default function TrainingPage() {
             className="bento-card md:col-span-2"
           >
             <Image
-              src="https://images.unsplash.com/photo-1589330694653-ded6df03f754?q=80&w=1888&auto=format&fit=crop"
+              src="https://images.unsplash.com/photo-1589330694653-ded6df03f754?w=600&q=75"
               alt="Digital certificates"
               fill
+              sizes="(max-width: 768px) 100vw, 33vw"
               className="object-cover"
             />
             <div>
@@ -234,9 +250,10 @@ export default function TrainingPage() {
             className="bento-card md:col-span-2"
           >
             <Image
-              src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?q=80&w=2070&auto=format&fit=crop"
+              src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=600&q=75"
               alt="Mobile learning"
               fill
+              sizes="(max-width: 768px) 100vw, 33vw"
               className="object-cover"
             />
             <div>
@@ -262,9 +279,10 @@ export default function TrainingPage() {
             className="bento-card md:col-span-2"
           >
             <Image
-              src="https://images.unsplash.com/photo-1612287230202-1ff1d85d1bdf"
+              src="https://images.unsplash.com/photo-1612287230202-1ff1d85d1bdf?w=600&q=75"
               alt="Gamification and rewards"
               fill
+              sizes="(max-width: 768px) 100vw, 33vw"
               className="object-cover"
             />
             <div>
@@ -290,9 +308,10 @@ export default function TrainingPage() {
             className="bento-card md:col-span-2"
           >
             <Image
-              src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop"
+              src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&q=75"
               alt="Manager dashboards"
               fill
+              sizes="(max-width: 768px) 100vw, 33vw"
               className="object-cover"
             />
             <div>
@@ -318,9 +337,10 @@ export default function TrainingPage() {
             className="bento-card md:col-span-6"
           >
             <Image
-              src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=2070&auto=format&fit=crop"
+              src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=1200&q=75"
               alt="Content builder"
               fill
+              sizes="100vw"
               className="object-cover"
             />
             <div>

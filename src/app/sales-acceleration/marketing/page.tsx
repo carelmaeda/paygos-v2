@@ -1,4 +1,5 @@
 import type { Metadata } from "next"
+import dynamic from "next/dynamic"
 import Link from "next/link"
 import Image from "next/image"
 import { PatternDots } from "@/components/ui/patterns"
@@ -21,9 +22,22 @@ import {
 import { CTA } from "@/components/sections/cta/CTA"
 import { Button } from "@/components/ui/button"
 import { IndustryBadge } from "@/components/sections/solutions/IndustryBadge"
-import { MarketingEngagementChart } from "./marketing-engagement-chart"
 import { Breadcrumbs } from "@/components/layout/Breadcrumbs"
 import { MotionSection } from "@/components/motion"
+
+// Dynamic import chart to reduce initial bundle - Recharts is heavy (~40KB)
+const MarketingEngagementChart = dynamic(
+  () =>
+    import("./marketing-engagement-chart").then(
+      (mod) => mod.MarketingEngagementChart
+    ),
+  {
+    ssr: true,
+    loading: () => (
+      <div className="h-[400px] animate-pulse rounded-lg bg-slate-200" />
+    ),
+  }
+)
 
 export const metadata: Metadata = {
   title: "Marketing Solutions | Paygos",
@@ -190,9 +204,10 @@ export default function MarketingPage() {
             aria-describedby="segmented-campaigns-desc"
           >
             <Image
-              src="https://images.unsplash.com/photo-1460925895917-afdab827c52f"
+              src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=75"
               alt="Segmented campaigns"
               fill
+              sizes="(max-width: 768px) 100vw, 66vw"
             />
             <div>
               <Target
@@ -225,9 +240,10 @@ export default function MarketingPage() {
             aria-describedby="multi-channel-desc"
           >
             <Image
-              src="https://images.unsplash.com/photo-1596526131083-e8c633c948d2"
+              src="https://images.unsplash.com/photo-1596526131083-e8c633c948d2?w=800&q=75"
               alt="Multi-channel delivery"
               fill
+              sizes="(max-width: 768px) 100vw, 33vw"
             />
             <div>
               <MessageSquare
@@ -255,9 +271,10 @@ export default function MarketingPage() {
             aria-describedby="campaign-builder-desc"
           >
             <Image
-              src="https://images.unsplash.com/photo-1586281380349-632531db7ed4"
+              src="https://images.unsplash.com/photo-1586281380349-632531db7ed4?w=800&q=75"
               alt="Campaign builder"
               fill
+              sizes="(max-width: 768px) 100vw, 33vw"
             />
             <div>
               <Mail size={32} aria-hidden="true" className="text-emerald-400" />
@@ -281,9 +298,10 @@ export default function MarketingPage() {
             aria-describedby="engagement-analytics-desc"
           >
             <Image
-              src="https://images.unsplash.com/photo-1551288049-bebda4e38f71"
+              src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=75"
               alt="Engagement analytics"
               fill
+              sizes="(max-width: 768px) 100vw, 33vw"
             />
             <div>
               <BarChart3
@@ -311,9 +329,10 @@ export default function MarketingPage() {
             aria-describedby="promo-codes-desc"
           >
             <Image
-              src="https://images.unsplash.com/photo-1556742502-ec7c0e9f34b1"
+              src="https://images.unsplash.com/photo-1556742502-ec7c0e9f34b1?w=800&q=75"
               alt="Promo code integration"
               fill
+              sizes="(max-width: 768px) 100vw, 33vw"
             />
             <div>
               <Percent
@@ -340,9 +359,10 @@ export default function MarketingPage() {
             aria-describedby="automated-triggers-desc"
           >
             <Image
-              src="https://images.unsplash.com/photo-1551288049-bebda4e38f71"
+              src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=75"
               alt="Automated triggers"
               fill
+              sizes="(max-width: 768px) 100vw, 100vw"
             />
             <div>
               <Zap size={32} aria-hidden="true" className="text-emerald-400" />

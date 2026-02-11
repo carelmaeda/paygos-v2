@@ -14,13 +14,15 @@ const FEATURES = [
       "Smart territory planning, automated scheduling, and real-time data capture that turn every store visit into a revenue opportunity.",
     image: "/solutions/sales-rep1.webp",
     href: "/fsa",
+    linkText: "Explore territory planning and scheduling",
   },
   {
     title: "Optimize Routes. Maximize Impact.",
     description:
       "PS-enabled territories, AI-powered insights, and mobile execution tools that boost productivity and deliver complete visibility across your field team.",
-    image: "https://images.unsplash.com/photo-1666281466387-0639381c5680",
+    image: "https://images.unsplash.com/photo-1666281466387-0639381c5680?w=800&q=75",
     href: "/fsa",
+    linkText: "See route optimization and mobile tools",
   },
 ]
 
@@ -87,7 +89,7 @@ export function FieldSales() {
                       href={feature.href}
                       className="inline-flex items-center gap-2"
                     >
-                      Learn more <ArrowRight className="h-4 w-4" />
+                      {feature.linkText} <ArrowRight className="h-4 w-4" />
                     </Link>
                   </Button>
                 </MotionSection>

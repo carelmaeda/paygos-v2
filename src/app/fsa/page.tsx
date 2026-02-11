@@ -1,5 +1,6 @@
 import type { Metadata } from "next"
 import React from "react"
+import dynamic from "next/dynamic"
 import Link from "next/link"
 import Image from "next/image"
 import {
@@ -18,8 +19,18 @@ import {
   Timer,
 } from "lucide-react"
 import { CTA } from "@/components/sections/cta/CTA"
-import { FsaCoverageChart } from "./fsa-coverage-chart"
 import { IndustryBadge } from "@/components/sections/solutions/IndustryBadge"
+
+// Dynamic import chart to reduce initial bundle - Recharts is heavy (~40KB)
+const FsaCoverageChart = dynamic(
+  () => import("./fsa-coverage-chart").then((mod) => mod.FsaCoverageChart),
+  {
+    ssr: true,
+    loading: () => (
+      <div className="h-[400px] animate-pulse rounded-lg bg-slate-200" />
+    ),
+  }
+)
 import { PatternHexagon } from "@/components/ui/patterns"
 import { Breadcrumbs } from "@/components/layout/Breadcrumbs"
 import { Button } from "@/components/ui/button"
@@ -218,9 +229,10 @@ export default function FsaPage() {
             aria-describedby="mobile-visit-capture-desc"
           >
             <Image
-              src="https://images.unsplash.com/photo-1556656793-08538906a9f8"
+              src="https://images.unsplash.com/photo-1556656793-08538906a9f8?w=800&q=75"
               alt="Mobile visit capture"
               fill
+              sizes="(max-width: 768px) 100vw, 66vw"
             />
             <div className="p-8">
               <Smartphone
@@ -252,9 +264,10 @@ export default function FsaPage() {
             aria-describedby="gps-routes-desc"
           >
             <Image
-              src="https://images.unsplash.com/photo-1569336415962-a4bd9f69cd83"
+              src="https://images.unsplash.com/photo-1569336415962-a4bd9f69cd83?w=600&q=75"
               alt="GPS route optimization"
               fill
+              sizes="(max-width: 768px) 100vw, 33vw"
             />
             <div className="p-8">
               <Map size={32} aria-hidden="true" className="text-cyan-400" />
@@ -277,9 +290,10 @@ export default function FsaPage() {
             aria-describedby="photo-validation-desc"
           >
             <Image
-              src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32"
+              src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=600&q=75"
               alt="Photo validation"
               fill
+              sizes="(max-width: 768px) 100vw, 33vw"
             />
             <div className="p-8">
               <Camera size={32} aria-hidden="true" className="text-cyan-400" />
@@ -302,9 +316,10 @@ export default function FsaPage() {
             aria-describedby="activity-dashboard-desc"
           >
             <Image
-              src="https://images.unsplash.com/photo-1551288049-bebda4e38f71"
+              src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&q=75"
               alt="Activity dashboard"
               fill
+              sizes="(max-width: 768px) 100vw, 33vw"
             />
             <div className="p-8">
               <Activity
@@ -331,9 +346,10 @@ export default function FsaPage() {
             aria-describedby="offline-mode-desc"
           >
             <Image
-              src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64"
+              src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=75"
               alt="Offline mode"
               fill
+              sizes="(max-width: 768px) 100vw, 33vw"
             />
             <div className="p-8">
               <CloudOff
@@ -360,9 +376,10 @@ export default function FsaPage() {
             aria-describedby="incentive-tie-in-desc"
           >
             <Image
-              src="https://images.unsplash.com/photo-1579621970563-ebec7560ff3e"
+              src="https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?w=1200&q=75"
               alt="Incentive integration"
               fill
+              sizes="100vw"
             />
             <div className="p-8">
               <DollarSign
@@ -441,6 +458,7 @@ export default function FsaPage() {
               src="/solutions/fsa-devices.webp"
               alt="FSA Devices with Power BI"
               fill
+              sizes="(max-width: 768px) 100vw, 1200px"
               aria-hidden="true"
             />
           </div>

@@ -190,6 +190,7 @@ export default function RetailEfficiency() {
             alt="Retail Store Operations"
             width={800}
             height={400}
+            sizes="(max-width: 768px) 100vw, 800px"
             className="mx-auto rounded-2xl shadow-lg"
           />
         </MotionSection>

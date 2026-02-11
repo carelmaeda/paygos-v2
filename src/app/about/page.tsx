@@ -48,6 +48,7 @@ export default function AboutPage() {
                 src="/paygos/hesham.jpg"
                 alt="Hesham Shafie - President of Paygos"
                 fill
+                sizes="80px"
                 className="object-cover"
               />
             </div>
@@ -192,9 +193,10 @@ export default function AboutPage() {
               className="relative flex flex-col justify-between overflow-hidden rounded-lg p-8 text-white lg:row-span-4"
             >
               <Image
-                src="https://images.unsplash.com/photo-1579208575657-c595a05383b7"
+                src="https://images.unsplash.com/photo-1579208575657-c595a05383b7?w=800&q=75"
                 alt="People holding hands together"
                 fill
+                sizes="(max-width: 1024px) 100vw, 50vw"
                 className="object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/20" />
@@ -323,9 +325,10 @@ export default function AboutPage() {
                 className="relative h-[300px] overflow-hidden rounded-lg md:h-[400px]"
               >
                 <Image
-                  src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2070&auto=format&fit=crop"
+                  src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&q=75"
                   alt="Team collaboration"
                   fill
+                  sizes="(max-width: 768px) 100vw, 50vw"
                   className="object-cover"
                 />
               </MotionSection>

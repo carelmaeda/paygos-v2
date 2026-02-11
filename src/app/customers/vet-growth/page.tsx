@@ -178,6 +178,7 @@ export default function VetGrowth() {
               src="/solutions/vetgrowth.webp"
               alt="FSA Devices with Power BI"
               fill
+              sizes="(max-width: 768px) 100vw, 1200px"
               className="object-contain!"
               aria-hidden="true"
             />

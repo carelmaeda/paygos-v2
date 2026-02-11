@@ -11,15 +11,17 @@ const SOLUTIONS = [
     title: "Drive Growth. Maximize ROI.",
     description:
       "Accelerate revenue with streamlined ordering, frictionless returns, and integrated payments that remove barriers from every sale.",
-    image: "https://images.unsplash.com/photo-1713947505562-299114c58523",
+    image: "https://images.unsplash.com/photo-1713947505562-299114c58523?w=800&q=75",
     href: "/sales-acceleration",
+    linkText: "Explore ordering, returns and payments",
   },
   {
     title: "Build High-Performance Sales Organizations.",
     description:
       "Power performance with targeted rebates, structured training management, and marketing tools designed to boost execution in the field.",
-    image: "https://images.unsplash.com/photo-1542744173-05336fcc7ad4",
+    image: "https://images.unsplash.com/photo-1542744173-05336fcc7ad4?w=800&q=75",
     href: "/sales-acceleration",
+    linkText: "Discover rebates, training and marketing tools",
   },
 ]
 
@@ -79,7 +81,7 @@ export function SolutionsSection() {
                       href={solution.href}
                       className="inline-flex items-center gap-2"
                     >
-                      Learn More <ArrowRight className="h-4 w-4" />
+                      {solution.linkText} <ArrowRight className="h-4 w-4" />
                     </Link>
                   </Button>
                 </MotionSection>

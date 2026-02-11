@@ -1,5 +1,6 @@
 import type { Metadata } from "next"
 import React from "react"
+import dynamic from "next/dynamic"
 import Image from "next/image"
 import {
   ArrowRight,
@@ -21,9 +22,22 @@ import {
 import { CTA } from "@/components/sections/cta/CTA"
 import { BookCallButton } from "@/components/sections/cta/BookCallButton"
 import { IndustryBadge } from "@/components/sections/solutions/IndustryBadge"
-import { AnalyticsMetricsChart } from "./analytics-metrics-chart"
 import { Breadcrumbs } from "@/components/layout/Breadcrumbs"
 import { MotionSection } from "@/components/motion"
+
+// Dynamic import chart to reduce initial bundle - Recharts is heavy (~40KB)
+const AnalyticsMetricsChart = dynamic(
+  () =>
+    import("./analytics-metrics-chart").then(
+      (mod) => mod.AnalyticsMetricsChart
+    ),
+  {
+    ssr: true,
+    loading: () => (
+      <div className="h-[400px] animate-pulse rounded-lg bg-slate-200" />
+    ),
+  }
+)
 
 export const metadata: Metadata = {
   title: "Data & Analytics | Paygos",
@@ -79,10 +93,11 @@ export default function AnalyticsPage() {
       <section className="hero-sm bg-teal-950" data-navbar-theme="dark">
         <div className="absolute inset-0 z-0">
           <Image
-            src="https://images.unsplash.com/photo-1551288049-bebda4e38f71"
+            src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1920&q=75"
             alt="Analytics Dashboard"
             fill
             priority
+            sizes="100vw"
             className="object-cover opacity-30"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/70 to-transparent" />
@@ -200,9 +215,10 @@ export default function AnalyticsPage() {
             aria-describedby="unified-dashboard-desc"
           >
             <Image
-              src="https://images.unsplash.com/photo-1551288049-bebda4e38f71"
+              src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=75"
               alt="Unified analytics dashboard"
               fill
+              sizes="(max-width: 768px) 100vw, 66vw"
             />
             <div>
               <Layout size={32} aria-hidden="true" />
@@ -227,9 +243,10 @@ export default function AnalyticsPage() {
             aria-describedby="custom-reports-desc"
           >
             <Image
-              src="https://images.unsplash.com/photo-1460925895917-afdab827c52f"
+              src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&q=75"
               alt="Custom reporting tools"
               fill
+              sizes="(max-width: 768px) 100vw, 33vw"
             />
             <div>
               <FileSearch size={32} aria-hidden="true" />
@@ -252,9 +269,10 @@ export default function AnalyticsPage() {
             aria-describedby="sku-tracking-desc"
           >
             <Image
-              src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d"
+              src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=600&q=75"
               alt="SKU-level tracking"
               fill
+              sizes="(max-width: 768px) 100vw, 33vw"
             />
             <div>
               <BarChart3 size={32} aria-hidden="true" />
@@ -277,9 +295,10 @@ export default function AnalyticsPage() {
             aria-describedby="territory-analytics-desc"
           >
             <Image
-              src="https://images.unsplash.com/photo-1524661135-423995f22d0b"
+              src="https://images.unsplash.com/photo-1524661135-423995f22d0b?w=600&q=75"
               alt="Territory analytics"
               fill
+              sizes="(max-width: 768px) 100vw, 33vw"
             />
             <div>
               <MapPin size={32} aria-hidden="true" />
@@ -301,9 +320,10 @@ export default function AnalyticsPage() {
             aria-describedby="predictive-insights-desc"
           >
             <Image
-              src="https://images.unsplash.com/photo-1551288049-bebda4e38f71"
+              src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&q=75"
               alt="Predictive analytics"
               fill
+              sizes="(max-width: 768px) 100vw, 33vw"
             />
             <div>
               <Sparkles size={32} aria-hidden="true" />
@@ -325,9 +345,10 @@ export default function AnalyticsPage() {
             aria-describedby="export-integrations-desc"
           >
             <Image
-              src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40"
+              src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&q=75"
               alt="Export and integrations"
               fill
+              sizes="(max-width: 768px) 100vw, 66vw"
             />
             <div>
               <FileOutput size={32} aria-hidden="true" />

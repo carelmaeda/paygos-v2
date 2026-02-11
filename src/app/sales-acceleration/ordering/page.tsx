@@ -1,4 +1,5 @@
 import type { Metadata } from "next"
+import dynamic from "next/dynamic"
 import Link from "next/link"
 import { CTA } from "@/components/sections/cta/CTA"
 import { Button } from "@/components/ui/button"
@@ -21,10 +22,28 @@ import {
   PackageX,
   BarChart3,
 } from "lucide-react"
-import { OrderingVolumeChart } from "./ordering-volume-chart"
-import { CustomerStoriesCarousel } from "@/components/sections/customers/CustomerStoriesCarousel"
 import { Breadcrumbs } from "@/components/layout/Breadcrumbs"
 import { MotionSection } from "@/components/motion"
+
+// Dynamic imports to reduce initial bundle
+const OrderingVolumeChart = dynamic(
+  () =>
+    import("./ordering-volume-chart").then((mod) => mod.OrderingVolumeChart),
+  {
+    ssr: true,
+    loading: () => (
+      <div className="h-[400px] animate-pulse rounded-lg bg-slate-200" />
+    ),
+  }
+)
+
+const CustomerStoriesCarousel = dynamic(
+  () =>
+    import("@/components/sections/customers/CustomerStoriesCarousel").then(
+      (mod) => mod.CustomerStoriesCarousel
+    ),
+  { ssr: true }
+)
 
 export const metadata: Metadata = {
   title: "Smart Ordering System | Paygos",
@@ -190,9 +209,10 @@ export default function PaygosOrderingPage() {
             aria-describedby="orders-one-platform-desc"
           >
             <Image
-              src="https://images.unsplash.com/photo-1674027392842-29f8354e236c"
+              src="https://images.unsplash.com/photo-1674027392842-29f8354e236c?w=800&q=75"
               alt="Centralized online ordering system dashboard"
               fill
+              sizes="(max-width: 768px) 100vw, 66vw"
             />
             <div>
               <Zap size={32} aria-hidden="true" className="text-teal-600" />
@@ -221,9 +241,10 @@ export default function PaygosOrderingPage() {
             aria-describedby="save-reps-time-desc"
           >
             <Image
-              src="https://images.unsplash.com/photo-1573497620053-ea5300f94f21"
+              src="https://images.unsplash.com/photo-1573497620053-ea5300f94f21?w=800&q=75"
               alt="Sales representative working efficiently with digital tools"
               fill
+              sizes="(max-width: 768px) 100vw, 33vw"
             />
             <div>
               <Clock size={32} aria-hidden="true" className="text-teal-600" />
@@ -247,9 +268,10 @@ export default function PaygosOrderingPage() {
             aria-describedby="products-merch-desc"
           >
             <Image
-              src="https://images.unsplash.com/photo-1585939049495-7f87cd649405"
+              src="https://images.unsplash.com/photo-1585939049495-7f87cd649405?w=800&q=75"
               alt="Retail products and merchandising materials"
               fill
+              sizes="(max-width: 768px) 100vw, 33vw"
             />
             <div>
               <ShoppingBag
@@ -276,9 +298,10 @@ export default function PaygosOrderingPage() {
             aria-describedby="real-time-visibility-desc"
           >
             <Image
-              src="https://images.unsplash.com/photo-1446776653964-20c1d3a81b06"
+              src="https://images.unsplash.com/photo-1446776653964-20c1d3a81b06?w=800&q=75"
               alt="Real-time order tracking interface"
               fill
+              sizes="(max-width: 768px) 100vw, 33vw"
             />
             <div>
               <Eye size={32} aria-hidden="true" className="text-teal-600" />
@@ -302,9 +325,10 @@ export default function PaygosOrderingPage() {
             aria-describedby="independent-focus-desc"
           >
             <Image
-              src="https://images.unsplash.com/photo-1441986300917-64674bd600d8"
+              src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=800&q=75"
               alt="Independent specialty retail store"
               fill
+              sizes="(max-width: 768px) 100vw, 33vw"
             />
             <div>
               <Store size={32} aria-hidden="true" className="text-teal-600" />

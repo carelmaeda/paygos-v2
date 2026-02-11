@@ -21,7 +21,8 @@
       "Bash(wmic process where \"name=''node.exe''\" get processid,commandline)",
       "Bash(cmd.exe /c \"taskkill /F /IM node.exe /T 2>nul & timeout /t 2 >nul & rmdir /s /q .next 2>nul & del /f next nul \"\"paygos-v2@0.1.0\"\" 2>nul & echo Done\")",
       "Bash(powershell.exe -Command \"Stop-Process -Name node -Force -ErrorAction SilentlyContinue; Start-Sleep -Seconds 2; Remove-Item -Path ''.next'' -Recurse -Force -ErrorAction SilentlyContinue; Remove-Item -Path ''next'',''nul'',''paygos-v2@0.1.0'' -Force -ErrorAction SilentlyContinue; Write-Host ''Done''\")",
-      "Bash(npm uninstall:*)"
+      "Bash(npm uninstall:*)",
+      "Bash(sort:*)"
     ]
   },
   "hooks": {

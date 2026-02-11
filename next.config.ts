@@ -16,6 +16,10 @@ const nextConfig: NextConfig = {
   },
   output: 'export',
   trailingSlash: true,
+  experimental: {
+    // Optimize CSS loading
+    optimizeCss: true,
+  },
 }
 
 export default nextConfig

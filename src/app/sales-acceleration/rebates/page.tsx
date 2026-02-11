@@ -1,4 +1,5 @@
 import type { Metadata } from "next"
+import dynamic from "next/dynamic"
 import Link from "next/link"
 import { CTA } from "@/components/sections/cta/CTA"
 import { Button } from "@/components/ui/button"
@@ -21,9 +22,22 @@ import {
   TrendingDown,
   Calculator,
 } from "lucide-react"
-import { RebatesPerformanceChart } from "./rebates-performance-chart"
 import { Breadcrumbs } from "@/components/layout/Breadcrumbs"
 import { MotionSection } from "@/components/motion"
+
+// Dynamic import chart to reduce initial bundle - Recharts is heavy (~40KB)
+const RebatesPerformanceChart = dynamic(
+  () =>
+    import("./rebates-performance-chart").then(
+      (mod) => mod.RebatesPerformanceChart
+    ),
+  {
+    ssr: true,
+    loading: () => (
+      <div className="h-[400px] animate-pulse rounded-lg bg-slate-200" />
+    ),
+  }
+)
 
 export const metadata: Metadata = {
   title: "Rebates & Incentives | Paygos",
@@ -189,9 +203,10 @@ export default function PaygosRebatesPage() {
             aria-describedby="automated-tracking-desc"
           >
             <Image
-              src="https://images.unsplash.com/photo-1460925895917-afdab827c52f"
+              src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=75"
               alt="Automated rebate tracking dashboard"
               fill
+              sizes="(max-width: 768px) 100vw, 33vw"
             />
             <div>
               <Sparkles size={32} aria-hidden="true" className="text-sky-400" />
@@ -215,9 +230,10 @@ export default function PaygosRebatesPage() {
             aria-describedby="program-management-desc"
           >
             <Image
-              src="https://images.unsplash.com/photo-1551288049-bebda4e38f71"
+              src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=75"
               alt="Multi-tier rebate program management interface"
               fill
+              sizes="(max-width: 768px) 100vw, 66vw"
             />
             <div>
               <Target size={32} aria-hidden="true" className="text-sky-400" />
@@ -246,9 +262,10 @@ export default function PaygosRebatesPage() {
             aria-describedby="real-time-visibility-desc"
           >
             <Image
-              src="https://images.unsplash.com/photo-1551288049-bebda4e38f71"
+              src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=75"
               alt="Real-time rebate visibility dashboard"
               fill
+              sizes="(max-width: 768px) 100vw, 50vw"
             />
             <div>
               <BarChart3
@@ -278,9 +295,10 @@ export default function PaygosRebatesPage() {
             aria-describedby="claim-validation-desc"
           >
             <Image
-              src="https://images.unsplash.com/photo-1554224155-6726b3ff858f"
+              src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800&q=75"
               alt="Automated claim validation process"
               fill
+              sizes="(max-width: 768px) 100vw, 50vw"
             />
             <div>
               <CheckCircle2
@@ -310,9 +328,10 @@ export default function PaygosRebatesPage() {
             aria-describedby="partner-engagement-desc"
           >
             <Image
-              src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf"
+              src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=800&q=75"
               alt="Partner and retailer engagement portal"
               fill
+              sizes="(max-width: 768px) 100vw, 33vw"
             />
             <div>
               <Users size={32} aria-hidden="true" className="text-sky-400" />
@@ -336,9 +355,10 @@ export default function PaygosRebatesPage() {
             aria-describedby="payout-reconciliation-desc"
           >
             <Image
-              src="https://images.unsplash.com/photo-1579621970563-ebec7560ff3e"
+              src="https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?w=800&q=75"
               alt="Automated payout reconciliation system"
               fill
+              sizes="(max-width: 768px) 100vw, 66vw"
             />
             <div>
               <DollarSign

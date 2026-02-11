@@ -1,4 +1,5 @@
 import type { Metadata } from "next"
+import dynamic from "next/dynamic"
 import Link from "next/link"
 import Image from "next/image"
 import { PatternDots } from "@/components/ui/patterns"
@@ -19,9 +20,19 @@ import {
 import { CTA } from "@/components/sections/cta/CTA"
 import { Button } from "@/components/ui/button"
 import { IndustryBadge } from "@/components/sections/solutions/IndustryBadge"
-import { ReturnsTrendChart } from "./returns-trend-chart"
 import { Breadcrumbs } from "@/components/layout/Breadcrumbs"
 import { MotionSection } from "@/components/motion"
+
+// Dynamic import chart to reduce initial bundle - Recharts is heavy (~40KB)
+const ReturnsTrendChart = dynamic(
+  () => import("./returns-trend-chart").then((mod) => mod.ReturnsTrendChart),
+  {
+    ssr: true,
+    loading: () => (
+      <div className="h-[400px] animate-pulse rounded-lg bg-slate-200" />
+    ),
+  }
+)
 
 export const metadata: Metadata = {
   title: "Returns Management | Paygos",
@@ -186,9 +197,10 @@ export default function ReturnsPage() {
             aria-describedby="validated-returns-desc"
           >
             <Image
-              src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d"
+              src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=800&q=75"
               alt="Validated returns processing with image capture"
               fill
+              sizes="(max-width: 768px) 100vw, 66vw"
             />
             <div>
               <Search size={32} aria-hidden="true" className="text-green-400" />
@@ -215,9 +227,10 @@ export default function ReturnsPage() {
             aria-describedby="replacement-orders-desc"
           >
             <Image
-              src="https://images.unsplash.com/photo-1553413077-190dd305871c"
+              src="https://images.unsplash.com/photo-1553413077-190dd305871c?w=600&q=75"
               alt="Replacement order management"
               fill
+              sizes="(max-width: 768px) 100vw, 33vw"
             />
             <div>
               <RefreshCcw
@@ -245,9 +258,10 @@ export default function ReturnsPage() {
             aria-describedby="returns-analytics-desc"
           >
             <Image
-              src="https://images.unsplash.com/photo-1551288049-bebda4e38f71"
+              src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&q=75"
               alt="Returns analytics dashboard"
               fill
+              sizes="(max-width: 768px) 100vw, 33vw"
             />
             <div>
               <BarChart3
@@ -275,9 +289,10 @@ export default function ReturnsPage() {
             aria-describedby="real-time-tracking-desc"
           >
             <Image
-              src="https://images.unsplash.com/photo-1460925895917-afdab827c52f"
+              src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=75"
               alt="Real-time returns tracking interface"
               fill
+              sizes="(max-width: 768px) 100vw, 66vw"
             />
             <div>
               <Package

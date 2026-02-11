@@ -1,15 +1,42 @@
 import type { Metadata } from "next"
+import dynamic from "next/dynamic"
 import { Hero } from "@/components/sections/hero/Hero"
 import { SolutionsSection } from "@/components/sections/solutions/SolutionsSection"
-import { DataAnalytics } from "@/components/sections/solutions/DataAnalyticsSection"
-import { FieldSales } from "@/components/sections/solutions/FieldSales"
-import { CTA } from "@/components/sections/cta/CTA"
-import { CustomerStoriesCarousel } from "@/components/sections/customers/CustomerStoriesCarousel"
 import { CustomerStoriesHeader } from "@/components/sections/customers/CustomerStoriesHeader"
 import { PatternDots } from "@/components/ui/patterns"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import { ArrowRight } from "lucide-react"
+
+// Dynamic imports for below-fold sections to reduce initial bundle size
+const FieldSales = dynamic(
+  () =>
+    import("@/components/sections/solutions/FieldSales").then(
+      (mod) => mod.FieldSales
+    ),
+  { ssr: true }
+)
+
+const DataAnalytics = dynamic(
+  () =>
+    import("@/components/sections/solutions/DataAnalyticsSection").then(
+      (mod) => mod.DataAnalytics
+    ),
+  { ssr: true }
+)
+
+const CustomerStoriesCarousel = dynamic(
+  () =>
+    import("@/components/sections/customers/CustomerStoriesCarousel").then(
+      (mod) => mod.CustomerStoriesCarousel
+    ),
+  { ssr: true }
+)
+
+const CTA = dynamic(
+  () => import("@/components/sections/cta/CTA").then((mod) => mod.CTA),
+  { ssr: true }
+)
 
 export const metadata: Metadata = {
   title: "Paygos - Sales Automation Platform",

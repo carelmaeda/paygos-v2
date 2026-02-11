@@ -1,4 +1,5 @@
 import type { Metadata } from "next"
+import dynamic from "next/dynamic"
 import Link from "next/link"
 import Image from "next/image"
 import { PatternDots } from "@/components/ui/patterns"
@@ -22,7 +23,20 @@ import { Button } from "@/components/ui/button"
 import { IndustryBadge } from "@/components/sections/solutions/IndustryBadge"
 import { Breadcrumbs } from "@/components/layout/Breadcrumbs"
 import { MotionSection } from "@/components/motion"
-import { PaymentDistributionChart } from "./payment-distribution-chart"
+
+// Dynamic import chart to reduce initial bundle - Recharts is heavy (~40KB)
+const PaymentDistributionChart = dynamic(
+  () =>
+    import("./payment-distribution-chart").then(
+      (mod) => mod.PaymentDistributionChart
+    ),
+  {
+    ssr: true,
+    loading: () => (
+      <div className="h-[400px] animate-pulse rounded-lg bg-slate-200" />
+    ),
+  }
+)
 
 export const metadata: Metadata = {
   title: "Payment Solutions | Paygos",
@@ -186,9 +200,10 @@ export default function PaymentsPage() {
             aria-describedby="automated-validation-desc"
           >
             <Image
-              src="https://images.unsplash.com/photo-1556742111-a301076d9d18"
+              src="https://images.unsplash.com/photo-1556742111-a301076d9d18?w=800&q=75"
               alt="Automated payment validation"
               fill
+              sizes="(max-width: 768px) 100vw, 66vw"
             />
             <div>
               <ShieldCheck
@@ -221,9 +236,10 @@ export default function PaymentsPage() {
             aria-describedby="budget-control-desc"
           >
             <Image
-              src="https://images.unsplash.com/photo-1554224154-26032ffc0d07"
+              src="https://images.unsplash.com/photo-1554224154-26032ffc0d07?w=800&q=75"
               alt="Budget control and spending limits"
               fill
+              sizes="(max-width: 768px) 100vw, 33vw"
             />
             <div>
               <Wallet size={32} aria-hidden="true" className="text-cyan-400" />
@@ -247,9 +263,10 @@ export default function PaymentsPage() {
             aria-describedby="real-time-tracking-desc"
           >
             <Image
-              src="https://images.unsplash.com/photo-1460925895917-afdab827c52f"
+              src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=75"
               alt="Real-time payment tracking"
               fill
+              sizes="(max-width: 768px) 100vw, 33vw"
             />
             <div>
               <History size={32} aria-hidden="true" className="text-cyan-400" />
@@ -273,9 +290,10 @@ export default function PaymentsPage() {
             aria-describedby="mobile-validation-desc"
           >
             <Image
-              src="https://images.unsplash.com/photo-1556656793-08538906a9f8"
+              src="https://images.unsplash.com/photo-1556656793-08538906a9f8?w=800&q=75"
               alt="Mobile payment validation"
               fill
+              sizes="(max-width: 768px) 100vw, 33vw"
             />
             <div>
               <Smartphone
@@ -303,9 +321,10 @@ export default function PaymentsPage() {
             aria-describedby="compliance-audit-desc"
           >
             <Image
-              src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85"
+              src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=800&q=75"
               alt="Compliance and audit trails"
               fill
+              sizes="(max-width: 768px) 100vw, 33vw"
             />
             <div>
               <Shield size={32} aria-hidden="true" className="text-cyan-400" />
@@ -329,9 +348,10 @@ export default function PaymentsPage() {
             aria-describedby="payment-analytics-desc"
           >
             <Image
-              src="https://images.unsplash.com/photo-1551288049-bebda4e38f71"
+              src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=75"
               alt="Payment distribution analytics"
               fill
+              sizes="(max-width: 768px) 100vw, 100vw"
             />
             <div>
               <PieChart

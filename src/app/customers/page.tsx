@@ -49,9 +49,10 @@ export default function CustomersPage() {
         <Link href="/customers/vet-growth" className="group block">
           <section className="section-container relative my-8 min-h-[65vh] overflow-hidden rounded-lg transition-transform duration-300 group-hover:shadow-xl">
             <Image
-              src="https://images.unsplash.com/photo-1655210913315-e8147faf7600"
+              src="https://images.unsplash.com/photo-1655210913315-e8147faf7600?w=1200&q=75"
               alt="Pet Food"
               fill
+              sizes="100vw"
               className="object-cover transition-transform duration-500 group-hover:scale-105"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/20" />

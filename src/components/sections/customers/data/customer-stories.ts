@@ -5,7 +5,7 @@ export const customerStories: CustomerStory[] = [
     id: "1",
     slug: "rebate-management",
     backgroundImage:
-      "https://images.unsplash.com/photo-1565674244283-993fb27a215f",
+      "https://images.unsplash.com/photo-1565674244283-993fb27a215f?w=800&q=75",
     tags: ["Pet Nutrition", "Rebates"],
     title: "40% Less Admin Work",
     excerpt:
@@ -15,7 +15,7 @@ export const customerStories: CustomerStory[] = [
     id: "2",
     slug: "returns-management",
     backgroundImage:
-      "https://images.unsplash.com/photo-1601598851547-4302969d0614",
+      "https://images.unsplash.com/photo-1601598851547-4302969d0614?w=800&q=75",
     tags: ["CPG", "Returns"],
     title: "20% Reduction in Admin Tasks",
     excerpt:
@@ -25,7 +25,7 @@ export const customerStories: CustomerStory[] = [
     id: "3",
     slug: "training-incentives",
     backgroundImage:
-      "https://images.unsplash.com/photo-1638202993928-7267aad84c31",
+      "https://images.unsplash.com/photo-1638202993928-7267aad84c31?w=800&q=75",
     tags: ["Pharma", "Training"],
     title: "20% Higher Sales Activity",
     excerpt:
@@ -35,7 +35,7 @@ export const customerStories: CustomerStory[] = [
     id: "4",
     slug: "retail-efficiency",
     backgroundImage:
-      "https://images.unsplash.com/photo-1512568400610-62da28bc8a13",
+      "https://images.unsplash.com/photo-1512568400610-62da28bc8a13?w=800&q=75",
     tags: ["Coffee Retail", "Field Sales Automation"],
     title: "10% More Efficient Operations",
     excerpt:
@@ -45,7 +45,7 @@ export const customerStories: CustomerStory[] = [
     id: "5",
     slug: "pharma-returns",
     backgroundImage:
-      "https://images.unsplash.com/photo-1512069772995-ec65ed45afd6",
+      "https://images.unsplash.com/photo-1512069772995-ec65ed45afd6?w=800&q=75",
     tags: ["Pharma", "Returns"],
     title: "40% More Sales Visits",
     excerpt:

@@ -9,11 +9,17 @@ import { MotionProvider } from "@/components/motion"
 const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin"],
+  display: "swap",
+  preload: true,
+  adjustFontFallback: true, // Adjusts fallback font metrics to minimize CLS
 })
 
 const urbanist = Urbanist({
   variable: "--font-urbanist",
   subsets: ["latin"],
+  display: "swap",
+  preload: true,
+  adjustFontFallback: true, // Adjusts fallback font metrics to minimize CLS
 })
 
 export const metadata: Metadata = {
@@ -58,6 +64,32 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        {/* Preload LCP image for faster rendering */}
+        <link
+          rel="preload"
+          href="/paygos/paygos-hero.webp"
+          as="image"
+          type="image/webp"
+          fetchPriority="high"
+        />
+        {/* Preconnect to external resources for faster loading */}
+        <link rel="preconnect" href="https://images.unsplash.com" />
+        <link rel="dns-prefetch" href="https://images.unsplash.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        {/* Critical CSS for above-the-fold content - prevents flash of unstyled content */}
+        <style
+          dangerouslySetInnerHTML={{
+            __html: `
+              :root{--background:#fff;--foreground:#0f172a}
+              *,*::before,*::after{box-sizing:border-box}
+              body{margin:0;background:var(--background);color:var(--foreground);-webkit-font-smoothing:antialiased;font-family:var(--font-inter),ui-sans-serif,system-ui,sans-serif}
+              h1,h2,h3{font-family:var(--font-urbanist),ui-sans-serif,system-ui,sans-serif;line-height:0.9}
+              .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+            `,
+          }}
+        />
+      </head>
       <body
         className={`${inter.variable} ${urbanist.variable} antialiased`}
         // suppressHydrationWarning needed for browser extensions that modify DOM before hydration
